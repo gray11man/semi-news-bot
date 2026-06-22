@@ -2,8 +2,6 @@ name: Semi-AI Daily Briefing
 
 on:
   schedule:
-    # GitHub 크론은 UTC 기준. "*/30"은 정시 혼잡으로 지연/스킵이 잦아
-    # 어긋난 분(7,37)으로 두 번 돌려 안정성 확보
     - cron: "7,37 * * * *"
   workflow_dispatch:
 
