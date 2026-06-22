@@ -2,8 +2,7 @@ name: Semi-AI Daily Briefing
 
 on:
   schedule:
-    - cron: "0 23 * * *"
-    - cron: "0 9 * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
