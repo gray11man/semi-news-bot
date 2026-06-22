@@ -389,22 +389,28 @@ def esc(s):
     return html.escape(s or "")
 
 
+def strip_source_suffix(title):
+    """제목 끝의 ' - 매체명' / ' | 매체명' 꼬리 제거 (번역 전후 모두 사용)"""
+    if not title:
+        return title
+    t = re.sub(r"\s*[-|]\s*[^-|]{2,40}$", "", title).strip()
+    # 너무 짧게 잘렸으면 원복
+    return t if len(t) >= 6 else title.strip()
+
+
 def build_message(category, it):
     """1 뉴스 = 1 메시지. 영문은 한글 번역을 함께 표시."""
     lines = [f"{esc(category)}"]
 
-    title = it["title"]
+    title = strip_source_suffix(it["title"])
     if _has_korean(title):
         # 한글 기사: 그대로
         lines.append(f'<b>{esc(title)}</b>')
     else:
-        # 영문 기사: 한글 번역을 굵게, 원문을 작게
+        # 영문 기사: 한글 번역만 (원문 생략)
         ko = translate_to_ko(title)
-        if ko and ko != title:
-            lines.append(f'<b>{esc(ko)}</b>')
-            lines.append(f'<i>{esc(title)}</i>')
-        else:
-            lines.append(f'<b>{esc(title)}</b>')
+        ko = strip_source_suffix(ko) if ko else ko
+        lines.append(f'<b>{esc(ko if ko else title)}</b>')
 
     if it["summary"]:
         s = it["summary"]
