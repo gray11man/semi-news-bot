@@ -26,7 +26,7 @@ jobs:
           cache: "pip"
 
       - name: Install deps
-run: pip install requests feedparser deep-translator
+        run: pip install requests feedparser deep-translator
 
       - name: Run bot
         env:
