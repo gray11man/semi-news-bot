@@ -56,9 +56,10 @@ FEEDS = {
         "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
     ],
     "🌐 해외 소식": [
-        google_news_rss("Micron OR SK Hynix OR Samsung memory OR TSMC HBM", "en"),
-        google_news_rss("Nvidia OR AMD OR Broadcom datacenter OR memory market", "en"),
-        google_news_rss("semiconductor memory demand OR HBM supply", "en"),
+        google_news_rss("Micron OR \"SK Hynix\" OR Samsung HBM partnership OR deal OR contract", "en"),
+        google_news_rss("Nvidia OR TSMC OR Broadcom AI deal OR investment OR supply agreement", "en"),
+        google_news_rss("memory chip shortage OR HBM capacity OR DRAM price hike", "en"),
+        google_news_rss("OpenAI OR Anthropic infrastructure OR compute deal OR data center", "en"),
     ],
     "📊 리포트/투자의견": [
         google_news_rss("SK하이닉스 OR 삼성전자 목표주가 OR 투자의견 OR 상향 OR 하향", "ko"),
@@ -106,6 +107,43 @@ EXCLUDE_KEYWORDS = [
     "할인", "쿠폰", "이벤트 당첨", "광고", "분양", "운세", "로또",
     "casino", "porn", "coupon",
 ]
+
+# 사건성(중요) 신호어 — 있으면 점수↑, 위로 올림
+EVENT_SIGNALS = [
+    # 한글
+    "파트너십", "협력", "계약", "공급계약", "수주", "인수", "합병", "지분", "투자",
+    "증설", "신설", "착공", "양산", "출시", "공개", "발표", "도입", "채택", "선정",
+    "독점", "최초", "세계 최초", "신제품", "개발 성공", "양산 돌입", "공장", "거점",
+    "조달", "납품", "확보", "체결", "맞손", "동맹", "출하", "상용화", "구축",
+    # 영문
+    "partnership", "deal", "agreement", "contract", "acquire", "acquisition",
+    "merger", "stake", "invest", "investment", "launch", "unveil", "announce",
+    "release", "expansion", "build", "supply deal", "secures", "partners with",
+    "collaboration", "rollout", "deploy", "mass production", "ramp",
+]
+
+# 단신/저신호 — 사건어가 없고 이게 있으면 점수↓ (주가·등락 단신)
+WEAK_SIGNALS = [
+    "주가", "시총", "상승", "하락", "강세", "약세", "급등", "급락", "오름세", "내림세",
+    "마감", "장중", "개장", "종가", "전일", "보합", "거래량", "외국인 순매수",
+    "기관 순매수", "수급", "shares", "stock", "rises", "falls", "rose", "fell",
+    "gains", "drops", "rally", "slips", "closing", "premarket",
+]
+
+
+def importance_score(category, title, summary):
+    """사건성 신호 기반 가중치. 높을수록 위로."""
+    text = f"{title} {summary}".lower()
+    score = 0
+    for kw in EVENT_SIGNALS:
+        if kw.lower() in text:
+            score += 3
+    # 주가 단신성 신호는 감점 (단, 리포트 카테고리는 주가가 본질이라 제외)
+    if category != "📊 리포트/투자의견":
+        for kw in WEAK_SIGNALS:
+            if kw.lower() in text:
+                score -= 1
+    return score
 
 
 def now_utc():
@@ -257,9 +295,21 @@ def collect():
                     "summary": summary,
                     "source": source_name(entry),
                     "ntitle": norm_title(title),
+                    "score": importance_score(category, title, raw_sum),
                 })
+        # 카테고리별 최소 점수 기준 (해외는 사건성 뉴스만 엄격히)
+        if category == "📊 리포트/투자의견":
+            min_score = None              # 리포트는 점수 필터 미적용 (주가가 본질)
+        elif category == "🌐 해외 소식":
+            min_score = 3                 # 해외는 사건 신호어가 실제 있는 것만
+        else:
+            min_score = 0                 # 메모리/AI는 단신(음수)만 제외
+        if min_score is not None:
+            items = [it for it in items if it["score"] >= min_score]
+        # 중요도 높은 순으로 정렬 (같으면 원래 순서 유지)
+        items.sort(key=lambda x: x["score"], reverse=True)
         results[category] = items
-        print(f"[INFO] {category}: {len(items)} raw")
+        print(f"[INFO] {category}: {len(items)} items (after importance filter)")
     return results
 
 
