@@ -23,6 +23,7 @@ import feedparser
 # ─────────────────────────────────────────────────────────────
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+TRANSLATE = os.environ.get("TRANSLATE", "1").strip() != "0"   # 0이면 번역 끄기
 
 SEEN_FILE = "seen.json"
 SEEN_RETENTION_DAYS = 14
@@ -144,6 +145,48 @@ def importance_score(category, title, summary):
             if kw.lower() in text:
                 score -= 1
     return score
+
+
+def _has_korean(text):
+    return bool(re.search(r"[가-힣]", text or ""))
+
+
+_translate_cache = {}
+_GT = None
+
+def _get_translator():
+    """deep-translator의 GoogleTranslator를 지연 로딩. 실패 시 None."""
+    global _GT
+    if _GT is not None:
+        return _GT
+    try:
+        from deep_translator import GoogleTranslator
+        _GT = GoogleTranslator(source="auto", target="ko")
+    except Exception as e:
+        print(f"[WARN] translator init fail: {e}")
+        _GT = False
+    return _GT
+
+
+def translate_to_ko(text):
+    """비한글 텍스트를 한국어로 번역. 실패하면 원문 반환(봇 안 멈춤)."""
+    if not text or not TRANSLATE:
+        return text
+    if _has_korean(text):        # 이미 한글이면 번역 안 함
+        return text
+    if text in _translate_cache:
+        return _translate_cache[text]
+    gt = _get_translator()
+    if not gt:
+        return text
+    try:
+        out = gt.translate(text)
+        if out and out.strip():
+            _translate_cache[text] = out
+            return out
+    except Exception as e:
+        print(f"[WARN] translate fail: {e}")
+    return text
 
 
 def now_utc():
@@ -347,11 +390,29 @@ def esc(s):
 
 
 def build_message(category, it):
-    """1 뉴스 = 1 메시지"""
+    """1 뉴스 = 1 메시지. 영문은 한글 번역을 함께 표시."""
     lines = [f"{esc(category)}"]
-    lines.append(f'<b>{esc(it["title"])}</b>')
+
+    title = it["title"]
+    if _has_korean(title):
+        # 한글 기사: 그대로
+        lines.append(f'<b>{esc(title)}</b>')
+    else:
+        # 영문 기사: 한글 번역을 굵게, 원문을 작게
+        ko = translate_to_ko(title)
+        if ko and ko != title:
+            lines.append(f'<b>{esc(ko)}</b>')
+            lines.append(f'<i>{esc(title)}</i>')
+        else:
+            lines.append(f'<b>{esc(title)}</b>')
+
     if it["summary"]:
-        lines.append(f'{esc(it["summary"])}')
+        s = it["summary"]
+        if not _has_korean(s):
+            s_ko = translate_to_ko(s)
+            s = s_ko if s_ko else s
+        lines.append(f'{esc(s)}')
+
     src = f' · {esc(it["source"])}' if it["source"] else ""
     lines.append(f'🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}')
     return "\n".join(lines)
