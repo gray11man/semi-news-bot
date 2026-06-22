@@ -27,7 +27,7 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 SEEN_FILE = "seen.json"
 SEEN_RETENTION_DAYS = 14
 MAX_ITEMS_PER_CATEGORY = 8         # 카테고리당 최대 (알림 폭주 방지)
-SIMILARITY_THRESHOLD = 0.82
+SIMILARITY_THRESHOLD = 0.68        # 낮을수록 중복을 더 적극적으로 묶음
 SUMMARY_MAX_CHARS = 180            # 요약 최대 길이
 REQUEST_TIMEOUT = 20
 SEND_DELAY = 1.0                   # 메시지 간 간격(초) - rate limit 회피
@@ -48,8 +48,10 @@ FEEDS = {
         "https://www.tomshardware.com/feeds/all",
     ],
     "🤖 AI": [
-        google_news_rss("AI 반도체 OR 엔비디아 OR 데이터센터 OR 생성형AI", "ko"),
-        google_news_rss("AI chip OR Nvidia OR datacenter GPU OR LLM OR OpenAI", "en"),
+        google_news_rss("OpenAI OR Anthropic OR 구글 제미나이 OR 메타 AI OR 샘 올트먼", "ko"),
+        google_news_rss("OpenAI OR Anthropic OR Google DeepMind OR Meta AI OR xAI", "en"),
+        google_news_rss("Sam Altman OR Dario Amodei OR Sundar Pichai OR Zuckerberg AI", "en"),
+        google_news_rss("AI model OR GPT OR Claude OR Gemini OR Llama release", "en"),
         "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
     ],
     "🌐 해외 소식": [
@@ -72,10 +74,20 @@ INCLUDE_KEYWORDS = {
         "비트", "감산", "증설", "공급", "수요", "가격", "고대역폭",
     ],
     "🤖 AI": [
-        "ai", "인공지능", "nvidia", "엔비디아", "gpu", "데이터센터", "datacenter",
-        "data center", "llm", "openai", "오픈ai", "추론", "inference", "학습", "training",
-        "생성형", "generative", "blackwell", "tpu", "anthropic", "구글", "google",
-        "microsoft", "메타", "meta",
+        # 기업
+        "openai", "오픈ai", "anthropic", "앤트로픽", "엔트로픽", "deepmind", "딥마인드",
+        "google", "구글", "gemini", "제미나이", "제미니", "meta", "메타", "xai", "그록", "grok",
+        "microsoft", "마이크로소프트", "코파일럿", "copilot", "mistral", "perplexity", "퍼플렉시티",
+        "스케일ai", "엔비디아", "nvidia",
+        # 인물
+        "altman", "올트먼", "amodei", "아모데이", "pichai", "피차이", "hassabis", "허사비스",
+        "zuckerberg", "저커버그", "musk", "머스크", "황", "젠슨", "huang",
+        # 모델/기술
+        "gpt", "chatgpt", "챗gpt", "claude", "클로드", "llama", "라마", "llm",
+        "생성형", "generative", "인공지능", "ai 모델", "추론모델", "에이전트", "agent",
+        "오픈소스", "벤치마크", "agi", "파운데이션 모델",
+        # 업계 동향
+        "투자", "기업가치", "valuation", "라운드", "ipo", "발표", "출시", "공개", "데이터센터",
     ],
     "🌐 해외 소식": [
         "memory", "dram", "nand", "hbm", "lpddr", "micron", "hynix", "samsung",
@@ -121,18 +133,49 @@ def prune_seen(seen):
 
 def norm_title(title):
     t = html.unescape(title or "")
-    t = re.sub(r"\s*-\s*[^-]+$", "", t)
+    t = re.sub(r"\s*[-|·]\s*[^-|·]+$", "", t)   # 끝의 ' - 매체명' 제거
+    t = re.sub(r"\[[^\]]*\]", " ", t)            # [속보][단독] 등 대괄호 토큰 제거
     t = re.sub(r"[\[\](){}<>·…“”\"'’‘|!?.,~―—\-]+", " ", t)
+    t = re.sub(r"[\"'%·,…]+", " ", t)
     t = re.sub(r"\s+", " ", t).strip().lower()
     return t
 
 
 def title_key(title):
-    return hashlib.md5(norm_title(title).encode("utf-8")).hexdigest()
+    # 공백까지 제거한 형태로 키 생성 → 띄어쓰기만 다른 제목을 같은 키로
+    compact = re.sub(r"\s+", "", norm_title(title))
+    return hashlib.md5(compact.encode("utf-8")).hexdigest()
+
+
+def _tokens(s):
+    # 2글자 이상 토큰만(조사/짧은 단어 노이즈 제거)
+    return {w for w in norm_title(s).split() if len(w) >= 2}
+
+
+def _jaccard(a, b):
+    ta, tb = _tokens(a), _tokens(b)
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / len(ta | tb)
 
 
 def is_similar(a, b):
-    return SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD
+    # 1) 문자열 시퀀스 유사도
+    if SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD:
+        return True
+    # 2) 핵심 단어 겹침(자카드)
+    if _jaccard(a, b) >= 0.4:
+        return True
+    # 3) 같은 핵심 주체 + 같은 사건 신호어를 공유하면 동일 사건으로 간주
+    ta, tb = _tokens(a), _tokens(b)
+    shared = ta & tb
+    actors = {"sk하이닉스", "하이닉스", "삼성전자", "마이크론", "엔비디아",
+              "hynix", "samsung", "micron", "nvidia", "tsmc"}
+    signals = {"시총", "왕좌", "대장주", "1위", "제치고", "제쳤다", "넘은", "추월",
+               "역전", "목표주가", "상향", "하향", "급등", "급락", "신고가"}
+    if (shared & actors) and (shared & signals):
+        return True
+    return False
 
 
 def passes_filter(category, title, summary):
