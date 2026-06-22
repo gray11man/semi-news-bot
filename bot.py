@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-메모리 반도체 / AI 데일리 브리핑 텔레그램 봇
-- RSS 다중 소스 수집
-- 키워드 필터 (메모리 반도체 / AI)
-- 제목 유사도 기반 중복 제거 (이미 보낸 것 + 이번 회차 내부 중복)
-- 카테고리별로 묶어서 텔레그램 전송
-- 보낸 기록은 seen.json 에 저장 (GitHub Actions가 커밋해서 영속화)
+메모리 반도체 / AI 데일리 브리핑 텔레그램 봇 (v2)
+- 1 뉴스 = 1 메시지
+- 제목 + 간단 요약(RSS 본문 발췌 정리) + 링크
+- 키워드 필터 + 제목 유사도 중복 제거 + 과거 발송분 제외
 """
 
 import os
@@ -17,34 +15,30 @@ import html
 import hashlib
 import datetime
 from difflib import SequenceMatcher
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote
 
 import requests
 import feedparser
 
 # ─────────────────────────────────────────────────────────────
-# 설정
-# ─────────────────────────────────────────────────────────────
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
 SEEN_FILE = "seen.json"
-SEEN_RETENTION_DAYS = 14          # 14일 지난 기록은 자동 정리
-MAX_ITEMS_PER_CATEGORY = 12       # 카테고리당 최대 전송 수
-SIMILARITY_THRESHOLD = 0.82       # 제목 유사도 중복 판정 임계값
+SEEN_RETENTION_DAYS = 14
+MAX_ITEMS_PER_CATEGORY = 10        # 카테고리당 최대 (알림 폭주 방지)
+SIMILARITY_THRESHOLD = 0.82
+SUMMARY_MAX_CHARS = 180            # 요약 최대 길이
 REQUEST_TIMEOUT = 20
+SEND_DELAY = 1.0                   # 메시지 간 간격(초) - rate limit 회피
 
-# ─────────────────────────────────────────────────────────────
-# RSS 소스 (카테고리별)
-#   - 구글 뉴스 RSS는 키워드 쿼리로 한국어/영어 둘 다 수집 가능
-#   - 매체 RSS도 섞어서 커버리지 확보
-# ─────────────────────────────────────────────────────────────
-def google_news_rss(query, lang="ko", country="KR"):
-    from urllib.parse import quote
+
+def google_news_rss(query, lang="ko"):
     q = quote(query)
     if lang == "ko":
         return f"https://news.google.com/rss/search?q={q}&hl=ko&gl=KR&ceid=KR:ko"
     return f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"
+
 
 FEEDS = {
     "🧠 메모리 반도체": [
@@ -60,7 +54,6 @@ FEEDS = {
     ],
 }
 
-# 카테고리별 양성 키워드 (제목/요약에 하나라도 있어야 통과)
 INCLUDE_KEYWORDS = {
     "🧠 메모리 반도체": [
         "hbm", "dram", "nand", "낸드", "디램", "메모리", "memory chip", "lpddr",
@@ -76,16 +69,12 @@ INCLUDE_KEYWORDS = {
     ],
 }
 
-# 노이즈 컷용 음성 키워드 (있으면 제외)
 EXCLUDE_KEYWORDS = [
     "할인", "쿠폰", "이벤트 당첨", "광고", "분양", "운세", "로또",
     "casino", "porn", "coupon",
 ]
 
 
-# ─────────────────────────────────────────────────────────────
-# 유틸
-# ─────────────────────────────────────────────────────────────
 def now_utc():
     return datetime.datetime.now(datetime.timezone.utc)
 
@@ -106,15 +95,13 @@ def save_seen(seen):
 
 
 def prune_seen(seen):
-    """오래된 기록 정리"""
     cutoff = (now_utc() - datetime.timedelta(days=SEEN_RETENTION_DAYS)).timestamp()
     return {k: v for k, v in seen.items() if v.get("ts", 0) >= cutoff}
 
 
 def norm_title(title):
-    """제목 정규화: 매체명/특수문자/공백 제거, 소문자화"""
     t = html.unescape(title or "")
-    t = re.sub(r"\s*-\s*[^-]+$", "", t)          # 구글뉴스 ' - 매체명' 꼬리 제거
+    t = re.sub(r"\s*-\s*[^-]+$", "", t)
     t = re.sub(r"[\[\](){}<>·…“”\"'’‘|!?.,~―—\-]+", " ", t)
     t = re.sub(r"\s+", " ", t).strip().lower()
     return t
@@ -132,25 +119,32 @@ def passes_filter(category, title, summary):
     text = f"{title} {summary}".lower()
     if any(k.lower() in text for k in EXCLUDE_KEYWORDS):
         return False
-    incl = INCLUDE_KEYWORDS.get(category, [])
-    return any(k.lower() in text for k in incl)
+    return any(k.lower() in text for k in INCLUDE_KEYWORDS.get(category, []))
 
 
-def source_name(entry, feed):
-    # 구글뉴스는 source 태그가 있는 경우가 많음
-    src = ""
+def clean_summary(raw):
+    """RSS 본문에서 태그/공백/잡음 제거 후 한 덩어리 텍스트로"""
+    if not raw:
+        return ""
+    s = re.sub(r"<[^>]+>", " ", raw)          # 태그 제거
+    s = html.unescape(s)
+    s = re.sub(r"https?://\S+", "", s)         # URL 제거
+    s = re.sub(r"&[a-z]+;", " ", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    # 구글뉴스가 매체명만 던지는 경우 등 너무 짧으면 버림
+    if len(s) < 25:
+        return ""
+    if len(s) > SUMMARY_MAX_CHARS:
+        s = s[:SUMMARY_MAX_CHARS].rsplit(" ", 1)[0] + "…"
+    return s
+
+
+def source_name(entry):
     if hasattr(entry, "source") and getattr(entry.source, "title", None):
-        src = entry.source.title
-    if not src:
-        link = entry.get("link", "")
-        host = urlparse(link).netloc.replace("www.", "")
-        src = host
-    return src
+        return entry.source.title
+    return urlparse(entry.get("link", "")).netloc.replace("www.", "")
 
 
-# ─────────────────────────────────────────────────────────────
-# 수집
-# ─────────────────────────────────────────────────────────────
 def collect():
     results = {}
     for category, urls in FEEDS.items():
@@ -159,62 +153,51 @@ def collect():
             try:
                 feed = feedparser.parse(url)
             except Exception as e:
-                print(f"[WARN] feed parse fail: {url} ({e})")
+                print(f"[WARN] feed fail: {url} ({e})")
                 continue
             for entry in feed.entries[:40]:
                 title = entry.get("title", "").strip()
-                summary = re.sub(r"<[^>]+>", "", entry.get("summary", "")).strip()
+                raw_sum = entry.get("summary", "")
                 link = entry.get("link", "").strip()
                 if not title or not link:
                     continue
-                if not passes_filter(category, title, summary):
+                summary = clean_summary(raw_sum)
+                if not passes_filter(category, title, raw_sum):
                     continue
                 items.append({
                     "title": html.unescape(title),
                     "link": link,
-                    "summary": summary[:160],
-                    "source": source_name(entry, feed),
+                    "summary": summary,
+                    "source": source_name(entry),
                     "ntitle": norm_title(title),
                 })
         results[category] = items
-        print(f"[INFO] {category}: {len(items)} raw items collected")
+        print(f"[INFO] {category}: {len(items)} raw")
     return results
 
 
-# ─────────────────────────────────────────────────────────────
-# 중복 제거
-# ─────────────────────────────────────────────────────────────
-def dedupe(category_items, seen):
-    """seen(과거) + 회차 내부 유사도로 중복 제거"""
+def dedupe(items, seen):
     seen_norm = [v["ntitle"] for v in seen.values() if "ntitle" in v]
-    out = []
-    accepted_norm = []
-
-    for it in category_items:
-        key = title_key(it["title"])
-        if key in seen:
+    out, accepted = [], []
+    for it in items:
+        if title_key(it["title"]) in seen:
             continue
-        # 과거 보낸 것과 유사하면 제외
         if any(is_similar(it["ntitle"], s) for s in seen_norm):
             continue
-        # 이번 회차 내부 중복 제외
-        if any(is_similar(it["ntitle"], s) for s in accepted_norm):
+        if any(is_similar(it["ntitle"], s) for s in accepted):
             continue
         out.append(it)
-        accepted_norm.append(it["ntitle"])
+        accepted.append(it["ntitle"])
     return out
 
 
-# ─────────────────────────────────────────────────────────────
-# 텔레그램 전송
-# ─────────────────────────────────────────────────────────────
 def tg_send(text):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
         "text": text,
         "parse_mode": "HTML",
-        "disable_web_page_preview": True,
+        "disable_web_page_preview": False,   # 1뉴스 1메시지라 링크 미리보기 켬
     }
     r = requests.post(url, json=payload, timeout=REQUEST_TIMEOUT)
     if r.status_code != 200:
@@ -226,66 +209,54 @@ def esc(s):
     return html.escape(s or "")
 
 
-def build_messages(briefing):
-    """텔레그램 4096자 제한 고려해 카테고리별로 메시지 분할"""
-    today = (now_utc() + datetime.timedelta(hours=9)).strftime("%Y-%m-%d (%a)")
-    messages = []
-    header = f"📡 <b>반도체·AI 데일리 브리핑</b>\n🗓 {today} KST\n"
-    messages.append(header)
-
-    for category, items in briefing.items():
-        if not items:
-            continue
-        block = f"\n<b>{esc(category)}</b>  ({len(items)}건)\n"
-        for i, it in enumerate(items, 1):
-            line = f'{i}. <a href="{esc(it["link"])}">{esc(it["title"])}</a>'
-            if it["source"]:
-                line += f' <i>· {esc(it["source"])}</i>'
-            line += "\n"
-            if len(block) + len(line) > 3500:
-                messages.append(block)
-                block = f"<b>{esc(category)}</b> (계속)\n"
-            block += line
-        messages.append(block)
-    return messages
+def build_message(category, it):
+    """1 뉴스 = 1 메시지"""
+    lines = [f"{esc(category)}"]
+    lines.append(f'<b>{esc(it["title"])}</b>')
+    if it["summary"]:
+        lines.append(f'{esc(it["summary"])}')
+    src = f' · {esc(it["source"])}' if it["source"] else ""
+    lines.append(f'🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}')
+    return "\n".join(lines)
 
 
-# ─────────────────────────────────────────────────────────────
-# 메인
-# ─────────────────────────────────────────────────────────────
 def main():
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
-        raise SystemExit("[FATAL] TELEGRAM_TOKEN / TELEGRAM_CHAT_ID 환경변수가 없습니다.")
+        raise SystemExit("[FATAL] TELEGRAM_TOKEN / TELEGRAM_CHAT_ID 없음")
 
     seen = prune_seen(load_seen())
     raw = collect()
 
-    briefing = {}
-    new_count = 0
+    # 날짜 헤더 1개만 먼저 (구분용)
+    today = (now_utc() + datetime.timedelta(hours=9)).strftime("%Y-%m-%d (%a)")
+
+    new_total = 0
+    to_send = []
     for category, items in raw.items():
         deduped = dedupe(items, seen)[:MAX_ITEMS_PER_CATEGORY]
-        briefing[category] = deduped
-        new_count += len(deduped)
-        # seen 기록
         for it in deduped:
+            to_send.append((category, it))
             seen[title_key(it["title"])] = {
-                "ntitle": it["ntitle"],
-                "ts": now_utc().timestamp(),
+                "ntitle": it["ntitle"], "ts": now_utc().timestamp(),
             }
+        new_total += len(deduped)
 
-    if new_count == 0:
-        print("[INFO] 신규 뉴스 없음 — 전송 생략")
+    if new_total == 0:
+        print("[INFO] 신규 없음 - 전송 생략")
         save_seen(seen)
         return
 
-    messages = build_messages(briefing)
-    for msg in messages:
-        if msg.strip():
-            tg_send(msg)
-            time.sleep(0.6)  # rate limit 회피
+    # 헤더
+    tg_send(f"📡 <b>반도체·AI 데일리 브리핑</b>\n🗓 {today} KST · 신규 {new_total}건")
+    time.sleep(SEND_DELAY)
+
+    # 1뉴스 1메시지
+    for category, it in to_send:
+        tg_send(build_message(category, it))
+        time.sleep(SEND_DELAY)
 
     save_seen(seen)
-    print(f"[DONE] 신규 {new_count}건 전송 완료")
+    print(f"[DONE] {new_total}건 전송 완료")
 
 
 if __name__ == "__main__":
