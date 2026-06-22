@@ -26,7 +26,7 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
 SEEN_FILE = "seen.json"
 SEEN_RETENTION_DAYS = 14
-MAX_ITEMS_PER_CATEGORY = 10        # 카테고리당 최대 (알림 폭주 방지)
+MAX_ITEMS_PER_CATEGORY = 8         # 카테고리당 최대 (알림 폭주 방지)
 SIMILARITY_THRESHOLD = 0.82
 SUMMARY_MAX_CHARS = 180            # 요약 최대 길이
 REQUEST_TIMEOUT = 20
@@ -52,6 +52,16 @@ FEEDS = {
         google_news_rss("AI chip OR Nvidia OR datacenter GPU OR LLM OR OpenAI", "en"),
         "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
     ],
+    "🌐 해외 소식": [
+        google_news_rss("Micron OR SK Hynix OR Samsung memory OR TSMC HBM", "en"),
+        google_news_rss("Nvidia OR AMD OR Broadcom datacenter OR memory market", "en"),
+        google_news_rss("semiconductor memory demand OR HBM supply", "en"),
+    ],
+    "📊 리포트/투자의견": [
+        google_news_rss("SK하이닉스 OR 삼성전자 목표주가 OR 투자의견 OR 상향 OR 하향", "ko"),
+        google_news_rss("Micron OR Nvidia price target OR upgrade OR downgrade analyst", "en"),
+        google_news_rss("HBM OR DRAM analyst forecast OR rating", "en"),
+    ],
 }
 
 INCLUDE_KEYWORDS = {
@@ -66,6 +76,16 @@ INCLUDE_KEYWORDS = {
         "data center", "llm", "openai", "오픈ai", "추론", "inference", "학습", "training",
         "생성형", "generative", "blackwell", "tpu", "anthropic", "구글", "google",
         "microsoft", "메타", "meta",
+    ],
+    "🌐 해외 소식": [
+        "memory", "dram", "nand", "hbm", "lpddr", "micron", "hynix", "samsung",
+        "tsmc", "nvidia", "amd", "broadcom", "semiconductor", "chip", "datacenter",
+        "data center", "supply", "demand", "wafer", "foundry",
+    ],
+    "📊 리포트/투자의견": [
+        "목표주가", "투자의견", "상향", "하향", "매수", "비중확대", "리포트", "증권",
+        "price target", "upgrade", "downgrade", "analyst", "rating", "outperform",
+        "overweight", "buy", "forecast", "estimate", "초과", "리서치",
     ],
 }
 
@@ -236,6 +256,7 @@ def main():
         deduped = dedupe(items, seen)[:MAX_ITEMS_PER_CATEGORY]
         for it in deduped:
             to_send.append((category, it))
+            # 직후 카테고리에서 동일/유사 기사가 다시 잡히지 않도록 즉시 seen 반영
             seen[title_key(it["title"])] = {
                 "ntitle": it["ntitle"], "ts": now_utc().timestamp(),
             }
