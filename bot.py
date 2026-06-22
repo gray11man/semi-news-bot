@@ -29,6 +29,7 @@ SEEN_RETENTION_DAYS = 14
 MAX_ITEMS_PER_CATEGORY = 8         # 카테고리당 최대 (알림 폭주 방지)
 SIMILARITY_THRESHOLD = 0.68        # 낮을수록 중복을 더 적극적으로 묶음
 SUMMARY_MAX_CHARS = 180            # 요약 최대 길이
+MAX_AGE_HOURS = 36                 # 이 시간보다 오래된 기사는 제외 (날짜 필터)
 REQUEST_TIMEOUT = 20
 SEND_DELAY = 1.0                   # 메시지 간 간격(초) - rate limit 회피
 
@@ -208,6 +209,27 @@ def source_name(entry):
     return urlparse(entry.get("link", "")).netloc.replace("www.", "")
 
 
+def entry_age_hours(entry):
+    """기사 발행 후 경과 시간(시간). 시각 정보 없으면 None."""
+    tm = entry.get("published_parsed") or entry.get("updated_parsed")
+    if not tm:
+        return None
+    try:
+        published = datetime.datetime(*tm[:6], tzinfo=datetime.timezone.utc)
+    except Exception:
+        return None
+    delta = now_utc() - published
+    return delta.total_seconds() / 3600.0
+
+
+def is_fresh(entry):
+    """MAX_AGE_HOURS 이내면 True. 시각을 못 읽으면 보수적으로 통과(놓침 방지)."""
+    age = entry_age_hours(entry)
+    if age is None:
+        return True          # 날짜 불명 기사는 일단 통과 (중복필터가 한번 더 거름)
+    return age <= MAX_AGE_HOURS
+
+
 def collect():
     results = {}
     for category, urls in FEEDS.items():
@@ -223,6 +245,8 @@ def collect():
                 raw_sum = entry.get("summary", "")
                 link = entry.get("link", "").strip()
                 if not title or not link:
+                    continue
+                if not is_fresh(entry):          # 오래된 기사 제외
                     continue
                 summary = clean_summary(raw_sum)
                 if not passes_filter(category, title, raw_sum):
