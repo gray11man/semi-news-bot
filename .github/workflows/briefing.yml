@@ -2,7 +2,9 @@ name: Semi-AI Daily Briefing
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # GitHub 크론은 UTC 기준. "*/30"은 정시 혼잡으로 지연/스킵이 잦아
+    # 어긋난 분(7,37)으로 두 번 돌려 안정성 확보
+    - cron: "7,37 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -23,6 +25,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
 
       - name: Install deps
         run: pip install requests feedparser
@@ -35,9 +38,13 @@ jobs:
 
       - name: Commit seen.json
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           touch seen.json
           git add seen.json
-          git diff --staged --quiet || git commit -m "update seen [skip ci]"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to seen.json"
+          else
+            git commit -m "update seen [skip ci]"
+            git push
+          fi
