@@ -1,0 +1,44 @@
+name: Semi-AI Daily Briefing
+
+on:
+  schedule:
+    - cron: "0 23 * * *"
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: briefing
+  cancel-in-progress: false
+
+jobs:
+  briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install requests feedparser
+
+      - name: Run bot
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python bot.py
+
+      - name: Commit seen.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          touch seen.json
+          git add seen.json
+          git diff --staged --quiet || git commit -m "update seen [skip ci]"
+          git push
