@@ -27,7 +27,7 @@ import feedparser
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip()
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite").strip()
 
 # ───────────────────────── 설정 ─────────────────────────
 SEEN_FILE = "seen.json"
@@ -180,11 +180,62 @@ def _jaccard(a, b):
     return len(ta & tb) / len(ta | tb)
 
 
+# 같은 사건 판정용: 핵심 주체(인물/기업) — 둘 다 공유하면 동일 사건 가능성↑
+SAME_EVENT_ACTORS = {
+    "이재용", "이재명", "젠슨", "황", "올트먼", "머스크", "저커버그", "아모데이",
+    "삼성전자", "하이닉스", "sk하이닉스", "마이크론", "엔비디아", "tsmc", "인텔",
+    "openai", "anthropic", "삼성", "구글", "메타", "broadcom", "amd",
+}
+# 같은 사건 판정용: 사건 행위어 — 같은 행위면 동일 사건 가능성↑
+SAME_EVENT_ACTIONS = {
+    "점검", "현장", "방문", "찾았다", "공급계약", "계약", "수주", "체결",
+    "인수", "투자", "증설", "착공", "양산", "출시", "발표", "공개", "돌파",
+    "선정", "협력", "파트너십", "상향", "하향", "목표가", "목표주가",
+    "1위", "등극", "제치고", "추월",
+}
+
+# 의미가 사실상 같은 행위어 묶음(동의어). 같은 그룹이면 동일 행위로 간주.
+ACTION_SYNONYMS = [
+    {"점검", "현장", "방문", "찾았다", "둘러", "행보"},      # 현장 점검류
+    {"공급계약", "계약", "수주", "체결", "납품", "공급"},      # 계약류
+    {"인수", "합병", "지분", "m&a"},                          # M&A류
+    {"투자", "증설", "착공", "신설", "구축", "확대"},          # 투자/증설류
+    {"양산", "출시", "공개", "발표", "선보", "상용화"},        # 출시/발표류
+    {"1위", "등극", "제치고", "추월", "역전", "왕좌"},         # 순위역전류
+    {"상향", "하향", "목표가", "목표주가", "투자의견"},        # 리포트류
+]
+
+
+def _action_group(action_set):
+    """행위어 집합을 동의어 그룹 번호 집합으로 변환."""
+    groups = set()
+    for a in action_set:
+        for gi, grp in enumerate(ACTION_SYNONYMS):
+            if a in grp:
+                groups.add(gi)
+    return groups
+
+
+def _key_entities(s):
+    toks = set(norm_title(s).split())
+    actors = {a for a in SAME_EVENT_ACTORS if a in s.lower() or a in toks}
+    actions = {a for a in SAME_EVENT_ACTIONS if a in s.lower() or a in toks}
+    return actors, actions
+
+
 def is_similar(a, b):
     if SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD:
         return True
     if _jaccard(a, b) >= 0.45:
         return True
+    # 핵심 주체와 사건 행위어(동의어 그룹 기준)를 동시에 공유하면 동일 사건
+    aa_actor, aa_action = _key_entities(a)
+    bb_actor, bb_action = _key_entities(b)
+    shared_actor = aa_actor & bb_actor
+    shared_group = _action_group(aa_action) & _action_group(bb_action)
+    if shared_actor and shared_group:
+        if _jaccard(a, b) >= 0.12:   # 과묶음 방지 최소 겹침
+            return True
     return False
 
 
@@ -478,10 +529,50 @@ def build_full(it, a):
     return "\n".join(lines)
 
 
+_gt_state = {"obj": None, "disabled": False}
+_gt_cache = {}
+
+
+def google_translate_ko(text):
+    """
+    제미나이 실패 시 보조 번역(deep-translator/구글).
+    영문 등 비한글을 한국어로. 실패하면 원문 반환(봇 안 멈춤).
+    """
+    if not text or not text.strip():
+        return text
+    if has_korean(text):          # 이미 한글이면 그대로
+        return text
+    if _gt_state["disabled"]:
+        return text
+    if text in _gt_cache:
+        return _gt_cache[text]
+    # 지연 로딩
+    if _gt_state["obj"] is None:
+        try:
+            from deep_translator import GoogleTranslator
+            _gt_state["obj"] = GoogleTranslator(source="auto", target="ko")
+        except Exception as e:
+            print(f"[WARN] google translate init fail: {e}")
+            _gt_state["disabled"] = True
+            return text
+    try:
+        out = _gt_state["obj"].translate(text[:4500])   # 5천자 제한 안전선
+        if out and out.strip():
+            _gt_cache[text] = out
+            time.sleep(0.4)        # 연속 호출 차단 방지(검증된 권장)
+            return out
+    except Exception as e:
+        print(f"[WARN] google translate fail: {e}")
+    return text
+
+
 def build_min(it):
-    """Gemini 미사용/실패 시 제목+링크만."""
+    """Gemini 미사용/실패 시: 제목+링크. 영문이면 구글번역으로 한글화."""
+    title = it["title"]
+    if not has_korean(title):
+        title = google_translate_ko(title)   # 영문 → 한글 보조 번역
     src = f" · {esc(it['source'])}" if it["source"] else ""
-    return f'<b>{esc(it["title"])}</b>\n🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}'
+    return f'<b>{esc(title)}</b>\n🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}'
 
 
 # ───────────────────────── 메인 ─────────────────────────
