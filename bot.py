@@ -192,7 +192,13 @@ def gemini_summarize_ko(title, summary):
             },
             json={
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 200},
+                "generationConfig": {
+                    "temperature": 0.2,
+                    "maxOutputTokens": 512,
+                    # 핵심: 2.5-flash는 thinking이 기본 ON이라 추론토큰이
+                    # maxOutputTokens를 먹어 빈 응답이 됨 → thinking 끔
+                    "thinkingConfig": {"thinkingBudget": 0},
+                },
             },
             timeout=REQUEST_TIMEOUT,
         )
@@ -200,7 +206,17 @@ def gemini_summarize_ko(title, summary):
         time.sleep(4.5)   # 분당 요청 제한(무료 Flash ~13RPM) 회피
         if r.status_code == 200:
             data = r.json()
-            text = data["candidates"][0]["content"]["parts"][0]["text"]
+            try:
+                cand = data["candidates"][0]
+                finish = cand.get("finishReason", "")
+                parts = cand.get("content", {}).get("parts", [])
+                text = parts[0]["text"] if parts and "text" in parts[0] else ""
+            except (KeyError, IndexError):
+                text, finish = "", "PARSE_ERR"
+            if not text.strip():
+                # 빈 응답이면 원인을 로그에 남김 (thinking이 토큰 먹은 경우 등)
+                print(f"[WARN] Gemini empty text (finish={finish}); fallback to original")
+                return title, summary
             ko_title, ko_summary = _parse_gemini(text, title, summary)
             _gemini_cache[cache_key] = (ko_title, ko_summary)
             return ko_title, ko_summary
