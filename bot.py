@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-메모리 반도체 / AI 데일리 브리핑 텔레그램 봇 (v2)
-- 1 뉴스 = 1 메시지
-- 제목 + 간단 요약(RSS 본문 발췌 정리) + 링크
-- 키워드 필터 + 제목 유사도 중복 제거 + 과거 발송분 제외
+AI·반도체·메모리·데이터센터·전력 산업 뉴스 에이전트
+- 목표: AI 산업의 자금흐름/공급망/수요/병목 변화에 영향 주는 정보만 선별
+- 6시간 이내 뉴스, 5개국(미/한/일/중/대만), 기업·인물·병목 추적
+- Gemini로 한국어 번역+요약+중요도(S/A/B/C)+병목/유동성 라벨(참고용)
+- 12건/회 제한, 초과분은 다음 회차 이월
+- Gemini 한도 소진/실패 시: 제목 + 링크만 전송
 """
 
 import os
@@ -20,251 +22,124 @@ from urllib.parse import urlparse, quote
 import requests
 import feedparser
 
-# ─────────────────────────────────────────────────────────────
+# ───────────────────────── 환경변수 ─────────────────────────
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip()        # 없으면 번역/요약 생략
+GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip()
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
 
+# ───────────────────────── 설정 ─────────────────────────
 SEEN_FILE = "seen.json"
-SEEN_RETENTION_DAYS = 14
-MAX_ITEMS_PER_CATEGORY = 8         # 카테고리당 최대 (알림 폭주 방지)
-SIMILARITY_THRESHOLD = 0.68        # 낮을수록 중복을 더 적극적으로 묶음
-SUMMARY_MAX_CHARS = 180            # 요약 최대 길이
-MAX_AGE_HOURS = 36                 # 이 시간보다 오래된 기사는 제외 (날짜 필터)
-REQUEST_TIMEOUT = 20
-SEND_DELAY = 1.0                   # 메시지 간 간격(초) - rate limit 회피
+QUEUE_FILE = "queue.json"          # 12건 초과분 이월 저장
+SEEN_RETENTION_DAYS = 7
+MAX_SEND_PER_RUN = 12              # 회당 최대 발송
+NEWS_WINDOW_HOURS = 6              # 최근 N시간 이내 뉴스만
+SIMILARITY_THRESHOLD = 0.68
+REQUEST_TIMEOUT = 25
+SEND_DELAY = 1.0
+GEMINI_MIN_INTERVAL = 6.5          # 보수적: 무료 10RPM 가정 → 6.5초 간격
+GEMINI_MAX_CALLS_PER_RUN = 30      # 일일 한도(보수적 250RPD) 보호: 회당 상한
+RSS_MAX_ENTRIES = 30
 
 
-def google_news_rss(query, lang="ko"):
-    q = quote(query)
+# ───────────────────────── RSS 소스 ─────────────────────────
+def gnews(query, lang="en", hours=NEWS_WINDOW_HOURS):
+    """구글뉴스 검색 RSS. when:Nh 로 최근 N시간 제한."""
+    q = quote(f"{query} when:{hours}h")
     if lang == "ko":
         return f"https://news.google.com/rss/search?q={q}&hl=ko&gl=KR&ceid=KR:ko"
+    if lang == "ja":
+        return f"https://news.google.com/rss/search?q={q}&hl=ja&gl=JP&ceid=JP:ja"
+    if lang == "zh":
+        return f"https://news.google.com/rss/search?q={q}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     return f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"
 
 
-FEEDS = {
-    "🧠 메모리 반도체": [
-        google_news_rss("HBM OR DRAM OR 낸드 OR 메모리반도체 OR SK하이닉스 OR 삼성전자 반도체", "ko"),
-        google_news_rss("반도체 수출 OR 소부장 OR 패키징 OR 메모리 가격 OR 감산 증설", "ko"),
-        google_news_rss("HBM4 OR LPDDR OR DDR5 OR SOCAMM OR 고대역폭메모리", "ko"),
-        google_news_rss("HBM OR DRAM OR NAND OR memory chip OR SK Hynix OR Micron", "en"),
-        google_news_rss("LPDDR OR SOCAMM OR HBM4 OR DDR5 server", "en"),
-        "https://www.tomshardware.com/feeds/all",
-    ],
-    "🤖 AI": [
-        google_news_rss("OpenAI OR Anthropic OR 구글 제미나이 OR 메타 AI OR 샘 올트먼", "ko"),
-        google_news_rss("네이버 AI OR 카카오 AI OR 하이퍼클로바 OR 한국 인공지능 OR 국산 AI", "ko"),
-        google_news_rss("AI 반도체 OR AI 데이터센터 OR 엔비디아 OR AI 투자 OR 생성형AI", "ko"),
-        google_news_rss("OpenAI OR Anthropic OR Google DeepMind OR Meta AI OR xAI", "en"),
-        google_news_rss("Sam Altman OR Dario Amodei OR Sundar Pichai OR Zuckerberg AI", "en"),
-        google_news_rss("AI model OR GPT OR Claude OR Gemini OR Llama release", "en"),
-        "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-    ],
-    "🌐 해외 소식": [
-        google_news_rss("Micron OR \"SK Hynix\" OR Samsung HBM partnership OR deal OR contract", "en"),
-        google_news_rss("Nvidia OR TSMC OR Broadcom AI deal OR investment OR supply agreement", "en"),
-        google_news_rss("memory chip shortage OR HBM capacity OR DRAM price hike", "en"),
-        google_news_rss("OpenAI OR Anthropic infrastructure OR compute deal OR data center", "en"),
-    ],
-    "📊 리포트/투자의견": [
-        google_news_rss("SK하이닉스 OR 삼성전자 목표주가 OR 투자의견 OR 상향 OR 하향", "ko"),
-        google_news_rss("반도체 증권사 리포트 OR 목표가 상향 OR 비중확대 OR 매수의견", "ko"),
-        google_news_rss("Micron OR Nvidia price target OR upgrade OR downgrade analyst", "en"),
-        google_news_rss("HBM OR DRAM analyst forecast OR rating", "en"),
-    ],
-}
-
-INCLUDE_KEYWORDS = {
-    "🧠 메모리 반도체": [
-        "hbm", "dram", "nand", "낸드", "디램", "메모리", "memory chip", "lpddr",
-        "ddr5", "ddr4", "socamm", "sk하이닉스", "하이닉스", "hynix", "micron", "마이크론",
-        "삼성전자", "samsung", "wafer", "웨이퍼", "cowos", "패키징", "packaging",
-        "비트", "감산", "증설", "공급", "수요", "가격", "고대역폭",
-    ],
-    "🤖 AI": [
-        # 기업
-        "openai", "오픈ai", "anthropic", "앤트로픽", "엔트로픽", "deepmind", "딥마인드",
-        "google", "구글", "gemini", "제미나이", "제미니", "meta", "메타", "xai", "그록", "grok",
-        "microsoft", "마이크로소프트", "코파일럿", "copilot", "mistral", "perplexity", "퍼플렉시티",
-        "스케일ai", "엔비디아", "nvidia",
-        # 인물
-        "altman", "올트먼", "amodei", "아모데이", "pichai", "피차이", "hassabis", "허사비스",
-        "zuckerberg", "저커버그", "musk", "머스크", "황", "젠슨", "huang",
-        # 모델/기술
-        "gpt", "chatgpt", "챗gpt", "claude", "클로드", "llama", "라마", "llm",
-        "생성형", "generative", "인공지능", "ai 모델", "추론모델", "에이전트", "agent",
-        "오픈소스", "벤치마크", "agi", "파운데이션 모델",
-        # 업계 동향
-        "투자", "기업가치", "valuation", "라운드", "ipo", "발표", "출시", "공개", "데이터센터",
-    ],
-    "🌐 해외 소식": [
-        "memory", "dram", "nand", "hbm", "lpddr", "micron", "hynix", "samsung",
-        "tsmc", "nvidia", "amd", "broadcom", "semiconductor", "chip", "datacenter",
-        "data center", "supply", "demand", "wafer", "foundry",
-    ],
-    "📊 리포트/투자의견": [
-        "목표주가", "투자의견", "상향", "하향", "매수", "비중확대", "리포트", "증권",
-        "price target", "upgrade", "downgrade", "analyst", "rating", "outperform",
-        "overweight", "buy", "forecast", "estimate", "초과", "리서치",
-    ],
-}
-
-EXCLUDE_KEYWORDS = [
-    "할인", "쿠폰", "이벤트 당첨", "광고", "분양", "운세", "로또",
-    "casino", "porn", "coupon",
-]
-
-# 사건성(중요) 신호어 — 있으면 점수↑, 위로 올림
-EVENT_SIGNALS = [
-    # 한글
-    "파트너십", "협력", "계약", "공급계약", "수주", "인수", "합병", "지분", "투자",
-    "증설", "신설", "착공", "양산", "출시", "공개", "발표", "도입", "채택", "선정",
-    "독점", "최초", "세계 최초", "신제품", "개발 성공", "양산 돌입", "공장", "거점",
-    "조달", "납품", "확보", "체결", "맞손", "동맹", "출하", "상용화", "구축",
-    # 영문
-    "partnership", "deal", "agreement", "contract", "acquire", "acquisition",
-    "merger", "stake", "invest", "investment", "launch", "unveil", "announce",
-    "release", "expansion", "build", "supply deal", "secures", "partners with",
-    "collaboration", "rollout", "deploy", "mass production", "ramp",
-]
-
-# 단신/저신호 — 사건어가 없고 이게 있으면 점수↓ (주가·등락 단신)
-WEAK_SIGNALS = [
-    "주가", "시총", "상승", "하락", "강세", "약세", "급등", "급락", "오름세", "내림세",
-    "마감", "장중", "개장", "종가", "전일", "보합", "거래량", "외국인 순매수",
-    "기관 순매수", "수급", "shares", "stock", "rises", "falls", "rose", "fell",
-    "gains", "drops", "rally", "slips", "closing", "premarket",
-]
-
-
-def importance_score(category, title, summary):
-    """사건성 신호 기반 가중치. 높을수록 위로."""
-    text = f"{title} {summary}".lower()
-    score = 0
-    for kw in EVENT_SIGNALS:
-        if kw.lower() in text:
-            score += 3
-    # 주가 단신성 신호는 감점 (단, 리포트 카테고리는 주가가 본질이라 제외)
-    if category != "📊 리포트/투자의견":
-        for kw in WEAK_SIGNALS:
-            if kw.lower() in text:
-                score -= 1
-    return score
-
-
-def _has_korean(text):
-    return bool(re.search(r"[가-힣]", text or ""))
-
-
-_gemini_cache = {}
-_gemini_calls = [0]   # 호출 횟수 추적 (rate 보호용)
-
-GEMINI_URL = (
-    "https://generativelanguage.googleapis.com/v1beta/models/"
-    "{model}:generateContent"
+# 기업/주제 키워드 (영문)
+CORE_EN = (
+    "OpenAI OR Anthropic OR xAI OR \"Google DeepMind\" OR \"Meta AI\" OR Mistral OR "
+    "Nvidia OR AMD OR Broadcom OR Marvell OR TSMC OR Samsung OR \"SK hynix\" OR Micron OR "
+    "HBM OR DRAM OR NAND OR CXL OR CoWoS OR \"data center\" OR datacenter OR "
+    "CoreWeave OR \"power grid\" OR \"gas turbine\" OR nuclear"
+)
+# 인물 (인터뷰/발언 관련 뉴스)
+PEOPLE_EN = (
+    "\"Jensen Huang\" OR \"Sam Altman\" OR \"Dario Amodei\" OR \"Ilya Sutskever\" OR "
+    "\"Demis Hassabis\" OR \"Elon Musk\" OR \"Lisa Su\" OR \"Satya Nadella\" OR "
+    "\"Sundar Pichai\" OR \"Hock Tan\""
+)
+# 유동성/CAPEX
+MONEY_EN = (
+    "AI capex OR AI funding OR \"data center investment\" OR \"GPU order\" OR "
+    "\"HBM contract\" OR \"cloud deal\" OR AI acquisition OR semiconductor investment"
+)
+# 한국어 핵심
+CORE_KO = (
+    "엔비디아 OR HBM OR DRAM OR 낸드 OR SK하이닉스 OR 삼성전자 반도체 OR "
+    "데이터센터 OR AI 투자 OR AI 인프라 OR 반도체 증설 OR 전력 OR 가스터빈 OR CXL OR 패키징"
 )
 
-def gemini_summarize_ko(title, summary):
-    """
-    영문 기사 제목+요약을 받아 한국어로 '번역+한줄요약'.
-    반환: (한글제목, 한글요약). 실패하면 (원문제목, 원문요약).
-    """
-    if not GEMINI_KEY:
-        return title, summary
-    cache_key = title
-    if cache_key in _gemini_cache:
-        return _gemini_cache[cache_key]
+FEEDS = [
+    # 미국/영문 핵심
+    gnews(CORE_EN, "en"),
+    gnews(PEOPLE_EN, "en"),
+    gnews(MONEY_EN, "en"),
+    # 한국
+    gnews(CORE_KO, "ko"),
+    gnews("AI 데이터센터 OR HBM 공급 OR 반도체 수주 OR AI 전력 OR 원전 데이터센터", "ko"),
+    # 일본
+    gnews("AI半導体 OR HBM OR データセンター OR ラピダス OR 電力 AI", "ja"),
+    # 중국
+    gnews("人工智能 芯片 OR 数据中心 OR HBM OR 算力 OR 英伟达", "zh"),
+    # 대만
+    gnews("台積電 OR CoWoS OR AI 伺服器 OR 半導體 產能", "zh"),
+]
 
-    src = f"제목: {title}"
-    if summary:
-        src += f"\n요약: {summary}"
-    prompt = (
-        "다음은 해외 반도체/AI 뉴스입니다. 한국 투자자가 빠르게 파악할 수 있도록 "
-        "한국어로 처리하세요.\n"
-        "1) 제목을 자연스러운 한국어로 번역\n"
-        "2) 핵심을 1문장으로 요약(투자 관점에서 중요한 사실 위주, 과장 금지)\n"
-        "반드시 아래 형식으로만 답하세요. 다른 말 금지.\n"
-        "제목: <한국어 제목>\n요약: <한국어 한 문장>\n\n"
-        f"{src}"
-    )
-    try:
-        r = requests.post(
-            GEMINI_URL.format(model=GEMINI_MODEL),
-            headers={
-                "x-goog-api-key": GEMINI_KEY,
-                "Content-Type": "application/json",
-            },
-            json={
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "temperature": 0.2,
-                    "maxOutputTokens": 512,
-                    # 핵심: 2.5-flash는 thinking이 기본 ON이라 추론토큰이
-                    # maxOutputTokens를 먹어 빈 응답이 됨 → thinking 끔
-                    "thinkingConfig": {"thinkingBudget": 0},
-                },
-            },
-            timeout=REQUEST_TIMEOUT,
-        )
-        _gemini_calls[0] += 1
-        time.sleep(4.5)   # 분당 요청 제한(무료 Flash ~13RPM) 회피
-        if r.status_code == 200:
-            data = r.json()
-            try:
-                cand = data["candidates"][0]
-                finish = cand.get("finishReason", "")
-                parts = cand.get("content", {}).get("parts", [])
-                text = parts[0]["text"] if parts and "text" in parts[0] else ""
-            except (KeyError, IndexError):
-                text, finish = "", "PARSE_ERR"
-            if not text.strip():
-                # 빈 응답이면 원인을 로그에 남김 (thinking이 토큰 먹은 경우 등)
-                print(f"[WARN] Gemini empty text (finish={finish}); fallback to original")
-                return title, summary
-            ko_title, ko_summary = _parse_gemini(text, title, summary)
-            _gemini_cache[cache_key] = (ko_title, ko_summary)
-            return ko_title, ko_summary
-        else:
-            print(f"[WARN] Gemini {r.status_code}: {r.text[:150]}")
-    except Exception as e:
-        print(f"[WARN] Gemini fail: {e}")
-    return title, summary
+# ───────────────────────── 필터 키워드 ─────────────────────────
+INCLUDE = [
+    # 영문
+    "ai", "gpu", "hbm", "dram", "nand", "cxl", "cowos", "packaging", "wafer",
+    "data center", "datacenter", "nvidia", "amd", "tsmc", "samsung", "hynix",
+    "micron", "broadcom", "marvell", "openai", "anthropic", "xai", "deepmind",
+    "capex", "funding", "investment", "acquisition", "power", "grid", "turbine",
+    "nuclear", "transformer", "optical", "transceiver", "inference",
+    # 한글
+    "인공지능", "반도체", "엔비디아", "메모리", "데이터센터", "고대역폭",
+    "전력", "원전", "가스터빈", "패키징", "투자", "수주", "증설", "공급",
+    # 일/중 핵심
+    "半導体", "データセンター", "人工智能", "芯片", "数据中心", "算力", "台積電",
+]
+EXCLUDE = [
+    "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
+    "casino", "porn", "coupon", "discount", "giveaway",
+]
+
+# 병목 키워드 (중요도 1단계 상향)
+BOTTLENECK = [
+    "hbm", "cowos", "packaging", "gpu", "dram", "nand", "optical", "transceiver",
+    "power", "grid", "turbine", "substation", "cooling", "전력", "송전", "변전",
+    "가스터빈", "냉각", "패키징", "고대역폭", "capacity", "shortage", "증설", "감산",
+]
 
 
-def _parse_gemini(text, fallback_title, fallback_summary):
-    """'제목: ... / 요약: ...' 형식 파싱. 실패 시 원문 폴백."""
-    ko_title, ko_summary = fallback_title, fallback_summary
-    for line in text.splitlines():
-        line = line.strip()
-        if line.startswith("제목:"):
-            v = line[3:].strip()
-            if v:
-                ko_title = v
-        elif line.startswith("요약:"):
-            v = line[3:].strip()
-            if v:
-                ko_summary = v
-    return ko_title, ko_summary
-
-
+# ───────────────────────── 유틸 ─────────────────────────
 def now_utc():
     return datetime.datetime.now(datetime.timezone.utc)
 
 
-def load_seen():
-    if not os.path.exists(SEEN_FILE):
-        return {}
+def load_json(path, default):
+    if not os.path.exists(path):
+        return default
     try:
-        with open(SEEN_FILE, "r", encoding="utf-8") as f:
+        with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except Exception:
-        return {}
+        return default
 
 
-def save_seen(seen):
-    with open(SEEN_FILE, "w", encoding="utf-8") as f:
-        json.dump(seen, f, ensure_ascii=False, indent=1)
+def save_json(path, data):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
 
 
 def prune_seen(seen):
@@ -272,24 +147,25 @@ def prune_seen(seen):
     return {k: v for k, v in seen.items() if v.get("ts", 0) >= cutoff}
 
 
+def has_korean(t):
+    return bool(re.search(r"[가-힣]", t or ""))
+
+
 def norm_title(title):
     t = html.unescape(title or "")
-    t = re.sub(r"\s*[-|·]\s*[^-|·]+$", "", t)   # 끝의 ' - 매체명' 제거
-    t = re.sub(r"\[[^\]]*\]", " ", t)            # [속보][단독] 등 대괄호 토큰 제거
+    t = re.sub(r"\s*[-|·]\s*[^-|·]+$", "", t)
+    t = re.sub(r"\[[^\]]*\]", " ", t)
     t = re.sub(r"[\[\](){}<>·…“”\"'’‘|!?.,~―—\-]+", " ", t)
-    t = re.sub(r"[\"'%·,…]+", " ", t)
     t = re.sub(r"\s+", " ", t).strip().lower()
     return t
 
 
 def title_key(title):
-    # 공백까지 제거한 형태로 키 생성 → 띄어쓰기만 다른 제목을 같은 키로
     compact = re.sub(r"\s+", "", norm_title(title))
     return hashlib.md5(compact.encode("utf-8")).hexdigest()
 
 
 def _tokens(s):
-    # 2글자 이상 토큰만(조사/짧은 단어 노이즈 제거)
     return {w for w in norm_title(s).split() if len(w) >= 2}
 
 
@@ -301,46 +177,56 @@ def _jaccard(a, b):
 
 
 def is_similar(a, b):
-    # 1) 문자열 시퀀스 유사도
     if SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD:
         return True
-    # 2) 핵심 단어 겹침(자카드)
-    if _jaccard(a, b) >= 0.4:
-        return True
-    # 3) 같은 핵심 주체 + 같은 사건 신호어를 공유하면 동일 사건으로 간주
-    ta, tb = _tokens(a), _tokens(b)
-    shared = ta & tb
-    actors = {"sk하이닉스", "하이닉스", "삼성전자", "마이크론", "엔비디아",
-              "hynix", "samsung", "micron", "nvidia", "tsmc"}
-    signals = {"시총", "왕좌", "대장주", "1위", "제치고", "제쳤다", "넘은", "추월",
-               "역전", "목표주가", "상향", "하향", "급등", "급락", "신고가"}
-    if (shared & actors) and (shared & signals):
+    if _jaccard(a, b) >= 0.45:
         return True
     return False
 
 
-def passes_filter(category, title, summary):
+def passes_filter(title, summary):
     text = f"{title} {summary}".lower()
-    if any(k.lower() in text for k in EXCLUDE_KEYWORDS):
+    if any(k in text for k in EXCLUDE):
         return False
-    return any(k.lower() in text for k in INCLUDE_KEYWORDS.get(category, []))
+    return any(k in text for k in INCLUDE)
 
 
-def clean_summary(raw):
-    """RSS 본문에서 태그/공백/잡음 제거 후 한 덩어리 텍스트로"""
-    if not raw:
-        return ""
-    s = re.sub(r"<[^>]+>", " ", raw)          # 태그 제거
-    s = html.unescape(s)
-    s = re.sub(r"https?://\S+", "", s)         # URL 제거
-    s = re.sub(r"&[a-z]+;", " ", s)
-    s = re.sub(r"\s+", " ", s).strip()
-    # 구글뉴스가 매체명만 던지는 경우 등 너무 짧으면 버림
-    if len(s) < 25:
-        return ""
-    if len(s) > SUMMARY_MAX_CHARS:
-        s = s[:SUMMARY_MAX_CHARS].rsplit(" ", 1)[0] + "…"
-    return s
+def base_score(title, summary):
+    """1차 중요도(키워드 기반). 병목/유동성 신호 가중."""
+    text = f"{title} {summary}".lower()
+    score = 0
+    # 유동성/규모 신호
+    for kw in ["capex", "billion", "investment", "funding", "수주", "계약", "조 원",
+               "억 달러", "acquisition", "deal", "contract", "투자", "발주", "증설"]:
+        if kw in text:
+            score += 3
+    # 병목 신호 (1단계 상향)
+    if any(k in text for k in BOTTLENECK):
+        score += 2
+    # 단신 감점
+    for kw in ["주가", "시총", "장중", "마감", "shares", "stock rises", "stock falls",
+               "급등", "급락", "보합"]:
+        if kw in text:
+            score -= 2
+    return score
+
+
+def entry_age_hours(entry):
+    tm = entry.get("published_parsed") or entry.get("updated_parsed")
+    if not tm:
+        return None
+    try:
+        published = datetime.datetime(*tm[:6], tzinfo=datetime.timezone.utc)
+    except Exception:
+        return None
+    return (now_utc() - published).total_seconds() / 3600.0
+
+
+def is_fresh(entry):
+    age = entry_age_hours(entry)
+    if age is None:
+        return True
+    return age <= NEWS_WINDOW_HOURS + 1   # 약간의 여유
 
 
 def source_name(entry):
@@ -349,177 +235,262 @@ def source_name(entry):
     return urlparse(entry.get("link", "")).netloc.replace("www.", "")
 
 
-def entry_age_hours(entry):
-    """기사 발행 후 경과 시간(시간). 시각 정보 없으면 None."""
-    tm = entry.get("published_parsed") or entry.get("updated_parsed")
-    if not tm:
+def clean_summary(raw):
+    if not raw:
+        return ""
+    s = re.sub(r"<[^>]+>", " ", raw)
+    s = html.unescape(s)
+    s = re.sub(r"https?://\S+", "", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s[:300]
+
+
+# ───────────────────────── Gemini ─────────────────────────
+GEMINI_URL = (
+    "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+)
+_gemini_state = {"calls": 0, "disabled": False, "last": 0.0}
+
+
+def gemini_analyze(title, summary, source):
+    """
+    한국어 번역+요약+중요도+병목/유동성 라벨.
+    반환 dict 또는 None(실패/한도). None이면 호출부가 제목+링크만 처리.
+    """
+    if not GEMINI_KEY or _gemini_state["disabled"]:
         return None
+    if _gemini_state["calls"] >= GEMINI_MAX_CALLS_PER_RUN:
+        _gemini_state["disabled"] = True
+        print("[INFO] Gemini 회당 호출 상한 도달 → 이후 제목+링크만")
+        return None
+
+    # 분당 제한 보호
+    elapsed = time.time() - _gemini_state["last"]
+    if elapsed < GEMINI_MIN_INTERVAL:
+        time.sleep(GEMINI_MIN_INTERVAL - elapsed)
+
+    prompt = (
+        "너는 AI·반도체·메모리·데이터센터·전력 산업 분석가다. "
+        "아래 뉴스를 한국 투자자 관점에서 분석하라. 과장/추측 금지, 사실 기반.\n"
+        "아래 7줄 형식으로만 답하라. 각 줄 라벨 그대로, 값만 채워라. 다른 말 금지.\n"
+        "제목: (한국어 번역 제목)\n"
+        "요약: (핵심 1~2문장 한국어)\n"
+        "중요도: (S=산업구조 영향 / A=대규모 투자·계약·증설 / B=산업영향 존재 / C=참고용 중 하나)\n"
+        "분야: (AI,GPU,HBM,DRAM,NAND,패키징,광통신,데이터센터,전력,원전,가스터빈 중 해당)\n"
+        "병목: (악화 / 완화 / 무관 중 하나)\n"
+        "유동성: (유입 / 유출 / 중립 중 하나)\n"
+        "왜중요: (한 문장)\n\n"
+        f"[원문 제목] {title}\n[원문 요약] {summary}\n[출처] {source}"
+    )
     try:
-        published = datetime.datetime(*tm[:6], tzinfo=datetime.timezone.utc)
-    except Exception:
+        r = requests.post(
+            GEMINI_URL.format(model=GEMINI_MODEL),
+            headers={"x-goog-api-key": GEMINI_KEY, "Content-Type": "application/json"},
+            json={
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {
+                    "temperature": 0.2,
+                    "maxOutputTokens": 1024,           # 잘림 방지 위해 상향
+                    "thinkingConfig": {"thinkingBudget": 0},  # thinking이 토큰 먹는 것 방지
+                    # responseMimeType(JSON모드)는 2.5-flash에서 잘림/빈응답 유발 → 미사용
+                },
+            },
+            timeout=REQUEST_TIMEOUT,
+        )
+        _gemini_state["calls"] += 1
+        _gemini_state["last"] = time.time()
+        if r.status_code == 429:
+            _gemini_state["disabled"] = True
+            print("[WARN] Gemini 429(한도) → 이후 제목+링크만")
+            return None
+        if r.status_code != 200:
+            print(f"[WARN] Gemini {r.status_code}: {r.text[:200]}")
+            return None
+        data = r.json()
+        cand = data["candidates"][0]
+        finish = cand.get("finishReason", "")
+        parts = cand.get("content", {}).get("parts", [])
+        text = parts[0]["text"] if parts and "text" in parts[0] else ""
+        if not text.strip():
+            print(f"[WARN] Gemini empty (finish={finish}) → 제목+링크 폴백")
+            return None
+        return _parse_lines(text)
+    except Exception as e:
+        print(f"[WARN] Gemini fail: {e}")
         return None
-    delta = now_utc() - published
-    return delta.total_seconds() / 3600.0
 
 
-def is_fresh(entry):
-    """MAX_AGE_HOURS 이내면 True. 시각을 못 읽으면 보수적으로 통과(놓침 방지)."""
-    age = entry_age_hours(entry)
-    if age is None:
-        return True          # 날짜 불명 기사는 일단 통과 (중복필터가 한번 더 거름)
-    return age <= MAX_AGE_HOURS
+def _parse_lines(text):
+    """'라벨: 값' 7줄 파싱."""
+    m = {"제목": "title_ko", "요약": "summary_ko", "중요도": "grade",
+         "분야": "sector", "병목": "bottleneck", "유동성": "liquidity", "왜중요": "why"}
+    out = {}
+    for line in text.splitlines():
+        line = line.strip()
+        if ":" not in line:
+            continue
+        k, _, v = line.partition(":")
+        k = k.strip()
+        if k in m and v.strip():
+            out[m[k]] = v.strip()
+    # 중요도는 첫 글자만(S/A/B/C)
+    if out.get("grade"):
+        g = out["grade"].strip().upper()[:1]
+        out["grade"] = g if g in "SABC" else ""
+    return out if out.get("title_ko") or out.get("summary_ko") else None
 
 
+# ───────────────────────── 수집 ─────────────────────────
 def collect():
-    results = {}
-    for category, urls in FEEDS.items():
-        items = []
-        for url in urls:
-            try:
-                feed = feedparser.parse(url)
-            except Exception as e:
-                print(f"[WARN] feed fail: {url} ({e})")
+    items = []
+    seen_titles = []
+    for url in FEEDS:
+        try:
+            feed = feedparser.parse(url)
+        except Exception as e:
+            print(f"[WARN] feed fail: {e}")
+            continue
+        for entry in feed.entries[:RSS_MAX_ENTRIES]:
+            title = entry.get("title", "").strip()
+            link = entry.get("link", "").strip()
+            raw_sum = entry.get("summary", "")
+            if not title or not link:
                 continue
-            for entry in feed.entries[:40]:
-                title = entry.get("title", "").strip()
-                raw_sum = entry.get("summary", "")
-                link = entry.get("link", "").strip()
-                if not title or not link:
-                    continue
-                if not is_fresh(entry):          # 오래된 기사 제외
-                    continue
-                summary = clean_summary(raw_sum)
-                if not passes_filter(category, title, raw_sum):
-                    continue
-                items.append({
-                    "title": html.unescape(title),
-                    "link": link,
-                    "summary": summary,
-                    "source": source_name(entry),
-                    "ntitle": norm_title(title),
-                    "score": importance_score(category, title, raw_sum),
-                })
-        # 카테고리별 최소 점수 기준 (해외는 사건성 뉴스만 엄격히)
-        if category == "📊 리포트/투자의견":
-            min_score = None              # 리포트는 점수 필터 미적용 (주가가 본질)
-        elif category == "🌐 해외 소식":
-            min_score = 3                 # 해외는 사건 신호어가 실제 있는 것만
-        else:
-            min_score = 0                 # 메모리/AI는 단신(음수)만 제외
-        if min_score is not None:
-            items = [it for it in items if it["score"] >= min_score]
-        # 중요도 높은 순으로 정렬 (같으면 원래 순서 유지)
-        items.sort(key=lambda x: x["score"], reverse=True)
-        results[category] = items
-        print(f"[INFO] {category}: {len(items)} items (after importance filter)")
-    return results
+            if not is_fresh(entry):
+                continue
+            if not passes_filter(title, raw_sum):
+                continue
+            nt = norm_title(title)
+            # 수집 단계 1차 중복 제거
+            if any(is_similar(nt, s) for s in seen_titles):
+                continue
+            seen_titles.append(nt)
+            items.append({
+                "title": html.unescape(title),
+                "link": link,
+                "summary": clean_summary(raw_sum),
+                "source": source_name(entry),
+                "ntitle": nt,
+                "score": base_score(title, raw_sum),
+            })
+    print(f"[INFO] 수집 {len(items)}건 (필터/1차중복 후)")
+    return items
 
 
-def dedupe(items, seen):
+def dedupe_against_seen(items, seen):
     seen_norm = [v["ntitle"] for v in seen.values() if "ntitle" in v]
-    out, accepted = [], []
+    out = []
     for it in items:
         if title_key(it["title"]) in seen:
             continue
         if any(is_similar(it["ntitle"], s) for s in seen_norm):
             continue
-        if any(is_similar(it["ntitle"], s) for s in accepted):
-            continue
         out.append(it)
-        accepted.append(it["ntitle"])
     return out
 
 
-def tg_send(text):
-    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": text,
-        "parse_mode": "HTML",
-        "disable_web_page_preview": False,   # 1뉴스 1메시지라 링크 미리보기 켬
-    }
-    r = requests.post(url, json=payload, timeout=REQUEST_TIMEOUT)
-    if r.status_code != 200:
-        print(f"[ERROR] telegram {r.status_code}: {r.text}")
-    return r.status_code == 200
-
-
+# ───────────────────────── 텔레그램 ─────────────────────────
 def esc(s):
     return html.escape(s or "")
 
 
-def strip_source_suffix(title):
-    """제목 끝의 ' - 매체명' / ' | 매체명' 꼬리 제거 (번역 전후 모두 사용)"""
-    if not title:
-        return title
-    t = re.sub(r"\s*[-|]\s*[^-|]{2,40}$", "", title).strip()
-    # 너무 짧게 잘렸으면 원복
-    return t if len(t) >= 6 else title.strip()
+def tg_send(text):
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    r = requests.post(url, json={
+        "chat_id": TELEGRAM_CHAT_ID, "text": text,
+        "parse_mode": "HTML", "disable_web_page_preview": True,
+    }, timeout=REQUEST_TIMEOUT)
+    if r.status_code != 200:
+        print(f"[ERROR] telegram {r.status_code}: {r.text[:120]}")
+    return r.status_code == 200
 
 
-def build_message(category, it):
-    """1 뉴스 = 1 메시지. 영문은 한글 번역을 함께 표시."""
-    lines = [f"{esc(category)}"]
+GRADE_EMOJI = {"S": "🔴 S", "A": "🟠 A", "B": "🟡 B", "C": "⚪ C"}
 
-    title = strip_source_suffix(it["title"])
-    summary = it["summary"]
 
-    if _has_korean(title):
-        # 한글 기사: 그대로 (제미나이 호출 안 함 - 한도 절약)
-        lines.append(f'<b>{esc(title)}</b>')
-        if summary:
-            lines.append(f'{esc(summary)}')
-    else:
-        # 영문 기사: 제미나이로 번역+요약 한 번에
-        ko_title, ko_summary = gemini_summarize_ko(title, summary)
-        ko_title = strip_source_suffix(ko_title) if ko_title else ko_title
-        lines.append(f'<b>{esc(ko_title if ko_title else title)}</b>')
-        if ko_summary:
-            lines.append(f'{esc(ko_summary)}')
-
-    src = f' · {esc(it["source"])}' if it["source"] else ""
+def build_full(it, a):
+    """Gemini 분석 성공 시 풀 포맷."""
+    title_ko = a.get("title_ko") or it["title"]
+    grade = GRADE_EMOJI.get(str(a.get("grade", "")).upper().strip(), "")
+    lines = []
+    if grade:
+        lines.append(f"{grade}")
+    lines.append(f"<b>{esc(title_ko)}</b>")
+    if a.get("summary_ko"):
+        lines.append(esc(a["summary_ko"]))
+    meta = []
+    if a.get("sector"):
+        meta.append(f"분야 {esc(a['sector'])}")
+    if a.get("bottleneck"):
+        meta.append(f"병목 {esc(a['bottleneck'])}")
+    if a.get("liquidity"):
+        meta.append(f"유동성 {esc(a['liquidity'])}")
+    if meta:
+        lines.append("· " + " | ".join(meta))
+    if a.get("why"):
+        lines.append(f"💡 {esc(a['why'])}")
+    src = f" · {esc(it['source'])}" if it["source"] else ""
     lines.append(f'🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}')
     return "\n".join(lines)
 
 
+def build_min(it):
+    """Gemini 미사용/실패 시 제목+링크만."""
+    src = f" · {esc(it['source'])}" if it["source"] else ""
+    return f'<b>{esc(it["title"])}</b>\n🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}'
+
+
+# ───────────────────────── 메인 ─────────────────────────
 def main():
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
-        raise SystemExit("[FATAL] TELEGRAM_TOKEN / TELEGRAM_CHAT_ID 없음")
+        raise SystemExit("[FATAL] TELEGRAM 토큰/챗ID 없음")
 
-    seen = prune_seen(load_seen())
-    raw = collect()
+    seen = prune_seen(load_json(SEEN_FILE, {}))
+    queue = load_json(QUEUE_FILE, [])   # 이월분 (이미 dedupe된 raw item들)
 
-    # 날짜 헤더 1개만 먼저 (구분용)
-    today = (now_utc() + datetime.timedelta(hours=9)).strftime("%Y-%m-%d (%a)")
+    fresh = collect()
+    fresh = dedupe_against_seen(fresh, seen)
 
-    new_total = 0
-    to_send = []
-    for category, items in raw.items():
-        deduped = dedupe(items, seen)[:MAX_ITEMS_PER_CATEGORY]
-        for it in deduped:
-            to_send.append((category, it))
-            # 직후 카테고리에서 동일/유사 기사가 다시 잡히지 않도록 즉시 seen 반영
-            seen[title_key(it["title"])] = {
-                "ntitle": it["ntitle"], "ts": now_utc().timestamp(),
-            }
-        new_total += len(deduped)
+    # 이월분 + 신규 합치고, 이월분 우선 + 점수순
+    pool = queue + fresh
+    # pool 내부 중복 제거
+    uniq, seen_nt = [], []
+    for it in pool:
+        if any(is_similar(it["ntitle"], s) for s in seen_nt):
+            continue
+        seen_nt.append(it["ntitle"])
+        uniq.append(it)
+    uniq.sort(key=lambda x: x.get("score", 0), reverse=True)
 
-    if new_total == 0:
+    if not uniq:
         print("[INFO] 신규 없음 - 전송 생략")
-        save_seen(seen)
+        save_json(SEEN_FILE, seen)
+        save_json(QUEUE_FILE, [])
         return
 
+    to_send = uniq[:MAX_SEND_PER_RUN]
+    leftover = uniq[MAX_SEND_PER_RUN:]
+
     # 헤더
-    tg_send(f"📡 <b>반도체·AI 데일리 브리핑</b>\n🗓 {today} KST · 신규 {new_total}건")
+    kst = (now_utc() + datetime.timedelta(hours=9)).strftime("%Y-%m-%d %H:%M")
+    tg_send(f"📡 <b>AI·반도체 산업 브리핑</b>\n🗓 {kst} KST · {len(to_send)}건"
+            + (f" · 대기 {len(leftover)}건" if leftover else ""))
     time.sleep(SEND_DELAY)
 
-    # 1뉴스 1메시지
-    for category, it in to_send:
-        tg_send(build_message(category, it))
+    sent = 0
+    for it in to_send:
+        a = gemini_analyze(it["title"], it["summary"], it["source"])
+        msg = build_full(it, a) if a else build_min(it)
+        if tg_send(msg):
+            sent += 1
+            seen[title_key(it["title"])] = {"ntitle": it["ntitle"],
+                                            "ts": now_utc().timestamp()}
         time.sleep(SEND_DELAY)
 
-    save_seen(seen)
-    print(f"[DONE] {new_total}건 전송 완료")
+    # 이월분 저장 (다음 회차 우선 발송) - seen 처리 안 함(아직 안 보냄)
+    save_json(QUEUE_FILE, leftover[:50])   # 과적재 방지
+    save_json(SEEN_FILE, seen)
+    print(f"[DONE] {sent}건 전송, 이월 {len(leftover)}건, Gemini호출 {_gemini_state['calls']}")
 
 
 if __name__ == "__main__":
