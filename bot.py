@@ -28,7 +28,7 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
 
 SEEN_FILE = "seen.json"
 SEEN_RETENTION_DAYS = 14
-MAX_ITEMS_PER_CATEGORY = 12         # 카테고리당 최대 (알림 폭주 방지)
+MAX_ITEMS_PER_CATEGORY = 8         # 카테고리당 최대 (알림 폭주 방지)
 SIMILARITY_THRESHOLD = 0.68        # 낮을수록 중복을 더 적극적으로 묶음
 SUMMARY_MAX_CHARS = 180            # 요약 최대 길이
 MAX_AGE_HOURS = 36                 # 이 시간보다 오래된 기사는 제외 (날짜 필터)
@@ -46,12 +46,16 @@ def google_news_rss(query, lang="ko"):
 FEEDS = {
     "🧠 메모리 반도체": [
         google_news_rss("HBM OR DRAM OR 낸드 OR 메모리반도체 OR SK하이닉스 OR 삼성전자 반도체", "ko"),
+        google_news_rss("반도체 수출 OR 소부장 OR 패키징 OR 메모리 가격 OR 감산 증설", "ko"),
+        google_news_rss("HBM4 OR LPDDR OR DDR5 OR SOCAMM OR 고대역폭메모리", "ko"),
         google_news_rss("HBM OR DRAM OR NAND OR memory chip OR SK Hynix OR Micron", "en"),
         google_news_rss("LPDDR OR SOCAMM OR HBM4 OR DDR5 server", "en"),
         "https://www.tomshardware.com/feeds/all",
     ],
     "🤖 AI": [
         google_news_rss("OpenAI OR Anthropic OR 구글 제미나이 OR 메타 AI OR 샘 올트먼", "ko"),
+        google_news_rss("네이버 AI OR 카카오 AI OR 하이퍼클로바 OR 한국 인공지능 OR 국산 AI", "ko"),
+        google_news_rss("AI 반도체 OR AI 데이터센터 OR 엔비디아 OR AI 투자 OR 생성형AI", "ko"),
         google_news_rss("OpenAI OR Anthropic OR Google DeepMind OR Meta AI OR xAI", "en"),
         google_news_rss("Sam Altman OR Dario Amodei OR Sundar Pichai OR Zuckerberg AI", "en"),
         google_news_rss("AI model OR GPT OR Claude OR Gemini OR Llama release", "en"),
@@ -65,6 +69,7 @@ FEEDS = {
     ],
     "📊 리포트/투자의견": [
         google_news_rss("SK하이닉스 OR 삼성전자 목표주가 OR 투자의견 OR 상향 OR 하향", "ko"),
+        google_news_rss("반도체 증권사 리포트 OR 목표가 상향 OR 비중확대 OR 매수의견", "ko"),
         google_news_rss("Micron OR Nvidia price target OR upgrade OR downgrade analyst", "en"),
         google_news_rss("HBM OR DRAM analyst forecast OR rating", "en"),
     ],
