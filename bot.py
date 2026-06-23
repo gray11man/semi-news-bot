@@ -28,7 +28,7 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
 
 SEEN_FILE = "seen.json"
 SEEN_RETENTION_DAYS = 14
-MAX_ITEMS_PER_CATEGORY = 8         # 카테고리당 최대 (알림 폭주 방지)
+MAX_ITEMS_PER_CATEGORY = 12         # 카테고리당 최대 (알림 폭주 방지)
 SIMILARITY_THRESHOLD = 0.68        # 낮을수록 중복을 더 적극적으로 묶음
 SUMMARY_MAX_CHARS = 180            # 요약 최대 길이
 MAX_AGE_HOURS = 36                 # 이 시간보다 오래된 기사는 제외 (날짜 필터)
