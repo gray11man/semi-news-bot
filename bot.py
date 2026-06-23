@@ -97,6 +97,21 @@ FEEDS = [
     gnews("人工智能 芯片 OR 数据中心 OR HBM OR 算力 OR 英伟达", "zh"),
     # 대만
     gnews("台積電 OR CoWoS OR AI 伺服器 OR 半導體 產能", "zh"),
+
+    # ── 사용자 관심 테마 (2026.06 추가) ──
+    # 한화엔진 + 4행정 중속엔진 + 데이터센터 발전엔진
+    gnews("한화엔진 OR 4행정 중속엔진 OR 데이터센터 발전엔진 OR 힘센엔진 OR 선박엔진 발전", "ko"),
+    gnews("한화엔진 OR STX엔진 OR HD현대마린엔진 OR 데이터센터 엔진 OR 가스엔진 발전", "ko"),
+    # 조선주
+    gnews("조선주 OR HD현대중공업 OR 삼성중공업 OR 한화오션 OR 조선 수주 OR LNG선 발주", "ko"),
+    # Tempus AI + 미국 의료 AI 시장
+    gnews("Tempus AI OR \"TEM stock\" OR precision medicine AI OR oncology AI diagnostics", "en"),
+    gnews("healthcare AI OR medical AI FDA OR clinical AI OR genomics AI OR AI diagnostics", "en"),
+    gnews("Tempus AI OR 템퍼스 OR 미국 의료AI OR 정밀의료 OR AI 진단", "ko"),
+    # Critical Metals + 희토류
+    gnews("Critical Metals OR \"CRML\" OR Tanbreez OR rare earth OR REE OR Greenland rare earth", "en"),
+    gnews("rare earth OR critical minerals OR MP Materials OR USA Rare Earth OR magnet supply", "en"),
+    gnews("희토류 OR 영구자석 OR 핵심광물 OR 희토류 공급망 OR 중국 희토류 규제", "ko"),
 ]
 
 # ───────────────────────── 필터 키워드 ─────────────────────────
@@ -112,6 +127,13 @@ INCLUDE = [
     "전력", "원전", "가스터빈", "패키징", "투자", "수주", "증설", "공급",
     # 일/중 핵심
     "半導体", "データセンター", "人工智能", "芯片", "数据中心", "算力", "台積電",
+    # 사용자 관심 테마 (2026.06 추가)
+    "한화엔진", "4행정", "중속엔진", "힘센", "선박엔진", "조선", "hd현대중공업",
+    "삼성중공업", "한화오션", "stx엔진", "lng선", "발전엔진", "가스엔진",
+    "tempus", "템퍼스", "정밀의료", "의료ai", "헬스케어", "oncology", "genomics",
+    "fda", "diagnostics", "clinical", "healthcare", "precision medicine",
+    "critical metals", "crml", "tanbreez", "rare earth", "ree", "희토류",
+    "영구자석", "핵심광물", "critical minerals", "mp materials", "magnet",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
