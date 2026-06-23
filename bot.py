@@ -23,7 +23,8 @@ import feedparser
 # ─────────────────────────────────────────────────────────────
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-TRANSLATE = os.environ.get("TRANSLATE", "1").strip() != "0"   # 0이면 번역 끄기
+GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip()        # 없으면 번역/요약 생략
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
 
 SEEN_FILE = "seen.json"
 SEEN_RETENTION_DAYS = 14
@@ -151,42 +152,79 @@ def _has_korean(text):
     return bool(re.search(r"[가-힣]", text or ""))
 
 
-_translate_cache = {}
-_GT = None
+_gemini_cache = {}
+_gemini_calls = [0]   # 호출 횟수 추적 (rate 보호용)
 
-def _get_translator():
-    """deep-translator의 GoogleTranslator를 지연 로딩. 실패 시 None."""
-    global _GT
-    if _GT is not None:
-        return _GT
+GEMINI_URL = (
+    "https://generativelanguage.googleapis.com/v1beta/models/"
+    "{model}:generateContent"
+)
+
+def gemini_summarize_ko(title, summary):
+    """
+    영문 기사 제목+요약을 받아 한국어로 '번역+한줄요약'.
+    반환: (한글제목, 한글요약). 실패하면 (원문제목, 원문요약).
+    """
+    if not GEMINI_KEY:
+        return title, summary
+    cache_key = title
+    if cache_key in _gemini_cache:
+        return _gemini_cache[cache_key]
+
+    src = f"제목: {title}"
+    if summary:
+        src += f"\n요약: {summary}"
+    prompt = (
+        "다음은 해외 반도체/AI 뉴스입니다. 한국 투자자가 빠르게 파악할 수 있도록 "
+        "한국어로 처리하세요.\n"
+        "1) 제목을 자연스러운 한국어로 번역\n"
+        "2) 핵심을 1문장으로 요약(투자 관점에서 중요한 사실 위주, 과장 금지)\n"
+        "반드시 아래 형식으로만 답하세요. 다른 말 금지.\n"
+        "제목: <한국어 제목>\n요약: <한국어 한 문장>\n\n"
+        f"{src}"
+    )
     try:
-        from deep_translator import GoogleTranslator
-        _GT = GoogleTranslator(source="auto", target="ko")
+        r = requests.post(
+            GEMINI_URL.format(model=GEMINI_MODEL),
+            headers={
+                "x-goog-api-key": GEMINI_KEY,
+                "Content-Type": "application/json",
+            },
+            json={
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 200},
+            },
+            timeout=REQUEST_TIMEOUT,
+        )
+        _gemini_calls[0] += 1
+        time.sleep(4.5)   # 분당 요청 제한(무료 Flash ~13RPM) 회피
+        if r.status_code == 200:
+            data = r.json()
+            text = data["candidates"][0]["content"]["parts"][0]["text"]
+            ko_title, ko_summary = _parse_gemini(text, title, summary)
+            _gemini_cache[cache_key] = (ko_title, ko_summary)
+            return ko_title, ko_summary
+        else:
+            print(f"[WARN] Gemini {r.status_code}: {r.text[:150]}")
     except Exception as e:
-        print(f"[WARN] translator init fail: {e}")
-        _GT = False
-    return _GT
+        print(f"[WARN] Gemini fail: {e}")
+    return title, summary
 
 
-def translate_to_ko(text):
-    """비한글 텍스트를 한국어로 번역. 실패하면 원문 반환(봇 안 멈춤)."""
-    if not text or not TRANSLATE:
-        return text
-    if _has_korean(text):        # 이미 한글이면 번역 안 함
-        return text
-    if text in _translate_cache:
-        return _translate_cache[text]
-    gt = _get_translator()
-    if not gt:
-        return text
-    try:
-        out = gt.translate(text)
-        if out and out.strip():
-            _translate_cache[text] = out
-            return out
-    except Exception as e:
-        print(f"[WARN] translate fail: {e}")
-    return text
+def _parse_gemini(text, fallback_title, fallback_summary):
+    """'제목: ... / 요약: ...' 형식 파싱. 실패 시 원문 폴백."""
+    ko_title, ko_summary = fallback_title, fallback_summary
+    for line in text.splitlines():
+        line = line.strip()
+        if line.startswith("제목:"):
+            v = line[3:].strip()
+            if v:
+                ko_title = v
+        elif line.startswith("요약:"):
+            v = line[3:].strip()
+            if v:
+                ko_summary = v
+    return ko_title, ko_summary
 
 
 def now_utc():
@@ -403,21 +441,20 @@ def build_message(category, it):
     lines = [f"{esc(category)}"]
 
     title = strip_source_suffix(it["title"])
-    if _has_korean(title):
-        # 한글 기사: 그대로
-        lines.append(f'<b>{esc(title)}</b>')
-    else:
-        # 영문 기사: 한글 번역만 (원문 생략)
-        ko = translate_to_ko(title)
-        ko = strip_source_suffix(ko) if ko else ko
-        lines.append(f'<b>{esc(ko if ko else title)}</b>')
+    summary = it["summary"]
 
-    if it["summary"]:
-        s = it["summary"]
-        if not _has_korean(s):
-            s_ko = translate_to_ko(s)
-            s = s_ko if s_ko else s
-        lines.append(f'{esc(s)}')
+    if _has_korean(title):
+        # 한글 기사: 그대로 (제미나이 호출 안 함 - 한도 절약)
+        lines.append(f'<b>{esc(title)}</b>')
+        if summary:
+            lines.append(f'{esc(summary)}')
+    else:
+        # 영문 기사: 제미나이로 번역+요약 한 번에
+        ko_title, ko_summary = gemini_summarize_ko(title, summary)
+        ko_title = strip_source_suffix(ko_title) if ko_title else ko_title
+        lines.append(f'<b>{esc(ko_title if ko_title else title)}</b>')
+        if ko_summary:
+            lines.append(f'{esc(ko_summary)}')
 
     src = f' · {esc(it["source"])}' if it["source"] else ""
     lines.append(f'🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}')
