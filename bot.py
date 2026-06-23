@@ -31,9 +31,9 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite").strip()
 
 # ───────────────────────── 설정 ─────────────────────────
 SEEN_FILE = "seen.json"
-QUEUE_FILE = "queue.json"          # 12건 초과분 이월 저장
+QUEUE_FILE = "queue.json"          # 30건 초과분 이월 저장
 SEEN_RETENTION_DAYS = 7
-MAX_SEND_PER_RUN = 12              # 회당 최대 발송
+MAX_SEND_PER_RUN = 30              # 회당 최대 발송
 NEWS_WINDOW_HOURS = 6              # 최근 N시간 이내 뉴스만
 SIMILARITY_THRESHOLD = 0.68
 REQUEST_TIMEOUT = 25
