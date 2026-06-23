@@ -14,6 +14,7 @@ import re
 import json
 import time
 import html
+import random
 import hashlib
 import datetime
 from difflib import SequenceMatcher
@@ -39,6 +40,9 @@ REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 GEMINI_MIN_INTERVAL = 6.5          # 보수적: 무료 10RPM 가정 → 6.5초 간격
 GEMINI_MAX_CALLS_PER_RUN = 30      # 일일 한도(보수적 250RPD) 보호: 회당 상한
+GEMINI_RETRY_MAX = 2               # 503/5xx/타임아웃 시 추가 재시도 횟수(총 3회 시도)
+GEMINI_RETRY_BASE = 2.0            # 지수 백오프 기준 대기(초): 2, 4 ...
+GEMINI_CONSEC_FAIL_STOP = 5        # 연속 실패 이만큼이면 이후 호출 중단(폴백)
 RSS_MAX_ENTRIES = 30
 
 
@@ -249,19 +253,24 @@ def clean_summary(raw):
 GEMINI_URL = (
     "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 )
-_gemini_state = {"calls": 0, "disabled": False, "last": 0.0}
+_gemini_state = {"calls": 0, "disabled": False, "last": 0.0, "consec_fail": 0}
 
 
 def gemini_analyze(title, summary, source):
     """
     한국어 번역+요약+중요도+병목/유동성 라벨.
     반환 dict 또는 None(실패/한도). None이면 호출부가 제목+링크만 처리.
+    503/5xx/타임아웃은 지수 백오프로 재시도, 429/4xx는 즉시 폴백.
     """
     if not GEMINI_KEY or _gemini_state["disabled"]:
         return None
     if _gemini_state["calls"] >= GEMINI_MAX_CALLS_PER_RUN:
         _gemini_state["disabled"] = True
         print("[INFO] Gemini 회당 호출 상한 도달 → 이후 제목+링크만")
+        return None
+    if _gemini_state["consec_fail"] >= GEMINI_CONSEC_FAIL_STOP:
+        _gemini_state["disabled"] = True
+        print(f"[INFO] Gemini 연속 실패 {GEMINI_CONSEC_FAIL_STOP}회 → 이후 제목+링크만")
         return None
 
     # 분당 제한 보호
@@ -282,42 +291,75 @@ def gemini_analyze(title, summary, source):
         "왜중요: (한 문장)\n\n"
         f"[원문 제목] {title}\n[원문 요약] {summary}\n[출처] {source}"
     )
-    try:
-        r = requests.post(
-            GEMINI_URL.format(model=GEMINI_MODEL),
-            headers={"x-goog-api-key": GEMINI_KEY, "Content-Type": "application/json"},
-            json={
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "temperature": 0.2,
-                    "maxOutputTokens": 1024,           # 잘림 방지 위해 상향
-                    "thinkingConfig": {"thinkingBudget": 0},  # thinking이 토큰 먹는 것 방지
-                    # responseMimeType(JSON모드)는 2.5-flash에서 잘림/빈응답 유발 → 미사용
-                },
-            },
-            timeout=REQUEST_TIMEOUT,
-        )
-        _gemini_state["calls"] += 1
-        _gemini_state["last"] = time.time()
-        if r.status_code == 429:
-            _gemini_state["disabled"] = True
-            print("[WARN] Gemini 429(한도) → 이후 제목+링크만")
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "temperature": 0.2,
+            "maxOutputTokens": 1024,
+            "thinkingConfig": {"thinkingBudget": 0},
+        },
+    }
+    headers = {"x-goog-api-key": GEMINI_KEY, "Content-Type": "application/json"}
+    url = GEMINI_URL.format(model=GEMINI_MODEL)
+
+    # 총 (1 + GEMINI_RETRY_MAX) 회 시도. 503/5xx/타임아웃만 재시도.
+    for attempt in range(GEMINI_RETRY_MAX + 1):
+        try:
+            r = requests.post(url, headers=headers, json=payload,
+                              timeout=REQUEST_TIMEOUT)
+            _gemini_state["calls"] += 1     # 503 재시도도 쿼터에 카운트되므로 매번 증가
+            _gemini_state["last"] = time.time()
+
+            if r.status_code == 200:
+                data = r.json()
+                cand = data["candidates"][0]
+                finish = cand.get("finishReason", "")
+                parts = cand.get("content", {}).get("parts", [])
+                text = parts[0]["text"] if parts and "text" in parts[0] else ""
+                if not text.strip():
+                    print(f"[WARN] Gemini empty (finish={finish}) → 제목+링크 폴백")
+                    _gemini_state["consec_fail"] += 1
+                    return None
+                _gemini_state["consec_fail"] = 0   # 성공 시 연속실패 초기화
+                return _parse_lines(text)
+
+            # 429: 한도 → 재시도 무의미, 이후 전체 중단
+            if r.status_code == 429:
+                _gemini_state["disabled"] = True
+                print("[WARN] Gemini 429(한도) → 이후 제목+링크만")
+                return None
+
+            # 503/500/502/504: 일시적 → 재시도 대상
+            if r.status_code in (500, 502, 503, 504):
+                _gemini_state["consec_fail"] += 1
+                if attempt < GEMINI_RETRY_MAX:
+                    wait = GEMINI_RETRY_BASE * (2 ** attempt) + random.uniform(0, 1.0)
+                    print(f"[WARN] Gemini {r.status_code} 과부하 "
+                          f"(재시도 {attempt+1}/{GEMINI_RETRY_MAX}, {wait:.1f}초 후)")
+                    time.sleep(wait)
+                    continue
+                print(f"[WARN] Gemini {r.status_code} 재시도 소진 → 제목+링크 폴백")
+                return None
+
+            # 400/403/404 등: 코드/키/모델 문제 → 재시도 무의미
+            print(f"[WARN] Gemini {r.status_code}: {r.text[:200]} → 폴백")
             return None
-        if r.status_code != 200:
-            print(f"[WARN] Gemini {r.status_code}: {r.text[:200]}")
+
+        except requests.exceptions.Timeout:
+            _gemini_state["consec_fail"] += 1
+            if attempt < GEMINI_RETRY_MAX:
+                wait = GEMINI_RETRY_BASE * (2 ** attempt) + random.uniform(0, 1.0)
+                print(f"[WARN] Gemini timeout (재시도 {attempt+1}/{GEMINI_RETRY_MAX}, "
+                      f"{wait:.1f}초 후)")
+                time.sleep(wait)
+                continue
+            print("[WARN] Gemini timeout 재시도 소진 → 제목+링크 폴백")
             return None
-        data = r.json()
-        cand = data["candidates"][0]
-        finish = cand.get("finishReason", "")
-        parts = cand.get("content", {}).get("parts", [])
-        text = parts[0]["text"] if parts and "text" in parts[0] else ""
-        if not text.strip():
-            print(f"[WARN] Gemini empty (finish={finish}) → 제목+링크 폴백")
+        except Exception as e:
+            print(f"[WARN] Gemini fail: {e} → 폴백")
+            _gemini_state["consec_fail"] += 1
             return None
-        return _parse_lines(text)
-    except Exception as e:
-        print(f"[WARN] Gemini fail: {e}")
-        return None
+    return None
 
 
 def _parse_lines(text):
