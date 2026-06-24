@@ -9,28 +9,102 @@
     "role": "꼬리 시나리오 옵션 / SOTP 저평가",
     "open": true,
     "bull": [
-     "SOTP: 메모리 단독으로 시총 대부분 정당화 → 파운드리·모바일·가전이 제로 또는 마이너스로 가격 책정된 구조적 미스프라이싱",
-     "HBM4 11.7Gbps로 엔비디아 요구치(10Gbps) 상회, 베라 루빈 겨냥. 2026년 2월 업계 최초 HBM4 양산 출하",
-     "AMD를 HBM4 주공급사로 확보 — 엔비디아 의존 높은 하이닉스와 차별화된 독립 수주 채널",
-     "IDM 구조: HBM4 베이스 다이를 자체 4nm 파운드리로 양산 → 턴키 패키징 우위 가능성"
+     "DRAM ASP 상승",
+     "HBM 가격 상승",
+     "HBM 비중 확대",
+     "NAND 가격 상승",
+     "재고 부족",
+     "AI ASIC 확대",
+     "AI GPU 출하 증가",
+     "첨단 패키징 부족",
+     "CoWoS 부족",
+     "HPC 매출 비중 확대",
+     "TSMC 생산능력 부족",
+     "첨단공정 고객 대기 증가",
+     "후공정 병목",
+     "2차 공급망 수혜 확대",
+     "AI 추론(Inference) 폭증",
+     "AI PC 확산",
+     "데이터센터 전력 인프라 증설",
+     "빅테크 캐팩스 상향"
     ],
     "track": [
-     "1c D램 수율 (HBM4 기준 현재 ~50%, 양산엔 70%+ 필요)",
-     "삼성 턴키 패키징 수주 건수",
-     "HBM 매출 비중 추이",
-     "1c D램 CAPA 증설 속도 (현재 월 6~7만장 추정)"
+     "GPU 공급 부족",
+     "HBM 공급 부족",
+     "AI 데이터센터 CAPEX 상향",
+     "AI 업계 투자 가속",
+     "추론(Inference) 서버 급증",
+     "AI 에이전트 사용량 증가",
+     "토큰 사용량 증가",
+     "Sovereign AI 투자 확대",
+     "클라우드 기업들 수주잔고 증가",
+     "HBM 계약 단가 상승",
+     "엔비디아 GPU 리드타임 증가",
+     "하이퍼스케일러 CAPEX 상향",
+     "AI 데이터센터 전력 사용량 증가",
+     "GPU 가격추이",
+     "영업이익 증가 추이",
+     "PER 상향추이"
     ],
     "kill": [
      {
-      "txt": "1c D램 HBM4 수율이 70%에 장기간 미달 → 양산 물량 대응 실패",
+      "txt": "GPU 공급 과잉",
       "status": "watch"
      },
      {
-      "txt": "HBM4E 세대에서도 하이닉스에 점유율 역전 실패 (삼성 반등 시나리오의 핵심 전제 붕괴)",
+      "txt": "데이터센터 투자 둔화",
       "status": "watch"
      },
      {
-      "txt": "파운드리 적자 지속으로 SOTP의 '제로 가격' 논리가 사실은 정당한 것으로 판명",
+      "txt": "HBM 증설 경쟁 심화",
+      "status": "watch"
+     },
+     {
+      "txt": "DRAM 재고 증가",
+      "status": "watch"
+     },
+     {
+      "txt": "AI ROI 논란 확대",
+      "status": "watch"
+     },
+     {
+      "txt": "AI ASIC 취소",
+      "status": "watch"
+     },
+     {
+      "txt": "TSMC 가동률 하락",
+      "status": "watch"
+     },
+     {
+      "txt": "CoWoS 공급 과잉",
+      "status": "watch"
+     },
+     {
+      "txt": "HPC 성장 둔화",
+      "status": "watch"
+     },
+     {
+      "txt": "고객사 CAPEX 축소",
+      "status": "watch"
+     },
+     {
+      "txt": "AI 서버 가동률 하락",
+      "status": "watch"
+     },
+     {
+      "txt": "클라우드 기업 수주 둔화",
+      "status": "watch"
+     },
+     {
+      "txt": "DRAM 증설 경쟁 재개",
+      "status": "watch"
+     },
+     {
+      "txt": "범용 메모리 ASP 하락",
+      "status": "watch"
+     },
+     {
+      "txt": "중국 저가 공급 확대",
       "status": "watch"
      }
     ]
@@ -40,34 +114,75 @@
     "name": "SK하이닉스",
     "code": "000660",
     "role": "근시 선두 (2026~2027)",
-    "open": false,
+    "open": true,
     "bull": [
-     "HBM 실행력 + TSMC CoWoS 동맹, 축적된 TSV·패키징 노하우로 선도 입지",
-     "2026년 엔비디아 루빈향 HBM4 물량 약 60~70% 확보 (선계약 우위)",
-     "2026년 전체 HBM 물량 사실상 완판, 가격 인상·프리미엄 사양 집중 전략",
-     "HBM4E·HBM5 로드맵 주도권으로 멀티이어 계약 선점"
+     "DRAM ASP 상승",
+     "HBM 가격 상승",
+     "HBM 비중 확대",
+     "NAND 가격 상승",
+     "재고 부족",
+     "AI 추론(Inference) 폭증",
+     "AI PC 확산",
+     "데이터센터 전력 인프라 증설",
+     "빅테크 캐팩스 상향"
     ],
     "track": [
-     "HBM 매출 비중 (% of total)",
-     "루빈향 HBM4 추가 승인/재검증 통과 시점 (IR 코멘트)",
-     "하이퍼스케일러 capex 가이던스 방향",
-     "엔비디아 공급망 다변화(삼성·마이크론 확대) 속도"
+     "GPU 공급 부족",
+     "HBM 공급 부족",
+     "AI 데이터센터 CAPEX 상향",
+     "추론(Inference) 서버 급증",
+     "AI 업계 투자 가속",
+     "AI 에이전트 사용량 증가",
+     "토큰 사용량 증가",
+     "클라우드 기업들 수주잔고 증가",
+     "Sovereign AI 투자 확대",
+     "HBM 계약 단가 상승",
+     "엔비디아 GPU 리드타임 증가",
+     "하이퍼스케일러 CAPEX 상향",
+     "AI 데이터센터 전력 사용량 증가",
+     "GPU 가격추이",
+     "영업이익 증가 추이",
+     "PER상향 추이"
     ],
     "kill": [
      {
-      "txt": "삼성이 HBM4E부터 점유율을 의미있게 빼앗아 '선두' 전제 붕괴",
+      "txt": "GPU 공급 과잉",
       "status": "watch"
      },
      {
-      "txt": "HBM 매출 비중 증가세 정체 (믹스 개선 둔화)",
+      "txt": "데이터센터 투자 둔화",
       "status": "watch"
      },
      {
-      "txt": "하이퍼스케일러 capex 가이던스 하향 전환",
+      "txt": "HBM 증설 경쟁 심화",
       "status": "watch"
      },
      {
-      "txt": "루빈 지연이 단순 이연이 아니라 공급사 재조정으로 확대",
+      "txt": "DRAM 재고 증가",
+      "status": "watch"
+     },
+     {
+      "txt": "AI ROI 논란 확대",
+      "status": "watch"
+     },
+     {
+      "txt": "고객사 CAPEX 축소",
+      "status": "watch"
+     },
+     {
+      "txt": "클라우드 기업 수주 둔화",
+      "status": "watch"
+     },
+     {
+      "txt": "DRAM 증설 경쟁 재개",
+      "status": "watch"
+     },
+     {
+      "txt": "중국 저가 공급 확대",
+      "status": "watch"
+     },
+     {
+      "txt": "범용 메모리 ASP 하락",
       "status": "watch"
      }
     ]
@@ -77,29 +192,38 @@
     "name": "한화엔진",
     "code": "082740",
     "role": "데이터센터 전력 옵션 (순차 병목)",
-    "open": false,
+    "open": true,
     "bull": [
-     "AI DC 전력 병목의 4행정 중속엔진 프라임무버 — 메모리 다음 순차 병목이 전력이라는 프레임",
-     "4행정 중속엔진 신공장 2026년 9월 완공 예정",
-     "Wärtsilä 대비 경쟁 포지셔닝, SEAM 인수(e-SEAMatic SW), Everllence 라이선스 구조",
-     "부유식 데이터센터(FDC) 프라임무버로 사실상 유일 대안 (소거법 검증)"
+     "LNG선 발주 증가",
+     "신조선가 상승",
+     "조선소 슬롯 매진",
+     "미국 조선업 재건",
+     "중국 조선 견제",
+     "중국 조선소 수주잔고 증"
     ],
     "track": [
-     "신공장 완공·가동 시점 (2026년 9월) 및 초도 수주",
+     "데이터센터 전력 부족",
      "DC향 엔진 수주 공시 여부",
-     "FDC 프로젝트 진행 (삼성중공업 AIP·OpenAI·Supermicro JDP 연계)"
+     "하이퍼스케일러 전력 확보 경쟁",
+     "원전 재가동",
+     "4행정 엔진 기업들 DC향엔진 수주 여부",
+     "DC향 4행정엔진 수요 여"
     ],
     "kill": [
      {
-      "txt": "애프터마켓 사업 분리가 소액주주 가치 훼손으로 현실화",
+      "txt": "운임 급락",
       "status": "watch"
      },
      {
-      "txt": "편입 방산 자산이 실제 매출 거의 없거나 기존 캐파 재포장에 불과",
+      "txt": "발주 취소",
       "status": "watch"
      },
      {
-      "txt": "DC 전력 병목이 가스터빈·SOFC 등 경쟁 솔루션으로 흡수되어 중속엔진 수요 미발생",
+      "txt": "글로벌 경기침체",
+      "status": "watch"
+     },
+     {
+      "txt": "신조선가 하락",
       "status": "watch"
      }
     ]
@@ -109,17 +233,20 @@
     "name": "Tempus AI",
     "code": "TEM",
     "role": "의료 데이터 해자 (~5% 비중)",
-    "open": false,
+    "open": true,
     "bull": [
      "종양학 종단(longitudinal) 데이터 자산의 복제 불가능성 — 핵심 해자",
-     "NRR 126%, 상위 20개 종양학 제약사 중 19곳과 파트너십",
-     "멀티모달 파운데이션 모델 (ASCO 2026 C-index 0.802 zero-shot), Lens 2.0 출시",
-     "데이터 자산 standalone 대체가치 $130~150B 추정"
+     "Foundation Model 출시",
+     "제약사 계약 확대",
+     "데이터셋 확대",
+     "AI 진단 상용화",
+     "흑자 전환 가시화"
     ],
     "track": [
-     "Data 부문 별도 공시 전환 여부",
-     "MRD 수가(reimbursement) 확대 스케일링",
-     "추가 멀티이어 계약 체결"
+     "FDA 승인 증가",
+     "보험 수가 인정",
+     "병원 도입 확대",
+     "제약사 AI 활용 증가"
     ],
     "kill": [
      {
@@ -140,328 +267,12 @@
  },
  "newsItems": [
   {
-   "title": "주식 투자 상위 1% 초고수익 투자자, 하이브(Hive) 집중 매수",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1mZlhtQzhGR0xwXzlIZU5MbVljRHVCYUNOU1RXdDZVSnU1YS1FSWE3QXl5R0xMVlM5WVBKbGRjR0V6S3gyTHo1eHowYjhwZWM?oc=5",
-   "source": "매일경제",
-   "published": "2026-06-24T06:13:48+00:00",
-   "summary": "24일 오후 2시 30분 기준, 주식 투자에서 최상위 수익률을 기록하는 상위 1% 투자자들이 주로 하이브(Hive) 주식을 매수한 것으로 나타났다. 이는 해당 투자자들이 현재 시장에서 하이브의 성장 가능성이나 가치에 주목하고 있음을 시사한다. 구체적인 매수 규모나 배경에 대한 추가 정보는 제공되지 않았으나, 이들의 투자 행보는 시장의 관심을 끌기에 충분하다. [분야 AI수요] [병목 무관] [유동성 중립] 왜중요: 상위 투자자들의 특정 종목 매수는 시장의 잠재적 트렌드를 파악하는 데 참고할 수 있다.",
-   "cls": {
-    "ticker": "none",
-    "sentiment": "neutral",
-    "reason": "하이브는 보유 종목이 아니며, 뉴스의 구체적 근거 부재(매수 규모·배경 미공시)로 보유 종목 투자논리 판단 불가."
-   }
-  },
-  {
-   "title": "SK하이닉스, 나스닥 ADR 상장을 통해 290억 달러 확장 추진",
-   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVUQzSW0tOXg2akxtS3lRN1FCSU5IdVJHOThua2FsdTIzUUhIcUtGX2lveWtScjNXVXo2RjJ1MlpuamNvUUc0aHdvMjJYSEtGdEI5T0hTT0g0X2tjN3E1ejNMV19HYkZNQnZtc3pFSXNDV1VZSTdieDBVSzIzc0hlcGJhd3hTZE5lRkFaSVV0bUdDRlNWZTdKQldlYVBHSGJYVnFtNHNVWk5UakxYSERORHpQTjdKOG_SAbcBQVVfeXFMTlVEM0ltLTl4NmpMbUt5UTdRQklOSHVSRzk4bmthbHUyM1FISHFLRl9pb3lrUnIzV1V6NkYydTJabmpjb1FHNGh3bzIyWEhLRnRCOU9IU09INF9rYzdxNXozTFdfR2JGTUJ2bXN6RUlzQ1dVWUk3YngwVUsyM3NIZXBiYXd4U2ROZUZBWklVdG1HQ0ZTVmU3SkJXZWFQR0hiWFZxbTRzVVpOVGpMWEhETkR6UE43Sjhv?oc=5",
-   "source": "Devdiscourse",
-   "published": "2026-06-24T08:15:41+00:00",
-   "summary": "SK하이닉스가 나스닥에 미국주식예탁증서(ADR)를 상장하여 최대 290억 달러(약 40조 원) 규모의 자금을 조달하는 방안을 검토 중이다. 이 자금은 주로 인디애나주에 건설 예정인 첨단 패키징 공장과 차세대 고대역폭 메모리(HBM) 생산 능력 확충에 사용될 계획이다. 이번 상장은 SK하이닉스의 글로벌 시장 입지를 강화하고, AI 반도체 수요 증가에 대응하기 위한 대규모 투자 재원을 확보하려는 전략의 일환이다. 현재 SK하이닉스는 HBM 시장의 선두 주자이며, 이번 투자를 통해 기술 리더십을 더욱 공고히 할 것으로 예상된다. 다만, 구체적인 상장 시기와 규모는 아직 확정되지 않았다. [분야 HBM,패키징,AI] [병목 완화] [유동성 유입] 왜중요: SK하이닉스의 대규모 투자 계획은 HBM 및 첨단 패키징 분야의 생산 능력 확대를 통해 AI 반도체 수요 증가에 대응하고 글로벌 시장 리더십을 강화하는 데 기여할 것이기 때문이다.",
-   "cls": {
-    "ticker": "hynix",
-    "sentiment": "neutral",
-    "reason": "290억 달러 자금조달은 HBM 확산 역량을 강화하지만, 루빈 지연·하이퍼스케일러 capex 하향·삼성의 HBM4E 추격이라는 근본적 수요·경쟁 약화 신호를 상쇄하지 못해 '선두' 전제의 지속성 확보 미흡."
-   }
-  },
-  {
-   "title": "AI 에이전트, 브랜드 고객 참여 방식 혁신 예고 - Khaleej Times",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQa0hpZktnb095UkF6ZVk0X0tLdTljQTJTaU9KUl85dGJkWmZtb2EtNng3QWoySk5iczUyYTNWNVVITTFZTllXZEc2WHI5cUpMa1FkNGs0VVRzbW1iWm8tXy1IRUl6OU5jcHFsVi1UWkFuUEo3a3lQTHh4OTFCWTN0ZUFJLUUzQ1JJWldadnVGbXJfMWJhU0prMHlzQ0RSRUs5RnJ6SdIBpAFBVV95cUxQa0hpZktnb095UkF6ZVk0X0tLdTljQTJTaU9KUl85dGJkWmZtb2EtNng3QWoySk5iczUyYTNWNVVITTFZTllXZEc2WHI5cUpMa1FkNGs0VVRzbW1iWm8tXy1IRUl6OU5jcHFsVi1UWkFuUEo3a3lQTHh4OTFCWTN0ZUFJLUUzQ1JJWldadnVGbXJfMWJhU0prMHlzQ0RSRUs5RnJ6SQ?oc=5",
-   "source": "Khaleej Times",
-   "published": "2026-06-24T07:40:25+00:00",
-   "summary": "AI 에이전트가 브랜드와 고객 간의 상호작용 방식을 근본적으로 변화시킬 것으로 예상된다. 이는 기업들이 고객 서비스, 마케팅, 판매 등 다양한 영역에서 AI 기반의 자동화된 에이전트를 활용하여 고객 경험을 개인화하고 효율성을 높일 수 있음을 시사한다. AI 에이전트는 고객 문의에 실시간으로 응답하고, 맞춤형 추천을 제공하며, 복잡한 문제 해결을 지원하는 등 기존의 고객 접점 방식을 넘어설 잠재력을 가지고 있다. 이러한 변화는 기업들이 고객 관계 관리 전략을 재정립하고, AI 기술 도입을 통해 경쟁 우위를 확보하려는 움직임을 가속화할 것이다. 궁극적으로 AI 에이전트는 고객 만족도를 향상시키고 브랜드 충성도를 높이는 데 기여할 것으로 전망된다. [분야 AI, AI수요] [병목 무관] [유동성 유입] 왜중요: AI 에이전트의 확산은 기업들의 AI 솔루션 도입을 촉진하여 AI 관련 산업의 수요 증가에 기여할 것이다.",
-   "cls": {
-    "ticker": "tempus",
-    "sentiment": "bull",
-    "reason": "AI 에이전트 기반 고객 상호작용 혁신은 기업 데이터 수집·활용 수요를 증대시켜 의료 데이터 해자 구축의 실행력 강화 신호로 작용하며, Tempus의 데이터 기반 AI 솔루션 확산 경로를 명시적으로 뒷받침한다."
-   }
-  },
-  {
-   "title": "삼성, SK, 전남 광주에 최대 400조원 규모 반도체 클러스터 조성 검토",
-   "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQdEt5SllIbXhoZVZwZ2ZuaHlHMkhPNnVOc1RJQlBzZVdoMnUwZVdGeWJoaVBXRHFYY0UtRVN4dDFTZU5RZzlfVWgwSV9qWDNVbm42Yld6eHJncHBDazJJdUU5ZmxMcm9rUWtBbEtMVE5QRVRKSGFCbTdlVWNueHhmWkdGYkk4VkRxSGNYSWlnVld4X3hObWpkR3k5TEpudmU5WGpCX3hyNnk5T1drUTJCWFpsejJYRkVLRlpJZHl5eGM4QWJkVnFDMDBOV1Z6ZUhnUmQ1TU5TbFZqeWkwYmwwTHVydmlLUGpLdFJ5bXBDUQ?oc=5",
-   "source": "디지털투데이",
-   "published": "2026-06-24T06:29:06+00:00",
-   "summary": "삼성전자와 SK하이닉스가 전라남도 광주에 최대 400조원 규모의 반도체 클러스터 조성을 검토 중이다. 이는 정부의 '메가 클러스터' 조성 계획에 발맞춰 비수도권 지역에 대규모 반도체 생산 기반을 구축하려는 움직임으로 해석된다. 해당 클러스터는 차세대 반도체 생산 시설과 연구개발 단지를 포함할 가능성이 있으며, 지역 경제 활성화 및 국가 반도체 산업 경쟁력 강화에 기여할 것으로 기대된다. 구체적인 투자 규모와 시기는 아직 확정되지 않았으나, 양사의 참여 가능성만으로도 국내 반도체 생태계에 큰 영향을 미칠 전망이다. 이는 수도권 집중 현상을 완화하고 지역 균형 발전을 도모하는 정부 정책 방향과도 일치한다. [분야 AI,GPU,HBM,DRAM,NAND,패키징,데이터센터,전력] [병목 완화] [유동성 유입] 왜중요: 삼성과 SK의 대규모 투자는 국내 반도체 생산 능력 증대와 지역 경제 활성화에 기여하며, 장기적으로 글로벌 반도체 공급망 안정화에 긍정적인 영향을 미칠 수 있기 때문이다.",
-   "cls": {
-    "ticker": "none",
-    "sentiment": "neutral",
-    "reason": "대규모 클러스터 검토 뉴스는 장기 산업 긍정 신호이나, 구체적 투자 규모·시기 미확정 상태에서 삼성(HBM4 수율 부진)과 하이닉스(선두 지위 약화·믹스 개선 둔화) 모두의 현재 핵심 사업 전제(수익성 있는 고부가 제품 양산)를 직접 해소하지 못함."
-   }
-  },
-  {
-   "title": "CDW (CDW), 모건 스탠리 업그레이드 이후 AI 수요 스토리가 이미 가격에 반영되었는가?",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOM0t4S1ZkZXIyTG5rQVpNZXRTaEpVVERIZVNWLVpoem1QOWdOaUhRREpIelVRWFRPNjE5WEVrMmxpSGQ1aXB6dzhGdGxjU3dNNUpqU1N4UERqc29aRVhwcHZXYzlrNDFwcE5GRHNZZjVQVXRMMGdJc1k4MlBLTE9BOVFjRzIxelM3QV9BRGl6UXhDckpHTHpaVEx6QU9OZHZYeUFpMVJZSE50RGZ2YWxhZ05RY3V3cjJm0gG-AUFVX3lxTE5aMjM2QXVieV9Uc3A1ck12WVd2T2h0c3picEItdHdwdUQ3WnptOUJyMXZmbG03NTVmOElkU0pTRXZGR2lweDgtYzhCT3BJLTVjc3B0V2xSYzFaRmJhRFM0bElrM2hmUERaRXFMQV84Wm0zdDBtM29yQ3FRZ3dsODRIWHJGYVBZeG5YSjQ4R1BDdTJVV1EtSzJadWo0MVd2SHRJYUgteWFuUEFCdndRdWdJbVctcENIeGVSLTRTelE?oc=5",
-   "source": "simplywall.st",
-   "published": "2026-06-24T05:37:29+00:00",
-   "summary": "이 기사는 CDW에 대한 모건 스탠리의 업그레이드 이후, AI 수요 증가가 CDW의 주가에 이미 반영되었는지에 대한 의문을 제기한다. 모건 스탠리는 CDW의 목표 주가를 260달러에서 280달러로 상향 조정하며 '비중 확대' 의견을 유지했다. 이는 CDW가 AI 관련 인프라 및 서비스 수요 증가의 수혜를 입을 것이라는 기대감에 기반한다. 그러나 기사는 이러한 긍정적인 전망이 현재 주가에 이미 충분히 반영되어 있을 가능성을 시사하며, 투자자들이 추가 상승 여력을 신중하게 평가해야 한다고 지적한다. CDW는 기업 및 공공 부문에 IT 솔루션을 제공하는 주요 리셀러로서, AI 기술 도입 확산에 따른 IT 지출 증가의 간접적인 수혜를 받을 수 있다. [분야 AI수요] [병목 무관] [유동성 중립] 왜중요: AI 기술 확산에 따른 간접적인 IT 서비스 및 인프라 수요 증가가 기업 가치에 어떻게 반영되는지 보여주는 사례이다.",
-   "cls": {
-    "ticker": "hanwha",
-    "sentiment": "neutral",
-    "reason": "CDW의 AI 인프라 수요 증가는 데이터센터 전력 솔루션 수요를 암시하지만, 기사는 가격 선반영 우려를 제기하고 있으며 한화엔진의 DC 전력 병목 전제(경쟁 솔루션 흡수 리스크)에 대한 직접적인 확인 신호는 아님"
-   }
-  },
-  {
-   "title": "ZAWYA: UAE 투자자들이 AI 채택을 개척하지만 최종 결정은 인간이 합니다 - TradingView",
-   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQWTNjdlFXSWVXTXp3bl9rbkZjbHB5d09XMmZUX05oZC00NU1wUUZPQXFyVkR4WUs3b29uR1lhYk5HejFwZXJxVHJRbnIyOEZlbExhZGJkd1dza1BaaGNXTEtiTjdqZzJGcWtVVWlwRVd5ZUwtQS02ejlsZU9rTnBHcVlVeDNGT0xEcXpFT3FRYU1mWFc0UUxVRExTa21VSTA5YnFEYzd4RGNHby1nX2FCUzZsRFNlbm5GVEtZRWdGQTVSVk56NkRjSmpacHdhaXhzLXdYa0RaM0xsT0NJVmc?oc=5",
-   "source": "TradingView",
-   "published": "2026-06-24T08:51:17+00:00",
-   "summary": "ZAWYA: UAE 투자자들이 AI 채택을 개척하지만 최종 결정은 인간이 합니다 TradingView",
-   "cls": {
-    "ticker": "tempus",
-    "sentiment": "neutral",
-    "reason": "UAE 투자자의 AI 채택 추세는 의료 데이터 해자 자체와 무관하며, 의료용 생성AI 규제·실제 수익화 경로(MRD 수가)의 진전 신호 부재로 긍정적 영향 제한적"
-   }
-  },
-  {
-   "title": "루마니아, 중부 유럽 내 기업 AI 도입률 최저 - 맥킨지 연구",
-   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZ09pNjd5d3U3OWxZZ0l6WGdTUlF6cmg5V3M1UG15Zy1LMlppZHBVc2VqQjRSdXpYdHJmeHFqMTEzVDNIazRSRmRKNENIdmZqckNmWVhpRFlrVlhZejJQNzZkT2g4U05ERDJMREFWZjhyVGV2NU92a2tkRm9MdjUxTENJa2RJaXUyVmZXaUNBQ005clhlVTFpaVFjbTlKTFh2NUxsWHlxUGJxTjlwdnZfdnZ1d2VzN1B0ZUdDT1FB?oc=5",
-   "source": "Business Review",
-   "published": "2026-06-24T08:12:15+00:00",
-   "summary": "맥킨지 연구에 따르면 루마니아는 중부 유럽 국가 중 기업의 AI 도입률이 가장 낮은 것으로 나타났다. 이는 루마니아 기업들이 AI 기술을 비즈니스 운영에 통합하는 데 있어 다른 중부 유럽 국가들에 비해 뒤처져 있음을 시사한다. 해당 연구는 루마니아 기업들이 AI 도입을 가속화하기 위한 전략적 노력이 필요함을 강조한다. 낮은 AI 도입률은 루마니아의 디지털 전환 및 생산성 향상에 제약이 될 수 있다. [분야 AI] [병목 무관] [유동성 중립] 왜중요: 루마니아의 낮은 AI 도입률은 해당 지역의 AI 시장 성장 잠재력과 관련 기업들의 기회 요인을 간접적으로 보여준다.",
-   "cls": {
-    "ticker": "tempus",
-    "sentiment": "neutral",
-    "reason": "루마니아의 낮은 AI 도입률은 의료 데이터 해자 구축과 무관한 지역 일반 AI 채택 현황이므로 Tempus의 MRD 수가 확대나 데이터 수익화 경로와 직접 연계되지 않음"
-   }
-  },
-  {
-   "title": "AI 채택으로 스위스에서 주니어 구인 제안 감소, 연구 결과 - 글로벌 은행 및 금융 리뷰",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNOFltZjlOWVNOSlhRU2ZMVTh0SWZFcXF5Yllpb25rWGZSOFpJd2tQSkZCY0NyRTZRckJBSU5rVm01aTdiaHlwRERQOWh1VU1va2FYcDNTQU9RYVlnUnE0QkZMLXloTTZSRTdSQmphMnBNbF84ZDExM3NjbW0yUUZUNkNLTWY2TnFsX3hCQWRQZG9hSWdUSHUwR1dvOA?oc=5",
-   "source": "Global Banking & Finance Review",
-   "published": "2026-06-24T09:50:59+00:00",
-   "summary": "AI 채택으로 스위스에서 주니어 구인 제안 감소, 연구 결과에 따르면 글로벌 은행 및 금융 검토",
-   "cls": {
-    "ticker": "tempus",
-    "sentiment": "neutral",
-    "reason": "AI 채택에 따른 금융 산업 고용 감소는 Tempus의 의료 데이터 해자와 직접 관련 없으며, MRD 수가 확대나 데이터 수익화 경로와도 무관한 매크로 신호"
-   }
-  },
-  {
-   "title": "원더풀, 기업 AI 도입을 위한 싱가포르 사업 확장 - 렛츠 데이터 사이언스",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcDNJWEpZYjdWYVk4VTRHZzVwRGh6dnFRNjRVTTJhYWpqYXZOX0txWE5FRjRJODI3X2hGNkhjNVozOWlNMjEyZUZha21sNWVmbGtRdTcxMmxsakRCTGRpSTlueXpBeGo3Y1o2QkkwWno1anpZQmlTYV9yeUxMUTl5WEhBZjY3MElXZTdYOG9fSUliX21fdUxqYmtEZmo2Z3pjVnhfMA?oc=5",
-   "source": "Let's Data Science",
-   "published": "2026-06-24T06:46:55+00:00",
-   "summary": "원더풀(Wonderful)이 기업의 AI 도입을 지원하기 위해 싱가포르 사업을 확장한다. 이번 확장은 아시아 태평양 지역 기업들의 AI 솔루션 수요 증가에 대응하기 위한 전략적 움직임이다. 원더풀은 싱가포르를 거점으로 AI 컨설팅, 솔루션 개발 및 구현 서비스를 제공하여 기업들이 AI 기술을 효과적으로 활용하도록 도울 예정이다. 이는 지역 내 AI 생태계 강화와 더불어 AI 기술 도입을 가속화하는 데 기여할 것으로 보인다. 특히 데이터 과학 및 AI 전문 인력 확보를 통해 서비스 역량을 강화할 계획이다. [분야 AI, AI수요] [병목 완화] [유동성 유입] 왜중요: 원더풀의 싱가포르 사업 확장은 아시아 태평양 지역 기업들의 AI 도입 가속화 및 관련 AI 서비스 수요 증가를 의미한다.",
-   "cls": {
-    "ticker": "none",
-    "sentiment": "neutral",
-    "reason": "원더풀의 싱가포르 AI 서비스 확장은 일반적인 산업 트렌드이며, 보유 종목 중 의료 데이터 해자(Tempus AI)나 데이터센터 전력 병목(한화엔진) 등과의 직접적 인과관계가 명확하지 않음."
-   }
-  },
-  {
-   "title": "시큐어 코드 워리어, 에이전트 개발 라이프사이클로 진화하는 SDLC에 맞춰 안전한 AI 도입 가속화를 위한 AI 도입 모델 발표",
-   "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPeTdtTzkzdzFieGEwREkxN052ajEteWwxVDBUWmpWaGNRcXdpQ1EtRkVNT2MzMWtMT2RDOGpPUHRobHk5TmdOTGpzVUFHOW81dmhYbmtsS0JWdV96ZG85ZnVNRldXd2twNEtZcERETllreDBQUzFSOEhkcUZZWnhIUVZ3SDB3ZGJHRGUxRkt0NmhrSkpKYTBGQVhMV1B3S0V5UjAzTzBDLUk5anJwUk9Xb3J1b2dHWk5USFk2cFIzQk9XSzRtT1h0dXhhZG82dXMtR3JsUzJKOWtKSURzZlFwbEpxVVl2Wi1iaUJHVDlYOWpqVy1KTFctZjVZLWN5cFhwSFhucG16TklYV210N3lETHEySTQ2Zw?oc=5",
-   "source": "iTWire",
-   "published": "2026-06-24T03:57:48+00:00",
-   "summary": "시큐어 코드 워리어는 소프트웨어 개발 라이프사이클(SDLC)이 에이전트 개발 라이프사이클로 진화함에 따라 안전한 AI 도입을 가속화하기 위한 AI 도입 모델을 발표했다. 이 모델은 기업이 AI 기반 개발 도구를 안전하게 통합하고 활용할 수 있도록 지원하며, 개발자들이 AI를 활용하여 코드를 생성하고 테스트하는 과정에서 발생할 수 있는 보안 취약점을 사전에 방지하는 데 중점을 둔다. 시큐어 코드 워리어는 AI 도입 모델을 통해 개발팀이 AI의 잠재력을 최대한 활용하면서도 보안 위험을 최소화할 수 있도록 돕는다. 이는 AI 기술이 소프트웨어 개발 프로세스에 깊이 통합되면서 발생하는 새로운 보안 과제에 대한 해결책을 제시한다. 궁극적으로 이 모델은 AI 시대의 소프트웨어 개발 보안 표준을 정립하는 데 기여할 것으로 예상된다. [분야 AI, AI수요] [병목 완화] [유동성 중립] 왜중요: AI 기반 소프트웨어 개발 환경에서 보안 취약점 발생 가능성을 줄여 AI 기술의 안전한 확산을 지원하기 때문이다.",
-   "cls": {
-    "ticker": "tempus",
-    "sentiment": "neutral",
-    "reason": "AI 기반 소프트웨어 개발 보안 솔루션은 일반적 AI 인프라 수요이며, Tempus의 의료 데이터 해자 전략과는 직접적 연관성이 없어 투자 논리에 영향을 주지 않음."
-   }
-  },
-  {
-   "title": "대만 ASE는 AI 수요를 지원하기 위해 역량을 확대하고 있다고 밝혔습니다.",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVzRzRnVZcmRtNk5wWTZsTDhSaWtrRWFLVHBZNTVBYzJRRENSWXhibjItUmVadll1Z0ZzNHdlZTVIYzVMcHd3eHNBNGpIN3ZkeTQzTlFkR0s1OVBYOWl4eG5pYjJONnF0N2RDRVRYbGM5YVhtWFh4OVlGZV84elhQeTFNczMzZnoxVTZBYWpKSjBaVzVCblpBdGhCTjl4T3NNWXduU3JjZHR1akVKY1ZqTEY3MHg?oc=5",
-   "source": "Reuters",
-   "published": "2026-06-24T04:51:00+00:00",
-   "summary": "대만 ASE는 AI 수요를 지원하기 위해 역량을 확대하고 있다고 밝혔습니다.",
-   "cls": {
-    "ticker": "hynix",
-    "sentiment": "neutral",
-    "reason": "ASE의 AI 패키징 역량 확대는 HBM 수요 증가를 시사하지만, SK하이닉스의 HBM 점유율 둔화와 하이퍼스케일러 capex 하향이 상쇄하여 중립적 영향"
-   }
-  },
-  {
-   "title": "Majesco는 보험 운영 모델을 재편하는 AI 채택 가속화를 지적합니다.",
-   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPUE9mRnZhd1pLNE4yb2N3YXE2dlo4WElxcDFSTmJJRXoxeFF3UXFHbm1GT2lONk1XUXY5b3hJZzBJQkhfLWd5NzJHR2Zsc3BSSUF4N0xueVlILU5oQ3g0WFNtNi15c2UtQm84LWsxTXVydmQ0cGVYNkJHeU9Tb2twX1ZjVGd5djgzMU1TTEN3ZmV2eDY5ZTh6elJpMThOeGdNck1DSk1Qd1FuWDl2YkE?oc=5",
-   "source": "Reinsurance News",
-   "published": "2026-06-24T07:04:53+00:00",
-   "summary": "Majesco는 보험 운영 모델을 재편하는 AI 채택 가속화를 지적합니다.",
-   "cls": {
-    "ticker": "tempus",
-    "sentiment": "neutral",
-    "reason": "보험업 AI 채택 뉴스는 의료데이터 해자와 직접 연관이 약하며, Tempus의 MRD 수가 확대나 의료데이터 수익화 경로와 무관한 산업 트렌드로 판단됨."
-   }
-  },
-  {
-   "title": "SK하이닉스, ADR 통해 美 나스닥 입성 … 45조원 조달해 HBM 승부수 - 뉴데일리",
-   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9EM2Z2ZUlqWnBIcUJEYTk2ZlhNSjVacUkxbm9tcnRIM3VpRER6VV9BYVFkQzBTMUxHektNMHJGS1pVRkUzRFl0WTlvZ1BSVnJiWTBaeU9GNEp5RlFBTHJfZTRQajdlYW1BbWdvMWRWQVdBR192NWZfUFd0RdIBgAFBVV95cUxQZXFEcEo0TlI3YlQyY0FvZmxtNjJQQlFiZFlDRDhiQ0V5QnRpNnJPNFNfTk1YV1hkWlBQaVpJeThnbFRmLUExTmV6Q05PQUgtWnA0NDFjTTRZbW1EX2Q4NmluNDVDV0VScG5TaDVWUk5GX1RVMlNCMm5BMFZJOHRkZA?oc=5",
-   "source": "뉴데일리",
-   "published": "2026-06-24T08:25:23+00:00",
-   "summary": "SK하이닉스, ADR 통해 美 나스닥 입성 … 45조원 조달해 HBM 승부수 뉴데일리",
-   "cls": {
-    "ticker": "hynix",
-    "sentiment": "neutral",
-    "reason": "45조원 자금 조달은 HBM 투자 의지를 보여주지만, 선두 점유율 유지 및 믹스 개선 실현이 핵심인데 뉴스만으로는 경쟁사 추격 억제나 수익성 개선 확실성이 검증되지 않음."
-   }
-  },
-  {
-   "title": "AI 데이터센터 병목…마벨, 마이크론 바통 이을까 - 초이스스탁US",
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5WeW5paVZnaTh3VWhqSkdEUHE2c0huOV9FaEY5TmlLZ3d3UWtwZEVDSWRZaThHX3BFekFTcktMMnJDOC1faWU2NmVkSWtKb3RYM3JXU0c0VUpyRHUwaUhzb1NpcHNvNGM?oc=5",
-   "source": "초이스스탁US",
-   "published": "2026-06-24T04:19:39+00:00",
-   "summary": "AI 데이터센터 병목…마벨, 마이크론 바통 이을까 초이스스탁US",
-   "cls": {
-    "ticker": "hanwha",
-    "sentiment": "kill",
-    "reason": "AI 데이터센터 병목이 마벨·마이크론 등 반도체 칩 솔루션으로 해결되는 추세는 한화엔진의 DC 전력 병목 가설을 무효화하며, 가스터빈·SOFC 등 경쟁 솔루션으로 수요가 흡수될 가능성을 재확인시킨다."
-   }
-  },
-  {
-   "title": "'사람을 해치지 않고는 수십억 달러를 벌 수 없다': Elon Musk의 Cory Doctorow, AI 버블 및 상사의 잔인한 환상 - The Guardian",
-   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNktKZmRiSFlKRTcxMEkyelZITUNYSzN4eUpyR0NjZkJIRXBIcFVOb0JXRW0xVFItYkJFT0JjazdlXzFaSzN2Q1V3Q0RwNjJBMzJreWhzNDNMMFhFeE16eVNXT1VSYTczYWE3OEFNT1BXOU9Pc2ZrYUpFWWFHczhvd2ljUG1xbGFlV09mcndYLTkwenVYUEdvRHVENTlUaUpfdWR0SUZzd0NPSXh3Tldv?oc=5",
-   "source": "The Guardian",
-   "published": "2026-06-24T09:00:00+00:00",
-   "summary": "'사람들에게 상처를 주지 않고는 수십억 달러를 벌 수 없다': 코리 닥터로우(Cory Doctorow), 엘론 머스크(Elon Musk), AI 거품과 상사들의 잔인한 환상 - The Guardian",
-   "cls": {
-    "ticker": "none",
-    "sentiment": "neutral",
-    "reason": "Elon Musk와 AI 버블에 대한 철학적·비판적 논평으로, 보유 종목(반도체·방위·의료AI)과의 직접적인 사업 영향 신호가 없음."
-   }
-  },
-  {
-   "title": "850억 달러는 그에게 충분하지 않았습니다: Elon Musk는 미친 모금 캠페인을 시작했습니다 - The Jerusalem Post",
-   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNQ2pmOW1XVUlGVDk2NS1hcmpucU1oNk9pZElLYUlzLU5Qck0zeXRjZ19pLUJzODdxdkZhMTQ2ZmtxUUpOXzF5OV9FR1JLQWdjR29PcTQ5T2ZCbjVfUERocFVXRG56NlFuSURoaUdGaWVtbDUwTkVxNUpxU3lmTk1oLTVRNUkzUQ?oc=5",
-   "source": "The Jerusalem Post",
-   "published": "2026-06-24T07:35:00+00:00",
-   "summary": "850억 달러는 그에게 충분하지 않았습니다: 엘론 머스크(Elon Musk)가 미친 모금 캠페인을 시작했습니다.",
-   "cls": {
-    "ticker": "none",
-    "sentiment": "neutral",
-    "reason": "엘론 머스크의 자금 조달 관련 뉴스는 보유 종목(반도체/방위/의료 AI)과 직접적 사업 연관성이 없어 투자 논리에 영향을 주지 않음"
-   }
-  },
-  {
-   "title": "2026년 AI 인프라 투자 붐: 7000억 달러 규모의 하이퍼스케일러 지출 경쟁 - Intellectia AI",
-   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1OOXNzd2JnclVUODBFd1E2azhxVGduNVZ5QnBTZnlNXy1oY0lKb3FNVXp3TXFSZkdOeEdXTENXZjBGMTkxTGNpdkVoNFZBbjFfQnZZSkNFX2hnU043Y1pLNzh3cnpvcnBETHBuaEZmNFIxb2Vh?oc=5",
-   "source": "Intellectia AI",
-   "published": "2026-06-24T08:14:41+00:00",
-   "summary": "2026년 AI 인프라 투자 붐: 7000억 달러 규모의 하이퍼스케일러 지출 경쟁 Intellectia AI",
-   "cls": {
-    "ticker": "hanwha",
-    "sentiment": "neutral",
-    "reason": "하이퍼스케일러 AI 인프라 투자 확대는 DC 전력 수요를 자극하나, 가스터빈·SOFC 등 경쟁 솔루션의 침식과 실제 중속엔진 수요 미발생 위험이 상존하여 긍정 효과가 제한적."
-   }
-  },
-  {
-   "title": "블랙스톤, 일본 AI 데이터센터에 300억 달러 투자 계획 - 보고서 - Telecompaper",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNHFLUHprUnFSNjlZSGRhbENJODZqUmVFQ2NOTHBLdXJqdFZiYlpFWEhEU2NMeXVGMFZsVVUwZkpsSGh4NjRHMUZkdzRTYU9scWM2a2w3dzNHNUxzT2E4eHNwMU1GbzBzTGRIby01b2xGMDRFZnVTTGNFX0hWLUtOaWJMeGlONk10YUdTUzQ0V3NrQ2tYY3BQejNwLTh5M1pQT2tuZUVyNThBOTluVERjUG9Gdw?oc=5",
-   "source": "Telecompaper",
-   "published": "2026-06-24T06:57:12+00:00",
-   "summary": "블랙스톤, 일본 AI 데이터센터에 300억 달러 투자 계획 - 뉴스와이어",
-   "cls": {
-    "ticker": "hanwha",
-    "sentiment": "neutral",
-    "reason": "글로벌 하이퍼스케일러 capex 확대는 장기적으로 DC 전력 수요 증가를 암시하나, 일본 특정지역 투자는 한화엔진의 순차 병목 가설 검증에 직접적 영향을 주지 않으며, 경쟁 솔루션 흡수 여부가 핵심 무효화 신호인바 이 뉴스만으로는 판단 불가."
-   }
-  },
-  {
-   "title": "AI 공급망 붐으로 대만의 투자, 수출 촉진, GDP 성장률 10% 전망 - digitimes",
-   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVDVGRF9EVHg3SFJxekgyX3VTb1Jzamp6bmlza2lfUWExZ3lQYV9mV25xNUVDWE1Wb25pdlpJMElld0NEcFV5aFdQNV9ORFJadXVENnlTbnd4aWtoOGFfWWQyaGtwUWFsOVZ0VVE0cE1vQkhmbnVJX3NEcW04aFZWRmVVeEVZWkxBcVhWcUlhNUFaS0FndGc?oc=5",
-   "source": "digitimes",
-   "published": "2026-06-24T06:03:36+00:00",
-   "summary": "AI 공급망 붐이 대만의 투자와 수출을 촉진하고 GDP 성장률이 전망 숫자 10%를 넘어섰습니다.",
-   "cls": {
-    "ticker": "hynix",
-    "sentiment": "neutral",
-    "reason": "대만 AI 공급망 호황은 TSMC 등 파운드리 중심이며, HBM 수요 확대는 긍정적이나 SK하이닉스의 하이퍼스케일러 capex 하향 가이던스와 공급사 재조정 신호가 상쇄하여 중장기 점유율 선도 전제에는 직접적 영향 미미."
-   }
-  },
-  {
-   "title": "정부, 삼성·SK하이닉스와 대규모 칩 투자 논의 - Crypto Briefing",
-   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1WTWd0ZWJBcHpqNmRKN2pubzkzUFhDelQxX0ExU0ZWUVljTWJOMDVNOVY5R2VVeGthVUlsdWV1Z3hzZ21CQlMyaFE1bmhJWEtIcTNZdkJwYWY3M0xKcUlkU0lUTGh2XzRqRjYtdUY4Y3ptSFlvQ05iMHh2OTJzUQ?oc=5",
-   "source": "Crypto Briefing",
-   "published": "2026-06-24T06:50:35+00:00",
-   "summary": "정부, 삼성·SK하이닉스와 대규모 칩 투자 논의",
-   "cls": {
-    "ticker": "samsung",
-    "sentiment": "neutral",
-    "reason": "정부 투자 논의는 긍정적이나 HBM 수율 70% 미달, HBM4E 점유율 역전 실패 등 근본적 경쟁력 무효화 신호가 우선하므로 중립 평가"
-   }
-  },
-  {
-   "title": "'변전소 암초' 만난 강릉 AI데이터센터… 우상호, TF로 정면돌파 - v.daum.net",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE14TnFubGFDSzFRRUJnWEtnM2w2MkdiSEg3b0FKaGQ2eVEyamRPdEFQNERMTFlvN21WcVcyaDNRaVBjcWZ0LXF4aEhKWGQzLU0?oc=5",
-   "source": "v.daum.net",
-   "published": "2026-06-24T08:00:17+00:00",
-   "summary": "'변전소 암초' 만난 강릉 AI데이터센터… 우상호, TF로 정면돌파 v.daum.net",
-   "cls": {
-    "ticker": "hanwha",
-    "sentiment": "kill",
-    "reason": "강릉 AI데이터센터의 변전소 병목 발생은 한화엔진의 DC 전력 솔루션(가스터빈·SOFC) 수요 시나리오가 실제로는 인프라 제약으로 인해 발현되지 않음을 의미하며, 이는 '순차 병목 해소'라는 투자 논리의 핵심 전제를 무효화한다."
-   }
-  },
-  {
-   "title": "日, LNG선 기술협력 요청...'K조선' 위상 40년 만에 역전 - 한스경제",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xOGlSZ2pFQllmWjNXVG9FM3dTTzB2NG0zanFqLWdZLUF4VzRRaXJFVkhmRGhuTHJycWg4X3hxY2ZQZ0VkeHk2UkJoWVFDUWNOUEhUT3FINGdETUJpYzhEYlZLZjlyUmxPTk5mZTNIb9IBb0FVX3lxTE0xOGlSZ2pFQllmWjNXVG9FM3dTTzB2NG0zanFqLWdZLUF4VzRRaXJFVkhmRGhuTHJycWg4X3hxY2ZQZ0VkeHk2UkJoWVFDUWNOUEhUT3FINGdETUJpYzhEYlZLZjlyUmxPTk5mZTNIbw?oc=5",
-   "source": "한스경제",
-   "published": "2026-06-24T08:14:38+00:00",
-   "summary": "日, LNG선 기술협력 요청...'K조선' 위상 40년 만에 역전 한스경제",
-   "cls": {
-    "ticker": "none",
-    "sentiment": "neutral",
-    "reason": "보유 종목 중 조선업(LNG선)과 직접 관련된 기업이 없으며, 한화엔진의 해양 엔진 사업도 전력 병목 시나리오와 무관한 뉴스."
-   }
-  },
-  {
-   "title": "호남 반도체 투자 논란 확산…용수·전력·인력·공급망 등 복합 인프라 관건",
-   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1KTXM4aUJXdVNGYWZVZmtiM0NzbVVvdDdUcDlTN2U3dUJWNENIUkhWcWI5N1BPZksxYWVRLTYyZGhIY0FQbmpGMWJxYUZFQS02NmFQWG5NTXc5TXJTZzAtRWhR?oc=5",
-   "source": "매일신문",
-   "published": "2026-06-24T07:36:32+00:00",
-   "summary": "전라남도에 추진되는 대규모 반도체 클러스터 조성 사업을 둘러싸고 용수, 전력, 인력, 공급망 등 복합적인 인프라 구축 문제가 논란의 핵심으로 부상하고 있습니다. 특히, 반도체 생산에 필수적인 대규모 용수 확보 방안과 안정적인 전력 공급 계획이 불투명하다는 지적이 제기되고 있습니다. 또한, 숙련된 반도체 전문 인력 확보와 관련 산업 생태계 조성을 위한 구체적인 로드맵 부재도 문제점으로 지적됩니다. 이러한 인프라 구축의 난제들이 해결되지 않을 경우, 투자 유치 및 사업 성공 가능성에 대한 우려가 커지고 있으며, 지역 사회 및 전문가들 사이에서 사업 추진 방식과 타당성에 대한 논쟁이 확산되고 있습니다. 정부와 지자체는 이러한 인프라 관련 문제들을 해결하기 위한 실질적인 방안을 제시하고, 투명한 정보 공개를 통해 사업 추진의 신뢰도를 높여야 할 필요성이 제기됩니다. [분야 AI수요,데이터센터,전력] [병목 악화] [유동성 중립] 왜중요: 반도체 산업의 핵심 인프라 구축 난제는 향후 관련 산업의 성장성과 투자 매력도에 직접적인 영향을 미칠 수 있기 때문입니다.",
-   "cls": {
-    "ticker": "hanwha",
-    "sentiment": "kill",
-    "reason": "호남 반도체 클러스터의 전력·용수 인프라 불확실성 심화는 DC 전력 병목 해소 수요 자체를 약화시키며, 경쟁 솔루션(가스터빈·SOFC)으로의 대체 가능성을 더욱 높이는 신호"
-   }
-  },
-  {
-   "title": "김용범 \"반도체 증설, 기다리면 늦어…수요 못 맞출까 두려워\" - 한국경제",
-   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE83cTZMcjhjYldVT2t5VmJucWMwT1J5MHVrMTVaX0VKTV9kZ3ZLd24zcHRRcGNxRWxqdFhtZjQ5T2thYVZIOGJxUXBEZHloLWNyZGIya9IBVEFVX3lxTE83cTZMcjhjYldVT2t5VmJucWMwT1J5MHVrMTVaX0VKTV9kZ3ZLd24zcHRRcGNxRWxqdFhtZjQ5T2thYVZIOGJxUXBEZHloLWNyZGIyaw?oc=5",
-   "source": "한국경제",
-   "published": "2026-06-24T05:55:01+00:00",
-   "summary": "김용범 \"반도체 증설, 기다리면 늦어…수요 못 맞출까 두려워\" 한국경제",
-   "cls": {
-    "ticker": "hynix",
-    "sentiment": "neutral",
-    "reason": "수요 선행 증설 의지는 긍정적이나, 하이퍼스케일러 capex 하향 가이던스와 루빈 공급사 재조정 신호 속에서 실제 수요 매칭 가능성이 불확실하므로 중립 평가"
-   }
-  },
-  {
-   "title": "미국 빅테크들과 잇달아 공급계약 맺은 가온전선, 글로벌 전력 배전 시장 공략 '가속페달' - 글로벌경제신문",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1Pdm1rdlprdGxVc3F0cGt2YnhCN1BLcXN2bEt0bVlRTnBjWlNqYm5nYUNzM2VEa2tnRGh2R01TR1FXOU05a21jWGN6aFlDUGppaENHdW9UckpyR3d2MU1iejRsTzFYZmlBU0QtcNIBcEFVX3lxTE8tcndMc0RMQ1NVX2I5RHdyaWtzenQ3cnBtMU1VQWQzMUFtMFFmZlVIbHUzY3FzRXVrY01URU42Q0RDZkpYdkdDWlNxcEhPUDQ5eWttNFhhbGZIZFJyb09jOHFJVzVkZHRaOVMtMnpLWkU?oc=5",
-   "source": "글로벌경제신문",
-   "published": "2026-06-24T05:36:21+00:00",
-   "summary": "미국 빅테크들과 잇달아 공급계약 맺은 가온전선, 글로벌 전력 배전 시장 공략 '가속페달' 글로벌경제신문",
-   "cls": {
-    "ticker": "hanwha",
-    "sentiment": "neutral",
-    "reason": "가온전선의 전력 배전 공급계약 확대는 DC 전력 수요 증가를 암시하지만, 한화엔진의 중속엔진 수요 창출로 직결되지 않으며 경쟁 솔루션(가스터빈·SOFC)이 이미 시장을 선점 중"
-   }
-  },
-  {
-   "title": "UN 사무총장, 'AI기업 환경비용' 공개 촉구 - 넷제로뉴스",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBNSU1WMUxqbkVublJGMVNqelY4THFZeHFJQy03OWhMWEdQRFRQZ2tqeTVNQjZ3b2J3OEwzUTJPRWJTT1UyM0EwS1ZwNy12T1lJemNPLTNhSnFkLXNpNFRhU2RkYU5yRjlwM0RYVkp30gFuQVVfeXFMUE1JTVYxTGpuRW5uUkYxU2p6VjhMcVl4cUlDLTc5aExYR1BEVFBna2p5NU1CNndvYnc4TDNRMk9FYlNPVTIzQTBLVnA3LXZPWUl6Y08tM2FKcWQtc2k0VGFTZGRhTnJGOXAzRFhWSnc?oc=5",
-   "source": "넷제로뉴스",
-   "published": "2026-06-24T06:31:57+00:00",
-   "summary": "UN 사무총장, 'AI기업 환경비용' 공개 촉구 넷제로뉴스",
-   "cls": {
-    "ticker": "tempus",
-    "sentiment": "kill",
-    "reason": "AI 기업의 환경비용 공시 압박은 데이터센터 운영비 증가와 규제 리스크로 이어져 Tempus의 데이터 수익화 경로와 마진율 개선 전제를 훼손할 수 있음."
-   }
-  },
-  {
    "title": "[유리기판 대전] TSMC, 기술보다 공급망이 무기…CoWoS 영향력으로 차별화 - 녹색경제신문",
    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9lOGJaMExzQ2JGdDcxRjhPWjlRR3FodjJjQzd2S0RjcE1HV0pSb2V3NFZJcjBmV2xidURXMC1ZUmhFTHFXVXF2SFc0bGZfT3k2TGNXZllwaWdQbk5NMEdVZnMyU01CazlD?oc=5",
    "source": "녹색경제신문",
    "published": "2026-06-24T06:17:34+00:00",
    "summary": "[유리기판 대전] TSMC, 기술보다 공급망이 무기…CoWoS 영향력으로 차별화 녹색경제신문",
-   "cls": {
-    "ticker": "samsung",
-    "sentiment": "kill",
-    "reason": "TSMC의 CoWoS 공급망 우위가 강화되면 삼성 파운드리의 경쟁력 격차가 심화되어 SOTP 저평가 논리의 핵심 전제인 파운드리 반등 시나리오가 더욱 훼손된다."
-   }
+   "cls": null
   },
   {
    "title": "AI 채택으로 2026년 1분기 동안 미국 벤처 캐피털 활동 기록 - Crowdfund Insider",
@@ -469,11 +280,7 @@
    "source": "Crowdfund Insider",
    "published": "2026-06-24T02:37:03+00:00",
    "summary": "AI 채택으로 2026년 1분기 동안 기록적인 미국 벤처 캐피털 활동 촉진 Crowdfund Insider",
-   "cls": {
-    "ticker": "tempus",
-    "sentiment": "bull",
-    "reason": "AI 채택 확대와 벤처캐피털 활동 증가는 의료 AI 데이터 기업의 펀딩 환경과 밸류에이션 상승을 지원하는 긍정 신호"
-   }
+   "cls": null
   },
   {
    "title": "자비스, 반도체 유리기판 첨단 패키징용 X-ray CT 검사장비 수주 - 전자신문",
@@ -481,12 +288,8 @@
    "source": "전자신문",
    "published": "2026-06-24T04:14:00+00:00",
    "summary": "자비스, 반도체 유리기판 첨단 패키징용 X-ray CT 검사장비 수주 전자신문",
-   "cls": {
-    "ticker": "hynix",
-    "sentiment": "bull",
-    "reason": "고급 X-ray CT 검사장비 수주는 반도체 패키징 고도화(HBM, 고급 패키징 수율 개선)를 위한 필수 인프라이며, SK하이닉스의 HBM 양산 물량 확대 및 수율 개선 시나리오를 뒷받침하는 긍정 신호"
-   }
+   "cls": null
   }
  ],
- "savedAt": "2026-06-24T11:33:14.203Z"
+ "savedAt": "2026-06-24T21:26:27.744Z"
 }
