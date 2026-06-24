@@ -51,7 +51,7 @@ QUEUE_FILE = "queue.json"
 NEWS_FILE = "news.json"        # 대시보드(thesis-tracker)가 읽는 파일
 NEWS_MAX_ITEMS = 150           # news.json 누적 상한(오래된 것부터 제거)
 SEEN_RETENTION_DAYS = 7
-MAX_SEND_PER_RUN = 10
+MAX_SEND_PER_RUN = 15         # 1시간 주기에 맞춰 회당 발송량 상향(10→15)
 MIN_SCORE_TO_SEND = 3          # 수요·병목 단일 신호 뉴스도 통과, 단신(음수~0점)은 차단
 NEWS_WINDOW_HOURS = 6
 SIMILARITY_THRESHOLD = 0.68
@@ -688,6 +688,11 @@ _gt_state = {"obj": None, "disabled": False}
 _gt_cache = {}
 
 
+def has_chinese(t):
+    # 한자(CJK 통합 한자) 포함 여부 — 중국어/번체 감지용
+    return bool(re.search(r"[\u4e00-\u9fff]", t or ""))
+
+
 def google_translate_ko(text):
     if not text or not text.strip():
         return text
@@ -701,26 +706,43 @@ def google_translate_ko(text):
         try:
             from deep_translator import GoogleTranslator
             _gt_state["obj"] = GoogleTranslator(source="auto", target="ko")
+            # 중국어 전용 번역기도 미리 준비(auto가 실패할 때 대비)
+            _gt_state["zh"] = GoogleTranslator(source="zh-CN", target="ko")
         except Exception as e:
             print(f"[WARN] google translate init fail: {e}")
             _gt_state["disabled"] = True
             return text
+    snippet = text[:4500]
+    # 1차: auto 감지
     try:
-        out = _gt_state["obj"].translate(text[:4500])
-        if out and out.strip():
+        out = _gt_state["obj"].translate(snippet)
+        if out and out.strip() and out.strip() != snippet.strip():
             _gt_cache[text] = out
             time.sleep(0.4)
             return out
     except Exception as e:
-        print(f"[WARN] google translate fail: {e}")
+        print(f"[WARN] google translate(auto) fail: {e}")
+    # 2차: 한자가 있으면 중국어로 명시 재시도(auto 실패/무변환 대비)
+    if has_chinese(snippet) and _gt_state.get("zh"):
+        try:
+            out = _gt_state["zh"].translate(snippet)
+            if out and out.strip():
+                _gt_cache[text] = out
+                time.sleep(0.4)
+                return out
+        except Exception as e:
+            print(f"[WARN] google translate(zh) fail: {e}")
     return text
 
 
 def build_min(it):
     """Gemini 미사용/실패 시: 제목+링크. 비한글이면 구글번역으로 한글화."""
     title = it["title"]
-    if not has_korean(title):
-        title = google_translate_ko(title)
+    # 한글이 없거나, 한자가 섞여 있으면 번역 시도(중국어 제목 한글화)
+    if not has_korean(title) or has_chinese(title):
+        translated = google_translate_ko(title)
+        if translated:
+            title = translated
     src = f" · {esc(it['source'])}" if it["source"] else ""
     return f'<b>{esc(title)}</b>\n🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}'
 
@@ -748,8 +770,10 @@ def make_news_item(it, a):
             summary = (summary + " " + " ".join(tail)).strip()
     else:   # Gemini 미사용/실패 → 제목 한글화, 요약은 RSS 요약
         title = it["title"]
-        if not has_korean(title):
-            title = google_translate_ko(title)
+        if not has_korean(title) or has_chinese(title):
+            t = google_translate_ko(title)
+            if t:
+                title = t
         summary = it.get("summary", "")
         if summary and not has_korean(summary):
             summary = google_translate_ko(summary)
