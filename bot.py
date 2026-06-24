@@ -41,7 +41,9 @@ except Exception:
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip()
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite").strip()
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
+# 503(과부하) 시 폴백할 모델: 메인이 붐비면 이쪽으로 한 번 더 시도
+GEMINI_FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash-lite").strip()
 
 # ───────────────────────── 설정 ─────────────────────────
 SEEN_FILE = "seen.json"
@@ -417,7 +419,7 @@ GEMINI_URL = (
 _gemini_state = {"calls": 0, "disabled": False, "last": 0.0, "consec_fail": 0}
 
 
-def gemini_analyze(title, summary, source, body=""):
+def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=False):
     """
     본문(있으면) 기반 한국어 번역+5~7문장 요약+중요도+병목/유동성/수요 라벨.
     반환 dict 또는 None(실패/한도). None이면 제목+링크만 처리.
@@ -465,7 +467,8 @@ def gemini_analyze(title, summary, source, body=""):
         },
     }
     headers = {"x-goog-api-key": GEMINI_KEY, "Content-Type": "application/json"}
-    url = GEMINI_URL.format(model=GEMINI_MODEL)
+    active_model = _model or GEMINI_MODEL
+    url = GEMINI_URL.format(model=active_model)
 
     for attempt in range(GEMINI_RETRY_MAX + 1):
         try:
@@ -500,9 +503,15 @@ def gemini_analyze(title, summary, source, body=""):
                           f"(재시도 {attempt+1}/{GEMINI_RETRY_MAX}, {wait:.1f}초 후)")
                     time.sleep(wait)
                     continue
-                # 재시도 소진 → 이 기사만 폴백. 봇 전체는 중단하지 않음
-                # (연속 GEMINI_CONSEC_FAIL_STOP회 실패 시에만 위에서 중단됨)
-                print(f"[WARN] Gemini {r.status_code} 재시도 소진 → 이 기사만 제목+링크")
+                # 재시도 소진 → 폴백 모델로 한 번 더 시도(아직 폴백 안 썼을 때만)
+                if not _is_fallback and GEMINI_FALLBACK_MODEL and GEMINI_FALLBACK_MODEL != active_model:
+                    print(f"[WARN] Gemini {r.status_code} 재시도 소진 → 폴백 모델"
+                          f"({GEMINI_FALLBACK_MODEL})로 전환 시도")
+                    _gemini_state["consec_fail"] = 0   # 폴백은 새 기회로 간주
+                    return gemini_analyze(title, summary, source, body=body,
+                                          _model=GEMINI_FALLBACK_MODEL, _is_fallback=True)
+                # 폴백까지 실패 → 이 기사만 제목+링크. 봇 전체는 중단 안 함
+                print(f"[WARN] Gemini {r.status_code} 재시도/폴백 소진 → 이 기사만 제목+링크")
                 return None
 
             print(f"[WARN] Gemini {r.status_code}: {r.text[:200]} → 폴백")
