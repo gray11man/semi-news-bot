@@ -31,9 +31,10 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite").strip()
 
 # ───────────────────────── 설정 ─────────────────────────
 SEEN_FILE = "seen.json"
-QUEUE_FILE = "queue.json"          # 30건 초과분 이월 저장
+QUEUE_FILE = "queue.json"          # 12건 초과분 이월 저장
 SEEN_RETENTION_DAYS = 7
-MAX_SEND_PER_RUN = 30              # 회당 최대 발송
+MAX_SEND_PER_RUN = 10              # 회당 최대 발송 (메시지 폭주 방지)
+MIN_SCORE_TO_SEND = 3              # 이 점수 미만은 발송 제외 (중요한 것만)
 NEWS_WINDOW_HOURS = 6              # 최근 N시간 이내 뉴스만
 SIMILARITY_THRESHOLD = 0.68
 REQUEST_TIMEOUT = 25
@@ -98,20 +99,15 @@ FEEDS = [
     # 대만
     gnews("台積電 OR CoWoS OR AI 伺服器 OR 半導體 產能", "zh"),
 
-    # ── 사용자 관심 테마 (2026.06 추가) ──
+    # ── 사용자 관심 테마 (2026.06) ──
     # 한화엔진 + 4행정 중속엔진 + 데이터센터 발전엔진
     gnews("한화엔진 OR 4행정 중속엔진 OR 데이터센터 발전엔진 OR 힘센엔진 OR 선박엔진 발전", "ko"),
     gnews("한화엔진 OR STX엔진 OR HD현대마린엔진 OR 데이터센터 엔진 OR 가스엔진 발전", "ko"),
     # 조선주
     gnews("조선주 OR HD현대중공업 OR 삼성중공업 OR 한화오션 OR 조선 수주 OR LNG선 발주", "ko"),
-    # Tempus AI + 미국 의료 AI 시장
-    gnews("Tempus AI OR \"TEM stock\" OR precision medicine AI OR oncology AI diagnostics", "en"),
-    gnews("healthcare AI OR medical AI FDA OR clinical AI OR genomics AI OR AI diagnostics", "en"),
-    gnews("Tempus AI OR 템퍼스 OR 미국 의료AI OR 정밀의료 OR AI 진단", "ko"),
-    # Critical Metals + 희토류
-    gnews("Critical Metals OR \"CRML\" OR Tanbreez OR rare earth OR REE OR Greenland rare earth", "en"),
-    gnews("rare earth OR critical minerals OR MP Materials OR USA Rare Earth OR magnet supply", "en"),
-    gnews("희토류 OR 영구자석 OR 핵심광물 OR 희토류 공급망 OR 중국 희토류 규제", "ko"),
+    # Tempus AI (보유 종목)
+    gnews("Tempus AI OR \"TEM stock\" OR Tempus oncology OR Tempus FDA", "en"),
+    gnews("Tempus AI OR 템퍼스", "ko"),
 ]
 
 # ───────────────────────── 필터 키워드 ─────────────────────────
@@ -127,13 +123,10 @@ INCLUDE = [
     "전력", "원전", "가스터빈", "패키징", "투자", "수주", "증설", "공급",
     # 일/중 핵심
     "半導体", "データセンター", "人工智能", "芯片", "数据中心", "算力", "台積電",
-    # 사용자 관심 테마 (2026.06 추가)
+    # 사용자 관심 테마 (2026.06)
     "한화엔진", "4행정", "중속엔진", "힘센", "선박엔진", "조선", "hd현대중공업",
     "삼성중공업", "한화오션", "stx엔진", "lng선", "발전엔진", "가스엔진",
-    "tempus", "템퍼스", "정밀의료", "의료ai", "헬스케어", "oncology", "genomics",
-    "fda", "diagnostics", "clinical", "healthcare", "precision medicine",
-    "critical metals", "crml", "tanbreez", "rare earth", "ree", "희토류",
-    "영구자석", "핵심광물", "critical minerals", "mp materials", "magnet",
+    "tempus", "템퍼스",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -269,18 +262,35 @@ def passes_filter(title, summary):
 
 
 def base_score(title, summary):
-    """1차 중요도(키워드 기반). 병목/유동성 신호 가중."""
+    """1차 중요도(키워드 기반). 병목/유동성/관심종목 신호 가중."""
     text = f"{title} {summary}".lower()
     score = 0
-    # 유동성/규모 신호
-    for kw in ["capex", "billion", "investment", "funding", "수주", "계약", "조 원",
-               "억 달러", "acquisition", "deal", "contract", "투자", "발주", "증설"]:
+    # 유동성/규모/이벤트 신호 (+3) — 산업에 실제 영향 주는 사건
+    strong = [
+        "capex", "billion", "investment", "funding", "수주", "계약", "조 원",
+        "억 달러", "acquisition", "deal", "contract", "투자", "발주", "증설",
+        "fda", "approval", "승인", "양산", "출시", "공급계약", "파트너십",
+        "partnership", "돌파", "신고가", "목표가", "상향", "수주잔고",
+        "ipo", "인수", "합병", "기록적", "사상 최대", "record",
+        "collaboration", "협업", "제휴", "협력", "선정", "채택", "공급",
+        "launch", "unveil", "secures", "wins", "공개",
+    ]
+    for kw in strong:
         if kw in text:
             score += 3
-    # 병목 신호 (1단계 상향)
+            break   # 중복 가산 방지(한 번만)
+    # 병목 신호 (+2)
     if any(k in text for k in BOTTLENECK):
         score += 2
-    # 단신 감점
+    # 관심 종목/테마 가점 (+2) — 형님이 보는 종목은 우선 노출
+    watchlist = [
+        "한화엔진", "tempus", "템퍼스", "hd현대중공업", "삼성중공업", "한화오션",
+        "stx엔진", "sk하이닉스", "하이닉스", "삼성전자", "엔비디아", "nvidia",
+        "tsmc", "micron", "마이크론", "4행정", "힘센", "조선",
+    ]
+    if any(k in text for k in watchlist):
+        score += 2
+    # 단신 감점 (주가 등락 등)
     for kw in ["주가", "시총", "장중", "마감", "shares", "stock rises", "stock falls",
                "급등", "급락", "보합"]:
         if kw in text:
@@ -618,6 +628,11 @@ def main():
         seen_nt.append(it["ntitle"])
         uniq.append(it)
     uniq.sort(key=lambda x: x.get("score", 0), reverse=True)
+
+    # 중요도 필터: 일정 점수 미만(단신·저신호)은 발송 제외
+    before = len(uniq)
+    uniq = [it for it in uniq if it.get("score", 0) >= MIN_SCORE_TO_SEND]
+    print(f"[INFO] 중요도 필터: {before}건 → {len(uniq)}건 (기준 {MIN_SCORE_TO_SEND}점 이상)")
 
     if not uniq:
         print("[INFO] 신규 없음 - 전송 생략")
