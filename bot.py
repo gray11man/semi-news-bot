@@ -5,7 +5,7 @@ AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이
 
 핵심 변경점(v1 → v2):
   1) 발송 필터 강화: 점수 기준 상향 + 단신/주가류 감점 강화 + AI수요/관심종목 가점.
-  2) 본문 읽기: 기사 URL 본문을 추출(trafilatura)해 Gemini에 전달 → 10~15문장 한국어 요약.
+  2) 본문 읽기: 기사 URL 본문을 추출(trafilatura)해 Gemini에 전달 → 5~7문장 한국어 요약.
   3) 다국어 본문 번역: Gemini가 영/중/일/대만어 본문을 직접 읽고 한국어로 요약(언어 무관).
   4) AI 수요 뉴스 추가: 토큰소비·추론수요·캐파부족·가동률·매출가이던스 등 수요측 피드/키워드 신설.
   5) 구조 수정: '제목 → 요약' 순서로 출력(v1은 요약이 먼저 나오던 버그).
@@ -50,17 +50,17 @@ NEWS_FILE = "news.json"        # 대시보드(thesis-tracker)가 읽는 파일
 NEWS_MAX_ITEMS = 150           # news.json 누적 상한(오래된 것부터 제거)
 SEEN_RETENTION_DAYS = 7
 MAX_SEND_PER_RUN = 10
-MIN_SCORE_TO_SEND = 5          # ↑ 상향(v1=3): 중요한 것만 통과
+MIN_SCORE_TO_SEND = 3          # 수요·병목 단일 신호 뉴스도 통과, 단신(음수~0점)은 차단
 NEWS_WINDOW_HOURS = 6
 SIMILARITY_THRESHOLD = 0.68
 REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 
-GEMINI_MIN_INTERVAL = 6.5
+GEMINI_MIN_INTERVAL = 4.0          # 호출 간격(초). Flash-Lite는 RPM 여유 있어 단축
 GEMINI_MAX_CALLS_PER_RUN = 30
-GEMINI_RETRY_MAX = 0
-GEMINI_RETRY_BASE = 2.0
-GEMINI_CONSEC_FAIL_STOP = 1
+GEMINI_RETRY_MAX = 2               # 503/타임아웃 시 최대 2회 재시도(지수 백오프)
+GEMINI_RETRY_BASE = 2.0           # 대기: 2초, 4초...
+GEMINI_CONSEC_FAIL_STOP = 4       # 연속 4회 실패해야 중단(1→4로 완화)
 RSS_MAX_ENTRIES = 30
 
 # 본문 추출 설정
@@ -168,6 +168,10 @@ BOTTLENECK = [
     "hbm", "cowos", "packaging", "gpu", "dram", "nand", "optical", "transceiver",
     "power", "grid", "turbine", "substation", "cooling", "전력", "송전", "변전",
     "가스터빈", "냉각", "패키징", "고대역폭", "capacity", "shortage", "증설", "감산",
+    # 수요 뉴스에 흔히 동반되는 공급제약 표현(수요+병목 → 합산으로 발송기준 도달)
+    "부족", "품귀", "수급", "병목", "tight", "sold out", "공급난", "대란",
+    "리드타임", "lead time", "backlog", "수주잔고", "capex", "설비투자",
+    "전력난", "부족분", "공급부족", "수급난", "물량부족", "증설 경쟁",
 ]
 # AI 수요 신호(가점용)
 DEMAND_SIGNALS = [
@@ -176,6 +180,10 @@ DEMAND_SIGNALS = [
     "ai workload", "enterprise ai", "ai agent", "guidance",
     "ai 수요", "추론 수요", "연산 수요", "캐파 부족", "gpu 부족", "가동률",
     "ai 매출", "수주잔고", "ai 에이전트", "기업용 ai", "需求", "需要",
+    # 한국어 표현 변형 보강
+    "수요 급증", "수요 폭증", "토큰 사용", "토큰 소비", "추론 폭증",
+    "연산 폭증", "ai 채택", "도입 확대", "트래픽 급증", "사용량 폭증",
+    "컴퓨팅 수요", "데이터센터 수요",
 ]
 
 
@@ -312,9 +320,9 @@ def base_score(title, summary):
             break
     if any(k in text for k in BOTTLENECK):
         score += 2
-    # AI 수요 신호 가점(+2) — 수요측 변화는 산업 방향성에 직결
+    # AI 수요 신호 가점(+3) — 수요측 변화는 산업 방향성에 직결, 종목명 없어도 통과시킴
     if any(k in text for k in DEMAND_SIGNALS):
-        score += 2
+        score += 3
     watchlist = [
         "한화엔진", "tempus", "템퍼스", "hd현대중공업", "삼성중공업", "한화오션",
         "stx엔진", "sk하이닉스", "하이닉스", "삼성전자", "엔비디아", "nvidia",
@@ -411,7 +419,7 @@ _gemini_state = {"calls": 0, "disabled": False, "last": 0.0, "consec_fail": 0}
 
 def gemini_analyze(title, summary, source, body=""):
     """
-    본문(있으면) 기반 한국어 번역+10~15문장 요약+중요도+병목/유동성/수요 라벨.
+    본문(있으면) 기반 한국어 번역+5~7문장 요약+중요도+병목/유동성/수요 라벨.
     반환 dict 또는 None(실패/한도). None이면 제목+링크만 처리.
     """
     if not GEMINI_KEY or _gemini_state["disabled"]:
@@ -439,7 +447,7 @@ def gemini_analyze(title, summary, source, body=""):
         "원문이 영어/중국어/일본어/대만어(번체)든 모두 한국어로 옮겨라.\n"
         "아래 7개 라벨 형식으로만 답하라. 각 줄 라벨 그대로, 값만 채워라. 다른 말 금지.\n"
         "제목: (한국어 번역 제목, 한 줄)\n"
-        "요약: (반드시 10~15문장의 한국어. 기사 본문의 사실/숫자/맥락을 충실히 담되 "
+        "요약: (반드시 5~7문장의 한국어. 기사 본문의 사실/숫자/맥락을 충실히 담되 "
         "한 문단으로 자연스럽게. 추측 금지)\n"
         "중요도: (S=산업구조 영향 / A=대규모 투자·계약·증설 / B=산업영향 존재 / C=참고용 중 하나)\n"
         "분야: (AI,GPU,HBM,DRAM,NAND,패키징,광통신,데이터센터,전력,원전,가스터빈,AI수요 중 해당)\n"
@@ -452,7 +460,7 @@ def gemini_analyze(title, summary, source, body=""):
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.2,
-            "maxOutputTokens": 2048,   # 10~15문장 요약 수용
+            "maxOutputTokens": 1024,   # 5~7문장 요약 수용
             "thinkingConfig": {"thinkingBudget": 0},
         },
     }
@@ -492,8 +500,9 @@ def gemini_analyze(title, summary, source, body=""):
                           f"(재시도 {attempt+1}/{GEMINI_RETRY_MAX}, {wait:.1f}초 후)")
                     time.sleep(wait)
                     continue
-                print(f"[WARN] Gemini {r.status_code} → 이후 전체 제목+링크 전환")
-                _gemini_state["disabled"] = True
+                # 재시도 소진 → 이 기사만 폴백. 봇 전체는 중단하지 않음
+                # (연속 GEMINI_CONSEC_FAIL_STOP회 실패 시에만 위에서 중단됨)
+                print(f"[WARN] Gemini {r.status_code} 재시도 소진 → 이 기사만 제목+링크")
                 return None
 
             print(f"[WARN] Gemini {r.status_code}: {r.text[:200]} → 폴백")
@@ -507,8 +516,7 @@ def gemini_analyze(title, summary, source, body=""):
                       f"{wait:.1f}초 후)")
                 time.sleep(wait)
                 continue
-            print("[WARN] Gemini timeout → 이후 전체 제목+링크 전환")
-            _gemini_state["disabled"] = True
+            print("[WARN] Gemini timeout 재시도 소진 → 이 기사만 제목+링크")
             return None
         except Exception as e:
             print(f"[WARN] Gemini fail: {e} → 폴백")
@@ -804,7 +812,7 @@ def main():
     sent = 0
     news_batch = []   # 대시보드 news.json 누적용
     for it in to_send:
-        # 1) 본문 추출 → 2) Gemini가 본문 읽고 10~15문장 요약
+        # 1) 본문 추출 → 2) Gemini가 본문 읽고 5~7문장 요약
         body = fetch_article_body(it["link"]) if FETCH_BODY else ""
         if FETCH_BODY:
             time.sleep(BODY_FETCH_DELAY)
