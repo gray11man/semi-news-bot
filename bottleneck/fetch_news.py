@@ -74,17 +74,61 @@ def fetch_rss(query, params, source_label):
     return items
 
 
+from difflib import SequenceMatcher
+
+# 같은 사건 묶기용: 핵심 주체 + 주제
+_DEDUP_ACTORS = {
+    "마이크론", "micron", "sk하이닉스", "하이닉스", "hynix", "삼성전자", "삼성",
+    "samsung", "엔비디아", "nvidia", "tsmc", "퀄컴", "qualcomm", "amd", "인텔",
+    "intel", "브로드컴", "broadcom", "한화엔진", "두산", "효성",
+}
+_DEDUP_TOPICS = {
+    "실적": {"실적", "매출", "이익", "earnings", "revenue", "분기", "사상 최대",
+             "record", "가이던스", "전망", "최고", "급등", "깜짝", "경신"},
+    "수주": {"수주", "계약", "공급계약", "발주", "contract", "deal", "수주잔고"},
+    "증설": {"증설", "투자", "공장", "capex", "설비", "착공", "ipo", "상장", "adr"},
+    "hbm": {"hbm", "고대역폭", "메모리", "dram", "슈퍼사이클", "supercycle"},
+    "전력": {"전력", "데이터센터", "전력망", "원전", "가스터빈", "power", "datacenter"},
+    "쇼티지": {"쇼티지", "shortage", "부족", "품귀", "공급난", "병목", "tight"},
+    "원자재": {"구리", "copper", "유가", "원유", "리튬", "우라늄", "희토류", "원자재"},
+    "지정학": {"전쟁", "war", "호르무즈", "제재", "방산", "지정학", "분쟁"},
+}
+
+
+def _norm(t):
+    import re as _re
+    t = _re.sub(r"\[[^\]]*\]", " ", t or "")
+    t = _re.sub(r"[^\w가-힣 ]", " ", t)
+    return _re.sub(r"\s+", " ", t).strip().lower()
+
+
+def _actors_topics(t):
+    low = _norm(t)
+    actors = {a for a in _DEDUP_ACTORS if a in low}
+    topics = {tp for tp, kws in _DEDUP_TOPICS.items() if any(k in low for k in kws)}
+    return actors, topics
+
+
+def _same_event(a, b):
+    na, nb = _norm(a), _norm(b)
+    if SequenceMatcher(None, na, nb).ratio() >= 0.6:
+        return True
+    aa, at = _actors_topics(a)
+    ba, bt = _actors_topics(b)
+    # 같은 주체 + 같은 주제 → 같은 사건으로 간주
+    if (aa & ba) and (at & bt):
+        return True
+    return False
+
+
 def dedup(items):
-    """제목 기준 중복 제거."""
-    seen = set()
-    out = []
+    """유사도 + 주체/주제 기반 중복 제거 (강화판)."""
+    kept = []
     for it in items:
-        key = it["title"][:60]
-        if key in seen:
+        if any(_same_event(it["title"], k["title"]) for k in kept):
             continue
-        seen.add(key)
-        out.append(it)
-    return out
+        kept.append(it)
+    return kept
 
 
 def fetch_news():
