@@ -13,9 +13,9 @@ from signals import (
 
 # core_top은 '축'으로 세지 않고 가산점으로만 취급할지 여부.
 # 여기서는 core_top 포함 서로 다른 카테고리 2개 이상을 S급 조건으로 둔다.
-# 난이도 하향: 서로 다른 축 2개 → 1개로 완화.
-# 더 빡세게 하려면 2로 올린다.
-MIN_DISTINCT_CATEGORIES = 1
+# 서로 다른 축 2개 이상 요구 (다시 조임).
+# 신호가 너무 많으면 이대로, 너무 적으면 1로 내린다.
+MIN_DISTINCT_CATEGORIES = 2
 
 
 def score_item(text: str):
