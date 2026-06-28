@@ -1,19 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이전트 (v2)
+AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이전트 (v2.1)
 
-핵심 변경점(v1 → v2):
-  1) 발송 필터 강화: 점수 기준 상향 + 단신/주가류 감점 강화 + AI수요/관심종목 가점.
-  2) 본문 읽기: 기사 URL 본문을 추출(trafilatura)해 Gemini에 전달 → 5~7문장 한국어 요약.
-  3) 다국어 본문 번역: Gemini가 영/중/일/대만어 본문을 직접 읽고 한국어로 요약(언어 무관).
-  4) AI 수요 뉴스 추가: 토큰소비·추론수요·캐파부족·가동률·매출가이던스 등 수요측 피드/키워드 신설.
-  5) 구조 수정: '제목 → 요약' 순서로 출력(v1은 요약이 먼저 나오던 버그).
-
-필요 패키지: requests, feedparser, trafilatura, deep-translator
-  (GitHub Actions: pip install requests feedparser trafilatura deep-translator)
-
-Gemini 최저가 모델: gemini-2.5-flash-lite ($0.10/1M in, $0.40/1M out, 2026.06 기준 최저가).
+v2 → v2.1 변경점 (중복 제거 강화):
+  - SIMILARITY_THRESHOLD 0.68 → 0.55 (더 공격적으로 유사 기사 묶음)
+  - NEWS_WINDOW_HOURS 6 → 4 (같은 사건이 여러 시간 퍼지는 범위 축소)
+  - is_similar에 '같은 주체 + 같은 주제(topic)' 규칙 추가
+    → 마이크론 실적 20건처럼 종목·주제가 같으면 표현이 달라도 한 건만 남김
 """
 
 import os
@@ -30,7 +24,6 @@ from urllib.parse import urlparse, quote
 import requests
 import feedparser
 
-# 본문 추출(없어도 봇은 동작 — 요약 입력이 RSS 요약으로 축소될 뿐)
 try:
     import trafilatura
     _HAS_TRAFI = True
@@ -42,33 +35,31 @@ TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip()
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
-# 503(과부하) 시 폴백할 모델: 메인이 붐비면 이쪽으로 한 번 더 시도
 GEMINI_FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash-lite").strip()
 
 # ───────────────────────── 설정 ─────────────────────────
 SEEN_FILE = "seen.json"
 QUEUE_FILE = "queue.json"
-NEWS_FILE = "news.json"        # 대시보드(thesis-tracker)가 읽는 파일
-NEWS_MAX_ITEMS = 150           # news.json 누적 상한(오래된 것부터 제거)
+NEWS_FILE = "news.json"
+NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 7
-MAX_SEND_PER_RUN = 15         # 1시간 주기에 맞춰 회당 발송량 상향(10→15)
-MIN_SCORE_TO_SEND = 3          # 수요·병목 단일 신호 뉴스도 통과, 단신(음수~0점)은 차단
-NEWS_WINDOW_HOURS = 6
-SIMILARITY_THRESHOLD = 0.68
+MAX_SEND_PER_RUN = 15
+MIN_SCORE_TO_SEND = 3
+NEWS_WINDOW_HOURS = 4                 # [변경] 6 → 4
+SIMILARITY_THRESHOLD = 0.55          # [변경] 0.68 → 0.55
 REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 
-GEMINI_MIN_INTERVAL = 4.0          # 호출 간격(초). Flash-Lite는 RPM 여유 있어 단축
+GEMINI_MIN_INTERVAL = 4.0
 GEMINI_MAX_CALLS_PER_RUN = 30
-GEMINI_RETRY_MAX = 2               # 503/타임아웃 시 최대 2회 재시도(지수 백오프)
-GEMINI_RETRY_BASE = 2.0           # 대기: 2초, 4초...
-GEMINI_CONSEC_FAIL_STOP = 4       # 연속 4회 실패해야 중단(1→4로 완화)
+GEMINI_RETRY_MAX = 2
+GEMINI_RETRY_BASE = 2.0
+GEMINI_CONSEC_FAIL_STOP = 4
 RSS_MAX_ENTRIES = 30
 
-# 본문 추출 설정
-FETCH_BODY = True             # 기사 본문 가져오기 on/off
+FETCH_BODY = True
 BODY_FETCH_TIMEOUT = 12
-BODY_MAX_CHARS = 6000         # Gemini 입력 비용 보호: 본문 앞 N자만 사용
+BODY_MAX_CHARS = 6000
 BODY_FETCH_DELAY = 0.5
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
@@ -101,7 +92,6 @@ MONEY_EN = (
     "AI capex OR AI funding OR \"data center investment\" OR \"GPU order\" OR "
     "\"HBM contract\" OR \"cloud deal\" OR AI acquisition OR semiconductor investment"
 )
-# ── AI 수요(신설): 토큰소비/추론수요/가동률/매출가이던스/캐파부족 등 수요측 신호 ──
 DEMAND_EN = (
     "\"AI demand\" OR \"inference demand\" OR \"token usage\" OR \"compute demand\" OR "
     "\"GPU shortage\" OR \"capacity sold out\" OR \"AI revenue\" OR \"AI adoption\" OR "
@@ -112,30 +102,22 @@ CORE_KO = (
     "엔비디아 OR HBM OR DRAM OR 낸드 OR SK하이닉스 OR 삼성전자 반도체 OR "
     "데이터센터 OR AI 투자 OR AI 인프라 OR 반도체 증설 OR 전력 OR 가스터빈 OR CXL OR 패키징"
 )
-# ── AI 수요(한국어 신설) ──
 DEMAND_KO = (
     "AI 수요 OR 추론 수요 OR AI 토큰 OR 연산 수요 OR GPU 부족 OR 캐파 부족 OR "
     "AI 매출 OR AI 가동률 OR AI 에이전트 OR 기업용 AI OR 수주잔고 OR AI 채택"
 )
 
 FEEDS = [
-    # 미국/영문 핵심
     gnews(CORE_EN, "en"),
     gnews(PEOPLE_EN, "en"),
     gnews(MONEY_EN, "en"),
-    gnews(DEMAND_EN, "en"),          # ← AI 수요 추가
-    # 한국
+    gnews(DEMAND_EN, "en"),
     gnews(CORE_KO, "ko"),
     gnews("AI 데이터센터 OR HBM 공급 OR 반도체 수주 OR AI 전력 OR 원전 데이터센터", "ko"),
-    gnews(DEMAND_KO, "ko"),          # ← AI 수요 추가
-    # 일본
+    gnews(DEMAND_KO, "ko"),
     gnews("AI半導体 OR HBM OR データセンター OR ラピダス OR 電力 AI OR AI需要 OR 推論需要", "ja"),
-    # 중국
     gnews("人工智能 芯片 OR 数据中心 OR HBM OR 算力 OR 英伟达 OR AI需求 OR 推理需求", "zh"),
-    # 대만
     gnews("台積電 OR CoWoS OR AI 伺服器 OR 半導體 產能 OR AI 需求", "zh"),
-
-    # ── 사용자 관심 테마 ──
     gnews("한화엔진 OR 4행정 중속엔진 OR 데이터센터 발전엔진 OR 힘센엔진 OR 선박엔진 발전", "ko"),
     gnews("한화엔진 OR STX엔진 OR HD현대마린엔진 OR 데이터센터 엔진 OR 가스엔진 발전", "ko"),
     gnews("조선주 OR HD현대중공업 OR 삼성중공업 OR 한화오션 OR 조선 수주 OR LNG선 발주", "ko"),
@@ -150,7 +132,6 @@ INCLUDE = [
     "micron", "broadcom", "marvell", "openai", "anthropic", "xai", "deepmind",
     "capex", "funding", "investment", "acquisition", "power", "grid", "turbine",
     "nuclear", "transformer", "optical", "transceiver", "inference",
-    # AI 수요
     "demand", "token", "workload", "backlog", "utilization", "adoption", "sold out",
     "인공지능", "반도체", "엔비디아", "메모리", "데이터센터", "고대역폭",
     "전력", "원전", "가스터빈", "패키징", "투자", "수주", "증설", "공급",
@@ -170,19 +151,16 @@ BOTTLENECK = [
     "hbm", "cowos", "packaging", "gpu", "dram", "nand", "optical", "transceiver",
     "power", "grid", "turbine", "substation", "cooling", "전력", "송전", "변전",
     "가스터빈", "냉각", "패키징", "고대역폭", "capacity", "shortage", "증설", "감산",
-    # 수요 뉴스에 흔히 동반되는 공급제약 표현(수요+병목 → 합산으로 발송기준 도달)
     "부족", "품귀", "수급", "병목", "tight", "sold out", "공급난", "대란",
     "리드타임", "lead time", "backlog", "수주잔고", "capex", "설비투자",
     "전력난", "부족분", "공급부족", "수급난", "물량부족", "증설 경쟁",
 ]
-# AI 수요 신호(가점용)
 DEMAND_SIGNALS = [
     "ai demand", "inference demand", "token usage", "compute demand",
     "sold out", "utilization", "backlog", "ai revenue", "ai adoption",
     "ai workload", "enterprise ai", "ai agent", "guidance",
     "ai 수요", "추론 수요", "연산 수요", "캐파 부족", "gpu 부족", "가동률",
     "ai 매출", "수주잔고", "ai 에이전트", "기업용 ai", "需求", "需要",
-    # 한국어 표현 변형 보강
     "수요 급증", "수요 폭증", "토큰 사용", "토큰 소비", "추론 폭증",
     "연산 폭증", "ai 채택", "도입 확대", "트래픽 급증", "사용량 폭증",
     "컴퓨팅 수요", "데이터센터 수요",
@@ -245,8 +223,9 @@ def _jaccard(a, b):
 
 SAME_EVENT_ACTORS = {
     "이재용", "이재명", "젠슨", "황", "올트먼", "머스크", "저커버그", "아모데이",
-    "삼성전자", "하이닉스", "sk하이닉스", "마이크론", "엔비디아", "tsmc", "인텔",
-    "openai", "anthropic", "삼성", "구글", "메타", "broadcom", "amd",
+    "삼성전자", "하이닉스", "sk하이닉스", "마이크론", "micron", "엔비디아", "nvidia",
+    "tsmc", "인텔", "openai", "anthropic", "삼성", "구글", "메타", "broadcom",
+    "amd", "퀄컴", "qualcomm",
 }
 SAME_EVENT_ACTIONS = {
     "점검", "현장", "방문", "찾았다", "공급계약", "계약", "수주", "체결",
@@ -263,6 +242,20 @@ ACTION_SYNONYMS = [
     {"1위", "등극", "제치고", "추월", "역전", "왕좌"},
     {"상향", "하향", "목표가", "목표주가", "투자의견"},
 ]
+
+# [신규] 같은 사건 묶기용 주제 사전
+TOPIC_KEYWORDS = {
+    "실적": {"실적", "매출", "이익", "어닝", "earnings", "revenue", "분기", "quarter",
+             "사상 최대", "record", "가이던스", "guidance", "전망", "최고", "급등",
+             "깜짝", "예상치", "경신", "호조", "어닝서프라이즈"},
+    "수주": {"수주", "계약", "공급계약", "발주", "contract", "deal", "수주잔고", "backlog"},
+    "증설": {"증설", "투자", "공장", "capex", "설비", "착공", "클러스터", "ipo", "상장", "adr"},
+    "주가": {"주가", "급락", "목표가", "신고가", "shares", "stock", "rally", "surge"},
+    "hbm": {"hbm", "고대역폭", "메모리", "dram", "슈퍼사이클", "supercycle", "공급 부족", "공급부족"},
+    "전력": {"전력", "데이터센터", "전력망", "원전", "가스터빈", "power", "grid", "datacenter"},
+    "인수": {"인수", "합병", "m&a", "acquisition", "지분"},
+    "칩공개": {"칩 공개", "칩공개", "프로세서", "드래곤플라이", "cpu 공개", "신제품"},
+}
 
 
 def _action_group(action_set):
@@ -281,18 +274,39 @@ def _key_entities(s):
     return actors, actions
 
 
+def _topic_groups(text):
+    """텍스트가 속한 주제 집합."""
+    low = text.lower()
+    return {t for t, kws in TOPIC_KEYWORDS.items() if any(k in low for k in kws)}
+
+
 def is_similar(a, b):
+    """
+    중복 판정 (v2.1 강화).
+    1) 문자열 유사도 / Jaccard (기존)
+    2) 같은 주체 + 같은 행동그룹 (기존)
+    3) [신규] 같은 주체 + 같은 주제(topic) → 표현 달라도 같은 사건으로 묶음
+    """
     if SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD:
         return True
     if _jaccard(a, b) >= 0.45:
         return True
+
     aa_actor, aa_action = _key_entities(a)
     bb_actor, bb_action = _key_entities(b)
     shared_actor = aa_actor & bb_actor
+
     shared_group = _action_group(aa_action) & _action_group(bb_action)
     if shared_actor and shared_group:
         if _jaccard(a, b) >= 0.12:
             return True
+
+    # [신규] 같은 주체 + 같은 주제
+    if shared_actor:
+        shared_topic = _topic_groups(a) & _topic_groups(b)
+        if shared_topic and _jaccard(a, b) >= 0.08:
+            return True
+
     return False
 
 
@@ -304,7 +318,6 @@ def passes_filter(title, summary):
 
 
 def base_score(title, summary):
-    """1차 중요도. 유동성/규모 이벤트(+3), 병목(+2), AI수요(+2), 관심종목(+2), 단신(-3)."""
     text = f"{title} {summary}".lower()
     score = 0
     strong = [
@@ -322,7 +335,6 @@ def base_score(title, summary):
             break
     if any(k in text for k in BOTTLENECK):
         score += 2
-    # AI 수요 신호 가점(+3) — 수요측 변화는 산업 방향성에 직결, 종목명 없어도 통과시킴
     if any(k in text for k in DEMAND_SIGNALS):
         score += 3
     watchlist = [
@@ -332,7 +344,6 @@ def base_score(title, summary):
     ]
     if any(k in text for k in watchlist):
         score += 2
-    # 단신 감점 강화(v1=-2 → -3): 주가 등락성 단신은 더 강하게 배제
     for kw in ["주가", "시총", "장중", "마감", "shares", "stock rises", "stock falls",
                "급등", "급락", "보합", "상한가", "하한가", "약세", "강세",
                "오늘의", "특징주", "이 시각"]:
@@ -378,7 +389,6 @@ def clean_summary(raw):
 
 # ───────────────────────── 본문 추출 ─────────────────────────
 def resolve_final_url(url):
-    """구글뉴스 RSS 링크는 리다이렉트 → 실제 기사 URL 확보."""
     try:
         r = requests.get(url, headers={"User-Agent": UA},
                          timeout=BODY_FETCH_TIMEOUT, allow_redirects=True)
@@ -388,10 +398,6 @@ def resolve_final_url(url):
 
 
 def fetch_article_body(url):
-    """
-    기사 본문 텍스트 추출. 언어 무관(영/중/일/대만 모두 원문 그대로 반환).
-    실패 시 빈 문자열 → 호출부가 RSS 요약으로 대체.
-    """
     if not (FETCH_BODY and _HAS_TRAFI):
         return ""
     final_url, prefetched = resolve_final_url(url)
@@ -420,10 +426,6 @@ _gemini_state = {"calls": 0, "disabled": False, "last": 0.0, "consec_fail": 0}
 
 
 def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=False):
-    """
-    본문(있으면) 기반 한국어 번역+5~7문장 요약+중요도+병목/유동성/수요 라벨.
-    반환 dict 또는 None(실패/한도). None이면 제목+링크만 처리.
-    """
     if not GEMINI_KEY or _gemini_state["disabled"]:
         return None
     if _gemini_state["calls"] >= GEMINI_MAX_CALLS_PER_RUN:
@@ -439,7 +441,6 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
     if elapsed < GEMINI_MIN_INTERVAL:
         time.sleep(GEMINI_MIN_INTERVAL - elapsed)
 
-    # 본문이 있으면 본문을, 없으면 RSS 요약을 분석 대상으로
     content_for_model = body.strip() if body.strip() else summary
     content_label = "본문" if body.strip() else "요약(본문 추출 실패)"
 
@@ -462,7 +463,7 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.2,
-            "maxOutputTokens": 1024,   # 5~7문장 요약 수용
+            "maxOutputTokens": 1024,
             "thinkingConfig": {"thinkingBudget": 0},
         },
     }
@@ -503,14 +504,12 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
                           f"(재시도 {attempt+1}/{GEMINI_RETRY_MAX}, {wait:.1f}초 후)")
                     time.sleep(wait)
                     continue
-                # 재시도 소진 → 폴백 모델로 한 번 더 시도(아직 폴백 안 썼을 때만)
                 if not _is_fallback and GEMINI_FALLBACK_MODEL and GEMINI_FALLBACK_MODEL != active_model:
                     print(f"[WARN] Gemini {r.status_code} 재시도 소진 → 폴백 모델"
                           f"({GEMINI_FALLBACK_MODEL})로 전환 시도")
-                    _gemini_state["consec_fail"] = 0   # 폴백은 새 기회로 간주
+                    _gemini_state["consec_fail"] = 0
                     return gemini_analyze(title, summary, source, body=body,
                                           _model=GEMINI_FALLBACK_MODEL, _is_fallback=True)
-                # 폴백까지 실패 → 이 기사만 제목+링크. 봇 전체는 중단 안 함
                 print(f"[WARN] Gemini {r.status_code} 재시도/폴백 소진 → 이 기사만 제목+링크")
                 return None
 
@@ -535,7 +534,6 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
 
 
 def _parse_lines(text):
-    """'라벨: 값' 파싱. 요약은 여러 줄일 수 있어 다음 라벨 전까지 이어붙임."""
     label_map = {"제목": "title_ko", "요약": "summary_ko", "중요도": "grade",
                  "분야": "sector", "병목": "bottleneck", "유동성": "liquidity",
                  "왜중요": "why"}
@@ -563,7 +561,7 @@ def _parse_lines(text):
             v = line.split(":", 1)[-1] if ":" in line else line.split("：", 1)[-1]
             buf = [v.strip()]
         else:
-            if cur_key:   # 요약 등 멀티라인 이어쓰기
+            if cur_key:
                 buf.append(line)
     flush()
 
@@ -597,7 +595,6 @@ def collect():
             if any(is_similar(nt, s) for s in seen_titles):
                 continue
             seen_titles.append(nt)
-            # published 시각(ISO) — 대시보드 news.json용
             pub_iso = ""
             tm = entry.get("published_parsed") or entry.get("updated_parsed")
             if tm:
@@ -651,21 +648,14 @@ GRADE_EMOJI = {"S": "🔴 S", "A": "🟠 A", "B": "🟡 B", "C": "⚪ C"}
 
 
 def build_full(it, a):
-    """
-    Gemini 분석 성공 시 풀 포맷.
-    구조 수정: [등급] → 제목 → 요약 → 메타 → 왜중요 → 링크  (제목이 요약보다 먼저!)
-    """
     title_ko = a.get("title_ko") or it["title"]
     grade = GRADE_EMOJI.get(str(a.get("grade", "")).upper().strip(), "")
     lines = []
-    # 1) 등급 + 제목 (먼저)
     if grade:
         lines.append(f"{grade}")
     lines.append(f"<b>{esc(title_ko)}</b>")
-    # 2) 요약 (제목 다음)
     if a.get("summary_ko"):
         lines.append(esc(a["summary_ko"]))
-    # 3) 메타
     meta = []
     if a.get("sector"):
         meta.append(f"분야 {esc(a['sector'])}")
@@ -675,10 +665,8 @@ def build_full(it, a):
         meta.append(f"유동성 {esc(a['liquidity'])}")
     if meta:
         lines.append("· " + " | ".join(meta))
-    # 4) 왜중요
     if a.get("why"):
         lines.append(f"💡 {esc(a['why'])}")
-    # 5) 링크
     src = f" · {esc(it['source'])}" if it["source"] else ""
     lines.append(f'🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}')
     return "\n".join(lines)
@@ -689,7 +677,6 @@ _gt_cache = {}
 
 
 def has_chinese(t):
-    # 한자(CJK 통합 한자) 포함 여부 — 중국어/번체 감지용
     return bool(re.search(r"[\u4e00-\u9fff]", t or ""))
 
 
@@ -706,14 +693,12 @@ def google_translate_ko(text):
         try:
             from deep_translator import GoogleTranslator
             _gt_state["obj"] = GoogleTranslator(source="auto", target="ko")
-            # 중국어 전용 번역기도 미리 준비(auto가 실패할 때 대비)
             _gt_state["zh"] = GoogleTranslator(source="zh-CN", target="ko")
         except Exception as e:
             print(f"[WARN] google translate init fail: {e}")
             _gt_state["disabled"] = True
             return text
     snippet = text[:4500]
-    # 1차: auto 감지
     try:
         out = _gt_state["obj"].translate(snippet)
         if out and out.strip() and out.strip() != snippet.strip():
@@ -722,7 +707,6 @@ def google_translate_ko(text):
             return out
     except Exception as e:
         print(f"[WARN] google translate(auto) fail: {e}")
-    # 2차: 한자가 있으면 중국어로 명시 재시도(auto 실패/무변환 대비)
     if has_chinese(snippet) and _gt_state.get("zh"):
         try:
             out = _gt_state["zh"].translate(snippet)
@@ -736,9 +720,7 @@ def google_translate_ko(text):
 
 
 def build_min(it):
-    """Gemini 미사용/실패 시: 제목+링크. 비한글이면 구글번역으로 한글화."""
     title = it["title"]
-    # 한글이 없거나, 한자가 섞여 있으면 번역 시도(중국어 제목 한글화)
     if not has_korean(title) or has_chinese(title):
         translated = google_translate_ko(title)
         if translated:
@@ -747,16 +729,11 @@ def build_min(it):
     return f'<b>{esc(title)}</b>\n🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}'
 
 
-# ───────────────────────── news.json (대시보드 연동) ─────────────────────────
+# ───────────────────────── news.json ─────────────────────────
 def make_news_item(it, a):
-    """
-    대시보드(thesis-tracker)가 읽는 형식.
-    summary에는 Gemini 한국어 요약(있으면)을, 없으면 build_min 로직처럼 보조 처리.
-    """
-    if a:   # Gemini 분석 성공
+    if a:
         title = a.get("title_ko") or it["title"]
         summary = a.get("summary_ko") or ""
-        # 메타(분야/병목/유동성/왜중요)도 요약 뒤에 붙여 대시보드에서 맥락 보강
         tail = []
         if a.get("sector"):
             tail.append(f"[분야 {a['sector']}]")
@@ -768,7 +745,7 @@ def make_news_item(it, a):
             tail.append(f"왜중요: {a['why']}")
         if tail:
             summary = (summary + " " + " ".join(tail)).strip()
-    else:   # Gemini 미사용/실패 → 제목 한글화, 요약은 RSS 요약
+    else:
         title = it["title"]
         if not has_korean(title) or has_chinese(title):
             t = google_translate_ko(title)
@@ -787,10 +764,6 @@ def make_news_item(it, a):
 
 
 def save_news_json(new_items):
-    """
-    기존 news.json에 신규 항목을 앞쪽에 누적(중복 url 제거), 상한 유지.
-    신규가 없어도 기존 파일은 그대로 보존(절대 빈 파일로 덮어쓰지 않음).
-    """
     prev = load_json(NEWS_FILE, {"updated": "", "items": []})
     prev_items = prev.get("items", []) if isinstance(prev, dict) else []
     seen_urls = {x.get("url") for x in new_items if x.get("url")}
@@ -831,7 +804,6 @@ def main():
         print("[INFO] 신규 없음 - 전송 생략")
         save_json(SEEN_FILE, seen)
         save_json(QUEUE_FILE, [])
-        # news.json은 건드리지 않음(기존 누적 보존)
         return
 
     to_send = uniq[:MAX_SEND_PER_RUN]
@@ -843,9 +815,8 @@ def main():
     time.sleep(SEND_DELAY)
 
     sent = 0
-    news_batch = []   # 대시보드 news.json 누적용
+    news_batch = []
     for it in to_send:
-        # 1) 본문 추출 → 2) Gemini가 본문 읽고 5~7문장 요약
         body = fetch_article_body(it["link"]) if FETCH_BODY else ""
         if FETCH_BODY:
             time.sleep(BODY_FETCH_DELAY)
@@ -855,14 +826,13 @@ def main():
             sent += 1
             seen[title_key(it["title"])] = {"ntitle": it["ntitle"],
                                             "ts": now_utc().timestamp()}
-            # 텔레그램 발송 성공분만 news.json에도 적재
             news_batch.append(make_news_item(it, a))
         time.sleep(SEND_DELAY)
 
     save_json(QUEUE_FILE, leftover[:50])
     save_json(SEEN_FILE, seen)
     if news_batch:
-        save_news_json(news_batch)   # 대시보드 연동
+        save_news_json(news_batch)
     print(f"[DONE] {sent}건 전송, 이월 {len(leftover)}건, Gemini호출 {_gemini_state['calls']}")
 
 
