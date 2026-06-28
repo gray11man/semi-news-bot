@@ -30,18 +30,46 @@ def score_item(text: str):
     return total, hits
 
 
+def _primary_category(hits):
+    """그 뉴스의 '대표 주제'를 하나 정한다 (다양성 분산용)."""
+    # core_top은 너무 흔하니 대표에서 제외하고, 구체적 축을 우선
+    priority = ["geopolitics", "material", "policy", "competition",
+                "capex", "supply", "pricing", "demand", "cycle", "core_top"]
+    for cat in priority:
+        if cat in hits:
+            return cat
+    return next(iter(hits)) if hits else "기타"
+
+
 def filter_news(news_items):
     passed = []
     for item in news_items:
         text = f"{item.get('title','')} {item.get('summary','')}"
         score, hits = score_item(text)
-        # 빡센 조건: 점수 + 서로 다른 축 개수
         if score >= SCORE_THRESHOLD and len(hits) >= MIN_DISTINCT_CATEGORIES:
             enriched = dict(item)
             enriched["score"] = score
             enriched["hits"] = hits
             enriched["categories"] = [CATEGORY_LABELS[c] for c in hits.keys()]
+            enriched["_primary"] = _primary_category(hits)
             passed.append(enriched)
+
     passed.sort(key=lambda x: x["score"], reverse=True)
-    # Stage2로는 여유분(상한의 2배)만 넘겨 LLM이 최종 압축
-    return passed[: MAX_DAILY * 2]
+
+    # ── 다양성 분산: 같은 대표주제가 몰리지 않게 라운드로빈으로 뽑기 ──
+    # 주제별로 묶고, 각 주제에서 점수 높은 것부터 한 개씩 번갈아 뽑는다.
+    from collections import defaultdict
+    buckets = defaultdict(list)
+    for it in passed:
+        buckets[it["_primary"]].append(it)
+
+    diversified = []
+    # 주제별 리스트를 점수순 유지한 채 라운드로빈
+    while len(diversified) < MAX_DAILY * 2 and any(buckets.values()):
+        for cat in list(buckets.keys()):
+            if buckets[cat]:
+                diversified.append(buckets[cat].pop(0))
+                if len(diversified) >= MAX_DAILY * 2:
+                    break
+
+    return diversified
