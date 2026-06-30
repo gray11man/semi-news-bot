@@ -80,6 +80,26 @@ BLOCKED_CHANNEL_IDS = [
 ]
 PERSON_SEARCH_LOOKBACK_HOURS = 26   # 하루 1회 스케줄이라 lookback도 그에 맞게
 
+# ── 관련성 필터 (축1+축2 공통) ──
+# 채널축은 지금까지 필터가 전혀 없어서, 연합뉴스TV/SBS Biz 같은 종합뉴스 채널을
+# 추가한 뒤로 날씨/정치/스포츠 등 전부 다 왔음. 이제 제목에 아래 키워드 중
+# 하나라도 있어야만 전송하도록 강제. (Lex Fridman 등 AI 전문 팟캐스트는
+# 어차피 거의 다 걸리니 손해 없음, 종합뉴스 채널의 무관한 영상만 걸러짐)
+RELEVANCE_KEYWORDS = [
+    # 회사명
+    "NVIDIA", "엔비디아", "AMD", "Intel", "인텔", "삼성전자", "삼성", "SK하이닉스",
+    "하이닉스", "OpenAI", "오픈AI", "Anthropic", "앤트로픽", "Google", "구글",
+    "Alphabet", "Microsoft", "마이크로소프트", "Meta", "메타", "Amazon", "아마존",
+    "Cerebras", "세레브라스", "TSMC", "Tempus",
+    # 인물 (PEOPLE 리스트와 중복되도 무방)
+    "Jensen Huang", "젠슨 황", "Lisa Su", "Sam Altman", "샘 올트먼",
+    "Dario Amodei", "Demis Hassabis", "Mark Zuckerberg", "저커버그",
+    "Andy Jassy", "Satya Nadella", "나델라", "Sundar Pichai", "피차이",
+    # 기술/산업 키워드
+    "AI", "반도체", "HBM", "GPU", "메모리", "데이터센터", "data center",
+    "semiconductor", "chip", "캐펙스", "capex", "파운드리", "DRAM", "낸드",
+]
+
 # 축3 키워드: 끔
 TOPIC_KEYWORDS = {"bull": [], "bear": []}
 LOOKBACK_HOURS = 26   # 하루 1회 통합 스케줄로 전환 (기존 4시간 → 26시간)
