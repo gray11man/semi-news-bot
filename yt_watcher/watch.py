@@ -1,85 +1,329 @@
 # -*- coding: utf-8 -*-
-"""감시 대상 설정 — 양질 채널만 (쇼츠·음모론·주식리딩방 원천 차단)"""
+"""
+YouTube AI-인터뷰 감시 봇 (API 방식 / 쇼츠 제외 / 중복제거 / 시간필터)
+  - 축1: 채널 화이트리스트 (playlistItems.list, UULF 업로드 재생목록 → 쇼츠 제외 롱폼만)
+  - 축2: 인물/직함 기반 검색 (search.list, 구독자수/길이/블랙워드 안전필터 적용)
+환경변수: YOUTUBE_API_KEY, GEMINI_KEY, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
+        RUN_PERSON_SEARCH=1 일 때만 축2(인물검색) 실행
+"""
+import os
+import re
+import json
+import time
+import html
+import datetime as dt
+import requests
 
-# ── 축1: 채널 화이트리스트 ──
-# NVIDIA·Invest Like the Best는 동명 사칭/딥페이크 채널이 실제로 존재해서
-# handle 자동조회 대신 channel_id를 직접 박아 리스크 차단.
-CHANNELS = [
-    {"name": "20VC (Harry Stebbings)", "channel_id": "UCf0PBRjhf0rF8fWBIxTuoWA"},
-    {"name": "All-In Podcast",         "handle": "@allin"},
-    {"name": "BG2 Pod",                "handle": "@bg2pod"},
-    {"name": "Dwarkesh Patel",         "handle": "@DwarkeshPatel"},
-    {"name": "Lex Fridman",            "handle": "@lexfridman"},
-    {"name": "a16z",                   "handle": "@a16z"},
-    {"name": "Latent Space",           "handle": "@LatentSpacePod"},
-    {"name": "No Priors",              "handle": "@NoPriorsPod"},
-    {"name": "Acquired",               "handle": "@AcquiredFM"},
-    {"name": "Cheeky Pint (Stripe)",   "handle": "@stripe"},
-    {"name": "Training Data (Sequoia)","handle": "@sequoiacapital"},
-    {"name": "Decoder (The Verge)",    "handle": "@DecoderwithNilayPatel"},
-    {"name": "Cognitive Revolution",   "handle": "@CognitiveRevolutionPodcast"},
-    {"name": "Bloomberg Technology",   "channel_id": "UCrM7B7SL_g1edFOnmj-SDKg"},
-    {"name": "SemiAnalysis",           "handle": "@semianalysis"},
-    {"name": "NVIDIA",                 "handle": "@NVIDIA"},
-    {"name": "Invest Like the Best",   "channel_id": "UCpQBb0fToph3jrDulwz1iUQ"},
-    # ── 한국 임원진(삼성/SK) 관련 뉴스는 오픈검색 대신 검증된 언론사 채널로 ──
-    # (오픈검색 시도해보니 "삼성전자 회장" 류 쿼리에 주식 리딩방/매집포착
-    #  채널이 100% 매칭돼서 직함검색은 폐기. 대신 공영/증권전문 채널 구독.)
-    {"name": "연합뉴스TV",              "channel_id": "UCTHCOPwqNfZ0uiKOvFyhGwg"},
-    {"name": "SBS Biz",                "channel_id": "UCbMjg2EvXs_RUGW-KrdM3pw"},
-]
+from watch_config import (
+    CHANNELS, LOOKBACK_HOURS,
+    PEOPLE, MIN_SUBSCRIBERS, MIN_DURATION_SEC,
+    BLOCK_KEYWORDS, BLOCKED_CHANNEL_IDS, PERSON_SEARCH_LOOKBACK_HOURS,
+)
 
-# ── 축2: 인물/직함 기반 검색 (채널 화이트리스트 밖 깜짝 출연 잡기) ──
-# 별도 스케줄(하루 1회, quota 100단위/건)로 돌릴 것.
-#
-# 주의: 한국 임원진(전영현/곽노정/이재용 등)은 직함으로 검색해도
-# "삼성전자 회장", "SK하이닉스 대표이사" 같은 쿼리가 주식 리딩방 SEO 타겟과
-# 정확히 겹쳐서 안전필터(구독자수)를 통과한 매집/리딩 채널이 다수 섞이는 게
-# 실측으로 확인됨. 그래서 한국 인물은 이 축에서 제외하고 CHANNELS의
-# 연합뉴스TV/SBS Biz가 다루도록 위임. 글로벌 인물은 동일 리스크가 상대적으로
-# 낮지만(영어권은 클릭베이트 SEO 경쟁이 한국 주식판만큼 치열하지 않음) 0은 아니므로
-# BLOCK_KEYWORDS를 계속 보강해야 함.
-PEOPLE = [
-    "Jensen Huang NVIDIA",
-    "Lisa Su AMD",
-    "Sam Altman OpenAI",
-    "Dario Amodei Anthropic",
-    "Demis Hassabis DeepMind",
-    "Mark Zuckerberg Meta",
-    "Andy Jassy Amazon",
-    "Microsoft CEO",
-    "Alphabet CEO",
-    "Intel CEO",
-    "Cerebras CEO",
-    "OpenAI CFO",
-    "Microsoft CFO capex",
-    "Alphabet CFO capex",
-    "Meta CFO capex",
-    "NVIDIA CFO",
-]
+YT_KEY     = os.environ["YOUTUBE_API_KEY"]
+GEMINI_KEY = os.environ.get("GEMINI_KEY", "")
+TG_TOKEN   = os.environ["TELEGRAM_TOKEN"]
+TG_CHAT    = os.environ["TELEGRAM_CHAT_ID"]
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
-# 인물 검색 결과 안전 필터
-MIN_SUBSCRIBERS   = 300_000   # 10만→30만으로 상향. 다만 이것만으론 한계가 있음(아래 참고).
-MIN_DURATION_SEC  = 180       # 3분 미만 = 쇼츠/클립으로 간주, 제외
+SEEN_PATH = os.environ.get("SEEN_PATH", "seen_videos.json")
+SEEN_MAX  = 3000
 
-# 블랙워드: title + description 둘 다 검사함 (watch.py 쪽 로직).
-# 한국 주식 리딩방/매집방 특유의 어휘를 대거 추가. 일반 클릭베이트 + 한국 주식판 SEO 단어.
-BLOCK_KEYWORDS = [
-    # 일반 클릭베이트
-    "충격", "폭로", "shocking", "exposed",
-    "they don't want you to know", "wake up", "deep state",
-    "conspiracy", "secret agenda",
-    # 한국 주식 리딩방/매집방 특유 어휘 (실측 노이즈 사례 기반 추가)
-    "매집포착", "매집", "초VIP", "VIP가입", "긴급속보", "결국 이렇게",
-    "세력들도", "난리난", "타점", "구독자를 위한 보답", "문자로 알려",
-    "문자 남기고", "무료방송", "파트너스", "유사투자", "수익률 대회",
-    "캐시충전", "1599-", "010-",
-]
-BLOCKED_CHANNEL_IDS = [
-    # 과거에 노이즈/리딩방/오인 채널로 확인된 channel_id를 여기 추가
-]
-PERSON_SEARCH_LOOKBACK_HOURS = 26   # 하루 1회 스케줄이라 lookback도 그에 맞게
+RUN_PERSON_SEARCH = os.environ.get("RUN_PERSON_SEARCH", "0") == "1"
 
-# 축3 키워드: 끔
-TOPIC_KEYWORDS = {"bull": [], "bear": []}
-LOOKBACK_HOURS = 26   # 하루 1회 통합 스케줄로 전환 (기존 4시간 → 26시간)
+YT_SEARCH        = "https://www.googleapis.com/youtube/v3/search"
+YT_CHANNELS      = "https://www.googleapis.com/youtube/v3/channels"
+YT_PLAYLISTITEMS = "https://www.googleapis.com/youtube/v3/playlistItems"
+YT_VIDEOS        = "https://www.googleapis.com/youtube/v3/videos"
+GEMINI_URL = ("https://generativelanguage.googleapis.com/v1beta/models/"
+              "{model}:generateContent")
+
+NOW           = dt.datetime.now(dt.timezone.utc)
+CUTOFF        = NOW - dt.timedelta(hours=LOOKBACK_HOURS)
+PERSON_CUTOFF = NOW - dt.timedelta(hours=PERSON_SEARCH_LOOKBACK_HOURS)
+
+
+# ────────────────────────── dedup 상태 ──────────────────────────
+def load_seen():
+    try:
+        with open(SEEN_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data if isinstance(data, dict) else {"ids": []}
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {"ids": []}
+
+
+def save_seen(seen):
+    seen["ids"] = seen["ids"][-SEEN_MAX:]
+    with open(SEEN_PATH, "w", encoding="utf-8") as f:
+        json.dump(seen, f, ensure_ascii=False, indent=0)
+
+
+# ──────────────── 축1: channel 식별 → 업로드 재생목록 ID ────────────────
+def _resolve_channel_id(channel):
+    if channel.get("channel_id"):
+        return channel["channel_id"]
+    handle = channel.get("handle")
+    if not handle:
+        return None
+    try:
+        r = requests.get(YT_SEARCH, params={
+            "key": YT_KEY, "part": "snippet", "type": "channel",
+            "q": handle, "maxResults": 1}, timeout=20)
+        r.raise_for_status()
+        items = r.json().get("items", [])
+        if items:
+            return items[0]["snippet"]["channelId"]
+    except Exception as e:
+        print(f"[resolve] {channel['name']} err: {e}")
+    return None
+
+
+def _uploads_playlist_id(channel_id):
+    if channel_id and channel_id.startswith("UC"):
+        return "UULF" + channel_id[2:]
+    return None
+
+
+def fetch_channel_uploads(channel):
+    cid = _resolve_channel_id(channel)
+    pid = _uploads_playlist_id(cid)
+    if not pid:
+        print(f"[yt] {channel['name']}: id 못 찾음, skip")
+        return []
+    out = []
+    try:
+        r = requests.get(YT_PLAYLISTITEMS, params={
+            "key": YT_KEY, "part": "snippet,contentDetails",
+            "playlistId": pid, "maxResults": 15}, timeout=20)
+        if r.status_code != 200:
+            print(f"[yt] {channel['name']}: playlistItems {r.status_code}, 채널API 재시도")
+            pid2 = _uploads_via_channel_api(cid)
+            if not pid2 or pid2 == pid:
+                return []
+            r = requests.get(YT_PLAYLISTITEMS, params={
+                "key": YT_KEY, "part": "snippet,contentDetails",
+                "playlistId": pid2, "maxResults": 15}, timeout=20)
+            if r.status_code != 200:
+                print(f"[yt] {channel['name']}: 재시도도 {r.status_code}")
+                return []
+        for it in r.json().get("items", []):
+            sn = it["snippet"]
+            cd = it.get("contentDetails", {})
+            vid = cd.get("videoId") or sn.get("resourceId", {}).get("videoId")
+            if not vid:
+                continue
+            pub_str = cd.get("videoPublishedAt") or sn.get("publishedAt")
+            pub = dt.datetime.fromisoformat(pub_str.replace("Z", "+00:00"))
+            if pub < CUTOFF:
+                continue
+            out.append({
+                "video_id": vid,
+                "title": html.unescape(sn["title"]),
+                "channel": channel["name"],
+                "published": pub,
+            })
+    except Exception as e:
+        print(f"[yt] {channel['name']} err: {e}")
+    return out
+
+
+def _uploads_via_channel_api(channel_id):
+    if not channel_id:
+        return None
+    try:
+        r = requests.get(YT_CHANNELS, params={
+            "key": YT_KEY, "part": "contentDetails",
+            "id": channel_id}, timeout=20)
+        r.raise_for_status()
+        items = r.json().get("items", [])
+        if items:
+            return items[0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    except Exception as e:
+        print(f"[channelapi] err: {e}")
+    return None
+
+
+# ──────────────── 축2: 인물/직함 기반 검색 (안전필터 포함) ────────────────
+def _parse_duration(iso_dur):
+    """ISO8601 'PT1H2M3S' → 초 단위 정수"""
+    m = re.match(r'PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?', iso_dur or "")
+    if not m:
+        return 0
+    h, mi, s = (int(x) if x else 0 for x in m.groups())
+    return h * 3600 + mi * 60 + s
+
+
+def _fetch_subscriber_counts(channel_ids):
+    if not channel_ids:
+        return {}
+    try:
+        r = requests.get(YT_CHANNELS, params={
+            "key": YT_KEY, "part": "statistics",
+            "id": ",".join(channel_ids)}, timeout=20)
+        r.raise_for_status()
+        return {it["id"]: int(it.get("statistics", {}).get("subscriberCount", 0) or 0)
+                for it in r.json().get("items", [])}
+    except Exception as e:
+        print(f"[subs] err: {e}")
+        return {}
+
+
+def _has_blocked_keyword(text):
+    """제목+설명 합쳐서 블랙워드 검사 (대소문자 무시)"""
+    t = text.lower()
+    return any(bad.lower() in t for bad in BLOCK_KEYWORDS)
+
+
+def fetch_person_videos(query):
+    """인물/직함 쿼리로 search.list 검색 → 구독자수/영상길이/블랙워드(제목+설명) 필터링."""
+    out = []
+    try:
+        r = requests.get(YT_SEARCH, params={
+            "key": YT_KEY, "part": "snippet", "type": "video",
+            "q": query, "order": "date",
+            "publishedAfter": PERSON_CUTOFF.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "maxResults": 10}, timeout=20)
+        r.raise_for_status()
+        items = r.json().get("items", [])
+    except Exception as e:
+        print(f"[person] '{query}' search err: {e}")
+        return out
+
+    vids = [it["id"]["videoId"] for it in items if it.get("id", {}).get("videoId")]
+    if not vids:
+        return out
+
+    try:
+        r2 = requests.get(YT_VIDEOS, params={
+            "key": YT_KEY, "part": "contentDetails,snippet",
+            "id": ",".join(vids)}, timeout=20)
+        r2.raise_for_status()
+        vinfo = {v["id"]: v for v in r2.json().get("items", [])}
+    except Exception as e:
+        print(f"[person] '{query}' videos.list err: {e}")
+        return out
+
+    channel_ids = {v["snippet"]["channelId"] for v in vinfo.values()}
+    subs = _fetch_subscriber_counts(channel_ids)
+
+    for vid, v in vinfo.items():
+        sn = v["snippet"]
+        cid = sn["channelId"]
+
+        if cid in BLOCKED_CHANNEL_IDS:
+            continue
+        if subs.get(cid, 0) < MIN_SUBSCRIBERS:
+            continue
+
+        dur = _parse_duration(v.get("contentDetails", {}).get("duration"))
+        if dur < MIN_DURATION_SEC:
+            continue
+
+        title = sn.get("title", "")
+        description = sn.get("description", "")
+        # ── 제목 + 설명 둘 다 블랙워드 검사 (매집포착/초VIP/문자영업 등 리딩방 차단) ──
+        if _has_blocked_keyword(title) or _has_blocked_keyword(description):
+            continue
+        # ── 전화번호 패턴(010-XXXX-XXXX 등) 들어있으면 영업성으로 간주, 차단 ──
+        if re.search(r'\d{2,3}[-.\s]\d{3,4}[-.\s]\d{4}', description):
+            continue
+
+        pub = dt.datetime.fromisoformat(sn["publishedAt"].replace("Z", "+00:00"))
+        if pub < PERSON_CUTOFF:
+            continue
+
+        out.append({
+            "video_id": vid,
+            "title": html.unescape(title),
+            "channel": f"🔍 {sn['channelTitle']} ({query})",
+            "published": pub,
+        })
+    return out
+
+
+# ──────────────── 제목 한글 번역 (기존 봇과 동일 방식) ────────────────
+def translate_title(title):
+    hangul = len(re.findall(r"[가-힣]", title))
+    if not GEMINI_KEY or hangul >= len(title.replace(" ", "")) * 0.4:
+        return None
+    prompt = ("다음 유튜브 영상 제목을 자연스러운 한국어로 번역해줘. "
+              "고유명사(인명/회사명)는 그대로 두고, 설명 없이 번역문 한 줄만 출력:\n"
+              + title)
+    try:
+        r = requests.post(
+            GEMINI_URL.format(model=GEMINI_MODEL),
+            headers={"x-goog-api-key": GEMINI_KEY,
+                     "Content-Type": "application/json"},
+            json={"contents": [{"parts": [{"text": prompt}]}],
+                  "generationConfig": {
+                      "temperature": 0.2,
+                      "maxOutputTokens": 256,
+                      "thinkingConfig": {"thinkingBudget": 0}}},
+            timeout=20)
+        r.raise_for_status()
+        t = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+        return t.split("\n")[0].strip()
+    except Exception as e:
+        print(f"[gemini] err: {e}")
+        return None
+
+
+# ────────────────────────── 텔레그램 ──────────────────────────
+def send_telegram(item):
+    url = f"https://www.youtube.com/watch?v={item['video_id']}"
+    ko = item.get("title_ko")
+    title_line = f"<b>{html.escape(ko)}</b>" if ko else f"<b>{html.escape(item['title'])}</b>"
+    orig = "" if not ko else f"\n<i>{html.escape(item['title'])}</i>"
+    msg = (f"📺 {html.escape(item['channel'])}\n"
+           f"{title_line}{orig}\n"
+           f"{url}")
+    try:
+        requests.post(
+            f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
+            json={"chat_id": TG_CHAT, "text": msg,
+                  "parse_mode": "HTML",
+                  "disable_web_page_preview": False},
+            timeout=20)
+    except Exception as e:
+        print(f"[tg] err: {e}")
+
+
+# ────────────────────────── 메인 ──────────────────────────
+def main():
+    seen = load_seen()
+    seen_ids = set(seen["ids"])
+
+    collected = {}
+
+    # 축1: 채널 화이트리스트 (매 실행마다 항상 동작)
+    for ch in CHANNELS:
+        for it in fetch_channel_uploads(ch):
+            collected.setdefault(it["video_id"], it)
+
+    # 축2: 인물/직함 검색 (RUN_PERSON_SEARCH=1 일 때만)
+    if RUN_PERSON_SEARCH:
+        for query in PEOPLE:
+            for it in fetch_person_videos(query):
+                collected.setdefault(it["video_id"], it)
+            time.sleep(0.3)
+
+    fresh = [it for vid, it in collected.items() if vid not in seen_ids]
+    fresh.sort(key=lambda x: x["published"])
+    axis2_msg = f"인물축 {PERSON_SEARCH_LOOKBACK_HOURS}h" if RUN_PERSON_SEARCH else "인물축 OFF"
+    print(f"수집 {len(collected)}건 / 신규 {len(fresh)}건 "
+          f"(채널축 {LOOKBACK_HOURS}h / {axis2_msg})")
+
+    for it in fresh:
+        it["title_ko"] = translate_title(it["title"])
+        send_telegram(it)
+        seen_ids.add(it["video_id"])
+        seen["ids"].append(it["video_id"])
+        time.sleep(1)
+
+    save_seen(seen)
+    print("완료")
+
+
+if __name__ == "__main__":
+    main()
