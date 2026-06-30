@@ -33,7 +33,8 @@ SEEN_MAX  = 3000  # 오래된 id는 잘라서 파일 비대화 방지
 YT_SEARCH = "https://www.googleapis.com/youtube/v3/search"
 YT_RSS    = "https://www.youtube.com/feeds/videos.xml?channel_id={cid}"
 GEMINI_URL= ("https://generativelanguage.googleapis.com/v1beta/models/"
-             "gemini-2.0-flash:generateContent?key={key}")
+             "{model}:generateContent")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
 NOW = dt.datetime.now(dt.timezone.utc)
 CUTOFF = NOW - dt.timedelta(hours=LOOKBACK_HOURS)
@@ -131,8 +132,15 @@ def translate_title(title):
     )
     try:
         r = requests.post(
-            GEMINI_URL.format(key=GEMINI_KEY),
-            json={"contents": [{"parts": [{"text": prompt}]}]},
+            GEMINI_URL.format(model=GEMINI_MODEL),
+            headers={"x-goog-api-key": GEMINI_KEY,
+                     "Content-Type": "application/json"},
+            json={"contents": [{"parts": [{"text": prompt}]}],
+                  "generationConfig": {
+                      "temperature": 0.2,
+                      "maxOutputTokens": 256,
+                      "thinkingConfig": {"thinkingBudget": 0},
+                  }},
             timeout=20)
         r.raise_for_status()
         t = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
@@ -186,8 +194,10 @@ def main():
         items = yt_search(f"\"{p['name']}\"", "person",
                           "🐻인물" if p.get("bear") else "🎙️인물")
         for it in items:
-            # 제목/채널에 이름이 실제로 있는 것만 (노이즈 컷)
-            if p["name"].lower().split()[0] not in (it["title"]+it["channel"]).lower():
+            # 노이즈 컷: 이름의 모든 단어가 '제목'에 실제로 있어야 통과
+            title_low = it["title"].lower()
+            name_parts = [w for w in p["name"].lower().replace(".", " ").split() if len(w) > 1]
+            if not all(part in title_low for part in name_parts):
                 continue
             it["bear"] = p.get("bear", False)
             collected.setdefault(it["video_id"], it)
