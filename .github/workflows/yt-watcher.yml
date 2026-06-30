@@ -1,44 +1,37 @@
-name: yt-watcher
-
+name: yt-watch-person-search
 on:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: "0 22 * * *"   # 매일 UTC 22:00 = 한국시간 오전 7:00
   workflow_dispatch:
-
 permissions:
   contents: write
-
 concurrency:
-  group: yt-watcher
+  group: yt-watch-person-search
   cancel-in-progress: false
-
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Install deps
         run: pip install requests
-
-      - name: Run watcher
+      - name: Run person-search axis
         env:
           YOUTUBE_API_KEY:    ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_KEY:         ${{ secrets.GEMINI_KEY }}
           TELEGRAM_TOKEN:     ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
           SEEN_PATH:          seen_videos.json
+          RUN_PERSON_SEARCH:  "1"
         run: python watch.py
         working-directory: yt_watcher
-
       - name: Commit dedup state
         run: |
           git config user.name  "github-actions"
           git config user.email "actions@github.com"
           git add yt_watcher/seen_videos.json || true
-          git commit -m "update seen_videos [skip ci]" || echo "no changes"
+          git commit -m "update seen_videos [skip ci] (person-search)" || echo "no changes"
           git push || echo "nothing to push"
