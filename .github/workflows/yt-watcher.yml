@@ -1,7 +1,7 @@
 name: yt-watcher
 on:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: "0 22 * * *"   # 매일 UTC 22:00 = 한국시간 오전 7:00, 하루 1번
   workflow_dispatch:
 permissions:
   contents: write
@@ -25,6 +25,7 @@ jobs:
           TELEGRAM_TOKEN:     ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
           SEEN_PATH:          seen_videos.json
+          RUN_PERSON_SEARCH:  "1"
         run: python watch.py
         working-directory: yt_watcher
       - name: Commit dedup state
