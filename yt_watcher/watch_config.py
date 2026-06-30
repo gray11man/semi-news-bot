@@ -1,27 +1,24 @@
 # -*- coding: utf-8 -*-
-"""감시 대상 설정 — 인물 검색만 (노이즈 최소화)"""
+"""감시 대상 설정 — 양질 채널만 (쇼츠·음모론 원천 차단)"""
 
-# 축1 채널: 일단 끔 (나중에 필요하면 추가)
-CHANNELS = []
-
-# 축2 인물: 핵심 인사만. 이름이 제목/채널에 실제로 박힌 것만 통과시킴.
-PEOPLE = [
-    {"name": "Jensen Huang",   "tier": 1},
-    {"name": "Sundar Pichai",  "tier": 1},
-    {"name": "Sam Altman",     "tier": 1},
-    {"name": "Lisa Su",        "tier": 1},
-    {"name": "Dario Amodei",   "tier": 1},
-    {"name": "Demis Hassabis", "tier": 1},
-    {"name": "Satya Nadella",  "tier": 1},
-    {"name": "Mark Zuckerberg","tier": 2},
-    {"name": "Andrew Feldman", "tier": 2},   # Cerebras
-    {"name": "Sarah Friar",    "tier": 2},   # OpenAI CFO
-    # 약세/경고 — 균형용
-    {"name": "Michael Burry",  "tier": 1, "bear": True},
-    {"name": "David Cahn",     "tier": 2, "bear": True},
+# 축1 채널: 양질 인터뷰 채널만. handle 또는 channel_id 둘 다 지원.
+CHANNELS = [
+    {"name": "20VC (Harry Stebbings)", "channel_id": "UCf0PBRjhf0rF8fWBIxTuoWA"},
+    {"name": "All-In Podcast",         "handle": "@allin"},
+    {"name": "BG2 Pod",                "handle": "@bg2pod"},
+    {"name": "Dwarkesh Patel",         "handle": "@DwarkeshPatel"},
+    {"name": "Lex Fridman",            "handle": "@lexfridman"},
+    {"name": "a16z",                   "handle": "@a16z"},
+    {"name": "Latent Space",           "handle": "@LatentSpacePod"},
+    {"name": "No Priors",              "handle": "@NoPriorsPod"},
+    {"name": "Acquired",               "handle": "@AcquiredFM"},
+    {"name": "Cheeky Pint (Stripe)",   "handle": "@stripe"},
 ]
 
-# 축3 키워드: 끔 (잡다한 영상 원인이었음)
+# 축2 인물: 끔 (쇼츠·음모론 원인이었음)
+PEOPLE = []
+
+# 축3 키워드: 끔
 TOPIC_KEYWORDS = {"bull": [], "bear": []}
 
 LOOKBACK_HOURS = 4
