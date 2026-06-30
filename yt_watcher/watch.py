@@ -18,6 +18,7 @@ from watch_config import (
     CHANNELS, LOOKBACK_HOURS,
     PEOPLE, MIN_SUBSCRIBERS, MIN_DURATION_SEC,
     BLOCK_KEYWORDS, BLOCKED_CHANNEL_IDS, PERSON_SEARCH_LOOKBACK_HOURS,
+    RELEVANCE_KEYWORDS,
 )
 
 YT_KEY     = os.environ["YOUTUBE_API_KEY"]
@@ -175,6 +176,20 @@ def _has_blocked_keyword(text):
     return any(bad.lower() in t for bad in BLOCK_KEYWORDS)
 
 
+# 짧은 영단어(AI, SK 등)는 단어경계로, 그 외(한글/긴 영단어)는 substring으로 검사
+_RELEVANCE_PATTERNS = [
+    re.compile(r'\b' + re.escape(kw) + r'\b', re.IGNORECASE)
+    if kw.isascii() and len(kw) <= 4
+    else re.compile(re.escape(kw), re.IGNORECASE)
+    for kw in RELEVANCE_KEYWORDS
+]
+
+
+def is_relevant(text):
+    """제목(필요시 설명 포함)에 관심 키워드가 하나라도 있는지 검사."""
+    return any(p.search(text) for p in _RELEVANCE_PATTERNS)
+
+
 def fetch_person_videos(query):
     """인물/직함 쿼리로 search.list 검색 → 구독자수/영상길이/블랙워드(제목+설명) 필터링."""
     out = []
@@ -310,8 +325,14 @@ def main():
 
     fresh = [it for vid, it in collected.items() if vid not in seen_ids]
     fresh.sort(key=lambda x: x["published"])
+
+    before_n = len(fresh)
+    fresh = [it for it in fresh if is_relevant(it["title"])]
+    filtered_out = before_n - len(fresh)
+
     axis2_msg = f"인물축 {PERSON_SEARCH_LOOKBACK_HOURS}h" if RUN_PERSON_SEARCH else "인물축 OFF"
-    print(f"수집 {len(collected)}건 / 신규 {len(fresh)}건 "
+    print(f"수집 {len(collected)}건 / 신규(필터전) {before_n}건 / "
+          f"관련성필터로 {filtered_out}건 제외 / 최종발송 {len(fresh)}건 "
           f"(채널축 {LOOKBACK_HOURS}h / {axis2_msg})")
 
     for it in fresh:
