@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-YouTube AI-인터뷰 감시 봇
-  - 축1 채널 RSS + 축2 인물검색 + 축3 키워드검색 → 신규 영상 수집
-  - dedup: seen_videos.json (video_id 저장, repo 커밋으로 영속)
-  - 제목 한글 번역 (Gemini)
-  - 텔레그램 발송
-
-환경변수(Secrets):
-  YOUTUBE_API_KEY, GEMINI_API_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+YouTube AI-인터뷰 감시 봇 (채널 전용 / 쇼츠 제외 / 중복제거 / 시간필터)
+  - 양질 채널의 업로드 재생목록(UULF) RSS만 감시 → 쇼츠 자동 제외, 롱폼만
+  - LOOKBACK_HOURS 안에 올라온 영상만 신규로 간주 (3시간 주기 대응)
+  - seen_videos.json 으로 video_id 중복제거 (이미 보낸 건 절대 재전송 안 함)
+  - 제목 한글 번역 (Gemini, 기존 봇과 동일 방식)
+환경변수: YOUTUBE_API_KEY, GEMINI_KEY, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
 """
 import os
 import re
@@ -15,40 +13,41 @@ import json
 import time
 import html
 import datetime as dt
-from urllib.parse import quote_plus
 import xml.etree.ElementTree as ET
 import requests
 
-from watch_config import CHANNELS, PEOPLE, TOPIC_KEYWORDS, LOOKBACK_HOURS
+from watch_config import CHANNELS, LOOKBACK_HOURS
 
-# ── 환경변수 (기존 semi-news-bot repo의 Secret 이름에 맞춤) ──
-YT_KEY    = os.environ["YOUTUBE_API_KEY"]
-GEMINI_KEY= os.environ.get("GEMINI_KEY", "")
-TG_TOKEN  = os.environ["TELEGRAM_TOKEN"]
-TG_CHAT   = os.environ["TELEGRAM_CHAT_ID"]
-
-SEEN_PATH = os.environ.get("SEEN_PATH", "seen_videos.json")
-SEEN_MAX  = 3000  # 오래된 id는 잘라서 파일 비대화 방지
-
-YT_SEARCH = "https://www.googleapis.com/youtube/v3/search"
-YT_RSS    = "https://www.youtube.com/feeds/videos.xml?channel_id={cid}"
-GEMINI_URL= ("https://generativelanguage.googleapis.com/v1beta/models/"
-             "{model}:generateContent")
+# ── 환경변수 (기존 semi-news-bot repo Secret 이름에 맞춤) ──
+YT_KEY     = os.environ["YOUTUBE_API_KEY"]
+GEMINI_KEY = os.environ.get("GEMINI_KEY", "")
+TG_TOKEN   = os.environ["TELEGRAM_TOKEN"]
+TG_CHAT    = os.environ["TELEGRAM_CHAT_ID"]
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
-NOW = dt.datetime.now(dt.timezone.utc)
+SEEN_PATH = os.environ.get("SEEN_PATH", "seen_videos.json")
+SEEN_MAX  = 3000
+
+YT_SEARCH = "https://www.googleapis.com/youtube/v3/search"
+YT_RSS    = "https://www.youtube.com/feeds/videos.xml?playlist_id={pid}"
+GEMINI_URL = ("https://generativelanguage.googleapis.com/v1beta/models/"
+              "{model}:generateContent")
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
+
+NOW    = dt.datetime.now(dt.timezone.utc)
 CUTOFF = NOW - dt.timedelta(hours=LOOKBACK_HOURS)
 
 
-# ────────────────────────────────────────────────
-# dedup 상태
-# ────────────────────────────────────────────────
+# ────────────────────────── dedup 상태 ──────────────────────────
 def load_seen():
     try:
         with open(SEEN_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            return data if isinstance(data, dict) else {"ids": []}
     except (FileNotFoundError, json.JSONDecodeError):
         return {"ids": []}
+
 
 def save_seen(seen):
     seen["ids"] = seen["ids"][-SEEN_MAX:]
@@ -56,11 +55,8 @@ def save_seen(seen):
         json.dump(seen, f, ensure_ascii=False, indent=0)
 
 
-# ────────────────────────────────────────────────
-# 축1: 채널 RSS (쿼터 0)
-# ────────────────────────────────────────────────
+# ──────────────── channel_id → 업로드 재생목록 ID(UULF) ────────────────
 def _resolve_channel_id(channel):
-    """channel_id가 있으면 그대로, 없으면 handle로 search.list 1회 조회."""
     if channel.get("channel_id"):
         return channel["channel_id"]
     handle = channel.get("handle")
@@ -79,78 +75,61 @@ def _resolve_channel_id(channel):
     return None
 
 
+def _uploads_playlist_id(channel_id):
+    # UC... 채널ID의 앞 UC를 UULF로 바꾸면 '쇼츠 제외 업로드 재생목록'
+    if channel_id and channel_id.startswith("UC"):
+        return "UULF" + channel_id[2:]
+    return None
+
+
 def fetch_channel_rss(channel):
     cid = _resolve_channel_id(channel)
-    if not cid:
-        print(f"[rss] {channel['name']}: channel_id 못 찾음, skip")
+    pid = _uploads_playlist_id(cid)
+    if not pid:
+        print(f"[rss] {channel['name']}: id 못 찾음, skip")
         return []
     out = []
     try:
-        r = requests.get(YT_RSS.format(cid=cid), timeout=20)
-        r.raise_for_status()
+        r = requests.get(YT_RSS.format(pid=pid),
+                         headers={"User-Agent": UA}, timeout=20)
+        if r.status_code != 200:
+            print(f"[rss] {channel['name']}: HTTP {r.status_code}")
+            return []
         root = ET.fromstring(r.content)
         ns = {"a": "http://www.w3.org/2005/Atom",
-              "yt": "http://www.youtube.com/xml/schemas/2015",
-              "media": "http://search.yahoo.com/mrss/"}
+              "yt": "http://www.youtube.com/xml/schemas/2015"}
         for entry in root.findall("a:entry", ns):
-            vid = entry.find("yt:videoId", ns).text
-            title = entry.find("a:title", ns).text or ""
-            published = entry.find("a:published", ns).text
-            pub = dt.datetime.fromisoformat(published.replace("Z", "+00:00"))
+            vid_el = entry.find("yt:videoId", ns)
+            if vid_el is None:
+                continue
+            vid = vid_el.text
+            title = (entry.find("a:title", ns).text or "").strip()
+            pub_el = entry.find("a:published", ns)
+            if pub_el is None:
+                continue
+            pub = dt.datetime.fromisoformat(pub_el.text.replace("Z", "+00:00"))
+            # ── 시간 필터: LOOKBACK 안에 올라온 것만 ──
             if pub < CUTOFF:
                 continue
             out.append({
-                "video_id": vid, "title": title,
-                "channel": channel["name"], "published": pub,
-                "source": "channel", "tag": "📺채널", "bear": False,
+                "video_id": vid,
+                "title": title,
+                "channel": channel["name"],
+                "published": pub,
             })
     except Exception as e:
         print(f"[rss] {channel['name']} err: {e}")
     return out
 
 
-# ────────────────────────────────────────────────
-# 축2/3: search.list 폴링
-# ────────────────────────────────────────────────
-def yt_search(query, label, tag):
-    params = {
-        "key": YT_KEY, "part": "snippet", "type": "video",
-        "order": "date", "maxResults": 10,
-        "q": query,
-        "publishedAfter": CUTOFF.strftime("%Y-%m-%dT%H:%M:%SZ"),
-    }
-    out = []
-    try:
-        r = requests.get(YT_SEARCH, params=params, timeout=20)
-        r.raise_for_status()
-        for it in r.json().get("items", []):
-            sn = it["snippet"]
-            out.append({
-                "video_id": it["id"]["videoId"],
-                "title": html.unescape(sn["title"]),
-                "channel": sn["channelTitle"],
-                "published": dt.datetime.fromisoformat(
-                    sn["publishedAt"].replace("Z", "+00:00")),
-                "source": label, "tag": tag,
-            })
-    except Exception as e:
-        print(f"[search] '{query}' err: {e}")
-    return out
-
-
-# ────────────────────────────────────────────────
-# 제목 한글 번역 (Gemini). 키 없으면 원문 그대로.
-# ────────────────────────────────────────────────
+# ──────────────── 제목 한글 번역 (기존 봇과 동일 방식) ────────────────
 def translate_title(title):
-    # 이미 한글이 절반 이상이면 번역 skip
     hangul = len(re.findall(r"[가-힣]", title))
     if not GEMINI_KEY or hangul >= len(title.replace(" ", "")) * 0.4:
         return None
-    prompt = (
-        "다음 유튜브 영상 제목을 자연스러운 한국어로 번역해줘. "
-        "고유명사(인명/회사명)는 그대로 두고, 설명 없이 번역문 한 줄만 출력:\n"
-        + title
-    )
+    prompt = ("다음 유튜브 영상 제목을 자연스러운 한국어로 번역해줘. "
+              "고유명사(인명/회사명)는 그대로 두고, 설명 없이 번역문 한 줄만 출력:\n"
+              + title)
     try:
         r = requests.post(
             GEMINI_URL.format(model=GEMINI_MODEL),
@@ -160,8 +139,7 @@ def translate_title(title):
                   "generationConfig": {
                       "temperature": 0.2,
                       "maxOutputTokens": 256,
-                      "thinkingConfig": {"thinkingBudget": 0},
-                  }},
+                      "thinkingConfig": {"thinkingBudget": 0}}},
             timeout=20)
         r.raise_for_status()
         t = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
@@ -171,21 +149,15 @@ def translate_title(title):
         return None
 
 
-# ────────────────────────────────────────────────
-# 텔레그램 발송
-# ────────────────────────────────────────────────
+# ────────────────────────── 텔레그램 ──────────────────────────
 def send_telegram(item):
     url = f"https://www.youtube.com/watch?v={item['video_id']}"
     ko = item.get("title_ko")
     title_line = f"<b>{html.escape(ko)}</b>" if ko else f"<b>{html.escape(item['title'])}</b>"
     orig = "" if not ko else f"\n<i>{html.escape(item['title'])}</i>"
-    bear = " ⚠️<b>[약세/경고]</b>" if item.get("bear") else ""
-    msg = (
-        f"{item['tag']}{bear}\n"
-        f"{title_line}{orig}\n"
-        f"📡 {html.escape(item['channel'])}\n"
-        f"{url}"
-    )
+    msg = (f"📺 {html.escape(item['channel'])}\n"
+           f"{title_line}{orig}\n"
+           f"{url}")
     try:
         requests.post(
             f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
@@ -197,51 +169,30 @@ def send_telegram(item):
         print(f"[tg] err: {e}")
 
 
-# ────────────────────────────────────────────────
-# 메인
-# ────────────────────────────────────────────────
+# ────────────────────────── 메인 ──────────────────────────
 def main():
     seen = load_seen()
     seen_ids = set(seen["ids"])
-    collected = {}  # video_id -> item (dedup)
 
-    # 축1 채널
+    # 1) 수집 (채널별 RSS, 시간필터 적용됨)
+    collected = {}
     for ch in CHANNELS:
         for it in fetch_channel_rss(ch):
-            collected.setdefault(it["video_id"], it)
+            collected.setdefault(it["video_id"], it)   # 같은 영상 1회만
 
-    # 축2 인물
-    for p in PEOPLE:
-        items = yt_search(f"\"{p['name']}\"", "person",
-                          "🐻인물" if p.get("bear") else "🎙️인물")
-        for it in items:
-            # 노이즈 컷: 이름의 모든 단어가 '제목'에 실제로 있어야 통과
-            title_low = it["title"].lower()
-            name_parts = [w for w in p["name"].lower().replace(".", " ").split() if len(w) > 1]
-            if not all(part in title_low for part in name_parts):
-                continue
-            it["bear"] = p.get("bear", False)
-            collected.setdefault(it["video_id"], it)
-
-    # 축3 키워드
-    for side, kws in TOPIC_KEYWORDS.items():
-        for kw in kws:
-            for it in yt_search(kw, "topic",
-                                "🐻주제" if side == "bear" else "🔑주제"):
-                it["bear"] = (side == "bear")
-                collected.setdefault(it["video_id"], it)
-
-    # dedup + 신규만
+    # 2) 중복제거 — 이미 보낸 video_id 제외
     fresh = [it for vid, it in collected.items() if vid not in seen_ids]
     fresh.sort(key=lambda x: x["published"])
-    print(f"수집 {len(collected)}건 / 신규 {len(fresh)}건")
+    print(f"수집 {len(collected)}건 / 신규 {len(fresh)}건 "
+          f"(기준 최근 {LOOKBACK_HOURS}시간)")
 
+    # 3) 전송 + seen 기록
     for it in fresh:
         it["title_ko"] = translate_title(it["title"])
         send_telegram(it)
         seen_ids.add(it["video_id"])
         seen["ids"].append(it["video_id"])
-        time.sleep(1)  # 텔레그램 rate limit 여유
+        time.sleep(1)
 
     save_seen(seen)
     print("완료")
