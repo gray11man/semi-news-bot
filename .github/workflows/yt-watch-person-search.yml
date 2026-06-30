@@ -1,0 +1,35 @@
+name: yt-watch-person-search
+
+on:
+  schedule:
+    - cron: "0 22 * * *"   # 매일 UTC 22:00 = 한국시간 오전 7:00
+  workflow_dispatch: {}     # 수동 실행 버튼도 같이 생김
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install requests
+
+      - name: Run person-search axis
+        env:
+          YOUTUBE_API_KEY:   ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_KEY:        ${{ secrets.GEMINI_KEY }}
+          TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_PERSON_SEARCH: "1"
+        run: python watch.py
+
+      - name: Commit seen_videos.json
+        run: |
+          git config user.name "yt-watch-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add seen_videos.json
+          git diff --cached --quiet || git commit -m "update seen_videos.json (person-search)"
+          git push
