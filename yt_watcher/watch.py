@@ -59,10 +59,31 @@ def save_seen(seen):
 # ────────────────────────────────────────────────
 # 축1: 채널 RSS (쿼터 0)
 # ────────────────────────────────────────────────
+def _resolve_channel_id(channel):
+    """channel_id가 있으면 그대로, 없으면 handle로 search.list 1회 조회."""
+    if channel.get("channel_id"):
+        return channel["channel_id"]
+    handle = channel.get("handle")
+    if not handle:
+        return None
+    try:
+        r = requests.get(YT_SEARCH, params={
+            "key": YT_KEY, "part": "snippet", "type": "channel",
+            "q": handle, "maxResults": 1}, timeout=20)
+        r.raise_for_status()
+        items = r.json().get("items", [])
+        if items:
+            return items[0]["snippet"]["channelId"]
+    except Exception as e:
+        print(f"[resolve] {channel['name']} err: {e}")
+    return None
+
+
 def fetch_channel_rss(channel):
-    cid = channel.get("channel_id")
+    cid = _resolve_channel_id(channel)
     if not cid:
-        return []  # channel_id 없으면 skip (resolve 먼저 돌릴 것)
+        print(f"[rss] {channel['name']}: channel_id 못 찾음, skip")
+        return []
     out = []
     try:
         r = requests.get(YT_RSS.format(cid=cid), timeout=20)
@@ -81,7 +102,7 @@ def fetch_channel_rss(channel):
             out.append({
                 "video_id": vid, "title": title,
                 "channel": channel["name"], "published": pub,
-                "source": "channel", "tag": "📺채널",
+                "source": "channel", "tag": "📺채널", "bear": False,
             })
     except Exception as e:
         print(f"[rss] {channel['name']} err: {e}")
