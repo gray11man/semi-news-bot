@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 YouTube AI-인터뷰 감시 봇 (API 방식 / 쇼츠 제외 / 중복제거 / 시간필터)
-  - playlistItems.list 로 각 채널 업로드 재생목록(UULF) 조회 → GitHub Actions에서도 차단 안 됨
-  - UULF 재생목록은 쇼츠 제외, 롱폼 업로드만 포함
-  - LOOKBACK_HOURS 안에 올라온 영상만 신규 (3시간 주기 대응)
-  - seen_videos.json 으로 video_id 중복제거
-  - 제목 한글 번역 (Gemini, 기존 봇과 동일 방식)
+  - 축1: 채널 화이트리스트 (playlistItems.list, UULF 업로드 재생목록 → 쇼츠 제외 롱폼만)
+  - 축2: 인물/직함 기반 검색 (search.list, 구독자수/길이/블랙워드 안전필터 적용)
 환경변수: YOUTUBE_API_KEY, GEMINI_KEY, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
+        RUN_PERSON_SEARCH=1 일 때만 축2(인물검색) 실행 — quota 보호용, 하루 1회 스케줄 권장
 """
 import os
 import re
@@ -16,7 +14,11 @@ import html
 import datetime as dt
 import requests
 
-from watch_config import CHANNELS, LOOKBACK_HOURS
+from watch_config import (
+    CHANNELS, LOOKBACK_HOURS,
+    PEOPLE, MIN_SUBSCRIBERS, MIN_DURATION_SEC,
+    BLOCK_KEYWORDS, BLOCKED_CHANNEL_IDS, PERSON_SEARCH_LOOKBACK_HOURS,
+)
 
 YT_KEY     = os.environ["YOUTUBE_API_KEY"]
 GEMINI_KEY = os.environ.get("GEMINI_KEY", "")
@@ -27,14 +29,20 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 SEEN_PATH = os.environ.get("SEEN_PATH", "seen_videos.json")
 SEEN_MAX  = 3000
 
+# 인물검색 축 켜고 끄는 스위치. 3시간마다 도는 기본 스케줄에서는 끄고,
+# 하루 1회 도는 별도 스케줄에서만 RUN_PERSON_SEARCH=1로 켠다. (quota 보호)
+RUN_PERSON_SEARCH = os.environ.get("RUN_PERSON_SEARCH", "0") == "1"
+
 YT_SEARCH        = "https://www.googleapis.com/youtube/v3/search"
 YT_CHANNELS      = "https://www.googleapis.com/youtube/v3/channels"
 YT_PLAYLISTITEMS = "https://www.googleapis.com/youtube/v3/playlistItems"
+YT_VIDEOS        = "https://www.googleapis.com/youtube/v3/videos"
 GEMINI_URL = ("https://generativelanguage.googleapis.com/v1beta/models/"
               "{model}:generateContent")
 
-NOW    = dt.datetime.now(dt.timezone.utc)
-CUTOFF = NOW - dt.timedelta(hours=LOOKBACK_HOURS)
+NOW           = dt.datetime.now(dt.timezone.utc)
+CUTOFF        = NOW - dt.timedelta(hours=LOOKBACK_HOURS)
+PERSON_CUTOFF = NOW - dt.timedelta(hours=PERSON_SEARCH_LOOKBACK_HOURS)
 
 
 # ────────────────────────── dedup 상태 ──────────────────────────
@@ -53,7 +61,7 @@ def save_seen(seen):
         json.dump(seen, f, ensure_ascii=False, indent=0)
 
 
-# ──────────────── channel 식별 → 업로드 재생목록 ID ────────────────
+# ──────────────── 축1: channel 식별 → 업로드 재생목록 ID ────────────────
 def _resolve_channel_id(channel):
     if channel.get("channel_id"):
         return channel["channel_id"]
@@ -92,7 +100,6 @@ def fetch_channel_uploads(channel):
             "key": YT_KEY, "part": "snippet,contentDetails",
             "playlistId": pid, "maxResults": 15}, timeout=20)
         if r.status_code != 200:
-            # UULF가 안 먹으면 채널 API로 정확한 업로드ID 재시도
             print(f"[yt] {channel['name']}: playlistItems {r.status_code}, 채널API 재시도")
             pid2 = _uploads_via_channel_api(cid)
             if not pid2 or pid2 == pid:
@@ -111,7 +118,6 @@ def fetch_channel_uploads(channel):
                 continue
             pub_str = cd.get("videoPublishedAt") or sn.get("publishedAt")
             pub = dt.datetime.fromisoformat(pub_str.replace("Z", "+00:00"))
-            # ── 시간 필터 ──
             if pub < CUTOFF:
                 continue
             out.append({
@@ -139,6 +145,93 @@ def _uploads_via_channel_api(channel_id):
     except Exception as e:
         print(f"[channelapi] err: {e}")
     return None
+
+
+# ──────────────── 축2: 인물/직함 기반 검색 (안전필터 포함) ────────────────
+def _parse_duration(iso_dur):
+    """ISO8601 'PT1H2M3S' → 초 단위 정수"""
+    m = re.match(r'PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?', iso_dur or "")
+    if not m:
+        return 0
+    h, mi, s = (int(x) if x else 0 for x in m.groups())
+    return h * 3600 + mi * 60 + s
+
+
+def _fetch_subscriber_counts(channel_ids):
+    if not channel_ids:
+        return {}
+    try:
+        r = requests.get(YT_CHANNELS, params={
+            "key": YT_KEY, "part": "statistics",
+            "id": ",".join(channel_ids)}, timeout=20)
+        r.raise_for_status()
+        return {it["id"]: int(it.get("statistics", {}).get("subscriberCount", 0) or 0)
+                for it in r.json().get("items", [])}
+    except Exception as e:
+        print(f"[subs] err: {e}")
+        return {}
+
+
+def fetch_person_videos(query):
+    """인물/직함 쿼리로 search.list 검색 → 구독자수/영상길이/블랙워드 필터링."""
+    out = []
+    try:
+        r = requests.get(YT_SEARCH, params={
+            "key": YT_KEY, "part": "snippet", "type": "video",
+            "q": query, "order": "date",
+            "publishedAfter": PERSON_CUTOFF.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "maxResults": 10}, timeout=20)
+        r.raise_for_status()
+        items = r.json().get("items", [])
+    except Exception as e:
+        print(f"[person] '{query}' search err: {e}")
+        return out
+
+    vids = [it["id"]["videoId"] for it in items if it.get("id", {}).get("videoId")]
+    if not vids:
+        return out
+
+    try:
+        r2 = requests.get(YT_VIDEOS, params={
+            "key": YT_KEY, "part": "contentDetails,snippet",
+            "id": ",".join(vids)}, timeout=20)
+        r2.raise_for_status()
+        vinfo = {v["id"]: v for v in r2.json().get("items", [])}
+    except Exception as e:
+        print(f"[person] '{query}' videos.list err: {e}")
+        return out
+
+    channel_ids = {v["snippet"]["channelId"] for v in vinfo.values()}
+    subs = _fetch_subscriber_counts(channel_ids)
+
+    for vid, v in vinfo.items():
+        sn = v["snippet"]
+        cid = sn["channelId"]
+
+        if cid in BLOCKED_CHANNEL_IDS:
+            continue
+        if subs.get(cid, 0) < MIN_SUBSCRIBERS:
+            continue
+
+        dur = _parse_duration(v.get("contentDetails", {}).get("duration"))
+        if dur < MIN_DURATION_SEC:
+            continue
+
+        title = sn["title"]
+        if any(bad.lower() in title.lower() for bad in BLOCK_KEYWORDS):
+            continue
+
+        pub = dt.datetime.fromisoformat(sn["publishedAt"].replace("Z", "+00:00"))
+        if pub < PERSON_CUTOFF:
+            continue
+
+        out.append({
+            "video_id": vid,
+            "title": html.unescape(title),
+            "channel": f"🔍 {sn['channelTitle']} ({query})",
+            "published": pub,
+        })
+    return out
 
 
 # ──────────────── 제목 한글 번역 (기존 봇과 동일 방식) ────────────────
@@ -194,14 +287,24 @@ def main():
     seen_ids = set(seen["ids"])
 
     collected = {}
+
+    # 축1: 채널 화이트리스트 (매 실행마다 항상 동작)
     for ch in CHANNELS:
         for it in fetch_channel_uploads(ch):
             collected.setdefault(it["video_id"], it)
 
+    # 축2: 인물/직함 검색 (RUN_PERSON_SEARCH=1 일 때만 — 하루 1회 스케줄용)
+    if RUN_PERSON_SEARCH:
+        for query in PEOPLE:
+            for it in fetch_person_videos(query):
+                collected.setdefault(it["video_id"], it)
+            time.sleep(0.3)
+
     fresh = [it for vid, it in collected.items() if vid not in seen_ids]
     fresh.sort(key=lambda x: x["published"])
+    axis2_msg = f"인물축 {PERSON_SEARCH_LOOKBACK_HOURS}h" if RUN_PERSON_SEARCH else "인물축 OFF"
     print(f"수집 {len(collected)}건 / 신규 {len(fresh)}건 "
-          f"(기준 최근 {LOOKBACK_HOURS}시간)")
+          f"(채널축 {LOOKBACK_HOURS}h / {axis2_msg})")
 
     for it in fresh:
         it["title_ko"] = translate_title(it["title"])
