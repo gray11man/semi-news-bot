@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-YouTube AI-인터뷰 감시 봇 (채널 전용 / 쇼츠 제외 / 중복제거 / 시간필터)
-  - 양질 채널의 업로드 재생목록(UULF) RSS만 감시 → 쇼츠 자동 제외, 롱폼만
-  - LOOKBACK_HOURS 안에 올라온 영상만 신규로 간주 (3시간 주기 대응)
-  - seen_videos.json 으로 video_id 중복제거 (이미 보낸 건 절대 재전송 안 함)
+YouTube AI-인터뷰 감시 봇 (API 방식 / 쇼츠 제외 / 중복제거 / 시간필터)
+  - playlistItems.list 로 각 채널 업로드 재생목록(UULF) 조회 → GitHub Actions에서도 차단 안 됨
+  - UULF 재생목록은 쇼츠 제외, 롱폼 업로드만 포함
+  - LOOKBACK_HOURS 안에 올라온 영상만 신규 (3시간 주기 대응)
+  - seen_videos.json 으로 video_id 중복제거
   - 제목 한글 번역 (Gemini, 기존 봇과 동일 방식)
 환경변수: YOUTUBE_API_KEY, GEMINI_KEY, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
 """
@@ -13,12 +14,10 @@ import json
 import time
 import html
 import datetime as dt
-import xml.etree.ElementTree as ET
 import requests
 
 from watch_config import CHANNELS, LOOKBACK_HOURS
 
-# ── 환경변수 (기존 semi-news-bot repo Secret 이름에 맞춤) ──
 YT_KEY     = os.environ["YOUTUBE_API_KEY"]
 GEMINI_KEY = os.environ.get("GEMINI_KEY", "")
 TG_TOKEN   = os.environ["TELEGRAM_TOKEN"]
@@ -28,12 +27,11 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 SEEN_PATH = os.environ.get("SEEN_PATH", "seen_videos.json")
 SEEN_MAX  = 3000
 
-YT_SEARCH = "https://www.googleapis.com/youtube/v3/search"
-YT_RSS    = "https://www.youtube.com/feeds/videos.xml?playlist_id={pid}"
+YT_SEARCH        = "https://www.googleapis.com/youtube/v3/search"
+YT_CHANNELS      = "https://www.googleapis.com/youtube/v3/channels"
+YT_PLAYLISTITEMS = "https://www.googleapis.com/youtube/v3/playlistItems"
 GEMINI_URL = ("https://generativelanguage.googleapis.com/v1beta/models/"
               "{model}:generateContent")
-UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
 NOW    = dt.datetime.now(dt.timezone.utc)
 CUTOFF = NOW - dt.timedelta(hours=LOOKBACK_HOURS)
@@ -55,7 +53,7 @@ def save_seen(seen):
         json.dump(seen, f, ensure_ascii=False, indent=0)
 
 
-# ──────────────── channel_id → 업로드 재생목록 ID(UULF) ────────────────
+# ──────────────── channel 식별 → 업로드 재생목록 ID ────────────────
 def _resolve_channel_id(channel):
     if channel.get("channel_id"):
         return channel["channel_id"]
@@ -76,50 +74,71 @@ def _resolve_channel_id(channel):
 
 
 def _uploads_playlist_id(channel_id):
-    # UC... 채널ID의 앞 UC를 UULF로 바꾸면 '쇼츠 제외 업로드 재생목록'
+    # UC... → UULF... (업로드 재생목록, 쇼츠 제외 롱폼)
     if channel_id and channel_id.startswith("UC"):
         return "UULF" + channel_id[2:]
     return None
 
 
-def fetch_channel_rss(channel):
+def fetch_channel_uploads(channel):
     cid = _resolve_channel_id(channel)
     pid = _uploads_playlist_id(cid)
     if not pid:
-        print(f"[rss] {channel['name']}: id 못 찾음, skip")
+        print(f"[yt] {channel['name']}: id 못 찾음, skip")
         return []
     out = []
     try:
-        r = requests.get(YT_RSS.format(pid=pid),
-                         headers={"User-Agent": UA}, timeout=20)
+        r = requests.get(YT_PLAYLISTITEMS, params={
+            "key": YT_KEY, "part": "snippet,contentDetails",
+            "playlistId": pid, "maxResults": 15}, timeout=20)
         if r.status_code != 200:
-            print(f"[rss] {channel['name']}: HTTP {r.status_code}")
-            return []
-        root = ET.fromstring(r.content)
-        ns = {"a": "http://www.w3.org/2005/Atom",
-              "yt": "http://www.youtube.com/xml/schemas/2015"}
-        for entry in root.findall("a:entry", ns):
-            vid_el = entry.find("yt:videoId", ns)
-            if vid_el is None:
+            # UULF가 안 먹으면 채널 API로 정확한 업로드ID 재시도
+            print(f"[yt] {channel['name']}: playlistItems {r.status_code}, 채널API 재시도")
+            pid2 = _uploads_via_channel_api(cid)
+            if not pid2 or pid2 == pid:
+                return []
+            r = requests.get(YT_PLAYLISTITEMS, params={
+                "key": YT_KEY, "part": "snippet,contentDetails",
+                "playlistId": pid2, "maxResults": 15}, timeout=20)
+            if r.status_code != 200:
+                print(f"[yt] {channel['name']}: 재시도도 {r.status_code}")
+                return []
+        for it in r.json().get("items", []):
+            sn = it["snippet"]
+            cd = it.get("contentDetails", {})
+            vid = cd.get("videoId") or sn.get("resourceId", {}).get("videoId")
+            if not vid:
                 continue
-            vid = vid_el.text
-            title = (entry.find("a:title", ns).text or "").strip()
-            pub_el = entry.find("a:published", ns)
-            if pub_el is None:
-                continue
-            pub = dt.datetime.fromisoformat(pub_el.text.replace("Z", "+00:00"))
-            # ── 시간 필터: LOOKBACK 안에 올라온 것만 ──
+            pub_str = cd.get("videoPublishedAt") or sn.get("publishedAt")
+            pub = dt.datetime.fromisoformat(pub_str.replace("Z", "+00:00"))
+            # ── 시간 필터 ──
             if pub < CUTOFF:
                 continue
             out.append({
                 "video_id": vid,
-                "title": title,
+                "title": html.unescape(sn["title"]),
                 "channel": channel["name"],
                 "published": pub,
             })
     except Exception as e:
-        print(f"[rss] {channel['name']} err: {e}")
+        print(f"[yt] {channel['name']} err: {e}")
     return out
+
+
+def _uploads_via_channel_api(channel_id):
+    if not channel_id:
+        return None
+    try:
+        r = requests.get(YT_CHANNELS, params={
+            "key": YT_KEY, "part": "contentDetails",
+            "id": channel_id}, timeout=20)
+        r.raise_for_status()
+        items = r.json().get("items", [])
+        if items:
+            return items[0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    except Exception as e:
+        print(f"[channelapi] err: {e}")
+    return None
 
 
 # ──────────────── 제목 한글 번역 (기존 봇과 동일 방식) ────────────────
@@ -174,19 +193,16 @@ def main():
     seen = load_seen()
     seen_ids = set(seen["ids"])
 
-    # 1) 수집 (채널별 RSS, 시간필터 적용됨)
     collected = {}
     for ch in CHANNELS:
-        for it in fetch_channel_rss(ch):
-            collected.setdefault(it["video_id"], it)   # 같은 영상 1회만
+        for it in fetch_channel_uploads(ch):
+            collected.setdefault(it["video_id"], it)
 
-    # 2) 중복제거 — 이미 보낸 video_id 제외
     fresh = [it for vid, it in collected.items() if vid not in seen_ids]
     fresh.sort(key=lambda x: x["published"])
     print(f"수집 {len(collected)}건 / 신규 {len(fresh)}건 "
           f"(기준 최근 {LOOKBACK_HOURS}시간)")
 
-    # 3) 전송 + seen 기록
     for it in fresh:
         it["title_ko"] = translate_title(it["title"])
         send_telegram(it)
