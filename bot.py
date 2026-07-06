@@ -123,47 +123,85 @@ FEEDS = [
     gnews("Tempus AI OR 템퍼스", "ko"),
 ]
 
-# ───────────────────────── 인물 발언 전용 경로 (v2.2 신규) ─────────────────────────
-# 2026-07-06 교차검증. 직함 변동 잦아 실명 위주 + 회사 수장.
-PEOPLE_EN = (
-    '"Sam Altman" OR "Greg Brockman" OR "Sarah Friar" OR "Jason Kwon" OR '
-    '"Dario Amodei" OR "Krishna Rao" OR "Rahul Patil" OR '
-    '"Demis Hassabis" OR "Sundar Pichai" OR "Elon Musk" OR '
-    '"Jensen Huang" OR "Lisa Su" OR "Satya Nadella" OR "Hock Tan" OR '
-    '"Sanjay Mehrotra" OR "C.C. Wei" OR "Cristiano Amon"'
+# ───────────────────────── 인물 발언 전용 경로 (v2.3 혼합) ─────────────────────────
+# 전략: 실명 + 직함(회사+직위) 혼합.
+#  - 아주 유명한 소수(젠슨황·올트먼·아모데이 등)는 실명이 더 잘 잡힘 → 실명 유지.
+#  - 나머지는 "회사 직함"으로 검색 → 임원 교체돼도 명단 수정 불필요.
+# 검증일 2026-07-06. 직함 검색은 자동 갱신되므로 재검증 부담 적음.
+
+# (1) 실명 — 언론이 직함 없이 이름만 쓰는 최상위 인물
+PEOPLE_NAMED_EN = (
+    '"Jensen Huang" OR "Sam Altman" OR "Dario Amodei" OR "Elon Musk" OR '
+    '"Demis Hassabis" OR "Sundar Pichai" OR "Lisa Su" OR "Satya Nadella"'
+)
+# (2) 직함 — 회사+직위. 임원 바뀌어도 그대로 유효.
+PEOPLE_TITLE_EN = (
+    '"OpenAI CEO" OR "OpenAI CFO" OR "OpenAI CTO" OR "OpenAI president" OR '
+    '"Anthropic CEO" OR "Anthropic CFO" OR "Anthropic CTO" OR '
+    '"Nvidia CEO" OR "Nvidia CFO" OR "TSMC CEO" OR "Micron CEO" OR '
+    '"SK hynix CEO" OR "Samsung CEO" OR "AMD CEO" OR "Broadcom CEO" OR '
+    '"Qualcomm CEO"'
 )
 PEOPLE_EN_VERB = (
     '(says OR said OR interview OR warns OR predicts OR comments OR '
     'remarks OR "earnings call" OR keynote)'
 )
-PEOPLE_KO = (
-    '곽노정 OR 전영현 OR 젠슨 황 OR 올트먼 OR 아모데이 OR 피차이 OR '
-    '황산더 OR 김동관 OR 정기선'
+
+# 한국어: (1) 실명 + (2) 회사+직함
+PEOPLE_NAMED_KO = (
+    '곽노정 OR 전영현 OR "젠슨 황" OR 올트먼 OR 아모데이 OR 피차이 OR '
+    '김동관 OR 정기선'
+)
+PEOPLE_TITLE_KO = (
+    '"SK하이닉스 사장" OR "SK하이닉스 대표" OR "삼성전자 사장" OR "삼성전자 부회장" OR '
+    '"마이크론 CEO" OR "엔비디아 CEO" OR "TSMC CEO"'
 )
 PEOPLE_KO_VERB = '(발언 OR 인터뷰 OR 간담회 OR 컨퍼런스콜 OR 기자회견 OR 강조 OR 전망)'
 
 PEOPLE_FEEDS = [
-    gnews(f"{PEOPLE_EN} {PEOPLE_EN_VERB}", "en", hours=PEOPLE_WINDOW_HOURS),
-    gnews(PEOPLE_EN, "en", hours=PEOPLE_WINDOW_HOURS),
-    gnews(f"{PEOPLE_KO} {PEOPLE_KO_VERB}", "ko", hours=PEOPLE_WINDOW_HOURS),
-    gnews(PEOPLE_KO, "ko", hours=PEOPLE_WINDOW_HOURS),
+    # 영어: 실명(발언어 강화) / 직함
+    gnews(f"({PEOPLE_NAMED_EN}) {PEOPLE_EN_VERB}", "en", hours=PEOPLE_WINDOW_HOURS),
+    gnews(PEOPLE_NAMED_EN, "en", hours=PEOPLE_WINDOW_HOURS),
+    gnews(f"({PEOPLE_TITLE_EN}) {PEOPLE_EN_VERB}", "en", hours=PEOPLE_WINDOW_HOURS),
+    # 한국어: 실명 / 직함
+    gnews(f"({PEOPLE_NAMED_KO}) {PEOPLE_KO_VERB}", "ko", hours=PEOPLE_WINDOW_HOURS),
+    gnews(PEOPLE_NAMED_KO, "ko", hours=PEOPLE_WINDOW_HOURS),
+    gnews(f"({PEOPLE_TITLE_KO}) {PEOPLE_KO_VERB}", "ko", hours=PEOPLE_WINDOW_HOURS),
 ]
 
+# 수집 후 인물기사 판정: (1) 실명 리스트 OR (2) 회사+직함 조합
 PEOPLE_NAMES = [
-    "sam altman", "altman", "greg brockman", "brockman", "sarah friar", "friar",
-    "jason kwon", "dario amodei", "amodei", "krishna rao", "rahul patil",
-    "demis hassabis", "hassabis", "sundar pichai", "pichai", "elon musk", "musk",
-    "jensen huang", "jensen", "lisa su", "satya nadella", "nadella", "hock tan",
-    "sanjay mehrotra", "mehrotra", "c.c. wei", "cristiano amon",
-    "곽노정", "전영현", "젠슨", "올트먼", "아모데이", "피차이",
-    "머스크", "리사 수", "황산더", "김동관", "정기선",
+    # 실명 (자주 이름만 등장하는 인물)
+    "jensen huang", "jensen", "sam altman", "altman", "dario amodei", "amodei",
+    "elon musk", "musk", "demis hassabis", "hassabis", "sundar pichai", "pichai",
+    "lisa su", "satya nadella", "nadella",
+    "곽노정", "전영현", "젠슨", "올트먼", "아모데이", "피차이", "머스크",
+    "김동관", "정기선",
+]
+# 회사 토큰 × 직함 토큰이 같은 기사에 함께 있으면 인물기사로 인정 (직함 자동 대응)
+PEOPLE_ORGS = [
+    "openai", "anthropic", "nvidia", "엔비디아", "tsmc", "micron", "마이크론",
+    "sk hynix", "sk하이닉스", "하이닉스", "samsung", "삼성전자", "amd",
+    "broadcom", "qualcomm", "퀄컴",
+]
+PEOPLE_TITLES = [
+    "ceo", "cfo", "cto", "president", "사장", "대표", "부회장", "회장",
 ]
 
 
 def is_people_article(title, summary):
-    """제목/요약에 핵심 인물명이 들어있으면 True (산업 키워드 불필요)."""
+    """
+    인물기사 판정 (혼합).
+    A) 실명이 직접 등장하거나
+    B) '회사명'과 '직함'이 같은 텍스트에 함께 있으면(예: 'OpenAI CFO', '삼성전자 사장') True.
+       → 임원이 교체돼도 직함 조합으로 자동 포착.
+    """
     text = f"{title} {summary}".lower()
-    return any(name in text for name in PEOPLE_NAMES)
+    if any(name in text for name in PEOPLE_NAMES):
+        return True
+    if any(org in text for org in PEOPLE_ORGS) and any(t in text for t in PEOPLE_TITLES):
+        return True
+    return False
 
 
 # ───────────────────────── 필터 키워드 ─────────────────────────
