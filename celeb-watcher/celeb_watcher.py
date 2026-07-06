@@ -29,7 +29,7 @@ CORE_PERSONS = {
     "Jakub Pachocki", "Kevin Weil", "Rahul Patil", "Krishna Rao",
     "Greg Brockman",
 }
-GEMINI_MODEL = "gemini-2.0-flash"
+GEMINI_MODEL = "gemini-3.5-flash"
 SCORE_THRESHOLD = 7         # Gemini 관련성 점수 컷
 
 # ── 감시 대상 인물 (이름 + 별칭) ──────────────────────────
