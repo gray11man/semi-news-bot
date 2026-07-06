@@ -1,194 +1,112 @@
 # -*- coding: utf-8 -*-
 """
-signals.py  (v2 - 전업종 신규성 확장판)
+filter_stage1.py  (v2 - 전업종 신규성 확장판)
 
-기존: 반도체/AI/지정학 키워드 매칭 → 그 우물만 잡힘.
-변경: '신규성/급변/컨센서스 이탈' 축(novelty)을 추가.
-      키워드가 없어도 '뭔가 새로 벌어진 것'이면 통과할 수 있게 함.
+기존: 산업 키워드 2축 이상 겹쳐야 통과 → 반도체 우물만 잡힘.
+변경: 두 경로를 OR로 본다.
+  경로 A (산업): 기존 키워드 점수 + 서로 다른 축 2개 이상  → 반도체/공급망 신호 유지
+  경로 B (신규성): NOVELTY 점수만 높아도 통과            → 전업종 '신박한 것' 포착
+둘 중 하나만 만족하면 Stage2(LLM)로 넘긴다.
 
-Stage1은 이 두 축을 OR로 본다:
-  (A) 기존 산업 키워드 점수 (반도체/공급망 신호 유지용)
-  (B) 신규성 점수 (전업종에서 '판이 바뀌는 신호'를 넓게 포착)
-둘 중 하나만 임계 이상이면 Stage2(LLM)로 넘긴다.
+Stage2가 어차피 variant perception으로 최종 선별하므로,
+Stage1은 '재료를 넓게 통과시키되 완전 노이즈만 거르는' 역할로 재정의.
 """
 
-# (키워드들, 가중치)
-SIGNAL_CATEGORIES = {
-    # ===== S급 핵심 20 (가중치 최상) =====
-    "core_top": (
-        [
-            "쇼티지", "shortage", "병목", "bottleneck", "공급 부족",
-            "수주잔고", "백로그", "backlog", "주문 급증", "가격 인상",
-            "ASP", "점유율 확대", "독점", "과점", "증설",
-            "capex", "CAPEX", "재고 소진", "슈퍼사이클", "supercycle",
-            "구조적 성장", "표준화", "리드타임", "lead time",
-            "락인", "lock-in", "규제 수혜", "TAM",
-        ],
-        4,
-    ),
-    # ===== 수급 =====
-    "supply": (
-        [
-            "공급 제약", "공급 차질", "재고 부족", "품귀", "슬롯 부족",
-            "생산능력 부족", "캐파 부족", "공급망 차질", "공급망", "supply chain",
-            "출하 지연", "납기 지연", "공급 타이트", "tight supply",
-        ],
-        3,
-    ),
-    # ===== 수요 =====
-    "demand": (
-        [
-            "수요 증가", "수요 급증", "수주", "발주", "예약 증가",
-            "고객 확대", "채택률", "침투율", "adoption", "신규 고객",
-        ],
-        3,
-    ),
-    # ===== 가격 =====
-    "pricing": (
-        [
-            "ASP 상승", "가격 협상", "협상력", "프리미엄", "믹스 개선",
-            "단가 인상", "가격 급등", "spot price", "현물가", "계약가",
-            "고정거래가", "renegotiation", "재협상",
-        ],
-        3,
-    ),
-    # ===== 산업 사이클 =====
-    "cycle": (
-        [
-            "업사이클", "재고 정상화", "공급 축소", "감산", "산업 재편",
-            "구조조정", "사이클 반등", "턴어라운드",
-        ],
-        2,
-    ),
-    # ===== 경쟁 구도 =====
-    "competition": (
-        [
-            "진입장벽", "기술 격차", "기술 초격차", "표준", "standard",
-            "시장 지배", "지배력", "독과점",
-        ],
-        3,
-    ),
-    # ===== CAPEX / 투자 =====
-    "capex": (
-        [
-            "투자 확대", "신규 공장", "생산능력 확장", "캐파 증설",
-            "인프라 투자", "데이터센터 건설", "데이터센터 투자",
-            "설비 투자", "가이던스", "guidance", "hyperscaler",
-        ],
-        3,
-    ),
-    # ===== 정책 / 규제 =====
-    "policy": (
-        [
-            "규제 완화", "보조금", "세액공제", "국산화", "리쇼어링",
-            "reshoring", "전략산업", "수출 통제", "export control",
-            "수출 제한", "관세", "tariff",
-        ],
-        3,
-    ),
-    # ===== 쇼티지·원자재 =====
-    "material": (
-        [
-            "원자재", "희토류", "rare earth", "구리", "copper", "리튬",
-            "니켈", "코발트", "갈륨", "게르마늄", "네온", "팔라듐",
-            "우라늄", "uranium", "유가", "원유", "천연가스", "곡물",
-        ],
-        3,
-    ),
-    # ===== 지정학 / 전쟁 / 방산 =====
-    "geopolitics": (
-        [
-            "전쟁", "war", "교전", "공습", "미사일", "확전", "휴전",
-            "지정학", "geopolitical", "제재", "sanction", "봉쇄", "blockade",
-            "호르무즈", "Hormuz", "대만", "Taiwan", "남중국해", "분쟁",
-            "방산", "defense", "무기", "군비", "국방 예산",
-        ],
-        3,
-    ),
-}
+from collections import defaultdict
 
-# =====================================================================
-# 신규성 축 (novelty) — 전업종 공통.
-# 산업 키워드가 하나도 없어도, '판이 새로 바뀌는 신호'면 여기서 잡는다.
-# 키워드가 아니라 '변화의 문법'을 잡는 사전이다.
-# =====================================================================
-NOVELTY_SIGNALS = {
-    # 최초·전례 없음 (구조 변화의 강한 신호)
-    "first_ever": (
-        [
-            "사상 최초", "세계 최초", "국내 최초", "업계 최초", "처음으로",
-            "전례 없", "유례 없", "최초로", "first ever", "first-ever",
-            "for the first time", "unprecedented", "debut", "신기록",
-            "사상 최대", "역대 최대", "역대 최고", "record high", "all-time high",
-            "사상 최고", "돌파", "경신",
-        ],
-        4,
-    ),
-    # 급변·돌연 (컨센서스 이탈 신호)
-    "abrupt": (
-        [
-            "돌연", "전격", "급반전", "급선회", "돌변", "기습",
-            "예상 밖", "예상 외", "의외", "이례적", "파격",
-            "surprise", "unexpected", "shock", "abruptly", "suddenly",
-            "reverses", "u-turn", "급락", "급등", "폭락", "폭등",
-            "surges", "plunges", "collapses", "soars",
-        ],
-        3,
-    ),
-    # 판도 변화·전환 (구조적 전환 신호)
-    "regime_shift": (
-        [
-            "게임체인저", "game changer", "판도", "지각변동", "패러다임",
-            "구조적 전환", "대전환", "재편", "reshape", "disrupt",
-            "breakthrough", "돌파구", "전환점", "변곡점", "tipping point",
-            "새로운 국면", "국면 전환", "판을 바꾸", "판 바뀌",
-        ],
-        3,
-    ),
-    # 신규 진입·신사업 (기존 플레이어의 영역 확장)
-    "new_entry": (
-        [
-            "신사업", "진출", "출사표", "새 시장", "신시장", "첫 진출",
-            "enters", "expands into", "pivot", "새 사업", "사업 전환",
-            "인수", "합병", "m&a", "지분 인수", "acquire", "takeover",
-        ],
-        2,
-    ),
-    # 규제·정책 신설·급변 (외생 충격)
-    "policy_shock": (
-        [
-            "전면 금지", "전면 허용", "규제 신설", "긴급", "특별법",
-            "행정명령", "executive order", "ban", "mandate", "긴급 조치",
-            "규제 철폐", "규제 도입", "전면 개편", "정책 급변",
-        ],
-        3,
-    ),
-}
+from signals import (
+    SIGNAL_CATEGORIES, NOVELTY_SIGNALS,
+    SCORE_THRESHOLD, NOVELTY_THRESHOLD, MAX_DAILY, CATEGORY_LABELS,
+)
 
-# ===== 임계값 =====
-# 기존 산업 키워드 축 임계값
-SCORE_THRESHOLD = 8
-# 신규성 축 임계값 (이쪽은 축이 하나라도 강하면 통과시키려 다소 낮게)
-NOVELTY_THRESHOLD = 5
+# 산업 경로에서 요구하는 최소 축 개수
+MIN_DISTINCT_CATEGORIES = 2
 
-# 하루 최종 전송 상한
-MAX_DAILY = 3
 
-CATEGORY_LABELS = {
-    "core_top": "핵심신호",
-    "supply": "수급",
-    "demand": "수요",
-    "pricing": "가격",
-    "cycle": "사이클",
-    "competition": "경쟁",
-    "capex": "CAPEX",
-    "policy": "정책",
-    "material": "원자재",
-    "geopolitics": "지정학",
-    # novelty
-    "first_ever": "최초·전례",
-    "abrupt": "급변",
-    "regime_shift": "판도변화",
-    "new_entry": "신규진입",
-    "policy_shock": "정책충격",
-}
+def _score(text_low, categories):
+    """주어진 사전(categories)으로 점수와 매칭 카테고리 반환."""
+    total = 0
+    hits = {}
+    for cat, (keywords, weight) in categories.items():
+        matched = [kw for kw in keywords if kw.lower() in text_low]
+        if matched:
+            total += weight + min(len(matched) - 1, 2)
+            hits[cat] = matched
+    return total, hits
+
+
+def _primary_category(industry_hits, novelty_hits):
+    """대표 주제 하나 결정 (다양성 분산용). 구체적 산업축 우선, 없으면 신규성축."""
+    priority = ["geopolitics", "material", "policy", "competition",
+                "capex", "supply", "pricing", "demand", "cycle", "core_top"]
+    for cat in priority:
+        if cat in industry_hits:
+            return cat
+    # 산업축이 없으면 신규성축을 대표로
+    nov_priority = ["first_ever", "policy_shock", "regime_shift",
+                    "abrupt", "new_entry"]
+    for cat in nov_priority:
+        if cat in novelty_hits:
+            return cat
+    if industry_hits:
+        return next(iter(industry_hits))
+    if novelty_hits:
+        return next(iter(novelty_hits))
+    return "기타"
+
+
+def filter_news(news_items):
+    passed = []
+    for item in news_items:
+        text_low = f"{item.get('title','')} {item.get('summary','')}".lower()
+
+        ind_score, ind_hits = _score(text_low, SIGNAL_CATEGORIES)
+        nov_score, nov_hits = _score(text_low, NOVELTY_SIGNALS)
+
+        # 경로 A: 산업 키워드가 충분히 촘촘 (기존 반도체/공급망 신호 유지)
+        path_industry = (
+            ind_score >= SCORE_THRESHOLD
+            and len(ind_hits) >= MIN_DISTINCT_CATEGORIES
+        )
+        # 경로 B: 신규성 신호가 강함 (전업종 '신박한 것')
+        #   단, 신규성만 있고 산업 맥락이 아예 없으면 노이즈일 수 있어
+        #   '신규성 축 자체가 2개 이상'이거나 '신규성+산업키워드 최소 1개' 요구
+        path_novelty = (
+            nov_score >= NOVELTY_THRESHOLD
+            and (len(nov_hits) >= 2 or ind_score > 0)
+        )
+
+        if not (path_industry or path_novelty):
+            continue
+
+        all_hits = {}
+        all_hits.update(ind_hits)
+        all_hits.update(nov_hits)
+
+        enriched = dict(item)
+        enriched["score"] = ind_score + nov_score
+        enriched["ind_score"] = ind_score
+        enriched["nov_score"] = nov_score
+        enriched["hits"] = all_hits
+        enriched["categories"] = [CATEGORY_LABELS.get(c, c) for c in all_hits.keys()]
+        enriched["_primary"] = _primary_category(ind_hits, nov_hits)
+        # Stage2가 신규성 여부를 참고하도록 플래그
+        enriched["is_novelty"] = path_novelty and not path_industry
+        passed.append(enriched)
+
+    passed.sort(key=lambda x: x["score"], reverse=True)
+
+    # ── 다양성 분산: 같은 대표주제가 몰리지 않게 라운드로빈 ──
+    buckets = defaultdict(list)
+    for it in passed:
+        buckets[it["_primary"]].append(it)
+
+    diversified = []
+    limit = MAX_DAILY * 2
+    while len(diversified) < limit and any(buckets.values()):
+        for cat in list(buckets.keys()):
+            if buckets[cat]:
+                diversified.append(buckets[cat].pop(0))
+                if len(diversified) >= limit:
+                    break
+    return diversified
