@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-fetch_news.py
-구글 뉴스 RSS로 미국+한국 뉴스를 긁는 수집기.
-signals.py의 핵심 키워드를 그대로 검색어로 사용 → 긁는 기준과 거르는 기준 일치.
-키 발급 불필요, 무료. GitHub Actions에서 바로 작동.
+fetch_news.py  (v2 - 전업종 무키워드 수집판)
+
+기존: signals.py 키워드로 검색 → 그 키워드 산업만 잡힘 (범위 좁음).
+변경: 미국/한국/일본/대만 4개 권역의 '경제·비즈니스 섹션 헤드라인'을
+      키워드 없이 넓게 긁는다. 무엇이 '신호'인지는 Stage1/Stage2가 판정.
+
+  1단(여기): 넓게 수집 + dedup  → 수백 건
+  2단(filter_stage1): 신규성/산업 OR 필터 → 수십 건
+  3단(evaluate_stage2): LLM variant perception 판정 → 최종 소수
 
 반환 형식(main.py가 기대하는 모양):
   [{"title", "summary", "url", "source"}, ...]
@@ -17,53 +22,43 @@ from difflib import SequenceMatcher
 
 import requests
 
-from signals import SIGNAL_CATEGORIES
+GOOGLE_NEWS_SEARCH = "https://news.google.com/rss/search?q={q}&hl={hl}&gl={gl}&ceid={ceid}"
 
-# 구글 뉴스 RSS 엔드포인트.
-# hl=언어, gl=국가, ceid=국가:언어 로 한국판/미국판을 나눠 긁는다.
-GOOGLE_NEWS = "https://news.google.com/rss/search?q={q}&hl={hl}&gl={gl}&ceid={ceid}"
+# 구글 뉴스는 UA에 민감. 기존 봇과 동일한 브라우저 UA로 403 회피.
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
-# 한국 뉴스: 한국어 키워드로 검색
-KO_PARAMS = {"hl": "ko", "gl": "KR", "ceid": "KR:ko"}
-# 미국 뉴스: 영어 키워드로 검색
-US_PARAMS = {"hl": "en-US", "gl": "US", "ceid": "US:en"}
+REGIONS = {
+    "US": {"hl": "en-US", "gl": "US", "ceid": "US:en", "label": "GoogleNews(US)"},
+    "KR": {"hl": "ko",    "gl": "KR", "ceid": "KR:ko", "label": "구글뉴스(KR)"},
+    "JP": {"hl": "ja",    "gl": "JP", "ceid": "JP:ja", "label": "GoogleNews(JP)"},
+    "TW": {"hl": "zh-TW", "gl": "TW", "ceid": "TW:zh-Hant", "label": "GoogleNews(TW)"},
+}
 
+BROAD_QUERIES = {
+    "US": ["business when:1d", "economy market when:1d", "industry supply when:1d"],
+    "KR": ["경제 when:1d", "산업 기업 when:1d", "증시 시장 when:1d"],
+    "JP": ["経済 when:1d", "産業 企業 when:1d"],
+    "TW": ["經濟 when:1d", "產業 企業 when:1d"],
+}
 
-# 검색에 쓸 키워드 고르기:
-# 핵심신호(core_top) + 쇼티지/원자재(material) + 지정학(geopolitics) 위주로,
-# 너무 흔해서 노이즈만 잔뜩 끌어오는 단어는 제외하고 '조준 키워드'만 추린다.
-def build_search_terms():
-    ko_terms, us_terms = [], []
-    for cat in ("core_top", "material", "geopolitics", "supply"):
-        keywords = SIGNAL_CATEGORIES.get(cat, ([], 0))[0]
-        for kw in keywords:
-            # 영어/한글 구분: 알파벳이 들어간 건 미국 검색, 한글은 한국 검색
-            if any(ord(c) < 128 and c.isalpha() for c in kw):
-                us_terms.append(kw)
-            else:
-                ko_terms.append(kw)
-    # 중복 제거, 너무 짧은 단어(1글자) 제외
-    ko_terms = sorted(set(t for t in ko_terms if len(t) >= 2))
-    us_terms = sorted(set(t for t in us_terms if len(t) >= 3))
-    return ko_terms, us_terms
+RSS_MAX_ENTRIES = 40
+REQUEST_TIMEOUT = 20
+FETCH_DELAY = 1.0
 
 
-def fetch_rss(query, params, source_label):
-    """구글 뉴스 RSS 1건 검색 → 기사 리스트."""
-    q = urllib.parse.quote(query)
-    url = GOOGLE_NEWS.format(q=q, **params)
+def fetch_rss(url, source_label):
     items = []
     try:
-        resp = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0"})
+        resp = requests.get(url, timeout=REQUEST_TIMEOUT,
+                            headers={"User-Agent": UA})
         resp.raise_for_status()
         root = ET.fromstring(resp.content)
-        for it in root.iter("item"):
+        for it in list(root.iter("item"))[:RSS_MAX_ENTRIES]:
             title = (it.findtext("title") or "").strip()
             link = (it.findtext("link") or "").strip()
             desc = (it.findtext("description") or "").strip()
-            # description은 HTML 태그가 섞여있어 거칠게 정리
-            desc = desc.replace("<", " <").replace(">", "> ")
-            desc = re.sub(r"<[^>]+>", "", desc).strip()
+            desc = re.sub(r"<[^>]+>", " ", desc).strip()
             src = (it.findtext("source") or source_label).strip()
             if title:
                 items.append({
@@ -73,70 +68,19 @@ def fetch_rss(query, params, source_label):
                     "source": src,
                 })
     except Exception as e:
-        print(f"[fetch] RSS 실패 ({query}): {e}")
+        print(f"[fetch] RSS 실패 ({source_label}): {e}")
     return items
-
-
-# ===== 중복 제거 (in-run dedup, 강화판) =====
-# 같은 사건 묶기용: 핵심 주체 + 주제
-_DEDUP_ACTORS = {
-    "마이크론", "micron", "sk하이닉스", "하이닉스", "hynix", "삼성전자", "삼성",
-    "samsung", "엔비디아", "nvidia", "tsmc", "퀄컴", "qualcomm", "amd", "인텔",
-    "intel", "브로드컴", "broadcom", "한화엔진", "두산", "효성",
-}
-_DEDUP_TOPICS = {
-    "실적": {"실적", "매출", "이익", "earnings", "revenue", "분기", "사상 최대",
-             "record", "가이던스", "전망", "최고", "급등", "깜짝", "경신"},
-    "수주": {"수주", "계약", "공급계약", "발주", "contract", "deal", "수주잔고"},
-    "증설": {"증설", "투자", "공장", "capex", "설비", "착공", "ipo", "상장", "adr"},
-    "hbm": {"hbm", "고대역폭", "메모리", "dram", "슈퍼사이클", "supercycle"},
-    "전력": {"전력", "데이터센터", "전력망", "원전", "가스터빈", "power", "datacenter"},
-    "쇼티지": {"쇼티지", "shortage", "부족", "품귀", "공급난", "병목", "tight"},
-    "원자재": {"구리", "copper", "유가", "원유", "리튬", "우라늄", "희토류", "원자재"},
-    "지정학": {"전쟁", "war", "호르무즈", "제재", "방산", "지정학", "분쟁"},
-}
-
-# 표면 유사도 임계값.
-# 0.80 이상이면 단독으로 같은 사건 판정.
-# actors∩topics가 겹칠 때는 0.55 이상이면 보조적으로 같은 사건 판정.
-_SIM_STRONG = 0.80
-_SIM_ASSIST = 0.55
 
 
 def _norm(t):
     t = t or ""
-    # 구글뉴스 제목 꼬리표 " - 언론사" 제거 (유사도 왜곡 방지)
     t = re.sub(r"\s*-\s*[^-]+$", "", t)
-    # [속보] (종합) 같은 머리표 제거
     t = re.sub(r"\[[^\]]*\]|\([^)]*\)", " ", t)
     t = re.sub(r"[^\w가-힣 ]", " ", t)
     return re.sub(r"\s+", " ", t).strip().lower()
 
 
-def _actors_topics(t):
-    low = _norm(t)
-    actors = {a for a in _DEDUP_ACTORS if a in low}
-    topics = {tp for tp, kws in _DEDUP_TOPICS.items() if any(k in low for k in kws)}
-    return actors, topics
-
-
-def _same_event(a, b):
-    na, nb = _norm(a), _norm(b)
-    ratio = SequenceMatcher(None, na, nb).ratio()
-    # 1) 표면 유사도가 충분히 높으면 같은 사건
-    if ratio >= _SIM_STRONG:
-        return True
-    # 2) 주체·주제가 겹치고 + 표면 유사도도 어느 정도 있을 때만 같은 사건
-    #    (단순 actor∩topic 일치만으로 묶으면 서로 다른 기사를 과잉 병합함)
-    aa, at = _actors_topics(a)
-    ba, bt = _actors_topics(b)
-    if (aa & ba) and (at & bt) and ratio >= _SIM_ASSIST:
-        return True
-    return False
-
-
 def _canon_url(u):
-    """URL 정규화: 같은 기사 다른 쿼리스트링 제거."""
     try:
         p = urllib.parse.urlparse(u)
         return (p.netloc.replace("www.", "") + p.path).rstrip("/").lower()
@@ -144,8 +88,14 @@ def _canon_url(u):
         return u or ""
 
 
+_SIM_THRESHOLD = 0.80
+
+
+def _same_event(a, b):
+    return SequenceMatcher(None, _norm(a), _norm(b)).ratio() >= _SIM_THRESHOLD
+
+
 def dedup(items):
-    """URL 정규화 + 유사도 + 주체/주제 기반 중복 제거 (강화판)."""
     kept = []
     seen_url = set()
     for it in items:
@@ -161,26 +111,16 @@ def dedup(items):
 
 
 def fetch_news():
-    """
-    한국+미국 뉴스를 키워드별로 긁어 모아 중복 제거 후 반환.
-    검색어가 많으면 호출이 늘어나므로, 키워드를 OR로 묶어 호출 수를 줄인다.
-    """
-    ko_terms, us_terms = build_search_terms()
+    """4개 권역 경제/산업 헤드라인을 무키워드로 넓게 수집 후 dedup."""
     all_items = []
 
-    # 한국: 키워드를 5개씩 OR로 묶어 검색 (호출 수 절감)
-    for i in range(0, len(ko_terms), 5):
-        chunk = ko_terms[i:i + 5]
-        query = " OR ".join(chunk) + " when:1d"   # 최근 1일 기사
-        all_items += fetch_rss(query, KO_PARAMS, "구글뉴스(KR)")
-        time.sleep(1)
-
-    # 미국: 동일
-    for i in range(0, len(us_terms), 5):
-        chunk = us_terms[i:i + 5]
-        query = " OR ".join(chunk) + " when:1d"
-        all_items += fetch_rss(query, US_PARAMS, "GoogleNews(US)")
-        time.sleep(1)
+    for region, params in REGIONS.items():
+        for q in BROAD_QUERIES.get(region, []):
+            qq = urllib.parse.quote(q)
+            search_url = GOOGLE_NEWS_SEARCH.format(
+                q=qq, hl=params["hl"], gl=params["gl"], ceid=params["ceid"])
+            all_items += fetch_rss(search_url, params["label"])
+            time.sleep(FETCH_DELAY)
 
     deduped = dedup(all_items)
     print(f"[fetch] 수집 {len(all_items)}건 → 중복제거 {len(deduped)}건")
@@ -188,7 +128,6 @@ def fetch_news():
 
 
 if __name__ == "__main__":
-    # 단독 테스트용
     news = fetch_news()
-    for n in news[:10]:
+    for n in news[:15]:
         print(f"- [{n['source']}] {n['title']}")
