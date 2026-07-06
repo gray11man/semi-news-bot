@@ -1,0 +1,42 @@
+name: celeb-watcher
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # 6시간마다 (쿼터 안전)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: celeb-watcher
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests
+
+      - name: Run watcher
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          TELEGRAM_TOKEN: ${{ secrets.CELEB_TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.CELEB_TELEGRAM_CHAT_ID }}
+        working-directory: celeb-watcher
+        run: python celeb_watcher.py
+
+      - name: Commit seen ids
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add celeb-watcher/seen_celeb_ids.json || true
+          git diff --cached --quiet || git commit -m "update seen ids"
+          git push
