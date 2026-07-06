@@ -12,8 +12,8 @@ import requests
 
 YOUTUBE_API_KEY = os.environ["YOUTUBE_API_KEY"]
 GEMINI_API_KEY = os.environ["GEMINI_KEY"]
-TG_TOKEN = os.environ["CELEB_TELEGRAM_TOKEN"]
-TG_CHAT = os.environ["CELEB_TELEGRAM_CHAT_ID"]
+TG_TOKEN = os.environ["TELEGRAM_TOKEN"]
+TG_CHAT = os.environ["TELEGRAM_CHAT_ID"]
 
 SEEN_FILE = "seen_celeb_ids.json"
 LOOKBACK_HOURS = 8          # 워크플로 주기보다 여유있게
