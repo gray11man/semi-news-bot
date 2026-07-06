@@ -47,7 +47,7 @@ MAX_SEND_PER_RUN = 8
 MIN_SCORE_TO_SEND = 7
 NEWS_WINDOW_HOURS = 3                 # [v2.3] 4 → 3 (실행 주기와 일치)
 PEOPLE_WINDOW_HOURS = 24              # 인물 발언은 하루 종일 퍼지므로 넓게
-SIMILARITY_THRESHOLD = 0.55
+SIMILARITY_THRESHOLD = 0.42
 REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 
@@ -339,7 +339,7 @@ def _topic_groups(text):
 def is_similar(a, b):
     if SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD:
         return True
-    if _jaccard(a, b) >= 0.45:
+    if _jaccard(a, b) >= 0.32:
         return True
 
     aa_actor, aa_action = _key_entities(a)
