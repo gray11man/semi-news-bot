@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이전트 (v2.2)
+AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이전트 (v2.3)
 
-v2.1 → v2.2 변경점 (인물 발언 전용 경로 추가):
-  - PEOPLE_FEEDS: 핵심 인물(젠슨황·올트먼·아모데이·곽노정·전영현 등) 발언/인터뷰를
-    24시간 창으로 별도 수집. (기존 산업 피드는 4시간 창 그대로)
-  - 인물 피드 기사는 passes_filter(산업 키워드 강제)를 건너뛰고
-    인물명(is_people_article)만 맞으면 통과.
-  - 인물 명단 2026-07-06 교차검증. OpenAI CTO 공석·Mira Murati 퇴사 반영 제외.
-  - 기존 산업 로직 / dedup / seen / 점수 체계는 그대로.
+v2.2 → v2.3 변경점 (오래된 기사 차단):
+  - NEWS_WINDOW_HOURS 4 → 3 (실행 주기와 일치)
+  - is_fresh(): 발행일 파싱 실패 기사 통과(True) → 차단(False)으로 변경
+  - 인물 피드도 날짜 없는 기사 차단
+  - 전송 직전 나이 재검사 추가: queue 이월분 포함 윈도우 초과 기사 폐기
 """
 
 import os
@@ -47,8 +45,8 @@ NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 7
 MAX_SEND_PER_RUN = 15
 MIN_SCORE_TO_SEND = 5
-NEWS_WINDOW_HOURS = 4
-PEOPLE_WINDOW_HOURS = 24              # [신규] 인물 발언은 하루 종일 퍼지므로 넓게
+NEWS_WINDOW_HOURS = 3                 # [v2.3] 4 → 3 (실행 주기와 일치)
+PEOPLE_WINDOW_HOURS = 24              # 인물 발언은 하루 종일 퍼지므로 넓게
 SIMILARITY_THRESHOLD = 0.55
 REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
@@ -105,7 +103,7 @@ DEMAND_KO = (
     "AI 매출 OR AI 가동률 OR AI 에이전트 OR 기업용 AI OR 수주잔고 OR AI 채택"
 )
 
-# 산업 피드 (기존 4시간 창). PEOPLE_EN 줄은 인물 전용 경로로 대체되어 제거됨.
+# 산업 피드 (3시간 창)
 FEEDS = [
     gnews(CORE_EN, "en"),
     gnews(MONEY_EN, "en"),
@@ -123,18 +121,11 @@ FEEDS = [
     gnews("Tempus AI OR 템퍼스", "ko"),
 ]
 
-# ───────────────────────── 인물 발언 전용 경로 (v2.3 혼합) ─────────────────────────
-# 전략: 실명 + 직함(회사+직위) 혼합.
-#  - 아주 유명한 소수(젠슨황·올트먼·아모데이 등)는 실명이 더 잘 잡힘 → 실명 유지.
-#  - 나머지는 "회사 직함"으로 검색 → 임원 교체돼도 명단 수정 불필요.
-# 검증일 2026-07-06. 직함 검색은 자동 갱신되므로 재검증 부담 적음.
-
-# (1) 실명 — 언론이 직함 없이 이름만 쓰는 최상위 인물
+# ───────────────────────── 인물 발언 전용 경로 ─────────────────────────
 PEOPLE_NAMED_EN = (
     '"Jensen Huang" OR "Sam Altman" OR "Dario Amodei" OR "Elon Musk" OR '
     '"Demis Hassabis" OR "Sundar Pichai" OR "Lisa Su" OR "Satya Nadella"'
 )
-# (2) 직함 — 회사+직위. 임원 바뀌어도 그대로 유효.
 PEOPLE_TITLE_EN = (
     '"OpenAI CEO" OR "OpenAI CFO" OR "OpenAI CTO" OR "OpenAI president" OR '
     '"Anthropic CEO" OR "Anthropic CFO" OR "Anthropic CTO" OR '
@@ -147,7 +138,6 @@ PEOPLE_EN_VERB = (
     'remarks OR "earnings call" OR keynote)'
 )
 
-# 한국어: (1) 실명 + (2) 회사+직함
 PEOPLE_NAMED_KO = (
     '곽노정 OR 전영현 OR "젠슨 황" OR 올트먼 OR 아모데이 OR 피차이 OR '
     '김동관 OR 정기선'
@@ -159,26 +149,21 @@ PEOPLE_TITLE_KO = (
 PEOPLE_KO_VERB = '(발언 OR 인터뷰 OR 간담회 OR 컨퍼런스콜 OR 기자회견 OR 강조 OR 전망)'
 
 PEOPLE_FEEDS = [
-    # 영어: 실명(발언어 강화) / 직함
     gnews(f"({PEOPLE_NAMED_EN}) {PEOPLE_EN_VERB}", "en", hours=PEOPLE_WINDOW_HOURS),
     gnews(PEOPLE_NAMED_EN, "en", hours=PEOPLE_WINDOW_HOURS),
     gnews(f"({PEOPLE_TITLE_EN}) {PEOPLE_EN_VERB}", "en", hours=PEOPLE_WINDOW_HOURS),
-    # 한국어: 실명 / 직함
     gnews(f"({PEOPLE_NAMED_KO}) {PEOPLE_KO_VERB}", "ko", hours=PEOPLE_WINDOW_HOURS),
     gnews(PEOPLE_NAMED_KO, "ko", hours=PEOPLE_WINDOW_HOURS),
     gnews(f"({PEOPLE_TITLE_KO}) {PEOPLE_KO_VERB}", "ko", hours=PEOPLE_WINDOW_HOURS),
 ]
 
-# 수집 후 인물기사 판정: (1) 실명 리스트 OR (2) 회사+직함 조합
 PEOPLE_NAMES = [
-    # 실명 (자주 이름만 등장하는 인물)
     "jensen huang", "jensen", "sam altman", "altman", "dario amodei", "amodei",
     "elon musk", "musk", "demis hassabis", "hassabis", "sundar pichai", "pichai",
     "lisa su", "satya nadella", "nadella",
     "곽노정", "전영현", "젠슨", "올트먼", "아모데이", "피차이", "머스크",
     "김동관", "정기선",
 ]
-# 회사 토큰 × 직함 토큰이 같은 기사에 함께 있으면 인물기사로 인정 (직함 자동 대응)
 PEOPLE_ORGS = [
     "openai", "anthropic", "nvidia", "엔비디아", "tsmc", "micron", "마이크론",
     "sk hynix", "sk하이닉스", "하이닉스", "samsung", "삼성전자", "amd",
@@ -190,12 +175,6 @@ PEOPLE_TITLES = [
 
 
 def is_people_article(title, summary):
-    """
-    인물기사 판정 (혼합).
-    A) 실명이 직접 등장하거나
-    B) '회사명'과 '직함'이 같은 텍스트에 함께 있으면(예: 'OpenAI CFO', '삼성전자 사장') True.
-       → 임원이 교체돼도 직함 조합으로 자동 포착.
-    """
     text = f"{title} {summary}".lower()
     if any(name in text for name in PEOPLE_NAMES):
         return True
@@ -437,8 +416,30 @@ def entry_age_hours(entry):
 def is_fresh(entry):
     age = entry_age_hours(entry)
     if age is None:
-        return True
+        return False  # [v2.3] 발행일 없는 기사 차단 (기존: 통과 → 오래된 기사 유입 원인)
     return age <= NEWS_WINDOW_HOURS + 1
+
+
+def published_age_hours(pub_iso):
+    """[v2.3] 저장된 published ISO 문자열로 나이(시간) 계산. 파싱 실패 시 None."""
+    if not pub_iso:
+        return None
+    try:
+        dt = datetime.datetime.fromisoformat(pub_iso)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=datetime.timezone.utc)
+        return (now_utc() - dt).total_seconds() / 3600.0
+    except Exception:
+        return None
+
+
+def is_stale_item(it):
+    """[v2.3] 전송 직전 나이 재검사. queue 이월분 포함."""
+    age = published_age_hours(it.get("published", ""))
+    if age is None:
+        return True  # 날짜 없으면 폐기
+    limit = PEOPLE_WINDOW_HOURS if it.get("is_people") else NEWS_WINDOW_HOURS
+    return age > limit + 1
 
 
 def source_name(entry):
@@ -646,7 +647,6 @@ def collect():
     items = []
     seen_titles = []
 
-    # 산업 피드(필터 강제) + 인물 피드(필터 완화)를 (url, is_people)로 순회
     feed_plan = [(u, False) for u in FEEDS] + [(u, True) for u in PEOPLE_FEEDS]
 
     for url, is_people in feed_plan:
@@ -662,17 +662,14 @@ def collect():
             if not title or not link:
                 continue
 
-            # 신선도: 인물 기사는 24h까지 허용
-            if is_people:
-                age = entry_age_hours(entry)
-                if age is not None and age > PEOPLE_WINDOW_HOURS + 1:
-                    continue
-            else:
-                if not is_fresh(entry):
-                    continue
+            # 신선도 [v2.3]: 인물/산업 모두 날짜 없는 기사 차단
+            age = entry_age_hours(entry)
+            if age is None:
+                continue
+            limit = PEOPLE_WINDOW_HOURS if is_people else NEWS_WINDOW_HOURS
+            if age > limit + 1:
+                continue
 
-            # 필터: 산업 기사만 passes_filter 강제.
-            #       인물 기사는 인물명만 맞으면 통과(산업 키워드 불필요).
             if is_people:
                 if not is_people_article(title, raw_sum):
                     continue
@@ -696,7 +693,7 @@ def collect():
 
             sc = base_score(title, raw_sum)
             if is_people:
-                sc += 3  # 인물 발언 가산점(전송 문턱 통과 도움)
+                sc += 3
 
             items.append({
                 "title": html.unescape(title),
@@ -884,6 +881,13 @@ def main():
     fresh = dedupe_against_seen(fresh, seen)
 
     pool = queue + fresh
+
+    # [v2.3] 전송 직전 나이 재검사: queue 이월분 포함 윈도우 초과 기사 폐기
+    before_stale = len(pool)
+    pool = [it for it in pool if not is_stale_item(it)]
+    if before_stale != len(pool):
+        print(f"[INFO] 오래된 기사 폐기: {before_stale - len(pool)}건")
+
     uniq, seen_nt = [], []
     for it in pool:
         if any(is_similar(it["ntitle"], s) for s in seen_nt):
