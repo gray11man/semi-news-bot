@@ -44,7 +44,7 @@ NEWS_FILE = "news.json"
 NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 7
 MAX_SEND_PER_RUN = 8
-MIN_SCORE_TO_SEND = 7
+MIN_SCORE_TO_SEND = 6
 NEWS_WINDOW_HOURS = 3                 # [v2.3] 4 → 3 (실행 주기와 일치)
 PEOPLE_WINDOW_HOURS = 24              # 인물 발언은 하루 종일 퍼지므로 넓게
 SIMILARITY_THRESHOLD = 0.42
@@ -419,6 +419,13 @@ def base_score(title, summary):
                "오늘의", "특징주", "이 시각"]:
         if kw in text:
             score -= 3
+            break
+    # 리테일/세대 잡뉴스 감점 (개인투자자 동향, 세대별 투자 등 산업 무관 기사)
+    for kw in ["20대", "30대", "2030", "청년", "개미", "서학개미", "동학개미",
+               "투자했을까", "순매수 1위", "인기 종목", "매수 상위", "계좌 잔고",
+               "retail investor", "young investor"]:
+        if kw in text:
+            score -= 5
             break
     return score
 
@@ -942,6 +949,12 @@ def main():
         if FETCH_BODY:
             time.sleep(BODY_FETCH_DELAY)
         a = gemini_analyze(it["title"], it["summary"], it["source"], body=body)
+        # [v2.4] Gemini가 C등급(참고용) 판정 시 전송 차단
+        if a and a.get("grade") == "C":
+            print(f"[SKIP] C등급 차단: {it['title'][:50]}")
+            seen[title_key(it["title"])] = {"ntitle": it["ntitle"],
+                                            "ts": now_utc().timestamp()}
+            continue
         msg = build_full(it, a) if a else build_min(it)
         if tg_send(msg):
             sent += 1
