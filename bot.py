@@ -102,15 +102,31 @@ DEMAND_KO = (
     "AI 수요 OR 추론 수요 OR AI 토큰 OR 연산 수요 OR GPU 부족 OR 캐파 부족 OR "
     "AI 매출 OR AI 가동률 OR AI 에이전트 OR 기업용 AI OR 수주잔고 OR AI 채택"
 )
+FUNDING_EN = (
+    "hyperscaler debt OR hyperscaler bond OR \"AI capex\" financing OR "
+    "\"bond issuance\" AI OR \"debt issuance\" AI datacenter OR "
+    "Oracle bond OR Oracle debt OR Meta bond OR \"Alphabet bond\" OR "
+    "\"Amazon bond\" OR \"Microsoft bond\" OR \"special purpose vehicle\" AI OR "
+    "\"private credit\" AI datacenter OR \"off-balance sheet\" AI OR "
+    "\"free cash flow\" hyperscaler OR \"credit rating\" hyperscaler OR "
+    "\"CDS\" Oracle OR hyperscaler leverage"
+)
+FUNDING_KO = (
+    "하이퍼스케일러 자금조달 OR 하이퍼스케일러 채권 OR 오라클 회사채 OR "
+    "빅테크 부채 OR AI 설비투자 조달 OR AI 자금조달 OR 빅테크 신용등급 OR "
+    "데이터센터 프로젝트파이낸싱 OR AI 부채"
+)
 
 # 산업 피드 (3시간 창)
 FEEDS = [
     gnews(CORE_EN, "en"),
     gnews(MONEY_EN, "en"),
     gnews(DEMAND_EN, "en"),
+    gnews(FUNDING_EN, "en"),
     gnews(CORE_KO, "ko"),
     gnews("AI 데이터센터 OR HBM 공급 OR 반도체 수주 OR AI 전력 OR 원전 데이터센터", "ko"),
     gnews(DEMAND_KO, "ko"),
+    gnews(FUNDING_KO, "ko"),
     gnews("AI半導体 OR HBM OR データセンター OR ラピダス OR 電力 AI OR AI需要 OR 推論需要", "ja"),
     gnews("人工智能 芯片 OR 数据中心 OR HBM OR 算力 OR 英伟达 OR AI需求 OR 推理需求", "zh"),
     gnews("台積電 OR CoWoS OR AI 伺服器 OR 半導體 產能 OR AI 需求", "zh"),
@@ -199,6 +215,8 @@ INCLUDE = [
     "한화엔진", "4행정", "중속엔진", "힘센", "선박엔진", "조선", "hd현대중공업",
     "삼성중공업", "한화오션", "stx엔진", "lng선", "발전엔진", "가스엔진",
     "tempus", "템퍼스",
+    "hyperscaler", "bond", "debt issuance", "credit rating", "leverage",
+    "오라클", "oracle", "채권", "회사채", "신용등급", "부채", "자금조달",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -390,6 +408,9 @@ def base_score(title, summary):
         "한화엔진", "tempus", "템퍼스", "hd현대중공업", "삼성중공업", "한화오션",
         "stx엔진", "sk하이닉스", "하이닉스", "삼성전자", "엔비디아", "nvidia",
         "tsmc", "micron", "마이크론", "4행정", "힘센", "조선",
+        "hyperscaler", "오라클", "oracle", "bond", "회사채", "채권", "cds",
+        "credit rating", "신용등급", "leverage", "부채", "debt",
+        "free cash flow", "잉여현금흐름",
     ]
     if any(k in text for k in watchlist):
         score += 2
