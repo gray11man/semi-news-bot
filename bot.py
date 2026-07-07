@@ -43,11 +43,11 @@ QUEUE_FILE = "queue.json"
 NEWS_FILE = "news.json"
 NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 7
-MAX_SEND_PER_RUN = 8
-MIN_SCORE_TO_SEND = 6
+MAX_SEND_PER_RUN = 12
+MIN_SCORE_TO_SEND = 5
 NEWS_WINDOW_HOURS = 3                 # [v2.3] 4 → 3 (실행 주기와 일치)
 PEOPLE_WINDOW_HOURS = 24              # 인물 발언은 하루 종일 퍼지므로 넓게
-SIMILARITY_THRESHOLD = 0.42
+SIMILARITY_THRESHOLD = 0.55
 REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 
@@ -81,6 +81,7 @@ def gnews(query, lang="en", hours=NEWS_WINDOW_HOURS):
 CORE_EN = (
     "OpenAI OR Anthropic OR xAI OR \"Google DeepMind\" OR \"Meta AI\" OR Mistral OR "
     "Nvidia OR AMD OR Broadcom OR Marvell OR TSMC OR Samsung OR \"SK hynix\" OR Micron OR "
+    "Amazon OR AWS OR Microsoft OR Alphabet OR Google OR Meta OR Oracle OR "
     "HBM OR DRAM OR NAND OR CXL OR CoWoS OR \"data center\" OR datacenter OR "
     "CoreWeave OR \"power grid\" OR \"gas turbine\" OR nuclear"
 )
@@ -103,13 +104,10 @@ DEMAND_KO = (
     "AI 매출 OR AI 가동률 OR AI 에이전트 OR 기업용 AI OR 수주잔고 OR AI 채택"
 )
 FUNDING_EN = (
-    "hyperscaler debt OR hyperscaler bond OR \"AI capex\" financing OR "
-    "\"bond issuance\" AI OR \"debt issuance\" AI datacenter OR "
-    "Oracle bond OR Oracle debt OR Meta bond OR \"Alphabet bond\" OR "
-    "\"Amazon bond\" OR \"Microsoft bond\" OR \"special purpose vehicle\" AI OR "
-    "\"private credit\" AI datacenter OR \"off-balance sheet\" AI OR "
-    "\"free cash flow\" hyperscaler OR \"credit rating\" hyperscaler OR "
-    "\"CDS\" Oracle OR hyperscaler leverage"
+    "(Amazon OR Microsoft OR Alphabet OR Google OR Meta OR Oracle OR Nvidia OR "
+    "OpenAI OR Anthropic OR xAI OR CoreWeave OR hyperscaler) "
+    "(bond OR debt OR \"capital raise\" OR \"equity sale\" OR \"share sale\" OR "
+    "financing OR \"credit rating\" OR CDS OR leverage OR \"free cash flow\")"
 )
 FUNDING_KO = (
     "하이퍼스케일러 자금조달 OR 하이퍼스케일러 채권 OR 오라클 회사채 OR "
@@ -217,6 +215,8 @@ INCLUDE = [
     "tempus", "템퍼스",
     "hyperscaler", "bond", "debt issuance", "credit rating", "leverage",
     "오라클", "oracle", "채권", "회사채", "신용등급", "부채", "자금조달",
+    "amazon", "aws", "아마존", "microsoft", "마이크로소프트", "alphabet",
+    "google", "구글", "meta", "메타",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -357,7 +357,7 @@ def _topic_groups(text):
 def is_similar(a, b):
     if SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD:
         return True
-    if _jaccard(a, b) >= 0.32:
+    if _jaccard(a, b) >= 0.45:
         return True
 
     aa_actor, aa_action = _key_entities(a)
