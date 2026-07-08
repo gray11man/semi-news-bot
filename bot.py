@@ -437,7 +437,9 @@ def base_score(title, summary):
 
 
 def entry_age_hours(entry):
-    tm = entry.get("published_parsed") or entry.get("updated_parsed")
+    # [v2.5] published만 사용. updated는 구글 재색인 시 갱신되어
+    # 옛날 기사가 신선한 것처럼 통과하는 원인이 됨.
+    tm = entry.get("published_parsed")
     if not tm:
         return None
     try:
@@ -717,7 +719,7 @@ def collect():
             seen_titles.append(nt)
 
             pub_iso = ""
-            tm = entry.get("published_parsed") or entry.get("updated_parsed")
+            tm = entry.get("published_parsed")
             if tm:
                 try:
                     pub_iso = datetime.datetime(*tm[:6],
