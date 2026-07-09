@@ -222,6 +222,11 @@ EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
     "casino", "porn", "coupon", "discount", "giveaway",
 ]
+# 저신호 매체 (게임/연예/커뮤니티 매체 — 산업 신호 거의 없음)
+SOURCE_BLACKLIST = [
+    "인벤", "루리웹", "디스이즈게임", "게임메카", "디스패치", "위키트리",
+    "인사이트", "허프포스트",
+]
 
 BOTTLENECK = [
     "hbm", "cowos", "packaging", "gpu", "dram", "nand", "optical", "transceiver",
@@ -401,6 +406,9 @@ def base_score(title, summary):
         "ipo", "인수", "합병", "기록적", "사상 최대", "record",
         "collaboration", "협업", "제휴", "협력", "선정", "채택", "공급",
         "launch", "unveil", "secures", "wins", "공개",
+        "mass production", "into production", "in-house chip", "자체 칩",
+        "자체 개발", "custom chip", "capacity", "컴퓨팅 인프라", "인프라 확대",
+        "double", "두 배", "확대",
     ]
     for kw in strong:
         if kw in text:
@@ -417,6 +425,7 @@ def base_score(title, summary):
         "hyperscaler", "오라클", "oracle", "bond", "회사채", "채권", "cds",
         "credit rating", "신용등급", "leverage", "부채", "debt",
         "free cash flow", "잉여현금흐름",
+        "meta", "메타", "broadcom", "브로드컴", "mtia", "샌디스크", "sandisk",
     ]
     if any(k in text for k in watchlist):
         score += 2
@@ -432,6 +441,13 @@ def base_score(title, summary):
                "retail investor", "young investor"]:
         if kw in text:
             score -= 5
+            break
+    # 인물 가십/동정 기사 감점 (방한기, 먹방, 회동 스케치 등 신호 없는 기사)
+    for kw in ["방한기", "3박4일", "3박 4일", "먹방", "치맥", "인증샷", "팬미팅",
+               "사인회", "왜 이렇게 바빠", "일거수일투족", "동선", "화제",
+               "만난 이유는", "만났다", "회동", "포착", "목격"]:
+        if kw in text:
+            score -= 4
             break
     return score
 
@@ -696,6 +712,12 @@ def collect():
             link = entry.get("link", "").strip()
             raw_sum = entry.get("summary", "")
             if not title or not link:
+                continue
+
+            # [v2.5] 저신호 매체 차단
+            src = source_name(entry)
+            if any(b in src for b in SOURCE_BLACKLIST) or \
+               any(b in title for b in SOURCE_BLACKLIST):
                 continue
 
             # 신선도 [v2.3]: 인물/산업 모두 날짜 없는 기사 차단
