@@ -245,6 +245,10 @@ DEMAND_SIGNALS = [
     "수요 급증", "수요 폭증", "토큰 사용", "토큰 소비", "추론 폭증",
     "연산 폭증", "ai 채택", "도입 확대", "트래픽 급증", "사용량 폭증",
     "컴퓨팅 수요", "데이터센터 수요",
+    # 인프라 용량 확장 자체 (capex/전력/메모리 수요를 견인하는 최상위 지표)
+    "gigawatt", "기가와트", "gw", "double compute", "computing capacity",
+    "컴퓨팅 인프라", "인프라 확대", "인프라 두 배", "capacity expansion",
+    "용량 확대", "용량 두 배",
 ]
 
 
@@ -407,8 +411,7 @@ def base_score(title, summary):
         "collaboration", "협업", "제휴", "협력", "선정", "채택", "공급",
         "launch", "unveil", "secures", "wins", "공개",
         "mass production", "into production", "in-house chip", "자체 칩",
-        "자체 개발", "custom chip", "capacity", "컴퓨팅 인프라", "인프라 확대",
-        "double", "두 배", "확대",
+        "자체 개발", "custom chip",
     ]
     for kw in strong:
         if kw in text:
