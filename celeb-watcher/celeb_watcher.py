@@ -27,7 +27,7 @@ CORE_PERSONS = {
     "Sundar Pichai", "Satya Nadella", "Lisa Su", "Mark Zuckerberg",
     "Sanjay Mehrotra", "Aravind Srinivas",
     "Jakub Pachocki", "Kevin Weil", "Rahul Patil", "Krishna Rao",
-    "Greg Brockman",
+    "Greg Brockman", "Eric Lefkofsky",
 }
 GEMINI_MODEL = "gemini-3.5-flash"
 SCORE_THRESHOLD = 7         # Gemini 관련성 점수 컷
@@ -70,11 +70,15 @@ PERSONS = {
     "Michael Dell":    ["michael dell"],
     "Arvind Krishna":  ["arvind krishna"],
     "Cristiano Amon":  ["cristiano amon"],
+    "Eric Lefkofsky":  ["eric lefkofsky", "레프코프스키"],
 }
 
 # 엄격 모드: 발언량 많은 인물은 메모리/컴퓨팅 직결 주제만 통과 (점수 9 이상)
 STRICT_PERSONS = {"Elon Musk"}
 STRICT_SCORE = 9
+
+# 주제 무관 통과 인물: 본인 출연만 확인되면 주제(메모리/컴퓨팅) 상관없이 통과
+TOPIC_FREE_PERSONS = {"Eric Lefkofsky"}
 
 # 배치 검색용 그룹 (query, include_medium) — 핵심 인물 포함 배치는 4~20분 영상도 검색
 SEARCH_BATCHES = [
@@ -87,6 +91,7 @@ SEARCH_BATCHES = [
     ('"Jakub Pachocki"|"Kevin Weil"|"Rahul Patil"|"Krishna Rao"', True),
     ('"Aaron Levie"|"Marc Andreessen"|"Chamath"|"Kevin Scott"', False),
     ('"Amin Vahdat"|"Michael Dell"|"Arvind Krishna"|"Cristiano Amon"', False),
+    ('"Eric Lefkofsky" Tempus', True),
 ]
 
 # ── 하드 블랙리스트 (제목/채널명에 있으면 즉시 제외) ──────
@@ -197,8 +202,9 @@ def gemini_judge(person, title, channel, desc):
 1. {person} 본인이 직접 출연(인터뷰/대담/키노트/팟캐스트)하는 영상일 것.
    - 제3자가 그 인물에 대해 논평/분석/요약하는 영상은 무조건 탈락.
    - AI 음성, 클립 짜깁기, 자막 번역 재업로드도 탈락.
-2. 영상에서 다음 주제 중 하나를 실질적으로 다룰 것: AI 수요/토큰 소비, 메모리(HBM/DRAM/NAND), 컴퓨팅 인프라/GPU/데이터센터/capex.
-   - 제목·설명에 위 주제 관련 단서가 전혀 없고 일반 AI 잡담/제품 홍보/커리어 얘기뿐이면 relevance_score 5 이하로 줄 것.
+{"2. 주제 제한 없음 — 본인 직접 출연만 확인되면 relevance_score 8 이상 부여." if person in TOPIC_FREE_PERSONS else
+"""2. 영상에서 다음 주제 중 하나를 실질적으로 다룰 것: AI 수요/토큰 소비, 메모리(HBM/DRAM/NAND), 컴퓨팅 인프라/GPU/데이터센터/capex.
+   - 제목·설명에 위 주제 관련 단서가 전혀 없고 일반 AI 잡담/제품 홍보/커리어 얘기뿐이면 relevance_score 5 이하로 줄 것."""}
 {"3. [엄격] 위 주제가 영상의 핵심이어야 함. 스치듯 언급이면 탈락. 정치/우주/자동차/소셜미디어 주제는 무조건 탈락." if person in STRICT_PERSONS else ""}
 
 영상 정보:
@@ -243,6 +249,12 @@ def send_telegram(person, item, judge, video_id):
               "disable_web_page_preview": False}, timeout=30)
 
 
+def send_telegram_text(text):
+    requests.post(
+        f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
+        json={"chat_id": TG_CHAT, "text": text, "parse_mode": "HTML"}, timeout=30)
+
+
 def main():
     seen = load_seen()
     published_after = (datetime.now(timezone.utc) - timedelta(hours=LOOKBACK_HOURS)) \
@@ -262,6 +274,7 @@ def main():
     print(f"신규 후보: {len(candidates)}건")
     if not candidates:
         save_seen(seen)
+        send_telegram_text("🔍 새로운 인터뷰 없음 (이번 주기)")
         return
 
     details = get_video_details(list(candidates.keys()))
@@ -291,6 +304,8 @@ def main():
         time.sleep(1.5)
 
     save_seen(seen)
+    if sent == 0:
+        send_telegram_text(f"🔍 후보 {len(candidates)}건 검토했으나 조건 충족 영상 없음")
     print(f"완료: {sent}건 전송")
 
 
