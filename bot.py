@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이전트 (v2.3)
+AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이전트 (v2.6)
 
-v2.2 → v2.3 변경점 (오래된 기사 차단):
-  - NEWS_WINDOW_HOURS 4 → 3 (실행 주기와 일치)
-  - is_fresh(): 발행일 파싱 실패 기사 통과(True) → 차단(False)으로 변경
-  - 인물 피드도 날짜 없는 기사 차단
-  - 전송 직전 나이 재검사 추가: queue 이월분 포함 윈도우 초과 기사 폐기
+v2.5 → v2.6 변경점:
+  - [신규 피드] 정부/국가의 하이퍼스케일러·AI 인프라 지원 (보조금, 세액공제, 소버린 AI, 대출보증)
+  - [신규 피드] 하이퍼스케일러 ROI/수익성/버블/과잉투자 논쟁
+  - [신규 피드] 논제 무효화 신호 (capex 축소, 가이던스 하향, HBM ASP 하락, 공급과잉, 주문취소)
+  - FUNDING 쿼리 강화: 자금조달 난항/신용등급 하향/스프레드 확대 등 스트레스 신호 추가
+  - THESIS_ALERT 점수 가점(+4): 논제 무효화 신호는 놓치면 안 되므로 최우선 통과
+  - POLICY_SIGNALS 점수 가점(+3)
+  - MAX_SEND_PER_RUN 12 → 20, GEMINI_MAX_CALLS_PER_RUN 30 → 45
 """
 
 import os
@@ -43,7 +46,7 @@ QUEUE_FILE = "queue.json"
 NEWS_FILE = "news.json"
 NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 7
-MAX_SEND_PER_RUN = 12
+MAX_SEND_PER_RUN = 20                 # [v2.6] 12 → 20
 MIN_SCORE_TO_SEND = 5
 NEWS_WINDOW_HOURS = 3                 # [v2.3] 4 → 3 (실행 주기와 일치)
 PEOPLE_WINDOW_HOURS = 24              # 인물 발언은 하루 종일 퍼지므로 넓게
@@ -52,7 +55,7 @@ REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 
 GEMINI_MIN_INTERVAL = 4.0
-GEMINI_MAX_CALLS_PER_RUN = 30
+GEMINI_MAX_CALLS_PER_RUN = 45         # [v2.6] 30 → 45 (전송한도 증가에 맞춤)
 GEMINI_RETRY_MAX = 2
 GEMINI_RETRY_BASE = 2.0
 GEMINI_CONSEC_FAIL_STOP = 4
@@ -103,16 +106,47 @@ DEMAND_KO = (
     "AI 수요 OR 추론 수요 OR AI 토큰 OR 연산 수요 OR GPU 부족 OR 캐파 부족 OR "
     "AI 매출 OR AI 가동률 OR AI 에이전트 OR 기업용 AI OR 수주잔고 OR AI 채택"
 )
+# [v2.6] 자금조달: 순조/난항 양쪽 신호 모두 포착하도록 스트레스 키워드 추가
 FUNDING_EN = (
     "(Amazon OR Microsoft OR Alphabet OR Google OR Meta OR Oracle OR Nvidia OR "
     "OpenAI OR Anthropic OR xAI OR CoreWeave OR hyperscaler) "
     "(bond OR debt OR \"capital raise\" OR \"equity sale\" OR \"share sale\" OR "
-    "financing OR \"credit rating\" OR CDS OR leverage OR \"free cash flow\")"
+    "financing OR \"credit rating\" OR CDS OR leverage OR \"free cash flow\" OR "
+    "downgrade OR \"credit spread\" OR \"bond yield\" OR \"funding squeeze\" OR "
+    "\"debt burden\" OR \"struggling to raise\" OR oversubscribed)"
 )
 FUNDING_KO = (
     "하이퍼스케일러 자금조달 OR 하이퍼스케일러 채권 OR 오라클 회사채 OR "
     "빅테크 부채 OR AI 설비투자 조달 OR AI 자금조달 OR 빅테크 신용등급 OR "
-    "데이터센터 프로젝트파이낸싱 OR AI 부채"
+    "데이터센터 프로젝트파이낸싱 OR AI 부채 OR 자금조달 난항 OR 조달 실패 OR "
+    "회사채 스프레드 OR 신용등급 하향"
+)
+# [v2.6] 정부/국가 지원: 보조금, 세액공제, 소버린 AI, 대출보증, 국가 AI 인프라
+POLICY_EN = (
+    "(hyperscaler OR \"data center\" OR OpenAI OR Anthropic OR Nvidia OR TSMC OR "
+    "Samsung OR \"SK hynix\" OR Micron OR Intel OR \"AI infrastructure\") "
+    "(subsidy OR subsidies OR \"tax credit\" OR \"tax break\" OR \"CHIPS Act\" OR "
+    "\"government support\" OR \"state support\" OR \"sovereign AI\" OR "
+    "\"national AI\" OR \"government funding\" OR \"loan guarantee\" OR "
+    "\"executive order\" OR \"export control\" OR tariff)"
+)
+POLICY_KO = (
+    "AI 정부 지원 OR 반도체 보조금 OR 데이터센터 세액공제 OR 소버린 AI OR "
+    "국가 AI 인프라 OR 반도체 특별법 OR AI 기본법 OR 정부 AI 투자 OR "
+    "대출 보증 OR 정책금융 OR 칩스법"
+)
+# [v2.6] ROI/수익성/버블: 논제 방어·무효화 양쪽 논쟁 포착
+ROI_EN = (
+    "(AI OR hyperscaler OR \"data center\" OR GPU OR capex) "
+    "(ROI OR \"return on investment\" OR monetization OR \"AI bubble\" OR "
+    "depreciation OR \"payback period\" OR overbuild OR overcapacity OR "
+    "\"write-down\" OR impairment OR \"capex cut\" OR \"spending cut\" OR "
+    "\"capex guidance\" OR unprofitable OR \"burn rate\")"
+)
+ROI_KO = (
+    "AI 투자 회수 OR AI ROI OR AI 수익화 OR AI 버블 OR AI 거품 OR "
+    "데이터센터 과잉 OR 과잉투자 OR 감가상각 OR capex 축소 OR 설비투자 축소 OR "
+    "가이던스 하향 OR 손상차손"
 )
 
 # 산업 피드 (3시간 창)
@@ -121,10 +155,14 @@ FEEDS = [
     gnews(MONEY_EN, "en"),
     gnews(DEMAND_EN, "en"),
     gnews(FUNDING_EN, "en"),
+    gnews(POLICY_EN, "en"),          # [v2.6]
+    gnews(ROI_EN, "en"),             # [v2.6]
     gnews(CORE_KO, "ko"),
     gnews("AI 데이터센터 OR HBM 공급 OR 반도체 수주 OR AI 전력 OR 원전 데이터센터", "ko"),
     gnews(DEMAND_KO, "ko"),
     gnews(FUNDING_KO, "ko"),
+    gnews(POLICY_KO, "ko"),          # [v2.6]
+    gnews(ROI_KO, "ko"),             # [v2.6]
     gnews("AI半導体 OR HBM OR データセンター OR ラピダス OR 電力 AI OR AI需要 OR 推論需要", "ja"),
     gnews("人工智能 芯片 OR 数据中心 OR HBM OR 算力 OR 英伟达 OR AI需求 OR 推理需求", "zh"),
     gnews("台積電 OR CoWoS OR AI 伺服器 OR 半導體 產能 OR AI 需求", "zh"),
@@ -217,6 +255,13 @@ INCLUDE = [
     "오라클", "oracle", "채권", "회사채", "신용등급", "부채", "자금조달",
     "amazon", "aws", "아마존", "microsoft", "마이크로소프트", "alphabet",
     "google", "구글", "meta", "메타",
+    # [v2.6] 정책/ROI/무효화 관련
+    "subsidy", "tax credit", "chips act", "sovereign", "loan guarantee",
+    "보조금", "세액공제", "정부 지원", "국가 지원", "정책금융", "소버린", "칩스법",
+    "roi", "monetization", "depreciation", "bubble", "overcapacity", "overbuild",
+    "write-down", "impairment", "downgrade",
+    "수익화", "감가상각", "버블", "거품", "과잉투자", "과잉공급", "공급과잉",
+    "손상차손", "등급 하향", "투자 회수",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -249,6 +294,38 @@ DEMAND_SIGNALS = [
     "gigawatt", "기가와트", "gw", "double compute", "computing capacity",
     "컴퓨팅 인프라", "인프라 확대", "인프라 두 배", "capacity expansion",
     "용량 확대", "용량 두 배",
+]
+# [v2.6] 논제 무효화 신호 — 놓치면 안 되는 최우선 경보 (+4)
+THESIS_ALERT = [
+    "capex cut", "capex reduction", "spending cut", "guidance cut",
+    "lower capex", "reduce capex", "slash spending", "pause construction",
+    "cancel order", "order cancellation", "oversupply", "hbm price decline",
+    "hbm asp", "asp decline", "memory price fall", "downgrade", "write-down",
+    "impairment", "overcapacity", "overbuild", "ai bubble", "bubble burst",
+    "data center delay", "data center cancel", "funding squeeze",
+    "struggling to raise", "failed to raise", "unable to raise",
+    "capex 축소", "설비투자 축소", "설비투자 삭감", "가이던스 하향",
+    "투자 축소", "투자 보류", "발주 취소", "주문 취소", "공급과잉", "과잉공급",
+    "가격 하락", "asp 하락", "신용등급 하향", "손상차손", "감액",
+    "버블 붕괴", "거품 붕괴", "과잉투자", "데이터센터 취소", "데이터센터 연기",
+    "착공 연기", "자금조달 난항", "조달 실패", "조달 차질",
+]
+# [v2.6] 정부/국가 지원 신호 (+3)
+POLICY_SIGNALS = [
+    "subsidy", "subsidies", "tax credit", "tax break", "chips act",
+    "government support", "state support", "sovereign ai", "national ai",
+    "government funding", "loan guarantee", "executive order", "export control",
+    "보조금", "세액공제", "정부 지원", "국가 지원", "정책금융", "정책 지원",
+    "소버린 ai", "국가 ai", "칩스법", "특별법", "대출 보증", "수출 통제",
+    "정부 투자", "국비", "재정 지원",
+]
+# [v2.6] ROI/수익성 논쟁 신호 (+3)
+ROI_SIGNALS = [
+    "return on investment", "monetization", "payback period",
+    "depreciation", "ai revenue growth", "unprofitable", "burn rate",
+    "free cash flow", "capex to revenue",
+    "투자 회수", "수익화", "수익성", "감가상각", "잉여현금흐름", "회수 기간",
+    "적자", "흑자 전환",
 ]
 
 
@@ -320,6 +397,7 @@ SAME_EVENT_ACTIONS = {
     "선정", "협력", "파트너십", "상향", "하향", "목표가", "목표주가",
     "1위", "등극", "제치고", "추월",
     "채권", "회사채", "bond", "debt", "발행", "조달", "issuance",
+    "보조금", "세액공제", "subsidy",
 }
 ACTION_SYNONYMS = [
     {"점검", "현장", "방문", "찾았다", "둘러", "행보"},
@@ -330,6 +408,7 @@ ACTION_SYNONYMS = [
     {"1위", "등극", "제치고", "추월", "역전", "왕좌"},
     {"상향", "하향", "목표가", "목표주가", "투자의견"},
     {"채권", "회사채", "bond", "debt", "발행", "조달", "issuance"},
+    {"보조금", "세액공제", "subsidy", "지원"},
 ]
 
 TOPIC_KEYWORDS = {
@@ -345,6 +424,10 @@ TOPIC_KEYWORDS = {
     "자금조달": {"채권", "회사채", "bond", "debt", "발행", "조달", "issuance",
                "capital raise", "equity sale", "financing"},
     "칩공개": {"칩 공개", "칩공개", "프로세서", "드래곤플라이", "cpu 공개", "신제품"},
+    "정책지원": {"보조금", "세액공제", "subsidy", "tax credit", "chips act",
+               "칩스법", "소버린", "sovereign", "정책금융", "loan guarantee"},
+    "roi버블": {"roi", "버블", "거품", "bubble", "과잉투자", "overcapacity",
+              "수익화", "monetization", "감가상각", "depreciation"},
 }
 
 
@@ -421,6 +504,15 @@ def base_score(title, summary):
         score += 2
     if any(k in text for k in DEMAND_SIGNALS):
         score += 3
+    # [v2.6] 논제 무효화 신호는 최우선 (+5) — 단독으로도 전송 기준 통과
+    if any(k in text for k in THESIS_ALERT):
+        score += 5
+    # [v2.6] 정부/국가 지원 신호 (+5)
+    if any(k in text for k in POLICY_SIGNALS):
+        score += 5
+    # [v2.6] ROI/수익성 논쟁 신호 (+5) — "roi"는 단어경계로만 매칭(android 등 오탐 방지)
+    if any(k in text for k in ROI_SIGNALS) or re.search(r"\broi\b", text):
+        score += 5
     watchlist = [
         "한화엔진", "tempus", "템퍼스", "hd현대중공업", "삼성중공업", "한화오션",
         "stx엔진", "sk하이닉스", "하이닉스", "삼성전자", "엔비디아", "nvidia",
@@ -579,7 +671,8 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         "요약: (반드시 5~7문장의 한국어. 기사 본문의 사실/숫자/맥락을 충실히 담되 "
         "한 문단으로 자연스럽게. 추측 금지)\n"
         "중요도: (S=산업구조 영향 / A=대규모 투자·계약·증설 / B=산업영향 존재 / C=참고용 중 하나)\n"
-        "분야: (AI,GPU,HBM,DRAM,NAND,패키징,광통신,데이터센터,전력,원전,가스터빈,AI수요 중 해당)\n"
+        "분야: (AI,GPU,HBM,DRAM,NAND,패키징,광통신,데이터센터,전력,원전,가스터빈,AI수요,"
+        "정책지원,ROI수익성,자금조달 중 해당)\n"
         "병목: (악화 / 완화 / 무관 중 하나)\n"
         "유동성: (유입 / 유출 / 중립 중 하나)\n"
         "왜중요: (한 문장)\n\n"
