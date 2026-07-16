@@ -301,7 +301,7 @@ def send_telegram_text(text):
 # ═══════════════════════════════════════════════════════════
 # [NEW] 트위터(X) 감시 — TwitterAPI.io 사용
 # ═══════════════════════════════════════════════════════════
-def fetch_latest_tweets(handle, max_results=5):
+def fetch_latest_tweets(handle, max_results=20):
     if not TWITTERAPI_IO_KEY:
         return []
     url = f"{TWITTERAPI_IO_BASE}/twitter/user/last_tweets"
@@ -341,7 +341,7 @@ def check_twitter(state):
         for t in reversed(fresh):
             new_items.append((handle, t))
         all_ids = [t["id"] for t in tweets if t["id"]]
-        seen[handle] = list(dict.fromkeys(all_ids + list(already)))[:50]
+        seen[handle] = list(dict.fromkeys(all_ids + list(already)))[:100]
         time.sleep(1)
     return new_items
 
