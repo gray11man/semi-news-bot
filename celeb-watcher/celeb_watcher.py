@@ -309,6 +309,10 @@ def fetch_latest_tweets(handle, max_results=20):
     params = {"userName": handle}
     try:
         resp = requests.get(url, headers=headers, params=params, timeout=20)
+        if resp.status_code == 429:
+            print(f"[트위터 재시도] {handle}: rate limit, 6초 대기 후 재시도")
+            time.sleep(6)
+            resp = requests.get(url, headers=headers, params=params, timeout=20)
         if resp.status_code != 200:
             print(f"[트위터 오류] {handle}: HTTP {resp.status_code} - {resp.text[:200]}")
             return []
@@ -342,7 +346,7 @@ def check_twitter(state):
             new_items.append((handle, t))
         all_ids = [t["id"] for t in tweets if t["id"]]
         seen[handle] = list(dict.fromkeys(all_ids + list(already)))[:100]
-        time.sleep(1)
+        time.sleep(5.5)  # TwitterAPI.io 무료 티어 QPS 제한: 5초당 1회
     return new_items
 
 
