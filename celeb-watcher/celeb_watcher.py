@@ -340,10 +340,14 @@ def check_twitter(state):
         tweets = fetch_latest_tweets(handle)
         if not tweets:
             continue
+        is_new_handle = handle not in seen  # 이 계정을 처음 체크하는 경우만 baseline 처리
         already = set(seen.get(handle, []))
         fresh = [t for t in tweets if t["id"] and t["id"] not in already]
-        for t in reversed(fresh):
-            new_items.append((handle, t))
+        if not is_new_handle:
+            for t in reversed(fresh):
+                new_items.append((handle, t))
+        else:
+            print(f"[트위터] {handle}: 신규 계정 baseline 저장 (알림 생략)")
         all_ids = [t["id"] for t in tweets if t["id"]]
         seen[handle] = list(dict.fromkeys(all_ids + list(already)))[:100]
         time.sleep(5.5)  # TwitterAPI.io 무료 티어 QPS 제한: 5초당 1회
@@ -377,10 +381,14 @@ def check_blogs(state):
         posts = fetch_blog_posts(blog_id)
         if not posts:
             continue
+        is_new_blog = blog_id not in seen  # 이 블로그를 처음 체크하는 경우만 baseline 처리
         already = set(seen.get(blog_id, []))
         fresh = [p for p in posts if p["id"] and p["id"] not in already]
-        for p in reversed(fresh):
-            new_items.append((blog_id, p))
+        if not is_new_blog:
+            for p in reversed(fresh):
+                new_items.append((blog_id, p))
+        else:
+            print(f"[블로그] {blog_id}: 신규 baseline 저장 (알림 생략)")
         all_ids = [p["id"] for p in posts if p["id"]]
         seen[blog_id] = list(dict.fromkeys(all_ids + list(already)))[:50]
     return new_items
@@ -404,15 +412,9 @@ def run_twitter_blog_watch():
     """트위터/블로그 감시 실행. 실패해도 유튜브 파트에 영향 없도록 예외 격리."""
     try:
         state = load_tw_blog_state()
-        is_first_run = not state.get("twitter") and not state.get("blog")
 
         new_tweets = check_twitter(state)
         new_posts = check_blogs(state)
-
-        if is_first_run:
-            print("[트위터/블로그] 첫 실행 - 상태만 저장, 알림 생략")
-            save_tw_blog_state(state)
-            return
 
         for handle, t in new_tweets:
             send_telegram_tweet(handle, t)
