@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-AI 업계 유명인사 유튜브 출연 감시 봇 + 트위터/네이버블로그 감시
+AI 업계 유명인사 유튜브 출연 감시 봇 + 네이버블로그 감시
 - YouTube Data API로 인물별 신규 영상 검색
 - 3단계 노이즈 필터: 하드필터 -> 채널필터 -> Gemini Flash 판정
 - 통과한 것만 텔레그램 전송
-- [NEW] 트위터(X) 8계정 + 네이버 블로그 3개 6시간 주기 감시 -> 텔레그램 전송
+- [NEW] 네이버 블로그 4개 6시간 주기 감시 -> 텔레그램 전송
+  (트위터 감시는 비용 문제로 비활성화)
 
 필요 시크릿:
   YOUTUBE_API_KEY, GEMINI_KEY, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
-  TWITTERAPI_IO_KEY   <- 신규 추가 (https://twitterapi.io 발급)
 """
 import os, json, re, time, html
 from datetime import datetime, timedelta, timezone
@@ -19,7 +19,6 @@ YOUTUBE_API_KEY = os.environ["YOUTUBE_API_KEY"]
 GEMINI_API_KEY = os.environ["GEMINI_KEY"]
 TG_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TG_CHAT = os.environ["TELEGRAM_CHAT_ID"]
-TWITTERAPI_IO_KEY = os.environ.get("TWITTERAPI_IO_KEY", "")  # 없으면 트위터 감시만 skip
 
 SEEN_FILE = "seen_celeb_ids.json"
 LOOKBACK_HOURS = 8          # 워크플로 주기보다 여유있게
@@ -121,19 +120,8 @@ TRUSTED_CHANNELS = [
 ]
 
 # ═══════════════════════════════════════════════════════════
-# [NEW] 트위터(X) + 네이버 블로그 감시 대상
+# [NEW] 네이버 블로그 감시 대상
 # ═══════════════════════════════════════════════════════════
-TWITTER_HANDLES = [
-    "Semicon_player",
-    "growth_papa",
-    "Alisvolatprop12",
-    "damnang2",
-    "BSPK_",
-    "laylaperfume",
-    "PolarisLog",
-    "jukan05",
-]
-
 NAVER_BLOG_IDS = [
     "richyun0108",
     "cybermw",
@@ -142,7 +130,6 @@ NAVER_BLOG_IDS = [
 ]
 
 SEEN_TWITTER_BLOG_FILE = "seen_twitter_blog.json"
-TWITTERAPI_IO_BASE = "https://api.twitterapi.io"
 
 
 def load_seen():
@@ -158,13 +145,15 @@ def save_seen(seen):
         json.dump(sorted(seen)[-3000:], f)
 
 
-# ── [NEW] 트위터/블로그 상태 로드/저장 (기존 seen과 분리된 별도 파일) ──
+# ── [NEW] 블로그 상태 로드/저장 (기존 seen과 분리된 별도 파일) ──
 def load_tw_blog_state():
     try:
         with open(SEEN_TWITTER_BLOG_FILE, encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            data.setdefault("blog", {})
+            return data
     except Exception:
-        return {"twitter": {}, "blog": {}}
+        return {"blog": {}}
 
 
 def save_tw_blog_state(state):
@@ -300,62 +289,6 @@ def send_telegram_text(text):
 
 
 # ═══════════════════════════════════════════════════════════
-# [NEW] 트위터(X) 감시 — TwitterAPI.io 사용
-# ═══════════════════════════════════════════════════════════
-def fetch_latest_tweets(handle, max_results=20):
-    if not TWITTERAPI_IO_KEY:
-        return []
-    url = f"{TWITTERAPI_IO_BASE}/twitter/user/last_tweets"
-    headers = {"X-API-Key": TWITTERAPI_IO_KEY}
-    params = {"userName": handle}
-    try:
-        resp = requests.get(url, headers=headers, params=params, timeout=20)
-        if resp.status_code == 429:
-            print(f"[트위터 재시도] {handle}: rate limit, 6초 대기 후 재시도")
-            time.sleep(6)
-            resp = requests.get(url, headers=headers, params=params, timeout=20)
-        if resp.status_code != 200:
-            print(f"[트위터 오류] {handle}: HTTP {resp.status_code} - {resp.text[:200]}")
-            return []
-        data = resp.json()
-    except Exception as e:
-        print(f"[트위터 오류] {handle}: {e}")
-        return []
-
-    tweets = []
-    raw = data.get("data", {}).get("tweets", []) or data.get("tweets", [])
-    for t in raw[:max_results]:
-        tid = t.get("id") or t.get("tweet_id")
-        tweets.append({
-            "id": str(tid) if tid else None,
-            "text": t.get("text", ""),
-            "url": t.get("url") or f"https://x.com/{handle}/status/{tid}",
-        })
-    return tweets
-
-
-def check_twitter(state):
-    seen = state.setdefault("twitter", {})
-    new_items = []
-    for handle in TWITTER_HANDLES:
-        tweets = fetch_latest_tweets(handle)
-        if not tweets:
-            continue
-        is_new_handle = handle not in seen  # 이 계정을 처음 체크하는 경우만 baseline 처리
-        already = set(seen.get(handle, []))
-        fresh = [t for t in tweets if t["id"] and t["id"] not in already]
-        if not is_new_handle:
-            for t in reversed(fresh):
-                new_items.append((handle, t))
-        else:
-            print(f"[트위터] {handle}: 신규 계정 baseline 저장 (알림 생략)")
-        all_ids = [t["id"] for t in tweets if t["id"]]
-        seen[handle] = list(dict.fromkeys(all_ids + list(already)))[:100]
-        time.sleep(5.5)  # TwitterAPI.io 무료 티어 QPS 제한: 5초당 1회
-    return new_items
-
-
-# ═══════════════════════════════════════════════════════════
 # [NEW] 네이버 블로그 감시 — RSS
 # ═══════════════════════════════════════════════════════════
 def fetch_blog_posts(blog_id):
@@ -367,10 +300,17 @@ def fetch_blog_posts(blog_id):
         return []
     posts = []
     for entry in feed.entries[:10]:
+        title = entry.get("title", "(제목 없음)")
+        raw_link = entry.get("link", "")
+        # 네이버 블로그 링크의 트래킹 쿼리스트링(?fromRss=true&trackingCode=rss 등) 제거
+        # -> 매 실행마다 동일한 글이 동일한 ID로 인식되도록 안정화
+        clean_link = raw_link.split("?")[0].rstrip("/")
+        published = entry.get("published", "") or entry.get("updated", "")
+        stable_id = clean_link or f"{blog_id}:{title}:{published}"
         posts.append({
-            "id": entry.get("link", entry.get("id", "")),
-            "title": entry.get("title", "(제목 없음)"),
-            "url": entry.get("link", ""),
+            "id": stable_id,
+            "title": title,
+            "url": clean_link or raw_link,
         })
     return posts
 
@@ -395,13 +335,6 @@ def check_blogs(state):
     return new_items
 
 
-def send_telegram_tweet(handle, tweet):
-    msg = (f"🐦 <b>@{handle}</b> 새 트윗\n\n"
-           f"{html.escape(tweet['text'][:300])}\n\n"
-           f"{tweet['url']}")
-    send_telegram_text(msg)
-
-
 def send_telegram_blog(blog_id, post):
     msg = (f"📝 <b>{html.escape(blog_id)}</b> 새 블로그 글\n\n"
            f"{html.escape(post['title'])}\n\n"
@@ -409,25 +342,21 @@ def send_telegram_blog(blog_id, post):
     send_telegram_text(msg)
 
 
-def run_twitter_blog_watch():
-    """트위터/블로그 감시 실행. 실패해도 유튜브 파트에 영향 없도록 예외 격리."""
+def run_blog_watch():
+    """블로그 감시 실행. 실패해도 유튜브 파트에 영향 없도록 예외 격리."""
     try:
         state = load_tw_blog_state()
 
-        new_tweets = check_twitter(state)
         new_posts = check_blogs(state)
 
-        for handle, t in new_tweets:
-            send_telegram_tweet(handle, t)
-            time.sleep(0.5)
         for blog_id, p in new_posts:
             send_telegram_blog(blog_id, p)
             time.sleep(0.5)
 
-        print(f"[트위터/블로그] 트윗 {len(new_tweets)}건, 블로그 {len(new_posts)}건 전송")
+        print(f"[블로그] {len(new_posts)}건 전송")
         save_tw_blog_state(state)
     except Exception as e:
-        print(f"[트위터/블로그 감시 전체 실패] {e}")
+        print(f"[블로그 감시 전체 실패] {e}")
 
 
 # ═══════════════════════════════════════════════════════════
@@ -485,8 +414,8 @@ def main():
             send_telegram_text(f"🔍 후보 {len(candidates)}건 검토했으나 조건 충족 영상 없음")
         print(f"완료: {sent}건 전송")
 
-    # [NEW] 트위터 + 네이버 블로그 감시 (유튜브 파트와 독립적으로 실행)
-    run_twitter_blog_watch()
+    # [NEW] 네이버 블로그 감시 (유튜브 파트와 독립적으로 실행)
+    run_blog_watch()
 
 
 if __name__ == "__main__":
