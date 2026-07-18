@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이전트 (v2.6)
+AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이전트 (v2.7)
 
-v2.5 → v2.6 변경점:
-  - [신규 피드] 정부/국가의 하이퍼스케일러·AI 인프라 지원 (보조금, 세액공제, 소버린 AI, 대출보증)
-  - [신규 피드] 하이퍼스케일러 ROI/수익성/버블/과잉투자 논쟁
-  - [신규 피드] 논제 무효화 신호 (capex 축소, 가이던스 하향, HBM ASP 하락, 공급과잉, 주문취소)
-  - FUNDING 쿼리 강화: 자금조달 난항/신용등급 하향/스프레드 확대 등 스트레스 신호 추가
-  - THESIS_ALERT 점수 가점(+4): 논제 무효화 신호는 놓치면 안 되므로 최우선 통과
-  - POLICY_SIGNALS 점수 가점(+3)
-  - MAX_SEND_PER_RUN 12 → 20, GEMINI_MAX_CALLS_PER_RUN 30 → 45
+v2.6 → v2.7 변경점:
+  [과거 뉴스 차단 — 3중 검증]
+  - 구글 재색인으로 published가 "방금"으로 찍힌 옛 기사 차단
+  - 1차: URL 경로에 박힌 날짜(/2026/06/18/ 등)로 조기 차단 (collect 단계)
+  - 2차: 기사 원문 HTML의 실제 발행일(article:published_time) 추출 검증 (전송 직전)
+  - 3차: Gemini 프롬프트에 "명백한 과거 사건 보도는 C 판정" 지시 → C 차단 로직이 최종 안전망
+  - STALE_HARD_LIMIT_H = 48 (실제 발행일 기준 48시간 초과 시 폐기)
+  - SEEN_RETENTION_DAYS 7 → 30 (재색인 주기가 7일보다 길어 같은 기사 반복 유입되던 문제)
+
+  [메시지 폭주 억제 — 중요도 기준 상향]
+  - MIN_SCORE_TO_SEND 5 → 8
+  - MAX_SEND_PER_RUN 20 → 10
+  - POLICY_SIGNALS / ROI_SIGNALS 가점 +5 → +3 (점수 인플레 원인이던 과다 가점 축소)
+  - Gemini 등급 필터 강화: C 차단(기존) + B등급도 점수 10 미만이면 차단
+    → 실질적으로 S/A 위주 + 고점수 B만 전송
 """
 
 import os
@@ -45,17 +52,19 @@ SEEN_FILE = "seen.json"
 QUEUE_FILE = "queue.json"
 NEWS_FILE = "news.json"
 NEWS_MAX_ITEMS = 150
-SEEN_RETENTION_DAYS = 7
-MAX_SEND_PER_RUN = 20                 # [v2.6] 12 → 20
-MIN_SCORE_TO_SEND = 5
-NEWS_WINDOW_HOURS = 3                 # [v2.3] 4 → 3 (실행 주기와 일치)
-PEOPLE_WINDOW_HOURS = 24              # 인물 발언은 하루 종일 퍼지므로 넓게
+SEEN_RETENTION_DAYS = 30              # [v2.7] 7 → 30 (재색인 재유입 방지)
+MAX_SEND_PER_RUN = 10                 # [v2.7] 20 → 10
+MIN_SCORE_TO_SEND = 8                 # [v2.7] 5 → 8
+NEWS_WINDOW_HOURS = 3
+PEOPLE_WINDOW_HOURS = 24
+STALE_HARD_LIMIT_H = 48               # [v2.7] 실제 발행일 기준 최대 허용 나이
+GRADE_B_MIN_SCORE = 10                # [v2.7] B등급은 이 점수 이상만 전송
 SIMILARITY_THRESHOLD = 0.55
 REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 
 GEMINI_MIN_INTERVAL = 4.0
-GEMINI_MAX_CALLS_PER_RUN = 45         # [v2.6] 30 → 45 (전송한도 증가에 맞춤)
+GEMINI_MAX_CALLS_PER_RUN = 45
 GEMINI_RETRY_MAX = 2
 GEMINI_RETRY_BASE = 2.0
 GEMINI_CONSEC_FAIL_STOP = 4
@@ -106,7 +115,6 @@ DEMAND_KO = (
     "AI 수요 OR 추론 수요 OR AI 토큰 OR 연산 수요 OR GPU 부족 OR 캐파 부족 OR "
     "AI 매출 OR AI 가동률 OR AI 에이전트 OR 기업용 AI OR 수주잔고 OR AI 채택"
 )
-# [v2.6] 자금조달: 순조/난항 양쪽 신호 모두 포착하도록 스트레스 키워드 추가
 FUNDING_EN = (
     "(Amazon OR Microsoft OR Alphabet OR Google OR Meta OR Oracle OR Nvidia OR "
     "OpenAI OR Anthropic OR xAI OR CoreWeave OR hyperscaler) "
@@ -121,7 +129,6 @@ FUNDING_KO = (
     "데이터센터 프로젝트파이낸싱 OR AI 부채 OR 자금조달 난항 OR 조달 실패 OR "
     "회사채 스프레드 OR 신용등급 하향"
 )
-# [v2.6] 정부/국가 지원: 보조금, 세액공제, 소버린 AI, 대출보증, 국가 AI 인프라
 POLICY_EN = (
     "(hyperscaler OR \"data center\" OR OpenAI OR Anthropic OR Nvidia OR TSMC OR "
     "Samsung OR \"SK hynix\" OR Micron OR Intel OR \"AI infrastructure\") "
@@ -135,7 +142,6 @@ POLICY_KO = (
     "국가 AI 인프라 OR 반도체 특별법 OR AI 기본법 OR 정부 AI 투자 OR "
     "대출 보증 OR 정책금융 OR 칩스법"
 )
-# [v2.6] ROI/수익성/버블: 논제 방어·무효화 양쪽 논쟁 포착
 ROI_EN = (
     "(AI OR hyperscaler OR \"data center\" OR GPU OR capex) "
     "(ROI OR \"return on investment\" OR monetization OR \"AI bubble\" OR "
@@ -149,20 +155,19 @@ ROI_KO = (
     "가이던스 하향 OR 손상차손"
 )
 
-# 산업 피드 (3시간 창)
 FEEDS = [
     gnews(CORE_EN, "en"),
     gnews(MONEY_EN, "en"),
     gnews(DEMAND_EN, "en"),
     gnews(FUNDING_EN, "en"),
-    gnews(POLICY_EN, "en"),          # [v2.6]
-    gnews(ROI_EN, "en"),             # [v2.6]
+    gnews(POLICY_EN, "en"),
+    gnews(ROI_EN, "en"),
     gnews(CORE_KO, "ko"),
     gnews("AI 데이터센터 OR HBM 공급 OR 반도체 수주 OR AI 전력 OR 원전 데이터센터", "ko"),
     gnews(DEMAND_KO, "ko"),
     gnews(FUNDING_KO, "ko"),
-    gnews(POLICY_KO, "ko"),          # [v2.6]
-    gnews(ROI_KO, "ko"),             # [v2.6]
+    gnews(POLICY_KO, "ko"),
+    gnews(ROI_KO, "ko"),
     gnews("AI半導体 OR HBM OR データセンター OR ラピダス OR 電力 AI OR AI需要 OR 推論需要", "ja"),
     gnews("人工智能 芯片 OR 数据中心 OR HBM OR 算力 OR 英伟达 OR AI需求 OR 推理需求", "zh"),
     gnews("台積電 OR CoWoS OR AI 伺服器 OR 半導體 產能 OR AI 需求", "zh"),
@@ -255,7 +260,6 @@ INCLUDE = [
     "오라클", "oracle", "채권", "회사채", "신용등급", "부채", "자금조달",
     "amazon", "aws", "아마존", "microsoft", "마이크로소프트", "alphabet",
     "google", "구글", "meta", "메타",
-    # [v2.6] 정책/ROI/무효화 관련
     "subsidy", "tax credit", "chips act", "sovereign", "loan guarantee",
     "보조금", "세액공제", "정부 지원", "국가 지원", "정책금융", "소버린", "칩스법",
     "roi", "monetization", "depreciation", "bubble", "overcapacity", "overbuild",
@@ -267,7 +271,6 @@ EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
     "casino", "porn", "coupon", "discount", "giveaway",
 ]
-# 저신호 매체 (게임/연예/커뮤니티 매체 — 산업 신호 거의 없음)
 SOURCE_BLACKLIST = [
     "인벤", "루리웹", "디스이즈게임", "게임메카", "디스패치", "위키트리",
     "인사이트", "허프포스트",
@@ -290,12 +293,11 @@ DEMAND_SIGNALS = [
     "수요 급증", "수요 폭증", "토큰 사용", "토큰 소비", "추론 폭증",
     "연산 폭증", "ai 채택", "도입 확대", "트래픽 급증", "사용량 폭증",
     "컴퓨팅 수요", "데이터센터 수요",
-    # 인프라 용량 확장 자체 (capex/전력/메모리 수요를 견인하는 최상위 지표)
     "gigawatt", "기가와트", "gw", "double compute", "computing capacity",
     "컴퓨팅 인프라", "인프라 확대", "인프라 두 배", "capacity expansion",
     "용량 확대", "용량 두 배",
 ]
-# [v2.6] 논제 무효화 신호 — 놓치면 안 되는 최우선 경보 (+4)
+# 논제 무효화 신호 — 놓치면 안 되는 최우선 경보 (+5 유지)
 THESIS_ALERT = [
     "capex cut", "capex reduction", "spending cut", "guidance cut",
     "lower capex", "reduce capex", "slash spending", "pause construction",
@@ -310,7 +312,7 @@ THESIS_ALERT = [
     "버블 붕괴", "거품 붕괴", "과잉투자", "데이터센터 취소", "데이터센터 연기",
     "착공 연기", "자금조달 난항", "조달 실패", "조달 차질",
 ]
-# [v2.6] 정부/국가 지원 신호 (+3)
+# [v2.7] 정부/국가 지원 신호 +5 → +3 (점수 인플레 축소)
 POLICY_SIGNALS = [
     "subsidy", "subsidies", "tax credit", "tax break", "chips act",
     "government support", "state support", "sovereign ai", "national ai",
@@ -319,7 +321,7 @@ POLICY_SIGNALS = [
     "소버린 ai", "국가 ai", "칩스법", "특별법", "대출 보증", "수출 통제",
     "정부 투자", "국비", "재정 지원",
 ]
-# [v2.6] ROI/수익성 논쟁 신호 (+3)
+# [v2.7] ROI/수익성 논쟁 신호 +5 → +3
 ROI_SIGNALS = [
     "return on investment", "monetization", "payback period",
     "depreciation", "ai revenue growth", "unprofitable", "burn rate",
@@ -504,15 +506,15 @@ def base_score(title, summary):
         score += 2
     if any(k in text for k in DEMAND_SIGNALS):
         score += 3
-    # [v2.6] 논제 무효화 신호는 최우선 (+5) — 단독으로도 전송 기준 통과
+    # 논제 무효화 신호는 최우선 (+5 유지) — 단독으로도 전송 기준 통과
     if any(k in text for k in THESIS_ALERT):
         score += 5
-    # [v2.6] 정부/국가 지원 신호 (+5)
+    # [v2.7] 정부/국가 지원 신호 +5 → +3
     if any(k in text for k in POLICY_SIGNALS):
-        score += 5
-    # [v2.6] ROI/수익성 논쟁 신호 (+5) — "roi"는 단어경계로만 매칭(android 등 오탐 방지)
+        score += 3
+    # [v2.7] ROI/수익성 논쟁 신호 +5 → +3 (단어경계 매칭으로 오탐 방지)
     if any(k in text for k in ROI_SIGNALS) or re.search(r"\broi\b", text):
-        score += 5
+        score += 3
     watchlist = [
         "한화엔진", "tempus", "템퍼스", "hd현대중공업", "삼성중공업", "한화오션",
         "stx엔진", "sk하이닉스", "하이닉스", "삼성전자", "엔비디아", "nvidia",
@@ -530,14 +532,12 @@ def base_score(title, summary):
         if kw in text:
             score -= 3
             break
-    # 리테일/세대 잡뉴스 감점 (개인투자자 동향, 세대별 투자 등 산업 무관 기사)
     for kw in ["20대", "30대", "2030", "청년", "개미", "서학개미", "동학개미",
                "투자했을까", "순매수 1위", "인기 종목", "매수 상위", "계좌 잔고",
                "retail investor", "young investor"]:
         if kw in text:
             score -= 5
             break
-    # 인물 가십/동정 기사 감점 (방한기, 먹방, 회동 스케치 등 신호 없는 기사)
     for kw in ["방한기", "3박4일", "3박 4일", "먹방", "치맥", "인증샷", "팬미팅",
                "사인회", "왜 이렇게 바빠", "일거수일투족", "동선", "화제",
                "만난 이유는", "만났다", "회동", "포착", "목격"]:
@@ -548,8 +548,6 @@ def base_score(title, summary):
 
 
 def entry_age_hours(entry):
-    # [v2.5] published만 사용. updated는 구글 재색인 시 갱신되어
-    # 옛날 기사가 신선한 것처럼 통과하는 원인이 됨.
     tm = entry.get("published_parsed")
     if not tm:
         return None
@@ -560,15 +558,8 @@ def entry_age_hours(entry):
     return (now_utc() - published).total_seconds() / 3600.0
 
 
-def is_fresh(entry):
-    age = entry_age_hours(entry)
-    if age is None:
-        return False  # [v2.3] 발행일 없는 기사 차단 (기존: 통과 → 오래된 기사 유입 원인)
-    return age <= NEWS_WINDOW_HOURS + 1
-
-
 def published_age_hours(pub_iso):
-    """[v2.3] 저장된 published ISO 문자열로 나이(시간) 계산. 파싱 실패 시 None."""
+    """저장된 published ISO 문자열로 나이(시간) 계산. 파싱 실패 시 None."""
     if not pub_iso:
         return None
     try:
@@ -581,12 +572,46 @@ def published_age_hours(pub_iso):
 
 
 def is_stale_item(it):
-    """[v2.3] 전송 직전 나이 재검사. queue 이월분 포함."""
+    """전송 직전 나이 재검사. queue 이월분 포함."""
     age = published_age_hours(it.get("published", ""))
     if age is None:
-        return True  # 날짜 없으면 폐기
+        return True
     limit = PEOPLE_WINDOW_HOURS if it.get("is_people") else NEWS_WINDOW_HOURS
     return age > limit + 1
+
+
+# ───────────────────────── [v2.7] 실제 발행일 검증 ─────────────────────────
+def url_date_age_hours(url):
+    """[v2.7] URL 경로에 박힌 날짜(/2026/06/18/, 2026-06-18, 20260618)로 나이 계산.
+    구글 재색인으로 published가 조작된 옛 기사를 URL로 잡아낸다."""
+    if not url:
+        return None
+    m = re.search(r"/(20\d{2})[/\-](\d{1,2})[/\-](\d{1,2})(?:[/\-?#]|$)", url)
+    if not m:
+        m = re.search(r"[/\-_](20\d{2})(\d{2})(\d{2})[/\-_.]", url)
+    if not m:
+        return None
+    try:
+        y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        if not (1 <= mo <= 12 and 1 <= d <= 31):
+            return None
+        dt = datetime.datetime(y, mo, d, tzinfo=datetime.timezone.utc)
+        return (now_utc() - dt).total_seconds() / 3600.0
+    except Exception:
+        return None
+
+
+def real_date_age_hours(real_date_str):
+    """[v2.7] trafilatura가 추출한 원문 발행일("2026-06-18" 등)로 나이 계산."""
+    if not real_date_str:
+        return None
+    try:
+        dt = datetime.datetime.fromisoformat(str(real_date_str))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=datetime.timezone.utc)
+        return (now_utc() - dt).total_seconds() / 3600.0
+    except Exception:
+        return None
 
 
 def source_name(entry):
@@ -616,10 +641,13 @@ def resolve_final_url(url):
 
 
 def fetch_article_body(url):
+    """[v2.7] (본문, 실제발행일나이(시간) or None) 튜플 반환.
+    실제발행일나이 = 원문 메타태그 발행일과 URL 날짜 중 더 오래된 쪽."""
     if not (FETCH_BODY and _HAS_TRAFI):
-        return ""
+        return "", None
     final_url, prefetched = resolve_final_url(url)
     body = ""
+    real_age = None
     try:
         downloaded = prefetched
         if not downloaded:
@@ -629,11 +657,22 @@ def fetch_article_body(url):
                 downloaded, include_comments=False, include_tables=False,
                 no_fallback=False, favor_precision=True,
             ) or ""
+            # [v2.7] 원문 HTML의 article:published_time 등 실제 발행일 추출
+            try:
+                meta = trafilatura.extract_metadata(downloaded)
+                if meta and getattr(meta, "date", None):
+                    real_age = real_date_age_hours(meta.date)
+            except Exception:
+                pass
     except Exception as e:
         print(f"[WARN] body extract fail: {e}")
         body = ""
+    # [v2.7] URL 날짜 보조 검증 — 둘 중 더 오래된 쪽 채택
+    ua_age = url_date_age_hours(final_url)
+    if ua_age is not None:
+        real_age = ua_age if real_age is None else max(real_age, ua_age)
     body = re.sub(r"\s+", " ", body).strip()
-    return body[:BODY_MAX_CHARS]
+    return body[:BODY_MAX_CHARS], real_age
 
 
 # ───────────────────────── Gemini ─────────────────────────
@@ -661,11 +700,16 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
 
     content_for_model = body.strip() if body.strip() else summary
     content_label = "본문" if body.strip() else "요약(본문 추출 실패)"
+    today_kst = (now_utc() + datetime.timedelta(hours=9)).strftime("%Y-%m-%d")
 
     prompt = (
         "너는 AI·반도체·메모리·데이터센터·전력·AI수요 산업 분석가다. "
         "아래 기사를 한국 투자자 관점에서 분석하라. 과장/추측 금지, 사실 기반.\n"
+        f"오늘 날짜는 {today_kst}(KST)다.\n"
         "원문이 영어/중국어/일본어/대만어(번체)든 모두 한국어로 옮겨라.\n"
+        "[중요] 기사 내용이 명백히 수 주~수 개월 이상 지난 과거 사건의 보도이거나, "
+        "이미 널리 알려진 옛 뉴스의 재탕이면 반드시 중요도를 C로 판정하라.\n"
+        "[중요] 단순 주가 등락, 리테일 투자 동향, 인물 동정/가십 기사도 C로 판정하라.\n"
         "아래 7개 라벨 형식으로만 답하라. 각 줄 라벨 그대로, 값만 채워라. 다른 말 금지.\n"
         "제목: (한국어 번역 제목, 한 줄)\n"
         "요약: (반드시 5~7문장의 한국어. 기사 본문의 사실/숫자/맥락을 충실히 담되 "
@@ -810,18 +854,21 @@ def collect():
             if not title or not link:
                 continue
 
-            # [v2.5] 저신호 매체 차단
             src = source_name(entry)
             if any(b in src for b in SOURCE_BLACKLIST) or \
                any(b in title for b in SOURCE_BLACKLIST):
                 continue
 
-            # 신선도 [v2.3]: 인물/산업 모두 날짜 없는 기사 차단
             age = entry_age_hours(entry)
             if age is None:
                 continue
             limit = PEOPLE_WINDOW_HOURS if is_people else NEWS_WINDOW_HOURS
             if age > limit + 1:
+                continue
+
+            # [v2.7] 1차 방어: URL 경로 날짜로 재색인된 옛 기사 조기 차단
+            u_age = url_date_age_hours(link)
+            if u_age is not None and u_age > STALE_HARD_LIMIT_H:
                 continue
 
             if is_people:
@@ -1036,7 +1083,6 @@ def main():
 
     pool = queue + fresh
 
-    # [v2.3] 전송 직전 나이 재검사: queue 이월분 포함 윈도우 초과 기사 폐기
     before_stale = len(pool)
     pool = [it for it in pool if not is_stale_item(it)]
     if before_stale != len(pool):
@@ -1064,23 +1110,45 @@ def main():
     leftover = uniq[MAX_SEND_PER_RUN:]
 
     kst = (now_utc() + datetime.timedelta(hours=9)).strftime("%Y-%m-%d %H:%M")
-    tg_send(f"📡 <b>AI·반도체 산업 브리핑</b>\n🗓 {kst} KST · {len(to_send)}건"
-            + (f" · 대기 {len(leftover)}건" if leftover else ""))
-    time.sleep(SEND_DELAY)
+    header_sent = False
 
     sent = 0
     news_batch = []
     for it in to_send:
-        body = fetch_article_body(it["link"]) if FETCH_BODY else ""
         if FETCH_BODY:
+            body, real_age = fetch_article_body(it["link"])
             time.sleep(BODY_FETCH_DELAY)
+        else:
+            body, real_age = "", None
+
+        # [v2.7] 2차 방어: 원문 실제 발행일 / URL 날짜 기준 48시간 초과 시 폐기
+        if real_age is not None and real_age > STALE_HARD_LIMIT_H:
+            print(f"[SKIP] 재색인된 과거 기사 폐기({real_age:.0f}h): {it['title'][:50]}")
+            seen[title_key(it["title"])] = {"ntitle": it["ntitle"],
+                                            "ts": now_utc().timestamp()}
+            continue
+
         a = gemini_analyze(it["title"], it["summary"], it["source"], body=body)
-        # [v2.4] Gemini가 C등급(참고용) 판정 시 전송 차단
+
+        # [v2.7] 3차 방어 + 노이즈 억제: C 차단, B는 고점수만 통과
         if a and a.get("grade") == "C":
             print(f"[SKIP] C등급 차단: {it['title'][:50]}")
             seen[title_key(it["title"])] = {"ntitle": it["ntitle"],
                                             "ts": now_utc().timestamp()}
             continue
+        if a and a.get("grade") == "B" and it.get("score", 0) < GRADE_B_MIN_SCORE:
+            print(f"[SKIP] B등급 저점수 차단({it.get('score', 0)}점): {it['title'][:50]}")
+            seen[title_key(it["title"])] = {"ntitle": it["ntitle"],
+                                            "ts": now_utc().timestamp()}
+            continue
+
+        # [v2.7] 헤더는 실제 전송할 기사가 확정된 뒤 1회만 전송
+        if not header_sent:
+            tg_send(f"📡 <b>AI·반도체 산업 브리핑</b>\n🗓 {kst} KST"
+                    + (f" · 대기 {len(leftover)}건" if leftover else ""))
+            time.sleep(SEND_DELAY)
+            header_sent = True
+
         msg = build_full(it, a) if a else build_min(it)
         if tg_send(msg):
             sent += 1
