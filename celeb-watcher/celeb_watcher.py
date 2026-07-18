@@ -127,6 +127,7 @@ NAVER_BLOG_IDS = [
     "cybermw",
     "hardark",
     "kk_kontemp",
+    "tmdejr1267",
 ]
 
 SEEN_TWITTER_BLOG_FILE = "seen_twitter_blog.json"
