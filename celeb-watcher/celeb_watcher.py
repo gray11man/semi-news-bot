@@ -294,11 +294,25 @@ def send_telegram_text(text):
 # ═══════════════════════════════════════════════════════════
 def fetch_blog_posts(blog_id):
     rss_url = f"https://rss.blog.naver.com/{blog_id}.xml"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/124.0.0.0 Safari/537.36"
+    }
     try:
-        feed = feedparser.parse(rss_url)
+        resp = requests.get(rss_url, headers=headers, timeout=20)
+        print(f"[블로그 디버그] {blog_id}: HTTP {resp.status_code}, 응답길이 {len(resp.content)}바이트")
+        if resp.status_code != 200:
+            print(f"[블로그 오류] {blog_id}: HTTP {resp.status_code}")
+            return []
+        feed = feedparser.parse(resp.content)
+        if feed.bozo:
+            print(f"[블로그 경고] {blog_id}: 파싱 경고 - {feed.bozo_exception}")
     except Exception as e:
         print(f"[블로그 오류] {blog_id}: {e}")
         return []
+
+    print(f"[블로그 디버그] {blog_id}: entries {len(feed.entries)}건")
     posts = []
     for entry in feed.entries[:10]:
         title = entry.get("title", "(제목 없음)")
