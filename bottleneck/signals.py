@@ -167,9 +167,9 @@ NOVELTY_SIGNALS = {
 
 # ===== 임계값 =====
 # 기존 산업 키워드 축 임계값
-SCORE_THRESHOLD = 8
+SCORE_THRESHOLD = 6
 # 신규성 축 임계값 (이쪽은 축이 하나라도 강하면 통과시키려 다소 낮게)
-NOVELTY_THRESHOLD = 5
+NOVELTY_THRESHOLD = 4
 
 # 하루 최종 전송 상한
 MAX_DAILY = 3
