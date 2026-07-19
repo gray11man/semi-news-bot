@@ -1,29 +1,33 @@
 name: bottleneck-idea-bot
-
 on:
   schedule:
     # UTC 기준. 23:00 UTC = 한국시간 아침 08:00
     - cron: "0 23 * * *"
-  workflow_dispatch:   # 수동 실행 버튼도 생김 (테스트용)
-
+  workflow_dispatch:
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # seen_ideas.json 커밋용
     steps:
       - name: 코드 체크아웃
         uses: actions/checkout@v4
-
       - name: 파이썬 설치
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: 의존성 설치
         run: pip install -r bottleneck/requirements.txt
-
       - name: 봇 실행
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BOTTLENECK_TOKEN: ${{ secrets.BOTTLENECK_TOKEN }}
           BOTTLENECK_CHAT_ID: ${{ secrets.BOTTLENECK_CHAT_ID }}
         run: python bottleneck/main.py
+      - name: 상태 파일 커밋 (중복 전송 방지)
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A seen_ideas.json || true
+          git diff --staged --quiet || git commit -m "update seen_ideas"
+          git push || true
