@@ -112,6 +112,36 @@ CORE_KO = (
     "엔비디아 OR HBM OR DRAM OR 낸드 OR SK하이닉스 OR 삼성전자 반도체 OR "
     "데이터센터 OR AI 투자 OR AI 인프라 OR 반도체 증설 OR 전력 OR 가스터빈 OR CXL OR 패키징"
 )
+# [v2.7.4] 중국 AI·반도체 심층 (본토 동향은 영어권 보도로 우회 포착)
+CHINA_AI_EN = (
+    "(China OR Chinese) (DeepSeek OR Alibaba OR Tencent OR Baidu OR Huawei OR "
+    "SMIC OR CXMT OR ChangXin OR YMTC OR Cambricon OR Moore Threads OR "
+    "\"Qwen\" OR Kimi OR Zhipu OR MiniMax) OR "
+    "\"China AI\" OR \"Chinese AI\" OR \"China chip\" OR \"China semiconductor\" OR "
+    "\"China data center\" OR \"China compute\""
+)
+CHINA_AI_KO = (
+    "중국 AI OR 딥시크 OR 화웨이 반도체 OR SMIC OR 창신메모리 OR CXMT OR "
+    "YMTC OR 캄브리콘 OR 알리바바 AI OR 텐센트 AI OR 중국 데이터센터 OR "
+    "중국 반도체 자립 OR 중국산 GPU OR 어센드"
+)
+CHINA_AI_ZH = (
+    "DeepSeek OR 深度求索 OR 华为 昇腾 OR 中芯国际 OR 长鑫 OR 寒武纪 OR "
+    "阿里 通义 OR 腾讯 AI OR 百度 文心 OR 国产 GPU OR 算力 中心 OR 智算"
+)
+# [v2.7.4] 소버린 AI — 국가 단위 AI 인프라 구축 (전세계)
+SOVEREIGN_EN = (
+    "\"sovereign AI\" OR \"national AI\" OR \"AI sovereignty\" OR "
+    "\"government AI investment\" OR \"state-backed AI\" OR "
+    "\"national compute\" OR \"AI gigafactory\" OR "
+    "(Nvidia (Saudi OR UAE OR Qatar OR India OR Japan OR Europe OR Stargate)) OR "
+    "\"Humain\" OR \"G42\" OR \"Stargate\""
+)
+SOVEREIGN_KO = (
+    "소버린 AI OR 국가 AI 인프라 OR 국가 AI 컴퓨팅 OR 정부 GPU OR "
+    "국산 AI 반도체 지원 OR AI 파운데이션 모델 정부 OR 국가 슈퍼컴퓨터 OR "
+    "사우디 AI OR UAE AI OR 스타게이트"
+)
 DEMAND_KO = (
     "AI 수요 OR 추론 수요 OR AI 토큰 OR 연산 수요 OR GPU 부족 OR 캐파 부족 OR "
     "AI 매출 OR AI 가동률 OR AI 에이전트 OR 기업용 AI OR 수주잔고 OR AI 채택"
@@ -170,7 +200,13 @@ FEEDS = [
     gnews(FUNDING_KO, "ko"),
     gnews(POLICY_KO, "ko"),
     gnews(ROI_KO, "ko"),
+    gnews(CHINA_AI_EN, "en"),            # [v2.7.4] 중국 AI (영어권 보도)
+    gnews(CHINA_AI_KO, "ko"),            # [v2.7.4] 중국 AI (한국 보도)
+    gnews(CHINA_AI_ZH, "zh"),            # [v2.7.4] 중국 AI (중화권 보도)
+    gnews(SOVEREIGN_EN, "en"),           # [v2.7.4] 소버린 AI (글로벌)
+    gnews(SOVEREIGN_KO, "ko"),           # [v2.7.4] 소버린 AI (한국 보도)
     gnews("AI半導体 OR HBM OR データセンター OR ラピダス OR 電力 AI OR AI需要 OR 推論需要", "ja"),
+    gnews("ソフトバンク AI OR キオクシア OR 信越 OR 半導体 素材 OR 国産 AI", "ja"),  # [v2.7.4] 일본 보강
     gnews("人工智能 芯片 OR 数据中心 OR HBM OR 算力 OR 英伟达 OR AI需求 OR 推理需求", "zh"),
     gnews("台積電 OR CoWoS OR AI 伺服器 OR 半導體 產能 OR AI 需求", "zh"),
     gnews("한화엔진 OR 4행정 중속엔진 OR 데이터센터 발전엔진 OR 힘센엔진 OR 선박엔진 발전", "ko"),
@@ -268,6 +304,13 @@ INCLUDE = [
     "write-down", "impairment", "downgrade",
     "수익화", "감가상각", "버블", "거품", "과잉투자", "과잉공급", "공급과잉",
     "손상차손", "등급 하향", "투자 회수",
+    # [v2.7.4] 중국 AI·소버린 AI
+    "deepseek", "딥시크", "深度求索", "huawei", "화웨이", "华为", "昇腾", "어센드",
+    "smic", "中芯", "cxmt", "창신", "长鑫", "ymtc", "cambricon", "寒武纪", "캄브리콘",
+    "alibaba", "알리바바", "阿里", "tencent", "텐센트", "腾讯", "baidu", "바이두", "百度",
+    "qwen", "통의", "通义", "kimi", "zhipu", "moore threads", "国产", "국산 gpu", "智算",
+    "sovereign", "소버린", "stargate", "스타게이트", "humain", "g42",
+    "national ai", "국가 ai", "saudi", "사우디", "uae",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -532,6 +575,10 @@ def base_score(title, summary):
         "iren", "아이렌", "cipher mining", "사이퍼", "terawulf", "테라울프",
         "applied digital", "galaxy digital", "crusoe", "lambda",
         "core scientific", "코어사이언티픽", "네오클라우드", "neocloud",
+        # [v2.7.4] 중국 AI·메모리 논제 리스크 감시 (CXMT DRAM 진입 등)
+        "deepseek", "딥시크", "cxmt", "창신", "长鑫", "smic", "中芯",
+        "화웨이", "huawei", "昇腾", "캄브리콘", "cambricon",
+        "sovereign", "소버린", "stargate", "스타게이트",
     ]
     if any(k in text for k in watchlist):
         score += 2
