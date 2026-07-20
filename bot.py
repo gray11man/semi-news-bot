@@ -212,6 +212,10 @@ FEEDS = [
     gnews("한화엔진 OR 4행정 중속엔진 OR 데이터센터 발전엔진 OR 힘센엔진 OR 선박엔진 발전", "ko"),
     gnews("한화엔진 OR STX엔진 OR HD현대마린엔진 OR 데이터센터 엔진 OR 가스엔진 발전", "ko"),
     gnews("조선주 OR HD현대중공업 OR 삼성중공업 OR 한화오션 OR 조선 수주 OR LNG선 발주", "ko"),
+    gnews("Supermicro OR \"AI server\" OR Foxconn AI OR Quanta server OR \"Dell AI\" OR "
+          "\"liquid cooling\" OR Vertiv OR \"vendor financing\" OR \"private credit\" AI", "en"),  # [v2.7.6]
+    gnews("AI 서버 수주 OR 리퀴드 쿨링 OR 액침 냉각 OR 변압기 수주 OR 전력기기 OR "
+          "SMR OR 전력구매계약 OR D램 고정거래가 OR 낸드 가격", "ko"),  # [v2.7.6]
     gnews("Tempus AI OR \"TEM stock\" OR Tempus oncology OR Tempus FDA", "en"),
     gnews("Tempus AI OR 템퍼스", "ko"),
 ]
@@ -311,6 +315,22 @@ INCLUDE = [
     "qwen", "통의", "通义", "kimi", "zhipu", "moore threads", "国产", "국산 gpu", "智算",
     "sovereign", "소버린", "stargate", "스타게이트", "humain", "g42",
     "national ai", "국가 ai", "saudi", "사우디", "uae",
+    # [v2.7.6] 메모리 가격 지표
+    "현물가", "고정거래가", "dxi", "spot price", "contract price", "고정가",
+    "ddr5", "lpddr", "essd", "qlc", "키오시아", "kioxia",
+    # [v2.7.6] 서버 ODM (캐펙스 선행지표)
+    "supermicro", "슈퍼마이크로", "foxconn", "폭스콘", "hon hai", "鴻海",
+    "quanta", "콴타", "廣達", "wistron", "위스트론", "dell", "델 테크",
+    "ai 서버", "ai server", "서버 수주",
+    # [v2.7.6] 냉각 (차기 병목 후보)
+    "냉각", "리퀴드 쿨링", "liquid cooling", "액침", "immersion cooling",
+    "vertiv", "버티브", "쿨링", "냉각수", "칠러",
+    # [v2.7.6] 자금조달 심화 (벤더파이낸싱·순환거래 논쟁)
+    "vendor financing", "벤더 파이낸싱", "circular", "순환 거래", "순환 투자",
+    "private credit", "사모대출", "사모 크레딧", "spv", "프로젝트 파이낸싱",
+    # [v2.7.6] 전력 보강
+    "smr", "소형모듈원전", "ppa", "전력구매계약", "변압기", "전력기기",
+    "송전", "변전", "전선", "초고압", "hvdc", "ess",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -328,6 +348,9 @@ BOTTLENECK = [
     "부족", "품귀", "수급", "병목", "tight", "sold out", "공급난", "대란",
     "리드타임", "lead time", "backlog", "수주잔고", "capex", "설비투자",
     "전력난", "부족분", "공급부족", "수급난", "물량부족", "증설 경쟁",
+    # [v2.7.6]
+    "리퀴드 쿨링", "liquid cooling", "액침", "변압기", "hvdc", "초고압",
+    "전력기기", "vertiv", "현물가", "고정거래가",
 ]
 DEMAND_SIGNALS = [
     "ai demand", "inference demand", "token usage", "compute demand",
@@ -356,6 +379,13 @@ THESIS_ALERT = [
     "가격 하락", "asp 하락", "신용등급 하향", "손상차손", "감액",
     "버블 붕괴", "거품 붕괴", "과잉투자", "데이터센터 취소", "데이터센터 연기",
     "착공 연기", "자금조달 난항", "조달 실패", "조달 차질",
+    # [v2.7.6] 무효화 변형 보강
+    "착공 지연", "건설 지연", "공사 중단", "공사 지연", "건설 중단",
+    "인허가 지연", "전력 확보 실패", "전력 공급 차질", "계통 연결 지연",
+    "construction delay", "construction halt", "grid connection delay",
+    "permit delay", "project delay", "project cancel", "lease terminated",
+    "계약 해지", "계약 파기", "수요 둔화", "수요 감소", "주문 감소",
+    "재고 증가", "재고 급증", "가동률 하락",
 ]
 # [v2.7] 정부/국가 지원 신호 +5 → +3 (점수 인플레 축소)
 POLICY_SIGNALS = [
@@ -373,6 +403,8 @@ ROI_SIGNALS = [
     "free cash flow", "capex to revenue",
     "투자 회수", "수익화", "수익성", "감가상각", "잉여현금흐름", "회수 기간",
     "적자", "흑자 전환",
+    "vendor financing", "벤더 파이낸싱", "순환 거래", "순환 투자", "circular deal",
+    "private credit", "사모대출",
 ]
 
 
@@ -544,6 +576,7 @@ def base_score(title, summary):
         "자체 개발", "custom chip",
         "임대 계약", "임차 계약", "lease", "장기 계약", "다년 계약",
         "multi-year", "hosting agreement", "colocation",
+        "고정거래가", "현물가", "가격 인상", "품귀", "공급 부족", "리드타임",
     ]
     for kw in strong:
         if kw in text:
@@ -583,8 +616,8 @@ def base_score(title, summary):
     if any(k in text for k in watchlist):
         score += 2
     for kw in ["주가", "시총", "장중", "마감", "shares", "stock rises", "stock falls",
-               "급등", "급락", "보합", "상한가", "하한가", "약세", "강세",
-               "오늘의", "특징주", "이 시각"]:
+               "보합", "상한가", "하한가", "약세", "강세",
+               "오늘의", "특징주", "이 시각", "%대 상승", "%대 하락", "% 급등", "% 급락"]:
         if kw in text:
             score -= 3
             break
@@ -775,6 +808,21 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         "[중요] 기사 내용이 명백히 수 주~수 개월 이상 지난 과거 사건의 보도이거나, "
         "이미 널리 알려진 옛 뉴스의 재탕이면 반드시 중요도를 C로 판정하라.\n"
         "[중요] 단순 주가 등락, 리테일 투자 동향, 인물 동정/가십 기사도 C로 판정하라.\n"
+        "[판단 기준] 독자는 다음 논제를 추적하는 투자자다. 아래 논제를 강화하거나 "
+        "훼손하는 직접 증거가 담긴 기사는 중요도를 한 등급 올려 판정하라:\n"
+        "1) 메모리 슈퍼사이클: HBM·서버DRAM·NAND의 공급부족, ASP 방향, 장기계약, "
+        "증설·감산, CXMT 등 중국 메모리의 추격 (위협 신호도 동급으로 중요)\n"
+        "2) 병목 이동: AI 인프라의 병목이 HBM→서버DRAM→NAND→LPDDR→광통신→전력으로 "
+        "옮겨가는 신호 (특정 부품의 품귀·리드타임 급증·가격 급등)\n"
+        "3) AI 캐펙스 지속성: 하이퍼스케일러·네오클라우드의 데이터센터 투자 확대/축소, "
+        "대형 임대·클라우드 계약, 자금조달 성패, 소버린 AI 국가 프로젝트\n"
+        "4) AI 수요 실증: 추론 수요·토큰 사용량·가동률·완판 등 실수요 증거, "
+        "또는 반대로 ROI 회의론·과잉투자 경고\n"
+        "5) 전력·냉각 병목: 데이터센터발 전력난, 변압기·가스터빈·원전·SMR·PPA, "
+        "리퀴드쿨링 등 냉각 공급 제약\n"
+        "6) 선행지표: 서버 ODM(슈퍼마이크로·폭스콘·콴타 등) 수주·가이던스, "
+        "메모리 현물가·고정거래가 방향, 벤더파이낸싱·순환거래 논쟁\n"
+        "위 논제와 무관한 기사는 기존 기준대로만 판정하라.\n"
         "아래 7개 라벨 형식으로만 답하라. 각 줄 라벨 그대로, 값만 채워라. 다른 말 금지.\n"
         "제목: (한국어 번역 제목, 한 줄)\n"
         "요약: (반드시 5~7문장의 한국어. 기사 본문의 사실/숫자/맥락을 충실히 담되 "
