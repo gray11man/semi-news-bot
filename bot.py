@@ -216,6 +216,11 @@ FEEDS = [
           "\"liquid cooling\" OR Vertiv OR \"vendor financing\" OR \"private credit\" AI", "en"),  # [v2.7.6]
     gnews("AI 서버 수주 OR 리퀴드 쿨링 OR 액침 냉각 OR 변압기 수주 OR 전력기기 OR "
           "SMR OR 전력구매계약 OR D램 고정거래가 OR 낸드 가격", "ko"),  # [v2.7.6]
+    gnews("Oracle (OCI OR OpenAI OR RPO OR \"remaining performance\" OR bond OR debt OR "
+          "\"credit default\" OR CDS OR downgrade OR \"cash flow\" OR capex OR "
+          "\"data center\" OR Stargate OR lease)", "en"),  # [v2.7.7] 오라클 리스크 전용
+    gnews("오라클 회사채 OR 오라클 수주잔고 OR 오라클 OpenAI OR 오라클 데이터센터 OR "
+          "오라클 신용 OR 오라클 부채 OR 오라클 CDS", "ko"),  # [v2.7.7]
     gnews("Tempus AI OR \"TEM stock\" OR Tempus oncology OR Tempus FDA", "en"),
     gnews("Tempus AI OR 템퍼스", "ko"),
 ]
@@ -331,6 +336,9 @@ INCLUDE = [
     # [v2.7.6] 전력 보강
     "smr", "소형모듈원전", "ppa", "전력구매계약", "변압기", "전력기기",
     "송전", "변전", "전선", "초고압", "hvdc", "ess",
+    # [v2.7.7] 오라클 리스크 지표
+    "rpo", "remaining performance", "oci", "오라클 클라우드", "수주잔고",
+    "cds 스프레드", "credit default swap",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -386,6 +394,12 @@ THESIS_ALERT = [
     "permit delay", "project delay", "project cancel", "lease terminated",
     "계약 해지", "계약 파기", "수요 둔화", "수요 감소", "주문 감소",
     "재고 증가", "재고 급증", "가동률 하락",
+    # [v2.7.7] 오라클발 시스템 리스크 (AI 캐펙스 사슬의 최약 고리)
+    "oracle downgrade", "오라클 등급", "오라클 강등", "cds 급등", "cds surge",
+    "신용등급 강등", "등급 강등", "강등 검토", "등급 하향 검토", "부정적 전망",
+    "부정적", "negative outlook", "rating cut", "watch negative",
+    "rpo miss", "rpo 하회", "수주잔고 감소", "openai 계약 축소",
+    "openai contract", "backlog decline", "backlog miss",
 ]
 # [v2.7] 정부/국가 지원 신호 +5 → +3 (점수 인플레 축소)
 POLICY_SIGNALS = [
@@ -577,6 +591,7 @@ def base_score(title, summary):
         "임대 계약", "임차 계약", "lease", "장기 계약", "다년 계약",
         "multi-year", "hosting agreement", "colocation",
         "고정거래가", "현물가", "가격 인상", "품귀", "공급 부족", "리드타임",
+        "무디스", "moody", "피치", "fitch", "s&p 글로벌", "신용평가",
     ]
     for kw in strong:
         if kw in text:
@@ -815,7 +830,10 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         "2) 병목 이동: AI 인프라의 병목이 HBM→서버DRAM→NAND→LPDDR→광통신→전력으로 "
         "옮겨가는 신호 (특정 부품의 품귀·리드타임 급증·가격 급등)\n"
         "3) AI 캐펙스 지속성: 하이퍼스케일러·네오클라우드의 데이터센터 투자 확대/축소, "
-        "대형 임대·클라우드 계약, 자금조달 성패, 소버린 AI 국가 프로젝트\n"
+        "대형 임대·클라우드 계약, 자금조달 성패, 소버린 AI 국가 프로젝트. "
+        "특히 오라클은 부채 의존 캐펙스로 사슬의 최약 고리이므로 오라클의 "
+        "회사채·CDS·신용등급·RPO(수주잔고)·OpenAI 계약 관련 뉴스는 호재·악재 "
+        "불문 한 등급 올려 판정하라\n"
         "4) AI 수요 실증: 추론 수요·토큰 사용량·가동률·완판 등 실수요 증거, "
         "또는 반대로 ROI 회의론·과잉투자 경고\n"
         "5) 전력·냉각 병목: 데이터센터발 전력난, 변압기·가스터빈·원전·SMR·PPA, "
