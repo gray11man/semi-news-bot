@@ -54,11 +54,11 @@ NEWS_FILE = "news.json"
 NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 30              # [v2.7] 7 → 30 (재색인 재유입 방지)
 MAX_SEND_PER_RUN = 10                 # [v2.7] 20 → 10
-MIN_SCORE_TO_SEND = 5                 # [v2.7] 5 → 8
+MIN_SCORE_TO_SEND = 5                 # [v2.7.2] 후보 선발용으로 완화 (최종 품질은 Gemini 등급이 방어)
 NEWS_WINDOW_HOURS = 3
 PEOPLE_WINDOW_HOURS = 24
 STALE_HARD_LIMIT_H = 48               # [v2.7] 실제 발행일 기준 최대 허용 나이
-GRADE_B_MIN_SCORE = 7                 # [v2.7] B등급은 이 점수 이상만 전송
+GRADE_B_MIN_SCORE = 8                 # [v2.7.1] 10 → 8 (B등급 과차단 완화)
 SIMILARITY_THRESHOLD = 0.55
 REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
@@ -95,7 +95,8 @@ CORE_EN = (
     "Nvidia OR AMD OR Broadcom OR Marvell OR TSMC OR Samsung OR \"SK hynix\" OR Micron OR "
     "Amazon OR AWS OR Microsoft OR Alphabet OR Google OR Meta OR Oracle OR "
     "HBM OR DRAM OR NAND OR CXL OR CoWoS OR \"data center\" OR datacenter OR "
-    "CoreWeave OR \"power grid\" OR \"gas turbine\" OR nuclear"
+    "CoreWeave OR Nebius OR \"Hut 8\" OR IREN OR TeraWulf OR "
+    "\"power grid\" OR \"gas turbine\" OR nuclear"
 )
 MONEY_EN = (
     "AI capex OR AI funding OR \"data center investment\" OR \"GPU order\" OR "
@@ -164,6 +165,7 @@ FEEDS = [
     gnews(ROI_EN, "en"),
     gnews(CORE_KO, "ko"),
     gnews("AI 데이터센터 OR HBM 공급 OR 반도체 수주 OR AI 전력 OR 원전 데이터센터", "ko"),
+    gnews("데이터센터 임대 계약 OR AI 클라우드 계약 OR 네오클라우드 OR 코어위브 OR 채굴업체 AI", "ko"),
     gnews(DEMAND_KO, "ko"),
     gnews(FUNDING_KO, "ko"),
     gnews(POLICY_KO, "ko"),
@@ -497,6 +499,8 @@ def base_score(title, summary):
         "launch", "unveil", "secures", "wins", "공개",
         "mass production", "into production", "in-house chip", "자체 칩",
         "자체 개발", "custom chip",
+        "임대 계약", "임차 계약", "lease", "장기 계약", "다년 계약",
+        "multi-year", "hosting agreement", "colocation",
     ]
     for kw in strong:
         if kw in text:
@@ -523,6 +527,11 @@ def base_score(title, summary):
         "credit rating", "신용등급", "leverage", "부채", "debt",
         "free cash flow", "잉여현금흐름",
         "meta", "메타", "broadcom", "브로드컴", "mtia", "샌디스크", "sandisk",
+        # [v2.7.2] 네오클라우드·채굴사 AI전환 (AI 캐펙스 수요의 최전선)
+        "coreweave", "코어위브", "nebius", "네비우스", "hut 8", "허트8",
+        "iren", "아이렌", "cipher mining", "사이퍼", "terawulf", "테라울프",
+        "applied digital", "galaxy digital", "crusoe", "lambda",
+        "core scientific", "코어사이언티픽", "네오클라우드", "neocloud",
     ]
     if any(k in text for k in watchlist):
         score += 2
