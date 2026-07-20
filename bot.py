@@ -651,22 +651,30 @@ def resolve_final_url(url):
 
 def fetch_article_body(url):
     """[v2.7] (본문, 실제발행일나이(시간) or None) 튜플 반환.
-    실제발행일나이 = 원문 메타태그 발행일과 URL 날짜 중 더 오래된 쪽."""
+    [v2.7.3 FIX] 구글 뉴스 래퍼 페이지에서 리다이렉트가 안 풀린 경우,
+    래퍼 HTML의 날짜를 기사 발행일로 오인해 모든 기사를 동일 나이로
+    판정하던 치명적 버그 수정. 실제 언론사 도메인으로 풀렸을 때만
+    날짜 검증을 수행한다."""
     if not (FETCH_BODY and _HAS_TRAFI):
         return "", None
     final_url, prefetched = resolve_final_url(url)
+
+    # [v2.7.3] 리다이렉트가 실제 기사로 풀렸는지 판별
+    host = urlparse(final_url).netloc.lower()
+    is_wrapper = ("news.google.com" in host) or (host.endswith("google.com"))
+
     body = ""
     real_age = None
     try:
         downloaded = prefetched
         if not downloaded:
             downloaded = trafilatura.fetch_url(final_url)
-        if downloaded:
+        if downloaded and not is_wrapper:
             body = trafilatura.extract(
                 downloaded, include_comments=False, include_tables=False,
                 no_fallback=False, favor_precision=True,
             ) or ""
-            # [v2.7] 원문 HTML의 article:published_time 등 실제 발행일 추출
+            # 실제 언론사 페이지일 때만 발행일 추출
             try:
                 meta = trafilatura.extract_metadata(downloaded)
                 if meta and getattr(meta, "date", None):
@@ -676,10 +684,11 @@ def fetch_article_body(url):
     except Exception as e:
         print(f"[WARN] body extract fail: {e}")
         body = ""
-    # [v2.7] URL 날짜 보조 검증 — 둘 중 더 오래된 쪽 채택
-    ua_age = url_date_age_hours(final_url)
-    if ua_age is not None:
-        real_age = ua_age if real_age is None else max(real_age, ua_age)
+    # URL 날짜 보조 검증 — 실제 언론사 URL일 때만 (래퍼 URL의 숫자열 오탐 방지)
+    if not is_wrapper:
+        ua_age = url_date_age_hours(final_url)
+        if ua_age is not None:
+            real_age = ua_age if real_age is None else max(real_age, ua_age)
     body = re.sub(r"\s+", " ", body).strip()
     return body[:BODY_MAX_CHARS], real_age
 
