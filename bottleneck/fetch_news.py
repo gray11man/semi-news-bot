@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-fetch_news.py  (v3 - 24시간 신선도 검증판)
+fetch_news.py  (v3.1 - 유사기사 중복 차단판)
 
-역할: 구글 뉴스 RSS(한국+미국)에서 전업종 뉴스를 넓게 수집해
-      main.py → filter_stage1로 넘긴다.
-      섹터 선별은 signals.py가 하므로 여기서는 '넓게 + 신선하게'만 담당.
+v3 → v3.1 변경:
+  - [핵심] 같은 사건을 다른 제목으로 쓴 기사 차단 (유사도 판정 추가)
+    예: "미-이란 확전 우려로 유가 급등" vs "중동 확전에 유가 급등"
+    → 아침에 보낸 사건을 저녁에 또 해석하던 문제 해결
+  - seen 구조 확장: 해시키 → {ts, nt(정규화 제목)} (기존 파일과 호환)
+  - 실행 내 중복도 유사도로 판정 (같은 회차에 비슷한 기사 2건 방지)
 
-신선도 3중 검증 (bot.py v2.7과 동일한 방어 구조):
+신선도 3중 검증 (v3과 동일):
   1) RSS published 기준 24시간 이내만 수집
-  2) URL 경로에 박힌 날짜(/2026/06/18/ 등)가 48시간 초과면 차단
-     → 구글 재색인으로 published가 "방금"으로 조작된 옛 기사 방어
-  3) seen.json으로 실행 간 중복 전송 방지 (30일 보존)
+  2) URL 경로 날짜 48시간 초과 차단 (구글 재색인 방어)
+  3) seen_ideas.json 30일 보존
 
 반환 형식: [{"title", "summary", "link", "source", "published"}, ...]
 """
@@ -21,6 +23,7 @@ import json
 import html
 import hashlib
 import datetime
+from difflib import SequenceMatcher
 from urllib.parse import urlparse, quote
 
 import feedparser
@@ -32,6 +35,7 @@ SEEN_FILE = "seen_ideas.json"
 SEEN_RETENTION_DAYS = 30
 RSS_MAX_ENTRIES = 40
 SUMMARY_MAX = 300
+SIMILARITY_THRESHOLD = 0.65  # [v3.1] 제목 유사도 이 이상이면 같은 사건 취급
 
 # 저신호 매체 차단 (게임/연예/커뮤니티)
 SOURCE_BLACKLIST = [
@@ -86,9 +90,57 @@ def _save_json(path, data):
 
 def _title_key(title):
     t = html.unescape(title or "")
-    t = re.sub(r"\s*[-|·]\s*[^-|·]+$", "", t)          # 꼬리 매체명 제거
+    t = re.sub(r"\s+[-–—|]\s+[\w가-힣 .이코노미]{1,25}$", "", t)          # 꼬리 매체명 제거
     t = re.sub(r"[^\w가-힣]+", "", t).lower()
     return hashlib.md5(t.encode("utf-8")).hexdigest()
+
+
+def _norm_for_sim(title):
+    """[v3.1] 유사도 비교용 제목 정규화."""
+    t = html.unescape(title or "")
+    t = re.sub(r"\s+[-–—|]\s+[\w가-힣 .이코노미]{1,25}$", "", t)          # 꼬리 매체명 제거
+    t = re.sub(r"\[[^\]]*\]", " ", t)                  # [단독] 등 말머리 제거
+    t = re.sub(r"[^\w가-힣 ]+", " ", t)
+    return re.sub(r"\s+", " ", t).strip().lower()
+
+
+def _tokens(s):
+    return {w for w in s.split() if len(w) >= 2}
+
+
+# [v3.1] 한국어 조사 제거 (확전에→확전, 우려로→우려 등을 같은 토큰으로)
+_PARTICLES = ("에서", "으로", "이라", "라고", "에는", "에도", "까지", "부터",
+              "에", "은", "는", "이", "가", "을", "를", "로", "의", "와", "과", "도")
+
+
+def _strip_particle(w):
+    for p in _PARTICLES:
+        if len(w) > len(p) + 1 and w.endswith(p):
+            return w[:-len(p)]
+    return w
+
+
+def _event_tokens(s):
+    return {_strip_particle(w) for w in s.split() if len(_strip_particle(w)) >= 2}
+
+
+def _is_similar(a, b):
+    """[v3.1] 같은 사건 판정 3단:
+    1) 문자열 유사도  2) 토큰 자카드  3) 조사 제거 후 핵심토큰 3개 이상 공유."""
+    if not a or not b:
+        return False
+    if SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD:
+        return True
+    ta, tb = _tokens(a), _tokens(b)
+    if ta and tb and len(ta & tb) / len(ta | tb) >= 0.5:
+        return True
+    # 조사 제거 후 사건 핵심토큰 비교 (예: 확전+유가+급등 3개 공유 → 같은 사건)
+    ea, eb = _event_tokens(a), _event_tokens(b)
+    if ea and eb:
+        shared = ea & eb
+        if len(shared) >= 3:
+            return True
+    return False
 
 
 def _entry_age_hours(entry):
@@ -139,15 +191,29 @@ def _clean_summary(raw):
 
 
 def _prune_seen(seen):
+    """[v3.1] 구버전(값=timestamp 숫자)과 신버전(값={ts, nt}) 모두 호환."""
     cutoff = (_now_utc() - datetime.timedelta(days=SEEN_RETENTION_DAYS)).timestamp()
-    return {k: v for k, v in seen.items() if v >= cutoff}
+    out = {}
+    for k, v in seen.items():
+        if isinstance(v, dict):
+            ts = v.get("ts", 0)
+            if ts >= cutoff:
+                out[k] = v
+        else:  # 구버전 숫자값 → 신형식으로 변환
+            if v >= cutoff:
+                out[k] = {"ts": v, "nt": ""}
+    return out
 
 
 # ───────────────────────── 메인 수집 ─────────────────────────
 def fetch_news():
     seen = _prune_seen(_load_json(SEEN_FILE, {}))
+    # [v3.1] 과거 전송 기사의 정규화 제목 목록 (유사도 비교용)
+    seen_titles = [v.get("nt", "") for v in seen.values() if v.get("nt")]
+
     items = []
     dup_keys = set()
+    run_titles = []   # [v3.1] 이번 실행 내 유사도 비교용
 
     for url in FEEDS:
         try:
@@ -176,11 +242,22 @@ def fetch_news():
             if u_age is not None and u_age > URL_DATE_HARD_LIMIT_H:
                 continue
 
-            # ── 중복: 실행 내 + 실행 간(seen.json) ──
+            # ── 중복 1: 완전일치 해시 (실행 내 + 실행 간) ──
             key = _title_key(title)
             if key in dup_keys or key in seen:
                 continue
+
+            # ── 중복 2 [v3.1]: 유사기사 판정 ──
+            nt = _norm_for_sim(title)
+            #   (a) 과거에 전송한 사건과 유사 → 차단 (같은 사건 재해석 방지)
+            if any(_is_similar(nt, s) for s in seen_titles):
+                continue
+            #   (b) 이번 실행 내 유사 기사 → 차단
+            if any(_is_similar(nt, s) for s in run_titles):
+                continue
+
             dup_keys.add(key)
+            run_titles.append(nt)
 
             pub_iso = ""
             tm = entry.get("published_parsed")
@@ -198,24 +275,37 @@ def fetch_news():
                 "source": src,
                 "published": pub_iso,
                 "_seen_key": key,
+                "_nt": nt,
             })
 
-    print(f"[fetch] {len(items)}건 수집 (24h 이내, 중복 제거 후)")
+    print(f"[fetch] {len(items)}건 수집 (24h 이내, 완전일치+유사 중복 제거 후)")
     return items
 
 
 def mark_sent(items):
-    """전송 완료된 기사를 seen에 기록. main.py에서 전송 후 호출 권장:
+    """전송 완료된 기사를 seen에 기록 (정규화 제목 포함 → 유사기사 차단에 사용).
+    main.py에서 전송 후 호출:
         from fetch_news import mark_sent
         mark_sent(results)
-    호출하지 않으면 같은 기사가 다음 실행에서 재전송될 수 있다."""
+    주의: results가 {"item": {...}, "verdict": {...}} 형태면 item을 꺼내 기록한다.
+    """
     seen = _prune_seen(_load_json(SEEN_FILE, {}))
     now_ts = _now_utc().timestamp()
-    for it in items:
-        key = it.get("_seen_key") or _title_key(it.get("title", ""))
-        seen[key] = now_ts
+    count = 0
+    for r in items:
+        # evaluate_stage2 결과 형태({"item": ...})와 원본 기사 형태 모두 지원
+        it = r.get("item", r) if isinstance(r, dict) else r
+        if not isinstance(it, dict):
+            continue
+        title = it.get("title", "")
+        if not title:
+            continue
+        key = it.get("_seen_key") or _title_key(title)
+        nt = it.get("_nt") or _norm_for_sim(title)
+        seen[key] = {"ts": now_ts, "nt": nt}
+        count += 1
     _save_json(SEEN_FILE, seen)
-    print(f"[fetch] seen 기록 {len(items)}건")
+    print(f"[fetch] seen 기록 {count}건")
 
 
 if __name__ == "__main__":
