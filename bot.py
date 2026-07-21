@@ -340,6 +340,9 @@ INCLUDE = [
     # [v2.7.7] 오라클 리스크 지표
     "rpo", "remaining performance", "oci", "오라클 클라우드", "수주잔고",
     "cds 스프레드", "credit default swap",
+    # [v2.8.2] 핵심 기업 한글명 (영문만 있어 한글 단독언급 기사가 입구 탈락하던 치명 결함)
+    "하이닉스", "삼성전자", "인텔", "마이크론", "브로드컴", "마벨",
+    "퀄컴", "amd", "티에스엠씨",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -670,6 +673,10 @@ def base_score(title, summary):
         "multi-year", "hosting agreement", "colocation",
         "고정거래가", "현물가", "가격 인상", "품귀", "공급 부족", "리드타임",
         "무디스", "moody", "피치", "fitch", "s&p 글로벌", "신용평가",
+        # [v2.8.2] 단독·특종 기사의 구어체 딜 표현 (격식어만 있으면 특종을 놓침)
+        "매입", "매각", "빅딜", "사들이", "사들인", " 산다", "품는다", "품었다",
+        "베팅", "승부수", "잡았다", "따냈다", "손잡", "확보한다", "짓는다",
+        "착공", "가동 개시", "가동 시작", "준공",
     ]
     for kw in strong:
         if kw in text:
@@ -707,6 +714,10 @@ def base_score(title, summary):
         "sovereign", "소버린", "stargate", "스타게이트",
     ]
     if any(k in text for k in watchlist):
+        score += 2
+    # [v2.8.2] 단독·특종 기사 가점 (스쿠프는 컨센서스 이전 정보일 확률이 높음)
+    if any(k in text for k in ["[단독]", "단독]", "[특종", "exclusive:", "scoop:",
+                               "빅딜", "메가딜"]):
         score += 2
     for kw in ["주가", "시총", "장중", "마감", "shares", "stock rises", "stock falls",
                "보합", "상한가", "하한가", "약세", "강세",
