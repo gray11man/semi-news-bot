@@ -347,6 +347,9 @@ EXCLUDE = [
 SOURCE_BLACKLIST = [
     "인벤", "루리웹", "디스이즈게임", "게임메카", "디스패치", "위키트리",
     "인사이트", "허프포스트",
+    # [v2.7.9] 재유통 플랫폼 — 옛 기사를 재발행해 구글에 새 기사로
+    # 재색인시키는 상습 경로. 원 언론사 기사로 다 잡히므로 손실 없음.
+    "MSN", "msn.com",
 ]
 
 BOTTLENECK = [
@@ -735,6 +738,43 @@ def clean_summary(raw):
 
 
 # ───────────────────────── 본문 추출 ─────────────────────────
+import base64
+
+
+def decode_gnews_url(url):
+    """[v2.7.8] 구글 뉴스 래퍼 URL(news.google.com/rss/articles/CBMi...)을
+    HTTP 요청 없이 디코딩해 실제 기사 URL 추출. 실패 시 None."""
+    try:
+        m = re.search(r"news\.google\.com/(?:rss/)?articles/([^?/]+)", url)
+        if not m:
+            return None
+        token = m.group(1)
+        pad = token + "=" * (-len(token) % 4)
+        raw = base64.urlsafe_b64decode(pad)
+        # 디코딩된 바이트에서 첫 http(s) URL 추출
+        m2 = re.search(rb'https?://[^\x00-\x20"\\]+', raw)
+        if m2:
+            real = m2.group(0).decode("utf-8", "ignore")
+            # 구글 자체 URL이면 무효
+            if "google.com" not in urlparse(real).netloc:
+                return real
+    except Exception:
+        pass
+    return None
+
+
+def extract_real_url_from_wrapper(html_text):
+    """[v2.7.8] 래퍼 HTML에서 실제 기사 URL 추출 시도 (신형 링크 대응)."""
+    if not html_text:
+        return None
+    for pat in (r'data-n-au="(https?://[^"]+)"',
+                r'<a[^>]+href="(https?://(?!news\.google|www\.google|accounts\.google|policies\.google)[^"]+)"'):
+        m = re.search(pat, html_text)
+        if m:
+            return m.group(1)
+    return None
+
+
 def resolve_final_url(url):
     try:
         r = requests.get(url, headers={"User-Agent": UA},
@@ -752,11 +792,23 @@ def fetch_article_body(url):
     날짜 검증을 수행한다."""
     if not (FETCH_BODY and _HAS_TRAFI):
         return "", None
-    final_url, prefetched = resolve_final_url(url)
 
-    # [v2.7.3] 리다이렉트가 실제 기사로 풀렸는지 판별
+    # [v2.7.8] 1순위: 래퍼 URL 자체를 디코딩해 실제 기사 URL 확보 (HTTP 불필요)
+    decoded = decode_gnews_url(url)
+    fetch_target = decoded or url
+
+    final_url, prefetched = resolve_final_url(fetch_target)
+
     host = urlparse(final_url).netloc.lower()
     is_wrapper = ("news.google.com" in host) or (host.endswith("google.com"))
+
+    # [v2.7.8] 2순위: 여전히 래퍼면 래퍼 HTML에서 실제 URL 추출 후 재시도
+    if is_wrapper and prefetched:
+        real2 = extract_real_url_from_wrapper(prefetched)
+        if real2:
+            final_url, prefetched = resolve_final_url(real2)
+            host = urlparse(final_url).netloc.lower()
+            is_wrapper = ("news.google.com" in host) or (host.endswith("google.com"))
 
     body = ""
     real_age = None
@@ -821,7 +873,9 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         f"오늘 날짜는 {today_kst}(KST)다.\n"
         "원문이 영어/중국어/일본어/대만어(번체)든 모두 한국어로 옮겨라.\n"
         "[중요] 기사 내용이 명백히 수 주~수 개월 이상 지난 과거 사건의 보도이거나, "
-        "이미 널리 알려진 옛 뉴스의 재탕이면 반드시 중요도를 C로 판정하라.\n"
+        "이미 널리 알려진 옛 뉴스의 재탕이면 반드시 중요도를 C로 판정하라. "
+        "본문에 언급된 사건 날짜·발표 시점이 오늘로부터 5일 이상 과거로 판단되면 "
+        "다른 조건과 무관하게 C로 판정하라.\n"
         "[중요] 단순 주가 등락, 리테일 투자 동향, 인물 동정/가십 기사도 C로 판정하라.\n"
         "[판단 기준] 독자는 다음 논제를 추적하는 투자자다. 아래 논제를 강화하거나 "
         "훼손하는 직접 증거가 담긴 기사는 중요도를 한 등급 올려 판정하라:\n"
@@ -988,6 +1042,9 @@ def collect():
             src = source_name(entry)
             if any(b in src for b in SOURCE_BLACKLIST) or \
                any(b in title for b in SOURCE_BLACKLIST):
+                continue
+            # [v2.7.9] 링크 도메인 기준 차단 (source title이 다르게 잡혀도 방어)
+            if "msn.com" in link.lower():
                 continue
 
             age = entry_age_hours(entry)
@@ -1260,6 +1317,12 @@ def main():
             continue
 
         a = gemini_analyze(it["title"], it["summary"], it["source"], body=body)
+
+        # [v2.7.8] 최후 방어선: 발행일 검증 불가 + Gemini 분석도 실패면
+        #   신선도를 아무도 보증 못 하므로 전송하지 않는다 (재색인 유입의 마지막 구멍 봉쇄)
+        if real_age is None and a is None:
+            print(f"[SKIP] 미검증+미분석 전송 차단: {it['title'][:50]}")
+            continue
 
         # [v2.7] 3차 방어 + 노이즈 억제: C 차단, B는 고점수만 통과
         if a and a.get("grade") == "C":
