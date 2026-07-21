@@ -54,7 +54,7 @@ NEWS_FILE = "news.json"
 NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 30              # [v2.7] 7 → 30 (재색인 재유입 방지)
 MAX_SEND_PER_RUN = 10                 # [v2.7] 20 → 10
-MIN_SCORE_TO_SEND = 5                 # [v2.7.2] 후보 선발용으로 완화 (최종 품질은 Gemini 등급이 방어)
+MIN_SCORE_TO_SEND = 6                 # [v2.8.1] 5 → 6
 NEWS_WINDOW_HOURS = 3
 PEOPLE_WINDOW_HOURS = 24
 STALE_HARD_LIMIT_H = 48               # [v2.7] 실제 발행일 기준 최대 허용 나이
@@ -404,6 +404,80 @@ THESIS_ALERT = [
     "rpo miss", "rpo 하회", "수주잔고 감소", "openai 계약 축소",
     "openai contract", "backlog decline", "backlog miss",
 ]
+# [v2.8] SS/SSS 사이클 경보 — 메모리 사이클 고점 4대 신호의 2단계 조기경보.
+# 뉴스봇은 데이터를 직접 계산할 수 없으므로, 해당 조건 충족을 보도하는
+# 기사를 텍스트 내 동시출현(AND)으로 판정한다.
+#   SSS(+10): 확정 신호 — 등급 차단 면제, 무조건 전송
+#   SS(+7):  조기 신호 — 등급 차단 면제, 무조건 전송
+# ①현물가: 1주+ 횡보·하락 SS / 2주+ 횡보·하락(+공급증가 동반) SSS
+# ②유통재고: 5주 초과 SS / 7주 초과 SSS
+# ③하이퍼스케일러 capex: 한 곳이라도 동결·하향 SSS (일반 capex 논쟁은 THESIS_ALERT)
+# ④HBM: 가격 상승률 둔화 SS / 계약가 QoQ 하락 전환 SSS
+
+_SPOT_TERMS = ["현물가", "현물 가격", "spot price", "스팟 가격"]
+_WEAK_TERMS = ["하락", "급락", "약세", "횡보", "내림", "꺾", "fall", "fell",
+               "decline", "drop", "weak", "slide", "slip"]
+_MULTI_WEEK = ["2주", "3주", "4주", "보름", "연속 하락", "연속 약세",
+               "하락세 지속", "약세 지속", "2 weeks", "two weeks",
+               "three weeks", "consecutive"]
+_SUPPLY_UP = ["공급 증가", "공급 확대", "생산 확대", "웨이퍼 투입 증가",
+              "증산", "캐파 증가", "wafer start", "supply increase",
+              "supply growth", "output increase", "production increase"]
+_INV_TERMS = ["유통 재고", "채널 재고", "재고 주수", "channel inventory",
+              "distributor inventory", "inventory weeks"]
+_INV_SSS = ["7주", "8주", "9주", "10주", "11주", "12주", "13주", "14주", "15주",
+            "7 weeks", "8 weeks", "9 weeks", "10 weeks", "12 weeks", "15 weeks"]
+_INV_SS = ["5주", "6주", "5 weeks", "6 weeks", "급증", "빠르게 증가",
+           "쌓이", "축적", "buildup"]
+_HYPER = ["아마존", "amazon", "aws", "마이크로소프트", "microsoft",
+          "구글", "google", "alphabet", "메타", "meta", "하이퍼스케일러",
+          "hyperscaler", "오라클", "oracle"]
+_CAPEX_DOWN = ["capex 동결", "capex 하향", "capex 축소", "capex 삭감",
+               "설비투자 동결", "설비투자 하향", "설비투자 축소", "투자 동결",
+               "가이던스 하향", "capex cut", "capex flat", "lower capex",
+               "capex guidance cut", "spending freeze", "투자 계획 철회"]
+_HBM_DOWN = ["계약가 하락", "계약가 인하", "가격 하락 전환", "asp 하락",
+             "가격 인하", "값 내려", "contract price decline",
+             "contract price fall", "price cut", "asp decline", "qoq 하락",
+             "가격 꺾"]
+_HBM_SLOW = ["상승률 둔화", "인상 폭 축소", "인상폭 축소", "상승 폭 둔화",
+             "상승폭 둔화", "인상률 하향", "가격 둔화", "인상 속도 둔화",
+             "price growth slow", "smaller increase", "slower price",
+             "moderating price"]
+
+
+def check_sss(title, summary):
+    """[v2.8] (레벨, 신호명) 반환. SSS 우선 판정, 없으면 None."""
+    text = f"{title} {summary}".lower()
+
+    def hit(kws):
+        return any(k in text for k in kws)
+
+    spot = hit(_SPOT_TERMS) and hit(_WEAK_TERMS)
+    inv = hit(_INV_TERMS)
+    hbm = "hbm" in text
+
+    # ── SSS 판정 (확정 신호) ──
+    if spot and (hit(_MULTI_WEEK) or hit(_SUPPLY_UP)):
+        return ("SSS", "①현물가 2주+ 약세")
+    if inv and hit(_INV_SSS):
+        return ("SSS", "②유통재고 7주 초과")
+    if hit(_HYPER) and hit(_CAPEX_DOWN):
+        return ("SSS", "③하이퍼스케일러 capex 이탈")
+    if hbm and hit(_HBM_DOWN):
+        return ("SSS", "④HBM 계약가 하락 전환")
+
+    # ── SS 판정 (조기 신호) ──
+    if spot:
+        return ("SS", "①현물가 약세 감지")
+    if inv and hit(_INV_SS):
+        return ("SS", "②유통재고 5주 초과")
+    if hbm and hit(_HBM_SLOW):
+        return ("SS", "④HBM 가격 상승률 둔화")
+
+    return None
+
+
 # [v2.7] 정부/국가 지원 신호 +5 → +3 (점수 인플레 축소)
 POLICY_SIGNALS = [
     "subsidy", "subsidies", "tax credit", "tax break", "chips act",
@@ -894,6 +968,11 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         "리퀴드쿨링 등 냉각 공급 제약\n"
         "6) 선행지표: 서버 ODM(슈퍼마이크로·폭스콘·콴타 등) 수주·가이던스, "
         "메모리 현물가·고정거래가 방향, 벤더파이낸싱·순환거래 논쟁\n"
+        "[사이클 경보 최우선] 다음 신호가 본문에서 확인되면 무조건 S로 판정하라: "
+        "①메모리 현물가 1주 이상 횡보·하락(2주 이상+공급 전년비 +10%면 최상급) "
+        "②유통(채널) 재고 5주 초과(7주 초과면 최상급) "
+        "③하이퍼스케일러 한 곳 이상의 capex 동결·하향(특히 아마존·MS) "
+        "④HBM 가격 상승률 둔화 또는 계약가 QoQ 하락 전환\n"
         "위 논제와 무관한 기사는 기존 기준대로만 판정하라.\n"
         "아래 7개 라벨 형식으로만 답하라. 각 줄 라벨 그대로, 값만 채워라. 다른 말 금지.\n"
         "제목: (한국어 번역 제목, 한 줄)\n"
@@ -1083,6 +1162,10 @@ def collect():
             sc = base_score(title, raw_sum)
             if is_people:
                 sc += 3
+            # [v2.8] SS/SSS 사이클 경보: 무조건 통과 (SSS +10, SS +7)
+            sss = check_sss(title, raw_sum)
+            if sss:
+                sc += 10 if sss[0] == "SSS" else 7
 
             items.append({
                 "title": html.unescape(title),
@@ -1093,6 +1176,7 @@ def collect():
                 "score": sc,
                 "published": pub_iso,
                 "is_people": is_people,
+                "sss": sss,
             })
     print(f"[INFO] 수집 {len(items)}건 (산업+인물, 필터/1차중복 후)")
     return items
@@ -1129,10 +1213,23 @@ def tg_send(text):
 GRADE_EMOJI = {"S": "🔴 S", "A": "🟠 A", "B": "🟡 B", "C": "⚪ C"}
 
 
+def _sss_banner(it):
+    s = it.get("sss")
+    if not s:
+        return ""
+    level, name = s
+    if level == "SSS":
+        return f"🚨🚨🚨 <b>SSS 사이클 경보</b> · {esc(name)}"
+    return f"⚠️⚠️ <b>SS 조기 경보</b> · {esc(name)}"
+
+
 def build_full(it, a):
     title_ko = a.get("title_ko") or it["title"]
     grade = GRADE_EMOJI.get(str(a.get("grade", "")).upper().strip(), "")
     lines = []
+    banner = _sss_banner(it)
+    if banner:
+        lines.append(banner)
     if grade:
         lines.append(f"{grade}")
     lines.append(f"<b>{esc(title_ko)}</b>")
@@ -1203,12 +1300,14 @@ def google_translate_ko(text):
 
 def build_min(it):
     title = it["title"]
+    banner = _sss_banner(it)
+    banner = banner + "\n" if banner else ""
     if not has_korean(title) or has_chinese(title):
         translated = google_translate_ko(title)
         if translated:
             title = translated
     src = f" · {esc(it['source'])}" if it["source"] else ""
-    return f'<b>{esc(title)}</b>\n🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}'
+    return f'{banner}<b>{esc(title)}</b>\n🔗 <a href="{esc(it["link"])}">기사 보기</a>{src}'
 
 
 # ───────────────────────── news.json ─────────────────────────
@@ -1256,6 +1355,41 @@ def save_news_json(new_items):
         "items": merged,
     })
     print(f"[INFO] news.json 저장: 신규 {len(new_items)}건 + 기존 → 총 {len(merged)}건")
+
+
+# ───────────────────────── 주간 생존 신고 ─────────────────────────
+STATS_FILE = "stats.json"
+
+
+def update_weekly_stats(collected, sent, sss):
+    """[v2.8.1] 실행 통계를 누적하고, 일요일 아침(KST 07~10시) 첫 실행 시
+    주간 요약을 전송해 '봇이 살아있음'을 신고한다."""
+    kst_now = now_utc() + datetime.timedelta(hours=9)
+    stats = load_json(STATS_FILE, {"week_start": "", "runs": 0,
+                                   "collected": 0, "sent": 0, "sss": 0,
+                                   "reported": ""})
+    # 주 시작(월요일) 날짜 계산
+    monday = (kst_now - datetime.timedelta(days=kst_now.weekday())).strftime("%Y-%m-%d")
+    if stats.get("week_start") != monday:
+        stats = {"week_start": monday, "runs": 0, "collected": 0,
+                 "sent": 0, "sss": 0, "reported": stats.get("reported", "")}
+    stats["runs"] += 1
+    stats["collected"] += collected
+    stats["sent"] += sent
+    stats["sss"] += sss
+
+    today = kst_now.strftime("%Y-%m-%d")
+    is_sunday = kst_now.weekday() == 6
+    in_morning = 7 <= kst_now.hour < 10
+    if is_sunday and in_morning and stats.get("reported") != today:
+        msg = (f"🩺 <b>주간 생존 신고</b>\n"
+               f"🗓 {stats['week_start']} 주간 (실행 {stats['runs']}회)\n"
+               f"수집 {stats['collected']}건 · 전송 {stats['sent']}건 · "
+               f"SS/SSS 경보 {stats['sss']}건\n"
+               f"봇 정상 가동 중입니다.")
+        if tg_send(msg):
+            stats["reported"] = today
+    save_json(STATS_FILE, stats)
 
 
 # ───────────────────────── 메인 ─────────────────────────
@@ -1324,13 +1458,16 @@ def main():
             print(f"[SKIP] 미검증+미분석 전송 차단: {it['title'][:50]}")
             continue
 
+        # [v2.8] SSS 경보는 등급 차단 면제 (무효화 신호는 절대 놓치지 않는다)
+        is_sss = bool(it.get("sss"))
+
         # [v2.7] 3차 방어 + 노이즈 억제: C 차단, B는 고점수만 통과
-        if a and a.get("grade") == "C":
+        if not is_sss and a and a.get("grade") == "C":
             print(f"[SKIP] C등급 차단: {it['title'][:50]}")
             seen[title_key(it["title"])] = {"ntitle": it["ntitle"],
                                             "ts": now_utc().timestamp()}
             continue
-        if a and a.get("grade") == "B" and it.get("score", 0) < GRADE_B_MIN_SCORE:
+        if not is_sss and a and a.get("grade") == "B" and it.get("score", 0) < GRADE_B_MIN_SCORE:
             print(f"[SKIP] B등급 저점수 차단({it.get('score', 0)}점): {it['title'][:50]}")
             seen[title_key(it["title"])] = {"ntitle": it["ntitle"],
                                             "ts": now_utc().timestamp()}
@@ -1355,6 +1492,11 @@ def main():
     save_json(SEEN_FILE, seen)
     if news_batch:
         save_news_json(news_batch)
+
+    # [v2.8.1] 주간 생존 신고용 통계 누적 + 일요일 요약 전송
+    update_weekly_stats(collected=len(fresh), sent=sent,
+                        sss=sum(1 for x in to_send if x.get("sss")))
+
     print(f"[DONE] {sent}건 전송, 이월 {len(leftover)}건, Gemini호출 {_gemini_state['calls']}")
 
 
