@@ -21,7 +21,7 @@ TG_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TG_CHAT = os.environ["TELEGRAM_CHAT_ID"]
 
 SEEN_FILE = "seen_celeb_ids.json"
-LOOKBACK_HOURS = 8          # 워크플로 주기보다 여유있게
+LOOKBACK_HOURS = 36         # GitHub Actions 스케줄 지연/스킵 대비 (seen 파일이 중복 차단)
 MIN_DURATION_SEC = 1800     # 일반 인물: 30분 미만 제외
 CORE_MIN_DURATION_SEC = 240 # 핵심 인물: 쇼츠/클립(4분 미만)만 제외
 
