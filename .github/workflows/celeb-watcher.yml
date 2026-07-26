@@ -1,22 +1,29 @@
 name: celeb-watcher
+
 on:
   schedule:
     - cron: "0 */6 * * *"   # 6시간마다 (쿼터 안전)
   workflow_dispatch:
+
 permissions:
   contents: write
+
 concurrency:
   group: celeb-watcher
   cancel-in-progress: false
+
 jobs:
   watch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - run: pip install requests feedparser
+
       - name: Run watcher
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
@@ -25,14 +32,20 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.CELEB_TELEGRAM_CHAT_ID }}
         working-directory: celeb-watcher
         run: python celeb_watcher.py
+
       - name: Commit seen ids
+        if: always()          # 파이썬이 실패해도 그때까지의 상태는 저장
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
 
+          # 상태 파일 목록 — 앞으로 추가될 파일은 여기 한 줄만 고치면 됨
+          STATE_FILES="seen_celeb_ids.json seen_twitter_blog.json seen_credit.json"
+
           # 이번 실행이 만든 최신 상태 파일을 백업 (이 파일들이 항상 최신본)
-          cp celeb-watcher/seen_celeb_ids.json /tmp/seen_celeb_ids.json 2>/dev/null || true
-          cp celeb-watcher/seen_twitter_blog.json /tmp/seen_twitter_blog.json 2>/dev/null || true
+          for f in $STATE_FILES; do
+            cp "celeb-watcher/$f" "/tmp/$f" 2>/dev/null || true
+          done
 
           PUSHED=0
           for i in 1 2 3 4 5; do
@@ -41,10 +54,14 @@ jobs:
             git reset --hard origin/main
 
             # 백업해둔 최신 상태 파일 복원
-            cp /tmp/seen_celeb_ids.json celeb-watcher/seen_celeb_ids.json 2>/dev/null || true
-            cp /tmp/seen_twitter_blog.json celeb-watcher/seen_twitter_blog.json 2>/dev/null || true
+            for f in $STATE_FILES; do
+              cp "/tmp/$f" "celeb-watcher/$f" 2>/dev/null || true
+            done
 
-            git add celeb-watcher/seen_celeb_ids.json celeb-watcher/seen_twitter_blog.json || true
+            for f in $STATE_FILES; do
+              git add "celeb-watcher/$f" || true
+            done
+
             if git diff --cached --quiet; then
               echo "변경사항 없음 - 커밋 생략"
               PUSHED=1
