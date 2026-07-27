@@ -29,10 +29,11 @@ GEMINI_API_KEY = os.environ["GEMINI_KEY"]
 TG_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TG_CHAT = os.environ["TELEGRAM_CHAT_ID"]
 
-# 429 나면 순서대로 폴백
-GEMINI_MODELS = ["gemini-3.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"]
+# 429 나면 순서대로 폴백 (저렴한 flash-lite 우선 → 비용 최소화)
+# gemini-2.0-flash는 2026-06-01 종료되어 제거함
+GEMINI_MODELS = ["gemini-2.5-flash-lite", "gemini-2.5-flash"]
 
-MAX_GEMINI_CALLS = 12      # 한 사이클 전체 Gemini 호출 상한 (셀럽 + 크레딧 합산)
+MAX_GEMINI_CALLS = 8       # 한 사이클 전체 Gemini 호출 상한 (셀럽 + 크레딧 합산)
 BATCH_SIZE = 8             # 한 번에 판정할 항목 수
 NOTIFY_WHEN_EMPTY = False  # True면 결과 없을 때도 "없음" 알림
 
@@ -80,7 +81,13 @@ def gemini_call(prompt, max_retry=2):
                     f"{model}:generateContent",
                     params={"key": GEMINI_API_KEY},
                     json={"contents": [{"parts": [{"text": prompt}]}],
-                          "generationConfig": {"temperature": 0.1}},
+                          "generationConfig": {
+                              "temperature": 0.1,
+                              # thinking(추론) 토큰은 출력 요율로 과금됨 → 0으로 차단
+                              "thinkingConfig": {"thinkingBudget": 0},
+                              # 판정 결과 JSON은 짧으므로 출력 상한을 낮게 고정
+                              "maxOutputTokens": 2048,
+                          }},
                     timeout=90)
                 if r.status_code == 429:
                     body = r.text[:500].replace("\n", " ")
@@ -202,6 +209,11 @@ TITLE_BLACKLIST = [
     "주식", "종목", "매수", "매도", "급등", "코인", "숏폼", "클립모음",
     "ai voice", "ai 목소리", "성대모사", "밈", "meme", "compilation",
     "fan made", "tribute", "motivational", "동기부여",
+    # 제3자 다큐/일대기/성공스토리 패턴 (Gemini 호출 전 차단 → 비용 절감)
+    "다큐", "documentary", "일대기", "성공 스토리", "성공스토리",
+    "success story", "biography", "전기", "생애", "인생",
+    "how ", "story of", "the rise of", "파산", "빈털터리", "밑바닥",
+    "충격", "소름", "레전드", "위기", "vs ", "roast",
 ]
 CHANNEL_BLACKLIST_PATTERNS = [
     r"주식", r"투자", r"경제tv", r"코인", r"단테", r"클립", r"쇼츠",
@@ -318,7 +330,7 @@ def judge_celeb_batch(chunk):
     for i, (person, item, detail, _vid) in enumerate(chunk):
         mode = ("주제무관" if person in TOPIC_FREE_PERSONS
                 else "엄격" if person in STRICT_PERSONS else "일반")
-        desc = (detail.get("snippet", {}).get("description") or "")[:600]
+        desc = (detail.get("snippet", {}).get("description") or "")[:250]
         lines.append(
             f"[{i}] 인물: {person} | 모드: {mode}\n"
             f"제목: {item['snippet']['title']}\n"
@@ -760,7 +772,7 @@ CREDIT_PROMPT = """너는 반도체/AI 인프라 투자자를 위한 콘텐츠 �
 def judge_credit_batch(chunk):
     blob = "\n\n".join(
         f"[{i}] 종류: {c['kind']}\n제목: {c['title']}\n출처: {c['source']}\n"
-        f"설명: {strip_html(c['body'])[:700]}"
+        f"설명: {strip_html(c['body'])[:300]}"
         for i, c in enumerate(chunk))
     out = gemini_call(CREDIT_PROMPT.format(items=blob))
     return parse_json_array(out, len(chunk))
