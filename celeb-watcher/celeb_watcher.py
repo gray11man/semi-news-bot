@@ -97,9 +97,9 @@ def gemini_call(prompt, max_retry=2):
                     json={"contents": [{"parts": [{"text": prompt}]}],
                           "generationConfig": {
                               "temperature": 0.1,
-                              # thinking(추론) 토큰은 출력 요율로 과금됨 → 0으로 차단
-                              "thinkingConfig": {"thinkingBudget": 0},
-                              # 판정 결과 JSON은 짧으므로 출력 상한을 낮게 고정
+                              # thinking을 소폭 허용(512)해 "본인 직접 출연" 판정 정확도 확보.
+                              # 출력(판정 JSON)은 짧아서 비용 증가는 미미함.
+                              "thinkingConfig": {"thinkingBudget": 512},
                               "maxOutputTokens": 2048,
                           }},
                     timeout=90)
@@ -229,6 +229,11 @@ TITLE_BLACKLIST = [
     "success story", "biography", "전기", "생애", "인생",
     "how ", "story of", "the rise of", "파산", "빈털터리", "밑바닥",
     "충격", "소름", "레전드", "위기", "vs ", "roast",
+    # 제3자 선정성 클릭베이트 패턴 (로그에서 오통과 확인된 유형)
+    "declares", "just killed", "shocks", "immigrant who", "before the",
+    "wealth secret", "billion", "risking", "the future is now",
+    "has arrived", "singularity", "middle-class", "get to gether",
+    "get together", "died", "back from the dead",
 ]
 CHANNEL_BLACKLIST_PATTERNS = [
     r"주식", r"투자", r"경제tv", r"코인", r"단테", r"클립", r"쇼츠",
