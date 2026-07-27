@@ -40,7 +40,20 @@ NOTIFY_WHEN_EMPTY = False  # True면 결과 없을 때도 "없음" 알림
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
-_gm = {"n": 0, "dead": False}
+_gm = {"n": 0, "dead": False, "notified": False}
+
+
+def _notify_gemini_dead(reason):
+    """Gemini 판정 중단 시 딱 1회만 텔레그램 알림."""
+    if _gm["notified"]:
+        return
+    _gm["notified"] = True
+    send_tg(f"⚠️ <b>Gemini 판정 중단</b>\n\n"
+            f"사유: {reason}\n"
+            f"이번 사이클 호출 {_gm['n']}회 / 상한 {MAX_GEMINI_CALLS}\n\n"
+            f"크레딧 소진일 수 있습니다. AI Studio에서 확인하세요:\n"
+            f"https://aistudio.google.com/apikey\n"
+            f"※ 미판정 항목은 다음 사이클에 자동 재시도됩니다.")
 
 
 def strip_html(s):
@@ -70,6 +83,7 @@ def gemini_call(prompt, max_retry=2):
     if _gm["n"] >= MAX_GEMINI_CALLS:
         print(f"[Gemini] 예산 {MAX_GEMINI_CALLS}회 소진 - 이후 판정 중단")
         _gm["dead"] = True
+        _notify_gemini_dead(f"호출 예산 {MAX_GEMINI_CALLS}회 소진")
         return None
 
     for model in GEMINI_MODELS:
@@ -111,6 +125,7 @@ def gemini_call(prompt, max_retry=2):
 
     print("[Gemini] 전 모델 실패 - 이번 사이클 판정 전면 중단")
     _gm["dead"] = True
+    _notify_gemini_dead("전 모델 응답 실패 (크레딧 소진 가능성)")
     return None
 
 
