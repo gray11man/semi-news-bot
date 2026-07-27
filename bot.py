@@ -58,7 +58,7 @@ NEWS_FILE = "news.json"
 NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 30              # [v2.7] 7 → 30 (재색인 재유입 방지)
 MAX_SEND_PER_RUN = 5                  # [v2.8.5] 10 → 5 (제목만 전송이므로 더 엄선)
-MIN_SCORE_TO_SEND = 7                 # [v2.8.5] Gemini 없이 키워드 점수만으로 판단. 8/10은 실제 중요기사(인텔 오하이오 딜 등 7점)까지 걸러 7로 확정
+MIN_SCORE_TO_SEND = 7                 # [v2.8.8] 실측: 인텔 오하이오 딜·송전망 미착공 등 실증된 중요기사가 7점. 8/10은 이들까지 거름. 통과기사는 전부 Gemini 요약 유지(호출 게이팅 없음)
 NEWS_WINDOW_HOURS = 3
 PEOPLE_WINDOW_HOURS = 24
 STALE_HARD_LIMIT_H = 48               # [v2.7] 실제 발행일 기준 최대 허용 나이
@@ -69,7 +69,6 @@ SEND_DELAY = 1.0
 
 GEMINI_MIN_INTERVAL = 4.0
 GEMINI_MAX_CALLS_PER_RUN = 20          # [v2.8.6] flash-lite 저비용이므로 15→20 소폭 상향
-GEMINI_ANALYZE_MIN_SCORE = 10          # [v2.8.7] 이 점수 미만은 Gemini 호출 안 함(제목만 전송, 0원)
 GEMINI_RETRY_MAX = 2
 GEMINI_RETRY_BASE = 2.0
 GEMINI_CONSEC_FAIL_STOP = 4
@@ -1465,15 +1464,7 @@ def main():
                                             "ts": now_utc().timestamp()}
             continue
 
-        # [v2.8.7] 크리티컬 게이팅: 고점수(SSS 경보 포함) 기사만 Gemini 분석.
-        #   날짜 검증(body fetch)은 비용이 없으므로 전 기사 그대로 수행하고,
-        #   유료 호출인 Gemini만 점수로 제한한다.
-        is_sss_pre = bool(it.get("sss"))
-        if is_sss_pre or it.get("score", 0) >= GEMINI_ANALYZE_MIN_SCORE:
-            a = gemini_analyze(it["title"], it["summary"], it["source"], body=body)
-        else:
-            a = None
-            print(f"[INFO] 저점수({it.get('score',0)}점) → Gemini 생략, 제목만: {it['title'][:50]}")
+        a = gemini_analyze(it["title"], it["summary"], it["source"], body=body)
 
         # [v2.8.3] 최후 방어선 완화: Gemini가 한도(429)로 아예 죽은 경우까지
         #   전면 차단하면 하루 0건이 된다. RSS published가 신선(창 이내)하면
