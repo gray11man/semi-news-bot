@@ -19,6 +19,9 @@ AI·반도체·메모리·데이터센터·전력·AI수요 산업 뉴스 에이
   v2.8  SS/SSS 사이클 경보: ①현물가 약세 ②유통재고 임계 ③하이퍼스케일러
         capex 이탈 ④HBM 가격 둔화/하락 — 2단계 조기경보, 등급차단 면제
   v2.8.1 MIN_SCORE_TO_SEND 6, 주간 생존 신고 (일요일 아침 1회)
+  v2.8.5 Gemini 완전 차단 (비용 발생 확인 후 긴급 조치, 키워드만 판단)
+  v2.8.6 Gemini 저비용 재활성화: flash-lite 모델, 본문 6000→1200자,
+        출력 512토큰, 요약 3~4문장으로 축소 (추정 90%+ 비용 절감)
 """
 
 import os
@@ -44,10 +47,9 @@ except Exception:
 # ───────────────────────── 환경변수 ─────────────────────────
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-GEMINI_KEY = ""  # [v2.8.5] Gemini 호출 완전 비활성화 (비용 발생 확인 후 차단).
-# 원래 값을 되살리려면 위 줄을 GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip() 로 되돌릴 것.
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
-GEMINI_FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash-lite").strip()
+GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip()  # [v2.8.6] 재활성화 (저비용 모드)
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite").strip()  # [v2.8.6] flash → flash-lite (약 1/3~1/4 단가)
+GEMINI_FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash-lite").strip()  # 기본과 동일(최저가 유지)
 
 # ───────────────────────── 설정 ─────────────────────────
 SEEN_FILE = "seen.json"
@@ -66,7 +68,8 @@ REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 
 GEMINI_MIN_INTERVAL = 4.0
-GEMINI_MAX_CALLS_PER_RUN = 15          # [v2.8.4] 45 → 15 (실비용 발생 확인, 대폭 축소)
+GEMINI_MAX_CALLS_PER_RUN = 20          # [v2.8.6] flash-lite 저비용이므로 15→20 소폭 상향
+GEMINI_ANALYZE_MIN_SCORE = 10          # [v2.8.7] 이 점수 미만은 Gemini 호출 안 함(제목만 전송, 0원)
 GEMINI_RETRY_MAX = 2
 GEMINI_RETRY_BASE = 2.0
 GEMINI_CONSEC_FAIL_STOP = 4
@@ -74,7 +77,7 @@ RSS_MAX_ENTRIES = 30
 
 FETCH_BODY = True
 BODY_FETCH_TIMEOUT = 12
-BODY_MAX_CHARS = 6000
+BODY_MAX_CHARS = 1200          # [v2.8.6] 6000 → 1200 (프롬프트 토큰 비용의 최대 요인, 앞부분만으로도 핵심 파악 가능)
 BODY_FETCH_DELAY = 0.5
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
@@ -989,8 +992,7 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         "위 논제와 무관한 기사는 기존 기준대로만 판정하라.\n"
         "아래 7개 라벨 형식으로만 답하라. 각 줄 라벨 그대로, 값만 채워라. 다른 말 금지.\n"
         "제목: (한국어 번역 제목, 한 줄)\n"
-        "요약: (반드시 5~7문장의 한국어. 기사 본문의 사실/숫자/맥락을 충실히 담되 "
-        "한 문단으로 자연스럽게. 추측 금지)\n"
+        "요약: (3~4문장의 한국어. 핵심 사실/숫자만 간결하게. 추측 금지)\n"
         "중요도: (S=산업구조 영향 / A=대규모 투자·계약·증설 / B=산업영향 존재 / C=참고용 중 하나)\n"
         "분야: (AI,GPU,HBM,DRAM,NAND,패키징,광통신,데이터센터,전력,원전,가스터빈,AI수요,"
         "정책지원,ROI수익성,자금조달 중 해당)\n"
@@ -1003,7 +1005,7 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.2,
-            "maxOutputTokens": 1024,
+            "maxOutputTokens": 512,  # [v2.8.6] 1024 → 512 (출력 토큰 비용 절감)
             "thinkingConfig": {"thinkingBudget": 0},
         },
     }
@@ -1463,7 +1465,15 @@ def main():
                                             "ts": now_utc().timestamp()}
             continue
 
-        a = gemini_analyze(it["title"], it["summary"], it["source"], body=body)
+        # [v2.8.7] 크리티컬 게이팅: 고점수(SSS 경보 포함) 기사만 Gemini 분석.
+        #   날짜 검증(body fetch)은 비용이 없으므로 전 기사 그대로 수행하고,
+        #   유료 호출인 Gemini만 점수로 제한한다.
+        is_sss_pre = bool(it.get("sss"))
+        if is_sss_pre or it.get("score", 0) >= GEMINI_ANALYZE_MIN_SCORE:
+            a = gemini_analyze(it["title"], it["summary"], it["source"], body=body)
+        else:
+            a = None
+            print(f"[INFO] 저점수({it.get('score',0)}점) → Gemini 생략, 제목만: {it['title'][:50]}")
 
         # [v2.8.3] 최후 방어선 완화: Gemini가 한도(429)로 아예 죽은 경우까지
         #   전면 차단하면 하루 0건이 된다. RSS published가 신선(창 이내)하면
