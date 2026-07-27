@@ -44,7 +44,8 @@ except Exception:
 # ───────────────────────── 환경변수 ─────────────────────────
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip()
+GEMINI_KEY = ""  # [v2.8.5] Gemini 호출 완전 비활성화 (비용 발생 확인 후 차단).
+# 원래 값을 되살리려면 위 줄을 GEMINI_KEY = os.environ.get("GEMINI_KEY", "").strip() 로 되돌릴 것.
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash").strip()
 GEMINI_FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash-lite").strip()
 
@@ -54,8 +55,8 @@ QUEUE_FILE = "queue.json"
 NEWS_FILE = "news.json"
 NEWS_MAX_ITEMS = 150
 SEEN_RETENTION_DAYS = 30              # [v2.7] 7 → 30 (재색인 재유입 방지)
-MAX_SEND_PER_RUN = 10                 # [v2.7] 20 → 10
-MIN_SCORE_TO_SEND = 6                 # [v2.8.1] 5 → 6
+MAX_SEND_PER_RUN = 5                  # [v2.8.5] 10 → 5 (제목만 전송이므로 더 엄선)
+MIN_SCORE_TO_SEND = 7                 # [v2.8.5] Gemini 없이 키워드 점수만으로 판단. 8/10은 실제 중요기사(인텔 오하이오 딜 등 7점)까지 걸러 7로 확정
 NEWS_WINDOW_HOURS = 3
 PEOPLE_WINDOW_HOURS = 24
 STALE_HARD_LIMIT_H = 48               # [v2.7] 실제 발행일 기준 최대 허용 나이
@@ -65,7 +66,7 @@ REQUEST_TIMEOUT = 25
 SEND_DELAY = 1.0
 
 GEMINI_MIN_INTERVAL = 4.0
-GEMINI_MAX_CALLS_PER_RUN = 45
+GEMINI_MAX_CALLS_PER_RUN = 15          # [v2.8.4] 45 → 15 (실비용 발생 확인, 대폭 축소)
 GEMINI_RETRY_MAX = 2
 GEMINI_RETRY_BASE = 2.0
 GEMINI_CONSEC_FAIL_STOP = 4
@@ -1464,11 +1465,18 @@ def main():
 
         a = gemini_analyze(it["title"], it["summary"], it["source"], body=body)
 
-        # [v2.7.8] 최후 방어선: 발행일 검증 불가 + Gemini 분석도 실패면
-        #   신선도를 아무도 보증 못 하므로 전송하지 않는다 (재색인 유입의 마지막 구멍 봉쇄)
-        if real_age is None and a is None:
-            print(f"[SKIP] 미검증+미분석 전송 차단: {it['title'][:50]}")
+        # [v2.8.3] 최후 방어선 완화: Gemini가 한도(429)로 아예 죽은 경우까지
+        #   전면 차단하면 하루 0건이 된다. RSS published가 신선(창 이내)하면
+        #   그 자체로 1차 신선도 근거이므로 통과시킨다.
+        #   진짜 위험한 경우(발행일도 못 구하고 RSS도 오래됨)만 최종 차단.
+        rss_age = published_age_hours(it.get("published", ""))
+        rss_is_fresh = rss_age is not None and rss_age <= (
+            PEOPLE_WINDOW_HOURS if it.get("is_people") else NEWS_WINDOW_HOURS) + 1
+        if real_age is None and a is None and not rss_is_fresh:
+            print(f"[SKIP] 미검증+미분석+RSS도 불명 전송 차단: {it['title'][:50]}")
             continue
+        if real_age is None and a is None and rss_is_fresh:
+            print(f"[INFO] Gemini 미가동 → RSS 신선도로 통과(제목+링크만): {it['title'][:50]}")
 
         # [v2.8] SSS 경보는 등급 차단 면제 (무효화 신호는 절대 놓치지 않는다)
         is_sss = bool(it.get("sss"))
