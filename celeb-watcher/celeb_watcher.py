@@ -280,10 +280,58 @@ def get_video_details(video_ids):
     r = requests.get(
         "https://www.googleapis.com/youtube/v3/videos",
         params={"key": YOUTUBE_API_KEY,
-                "part": "contentDetails,statistics,snippet",
+                "part": "contentDetails,statistics,snippet,status",
                 "id": ",".join(video_ids[:50])}, timeout=30)
     r.raise_for_status()
     return {it["id"]: it for it in r.json().get("items", [])}
+
+
+def get_channel_stats(channel_ids):
+    """채널 통계를 배치 조회. {channel_id: {subs, videos, published}}"""
+    out = {}
+    ids = list(dict.fromkeys(channel_ids))
+    for i in range(0, len(ids), 50):
+        batch = ids[i:i + 50]
+        try:
+            r = requests.get(
+                "https://www.googleapis.com/youtube/v3/channels",
+                params={"key": YOUTUBE_API_KEY, "part": "statistics,snippet",
+                        "id": ",".join(batch)}, timeout=30)
+            r.raise_for_status()
+            for it in r.json().get("items", []):
+                st = it.get("statistics", {})
+                sn = it.get("snippet", {})
+                out[it["id"]] = {
+                    "subs": int(st.get("subscriberCount", 0) or 0),
+                    "hidden_subs": st.get("hiddenSubscriberCount", False),
+                    "videos": int(st.get("videoCount", 0) or 0),
+                    "published": sn.get("publishedAt", ""),
+                }
+        except Exception as e:
+            print(f"[채널조회 실패] {str(e)[:120]}")
+    return out
+
+
+def is_factory_channel(stats):
+    """공장형(재업로드/슬롭) 채널 판별. (제외여부, 사유)"""
+    if not stats:
+        return False, None  # 정보 없으면 통과 (오차단 방지)
+    subs = stats["subs"]
+    videos = stats["videos"]
+    # 1) 영상은 매우 많은데 구독자가 적음 → 양산형
+    if videos >= 300 and subs < 5000:
+        return True, f"공장형(영상{videos}/구독{subs})"
+    # 2) 채널 개설 1년 이내인데 영상이 500개 이상 → 대량 자동 업로드
+    pub = stats.get("published", "")
+    if pub and videos >= 500:
+        try:
+            created = datetime.fromisoformat(pub.replace("Z", "+00:00"))
+            age_days = (datetime.now(timezone.utc) - created).days
+            if age_days < 365:
+                return True, f"신생대량({age_days}일/{videos}편)"
+        except Exception:
+            pass
+    return False, None
 
 
 def parse_duration(iso):
@@ -311,6 +359,9 @@ def hard_filter(item, detail):
     person = match_person(title) or match_person(desc[:500])
     if not person:
         return None, "인물명 없음"
+    # YouTube가 표시한 합성/변조 콘텐츠 플래그 → AI 나레이션 등 차단
+    if detail.get("status", {}).get("containsSyntheticMedia"):
+        return None, "합성미디어 플래그"
     for b in TITLE_BLACKLIST:
         if b in title:
             return None, f"제목 블랙리스트: {b}"
@@ -411,6 +462,22 @@ def run_celeb_watch():
             print(f"❌ [{reject}] {item['snippet']['title'][:60]}")
             continue
         passed.append((person, item, detail, vid))
+
+    # 1.5단계: 채널 통계로 공장형(재업로드/슬롭) 채널 제외 (Gemini 호출 없음)
+    if passed:
+        ch_ids = [it["snippet"].get("channelId", "") for _, it, _, _ in passed]
+        ch_stats = get_channel_stats([c for c in ch_ids if c])
+        filtered = []
+        for person, item, detail, vid in passed:
+            cid = item["snippet"].get("channelId", "")
+            factory, why = is_factory_channel(ch_stats.get(cid))
+            if factory:
+                seen.add(vid)
+                print(f"❌ [{why}] {item['snippet']['channelTitle'][:25]} | "
+                      f"{item['snippet']['title'][:40]}")
+                continue
+            filtered.append((person, item, detail, vid))
+        passed = filtered
 
     passed = passed[:MAX_CELEB_CANDIDATES]
     nb = (len(passed) + BATCH_SIZE - 1) // BATCH_SIZE
