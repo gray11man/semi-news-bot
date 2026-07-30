@@ -520,6 +520,7 @@ def run_celeb_watch():
 NAVER_BLOG_IDS = [
     "richyun0108", "cybermw", "hardark",
     "kk_kontemp", "tmdejr1267", "engineerinvestor",
+    "thebeing",
 ]
 SEEN_BLOG_FILE = "seen_twitter_blog.json"
 
