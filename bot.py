@@ -146,6 +146,18 @@ SOVEREIGN_KO = (
     "국산 AI 반도체 지원 OR AI 파운데이션 모델 정부 OR 국가 슈퍼컴퓨터 OR "
     "사우디 AI OR UAE AI OR 스타게이트"
 )
+# [v2.8.9] GPU 가격 추이 — H100/H200/B200/GB200 임대료·중고가·리셀가 등
+GPU_PRICE_EN = (
+    "(H100 OR H200 OR B200 OR GB200 OR Blackwell OR \"GPU rental\" OR "
+    "\"GPU cloud pricing\") (price OR pricing OR \"per hour\" OR rental OR "
+    "resale OR \"secondary market\" OR discount OR \"price drop\" OR "
+    "\"price cut\" OR \"price surge\" OR shortage OR \"lead time\")"
+)
+GPU_PRICE_KO = (
+    "H100 가격 OR H200 가격 OR B200 가격 OR GPU 임대료 OR GPU 렌탈 가격 OR "
+    "엔비디아 GPU 중고가 OR GPU 리셀가 OR GPU 대여 시세 OR 블랙웰 가격 OR "
+    "GPU 시간당 요금 OR GPU 클라우드 단가"
+)
 DEMAND_KO = (
     "AI 수요 OR 추론 수요 OR AI 토큰 OR 연산 수요 OR GPU 부족 OR 캐파 부족 OR "
     "AI 매출 OR AI 가동률 OR AI 에이전트 OR 기업용 AI OR 수주잔고 OR AI 채택"
@@ -220,6 +232,8 @@ FEEDS = [
           "\"liquid cooling\" OR Vertiv OR \"vendor financing\" OR \"private credit\" AI", "en"),  # [v2.7.6]
     gnews("AI 서버 수주 OR 리퀴드 쿨링 OR 액침 냉각 OR 변압기 수주 OR 전력기기 OR "
           "SMR OR 전력구매계약 OR D램 고정거래가 OR 낸드 가격", "ko"),  # [v2.7.6]
+    gnews(GPU_PRICE_EN, "en"),           # [v2.8.9] GPU 가격 추이
+    gnews(GPU_PRICE_KO, "ko"),           # [v2.8.9] GPU 가격 추이 (한국 보도)
     gnews("Oracle (OCI OR OpenAI OR RPO OR \"remaining performance\" OR bond OR debt OR "
           "\"credit default\" OR CDS OR downgrade OR \"cash flow\" OR capex OR "
           "\"data center\" OR Stargate OR lease)", "en"),  # [v2.7.7] 오라클 리스크 전용
@@ -346,6 +360,10 @@ INCLUDE = [
     # [v2.8.2] 핵심 기업 한글명 (영문만 있어 한글 단독언급 기사가 입구 탈락하던 치명 결함)
     "하이닉스", "삼성전자", "인텔", "마이크론", "브로드컴", "마벨",
     "퀄컴", "amd", "티에스엠씨",
+    # [v2.8.9] GPU 가격 추이
+    "h100", "h200", "b200", "gb200", "blackwell", "블랙웰",
+    "gpu 가격", "gpu 임대료", "gpu 렌탈", "gpu 대여", "gpu 리셀",
+    "gpu rental", "gpu pricing", "per gpu hour", "gpu 시간당",
 ]
 EXCLUDE = [
     "할인", "쿠폰", "이벤트", "광고", "분양", "운세", "로또",
@@ -369,6 +387,8 @@ BOTTLENECK = [
     # [v2.7.6]
     "리퀴드 쿨링", "liquid cooling", "액침", "변압기", "hvdc", "초고압",
     "전력기기", "vertiv", "현물가", "고정거래가",
+    # [v2.8.9] GPU 2차 시장 신호 (공급 여유/타이트의 실질 지표)
+    "gpu 렌탈", "gpu 임대료", "중고가", "리셀", "반토막",
 ]
 DEMAND_SIGNALS = [
     "ai demand", "inference demand", "token usage", "compute demand",
@@ -676,6 +696,11 @@ def base_score(title, summary):
         "multi-year", "hosting agreement", "colocation",
         "고정거래가", "현물가", "가격 인상", "품귀", "공급 부족", "리드타임",
         "무디스", "moody", "피치", "fitch", "s&p 글로벌", "신용평가",
+        # [v2.8.9] GPU 가격 방향성 (렌탈·단가·중고가 급변은 그 자체로 강신호)
+        "gpu 가격 하락", "gpu 가격 상승", "gpu 임대료 하락", "gpu 임대료 상승",
+        "gpu price drop", "gpu price surge", "gpu 렌탈 가격", "임대료 급등",
+        "임대료 급락", "단가 급등", "단가 급락", "요금 인하", "요금 인상",
+        "중고가 급락", "중고가 급등", "반토막", "리셀가", "gpu 시세",
         # [v2.8.2] 단독·특종 기사의 구어체 딜 표현 (격식어만 있으면 특종을 놓침)
         "매입", "매각", "빅딜", "사들이", "사들인", " 산다", "품는다", "품었다",
         "베팅", "승부수", "잡았다", "따냈다", "손잡", "확보한다", "짓는다",
@@ -715,6 +740,9 @@ def base_score(title, summary):
         "deepseek", "딥시크", "cxmt", "창신", "长鑫", "smic", "中芯",
         "화웨이", "huawei", "昇腾", "캄브리콘", "cambricon",
         "sovereign", "소버린", "stargate", "스타게이트",
+        # [v2.8.9] GPU 가격 추이 감시
+        "h100", "h200", "b200", "gb200", "blackwell", "블랙웰",
+        "gpu 렌탈", "gpu 임대료", "gpu 대여", "리셀",
     ]
     if any(k in text for k in watchlist):
         score += 2
@@ -982,7 +1010,9 @@ def gemini_analyze(title, summary, source, body="", _model=None, _is_fallback=Fa
         "5) 전력·냉각 병목: 데이터센터발 전력난, 변압기·가스터빈·원전·SMR·PPA, "
         "리퀴드쿨링 등 냉각 공급 제약\n"
         "6) 선행지표: 서버 ODM(슈퍼마이크로·폭스콘·콴타 등) 수주·가이던스, "
-        "메모리 현물가·고정거래가 방향, 벤더파이낸싱·순환거래 논쟁\n"
+        "메모리 현물가·고정거래가 방향, 벤더파이낸싱·순환거래 논쟁, "
+        "H100/H200/B200 등 GPU 임대료·중고가·클라우드 단가 추이 (하락은 "
+        "수요 둔화, 급등은 공급 타이트 신호)\n"
         "[사이클 경보 최우선] 다음 신호가 본문에서 확인되면 무조건 S로 판정하라: "
         "①메모리 현물가 1주 이상 횡보·하락(2주 이상+공급 전년비 +10%면 최상급) "
         "②유통(채널) 재고 5주 초과(7주 초과면 최상급) "
