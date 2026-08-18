@@ -8,32 +8,32 @@
     "Odd Lots": [
       "4fd75bad-403f-47c1-b23c-b4a60141b176",
       "906e5071-7abc-4f2c-acb5-b4a5013ff33f",
-      "bfd63d35-c7ad-4a5c-a603-b4a400dbfa65",
-      "6027c695-2425-4510-bd41-b491014d8b7a",
-      "519b7338-f6ec-4d99-a8a2-b496012a0db1",
       "f004446b-a024-4773-bd04-b497017ec344",
-      "ea283f31-8b41-42a8-9147-b49f01293e32",
-      "09ad45b2-ee9c-4482-8700-b49d0161d97f",
-      "f7ff667e-d517-457f-b745-b49f0150c4e6",
       "253af1b0-6485-46c3-b506-b49e01625633",
-      "0d6108b3-8435-4010-9141-b48f0145a86f",
-      "6ea24954-06b5-4daa-a250-b4980120947f",
+      "f7ff667e-d517-457f-b745-b49f0150c4e6",
+      "6027c695-2425-4510-bd41-b491014d8b7a",
+      "09ad45b2-ee9c-4482-8700-b49d0161d97f",
       "dac96181-5b1e-4549-a0f9-b491013fe961",
-      "2050514a-2131-40e9-bc90-b48f0113d17c"
+      "519b7338-f6ec-4d99-a8a2-b496012a0db1",
+      "6ea24954-06b5-4daa-a250-b4980120947f",
+      "2050514a-2131-40e9-bc90-b48f0113d17c",
+      "0d6108b3-8435-4010-9141-b48f0145a86f",
+      "ea283f31-8b41-42a8-9147-b49f01293e32",
+      "bfd63d35-c7ad-4a5c-a603-b4a400dbfa65"
     ],
     "Money Stuff": [
       "da2ad2eb-8e26-4fb7-8518-b49e0015aa37",
-      "089b710d-a0df-4ba0-977b-b4980108e6db",
-      "743444ca-8008-48d1-9583-b49100e2e537"
+      "743444ca-8008-48d1-9583-b49100e2e537",
+      "089b710d-a0df-4ba0-977b-b4980108e6db"
     ],
     "Unhedged": [
       "6a7e0a46ff328abd84337abc",
       "6a6b99250bf0e6212ffe57da",
-      "6a68f8580ee147a124a67c53",
-      "6a625dad562e3ad88605a224",
+      "6a7b709df91cd396b39a6705",
       "6a6cbd2e61ae402f612bf288",
-      "6a73452056644b678ee1688a",
-      "6a7b709df91cd396b39a6705"
+      "6a625dad562e3ad88605a224",
+      "6a68f8580ee147a124a67c53",
+      "6a73452056644b678ee1688a"
     ],
     "GS Exchanges": [
       "4307a9dc-9673-11f1-81de-a32338c3bc37",
@@ -526,7 +526,11 @@
     "https://news.google.com/rss/articles/CBMidkFVX3lxTE5DcjVKeTlOSU1MUW9SX1Bici1LWGZZV2JrVGlGbTdwbndsb1hoU0xmQVRvVEVXNURJUTktZXNtV0hNWXhyRGpodHlGamQyYlJuQjBPcENkdkF5N3V1dnB3eUlwdHo5RXlsZ00zQWhCbG5NWEw1Tnc?oc=5",
     "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1VU3h3bGRSMmxqS2FKdU5Oc3RHRjFXQTU4N3ZMMnN3aTlPMl9YVmoydU9lb3lic3ZRNmRGQmUxX0pNbGJSU29panZRTVE2a3F2TkNHcDdLQWlvbWNDVWZJ?oc=5",
     "https://news.google.com/rss/articles/CBMihAFBVV95cUxQX3hFMlZZcG9XX2xsQnNtYnlLZWFmdkFmaXRuRjE3Q3BaSDNZeXpLWk5fVnp1SWl0LUxsanl4RFJtMzVkNU50VFJwMVQyR1kzMlVVU0xaTURoUkpvZFhSUGRUYVZmd0dONllmZ0N3VFo0Y3RZcW9vTXU1WVlyU0hDZXdNUHU?oc=5",
-    "https://news.google.com/rss/articles/CBMia0FVX3lxTE5LYXQzc1RHTXI1emZ4WkhHalVsTllRRWd3QlBDR0R5NTZIbnB2ekpCNl83Yk0yU0xqcmwwU1pPaTRrSkxxVjNDYU1qcmN2eE1LOUs4ZjJXbHBoNmdTaVEwUnQ2cmhGZHpMd2w4?oc=5"
+    "https://news.google.com/rss/articles/CBMia0FVX3lxTE5LYXQzc1RHTXI1emZ4WkhHalVsTllRRWd3QlBDR0R5NTZIbnB2ekpCNl83Yk0yU0xqcmwwU1pPaTRrSkxxVjNDYU1qcmN2eE1LOUs4ZjJXbHBoNmdTaVEwUnQ2cmhGZHpMd2w4?oc=5",
+    "https://news.google.com/rss/articles/CBMinwFBVV95cUxQeXlISnJBWTdtT1lZOERvYmF5cmxGaS1HbHZOS0VRWlZDWjRRdmhlX2xrb25BSTU5Mmw3MWtfNGExcUpnNkhLdmJydGEzXzJ3c1dCRi05QVhOSk9vOU9VdEk5bDAyUVNJWWNSYzY1T1EzMmdXUVlTSF9wZFU3VThfUGhTeVVDY003cGttMk5jUl9MRXdjc3Zub3pZWEJPTFk?oc=5",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWUtyQ1FSYlpXbUg1bG43Y3A4eHhYWmdCLTNrWVRiQndMaDZhU1dQbmpoVVllWUhQNE5rb2o0TzNOMF9fdm9nTGxsYzRfSTZfWGw0RHhiZ2tpajgzNTBRUWZmQ0lILURfblJSZlZVTUFRMDhvdl8wTHJpUU1aRjJwTm1TSjZXUVN5aV9GYWI5TW1Od1BUMUZDMTZ0UEJSR3V4SmVWSDV3?oc=5",
+    "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOY1A4SHpJTjRTNnlvMHhlN28wLWVpekRKUWtpVFl3VDVCVXQ1ZGdTTXdkcGhiUGRMcndiVEpNXzdpa2IwaFQyT1hZa3hMOGFmNXljNEV6STQzdEZSbU9zeWlya3NySTBOWHYxQVFITHdKVWFBNGF0Nl9QRjlqb2NZbkxsWWxOSUZMMjA4N2tpSG0yQXVQejhhZ190NUFnekdwaVJZaVBMTm9HUDdmLU5adHN1X0JNbTRYb0pRSUtLaWpzNVhkLTViRTNQNF9ZUzNNRHZv?oc=5",
+    "https://news.google.com/rss/articles/CBMingJBVV95cUxQRWw3NjlyRUJCTWVWejJEZUxrQUxhcUR2Q3N4Z2hDZVVEdDFGTGdNYUdPdmMyY1dUb1o5R2NTNHhQS3ZQaWJFd29aQjJoYjN1cS1jSnRGcTFCWHNQTFZYdmV4eHFTeUU0dTVucGYyZlYxcFNVdGhxNUc3M1JrRWRISTBhSG10WUFPTWFtUFBnbnFaZmVRcG9nZjNjNjZUMnpKVHpwcVhlMUJVUzFycVAtdVlmNzNGZ3RtVVItcXM4WG9NUVpPR0xfcDdDeTBOY2dhc0ZUcV9iRmk3Y3doVVF0N0p5T09GcTlJdEJVNzhuYVNQRUVnaW56T1J3SHBiT2tUYlUyV21MLWVPYW1wcTVieU5mUHJ4NjBzSXNRN2Z3?oc=5"
   ],
   "feed_ver": 2
 }
