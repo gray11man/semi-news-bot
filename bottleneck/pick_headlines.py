@@ -10,20 +10,21 @@ fetch_news()로 모은 기사 중 "투자에 크리티컬한 것"만 LLM이 한 
     from fetch_news import fetch_news
     results = pick_critical(fetch_news())
 
-[변경 사항 - 400 에러 수정]
-  - system 필드의 cache_control 제거
-    (SYSTEM 프롬프트가 prompt caching 최소 토큰 기준에 못 미쳐 400 유발 가능성)
-  - system을 리스트가 아닌 단순 문자열로 변경
-  - 에러 발생 시 resp.text(실제 API 에러 본문)까지 출력하도록 예외 처리 강화
+[변경 사항 - Anthropic → Google Gemini API 전환]
+  - Anthropic 크레딧 부족(400 invalid_request_error: credit balance too low) 문제로
+    Gemini API(GEMINI_KEY 환경변수)로 전환
+  - 엔드포인트: generativelanguage.googleapis.com generateContent
+  - system_instruction / contents 구조로 페이로드 변경
+  - 에러 발생 시 응답 본문까지 출력하도록 예외 처리 유지
 """
 
 import json
 import os
 import requests
 
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-CLAUDE_URL = "https://api.anthropic.com/v1/messages"
-MODEL = os.environ.get("PICK_MODEL", "claude-haiku-4-5-20251001")
+GEMINI_API_KEY = os.environ.get("GEMINI_KEY", "")
+MODEL = os.environ.get("PICK_MODEL", "gemini-2.5-flash")
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
 MAX_TOKENS = 1200
 MAX_PICK = int(os.environ.get("MAX_PICK", "3"))  # 실행당 최종 전송 상한 (진짜 크리티컬한 것만, 목표 아닌 상한)
 
@@ -50,8 +51,6 @@ SYSTEM = """너는 극도로 까다로운 투자 뉴스 게이트키퍼다. 사�
 
 def _headers():
     return {
-        "x-api-key": ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
         "content-type": "application/json",
     }
 
@@ -70,41 +69,55 @@ def pick_critical(news_items, max_pick=None):
     if not news_items:
         return []
 
-    if not ANTHROPIC_API_KEY:
-        print("[pick_headlines] 실패: ANTHROPIC_API_KEY 환경변수가 비어있음")
-        return []
+    if not GEMINI_API_KEY:
+        print("[pick_headlines] ❌ API 실패: GEMINI_KEY 환경변수가 비어있음 (뉴스가 없는게 아니라 키 설정 문제)")
+        return None
 
     max_pick = max_pick or MAX_PICK
     list_text = _build_list_text(news_items)
     system_text = SYSTEM.format(max_pick=max_pick)
 
     payload = {
-        "model": MODEL,
-        "max_tokens": MAX_TOKENS,
-        "system": system_text,
-        "messages": [{"role": "user", "content": list_text}],
+        "system_instruction": {
+            "parts": [{"text": system_text}]
+        },
+        "contents": [
+            {"role": "user", "parts": [{"text": list_text}]}
+        ],
+        "generationConfig": {
+            "maxOutputTokens": MAX_TOKENS,
+            "responseMimeType": "application/json",
+        },
     }
 
+    url = f"{GEMINI_URL}?key={GEMINI_API_KEY}"
+
     resp = None
+    raw = ""
     try:
-        resp = requests.post(CLAUDE_URL, headers=_headers(), json=payload, timeout=60)
+        resp = requests.post(url, headers=_headers(), json=payload, timeout=60)
         resp.raise_for_status()
         data = resp.json()
-        raw = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
+        candidates = data.get("candidates", [])
+        if not candidates:
+            print(f"[pick_headlines] ❌ API 실패: candidates 없음 (뉴스가 없는게 아니라 Gemini 응답 이상), 응답: {data}")
+            return None
+        parts = candidates[0].get("content", {}).get("parts", [])
+        raw = "".join(p.get("text", "") for p in parts)
         raw = raw.replace("```json", "").replace("```", "").strip()
         picks = json.loads(raw)
     except requests.exceptions.HTTPError as e:
-        print(f"[pick_headlines] 실패(HTTP): {e}")
+        print(f"[pick_headlines] ❌ API 실패(HTTP): {e}  (뉴스가 없는게 아니라 API 호출 자체가 실패함)")
         if resp is not None:
             print(f"[pick_headlines] 응답 본문: {resp.text}")
-        return []
+        return None
     except json.JSONDecodeError as e:
-        print(f"[pick_headlines] 실패(JSON 파싱): {e}")
+        print(f"[pick_headlines] ❌ API 실패(JSON 파싱): {e}  (뉴스가 없는게 아니라 응답 파싱 실패)")
         print(f"[pick_headlines] 원본 응답 텍스트: {raw!r}")
-        return []
+        return None
     except Exception as e:
-        print(f"[pick_headlines] 실패: {type(e).__name__}: {e}")
-        return []
+        print(f"[pick_headlines] ❌ API 실패: {type(e).__name__}: {e}  (뉴스가 없는게 아니라 예외 발생)")
+        return None
 
     results = []
     for p in picks[:max_pick]:
