@@ -25,7 +25,7 @@ import requests
 GEMINI_API_KEY = os.environ.get("GEMINI_KEY", "")
 MODEL = os.environ.get("PICK_MODEL", "gemini-2.5-flash")
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
-MAX_TOKENS = 1200
+MAX_TOKENS = 4096
 MAX_PICK = int(os.environ.get("MAX_PICK", "3"))  # 실행당 최종 전송 상한 (진짜 크리티컬한 것만, 목표 아닌 상한)
 
 SYSTEM = """너는 극도로 까다로운 투자 뉴스 게이트키퍼다. 사용자는 업종 불문 구조적 변화
@@ -87,6 +87,7 @@ def pick_critical(news_items, max_pick=None):
         "generationConfig": {
             "maxOutputTokens": MAX_TOKENS,
             "responseMimeType": "application/json",
+            "thinkingConfig": {"thinkingBudget": 0},
         },
     }
 
@@ -102,9 +103,12 @@ def pick_critical(news_items, max_pick=None):
         if not candidates:
             print(f"[pick_headlines] ❌ API 실패: candidates 없음 (뉴스가 없는게 아니라 Gemini 응답 이상), 응답: {data}")
             return None
+        finish_reason = candidates[0].get("finishReason", "")
         parts = candidates[0].get("content", {}).get("parts", [])
         raw = "".join(p.get("text", "") for p in parts)
         raw = raw.replace("```json", "").replace("```", "").strip()
+        if finish_reason == "MAX_TOKENS":
+            print(f"[pick_headlines] ⚠️ 경고: MAX_TOKENS({MAX_TOKENS})에 도달해 응답이 잘렸을 수 있음")
         picks = json.loads(raw)
     except requests.exceptions.HTTPError as e:
         print(f"[pick_headlines] ❌ API 실패(HTTP): {e}  (뉴스가 없는게 아니라 API 호출 자체가 실패함)")
