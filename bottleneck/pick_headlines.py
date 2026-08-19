@@ -9,6 +9,12 @@ fetch_news()로 모은 기사 중 "투자에 크리티컬한 것"만 LLM이 한 
     from pick_headlines import pick_critical
     from fetch_news import fetch_news
     results = pick_critical(fetch_news())
+
+[변경 사항 - 400 에러 수정]
+  - system 필드의 cache_control 제거
+    (SYSTEM 프롬프트가 prompt caching 최소 토큰 기준에 못 미쳐 400 유발 가능성)
+  - system을 리스트가 아닌 단순 문자열로 변경
+  - 에러 발생 시 resp.text(실제 API 에러 본문)까지 출력하도록 예외 처리 강화
 """
 
 import json
@@ -64,6 +70,10 @@ def pick_critical(news_items, max_pick=None):
     if not news_items:
         return []
 
+    if not ANTHROPIC_API_KEY:
+        print("[pick_headlines] 실패: ANTHROPIC_API_KEY 환경변수가 비어있음")
+        return []
+
     max_pick = max_pick or MAX_PICK
     list_text = _build_list_text(news_items)
     system_text = SYSTEM.format(max_pick=max_pick)
@@ -71,10 +81,11 @@ def pick_critical(news_items, max_pick=None):
     payload = {
         "model": MODEL,
         "max_tokens": MAX_TOKENS,
-        "system": [{"type": "text", "text": system_text, "cache_control": {"type": "ephemeral"}}],
+        "system": system_text,
         "messages": [{"role": "user", "content": list_text}],
     }
 
+    resp = None
     try:
         resp = requests.post(CLAUDE_URL, headers=_headers(), json=payload, timeout=60)
         resp.raise_for_status()
@@ -82,8 +93,17 @@ def pick_critical(news_items, max_pick=None):
         raw = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
         raw = raw.replace("```json", "").replace("```", "").strip()
         picks = json.loads(raw)
+    except requests.exceptions.HTTPError as e:
+        print(f"[pick_headlines] 실패(HTTP): {e}")
+        if resp is not None:
+            print(f"[pick_headlines] 응답 본문: {resp.text}")
+        return []
+    except json.JSONDecodeError as e:
+        print(f"[pick_headlines] 실패(JSON 파싱): {e}")
+        print(f"[pick_headlines] 원본 응답 텍스트: {raw!r}")
+        return []
     except Exception as e:
-        print(f"[pick_headlines] 실패: {e}")
+        print(f"[pick_headlines] 실패: {type(e).__name__}: {e}")
         return []
 
     results = []
