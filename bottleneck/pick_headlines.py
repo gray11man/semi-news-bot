@@ -20,6 +20,7 @@ fetch_news()로 모은 기사 중 "투자에 크리티컬한 것"만 LLM이 한 
 
 import json
 import os
+import time
 import requests
 
 GEMINI_API_KEY = os.environ.get("GEMINI_KEY", "")
@@ -95,32 +96,46 @@ def pick_critical(news_items, max_pick=None):
 
     resp = None
     raw = ""
-    try:
-        resp = requests.post(url, headers=_headers(), json=payload, timeout=60)
-        resp.raise_for_status()
-        data = resp.json()
-        candidates = data.get("candidates", [])
-        if not candidates:
-            print(f"[pick_headlines] ❌ API 실패: candidates 없음 (뉴스가 없는게 아니라 Gemini 응답 이상), 응답: {data}")
+    RETRY_STATUS = (503, 429)
+    RETRY_DELAYS = (5, 15)  # 1차 실패 후 5초, 2차 실패 후 15초 대기 후 재시도
+
+    for attempt in range(len(RETRY_DELAYS) + 1):
+        try:
+            resp = requests.post(url, headers=_headers(), json=payload, timeout=60)
+            if resp.status_code in RETRY_STATUS and attempt < len(RETRY_DELAYS):
+                wait = RETRY_DELAYS[attempt]
+                print(f"[pick_headlines] ⏳ {resp.status_code} 응답 — {wait}초 후 재시도 ({attempt+1}/{len(RETRY_DELAYS)})")
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            data = resp.json()
+            candidates = data.get("candidates", [])
+            if not candidates:
+                print(f"[pick_headlines] ❌ API 실패: candidates 없음 (뉴스가 없는게 아니라 Gemini 응답 이상), 응답: {data}")
+                return None
+            finish_reason = candidates[0].get("finishReason", "")
+            parts = candidates[0].get("content", {}).get("parts", [])
+            raw = "".join(p.get("text", "") for p in parts)
+            raw = raw.replace("```json", "").replace("```", "").strip()
+            if finish_reason == "MAX_TOKENS":
+                print(f"[pick_headlines] ⚠️ 경고: MAX_TOKENS({MAX_TOKENS})에 도달해 응답이 잘렸을 수 있음")
+            picks = json.loads(raw)
+            break
+        except requests.exceptions.HTTPError as e:
+            print(f"[pick_headlines] ❌ API 실패(HTTP): {e}  (뉴스가 없는게 아니라 API 호출 자체가 실패함)")
+            if resp is not None:
+                print(f"[pick_headlines] 응답 본문: {resp.text}")
             return None
-        finish_reason = candidates[0].get("finishReason", "")
-        parts = candidates[0].get("content", {}).get("parts", [])
-        raw = "".join(p.get("text", "") for p in parts)
-        raw = raw.replace("```json", "").replace("```", "").strip()
-        if finish_reason == "MAX_TOKENS":
-            print(f"[pick_headlines] ⚠️ 경고: MAX_TOKENS({MAX_TOKENS})에 도달해 응답이 잘렸을 수 있음")
-        picks = json.loads(raw)
-    except requests.exceptions.HTTPError as e:
-        print(f"[pick_headlines] ❌ API 실패(HTTP): {e}  (뉴스가 없는게 아니라 API 호출 자체가 실패함)")
-        if resp is not None:
-            print(f"[pick_headlines] 응답 본문: {resp.text}")
-        return None
-    except json.JSONDecodeError as e:
-        print(f"[pick_headlines] ❌ API 실패(JSON 파싱): {e}  (뉴스가 없는게 아니라 응답 파싱 실패)")
-        print(f"[pick_headlines] 원본 응답 텍스트: {raw!r}")
-        return None
-    except Exception as e:
-        print(f"[pick_headlines] ❌ API 실패: {type(e).__name__}: {e}  (뉴스가 없는게 아니라 예외 발생)")
+        except json.JSONDecodeError as e:
+            print(f"[pick_headlines] ❌ API 실패(JSON 파싱): {e}  (뉴스가 없는게 아니라 응답 파싱 실패)")
+            print(f"[pick_headlines] 원본 응답 텍스트: {raw!r}")
+            return None
+        except Exception as e:
+            print(f"[pick_headlines] ❌ API 실패: {type(e).__name__}: {e}  (뉴스가 없는게 아니라 예외 발생)")
+            return None
+    else:
+        # for-else: 재시도를 다 소진했는데도 break를 못 만난 경우 (계속 503/429)
+        print(f"[pick_headlines] ❌ API 실패: {len(RETRY_DELAYS)}회 재시도 후에도 서버 과부하 지속 (다음 스케줄에 재시도됨)")
         return None
 
     results = []
