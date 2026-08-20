@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-fetch_news.py  (v3.1 - 유사기사 중복 차단판)
+fetch_news.py  (v3.2 - 중국어 산업매체 추가판)
+
+v3.1 → v3.2 변경:
+  - [핵심] 중국어 산업/금융 전문매체 쿼리 추가
+    (구글뉴스 한국/영어 헤드라인만으로는 뻔한 상위권 뉴스만 반복 노출되는 문제 해결)
+    예: 马士基(머스크) CEO의 실적 콜 발언, 航运界网(해운업계망) 같은
+    업종 심층 소식은 한국어/영어 구글뉴스에 거의 안 걸림
+  - SOURCE_BLACKLIST에 중국어 저신호 매체(연예/가십) 항목은 필요시 추가 가능
 
 v3 → v3.1 변경:
   - [핵심] 같은 사건을 다른 제목으로 쓴 기사 차단 (유사도 판정 추가)
@@ -48,6 +55,8 @@ def _gnews(query, lang="ko"):
     q = quote(f"{query} when:{FRESH_HOURS}h")
     if lang == "ko":
         return f"https://news.google.com/rss/search?q={q}&hl=ko&gl=KR&ceid=KR:ko"
+    if lang == "zh":
+        return f"https://news.google.com/rss/search?q={q}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
     return f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"
 
 
@@ -58,6 +67,8 @@ FEEDS = [
     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ko&gl=KR&ceid=KR:ko",
     # 미국 비즈니스 헤드라인 토픽
     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en",
+    # [v3.2] 중국 비즈니스 헤드라인 토픽 (구글뉴스 중국어판)
+    "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
     # 넓은 그물 쿼리 (구조 변곡이 잘 걸리는 표현 위주)
     _gnews("수주 OR 공급 부족 OR 가격 급등 OR 사상 최대 OR 증설 OR 사상 최초", "ko"),
     _gnews("금리 OR 환율 OR FOMC OR 유가 OR 신조선가 OR 운임 OR 전력망", "ko"),
@@ -65,6 +76,13 @@ FEEDS = [
     _gnews("shortage OR \"supply crunch\" OR \"record high\" OR \"first ever\" OR surge", "en"),
     _gnews("\"rate cut\" OR FOMC OR tariff OR sanction OR \"defense spending\"", "en"),
     _gnews("shipbuilding OR freight OR \"power grid\" OR uranium OR \"data center\"", "en"),
+    # [v3.2] 중국어 산업/해운/공급망 쿼리
+    #   구글뉴스 한국/영어판에 잘 안 걸리는 중국 현지 업계 심층 소식
+    #   (해운 운임, 공급과잉/부족 재평가, 정부 정책, 원자재 등)
+    _gnews("集运 OR 运价 OR 缺柜 OR 舱位 OR 港口 拥堵", "zh"),   # 컨테이너 해운/운임/항만 정체
+    _gnews("供应过剩 OR 供不应求 OR 涨价 OR 减产 OR 扩产", "zh"),  # 공급과잉/부족, 가격 인상, 증산/감산
+    _gnews("关税 OR 出口管制 OR 制裁 OR 补贴政策", "zh"),          # 관세/수출통제/제재/보조금 정책
+    _gnews("芯片 OR 半导体 OR 稀土 OR 锂电池 供应链", "zh"),       # 반도체·희토류·배터리 공급망
 ]
 
 
