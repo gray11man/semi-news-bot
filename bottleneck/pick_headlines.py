@@ -26,7 +26,7 @@ import requests
 GEMINI_API_KEY = os.environ.get("GEMINI_KEY", "")
 MODEL = os.environ.get("PICK_MODEL", "gemini-2.5-flash")
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
-MAX_TOKENS = 4096
+MAX_TOKENS = 6144
 MAX_PICK = int(os.environ.get("MAX_PICK", "3"))  # 실행당 최종 전송 상한 (진짜 크리티컬한 것만, 목표 아닌 상한)
 
 SYSTEM = """너는 극도로 까다로운 투자 뉴스 게이트키퍼다. 사용자는 업종 불문 구조적 변화
@@ -37,8 +37,15 @@ SYSTEM = """너는 극도로 까다로운 투자 뉴스 게이트키퍼다. 사�
 아래를 모두 통과해야만 채택한다:
 1. 일회성이 아니라 구조적 변화(수급/가격/정책/경쟁구도)다.
 2. 수혜 또는 피해가 특정 산업·기업에 명확히 걸린다.
-3. 이미 다 아는 이야기의 반복이 아니라 새로운 정보다 (실적 발표 자체, 주가 등락 설명, 일반 시황은 탈락).
-4. 지금 당장 몰라도 사는 데 지장 없다면 탈락. "알아두면 좋다" 수준은 전부 버려라.
+3. 이미 다 아는 이야기의 반복이 아니라 새로운 정보다 (실적 수치 자체, 주가 등락 설명, 일반 시황은 탈락).
+   단, 실적 콜/컨퍼런스콜에서 나온 경영진 발언이라도 아래에 해당하면 탈락시키지 말고 채택한다:
+   - 업계 리더가 기존 컨센서스(공급과잉, 수요둔화 등)를 공개적으로 뒤집는 발언
+   - 가동률·수주잔고·CAPEX 계획 등 향후 공급/수요를 가늠하게 하는 구체적 신호
+   - "실적이 좋다/나쁘다"가 아니라 "업계 구조가 이렇게 바뀌고 있다"는 진단
+4. 1차 사건이 특정 산업에 간접적으로 미치는 파급 효과도 고려한다.
+   예: 정유시설 피격→정제마진 변화, 항로 차질→해운 운임, 원자재 가격 변동→하류 제조원가.
+   단, 파급 경로가 2단계를 넘어가거나 추측이 과하면 탈락시킨다.
+5. 지금 당장 몰라도 사는 데 지장 없다면 탈락. "알아두면 좋다" 수준은 전부 버려라.
 
 애매하면 무조건 버린다. 하루에 아무것도 없으면 빈 리스트가 정답이다.
 개수를 채우려는 압박을 갖지 마라 — {max_pick}개는 상한일 뿐 목표가 아니다.
@@ -88,7 +95,7 @@ def pick_critical(news_items, max_pick=None):
         "generationConfig": {
             "maxOutputTokens": MAX_TOKENS,
             "responseMimeType": "application/json",
-            "thinkingConfig": {"thinkingBudget": 0},
+            "thinkingConfig": {"thinkingBudget": 1024},
         },
     }
 
