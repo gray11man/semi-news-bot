@@ -354,6 +354,17 @@ def hard_filter(item, detail):
     for p in CHANNEL_BLACKLIST_PATTERNS:
         if re.search(p, channel):
             return None, f"채널 블랙리스트: {p}"
+    # [안전장치] 검색 API의 publishedAfter가 재업로드/수정 영상에서
+    # 신뢰할 수 없는 경우가 있어, videos.list의 실제 publishedAt으로 재검증.
+    real_pub = detail.get("snippet", {}).get("publishedAt", "")
+    if real_pub:
+        try:
+            pub_dt = datetime.fromisoformat(real_pub.replace("Z", "+00:00"))
+            age_hours = (datetime.now(timezone.utc) - pub_dt).total_seconds() / 3600
+            if age_hours > LOOKBACK_HOURS + 2:
+                return None, f"실제게시일 범위밖({age_hours/24:.0f}일 전, {real_pub[:10]})"
+        except Exception:
+            pass
     dur = parse_duration(detail.get("contentDetails", {}).get("duration"))
     min_dur = CORE_MIN_DURATION_SEC if person in CORE_PERSONS else MIN_DURATION_SEC
     if dur < min_dur:
@@ -552,10 +563,21 @@ def fetch_blog_posts(blog_id):
         clean = raw.split("?")[0].rstrip("/")
         pub = entry.get("published", "") or entry.get("updated", "")
         title = entry.get("title", "(제목 없음)")
+        pub_dt = None
+        tm = entry.get("published_parsed") or entry.get("updated_parsed")
+        if tm:
+            try:
+                pub_dt = datetime(*tm[:6], tzinfo=timezone.utc)
+            except Exception:
+                pub_dt = None
         posts.append({"id": clean or f"{blog_id}:{title}:{pub}",
-                      "title": title, "url": clean or raw})
+                      "title": title, "url": clean or raw, "pub_dt": pub_dt})
     print(f"[블로그] {blog_id}: {len(posts)}건")
     return posts
+
+
+BLOG_MAX_AGE_HOURS = 30  # 워크플로 주기(예: 6시간)보다 여유있게. 이보다 오래된 글은
+                          # seen에 없어도(=아직 한번도 못본 글이어도) 신규 전송 안함.
 
 
 def run_blog_watch():
@@ -563,6 +585,7 @@ def run_blog_watch():
         state = load_blog_state()
         seen = state.setdefault("blog", {})
         total = 0
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=BLOG_MAX_AGE_HOURS)
         for blog_id in NAVER_BLOG_IDS:
             posts = fetch_blog_posts(blog_id)
             if not posts:
@@ -570,6 +593,15 @@ def run_blog_watch():
             first = blog_id not in seen
             already = set(seen.get(blog_id, []))
             fresh = [p for p in posts if p["id"] and p["id"] not in already]
+            # 발행시각 기준 재검증: 오래된 글(과거 밀린 글)은 seen 누락이어도
+            # 전송하지 않고 seen에만 등록 → 근본적으로 "밀린 과거글 폭탄" 차단
+            old_but_new = [p for p in fresh
+                          if p["pub_dt"] and p["pub_dt"] < cutoff]
+            fresh = [p for p in fresh
+                    if not (p["pub_dt"] and p["pub_dt"] < cutoff)]
+            if old_but_new:
+                print(f"  ↳ [{blog_id}] 발행일 기준 오래된 글 {len(old_but_new)}건 "
+                      f"전송 생략(seen만 등록)")
             if first:
                 print(f"[블로그] {blog_id}: baseline 저장 (알림 생략)")
             else:
