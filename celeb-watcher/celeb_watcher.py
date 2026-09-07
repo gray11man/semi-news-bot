@@ -573,6 +573,10 @@ def fetch_blog_posts(blog_id):
         posts.append({"id": clean or f"{blog_id}:{title}:{pub}",
                       "title": title, "url": clean or raw, "pub_dt": pub_dt})
     print(f"[블로그] {blog_id}: {len(posts)}건")
+    if posts:
+        p0 = posts[0]
+        print(f"  ↳ [디버그] RSS 1번째글: {p0['title'][:40]} | "
+              f"발행:{p0['pub_dt']} | id:{p0['id'][-40:]}")
     return posts
 
 
