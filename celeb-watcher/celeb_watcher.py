@@ -29,13 +29,11 @@ GEMINI_API_KEY = os.environ["GEMINI_KEY"]
 TG_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TG_CHAT = os.environ["TELEGRAM_CHAT_ID"]
 
-# 429 나면 순서대로 폴백 (저렴한 flash-lite 우선 → 비용 최소화)
-# gemini-2.0-flash는 2026-06-01 종료되어 제거함
 GEMINI_MODELS = ["gemini-2.5-flash-lite", "gemini-2.5-flash"]
 
-MAX_GEMINI_CALLS = 8       # 한 사이클 전체 Gemini 호출 상한 (셀럽 + 크레딧 합산)
-BATCH_SIZE = 8             # 한 번에 판정할 항목 수
-NOTIFY_WHEN_EMPTY = False  # True면 결과 없을 때도 "없음" 알림
+MAX_GEMINI_CALLS = 8
+BATCH_SIZE = 8
+NOTIFY_WHEN_EMPTY = False
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
@@ -44,7 +42,6 @@ _gm = {"n": 0, "dead": False, "notified": False}
 
 
 def _notify_gemini_dead(reason):
-    """Gemini 판정 중단 시 딱 1회만 텔레그램 알림."""
     if _gm["notified"]:
         return
     _gm["notified"] = True
@@ -77,7 +74,6 @@ def _retry_delay(body):
 
 
 def gemini_call(prompt, max_retry=2):
-    """모델 폴백 + 백오프 + 전역 예산. 실패 시 None."""
     if _gm["dead"]:
         return None
     if _gm["n"] >= MAX_GEMINI_CALLS:
@@ -97,8 +93,6 @@ def gemini_call(prompt, max_retry=2):
                     json={"contents": [{"parts": [{"text": prompt}]}],
                           "generationConfig": {
                               "temperature": 0.1,
-                              # thinking을 소폭 허용(512)해 "본인 직접 출연" 판정 정확도 확보.
-                              # 출력(판정 JSON)은 짧아서 비용 증가는 미미함.
                               "thinkingConfig": {"thinkingBudget": 512},
                               "maxOutputTokens": 2048,
                           }},
@@ -130,7 +124,6 @@ def gemini_call(prompt, max_retry=2):
 
 
 def parse_json_array(out, n):
-    """idx 필드 기준으로 길이 n 배열에 정렬. 실패 시 [None]*n"""
     if out is None:
         return [None] * n
     try:
@@ -151,11 +144,11 @@ def parse_json_array(out, n):
 # ═══════════════════════════════════════════════════════════
 SEEN_FILE = "seen_celeb_ids.json"
 LOOKBACK_HOURS = 36
-MIN_DURATION_SEC = 1800      # 일반 인물: 30분 미만 제외
-CORE_MIN_DURATION_SEC = 240  # 핵심 인물: 4분 미만만 제외
+MIN_DURATION_SEC = 1800
+CORE_MIN_DURATION_SEC = 240
 SCORE_THRESHOLD = 7
 STRICT_SCORE = 9
-MAX_CELEB_CANDIDATES = 24    # 배치 판정 대상 상한
+MAX_CELEB_CANDIDATES = 24
 
 CORE_PERSONS = {
     "Jensen Huang", "Sam Altman", "Sarah Friar", "Mira Murati",
@@ -224,12 +217,10 @@ TITLE_BLACKLIST = [
     "주식", "종목", "매수", "매도", "급등", "코인", "숏폼", "클립모음",
     "ai voice", "ai 목소리", "성대모사", "밈", "meme", "compilation",
     "fan made", "tribute", "motivational", "동기부여",
-    # 제3자 다큐/일대기/성공스토리 패턴 (Gemini 호출 전 차단 → 비용 절감)
     "다큐", "documentary", "일대기", "성공 스토리", "성공스토리",
     "success story", "biography", "전기", "생애", "인생",
     "how ", "story of", "the rise of", "파산", "빈털터리", "밑바닥",
     "충격", "소름", "레전드", "위기", "vs ", "roast",
-    # 제3자 선정성 클릭베이트 패턴 (로그에서 오통과 확인된 유형)
     "declares", "just killed", "shocks", "immigrant who", "before the",
     "wealth secret", "billion", "risking", "the future is now",
     "has arrived", "singularity", "middle-class", "get to gether",
@@ -287,7 +278,6 @@ def get_video_details(video_ids):
 
 
 def get_channel_stats(channel_ids):
-    """채널 통계를 배치 조회. {channel_id: {subs, videos, published}}"""
     out = {}
     ids = list(dict.fromkeys(channel_ids))
     for i in range(0, len(ids), 50):
@@ -313,15 +303,12 @@ def get_channel_stats(channel_ids):
 
 
 def is_factory_channel(stats):
-    """공장형(재업로드/슬롭) 채널 판별. (제외여부, 사유)"""
     if not stats:
-        return False, None  # 정보 없으면 통과 (오차단 방지)
+        return False, None
     subs = stats["subs"]
     videos = stats["videos"]
-    # 1) 영상은 매우 많은데 구독자가 적음 → 양산형
     if videos >= 300 and subs < 5000:
         return True, f"공장형(영상{videos}/구독{subs})"
-    # 2) 채널 개설 1년 이내인데 영상이 500개 이상 → 대량 자동 업로드
     pub = stats.get("published", "")
     if pub and videos >= 500:
         try:
@@ -359,7 +346,6 @@ def hard_filter(item, detail):
     person = match_person(title) or match_person(desc[:500])
     if not person:
         return None, "인물명 없음"
-    # YouTube가 표시한 합성/변조 콘텐츠 플래그 → AI 나레이션 등 차단
     if detail.get("status", {}).get("containsSyntheticMedia"):
         return None, "합성미디어 플래그"
     for b in TITLE_BLACKLIST:
@@ -386,6 +372,17 @@ CELEB_PROMPT = """다음 유튜브 영상들 각각을 조건에 따라 엄격�
     없는 한 뉴스 나레이션/요약 채널로 간주하여 direct_appearance=false.
     실제 출연 영상은 보통 설명에 출연자·진행자·프로그램명·에피소드 정보가 있다.
     근거가 애매하면 false 쪽으로 판정하라.
+  · [매우 중요] 제목·채널명·설명이 해당 인물의 모국어(영어)나 채널이 속한
+    지역 주요 언어가 아닌 제3의 언어(베트남어, 태국어, 인도네시아어, 힌디어,
+    아랍어 등)로 되어 있으면, 이는 거의 항상 그 지역 크리에이터가 인물의
+    발언이나 뉴스를 자체 나레이션/자막으로 재구성한 해설·요약 영상이다.
+    이 경우 채널명이나 설명에 "official", 방송사 로고, 실제 스튜디오 촬영
+    등 원본 인터뷰라는 명백한 증거가 없는 한 direct_appearance=false로
+    판정하라. 썸네일 그래픽 스타일 설명(자체 제작 타이틀 카드, 인물 사진
+    합성)도 재구성 콘텐츠의 신호로 간주하라.
+  · 채널명 자체가 인물 이름과 무관한 뉴스/큐레이션 채널명(예: 특정 국가어
+    닉네임, "~뉴스", "~정보", "~요약" 류)이면 direct_appearance=false 쪽으로
+    강하게 기울여라.
 
 모드별 주제 조건:
   [일반] AI 수요/토큰 소비, 메모리(HBM/DRAM/NAND), 컴퓨팅 인프라/GPU/데이터센터/capex
@@ -402,7 +399,6 @@ CELEB_PROMPT = """다음 유튜브 영상들 각각을 조건에 따라 엄격�
 
 
 def judge_celeb_batch(chunk):
-    """chunk: [(person, item, detail, vid)] → [judgment|None]"""
     lines = []
     for i, (person, item, detail, _vid) in enumerate(chunk):
         mode = ("주제무관" if person in TOPIC_FREE_PERSONS
@@ -452,18 +448,16 @@ def run_celeb_watch():
 
     details = get_video_details(list(candidates.keys()))
 
-    # 1단계: 하드필터 (Gemini 호출 없음)
     passed = []
     for vid, item in candidates.items():
         detail = details.get(vid, {})
         person, reject = hard_filter(item, detail)
         if not person:
-            seen.add(vid)   # 하드필터 탈락은 재검토 가치 없음
+            seen.add(vid)
             print(f"❌ [{reject}] {item['snippet']['title'][:60]}")
             continue
         passed.append((person, item, detail, vid))
 
-    # 1.5단계: 채널 통계로 공장형(재업로드/슬롭) 채널 제외 (Gemini 호출 없음)
     if passed:
         ch_ids = [it["snippet"].get("channelId", "") for _, it, _, _ in passed]
         ch_stats = get_channel_stats([c for c in ch_ids if c])
@@ -553,7 +547,7 @@ def fetch_blog_posts(blog_id):
         return []
 
     posts = []
-    for entry in feed.entries[:10]:
+    for entry in feed.entries[:30]:
         raw = entry.get("link", "")
         clean = raw.split("?")[0].rstrip("/")
         pub = entry.get("published", "") or entry.get("updated", "")
@@ -585,7 +579,7 @@ def run_blog_watch():
                     total += 1
                     time.sleep(0.5)
             seen[blog_id] = list(dict.fromkeys(
-                [p["id"] for p in posts if p["id"]] + list(already)))[:50]
+                [p["id"] for p in posts if p["id"]] + list(already)))[:80]
         print(f"[블로그] {total}건 전송")
         save_blog_state(state)
     except Exception as e:
@@ -599,7 +593,7 @@ CREDIT_STATE_FILE = "seen_credit.json"
 FEED_CACHE_VERSION = 2
 
 ENABLE_PODCAST = True
-ENABLE_CREDIT_YT = False    # 유튜브 API 쿼터 절약 위해 기본 OFF
+ENABLE_CREDIT_YT = False
 ENABLE_NEWS = True
 
 PODCAST_MAX_AGE_DAYS = 5
@@ -929,8 +923,8 @@ def main():
     except Exception as e:
         print(f"[셀럽 감시 실패] {str(e)[:250]}")
 
-    run_blog_watch()      # Gemini 미사용 — 항상 실행
-    run_credit_watch()    # 남은 Gemini 예산으로 실행
+    run_blog_watch()
+    run_credit_watch()
 
     print(f"=== Gemini 총 호출 {_gm['n']}회 / 상한 {MAX_GEMINI_CALLS} ===")
 
