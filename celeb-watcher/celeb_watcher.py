@@ -9,7 +9,7 @@ PART 4  하이퍼스케일러 / 사모크레딧 / AI CAPEX 금융 감시
 
 핵심 설계:
 - 사람 목록은 넓게 잡는다.
-- 채널 화이트리스트를 사용하지 않는다.
+- 채널 화이트리스트를 사용하지 않는다. -> 새 채널/새 팟캐스트를 놓치지 않기 위해서.
 - 명백한 쓰레기만 코드로 제거한다.
 - 후보를 메타데이터 점수로 우선 정렬한다.
 - Gemini가 "본인이 실제로 출연했는가"를 별도로 판정한다.
@@ -28,6 +28,7 @@ import json
 import re
 import time
 import html
+import difflib
 from datetime import datetime, timedelta, timezone
 
 import requests
@@ -43,11 +44,6 @@ GEMINI_API_KEY = os.environ["GEMINI_KEY"]
 TG_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TG_CHAT = os.environ["TELEGRAM_CHAT_ID"]
 
-
-# ------------------------------------------------------------
-# Gemini 설정
-# ------------------------------------------------------------
-
 GEMINI_MODELS = [
     "gemini-2.5-flash-lite",
     "gemini-2.5-flash",
@@ -57,27 +53,18 @@ MAX_GEMINI_CALLS = 8
 BATCH_SIZE = 8
 NOTIFY_WHEN_EMPTY = False
 
-_gm = {
-    "n": 0,
-    "dead": False,
-    "notified": False,
-}
-
-
-# ------------------------------------------------------------
-# 공통 HTTP
-# ------------------------------------------------------------
-
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/124.0.0.0 Safari/537.36"
 )
 
+_gm = {"n": 0, "dead": False, "notified": False}
+
 
 def send_tg(msg):
     try:
-        r = requests.post(
+        requests.post(
             f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
             json={
                 "chat_id": TG_CHAT,
@@ -87,13 +74,6 @@ def send_tg(msg):
             },
             timeout=30,
         )
-
-        if not r.ok:
-            print(
-                f"[텔레그램 실패] HTTP {r.status_code}: "
-                f"{r.text[:150]}"
-            )
-
     except Exception as e:
         print(f"[텔레그램 실패] {e}")
 
@@ -118,388 +98,100 @@ def strip_html(s):
 
 
 def _retry_delay(body):
-    """
-    Gemini 429 응답의 retryDelay 추출.
-    예:
-    "retryDelay": "34s"
-    """
-
-    if not body:
-        return None
-
-    m = re.search(
-        r'"retryDelay"\s*:\s*"(\d+)s?"',
-        body,
-        re.I,
-    )
-
-    if m:
-        return int(m.group(1))
-
-    m = re.search(
-        r'"retryDelay"\s*:\s*"(\d+)',
-        body,
-        re.I,
-    )
-
-    if m:
-        return int(m.group(1))
-
-    return None
+    m = re.search(r'"retryDelay"\s*:\s*"(\d+)', body or "")
+    return int(m.group(1)) if m else None
 
 
 def gemini_call(prompt, max_retry=2):
-    """
-    Gemini 호출.
-
-    중요한 점:
-    - 호출 예산을 넘으면 즉시 중단
-    - 429는 재시도
-    - 일일 quota 소진은 재시도하지 않고 다음 모델로 이동
-    - 모든 모델 실패 시 이번 사이클 Gemini를 dead 처리
-    """
-
     if _gm["dead"]:
         return None
 
     if _gm["n"] >= MAX_GEMINI_CALLS:
-        print(
-            f"[Gemini] 예산 {MAX_GEMINI_CALLS}회 소진"
-        )
-
+        print(f"[Gemini] 예산 {MAX_GEMINI_CALLS}회 소진")
         _gm["dead"] = True
-
-        _notify_gemini_dead(
-            f"호출 예산 {MAX_GEMINI_CALLS}회 소진"
-        )
-
+        _notify_gemini_dead(f"호출 예산 {MAX_GEMINI_CALLS}회 소진")
         return None
 
     for model in GEMINI_MODELS:
-
-        model_failed = True
-
         for attempt in range(max_retry):
-
-            if _gm["n"] >= MAX_GEMINI_CALLS:
-                print(
-                    "[Gemini] 호출 상한 도달"
-                )
-
-                _gm["dead"] = True
-
-                _notify_gemini_dead(
-                    f"호출 예산 {MAX_GEMINI_CALLS}회 소진"
-                )
-
-                return None
-
             _gm["n"] += 1
 
             try:
                 r = requests.post(
                     "https://generativelanguage.googleapis.com/v1beta/models/"
                     f"{model}:generateContent",
-                    params={
-                        "key": GEMINI_API_KEY,
-                    },
+                    params={"key": GEMINI_API_KEY},
                     json={
-                        "contents": [
-                            {
-                                "parts": [
-                                    {
-                                        "text": prompt
-                                    }
-                                ]
-                            }
-                        ],
+                        "contents": [{"parts": [{"text": prompt}]}],
                         "generationConfig": {
                             "temperature": 0.1,
-                            "thinkingConfig": {
-                                "thinkingBudget": 512
-                            },
+                            "thinkingConfig": {"thinkingBudget": 512},
                             "maxOutputTokens": 4096,
                         },
                     },
                     timeout=90,
                 )
 
-                # ------------------------------------------------
-                # 429
-                # ------------------------------------------------
-
                 if r.status_code == 429:
+                    body = r.text[:500].replace("\n", " ")
+                    print(f"[429] {model} attempt{attempt + 1} | {body}")
 
-                    body = (
-                        r.text[:1000]
-                        .replace("\n", " ")
-                    )
-
-                    print(
-                        f"[Gemini 429] "
-                        f"{model} "
-                        f"attempt={attempt + 1} | "
-                        f"{body[:300]}"
-                    )
-
-                    # 일일 quota
-                    if (
-                        "PerDay" in body
-                        or "per day" in body.lower()
-                        or "daily" in body.lower()
-                    ):
-                        print(
-                            "[Gemini] 일일 쿼터 소진"
-                        )
-
+                    if "PerDay" in body:
+                        print("[Gemini] 일일 쿼터 소진")
                         break
 
-                    wait = (
-                        _retry_delay(body)
-                        or (5 * (2 ** attempt))
-                    )
-
-                    wait = min(
-                        max(wait, 3),
-                        40,
-                    )
-
-                    print(
-                        f"[Gemini] {wait}초 후 재시도"
-                    )
-
-                    time.sleep(wait)
-
+                    wait = _retry_delay(body) or (5 * (2 ** attempt))
+                    time.sleep(min(wait, 40))
                     continue
 
-                # ------------------------------------------------
-                # 404
-                # ------------------------------------------------
-
                 if r.status_code == 404:
-                    print(
-                        f"[Gemini 404] "
-                        f"모델 없음: {model}"
-                    )
-
+                    print(f"[404] 모델 없음: {model}")
                     break
-
-                # ------------------------------------------------
-                # 기타 HTTP
-                # ------------------------------------------------
 
                 r.raise_for_status()
 
-                data = r.json()
-
-                candidates = data.get(
-                    "candidates",
-                    [],
-                )
-
-                if not candidates:
-                    print(
-                        f"[Gemini] 후보 응답 없음: "
-                        f"{model}"
-                    )
-                    continue
-
-                content = (
-                    candidates[0]
-                    .get("content", {})
-                )
-
-                parts = content.get(
-                    "parts",
-                    [],
-                )
-
-                texts = []
-
-                for p in parts:
-                    if isinstance(p, dict):
-                        t = p.get("text")
-
-                        if t:
-                            texts.append(t)
-
-                txt = "\n".join(texts).strip()
-
-                if not txt:
-                    print(
-                        f"[Gemini] 빈 응답: "
-                        f"{model}"
-                    )
-                    continue
-
-                txt = re.sub(
-                    r"```json\s*",
-                    "",
-                    txt,
-                    flags=re.I,
-                )
-
-                txt = re.sub(
-                    r"```\s*$",
-                    "",
-                    txt,
-                    flags=re.I,
-                )
-
-                txt = txt.strip()
-
-                model_failed = False
-
+                txt = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+                txt = re.sub(r"```json|```", "", txt).strip()
                 return txt
 
-            except requests.Timeout as e:
-                print(
-                    f"[Gemini timeout] "
-                    f"{model} "
-                    f"attempt={attempt + 1}"
-                )
-
-                if attempt + 1 < max_retry:
-                    time.sleep(3)
-
-            except requests.RequestException as e:
-                print(
-                    f"[Gemini HTTP 오류] "
-                    f"{model}: "
-                    f"{str(e)[:180]}"
-                )
-
-                if attempt + 1 < max_retry:
-                    time.sleep(3)
-
             except Exception as e:
-                print(
-                    f"[Gemini 오류] "
-                    f"{model}: "
-                    f"{str(e)[:180]}"
-                )
+                print(f"[Gemini 오류] {model}: {str(e)[:180]}")
+                time.sleep(3)
 
-                if attempt + 1 < max_retry:
-                    time.sleep(3)
+        print(f"[Gemini] {model} 실패 → 다음 모델")
 
-        if not model_failed:
-            break
-
-        print(
-            f"[Gemini] {model} 실패 → 다음 모델"
-        )
-
-    print(
-        "[Gemini] 전 모델 실패"
-    )
-
+    print("[Gemini] 전 모델 실패")
     _gm["dead"] = True
-
-    _notify_gemini_dead(
-        "전 모델 응답 실패"
-    )
-
+    _notify_gemini_dead("전 모델 응답 실패")
     return None
 
 
 def parse_json_array(out, n):
-    """
-    Gemini JSON 배열 파싱.
-
-    일반적인 JSON뿐 아니라,
-    Gemini가 앞뒤에 약간의 설명을 붙이는 경우에도
-    가장 바깥쪽 [...]을 찾아 파싱한다.
-    """
-
     if out is None:
         return [None] * n
 
-    text = str(out).strip()
-
-    # 코드블록 제거
-    text = re.sub(
-        r"^```(?:json)?\s*",
-        "",
-        text,
-        flags=re.I,
-    )
-
-    text = re.sub(
-        r"\s*```$",
-        "",
-        text,
-        flags=re.I,
-    )
-
-    text = text.strip()
-
-    # 우선 전체 JSON 시도
     try:
-        arr = json.loads(text)
+        arr = json.loads(out)
 
-        if isinstance(arr, list):
-            return _normalize_json_results(
-                arr,
-                n,
-            )
+        if not isinstance(arr, list):
+            return [None] * n
 
-    except Exception:
-        pass
+        res = [None] * n
 
-    # 앞뒤 설명이 붙은 경우 [...]
-    start = text.find("[")
-    end = text.rfind("]")
-
-    if start >= 0 and end > start:
-
-        candidate = text[
-            start:end + 1
-        ]
-
-        try:
-            arr = json.loads(candidate)
-
-            if isinstance(arr, list):
-                return _normalize_json_results(
-                    arr,
-                    n,
-                )
-
-        except Exception:
-            pass
-
-    print(
-        f"[배치 파싱 실패] "
-        f"{str(text)[:500]}"
-    )
-
-    return [None] * n
-
-
-def _normalize_json_results(arr, n):
-    res = [None] * n
-
-    for j in arr:
-
-        if not isinstance(j, dict):
-            continue
-
-        i = j.get("idx")
-
-        # 숫자 문자열도 허용
-        if isinstance(i, str):
-            try:
-                i = int(i)
-            except Exception:
+        for j in arr:
+            if not isinstance(j, dict):
                 continue
 
-        if (
-            isinstance(i, int)
-            and 0 <= i < n
-        ):
-            res[i] = j
+            i = j.get("idx")
 
-    return res
+            if isinstance(i, int) and 0 <= i < n:
+                res[i] = j
+
+        return res
+
+    except Exception as e:
+        print(f"[배치 파싱 실패] {str(e)[:150]} | {str(out)[:250]}")
+        return [None] * n
 
 
 # ============================================================
@@ -511,422 +203,194 @@ SEEN_FILE = "seen_celeb_ids.json"
 LOOKBACK_HOURS = 36
 
 # 직접 출연 감시이므로 너무 짧은 영상은 기본적으로 배제.
+# 다만 핵심 인물의 공식 키노트/인터뷰는 더 짧아도 후보로 유지.
 MIN_DURATION_SEC = 480
-
-# 핵심 인물은 조금 더 짧은 공식 인터뷰도 허용.
-CORE_MIN_DURATION_SEC = 360
 
 # 후보 우선순위용.
 PREFERRED_DURATION_SEC = 1200
 
-# 최종 알림 기준.
+# 최종 알림은 매우 엄격하게.
 SCORE_THRESHOLD = 9
-
 MAX_CELEB_CANDIDATES = 24
 
+# Gemini가 읽는 설명 길이.
 DESC_CHARS_FOR_GEMINI = 1500
 
 
 # ------------------------------------------------------------
 # 핵심 인물 목록
+# 사람 목록은 "알림 목록"이 아니라 "검색 목록"이다.
+# 따라서 넓게 잡는다.
 # ------------------------------------------------------------
 
 PERSONS = {
-
     # NVIDIA
-    "Jensen Huang": [
-        "jensen huang",
-        "젠슨 황",
-        "젠슨황",
-    ],
-    "Colette Kress": [
-        "colette kress",
-    ],
-    "Jay Puri": [
-        "jay puri nvidia",
-    ],
+    "Jensen Huang": ["jensen huang", "젠슨 황", "젠슨황"],
+    "Colette Kress": ["colette kress"],
+    "Jay Puri": ["jay puri nvidia"],
 
     # OpenAI
-    "Sam Altman": [
-        "sam altman",
-        "샘 알트만",
-        "샘 올트먼",
-    ],
-    "Greg Brockman": [
-        "greg brockman",
-    ],
-    "Kevin Weil": [
-        "kevin weil",
-    ],
-    "Jakub Pachocki": [
-        "jakub pachocki",
-    ],
-    "Sarah Friar": [
-        "sarah friar",
-    ],
-    "Mark Chen": [
-        "mark chen openai",
-    ],
+    "Sam Altman": ["sam altman", "샘 알트만", "샘 올트먼"],
+    "Greg Brockman": ["greg brockman"],
+    "Kevin Weil": ["kevin weil"],
+    "Jakub Pachocki": ["jakub pachocki"],
+    "Sarah Friar": ["sarah friar"],
+    "Mark Chen": ["mark chen openai"],
 
     # Anthropic
-    "Dario Amodei": [
-        "dario amodei",
-        "다리오 아모데이",
-    ],
-    "Daniela Amodei": [
-        "daniela amodei",
-    ],
-    "Rahul Patil": [
-        "rahul patil anthropic",
-    ],
-    "Krishna Rao": [
-        "krishna rao anthropic",
-    ],
+    "Dario Amodei": ["dario amodei", "다리오 아모데이"],
+    "Daniela Amodei": ["daniela amodei"],
+    "Rahul Patil": ["rahul patil anthropic"],
+    "Krishna Rao": ["krishna rao anthropic"],
 
     # Google / DeepMind
-    "Sundar Pichai": [
-        "sundar pichai",
-        "순다르 피차이",
-    ],
-    "Demis Hassabis": [
-        "demis hassabis",
-    ],
-    "Jeff Dean": [
-        "jeff dean",
-    ],
-    "Amin Vahdat": [
-        "amin vahdat",
-    ],
-    "Yann LeCun": [
-        "yann lecun",
-        "yann le cun",
-    ],
-    "Noam Shazeer": [
-        "noam shazeer",
-    ],
+    "Sundar Pichai": ["sundar pichai", "순다르 피차이"],
+    "Demis Hassabis": ["demis hassabis"],
+    "Jeff Dean": ["jeff dean"],
+    "Amin Vahdat": ["amin vahdat"],
+    "Yann LeCun": ["yann lecun", "yann le cun"],
+    "Noam Shazeer": ["noam shazeer"],
 
     # Microsoft
-    "Satya Nadella": [
-        "satya nadella",
-        "사티아 나델라",
-    ],
-    "Kevin Scott": [
-        "kevin scott microsoft",
-    ],
-    "Mustafa Suleyman": [
-        "mustafa suleyman",
-    ],
+    "Satya Nadella": ["satya nadella", "사티아 나델라"],
+    "Kevin Scott": ["kevin scott microsoft"],
+    "Mustafa Suleyman": ["mustafa suleyman"],
 
     # Meta
-    "Mark Zuckerberg": [
-        "mark zuckerberg",
-        "저커버그",
-        "zuckerberg",
-    ],
-    "Andrew Bosworth": [
-        "andrew bosworth",
-        "boz",
-    ],
+    "Mark Zuckerberg": ["mark zuckerberg", "저커버그", "zuckerberg"],
+    "Andrew Bosworth": ["andrew bosworth", "boz"],
 
     # xAI / Tesla
-    "Elon Musk": [
-        "elon musk",
-        "일론 머스크",
-    ],
-    "Ashok Elluswamy": [
-        "ashok elluswamy",
-    ],
+    "Elon Musk": ["elon musk", "일론 머스크"],
+    "Ashok Elluswamy": ["ashok elluswamy"],
 
     # AMD
-    "Lisa Su": [
-        "lisa su",
-        "리사 수",
-    ],
-    "Mark Papermaster": [
-        "mark papermaster",
-    ],
-    "Forrest Norrod": [
-        "forrest norrod",
-    ],
+    "Lisa Su": ["lisa su", "리사 수"],
+    "Mark Papermaster": ["mark papermaster"],
+    "Forrest Norrod": ["forrest norrod"],
 
     # Intel
-    "Lip-Bu Tan": [
-        "lip-bu tan",
-        "lip bu tan",
-    ],
-    "Sandra Rivera": [
-        "sandra rivera",
-    ],
+    "Lip-Bu Tan": ["lip-bu tan", "lip bu tan"],
+    "Sandra Rivera": ["sandra rivera"],
 
     # Broadcom
-    "Hock Tan": [
-        "hock tan",
-    ],
-    "Charlie Kawwas": [
-        "charlie kawwas",
-    ],
+    "Hock Tan": ["hock tan"],
+    "Charlie Kawwas": ["charlie kawwas"],
 
     # Marvell
-    "Matt Murphy": [
-        "matt murphy marvell",
-    ],
-    "Chris Koopmans": [
-        "chris koopmans",
-    ],
+    "Matt Murphy": ["matt murphy marvell"],
+    "Chris Koopmans": ["chris koopmans"],
 
     # Micron
-    "Sanjay Mehrotra": [
-        "sanjay mehrotra",
-        "micron ceo",
-    ],
-    "Sumit Sadana": [
-        "sumit sadana",
-    ],
+    "Sanjay Mehrotra": ["sanjay mehrotra", "micron ceo"],
+    "Sumit Sadana": ["sumit sadana"],
 
     # TSMC
-    "C.C. Wei": [
-        "c.c. wei",
-        "cc wei",
-        "wei che-chia",
-    ],
-    "Mark Liu": [
-        "mark liu tsmc",
-    ],
-    "Morris Chang": [
-        "morris chang",
-    ],
+    "C.C. Wei": ["c.c. wei", "cc wei", "wei che-chia"],
+    "Mark Liu": ["mark liu tsmc"],
+    "Morris Chang": ["morris chang"],
 
     # Samsung / SK hynix
-    "Young-Hyun Jun": [
-        "young-hyun jun",
-        "young hyun jun",
-    ],
-    "Jong-Hee Han": [
-        "jong-hee han",
-        "jong hee han",
-    ],
-    "Chey Tae-won": [
-        "chey tae-won",
-        "choi tae-won",
-        "최태원",
-    ],
+    "Young-Hyun Jun": ["young-hyun jun", "young hyun jun"],
+    "Jong-Hee Han": ["jong-hee han", "jong hee han"],
+    "Chey Tae-won": ["chey tae-won", "choi tae-won", "최태원"],
 
     # Arista Networks
-    "Jayshree Ullal": [
-        "jayshree ullal",
-    ],
-    "Andy Bechtolsheim": [
-        "andy bechtolsheim",
-    ],
-    "Ken Duda": [
-        "ken duda",
-    ],
+    "Jayshree Ullal": ["jayshree ullal"],
+    "Andy Bechtolsheim": ["andy bechtolsheim"],
+    "Ken Duda": ["ken duda"],
 
     # Cisco
-    "Chuck Robbins": [
-        "chuck robbins",
-    ],
-    "Jonathan Rosenberg": [
-        "jonathan rosenberg cisco",
-    ],
+    "Chuck Robbins": ["chuck robbins"],
+    "Jonathan Rosenberg": ["jonathan rosenberg cisco"],
 
     # Dell
-    "Michael Dell": [
-        "michael dell",
-        "michael s dell",
-    ],
-    "Jeff Clarke": [
-        "jeff clarke dell",
-    ],
+    "Michael Dell": ["michael dell", "michael s dell"],
+    "Jeff Clarke": ["jeff clarke dell"],
 
     # HPE
-    "Antonio Neri": [
-        "antonio neri",
-    ],
-    "Fidelma Russo": [
-        "fidelma russo",
-    ],
+    "Antonio Neri": ["antonio neri"],
+    "Fidelma Russo": ["fidelma russo"],
 
     # Supermicro
-    "Charles Liang": [
-        "charles liang",
-        "liang charles",
-        "supermicro ceo",
-    ],
+    "Charles Liang": ["charles liang", "liang charles", "supermicro ceo"],
 
     # Cerebras
-    "Andrew Feldman": [
-        "andrew feldman cerebras",
-    ],
+    "Andrew Feldman": ["andrew feldman cerebras"],
 
     # Groq
-    "Jonathan Ross": [
-        "jonathan ross groq",
-    ],
+    "Jonathan Ross": ["jonathan ross groq"],
 
     # Tenstorrent
-    "Jim Keller": [
-        "jim keller",
-        "jim keller tenstorrent",
-    ],
+    "Jim Keller": ["jim keller", "jim keller tenstorrent"],
 
     # SambaNova
-    "Rodrigo Liang": [
-        "rodrigo liang",
-    ],
+    "Rodrigo Liang": ["rodrigo liang"],
 
     # Graphcore
-    "Nigel Toon": [
-        "nigel toon",
-    ],
+    "Nigel Toon": ["nigel toon"],
 
     # CoreWeave
-    "Michael Intrator": [
-        "michael intrator",
-        "coreweave ceo",
-    ],
+    "Michael Intrator": ["michael intrator", "coreweave ceo"],
 
     # Crusoe
-    "Chase Lochmiller": [
-        "chase lochmiller",
-        "crusoe",
-    ],
+    "Chase Lochmiller": ["chase lochmiller", "crusoe"],
 
     # Lambda
-    "Stephen Balaban": [
-        "stephen balaban",
-        "lambda labs",
-    ],
+    "Stephen Balaban": ["stephen balaban", "lambda labs"],
 
     # Applied Digital
-    "Wes Cummins": [
-        "wes cummins",
-    ],
+    "Wes Cummins": ["wes cummins"],
 
     # AI infrastructure / data center / power
-    "Giordano Albertazzi": [
-        "giordano albertazzi",
-    ],
-    "Peter Herweck": [
-        "peter herweck",
-    ],
-    "Craig Arnold": [
-        "craig arnold eaton",
-    ],
-    "Roland Busch": [
-        "roland busch",
-    ],
-    "Scott Strazik": [
-        "scott strazik",
-    ],
+    "Giordano Albertazzi": ["giordano albertazzi"],
+    "Peter Herweck": ["peter herweck"],
+    "Craig Arnold": ["craig arnold eaton"],
+    "Roland Busch": ["roland busch"],
+    "Scott Strazik": ["scott strazik"],
 
     # Qualcomm / Mobileye
-    "Cristiano Amon": [
-        "cristiano amon",
-    ],
-    "Amnon Shashua": [
-        "amnon shashua",
-    ],
+    "Cristiano Amon": ["cristiano amon"],
+    "Amnon Shashua": ["amnon shashua"],
 
     # IBM / Palantir / enterprise AI
-    "Arvind Krishna": [
-        "arvind krishna",
-    ],
-    "Alex Karp": [
-        "alex karp",
-    ],
-    "Thomas Kurian": [
-        "thomas kurian",
-    ],
-    "Chet Kapoor": [
-        "chet kapoor",
-    ],
+    "Arvind Krishna": ["arvind krishna"],
+    "Alex Karp": ["alex karp"],
+    "Thomas Kurian": ["thomas kurian"],
+    "Chet Kapoor": ["chet kapoor"],
 
     # Cloud
-    "Andy Jassy": [
-        "andy jassy",
-    ],
-    "Matt Garman": [
-        "matt garman",
-    ],
-    "Swami Sivasubramanian": [
-        "swami sivasubramanian",
-    ],
+    "Andy Jassy": ["andy jassy"],
+    "Matt Garman": ["matt garman"],
+    "Swami Sivasubramanian": ["swami sivasubramanian"],
 
     # AI search / model startups
-    "Aravind Srinivas": [
-        "aravind srinivas",
-    ],
-    "Mira Murati": [
-        "mira murati",
-        "미라 무라티",
-    ],
-    "Ilya Sutskever": [
-        "ilya sutskever",
-        "일리야 수츠케버",
-    ],
-    "Arthur Mensch": [
-        "arthur mensch",
-    ],
-    "Aidan Gomez": [
-        "aidan gomez",
-    ],
-    "Eric Lefkofsky": [
-        "eric lefkofsky",
-        "레프코프스키",
-    ],
+    "Aravind Srinivas": ["aravind srinivas"],
+    "Mira Murati": ["mira murati", "미라 무라티"],
+    "Ilya Sutskever": ["ilya sutskever", "일리야 수츠케버"],
+    "Arthur Mensch": ["arthur mensch"],
+    "Aidan Gomez": ["aidan gomez"],
+    "Eric Lefkofsky": ["eric lefkofsky", "레프코프스키"],
 
     # Robotics / physical AI
-    "Marc Raibert": [
-        "marc raibert",
-    ],
-    "Robert Playter": [
-        "robert playter",
-    ],
-    "Brett Adcock": [
-        "brett adcock",
-    ],
-    "Jonathan Hurst": [
-        "jonathan hurst",
-    ],
+    "Marc Raibert": ["marc raibert"],
+    "Robert Playter": ["robert playter"],
+    "Brett Adcock": ["brett adcock"],
+    "Jonathan Hurst": ["jonathan hurst"],
 
     # Investors / AI ecosystem
-    "Marc Andreessen": [
-        "marc andreessen",
-    ],
-    "Ben Horowitz": [
-        "ben horowitz",
-    ],
-    "Chamath Palihapitiya": [
-        "chamath",
-        "chamath palihapitiya",
-    ],
-    "Gavin Baker": [
-        "gavin baker",
-    ],
-    "Dylan Patel": [
-        "dylan patel",
-        "semianalysis",
-    ],
+    "Marc Andreessen": ["marc andreessen"],
+    "Ben Horowitz": ["ben horowitz"],
+    "Chamath Palihapitiya": ["chamath", "chamath palihapitiya"],
+    "Gavin Baker": ["gavin baker"],
+    "Dylan Patel": ["dylan patel", "semianalysis"],
 
     # Asia AI / tech
-    "Masayoshi Son": [
-        "masayoshi son",
-        "son masayoshi",
-    ],
-    "Pony Ma": [
-        "pony ma",
-    ],
-    "Robin Li": [
-        "robin li baidu",
-    ],
-    "Liang Wenfeng": [
-        "liang wenfeng",
-        "liang wen-feng",
-    ],
-    "Ren Zhengfei": [
-        "ren zhengfei",
-    ],
+    "Masayoshi Son": ["masayoshi son", "son masayoshi"],
+    "Pony Ma": ["pony ma"],
+    "Robin Li": ["robin li baidu"],
+    "Liang Wenfeng": ["liang wenfeng", "liang wen-feng"],
+    "Ren Zhengfei": ["ren zhengfei"],
 }
 
 
@@ -965,7 +429,6 @@ TOPIC_FREE_PERSONS = {
     "Dylan Patel",
 }
 
-
 STRICT_PERSONS = {
     "Elon Musk",
 }
@@ -975,35 +438,16 @@ def build_search_batches():
     names = list(PERSONS.keys())
     batches = []
 
-    for i in range(
-        0,
-        len(names),
-        5,
-    ):
-        group = names[
-            i:i + 5
-        ]
-
-        q = "|".join(
-            f'"{x}"'
-            for x in group
-        )
-
-        # True/False 플래그는 호환성을 위해 유지.
-        # 실제 검색에서는 duration을 분리하지 않는다.
-        batches.append(
-            (q, False)
-        )
+    for i in range(0, len(names), 5):
+        group = names[i:i + 5]
+        q = "|".join(f'"{x}"' for x in group)
+        batches.append((q, True))
 
     return batches
 
 
 SEARCH_BATCHES = build_search_batches()
 
-
-# ------------------------------------------------------------
-# 필터
-# ------------------------------------------------------------
 
 TITLE_BLACKLIST = [
     "shorts",
@@ -1043,7 +487,6 @@ TITLE_BLACKLIST = [
     "roast",
 ]
 
-
 CHANNEL_BLACKLIST_PATTERNS = [
     r"주식",
     r"투자",
@@ -1056,7 +499,6 @@ CHANNEL_BLACKLIST_PATTERNS = [
     r"quotes",
     r"success",
 ]
-
 
 TRUSTED_CHANNELS = [
     "bloomberg",
@@ -1087,7 +529,6 @@ TRUSTED_CHANNELS = [
     "sequoia",
 ]
 
-
 INTERVIEW_SIGNALS = [
     "interview",
     "full interview",
@@ -1117,7 +558,6 @@ INTERVIEW_SIGNALS = [
     "패널",
     "컨퍼런스",
 ]
-
 
 TOPIC_SIGNALS = [
     "ai",
@@ -1158,7 +598,6 @@ TOPIC_SIGNALS = [
     "inference economics",
 ]
 
-
 NEGATIVE_CONTENT_SIGNALS = [
     "according to",
     "what x thinks",
@@ -1174,172 +613,48 @@ NEGATIVE_CONTENT_SIGNALS = [
 ]
 
 
-# ------------------------------------------------------------
-# Seen
-# ------------------------------------------------------------
-
 def load_seen():
     try:
-        with open(
-            SEEN_FILE,
-            encoding="utf-8",
-        ) as f:
-            return set(
-                json.load(f)
-            )
-
+        with open(SEEN_FILE, encoding="utf-8") as f:
+            return set(json.load(f))
     except Exception:
         return set()
 
 
 def save_seen(seen):
-    with open(
-        SEEN_FILE,
-        "w",
-        encoding="utf-8",
-    ) as f:
-        json.dump(
-            sorted(seen)[-5000:],
-            f,
-            ensure_ascii=False,
-        )
+    with open(SEEN_FILE, "w", encoding="utf-8") as f:
+        json.dump(sorted(seen)[-5000:], f, ensure_ascii=False)
 
 
-# ------------------------------------------------------------
-# YouTube 검색
-# ------------------------------------------------------------
-
-def yt_search(
-    query,
-    published_after,
-    include_medium=False,
-    max_retry=2,
-):
-    """
-    YouTube search.
-
-    기존:
-        long 검색
-        medium 검색
-
-    변경:
-        duration 필터 없이 한 번 검색.
-        실제 영상 길이는 videos.list에서 확인.
-
-    이렇게 해야 search.list 호출량이 불필요하게
-    두 배가 되는 것을 막을 수 있다.
-    """
-
+def yt_search(query, published_after, include_medium=False):
     items = []
 
-    for attempt in range(max_retry):
+    durations = ["long"]
 
-        try:
-            r = requests.get(
-                "https://www.googleapis.com/youtube/v3/search",
-                params={
-                    "key": YOUTUBE_API_KEY,
-                    "part": "snippet",
-                    "q": query,
-                    "type": "video",
-                    "order": "date",
-                    "maxResults": 25,
-                    "publishedAfter": published_after,
-                },
-                timeout=30,
-            )
+    if include_medium:
+        durations.append("medium")
 
-            if r.status_code == 429:
-
-                body = (
-                    r.text[:700]
-                    .replace("\n", " ")
-                )
-
-                retry_after = r.headers.get(
-                    "Retry-After"
-                )
-
-                try:
-                    wait = int(
-                        retry_after
-                    )
-                except Exception:
-                    wait = 5 * (
-                        2 ** attempt
-                    )
-
-                wait = min(
-                    max(wait, 3),
-                    60,
-                )
-
-                print(
-                    f"[YouTube 429] "
-                    f"attempt={attempt + 1} "
-                    f"| {body[:250]}"
-                )
-
-                if attempt + 1 < max_retry:
-                    print(
-                        f"[YouTube] "
-                        f"{wait}초 후 재시도"
-                    )
-
-                    time.sleep(wait)
-                    continue
-
-                return items
-
-            r.raise_for_status()
-
-            data = r.json()
-
-            items.extend(
-                data.get(
-                    "items",
-                    [],
-                )
-            )
-
-            break
-
-        except requests.RequestException as e:
-
-            print(
-                f"[YouTube 검색 오류] "
-                f"attempt={attempt + 1}: "
-                f"{str(e)[:180]}"
-            )
-
-            if attempt + 1 < max_retry:
-                time.sleep(
-                    min(
-                        3 * (attempt + 1),
-                        10,
-                    )
-                )
-
-    # 영상 ID 기준 중복 제거
-    dedup = {}
-
-    for it in items:
-        vid = (
-            it.get("id", {})
-            .get("videoId")
+    for d in durations:
+        r = requests.get(
+            "https://www.googleapis.com/youtube/v3/search",
+            params={
+                "key": YOUTUBE_API_KEY,
+                "part": "snippet",
+                "q": query,
+                "type": "video",
+                "order": "date",
+                "maxResults": 25,
+                "publishedAfter": published_after,
+                "videoDuration": d,
+            },
+            timeout=30,
         )
 
-        if vid:
-            dedup[vid] = it
+        r.raise_for_status()
+        items.extend(r.json().get("items", []))
 
-    return list(
-        dedup.values()
-    )
+    return items
 
-
-# ------------------------------------------------------------
-# 영상 상세
-# ------------------------------------------------------------
 
 def get_video_details(video_ids):
     if not video_ids:
@@ -1347,79 +662,40 @@ def get_video_details(video_ids):
 
     out = {}
 
-    for i in range(
-        0,
-        len(video_ids),
-        50,
-    ):
-        batch = video_ids[
-            i:i + 50
-        ]
+    for i in range(0, len(video_ids), 50):
+        batch = video_ids[i:i + 50]
 
-        try:
-            r = requests.get(
-                "https://www.googleapis.com/youtube/v3/videos",
-                params={
-                    "key": YOUTUBE_API_KEY,
-                    "part": (
-                        "contentDetails,"
-                        "statistics,"
-                        "snippet,"
-                        "status"
-                    ),
-                    "id": ",".join(batch),
-                },
-                timeout=30,
-            )
+        r = requests.get(
+            "https://www.googleapis.com/youtube/v3/videos",
+            params={
+                "key": YOUTUBE_API_KEY,
+                "part": "contentDetails,statistics,snippet,status",
+                "id": ",".join(batch),
+            },
+            timeout=30,
+        )
 
-            r.raise_for_status()
+        r.raise_for_status()
 
-            for it in r.json().get(
-                "items",
-                [],
-            ):
-                out[it["id"]] = it
-
-        except Exception as e:
-            print(
-                f"[영상 상세조회 실패] "
-                f"{str(e)[:180]}"
-            )
+        for it in r.json().get("items", []):
+            out[it["id"]] = it
 
     return out
 
 
-# ------------------------------------------------------------
-# 채널 통계
-# ------------------------------------------------------------
-
 def get_channel_stats(channel_ids):
     out = {}
+    ids = list(dict.fromkeys(channel_ids))
 
-    ids = list(
-        dict.fromkeys(
-            channel_ids
-        )
-    )
-
-    for i in range(
-        0,
-        len(ids),
-        50,
-    ):
-        batch = ids[
-            i:i + 50
-        ]
+    for i in range(0, len(ids), 50):
+        batch = ids[i:i + 50]
 
         try:
             r = requests.get(
                 "https://www.googleapis.com/youtube/v3/channels",
                 params={
                     "key": YOUTUBE_API_KEY,
-                    "part": (
-                        "statistics,"
-                        "snippet"
-                    ),
+                    "part": "statistics,snippet",
                     "id": ",".join(batch),
                 },
                 timeout=30,
@@ -1427,51 +703,19 @@ def get_channel_stats(channel_ids):
 
             r.raise_for_status()
 
-            for it in r.json().get(
-                "items",
-                [],
-            ):
-
-                st = it.get(
-                    "statistics",
-                    {}
-                )
-
-                sn = it.get(
-                    "snippet",
-                    {}
-                )
+            for it in r.json().get("items", []):
+                st = it.get("statistics", {})
+                sn = it.get("snippet", {})
 
                 out[it["id"]] = {
-                    "subs": int(
-                        st.get(
-                            "subscriberCount",
-                            0,
-                        )
-                        or 0
-                    ),
-                    "hidden_subs": st.get(
-                        "hiddenSubscriberCount",
-                        False,
-                    ),
-                    "videos": int(
-                        st.get(
-                            "videoCount",
-                            0,
-                        )
-                        or 0
-                    ),
-                    "published": sn.get(
-                        "publishedAt",
-                        "",
-                    ),
+                    "subs": int(st.get("subscriberCount", 0) or 0),
+                    "hidden_subs": st.get("hiddenSubscriberCount", False),
+                    "videos": int(st.get("videoCount", 0) or 0),
+                    "published": sn.get("publishedAt", ""),
                 }
 
         except Exception as e:
-            print(
-                f"[채널조회 실패] "
-                f"{str(e)[:120]}"
-            )
+            print(f"[채널조회 실패] {str(e)[:120]}")
 
     return out
 
@@ -1483,50 +727,23 @@ def is_factory_channel(stats):
     subs = stats["subs"]
     videos = stats["videos"]
 
-    if (
-        videos >= 300
-        and subs < 5000
-    ):
-        return (
-            True,
-            f"공장형(영상{videos}/구독{subs})"
-        )
+    if videos >= 300 and subs < 5000:
+        return True, f"공장형(영상{videos}/구독{subs})"
 
-    pub = stats.get(
-        "published",
-        "",
-    )
+    pub = stats.get("published", "")
 
     if pub and videos >= 500:
-
         try:
-            created = datetime.fromisoformat(
-                pub.replace(
-                    "Z",
-                    "+00:00",
-                )
-            )
-
-            age_days = (
-                datetime.now(timezone.utc)
-                - created
-            ).days
+            created = datetime.fromisoformat(pub.replace("Z", "+00:00"))
+            age_days = (datetime.now(timezone.utc) - created).days
 
             if age_days < 365:
-                return (
-                    True,
-                    f"신생대량({age_days}일/{videos}편)"
-                )
-
+                return True, f"신생대량({age_days}일/{videos}편)"
         except Exception:
             pass
 
     return False, None
 
-
-# ------------------------------------------------------------
-# Duration
-# ------------------------------------------------------------
 
 def parse_duration(iso):
     m = re.match(
@@ -1537,171 +754,75 @@ def parse_duration(iso):
     if not m:
         return 0
 
-    h, mi, s = (
-        int(x) if x else 0
-        for x in m.groups()
-    )
+    h, mi, s = (int(x) if x else 0 for x in m.groups())
+    return h * 3600 + mi * 60 + s
 
-    return (
-        h * 3600
-        + mi * 60
-        + s
-    )
-
-
-# ------------------------------------------------------------
-# 인물 매칭
-# ------------------------------------------------------------
 
 def match_person(text):
-    t = (
-        text or ""
-    ).lower()
+    t = (text or "").lower()
 
     ordered = sorted(
         PERSONS.items(),
         key=lambda x: max(
-            [len(x[0])]
-            + [
-                len(a)
-                for a in x[1]
-            ]
+            [len(x[0])] + [len(a) for a in x[1]]
         ),
         reverse=True,
     )
 
     for name, aliases in ordered:
-
-        for a in (
-            [name.lower()]
-            + aliases
-        ):
-
+        for a in [name.lower()] + aliases:
             if a and a in t:
                 return name
 
     return None
 
 
-def contains_any(
-    text,
-    words,
-):
-    t = (
-        text or ""
-    ).lower()
-
-    return any(
-        w in t
-        for w in words
-    )
+def contains_any(text, words):
+    t = (text or "").lower()
+    return any(w in t for w in words)
 
 
-# ------------------------------------------------------------
-# 후보 점수
-# ------------------------------------------------------------
-
-def candidate_score(
-    person,
-    item,
-    detail,
-):
-
-    title = item["snippet"].get(
-        "title",
-        "",
-    )
-
-    channel = item["snippet"].get(
-        "channelTitle",
-        "",
-    )
-
-    desc = (
-        detail.get(
-            "snippet",
-            {},
-        ).get(
-            "description",
-            "",
-        )
-        or ""
-    )
+def candidate_score(person, item, detail):
+    title = item["snippet"].get("title", "")
+    channel = item["snippet"].get("channelTitle", "")
+    desc = detail.get("snippet", {}).get("description", "") or ""
 
     score = 0
 
-    if any(
-        t in channel.lower()
-        for t in TRUSTED_CHANNELS
-    ):
+    if any(t in channel.lower() for t in TRUSTED_CHANNELS):
         score += 4
 
-    if contains_any(
-        title,
-        INTERVIEW_SIGNALS,
-    ):
+    if contains_any(title, INTERVIEW_SIGNALS):
         score += 4
 
-    if contains_any(
-        desc[:1500],
-        INTERVIEW_SIGNALS,
-    ):
+    if contains_any(desc[:1500], INTERVIEW_SIGNALS):
         score += 2
 
-    if contains_any(
-        title,
-        TOPIC_SIGNALS,
-    ):
+    if contains_any(title, TOPIC_SIGNALS):
         score += 2
 
-    if contains_any(
-        desc[:1500],
-        TOPIC_SIGNALS,
-    ):
+    if contains_any(desc[:1500], TOPIC_SIGNALS):
         score += 1
 
-    if contains_any(
-        title,
-        NEGATIVE_CONTENT_SIGNALS,
-    ):
+    if contains_any(title, NEGATIVE_CONTENT_SIGNALS):
         score -= 3
 
-    if contains_any(
-        channel,
-        [
-            "news",
-            "daily",
-            "media",
-            "today",
-        ],
-    ):
+    if contains_any(channel, ["news", "daily", "media", "today"]):
         score -= 1
 
     dur = parse_duration(
-        detail.get(
-            "contentDetails",
-            {},
-        ).get(
-            "duration"
-        )
+        detail.get("contentDetails", {}).get("duration")
     )
 
     if dur >= PREFERRED_DURATION_SEC:
         score += 2
-
     elif dur < MIN_DURATION_SEC:
         score -= 5
 
     if person in CORE_PERSONS:
         score += 1
 
-    aliases = (
-        [person.lower()]
-        + PERSONS.get(
-            person,
-            [],
-        )
-    )
+    aliases = [person.lower()] + PERSONS.get(person, [])
 
     if any(
         a and a in title.lower()
@@ -1712,140 +833,59 @@ def candidate_score(
     return score
 
 
-# ------------------------------------------------------------
-# 하드 필터
-# ------------------------------------------------------------
+def hard_filter(item, detail):
+    title = item["snippet"].get("title", "")
+    channel = item["snippet"].get("channelTitle", "")
+    desc = detail.get("snippet", {}).get("description", "") or ""
 
-def hard_filter(
-    item,
-    detail,
-):
-
-    title = item["snippet"].get(
-        "title",
-        "",
-    )
-
-    channel = item["snippet"].get(
-        "channelTitle",
-        "",
-    )
-
-    desc = (
-        detail.get(
-            "snippet",
-            {},
-        ).get(
-            "description",
-            "",
-        )
-        or ""
-    )
-
-    person = (
-        match_person(title)
-        or match_person(
-            desc[:1500]
-        )
-    )
+    person = match_person(title) or match_person(desc[:1500])
 
     if not person:
         return None, "인물명 없음"
 
-    if detail.get(
-        "status",
-        {},
-    ).get(
-        "containsSyntheticMedia"
-    ):
+    if detail.get("status", {}).get("containsSyntheticMedia"):
         return None, "합성미디어 플래그"
 
     title_l = title.lower()
     channel_l = channel.lower()
 
     for b in TITLE_BLACKLIST:
-
         if b in title_l:
-            return (
-                None,
-                f"제목 블랙리스트: {b}",
-            )
+            return None, f"제목 블랙리스트: {b}"
 
     for p in CHANNEL_BLACKLIST_PATTERNS:
+        if re.search(p, channel_l):
+            return None, f"채널 블랙리스트: {p}"
 
-        if re.search(
-            p,
-            channel_l,
-        ):
-            return (
-                None,
-                f"채널 블랙리스트: {p}",
-            )
-
-    real_pub = (
-        detail.get(
-            "snippet",
-            {},
-        ).get(
-            "publishedAt",
-            "",
-        )
-    )
+    real_pub = detail.get("snippet", {}).get("publishedAt", "")
 
     if real_pub:
-
         try:
             pub_dt = datetime.fromisoformat(
-                real_pub.replace(
-                    "Z",
-                    "+00:00",
-                )
+                real_pub.replace("Z", "+00:00")
             )
 
             age_hours = (
-                datetime.now(timezone.utc)
-                - pub_dt
+                datetime.now(timezone.utc) - pub_dt
             ).total_seconds() / 3600
 
-            if age_hours > (
-                LOOKBACK_HOURS + 2
-            ):
-                return (
-                    None,
-                    f"실제게시일 범위밖 "
-                    f"({age_hours / 24:.0f}일 전)",
-                )
+            if age_hours > LOOKBACK_HOURS + 2:
+                return None, f"실제게시일 범위밖 ({age_hours / 24:.0f}일 전)"
 
         except Exception:
             pass
 
     dur = parse_duration(
-        detail.get(
-            "contentDetails",
-            {},
-        ).get(
-            "duration"
-        )
+        detail.get("contentDetails", {}).get("duration")
     )
 
-    min_dur = (
-        CORE_MIN_DURATION_SEC
-        if person in CORE_PERSONS
-        else MIN_DURATION_SEC
-    )
+    min_dur = 360 if person in CORE_PERSONS else MIN_DURATION_SEC
 
     if dur < min_dur:
-        return (
-            None,
-            f"길이 미달 ({dur // 60}분)",
-        )
+        return None, f"길이 미달 ({dur // 60}분)"
 
     return person, None
 
-
-# ============================================================
-# CELEB GEMINI PROMPT
-# ============================================================
 
 CELEB_PROMPT = r"""
 당신은 AI/반도체/데이터센터 산업의 핵심 인물 출연 영상을 찾는
@@ -1978,39 +1018,20 @@ Bloomberg/CNBC라도 뉴스 해설 영상이면 FALSE다.
 def judge_celeb_batch(chunk):
     lines = []
 
-    for i, (
-        person,
-        item,
-        detail,
-        _vid,
-        meta_score,
-    ) in enumerate(chunk):
-
+    for i, (person, item, detail, _vid, meta_score) in enumerate(chunk):
         if person in TOPIC_FREE_PERSONS:
             mode = "주제무관"
-
         elif person in STRICT_PERSONS:
             mode = "엄격"
-
         else:
             mode = "일반"
 
         desc = (
-            detail.get(
-                "snippet",
-                {},
-            ).get(
-                "description",
-                "",
-            )
+            detail.get("snippet", {}).get("description", "")
             or ""
         )
 
-        desc = strip_html(
-            desc[
-                :DESC_CHARS_FOR_GEMINI
-            ]
-        )
+        desc = strip_html(desc[:DESC_CHARS_FOR_GEMINI])
 
         lines.append(
             f"[{i}] 인물: {person}\n"
@@ -2021,27 +1042,10 @@ def judge_celeb_batch(chunk):
             f"설명: {desc}"
         )
 
-    # --------------------------------------------------------
-    # 중요:
-    #
-    # 기존:
-    # CELEB_PROMPT.format(items=...)
-    #
-    # 문제:
-    # Prompt 안의 JSON 예시 { }까지 .format()이 해석하면서
-    # KeyError: '\n    "idx"'
-    #
-    # 수정:
-    # 정확히 {items}만 치환한다.
-    # --------------------------------------------------------
-
-    prompt = CELEB_PROMPT.replace(
-        "{items}",
-        "\n\n".join(lines),
-    )
-
     out = gemini_call(
-        prompt
+        CELEB_PROMPT.format(
+            items="\n\n".join(lines)
+        )
     )
 
     return parse_json_array(
@@ -2050,38 +1054,11 @@ def judge_celeb_batch(chunk):
     )
 
 
-def send_telegram_celeb(
-    person,
-    item,
-    judge,
-    video_id,
-):
-
-    evidence = str(
-        judge.get(
-            "evidence",
-            "",
-        )
-        or ""
-    )
-
-    summary = str(
-        judge.get(
-            "summary_kr",
-            "",
-        )
-        or ""
-    )
-
-    score = judge.get(
-        "relevance_score",
-        "?",
-    )
-
-    confidence = judge.get(
-        "appearance_confidence",
-        "?",
-    )
+def send_telegram_celeb(person, item, judge, video_id):
+    evidence = judge.get("evidence", "")
+    summary = judge.get("summary_kr", "")
+    score = judge.get("relevance_score", "?")
+    confidence = judge.get("appearance_confidence", "?")
 
     msg = (
         f"🎙 <b>{html.escape(person)}</b> 직접 출연 감지\n"
@@ -2098,40 +1075,23 @@ def send_telegram_celeb(
 
 
 def run_celeb_watch():
-
     seen = load_seen()
 
     published_after = (
         datetime.now(timezone.utc)
-        - timedelta(
-            hours=LOOKBACK_HOURS
-        )
-    ).strftime(
-        "%Y-%m-%dT%H:%M:%SZ"
-    )
+        - timedelta(hours=LOOKBACK_HOURS)
+    ).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     candidates = {}
 
-    # --------------------------------------------------------
-    # YouTube 검색
-    # --------------------------------------------------------
-
     for q, inc_med in SEARCH_BATCHES:
-
         try:
-
-            results = yt_search(
+            for it in yt_search(
                 q,
                 published_after,
                 inc_med,
-            )
-
-            for it in results:
-
-                vid = (
-                    it.get("id", {})
-                    .get("videoId")
-                )
+            ):
+                vid = it.get("id", {}).get("videoId")
 
                 if not vid:
                     continue
@@ -2140,65 +1100,34 @@ def run_celeb_watch():
                     candidates[vid] = it
 
         except Exception as e:
-
             print(
-                f"[셀럽 검색 실패] "
-                f"{q}: "
-                f"{str(e)[:150]}"
+                f"[셀럽 검색 실패] {q}: {str(e)[:150]}"
             )
 
-        # YouTube API를 너무 빠르게 연속 호출하지 않도록
         time.sleep(0.7)
 
-    print(
-        f"[셀럽] 신규 후보: "
-        f"{len(candidates)}건"
-    )
+    print(f"[셀럽] 신규 후보: {len(candidates)}건")
 
     if not candidates:
-
         save_seen(seen)
 
         if NOTIFY_WHEN_EMPTY:
-            send_tg(
-                "🔍 새로운 직접출연 영상 없음"
-            )
+            send_tg("🔍 새로운 직접출연 영상 없음")
 
         return
 
-    # --------------------------------------------------------
-    # 영상 상세조회
-    # --------------------------------------------------------
-
     try:
-
         details = get_video_details(
-            list(
-                candidates.keys()
-            )
+            list(candidates.keys())
         )
-
     except Exception as e:
-
-        print(
-            f"[셀럽] 영상 상세조회 실패: "
-            f"{e}"
-        )
-
+        print(f"[셀럽] 영상 상세조회 실패: {e}")
         return
 
     passed = []
 
-    # --------------------------------------------------------
-    # 하드 필터 + 메타 점수
-    # --------------------------------------------------------
-
     for vid, item in candidates.items():
-
-        detail = details.get(
-            vid,
-            {},
-        )
+        detail = details.get(vid, {})
 
         person, reject = hard_filter(
             item,
@@ -2206,7 +1135,6 @@ def run_celeb_watch():
         )
 
         if not person:
-
             seen.add(vid)
 
             print(
@@ -2222,16 +1150,11 @@ def run_celeb_watch():
             detail,
         )
 
-        if (
-            meta_score < -1
-            and person not in CORE_PERSONS
-        ):
-
+        if meta_score < -1 and person not in CORE_PERSONS:
             seen.add(vid)
 
             print(
-                f"❌ [메타점수 낮음 "
-                f"{meta_score}] "
+                f"❌ [메타점수 낮음 {meta_score}] "
                 f"{item['snippet'].get('title', '')[:60]}"
             )
 
@@ -2247,43 +1170,22 @@ def run_celeb_watch():
             )
         )
 
-    # --------------------------------------------------------
-    # 공장형 채널 필터
-    # --------------------------------------------------------
-
     if passed:
-
         ch_ids = [
-            it["snippet"].get(
-                "channelId",
-                "",
-            )
+            it["snippet"].get("channelId", "")
             for _, it, _, _, _ in passed
         ]
 
         ch_stats = get_channel_stats(
-            [
-                c
-                for c in ch_ids
-                if c
-            ]
+            [c for c in ch_ids if c]
         )
 
         filtered = []
 
         for candidate in passed:
+            person, item, detail, vid, meta_score = candidate
 
-            (
-                person,
-                item,
-                detail,
-                vid,
-                meta_score,
-            ) = candidate
-
-            cid = item[
-                "snippet"
-            ].get(
+            cid = item["snippet"].get(
                 "channelId",
                 "",
             )
@@ -2293,7 +1195,6 @@ def run_celeb_watch():
             )
 
             if factory:
-
                 seen.add(vid)
 
                 print(
@@ -2304,85 +1205,53 @@ def run_celeb_watch():
 
                 continue
 
-            filtered.append(
-                candidate
-            )
+            filtered.append(candidate)
 
         passed = filtered
-
-    # --------------------------------------------------------
-    # 메타 점수 높은 후보 우선
-    # --------------------------------------------------------
 
     passed.sort(
         key=lambda x: x[4],
         reverse=True,
     )
 
-    passed = passed[
-        :MAX_CELEB_CANDIDATES
-    ]
+    # 이번 사이클의 Gemini 예산 안에서 가장 유력한 후보부터 판정.
+    passed = passed[:MAX_CELEB_CANDIDATES]
 
     nb = (
-        len(passed)
-        + BATCH_SIZE
-        - 1
+        len(passed) + BATCH_SIZE - 1
     ) // BATCH_SIZE
 
     print(
         f"[셀럽] Gemini 판정 대상 "
-        f"{len(passed)}건 → "
-        f"배치 {nb}회"
+        f"{len(passed)}건 → 배치 {nb}회"
     )
 
     sent = 0
-
-    # --------------------------------------------------------
-    # Gemini 판정
-    # --------------------------------------------------------
 
     for i in range(
         0,
         len(passed),
         BATCH_SIZE,
     ):
-
         chunk = passed[
             i:i + BATCH_SIZE
         ]
 
-        results = judge_celeb_batch(
-            chunk
-        )
+        results = judge_celeb_batch(chunk)
 
         for candidate, j in zip(
             chunk,
             results,
         ):
+            person, item, detail, vid, meta_score = candidate
 
-            (
-                person,
-                item,
-                detail,
-                vid,
-                meta_score,
-            ) = candidate
-
-            # Gemini 판정 실패
-            # seen에 넣지 않음
-            # → 다음 사이클에 재시도
             if j is None:
-
                 print(
-                    f"⚠ 판정실패"
-                    f"(다음사이클 재시도): "
+                    f"⚠ 판정실패(다음사이클 재시도): "
                     f"{item['snippet'].get('title', '')[:60]}"
                 )
-
                 continue
 
-            # 정상적으로 판정했으면
-            # 통과든 탈락이든 seen
             seen.add(vid)
 
             direct = j.get(
@@ -2406,11 +1275,7 @@ def run_celeb_watch():
             )
 
             evidence = str(
-                j.get(
-                    "evidence",
-                    "",
-                )
-                or ""
+                j.get("evidence", "")
             ).strip()
 
             try:
@@ -2421,7 +1286,6 @@ def run_celeb_watch():
                     )
                     or 0
                 )
-
             except Exception:
                 appearance_conf = 0
 
@@ -2433,7 +1297,6 @@ def run_celeb_watch():
                     )
                     or 0
                 )
-
             except Exception:
                 score = 0
 
@@ -2448,7 +1311,6 @@ def run_celeb_watch():
             )
 
             if should_send:
-
                 send_telegram_celeb(
                     person,
                     item,
@@ -2460,15 +1322,12 @@ def run_celeb_watch():
 
                 print(
                     f"✅ {person} | "
-                    f"출연확신 "
-                    f"{appearance_conf}/10 | "
-                    f"관련성 "
-                    f"{score}/10 | "
+                    f"출연확신 {appearance_conf}/10 | "
+                    f"관련성 {score}/10 | "
                     f"{item['snippet'].get('title', '')[:60]}"
                 )
 
             else:
-
                 print(
                     f"❌ [{person}] "
                     f"direct={direct} "
@@ -2477,37 +1336,24 @@ def run_celeb_watch():
                     f"synthetic={synthetic} "
                     f"confidence={appearance_conf} "
                     f"score={score} | "
-                    f"{str(j.get('reason', ''))[:55]}"
+                    f"{j.get('reason', '')[:55]}"
                 )
 
         time.sleep(1.5)
 
         if _gm["dead"]:
-
-            print(
-                "[셀럽] Gemini 중단 "
-                "→ 다음 사이클 재시도"
-            )
-
+            print("[셀럽] Gemini 중단 → 다음 사이클 재시도")
             break
 
     save_seen(seen)
 
-    if (
-        sent == 0
-        and NOTIFY_WHEN_EMPTY
-    ):
-
+    if sent == 0 and NOTIFY_WHEN_EMPTY:
         send_tg(
-            f"🔍 셀럽 후보 "
-            f"{len(candidates)}건 검토했으나 "
+            f"🔍 셀럽 후보 {len(candidates)}건 검토했으나 "
             "직접출연 조건 충족 영상 없음"
         )
 
-    print(
-        f"[셀럽] 완료: "
-        f"{sent}건 전송"
-    )
+    print(f"[셀럽] 완료: {sent}건 전송")
 
 
 # ============================================================
@@ -2525,43 +1371,30 @@ NAVER_BLOG_IDS = [
 ]
 
 SEEN_BLOG_FILE = "seen_twitter_blog.json"
-
 BLOG_MAX_AGE_HOURS = 30
 
 
 def load_blog_state():
-
     try:
-
         with open(
             SEEN_BLOG_FILE,
             encoding="utf-8",
         ) as f:
-
             d = json.load(f)
 
-        d.setdefault(
-            "blog",
-            {}
-        )
-
+        d.setdefault("blog", {})
         return d
 
     except Exception:
-
-        return {
-            "blog": {}
-        }
+        return {"blog": {}}
 
 
 def save_blog_state(state):
-
     with open(
         SEEN_BLOG_FILE,
         "w",
         encoding="utf-8",
     ) as f:
-
         json.dump(
             state,
             f,
@@ -2571,64 +1404,35 @@ def save_blog_state(state):
 
 
 def fetch_blog_posts(blog_id):
-
     try:
-
         resp = requests.get(
             f"https://rss.blog.naver.com/{blog_id}.xml",
-            headers={
-                "User-Agent": UA
-            },
+            headers={"User-Agent": UA},
             timeout=20,
         )
 
         if resp.status_code != 200:
-
             print(
-                f"[블로그 오류] "
-                f"{blog_id}: "
+                f"[블로그 오류] {blog_id}: "
                 f"HTTP {resp.status_code}"
             )
-
             return []
 
-        feed = feedparser.parse(
-            resp.content
-        )
+        feed = feedparser.parse(resp.content)
 
     except Exception as e:
-
-        print(
-            f"[블로그 오류] "
-            f"{blog_id}: {e}"
-        )
-
+        print(f"[블로그 오류] {blog_id}: {e}")
         return []
 
     posts = []
 
     for entry in feed.entries[:30]:
-
-        raw = entry.get(
-            "link",
-            "",
-        )
-
-        clean = (
-            raw
-            .split("?")[0]
-            .rstrip("/")
-        )
+        raw = entry.get("link", "")
+        clean = raw.split("?")[0].rstrip("/")
 
         pub = (
-            entry.get(
-                "published",
-                "",
-            )
-            or entry.get(
-                "updated",
-                "",
-            )
+            entry.get("published", "")
+            or entry.get("updated", "")
         )
 
         title = entry.get(
@@ -2639,57 +1443,39 @@ def fetch_blog_posts(blog_id):
         pub_dt = None
 
         tm = (
-            entry.get(
-                "published_parsed"
-            )
-            or entry.get(
-                "updated_parsed"
-            )
+            entry.get("published_parsed")
+            or entry.get("updated_parsed")
         )
 
         if tm:
-
             try:
-
                 pub_dt = datetime(
                     *tm[:6],
                     tzinfo=timezone.utc,
                 )
-
             except Exception:
-
                 pub_dt = None
 
         posts.append(
             {
-                "id": (
-                    clean
-                    or f"{blog_id}:{title}:{pub}"
-                ),
+                "id": clean
+                or f"{blog_id}:{title}:{pub}",
                 "title": title,
-                "url": (
-                    clean
-                    or raw
-                ),
+                "url": clean or raw,
                 "pub_dt": pub_dt,
             }
         )
 
     print(
-        f"[블로그] "
-        f"{blog_id}: "
-        f"{len(posts)}건"
+        f"[블로그] {blog_id}: {len(posts)}건"
     )
 
     return posts
 
 
 def run_blog_watch():
-
     try:
-
         state = load_blog_state()
-
         seen = state.setdefault(
             "blog",
             {},
@@ -2699,24 +1485,16 @@ def run_blog_watch():
 
         cutoff = (
             datetime.now(timezone.utc)
-            - timedelta(
-                hours=BLOG_MAX_AGE_HOURS
-            )
+            - timedelta(hours=BLOG_MAX_AGE_HOURS)
         )
 
         for blog_id in NAVER_BLOG_IDS:
-
-            posts = fetch_blog_posts(
-                blog_id
-            )
+            posts = fetch_blog_posts(blog_id)
 
             if not posts:
                 continue
 
-            first = (
-                blog_id
-                not in seen
-            )
+            first = blog_id not in seen
 
             already = set(
                 seen.get(
@@ -2726,26 +1504,19 @@ def run_blog_watch():
             )
 
             fresh = [
-                p
-                for p in posts
-                if (
-                    p["id"]
-                    and p["id"] not in already
-                )
+                p for p in posts
+                if p["id"]
+                and p["id"] not in already
             ]
 
             old_but_new = [
-                p
-                for p in fresh
-                if (
-                    p["pub_dt"]
-                    and p["pub_dt"] < cutoff
-                )
+                p for p in fresh
+                if p["pub_dt"]
+                and p["pub_dt"] < cutoff
             ]
 
             fresh = [
-                p
-                for p in fresh
+                p for p in fresh
                 if not (
                     p["pub_dt"]
                     and p["pub_dt"] < cutoff
@@ -2753,28 +1524,18 @@ def run_blog_watch():
             ]
 
             if old_but_new:
-
                 print(
-                    f"  ↳ [{blog_id}] "
-                    f"오래된 글 "
-                    f"{len(old_but_new)}건 "
-                    f"전송 생략"
+                    f"  ↳ [{blog_id}] 오래된 글 "
+                    f"{len(old_but_new)}건 전송 생략"
                 )
 
             if first:
-
                 print(
-                    f"[블로그] "
-                    f"{blog_id}: "
-                    f"baseline 저장"
+                    f"[블로그] {blog_id}: baseline 저장"
                 )
 
             else:
-
-                for p in reversed(
-                    fresh
-                ):
-
+                for p in reversed(fresh):
                     send_tg(
                         f"📝 <b>{html.escape(blog_id)}</b> 새 글\n\n"
                         f"{html.escape(p['title'])}\n\n"
@@ -2782,7 +1543,6 @@ def run_blog_watch():
                     )
 
                     total += 1
-
                     time.sleep(0.5)
 
             seen[blog_id] = list(
@@ -2797,19 +1557,14 @@ def run_blog_watch():
             )[:80]
 
         print(
-            f"[블로그] "
-            f"{total}건 전송"
+            f"[블로그] {total}건 전송"
         )
 
-        save_blog_state(
-            state
-        )
+        save_blog_state(state)
 
     except Exception as e:
-
         print(
-            f"[블로그 감시 실패] "
-            f"{str(e)[:200]}"
+            f"[블로그 감시 실패] {str(e)[:200]}"
         )
 
 
@@ -2818,7 +1573,6 @@ def run_blog_watch():
 # ============================================================
 
 CREDIT_STATE_FILE = "seen_credit.json"
-
 FEED_CACHE_VERSION = 3
 
 ENABLE_PODCAST = True
@@ -2828,48 +1582,45 @@ ENABLE_NEWS = True
 PODCAST_MAX_AGE_DAYS = 5
 NEWS_LOOKBACK_HOURS = 24
 
+# 뉴스는 "관련 뉴스"가 아니라 "투자 판단을 바꿀 정도의 중요 뉴스"만 전송
+NEWS_SCORE_THRESHOLD = 9
+NEWS_MAX_CANDIDATES = 10
+NEWS_TITLE_SIMILARITY = 0.72
+
 CREDIT_SCORE_THRESHOLD = 7
 CREDIT_MAX_SEND = 8
 CREDIT_MAX_CANDIDATES = 24
 
-
 PODCASTS = [
-
     {
         "name": "The Credit Edge",
         "apple_id": "1674628050",
     },
-
     {
         "name": "Odd Lots",
         "search": "Odd Lots Bloomberg",
         "verify": "odd lots",
     },
-
     {
         "name": "Money Stuff",
         "search": "Money Stuff Matt Levine",
         "verify": "money stuff",
     },
-
     {
         "name": "GS Exchanges",
         "search": "Goldman Sachs Exchanges",
         "verify": "exchanges",
     },
-
     {
         "name": "Behind the Money",
         "search": "Behind the Money FT",
         "verify": "behind the money",
     },
-
     {
         "name": "Unhedged",
         "search": "Unhedged Financial Times",
         "verify": "unhedged",
     },
-
     {
         "name": "BG2Pod",
         "search": "BG2Pod Gerstner Gurley",
@@ -2877,9 +1628,7 @@ PODCASTS = [
     },
 ]
 
-
 CREDIT_KEYWORDS = [
-
     "private credit",
     "private debt",
     "direct lending",
@@ -2903,7 +1652,6 @@ CREDIT_KEYWORDS = [
     "covenant",
     "downgrade",
     "rating",
-
     "data center",
     "datacenter",
     "data centre",
@@ -2914,7 +1662,6 @@ CREDIT_KEYWORDS = [
     "gpu",
     "ai infrastructure",
     "grid",
-
     "memory",
     "hbm",
     "dram",
@@ -2933,7 +1680,6 @@ CREDIT_KEYWORDS = [
     "sk hynix",
     "samsung",
     "tsmc",
-
     "blackstone",
     "apollo",
     "ares",
@@ -2942,12 +1688,10 @@ CREDIT_KEYWORDS = [
     "pimco",
 ]
 
-
 CREDIT_YT_QUERIES = [
     '"private credit" ("data center"|"data centre"|AI)',
     'hyperscaler debt "bond issuance" OR "credit spread"',
 ]
-
 
 NEWS_QUERIES = [
     '"private credit" "data center"',
@@ -2956,7 +1700,6 @@ NEWS_QUERIES = [
     '"AI capex" credit market',
     "HBM pricing contract negotiation",
 ]
-
 
 CREDIT_YT_CHANNEL_BLACK = [
     r"주식",
@@ -2969,85 +1712,42 @@ CREDIT_YT_CHANNEL_BLACK = [
 ]
 
 
-# ------------------------------------------------------------
-# Credit state
-# ------------------------------------------------------------
-
 def load_credit_state():
-
     try:
-
         with open(
             CREDIT_STATE_FILE,
             encoding="utf-8",
         ) as f:
-
             s = json.load(f)
 
     except Exception:
-
         s = {}
 
-    s.setdefault(
-        "podcast",
-        {}
-    )
+    s.setdefault("podcast", {})
+    s.setdefault("feeds", {})
+    s.setdefault("youtube", [])
+    s.setdefault("news", [])
 
-    s.setdefault(
-        "feeds",
-        {}
-    )
-
-    s.setdefault(
-        "youtube",
-        []
-    )
-
-    s.setdefault(
-        "news",
-        [])
-
-    if (
-        s.get("feed_ver")
-        != FEED_CACHE_VERSION
-    ):
-
-        print(
-            "[캐시] "
-            "피드 캐시 재해석"
-        )
-
+    if s.get("feed_ver") != FEED_CACHE_VERSION:
+        print("[캐시] 피드 캐시 재해석")
         s["feeds"] = {}
-
-        s["feed_ver"] = (
-            FEED_CACHE_VERSION
-        )
+        s["feed_ver"] = FEED_CACHE_VERSION
 
     return s
 
 
 def save_credit_state(s):
-
-    s["youtube"] = (
-        s["youtube"][-1500:]
-    )
-
-    s["news"] = (
-        s["news"][-1500:]
-    )
+    s["youtube"] = s["youtube"][-1500:]
+    s["news"] = s["news"][-1500:]
 
     for k in s["podcast"]:
-
-        s["podcast"][k] = (
-            s["podcast"][k][:60]
-        )
+        s["podcast"][k] = s["podcast"][k][:60]
 
     with open(
         CREDIT_STATE_FILE,
         "w",
         encoding="utf-8",
     ) as f:
-
         json.dump(
             s,
             f,
@@ -3057,10 +1757,7 @@ def save_credit_state(s):
 
 
 def keyword_hit(text):
-
-    t = (
-        text or ""
-    ).lower()
+    t = (text or "").lower()
 
     return any(
         k in t
@@ -3068,24 +1765,14 @@ def keyword_hit(text):
     )
 
 
-# ------------------------------------------------------------
-# Podcast feed
-# ------------------------------------------------------------
-
-def resolve_feed(
-    pod,
-    state,
-):
-
+def resolve_feed(pod, state):
     name = pod["name"]
 
     if state["feeds"].get(name):
         return state["feeds"][name]
 
     try:
-
         if pod.get("apple_id"):
-
             r = requests.get(
                 "https://itunes.apple.com/lookup",
                 params={
@@ -3096,7 +1783,6 @@ def resolve_feed(
             )
 
         else:
-
             r = requests.get(
                 "https://itunes.apple.com/search",
                 params={
@@ -3124,77 +1810,54 @@ def resolve_feed(
         ).lower()
 
         if verify:
-
             results = [
                 x
                 for x in results
                 if verify
                 in (
-                    x.get(
-                        "collectionName"
-                    )
+                    x.get("collectionName")
                     or ""
                 ).lower()
             ]
 
         if not results:
-
             print(
-                f"[팟캐스트] "
-                f"{name}: 해석 실패"
+                f"[팟캐스트] {name}: 해석 실패"
             )
-
             return None
 
         best = results[0]
 
         print(
-            f"[팟캐스트] "
-            f"{name} → "
+            f"[팟캐스트] {name} → "
             f"{best.get('collectionName')}"
         )
 
-        state["feeds"][name] = (
-            best["feedUrl"]
-        )
+        state["feeds"][name] = best["feedUrl"]
 
         return best["feedUrl"]
 
     except Exception as e:
-
         print(
-            f"[팟캐스트] "
-            f"{name} "
-            f"해석 오류: "
-            f"{str(e)[:150]}"
+            f"[팟캐스트] {name} "
+            f"해석 오류: {str(e)[:150]}"
         )
-
         return None
 
 
-def fetch_episodes(
-    feed_url,
-    name,
-):
-
+def fetch_episodes(feed_url, name):
     try:
-
         r = requests.get(
             feed_url,
-            headers={
-                "User-Agent": UA
-            },
+            headers={"User-Agent": UA},
             timeout=25,
         )
 
         if r.status_code != 200:
-
             print(
-                f"[팟캐스트] "
-                f"{name}: "
+                f"[팟캐스트] {name}: "
                 f"HTTP {r.status_code}"
             )
-
             return []
 
         d = feedparser.parse(
@@ -3202,27 +1865,20 @@ def fetch_episodes(
         )
 
     except Exception as e:
-
         print(
-            f"[팟캐스트] "
-            f"{name}: "
-            f"피드 오류 "
-            f"{str(e)[:120]}"
+            f"[팟캐스트] {name}: "
+            f"피드 오류 {str(e)[:120]}"
         )
-
         return []
 
     cutoff = (
         datetime.now(timezone.utc)
-        - timedelta(
-            days=PODCAST_MAX_AGE_DAYS
-        )
+        - timedelta(days=PODCAST_MAX_AGE_DAYS)
     )
 
     out = []
 
     for e in d.entries[:15]:
-
         eid = (
             e.get("id")
             or e.get("guid")
@@ -3233,12 +1889,8 @@ def fetch_episodes(
             continue
 
         pub = (
-            e.get(
-                "published_parsed"
-            )
-            or e.get(
-                "updated_parsed"
-            )
+            e.get("published_parsed")
+            or e.get("updated_parsed")
         )
 
         if (
@@ -3251,18 +1903,12 @@ def fetch_episodes(
             continue
 
         desc = (
-            e.get(
-                "summary",
-                "",
-            )
+            e.get("summary", "")
             or ""
         )
 
         if e.get("content"):
-
-            desc = e[
-                "content"
-            ][0].get(
+            desc = e["content"][0].get(
                 "value",
                 desc,
             )
@@ -3283,8 +1929,7 @@ def fetch_episodes(
         )
 
     print(
-        f"[팟캐스트] "
-        f"{name}: "
+        f"[팟캐스트] {name}: "
         f"최근 {PODCAST_MAX_AGE_DAYS}일 "
         f"{len(out)}건"
     )
@@ -3293,11 +1938,9 @@ def fetch_episodes(
 
 
 def collect_podcast(state):
-
     cands = []
 
     for pod in PODCASTS:
-
         name = pod["name"]
 
         feed = resolve_feed(
@@ -3328,12 +1971,6 @@ def collect_podcast(state):
             )
         )
 
-        new_eps = [
-            e
-            for e in eps
-            if e["id"] not in seen
-        ]
-
         state["podcast"][name] = list(
             dict.fromkeys(
                 [e["id"] for e in eps]
@@ -3342,29 +1979,26 @@ def collect_podcast(state):
         )
 
         if first:
-
             print(
-                f"[팟캐스트] "
-                f"{name}: "
+                f"[팟캐스트] {name}: "
                 "baseline 저장"
             )
-
             continue
 
         for ep in reversed(
-            new_eps
+            [
+                e for e in eps
+                if e["id"] not in seen
+            ]
         ):
-
             if not keyword_hit(
                 f"{ep['title']} "
                 f"{strip_html(ep['desc'])}"
             ):
-
                 print(
                     f"  ⏭ [키워드 없음] "
                     f"{ep['title'][:55]}"
                 )
-
                 continue
 
             cands.append(
@@ -3382,31 +2016,17 @@ def collect_podcast(state):
     return cands
 
 
-# ------------------------------------------------------------
-# Credit YouTube
-# ------------------------------------------------------------
-
 def collect_credit_youtube(state):
-
     after = (
         datetime.now(timezone.utc)
-        - timedelta(
-            hours=LOOKBACK_HOURS
-        )
-    ).strftime(
-        "%Y-%m-%dT%H:%M:%SZ"
-    )
+        - timedelta(hours=LOOKBACK_HOURS)
+    ).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    seen = set(
-        state["youtube"]
-    )
-
+    seen = set(state["youtube"])
     cand = {}
 
     for q in CREDIT_YT_QUERIES:
-
         try:
-
             r = requests.get(
                 "https://www.googleapis.com/youtube/v3/search",
                 params={
@@ -3421,49 +2041,20 @@ def collect_credit_youtube(state):
                 timeout=30,
             )
 
-            if r.status_code == 429:
-
-                body = (
-                    r.text[:500]
-                    .replace("\n", " ")
-                )
-
-                print(
-                    f"[크레딧YT 429] "
-                    f"{body[:250]}"
-                )
-
-                time.sleep(5)
-
-                continue
-
             r.raise_for_status()
 
             for it in r.json().get(
                 "items",
                 [],
             ):
-
-                vid = (
-                    it.get(
-                        "id",
-                        {},
-                    ).get(
-                        "videoId"
-                    )
-                )
-
-                if not vid:
-                    continue
+                vid = it["id"]["videoId"]
 
                 if vid not in seen:
                     cand[vid] = it
 
         except Exception as e:
-
             print(
-                f"[크레딧YT] "
-                f"검색 실패: "
+                f"[크레딧YT] 검색 실패: "
                 f"{str(e)[:120]}"
             )
 
@@ -3473,80 +2064,59 @@ def collect_credit_youtube(state):
         return []
 
     try:
-
         det = get_video_details(
-            list(
-                cand.keys()
-            )
+            list(cand.keys())
         )
 
     except Exception as e:
-
         print(
-            f"[크레딧YT] "
-            f"상세조회 실패: "
+            f"[크레딧YT] 상세조회 실패: "
             f"{str(e)[:120]}"
         )
-
         return []
 
     out = []
 
     for vid, it in cand.items():
-
-        title = it[
-            "snippet"
-        ]["title"]
-
-        ch = it[
-            "snippet"
-        ]["channelTitle"]
+        title = it["snippet"]["title"]
+        ch = it["snippet"]["channelTitle"]
 
         d = det.get(
             vid,
             {},
         )
 
-        desc = (
-            d.get(
-                "snippet",
-                {},
-            ).get(
-                "description",
-                "",
-            )
-        )
-
-        duration = parse_duration(
-            d.get(
-                "contentDetails",
-                {},
-            ).get(
-                "duration"
-            )
-        )
-
-        blacklisted = any(
-            re.search(
-                p,
-                ch.lower(),
-            )
-            for p in CREDIT_YT_CHANNEL_BLACK
+        desc = d.get(
+            "snippet",
+            {},
+        ).get(
+            "description",
+            "",
         )
 
         if (
-            blacklisted
-            or duration < 600
+            any(
+                re.search(
+                    p,
+                    ch.lower(),
+                )
+                for p in CREDIT_YT_CHANNEL_BLACK
+            )
+            or parse_duration(
+                d.get(
+                    "contentDetails",
+                    {},
+                ).get(
+                    "duration"
+                )
+            ) < 600
             or not keyword_hit(
-                f"{title} "
-                f"{desc[:600]}"
+                f"{title} {desc[:600]}"
             )
         ):
-
-            state[
-                "youtube"
-            ].append(vid)
-
+            state["youtube"].append(
+                vid
+            )
             continue
 
         out.append(
@@ -3556,9 +2126,7 @@ def collect_credit_youtube(state):
                 "source": ch,
                 "title": title,
                 "body": desc,
-                "url": (
-                    f"https://youtu.be/{vid}"
-                ),
+                "url": f"https://youtu.be/{vid}",
                 "seen_key": (
                     "youtube",
                     vid,
@@ -3567,39 +2135,128 @@ def collect_credit_youtube(state):
         )
 
     print(
-        f"[크레딧YT] "
-        f"판정 대상 "
+        f"[크레딧YT] 판정 대상 "
         f"{len(out)}건"
     )
 
     return out
 
 
-# ------------------------------------------------------------
-# News
-# ------------------------------------------------------------
+def _news_title_key(title):
+    """언론사/숫자/기호 차이로 같은 사건이 중복되는 것을 줄인다."""
+    t = (title or "").lower()
+    t = re.sub(r"\[[^\]]+\]", " ", t)
+    t = re.sub(r"\([^)]*\)", " ", t)
+    t = re.sub(r"[^a-z0-9가-힣]+", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
+
+
+NEWS_CRITICAL_TERMS = [
+    # 실제 금융 이벤트
+    "bond issuance", "bond sale", "debt issuance", "debt financing",
+    "credit facility", "loan facility", "private credit", "private debt",
+    "default", "defaults", "bankruptcy", "restructuring", "distress",
+    "downgrade", "rating cut", "credit rating", "credit spread",
+    "spread widening", "spread widens", "refinancing", "refinance",
+    "covenant breach", "covenant", "securitization", "asset-backed",
+    "funding", "financing", "capital raise", "liquidity",
+    # AI 인프라의 대형 금융/계약 이벤트
+    "capex financing", "capex plan", "capital expenditure",
+    "data center financing", "data centre financing",
+    "data center debt", "data centre debt", "project finance",
+    "vendor financing", "prepayment", "prepayment agreement",
+    "long-term contract", "supply agreement", "purchase agreement",
+    # 메모리 가격/계약의 실제 변화
+    "memory price", "dram price", "nand price", "hbm price",
+    "contract price", "contract pricing", "price increase", "price hike",
+]
+
+NEWS_MAJOR_ENTITIES = [
+    "microsoft", "google", "alphabet", "amazon", "meta", "oracle",
+    "coreweave", "nvidia", "blackstone", "apollo", "ares", "kkr",
+    "pimco", "wellington", "sk hynix", "samsung", "micron", "tsmc",
+]
+
+NEWS_NOISE_TERMS = [
+    "stock price", "shares rise", "shares fall", "stock rises", "stock falls",
+    "analyst", "price target", "buy rating", "sell rating", "upgrade to",
+    "downgrade to buy", "market outlook", "investor outlook", "should buy",
+    "top stocks", "best stocks", "stock picks", "why investors",
+    "earnings preview", "earnings recap", "quarterly results", "ai tool",
+    "ai model", "new ai", "launches", "unveils", "introduces",
+]
+
+
+def _news_importance_prefilter(title, body):
+    """명백히 중요하지 않은 뉴스는 Gemini에 보내기 전에 제거한다."""
+    text = f"{title} {strip_html(body)}".lower()
+
+    if any(x in text for x in NEWS_NOISE_TERMS):
+        # 단, 금융/신용 이벤트가 동시에 있으면 살려둔다.
+        if not any(x in text for x in NEWS_CRITICAL_TERMS):
+            return False
+
+    critical_hits = sum(
+        1 for x in NEWS_CRITICAL_TERMS
+        if x in text
+    )
+    entity_hits = sum(
+        1 for x in NEWS_MAJOR_ENTITIES
+        if x in text
+    )
+
+    # 대형 금융 이벤트는 단일 강한 신호도 후보로 허용.
+    if critical_hits >= 2:
+        return True
+
+    # 주요 기업 + 핵심 금융 이벤트 조합만 허용.
+    if critical_hits >= 1 and entity_hits >= 1:
+        return True
+
+    return False
+
+
+def _news_duplicate(title, selected_titles):
+    key = _news_title_key(title)
+    if not key:
+        return True
+
+    for old in selected_titles:
+        old_key = _news_title_key(old)
+        if not old_key:
+            continue
+
+        ratio = difflib.SequenceMatcher(
+            None,
+            key,
+            old_key,
+        ).ratio()
+
+        # 제목 표현이 달라도 핵심 단어 집합이 거의 같으면 중복으로 처리
+        a = set(key.split())
+        b = set(old_key.split())
+        jaccard = len(a & b) / max(1, len(a | b))
+
+        if ratio >= NEWS_TITLE_SIMILARITY or jaccard >= 0.62:
+            return True
+
+    return False
+
 
 def collect_news(state):
-
-    seen = set(
-        state["news"]
-    )
-
+    seen = set(state["news"])
     cutoff = (
         datetime.now(timezone.utc)
-        - timedelta(
-            hours=NEWS_LOOKBACK_HOURS
-        )
+        - timedelta(hours=NEWS_LOOKBACK_HOURS)
     )
 
-    out = []
-
-    dedup = set()
+    raw = []
+    url_seen = set()
+    title_seen = []
 
     for q in NEWS_QUERIES:
-
         try:
-
             r = requests.get(
                 "https://news.google.com/rss/search",
                 params={
@@ -3608,107 +2265,75 @@ def collect_news(state):
                     "gl": "US",
                     "ceid": "US:en",
                 },
-                headers={
-                    "User-Agent": UA
-                },
+                headers={"User-Agent": UA},
                 timeout=25,
             )
-
-            if r.status_code != 200:
-
-                print(
-                    f"[뉴스] HTTP "
-                    f"{r.status_code}"
-                )
-
-                continue
-
-            d = feedparser.parse(
-                r.content
-            )
+            d = feedparser.parse(r.content)
 
         except Exception as e:
-
             print(
-                f"[뉴스] 실패 "
-                f"({q}): "
+                f"[뉴스] 실패 ({q}): "
                 f"{str(e)[:120]}"
             )
-
             continue
 
-        for e in d.entries[:6]:
+        for e in d.entries[:8]:
+            link = e.get("link", "")
+            title = e.get("title", "")
+            body = e.get("summary", "")
 
-            link = e.get(
-                "link",
-                "",
-            )
-
-            if (
-                not link
-                or link in seen
-                or link in dedup
-            ):
+            if not link or link in seen or link in url_seen:
                 continue
 
-            pub = e.get(
-                "published_parsed"
-            )
-
-            if (
-                pub
-                and datetime(
+            pub = e.get("published_parsed") or e.get("updated_parsed")
+            if pub:
+                pub_dt = datetime(
                     *pub[:6],
                     tzinfo=timezone.utc,
-                ) < cutoff
-            ):
+                )
+                if pub_dt < cutoff:
+                    continue
+
+            url_seen.add(link)
+
+            # 명백한 잡음 제거
+            if not _news_importance_prefilter(title, body):
+                # 다시 검색되지 않도록 URL은 seen에 기록
+                state["news"].append(link)
                 continue
 
-            dedup.add(link)
+            # 같은 사건을 여러 언론사가 보도한 경우 대표 기사 하나만 남김
+            if _news_duplicate(title, title_seen):
+                state["news"].append(link)
+                continue
 
-            out.append(
+            title_seen.append(title)
+            raw.append(
                 {
                     "kind": "뉴스",
                     "icon": "📰",
                     "source": (
-                        e.get(
-                            "source",
-                            {},
-                        )
-                        or {}
-                    ).get(
-                        "title",
-                        "News",
-                    ),
-                    "title": e.get(
-                        "title",
-                        "",
-                    ),
-                    "body": e.get(
-                        "summary",
-                        "",
-                    ),
+                        e.get("source", {}) or {}
+                    ).get("title", "News"),
+                    "title": title,
+                    "body": body,
                     "url": link,
-                    "seen_key": (
-                        "news",
-                        link,
-                    ),
+                    "seen_key": ("news", link),
                 }
             )
 
         time.sleep(0.5)
 
+    # 후보가 너무 많아져 팟캐스트/다른 콘텐츠를 밀어내지 않도록 제한
+    raw = raw[:NEWS_MAX_CANDIDATES]
+
     print(
-        f"[뉴스] 판정 대상 "
-        f"{len(out)}건"
+        f"[뉴스] 중요뉴스 후보 "
+        f"{len(raw)}건"
     )
 
-    return out
+    return raw
 
-
-# ============================================================
-# CREDIT GEMINI PROMPT
-# ============================================================
 
 CREDIT_PROMPT = r"""
 너는 반도체/AI 인프라 투자자를 위한 콘텐츠 선별 에이전트다.
@@ -3726,10 +2351,19 @@ CREDIT_PROMPT = r"""
 - 계약 협상/선급금
 - 위 주제로 업계 실무자가 직접 발언하는 인터뷰/대담
 
-탈락:
+뉴스는 특히 엄격하게 판정한다.
+뉴스의 경우 9점 이상만 통과시킨다.
+9점은 단순히 관련 있는 뉴스가 아니라, 실제 투자 판단이나 시장 구조를 바꿀 가능성이 높은 사건이어야 한다.
+예: 대규모 채권/대출/프로젝트 파이낸싱, 신용등급 강등, 디폴트/부실, 신용스프레드 급변, AI CAPEX 자금조달 구조 변화, 대형 데이터센터 금융 문제, 대형 벤더 파이낸싱/선급금/장기공급계약, HBM/DRAM/NAND 실제 계약가격 변화.
+
+뉴스 탈락:
 - 일반 AI 기술/제품 소개
-- 스치듯 언급
+- 신제품 출시/모델 발표
+- 주가 등락이나 증권사 목표가/투자의견
 - 개인투자 채널의 종목추천/시황요약
+- 이미 널리 알려진 내용을 반복하는 기사
+- 기업 실적 자체가 아니라 단순 실적 요약
+- 스치듯 관련 키워드만 포함한 기사
 - 광고
 
 출력:
@@ -3753,7 +2387,6 @@ JSON 배열만.
 
 
 def judge_credit_batch(chunk):
-
     blob = "\n\n".join(
         f"[{i}] 종류: {c['kind']}\n"
         f"제목: {c['title']}\n"
@@ -3762,21 +2395,11 @@ def judge_credit_batch(chunk):
         for i, c in enumerate(chunk)
     )
 
-    # --------------------------------------------------------
-    # 중요:
-    # CREDIT_PROMPT 안의 JSON 예시 때문에
-    # .format()을 사용하면 KeyError가 발생한다.
-    #
-    # {items}만 정확하게 replace한다.
-    # --------------------------------------------------------
-
-    prompt = CREDIT_PROMPT.replace(
-        "{items}",
-        blob,
-    )
-
     out = gemini_call(
-        prompt
+        CREDIT_PROMPT.replace(
+            "{items}",
+            blob,
+        )
     )
 
     return parse_json_array(
@@ -3786,39 +2409,25 @@ def judge_credit_batch(chunk):
 
 
 def run_credit_watch():
-
     try:
-
         state = load_credit_state()
 
         cands = []
 
         if ENABLE_PODCAST:
-
-            print(
-                "── 팟캐스트 ──"
-            )
-
+            print("── 팟캐스트 ──")
             cands += collect_podcast(
                 state
             )
 
         if ENABLE_CREDIT_YT:
-
-            print(
-                "── 크레딧 유튜브 ──"
-            )
-
+            print("── 크레딧 유튜브 ──")
             cands += collect_credit_youtube(
                 state
             )
 
         if ENABLE_NEWS:
-
-            print(
-                "── 뉴스 ──"
-            )
-
+            print("── 뉴스 ──")
             cands += collect_news(
                 state
             )
@@ -3846,7 +2455,6 @@ def run_credit_watch():
             len(cands),
             BATCH_SIZE,
         ):
-
             chunk = cands[
                 i:i + BATCH_SIZE
             ]
@@ -3859,21 +2467,14 @@ def run_credit_watch():
                 chunk,
                 results,
             ):
-
-                # Gemini 판정 실패
-                # → seen에 넣지 않음
-                # → 다음 사이클 재시도
                 if j is None:
-
                     print(
                         f"⚠ 판정실패: "
                         f"{c['title'][:50]}"
                     )
-
                     continue
 
                 if c["seen_key"]:
-
                     state[
                         c["seen_key"][0]
                     ].append(
@@ -3881,7 +2482,6 @@ def run_credit_watch():
                     )
 
                 try:
-
                     score = int(
                         j.get(
                             "relevance_score",
@@ -3889,19 +2489,21 @@ def run_credit_watch():
                         )
                         or 0
                     )
-
                 except Exception:
-
                     score = 0
 
+                threshold = (
+                    NEWS_SCORE_THRESHOLD
+                    if c["kind"] == "뉴스"
+                    else CREDIT_SCORE_THRESHOLD
+                )
+
                 if (
-                    score >= CREDIT_SCORE_THRESHOLD
+                    score >= threshold
                     and sent < CREDIT_MAX_SEND
                 ):
-
                     pts = "".join(
-                        f"\n • "
-                        f"{html.escape(str(p))}"
+                        f"\n • {html.escape(str(p))}"
                         for p in (
                             j.get(
                                 "key_points"
@@ -3915,8 +2517,7 @@ def run_credit_watch():
                         f"<b>{html.escape(c['kind'])}</b> · "
                         f"{html.escape(c['source'])}\n"
                         f"<b>{html.escape(c['title'])}</b>\n\n"
-                        f"💡 "
-                        f"{html.escape(str(j.get('summary_kr', '') or ''))}"
+                        f"💡 {html.escape(j.get('summary_kr', ''))}"
                         f"{pts}\n\n"
                         f"점수: {score}/10\n"
                         f"{c['url']}"
@@ -3931,7 +2532,6 @@ def run_credit_watch():
                     )
 
                 else:
-
                     print(
                         f"❌ [{score}] "
                         f"{c['title'][:50]}"
@@ -3942,17 +2542,13 @@ def run_credit_watch():
             if _gm["dead"]:
                 break
 
-        save_credit_state(
-            state
-        )
+        save_credit_state(state)
 
         print(
-            f"[크레딧] "
-            f"전송 {sent}건"
+            f"[크레딧] 전송 {sent}건"
         )
 
     except Exception as e:
-
         print(
             f"[크레딧 감시 실패] "
             f"{str(e)[:250]}"
@@ -3964,85 +2560,33 @@ def run_credit_watch():
 # ============================================================
 
 def main():
-
-    print(
-        "=================================================="
-    )
-
-    print(
-        "통합 감시 봇 시작"
-    )
-
-    print(
-        "=================================================="
-    )
-
-    # --------------------------------------------------------
-    # 셀럽
-    # --------------------------------------------------------
-
     try:
-
         run_celeb_watch()
-
     except Exception as e:
-
         print(
             f"[셀럽 감시 실패] "
             f"{str(e)[:250]}"
         )
 
-    # --------------------------------------------------------
-    # 블로그
-    # --------------------------------------------------------
-
     try:
-
         run_blog_watch()
-
     except Exception as e:
-
         print(
             f"[블로그 감시 실패] "
             f"{str(e)[:250]}"
         )
 
-    # --------------------------------------------------------
-    # 크레딧
-    # --------------------------------------------------------
-
     try:
-
         run_credit_watch()
-
     except Exception as e:
-
         print(
             f"[크레딧 감시 실패] "
             f"{str(e)[:250]}"
         )
 
-    # --------------------------------------------------------
-    # 최종 상태
-    # --------------------------------------------------------
-
-    print(
-        "=================================================="
-    )
-
     print(
         f"=== Gemini 총 호출 "
-        f"{_gm['n']}회 / "
-        f"상한 {MAX_GEMINI_CALLS} ==="
-    )
-
-    print(
-        f"=== Gemini 상태: "
-        f"{'중단' if _gm['dead'] else '정상'} ==="
-    )
-
-    print(
-        "=================================================="
+        f"{_gm['n']}회 / 상한 {MAX_GEMINI_CALLS} ==="
     )
 
 
