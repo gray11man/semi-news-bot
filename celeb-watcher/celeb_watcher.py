@@ -471,6 +471,75 @@ PERSONS = {
     "Robin Li": ["robin li baidu"],
     "Liang Wenfeng": ["liang wenfeng", "liang wen-feng"],
     "Ren Zhengfei": ["ren zhengfei"],
+
+    # Oracle / enterprise AI / cloud infrastructure
+    "Larry Ellison": ["larry ellison", "lawrence ellison", "oracle cto"],
+    "Safra Catz": ["safra catz"],
+    "Clay Magouyrk": ["clay magouyrk", "oracle cloud ceo"],
+    "Mike Sicilia": ["mike sicilia", "oracle industries ceo"],
+    "T.K. Anand": ["t.k. anand", "tk anand oracle"],
+
+    # Arm / CPU architecture
+    "Rene Haas": ["rene haas", "rené haas", "arm ceo"],
+    "Mohamed Awad": ["mohamed awad arm"],
+
+    # EDA / semiconductor design software
+    "Sassine Ghazi": ["sassine ghazi", "synopsys ceo"],
+    "Aart de Geus": ["aart de geus", "synopsys"],
+    "Anirudh Devgan": ["anirudh devgan", "cadence ceo"],
+
+    # Semiconductor equipment
+    "Christophe Fouquet": ["christophe fouquet", "asml ceo"],
+    "Roger Dassen": ["roger dassen", "asml cfo"],
+    "Gary Dickerson": ["gary dickerson", "applied materials ceo"],
+    "Prabu Raja": ["prabu raja", "applied materials semiconductor"],
+    "Tim Archer": ["tim archer", "timothy archer lam research"],
+    "Rick Wallace": ["rick wallace", "kla ceo"],
+
+    # Memory / storage
+    "Manish Bhatia": ["manish bhatia micron"],
+    "Scott DeBoer": ["scott deboer", "micron cto"],
+    "David Goeckeler": ["david goeckeler", "sandisk ceo"],
+    "Irving Tan": ["irving tan", "western digital ceo"],
+
+    # AI interconnect / optics / connectivity
+    "Jitendra Mohan": ["jitendra mohan", "astera labs ceo"],
+    "Sanjay Gajendra": ["sanjay gajendra", "astera labs"],
+    "Sandeep Bharathi": ["sandeep bharathi", "marvell data center"],
+    "Will Chu": ["will chu marvell", "marvell custom cloud"],
+    "Noam Mizrahi": ["noam mizrahi marvell"],
+    "Jim Anderson": ["jim anderson coherent", "coherent ceo"],
+    "Alan Lowe": ["alan lowe lumentum", "lumentum ceo"],
+    "Bill Brennan": ["bill brennan credo", "credo semiconductor ceo"],
+    "Matthew Prince": ["matthew prince", "cloudflare ceo"],
+
+    # Data center / power / cooling / energy
+    "Olivier Blum": ["olivier blum", "schneider electric ceo"],
+    "Adaire Fox-Martin": ["adaire fox-martin", "equinix ceo"],
+    "Andy Power": ["andy power digital realty", "andrew power digital realty"],
+    "Joe Dominguez": ["joe dominguez constellation energy"],
+    "Jim Burke": ["jim burke vistra", "vistra ceo"],
+    "Arkady Volozh": ["arkady volozh", "nebius ceo"],
+
+    # Frontier AI / research / model ecosystem
+    "Fidji Simo": ["fidji simo", "openai applications"],
+    "Brad Lightcap": ["brad lightcap", "openai coo"],
+    "Wojciech Zaremba": ["wojciech zaremba", "openai"],
+    "Andrej Karpathy": ["andrej karpathy"],
+    "Fei-Fei Li": ["fei-fei li", "fei fei li", "world labs"],
+    "Alexandr Wang": ["alexandr wang", "alexander wang ai"],
+    "Nat Friedman": ["nat friedman", "nathaniel friedman ai"],
+    "Daniel Gross": ["daniel gross ai"],
+    "David Luan": ["david luan ai"],
+    "Barret Zoph": ["barret zoph", "thinking machines"],
+
+    # Robotics / embodied AI
+    "Karol Hausman": ["karol hausman", "physical intelligence"],
+    "Sergey Levine": ["sergey levine", "physical intelligence"],
+    "Chelsea Finn": ["chelsea finn", "physical intelligence"],
+    "Deepak Pathak": ["deepak pathak", "skild ai"],
+    "Abhinav Gupta": ["abhinav gupta", "skild ai"],
+    "Bernt Bornich": ["bernt bornich", "bernt børnich", "1x technologies"],
 }
 
 
@@ -498,6 +567,27 @@ CORE_PERSONS = {
     "Matt Garman",
     "Eric Lefkofsky",
     "Elon Musk",
+    "Larry Ellison",
+    "Clay Magouyrk",
+    "Rene Haas",
+    "Sassine Ghazi",
+    "Anirudh Devgan",
+    "Christophe Fouquet",
+    "Gary Dickerson",
+    "Tim Archer",
+    "Rick Wallace",
+    "Manish Bhatia",
+    "David Goeckeler",
+    "Jitendra Mohan",
+    "Sandeep Bharathi",
+    "Jim Anderson",
+    "Olivier Blum",
+    "Adaire Fox-Martin",
+    "Andy Power",
+    "Arkady Volozh",
+    "Fidji Simo",
+    "Andrej Karpathy",
+    "Fei-Fei Li",
 }
 
 
@@ -519,7 +609,7 @@ def build_search_batches():
     # 한 번의 검색으로 여러 인물을 OR 검색하고, 길이는 videos.list 상세조회 뒤 필터한다.
     names = list(PERSONS.keys())
     batches = []
-    group_size = 6
+    group_size = 8
 
     for i in range(0, len(names), group_size):
         group = names[i:i + group_size]
@@ -610,6 +700,32 @@ TRUSTED_CHANNELS = [
     "harvard",
     "berkeley",
     "sequoia",
+    "oracle",
+    "arm",
+    "asml",
+    "applied materials",
+    "lam research",
+    "kla",
+    "synopsys",
+    "cadence",
+    "micron",
+    "sandisk",
+    "western digital",
+    "astera labs",
+    "marvell",
+    "broadcom",
+    "coherent",
+    "lumentum",
+    "credo",
+    "cloudflare",
+    "equinix",
+    "digital realty",
+    "vertiv",
+    "schneider electric",
+    "ge vernova",
+    "nebius",
+    "constellation energy",
+    "vistra",
 ]
 
 INTERVIEW_SIGNALS = [
