@@ -30,9 +30,13 @@ import time
 import html
 import difflib
 from datetime import datetime, timedelta, timezone
+from urllib.parse import urlparse, parse_qs
 
 import requests
 import feedparser
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # ============================================================
@@ -63,19 +67,51 @@ _gm = {"n": 0, "dead": False, "notified": False}
 
 
 def send_tg(msg):
-    try:
-        requests.post(
-            f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
-            json={
-                "chat_id": TG_CHAT,
-                "text": msg[:4000],
-                "parse_mode": "HTML",
-                "disable_web_page_preview": False,
-            },
-            timeout=30,
-        )
-    except Exception as e:
-        print(f"[텔레그램 실패] {e}")
+    """텔레그램 전송 성공 여부를 반환한다. 실패한 항목은 seen 처리하지 않는다."""
+    url = f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": TG_CHAT,
+        "text": msg[:4000],
+        "parse_mode": "HTML",
+        "disable_web_page_preview": False,
+    }
+
+    for attempt in range(3):
+        try:
+            r = requests.post(
+                url,
+                json=payload,
+                timeout=30,
+            )
+
+            # Telegram rate limit
+            if r.status_code == 429:
+                try:
+                    retry_after = int(
+                        r.json().get("parameters", {}).get("retry_after", 3)
+                    )
+                except Exception:
+                    retry_after = 3
+
+                print(f"[텔레그램 429] {retry_after}초 후 재시도")
+                time.sleep(min(max(retry_after, 1), 30))
+                continue
+
+            r.raise_for_status()
+
+            data = r.json()
+            if data.get("ok") is True:
+                return True
+
+            print(f"[텔레그램 실패] 응답 ok=false | {str(data)[:250]}")
+
+        except Exception as e:
+            print(f"[텔레그램 실패] attempt={attempt + 1} | {str(e)[:200]}")
+
+        if attempt < 2:
+            time.sleep(2 ** attempt)
+
+    return False
 
 
 def _notify_gemini_dead(reason):
@@ -97,6 +133,19 @@ def strip_html(s):
     return re.sub(r"\s+", " ", html.unescape(s)).strip()
 
 
+def atomic_json_dump(path, data, *, indent=None):
+    """중간 종료로 seen 파일이 깨지는 것을 줄이기 위한 원자적 저장."""
+    tmp = f"{path}.tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(
+            data,
+            f,
+            ensure_ascii=False,
+            indent=indent,
+        )
+    os.replace(tmp, path)
+
+
 def _retry_delay(body):
     m = re.search(r'"retryDelay"\s*:\s*"(\d+)', body or "")
     return int(m.group(1)) if m else None
@@ -106,14 +155,14 @@ def gemini_call(prompt, max_retry=2):
     if _gm["dead"]:
         return None
 
-    if _gm["n"] >= MAX_GEMINI_CALLS:
-        print(f"[Gemini] 예산 {MAX_GEMINI_CALLS}회 소진")
-        _gm["dead"] = True
-        _notify_gemini_dead(f"호출 예산 {MAX_GEMINI_CALLS}회 소진")
-        return None
-
     for model in GEMINI_MODELS:
         for attempt in range(max_retry):
+            if _gm["n"] >= MAX_GEMINI_CALLS:
+                print(f"[Gemini] 예산 {MAX_GEMINI_CALLS}회 소진")
+                _gm["dead"] = True
+                _notify_gemini_dead(f"호출 예산 {MAX_GEMINI_CALLS}회 소진")
+                return None
+
             _gm["n"] += 1
 
             try:
@@ -133,7 +182,7 @@ def gemini_call(prompt, max_retry=2):
                 )
 
                 if r.status_code == 429:
-                    body = r.text[:500].replace("\n", " ")
+                    body = r.text[:500].replace("\\n", " ")
                     print(f"[429] {model} attempt{attempt + 1} | {body}")
 
                     if "PerDay" in body:
@@ -150,8 +199,23 @@ def gemini_call(prompt, max_retry=2):
 
                 r.raise_for_status()
 
-                txt = r.json()["candidates"][0]["content"]["parts"][0]["text"]
-                txt = re.sub(r"```json|```", "", txt).strip()
+                data = r.json()
+                candidates = data.get("candidates") or []
+                if not candidates:
+                    print(f"[Gemini] {model} 응답에 candidates 없음")
+                    continue
+
+                parts = candidates[0].get("content", {}).get("parts", [])
+                txt = "".join(
+                    p.get("text", "")
+                    for p in parts
+                    if isinstance(p, dict)
+                ).strip()
+
+                if not txt:
+                    print(f"[Gemini] {model} 빈 텍스트 응답")
+                    continue
+
                 return txt
 
             except Exception as e:
@@ -171,21 +235,37 @@ def parse_json_array(out, n):
         return [None] * n
 
     try:
-        arr = json.loads(out)
+        cleaned = re.sub(r"```(?:json)?|```", "", str(out), flags=re.I).strip()
+
+        # 모델이 앞뒤에 문장을 붙여도 첫 JSON 배열만 복구한다.
+        if not cleaned.startswith("["):
+            m = re.search(r"\[.*\]", cleaned, flags=re.S)
+            if m:
+                cleaned = m.group(0)
+
+        arr = json.loads(cleaned)
 
         if not isinstance(arr, list):
             return [None] * n
 
         res = [None] * n
+        used = set()
 
-        for j in arr:
+        # idx가 정상적으로 들어온 항목 우선 배치
+        for pos, j in enumerate(arr):
             if not isinstance(j, dict):
                 continue
 
             i = j.get("idx")
-
-            if isinstance(i, int) and 0 <= i < n:
+            if isinstance(i, int) and 0 <= i < n and i not in used:
                 res[i] = j
+                used.add(i)
+
+        # idx 누락 시 입력 순서로 보완
+        if len(arr) == n:
+            for i, j in enumerate(arr):
+                if res[i] is None and isinstance(j, dict):
+                    res[i] = j
 
         return res
 
@@ -198,23 +278,23 @@ def parse_json_array(out, n):
 # PART 2 — AI / 반도체 / 데이터센터 핵심인물 유튜브 감시
 # ============================================================
 
-SEEN_FILE = "seen_celeb_ids.json"
+SEEN_FILE = os.path.join(BASE_DIR, "seen_celeb_ids.json")
 
-LOOKBACK_HOURS = 36
+LOOKBACK_HOURS = 72
 
 # 직접 출연 감시이므로 너무 짧은 영상은 기본적으로 배제.
 # 다만 핵심 인물의 공식 키노트/인터뷰는 더 짧아도 후보로 유지.
-MIN_DURATION_SEC = 480
+MIN_DURATION_SEC = 300
 
 # 후보 우선순위용.
 PREFERRED_DURATION_SEC = 1200
 
 # 최종 알림은 매우 엄격하게.
-SCORE_THRESHOLD = 9
-MAX_CELEB_CANDIDATES = 24
+SCORE_THRESHOLD = 8
+MAX_CELEB_CANDIDATES = 32
 
 # Gemini가 읽는 설명 길이.
-DESC_CHARS_FOR_GEMINI = 1500
+DESC_CHARS_FOR_GEMINI = 2200
 
 
 # ------------------------------------------------------------
@@ -435,13 +515,16 @@ STRICT_PERSONS = {
 
 
 def build_search_batches():
+    # YouTube search.list는 호출당 쿼터 비용이 크다.
+    # 한 번의 검색으로 여러 인물을 OR 검색하고, 길이는 videos.list 상세조회 뒤 필터한다.
     names = list(PERSONS.keys())
     batches = []
+    group_size = 6
 
-    for i in range(0, len(names), 5):
-        group = names[i:i + 5]
+    for i in range(0, len(names), group_size):
+        group = names[i:i + group_size]
         q = "|".join(f'"{x}"' for x in group)
-        batches.append((q, True))
+        batches.append((q, False))
 
     return batches
 
@@ -622,38 +705,40 @@ def load_seen():
 
 
 def save_seen(seen):
-    with open(SEEN_FILE, "w", encoding="utf-8") as f:
-        json.dump(sorted(seen)[-5000:], f, ensure_ascii=False)
+    atomic_json_dump(
+        SEEN_FILE,
+        sorted(seen)[-5000:],
+    )
+
+
+class YouTubeQuotaError(RuntimeError):
+    pass
 
 
 def yt_search(query, published_after, include_medium=False):
-    items = []
+    # videoDuration을 long/medium으로 나눠 두 번 호출하지 않는다.
+    # search.list 1회만 쓰고 실제 길이는 videos.list에서 확인한다.
+    r = requests.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        params={
+            "key": YOUTUBE_API_KEY,
+            "part": "snippet",
+            "q": query,
+            "type": "video",
+            "order": "date",
+            "maxResults": 50,
+            "publishedAfter": published_after,
+        },
+        timeout=30,
+    )
 
-    durations = ["long"]
+    if r.status_code in (403, 429):
+        body = r.text[:600].lower()
+        if "quota" in body or "rate" in body:
+            raise YouTubeQuotaError(r.text[:500])
 
-    if include_medium:
-        durations.append("medium")
-
-    for d in durations:
-        r = requests.get(
-            "https://www.googleapis.com/youtube/v3/search",
-            params={
-                "key": YOUTUBE_API_KEY,
-                "part": "snippet",
-                "q": query,
-                "type": "video",
-                "order": "date",
-                "maxResults": 25,
-                "publishedAfter": published_after,
-                "videoDuration": d,
-            },
-            timeout=30,
-        )
-
-        r.raise_for_status()
-        items.extend(r.json().get("items", []))
-
-    return items
+    r.raise_for_status()
+    return r.json().get("items", [])
 
 
 def get_video_details(video_ids):
@@ -782,6 +867,98 @@ def contains_any(text, words):
     return any(w in t for w in words)
 
 
+DIRECT_GUEST_SIGNALS = [
+    "guest", "guest:", "our guest", "joined by", "joins us", "joins ",
+    "sit down with", "sits down with", "in conversation with",
+    "conversation with", "interview with", "speaks with", "talks with",
+    "fireside chat with", "featuring", "welcomes", "keynote by",
+    "keynote from", "panelist", "대담", "인터뷰", "출연", "초대",
+]
+
+
+def _person_aliases(person):
+    return list(dict.fromkeys(
+        [person.lower()] + [a.lower() for a in PERSONS.get(person, []) if a]
+    ))
+
+
+def _person_mentioned(person, text):
+    t = (text or "").lower()
+    return any(a in t for a in _person_aliases(person))
+
+
+def _guest_context(person, text, window=140):
+    """인물명 근처에 '게스트/인터뷰/키노트' 표현이 실제로 붙어 있는지 확인."""
+    t = re.sub(r"\\s+", " ", (text or "").lower())
+
+    for alias in _person_aliases(person):
+        start = 0
+        while True:
+            idx = t.find(alias, start)
+            if idx < 0:
+                break
+
+            left = max(0, idx - window)
+            right = min(len(t), idx + len(alias) + window)
+            ctx = t[left:right]
+
+            if any(sig in ctx for sig in DIRECT_GUEST_SIGNALS):
+                return True
+
+            start = idx + max(1, len(alias))
+
+    return False
+
+
+def direct_metadata_evidence(person, item, detail):
+    """
+    Gemini가 제목만 보고 출연을 상상하지 못하게 하는 코드측 안전장치.
+    TRUE여도 최종 판정은 Gemini가 다시 한다.
+    """
+    title = item.get("snippet", {}).get("title", "") or ""
+    channel = item.get("snippet", {}).get("channelTitle", "") or ""
+    desc = detail.get("snippet", {}).get("description", "") or ""
+
+    name_in_title = _person_mentioned(person, title)
+    format_in_title = contains_any(title, INTERVIEW_SIGNALS)
+    guest_in_desc = _guest_context(person, desc[:3000])
+    guest_in_title = _guest_context(person, title)
+    trusted = any(t in channel.lower() for t in TRUSTED_CHANNELS)
+
+    # 제목이 명백한 해설/분석이면 직접출연 근거로 승격하지 않는다.
+    if contains_any(title, NEGATIVE_CONTENT_SIGNALS):
+        strong_direct_title = contains_any(
+            title,
+            [
+                "full interview",
+                "in conversation",
+                "fireside chat",
+                "keynote",
+                "podcast",
+                "panel discussion",
+                "인터뷰",
+                "키노트",
+                "대담",
+            ],
+        )
+        if not strong_direct_title:
+            return False, "제목이 해설/분석형 콘텐츠"
+
+    # 가장 강한 신호: 제목 자체가 '인물 + 인터뷰/키노트/패널/팟캐스트'
+    if name_in_title and (format_in_title or guest_in_title):
+        return True, "제목에 인물명과 직접출연 형식이 함께 있음"
+
+    # 설명에 게스트/진행자/행사 문맥과 인물명이 근접해 있음
+    if guest_in_desc:
+        return True, "설명에 인물명이 게스트/인터뷰/행사 문맥으로 명시됨"
+
+    # 신뢰 채널이라도 이름만 있으면 부족하다. 설명에 출연 형식이 함께 있어야 한다.
+    if trusted and name_in_title and contains_any(desc[:2500], INTERVIEW_SIGNALS):
+        return True, "신뢰 채널 + 제목 인물명 + 설명의 출연 형식"
+
+    return False, "직접출연을 뒷받침하는 메타데이터 근거 부족"
+
+
 def candidate_score(person, item, detail):
     title = item["snippet"].get("title", "")
     channel = item["snippet"].get("channelTitle", "")
@@ -830,6 +1007,12 @@ def candidate_score(person, item, detail):
     ):
         score += 3
 
+    direct_meta, _ = direct_metadata_evidence(person, item, detail)
+    if direct_meta:
+        score += 5
+    else:
+        score -= 1
+
     return score
 
 
@@ -838,7 +1021,7 @@ def hard_filter(item, detail):
     channel = item["snippet"].get("channelTitle", "")
     desc = detail.get("snippet", {}).get("description", "") or ""
 
-    person = match_person(title) or match_person(desc[:1500])
+    person = match_person(title) or match_person(desc[:3000])
 
     if not person:
         return None, "인물명 없음"
@@ -879,7 +1062,7 @@ def hard_filter(item, detail):
         detail.get("contentDetails", {}).get("duration")
     )
 
-    min_dur = 360 if person in CORE_PERSONS else MIN_DURATION_SEC
+    min_dur = 180 if person in CORE_PERSONS else MIN_DURATION_SEC
 
     if dur < min_dur:
         return None, f"길이 미달 ({dur // 60}분)"
@@ -1030,13 +1213,20 @@ def judge_celeb_batch(chunk):
             detail.get("snippet", {}).get("description", "")
             or ""
         )
-
         desc = strip_html(desc[:DESC_CHARS_FOR_GEMINI])
+
+        direct_meta, direct_meta_reason = direct_metadata_evidence(
+            person,
+            item,
+            detail,
+        )
 
         lines.append(
             f"[{i}] 인물: {person}\n"
             f"모드: {mode}\n"
             f"메타후보점수: {meta_score}\n"
+            f"코드측 직접출연근거: {direct_meta}\n"
+            f"코드측 근거설명: {direct_meta_reason}\n"
             f"제목: {item['snippet'].get('title', '')}\n"
             f"채널: {item['snippet'].get('channelTitle', '')}\n"
             f"설명: {desc}"
@@ -1071,7 +1261,7 @@ def send_telegram_celeb(person, item, judge, video_id):
         f"https://youtu.be/{video_id}"
     )
 
-    send_tg(msg)
+    return send_tg(msg)
 
 
 def run_celeb_watch():
@@ -1083,6 +1273,7 @@ def run_celeb_watch():
     ).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     candidates = {}
+    quota_stopped = False
 
     for q, inc_med in SEARCH_BATCHES:
         try:
@@ -1099,19 +1290,27 @@ def run_celeb_watch():
                 if vid not in seen:
                     candidates[vid] = it
 
+        except YouTubeQuotaError:
+            print("[셀럽] YouTube API 쿼터 소진/제한 감지 → 남은 검색 중단")
+            quota_stopped = True
+            break
+
         except Exception as e:
             print(
                 f"[셀럽 검색 실패] {q}: {str(e)[:150]}"
             )
 
-        time.sleep(0.7)
+        time.sleep(0.5)
 
-    print(f"[셀럽] 신규 후보: {len(candidates)}건")
+    print(
+        f"[셀럽] 신규 후보: {len(candidates)}건"
+        + (" (쿼터로 검색 조기종료)" if quota_stopped else "")
+    )
 
     if not candidates:
         save_seen(seen)
 
-        if NOTIFY_WHEN_EMPTY:
+        if NOTIFY_WHEN_EMPTY and not quota_stopped:
             send_tg("🔍 새로운 직접출연 영상 없음")
 
         return
@@ -1141,7 +1340,6 @@ def run_celeb_watch():
                 f"❌ [{reject}] "
                 f"{item['snippet'].get('title', '')[:70]}"
             )
-
             continue
 
         meta_score = candidate_score(
@@ -1157,7 +1355,6 @@ def run_celeb_watch():
                 f"❌ [메타점수 낮음 {meta_score}] "
                 f"{item['snippet'].get('title', '')[:60]}"
             )
-
             continue
 
         passed.append(
@@ -1195,15 +1392,31 @@ def run_celeb_watch():
             )
 
             if factory:
-                seen.add(vid)
-
-                print(
-                    f"❌ [{why}] "
-                    f"{item['snippet'].get('channelTitle', '')[:30]} | "
-                    f"{item['snippet'].get('title', '')[:45]}"
+                direct_meta, _ = direct_metadata_evidence(
+                    person,
+                    item,
+                    detail,
                 )
 
-                continue
+                # 작은 컨퍼런스/대학 채널도 진짜 인터뷰를 올릴 수 있으므로
+                # 직접출연 근거가 있으면 하드 탈락시키지 않는다.
+                if not direct_meta:
+                    seen.add(vid)
+
+                    print(
+                        f"❌ [{why}] "
+                        f"{item['snippet'].get('channelTitle', '')[:30]} | "
+                        f"{item['snippet'].get('title', '')[:45]}"
+                    )
+                    continue
+
+                candidate = (
+                    person,
+                    item,
+                    detail,
+                    vid,
+                    meta_score - 2,
+                )
 
             filtered.append(candidate)
 
@@ -1214,7 +1427,6 @@ def run_celeb_watch():
         reverse=True,
     )
 
-    # 이번 사이클의 Gemini 예산 안에서 가장 유력한 후보부터 판정.
     passed = passed[:MAX_CELEB_CANDIDATES]
 
     nb = (
@@ -1252,23 +1464,18 @@ def run_celeb_watch():
                 )
                 continue
 
-            seen.add(vid)
-
             direct = j.get(
                 "direct_appearance",
                 False,
             )
-
             original = j.get(
                 "source_originality",
                 False,
             )
-
             indirect = j.get(
                 "indirect_content",
                 True,
             )
-
             synthetic = j.get(
                 "synthetic_or_reupload",
                 True,
@@ -1300,8 +1507,15 @@ def run_celeb_watch():
             except Exception:
                 score = 0
 
+            direct_meta, direct_meta_reason = direct_metadata_evidence(
+                person,
+                item,
+                detail,
+            )
+
             should_send = (
-                direct is True
+                direct_meta is True
+                and direct is True
                 and original is True
                 and indirect is False
                 and synthetic is False
@@ -1311,25 +1525,36 @@ def run_celeb_watch():
             )
 
             if should_send:
-                send_telegram_celeb(
+                ok = send_telegram_celeb(
                     person,
                     item,
                     j,
                     vid,
                 )
 
-                sent += 1
+                if ok:
+                    seen.add(vid)
+                    sent += 1
 
-                print(
-                    f"✅ {person} | "
-                    f"출연확신 {appearance_conf}/10 | "
-                    f"관련성 {score}/10 | "
-                    f"{item['snippet'].get('title', '')[:60]}"
-                )
+                    print(
+                        f"✅ {person} | "
+                        f"출연확신 {appearance_conf}/10 | "
+                        f"관련성 {score}/10 | "
+                        f"{item['snippet'].get('title', '')[:60]}"
+                    )
+                else:
+                    print(
+                        f"⚠ 텔레그램 전송실패 → seen 미처리/다음사이클 재시도 | "
+                        f"{person} | {item['snippet'].get('title', '')[:55]}"
+                    )
 
             else:
+                # 정상적으로 판정해 탈락한 항목만 seen 처리
+                seen.add(vid)
+
                 print(
                     f"❌ [{person}] "
+                    f"meta={direct_meta}({direct_meta_reason}) "
                     f"direct={direct} "
                     f"original={original} "
                     f"indirect={indirect} "
@@ -1339,15 +1564,15 @@ def run_celeb_watch():
                     f"{j.get('reason', '')[:55]}"
                 )
 
-        time.sleep(1.5)
+        time.sleep(1.2)
 
         if _gm["dead"]:
-            print("[셀럽] Gemini 중단 → 다음 사이클 재시도")
+            print("[셀럽] Gemini 중단 → 미판정 항목은 다음 사이클 재시도")
             break
 
     save_seen(seen)
 
-    if sent == 0 and NOTIFY_WHEN_EMPTY:
+    if sent == 0 and NOTIFY_WHEN_EMPTY and not quota_stopped:
         send_tg(
             f"🔍 셀럽 후보 {len(candidates)}건 검토했으나 "
             "직접출연 조건 충족 영상 없음"
@@ -1370,8 +1595,9 @@ NAVER_BLOG_IDS = [
     "thebeing",
 ]
 
-SEEN_BLOG_FILE = "seen_twitter_blog.json"
-BLOG_MAX_AGE_HOURS = 30
+SEEN_BLOG_FILE = os.path.join(BASE_DIR, "seen_twitter_blog.json")
+BLOG_MAX_AGE_HOURS = 72
+BLOG_FIRST_RUN_SEND_HOURS = 8
 
 
 def load_blog_state():
@@ -1390,24 +1616,80 @@ def load_blog_state():
 
 
 def save_blog_state(state):
-    with open(
+    atomic_json_dump(
         SEEN_BLOG_FILE,
-        "w",
-        encoding="utf-8",
-    ) as f:
-        json.dump(
-            state,
-            f,
-            ensure_ascii=False,
-            indent=2,
+        state,
+        indent=2,
+    )
+
+
+def _canonical_blog_link(entry, blog_id):
+    """
+    네이버 RSS가 PostView.naver?blogId=...&logNo=... 형태를 줄 때
+    쿼리를 통째로 버리면 모든 글 ID가 같은 주소가 되는 치명적 문제가 생긴다.
+    logNo를 보존한 정규 URL로 바꾼다.
+    """
+    raw = (entry.get("link", "") or "").strip()
+
+    if not raw:
+        eid = (
+            entry.get("id")
+            or entry.get("guid")
+            or ""
         )
+        return str(eid), str(eid)
+
+    try:
+        u = urlparse(raw)
+        qs = parse_qs(u.query)
+
+        q_blog = (
+            (qs.get("blogId") or [blog_id])[0]
+            or blog_id
+        )
+        log_no = (
+            (qs.get("logNo") or [None])[0]
+        )
+
+        if not log_no:
+            m = re.search(
+                r"/(?:[^/]+)/([0-9]{6,})(?:/)?$",
+                u.path or "",
+            )
+            if m:
+                log_no = m.group(1)
+
+        if log_no:
+            canonical = f"https://blog.naver.com/{q_blog}/{log_no}"
+            return canonical, canonical
+
+        # 알려진 추적 파라미터만 제거. 식별에 필요한 쿼리는 함부로 버리지 않는다.
+        clean = raw.split("#", 1)[0].rstrip("/")
+        eid = (
+            entry.get("id")
+            or entry.get("guid")
+            or clean
+        )
+        return str(eid), clean
+
+    except Exception:
+        eid = (
+            entry.get("id")
+            or entry.get("guid")
+            or raw
+        )
+        return str(eid), raw
 
 
 def fetch_blog_posts(blog_id):
     try:
         resp = requests.get(
             f"https://rss.blog.naver.com/{blog_id}.xml",
-            headers={"User-Agent": UA},
+            headers={
+                "User-Agent": UA,
+                "Cache-Control": "no-cache",
+                "Pragma": "no-cache",
+            },
             timeout=20,
         )
 
@@ -1420,24 +1702,34 @@ def fetch_blog_posts(blog_id):
 
         feed = feedparser.parse(resp.content)
 
+        if getattr(feed, "bozo", False):
+            print(
+                f"[블로그 경고] {blog_id}: RSS 파싱 경고 "
+                f"{str(getattr(feed, 'bozo_exception', ''))[:120]}"
+            )
+
     except Exception as e:
         print(f"[블로그 오류] {blog_id}: {e}")
         return []
 
     posts = []
 
-    for entry in feed.entries[:30]:
-        raw = entry.get("link", "")
-        clean = raw.split("?")[0].rstrip("/")
+    for entry in feed.entries[:40]:
+        post_id, clean_url = _canonical_blog_link(
+            entry,
+            blog_id,
+        )
 
         pub = (
             entry.get("published", "")
             or entry.get("updated", "")
         )
 
-        title = entry.get(
-            "title",
-            "(제목 없음)",
+        title = strip_html(
+            entry.get(
+                "title",
+                "(제목 없음)",
+            )
         )
 
         pub_dt = None
@@ -1458,34 +1750,46 @@ def fetch_blog_posts(blog_id):
 
         posts.append(
             {
-                "id": clean
+                "id": post_id
                 or f"{blog_id}:{title}:{pub}",
                 "title": title,
-                "url": clean or raw,
+                "url": clean_url,
                 "pub_dt": pub_dt,
             }
         )
 
+    # RSS가 중복 엔트리를 줄 때도 한 번만 처리
+    deduped = []
+    ids = set()
+
+    for p in posts:
+        if not p["id"] or p["id"] in ids:
+            continue
+        ids.add(p["id"])
+        deduped.append(p)
+
     print(
-        f"[블로그] {blog_id}: {len(posts)}건"
+        f"[블로그] {blog_id}: {len(deduped)}건"
     )
 
-    return posts
+    return deduped
 
 
 def run_blog_watch():
     try:
         state = load_blog_state()
-        seen = state.setdefault(
+        seen_map = state.setdefault(
             "blog",
             {},
         )
 
         total = 0
-
-        cutoff = (
-            datetime.now(timezone.utc)
-            - timedelta(hours=BLOG_MAX_AGE_HOURS)
+        now = datetime.now(timezone.utc)
+        normal_cutoff = now - timedelta(
+            hours=BLOG_MAX_AGE_HOURS
+        )
+        first_cutoff = now - timedelta(
+            hours=BLOG_FIRST_RUN_SEND_HOURS
         )
 
         for blog_id in NAVER_BLOG_IDS:
@@ -1494,13 +1798,18 @@ def run_blog_watch():
             if not posts:
                 continue
 
-            first = blog_id not in seen
-
+            first = blog_id not in seen_map
             already = set(
-                seen.get(
+                seen_map.get(
                     blog_id,
                     [],
                 )
+            )
+
+            # 구버전은 PostView.naver의 ? 뒤를 잘라 모든 글을 같은 ID로 만들 수 있었다.
+            legacy_collapsed = any(
+                str(x).rstrip("/") == "https://blog.naver.com/PostView.naver"
+                for x in already
             )
 
             fresh = [
@@ -1509,58 +1818,84 @@ def run_blog_watch():
                 and p["id"] not in already
             ]
 
-            old_but_new = [
-                p for p in fresh
-                if p["pub_dt"]
-                and p["pub_dt"] < cutoff
-            ]
-
-            fresh = [
-                p for p in fresh
-                if not (
-                    p["pub_dt"]
-                    and p["pub_dt"] < cutoff
-                )
-            ]
-
-            if old_but_new:
-                print(
-                    f"  ↳ [{blog_id}] 오래된 글 "
-                    f"{len(old_but_new)}건 전송 생략"
-                )
+            newly_seen = set()
+            send_cutoff = (
+                first_cutoff
+                if first or legacy_collapsed
+                else normal_cutoff
+            )
 
             if first:
                 print(
-                    f"[블로그] {blog_id}: baseline 저장"
+                    f"[블로그] {blog_id}: 첫 실행 — "
+                    f"최근 {BLOG_FIRST_RUN_SEND_HOURS}시간 글만 알림"
                 )
 
-            else:
-                for p in reversed(fresh):
-                    send_tg(
-                        f"📝 <b>{html.escape(blog_id)}</b> 새 글\n\n"
-                        f"{html.escape(p['title'])}\n\n"
-                        f"{p['url']}"
+            if legacy_collapsed:
+                print(
+                    f"[블로그] {blog_id}: 구버전 PostView ID 충돌 감지 — "
+                    "최근 글만 복구 알림"
+                )
+
+            # 오래된 신규 항목은 과거 backlog로 보고 전송 없이 seen 처리
+            eligible = []
+            for p in fresh:
+                if (
+                    p["pub_dt"] is not None
+                    and p["pub_dt"] < send_cutoff
+                ):
+                    newly_seen.add(p["id"])
+                    continue
+
+                eligible.append(p)
+
+            # RSS는 보통 최신순이므로 오래된 것부터 알림
+            for p in reversed(eligible):
+                ok = send_tg(
+                    f"📝 <b>{html.escape(blog_id)}</b> 새 글\n\n"
+                    f"{html.escape(p['title'])}\n\n"
+                    f"{p['url']}"
+                )
+
+                if ok:
+                    newly_seen.add(p["id"])
+                    total += 1
+                    print(
+                        f"✅ [블로그] {blog_id} | "
+                        f"{p['title'][:60]}"
+                    )
+                else:
+                    print(
+                        f"⚠ [블로그] 전송실패 → seen 미처리/다음사이클 재시도 | "
+                        f"{blog_id} | {p['title'][:55]}"
                     )
 
-                    total += 1
-                    time.sleep(0.5)
+                time.sleep(0.4)
 
-            seen[blog_id] = list(
+            # 현재 RSS에서 확인된 기존 글 + 정상 처리한 신규 글만 저장.
+            # 전송 실패 신규 글은 일부러 넣지 않아 다음 주기에 재시도한다.
+            current_existing = [
+                p["id"]
+                for p in posts
+                if p["id"] in already
+            ]
+
+            merged = list(
                 dict.fromkeys(
-                    [
-                        p["id"]
-                        for p in posts
-                        if p["id"]
-                    ]
+                    list(newly_seen)
+                    + current_existing
                     + list(already)
                 )
-            )[:80]
+            )
+
+            seen_map[blog_id] = merged[:200]
+
+            # 한 블로그 처리 후 즉시 저장해 중간 종료에도 상태 보존
+            save_blog_state(state)
 
         print(
             f"[블로그] {total}건 전송"
         )
-
-        save_blog_state(state)
 
     except Exception as e:
         print(
@@ -1572,20 +1907,21 @@ def run_blog_watch():
 # PART 4 — 크레딧 / 사모대출 / AI CAPEX 금융 감시
 # ============================================================
 
-CREDIT_STATE_FILE = "seen_credit.json"
-FEED_CACHE_VERSION = 3
+CREDIT_STATE_FILE = os.path.join(BASE_DIR, "seen_credit.json")
+FEED_CACHE_VERSION = 4
 
 ENABLE_PODCAST = True
 ENABLE_CREDIT_YT = False
 ENABLE_NEWS = True
 
 PODCAST_MAX_AGE_DAYS = 5
-NEWS_LOOKBACK_HOURS = 24
+NEWS_LOOKBACK_HOURS = 48
 
 # 뉴스는 "관련 뉴스"가 아니라 "투자 판단을 바꿀 정도의 중요 뉴스"만 전송
 NEWS_SCORE_THRESHOLD = 9
 NEWS_MAX_CANDIDATES = 10
 NEWS_TITLE_SIMILARITY = 0.72
+NEWS_EVENT_TTL_DAYS = 7
 
 CREDIT_SCORE_THRESHOLD = 7
 CREDIT_MAX_SEND = 8
@@ -1694,11 +2030,10 @@ CREDIT_YT_QUERIES = [
 ]
 
 NEWS_QUERIES = [
-    '"private credit" "data center"',
-    "hyperscaler bond issuance debt",
-    '"data center" debt financing spreads',
-    '"AI capex" credit market',
-    "HBM pricing contract negotiation",
+    '"private credit" ("data center" OR "data centre" OR "AI infrastructure")',
+    '("data center" OR "data centre") ("debt financing" OR "project finance" OR "credit spread")',
+    '("AI capex" OR "AI infrastructure") (bond OR debt OR financing OR prepayment)',
+    '(HBM OR DRAM OR NAND) ("contract price" OR pricing OR prepayment OR "supply agreement")',
 ]
 
 CREDIT_YT_CHANNEL_BLACK = [
@@ -1727,12 +2062,26 @@ def load_credit_state():
     s.setdefault("feeds", {})
     s.setdefault("youtube", [])
     s.setdefault("news", [])
+    s.setdefault("news_events", {})
 
     if s.get("feed_ver") != FEED_CACHE_VERSION:
         print("[캐시] 피드 캐시 재해석")
         s["feeds"] = {}
         s["feed_ver"] = FEED_CACHE_VERSION
 
+    # 오래된 사건 중복키는 자동 정리
+    cutoff = datetime.now(timezone.utc) - timedelta(days=10)
+    cleaned = {}
+
+    for k, v in (s.get("news_events") or {}).items():
+        try:
+            dt = datetime.fromisoformat(str(v).replace("Z", "+00:00"))
+            if dt >= cutoff:
+                cleaned[k] = v
+        except Exception:
+            continue
+
+    s["news_events"] = cleaned
     return s
 
 
@@ -1741,19 +2090,27 @@ def save_credit_state(s):
     s["news"] = s["news"][-1500:]
 
     for k in s["podcast"]:
-        s["podcast"][k] = s["podcast"][k][:60]
+        s["podcast"][k] = s["podcast"][k][:100]
 
-    with open(
+    # 사건키는 최근 것만 유지
+    cutoff = datetime.now(timezone.utc) - timedelta(days=10)
+    cleaned = {}
+
+    for k, v in (s.get("news_events") or {}).items():
+        try:
+            dt = datetime.fromisoformat(str(v).replace("Z", "+00:00"))
+            if dt >= cutoff:
+                cleaned[k] = v
+        except Exception:
+            continue
+
+    s["news_events"] = cleaned
+
+    atomic_json_dump(
         CREDIT_STATE_FILE,
-        "w",
-        encoding="utf-8",
-    ) as f:
-        json.dump(
-            s,
-            f,
-            ensure_ascii=False,
-            indent=2,
-        )
+        s,
+        indent=2,
+    )
 
 
 def keyword_hit(text):
@@ -1971,14 +2328,12 @@ def collect_podcast(state):
             )
         )
 
-        state["podcast"][name] = list(
-            dict.fromkeys(
-                [e["id"] for e in eps]
-                + list(seen)
-            )
-        )
-
         if first:
+            # 첫 실행은 과거 에피소드 폭탄 방지용 baseline
+            state["podcast"][name] = [
+                e["id"] for e in eps
+            ][:100]
+
             print(
                 f"[팟캐스트] {name}: "
                 "baseline 저장"
@@ -1999,6 +2354,7 @@ def collect_podcast(state):
                     f"  ⏭ [키워드 없음] "
                     f"{ep['title'][:55]}"
                 )
+                state["podcast"].setdefault(name, []).append(ep["id"])
                 continue
 
             cands.append(
@@ -2009,7 +2365,11 @@ def collect_podcast(state):
                     "title": ep["title"],
                     "body": ep["desc"],
                     "url": ep["url"],
-                    "seen_key": None,
+                    "seen_key": (
+                        "podcast",
+                        name,
+                        ep["id"],
+                    ),
                 }
             )
 
@@ -2153,7 +2513,6 @@ def _news_title_key(title):
 
 
 NEWS_CRITICAL_TERMS = [
-    # 실제 금융 이벤트
     "bond issuance", "bond sale", "debt issuance", "debt financing",
     "credit facility", "loan facility", "private credit", "private debt",
     "default", "defaults", "bankruptcy", "restructuring", "distress",
@@ -2161,21 +2520,53 @@ NEWS_CRITICAL_TERMS = [
     "spread widening", "spread widens", "refinancing", "refinance",
     "covenant breach", "covenant", "securitization", "asset-backed",
     "funding", "financing", "capital raise", "liquidity",
-    # AI 인프라의 대형 금융/계약 이벤트
-    "capex financing", "capex plan", "capital expenditure",
-    "data center financing", "data centre financing",
-    "data center debt", "data centre debt", "project finance",
+    "capex financing", "capital expenditure", "project finance",
     "vendor financing", "prepayment", "prepayment agreement",
     "long-term contract", "supply agreement", "purchase agreement",
-    # 메모리 가격/계약의 실제 변화
-    "memory price", "dram price", "nand price", "hbm price",
     "contract price", "contract pricing", "price increase", "price hike",
 ]
 
 NEWS_MAJOR_ENTITIES = [
-    "microsoft", "google", "alphabet", "amazon", "meta", "oracle",
+    "microsoft", "google", "alphabet", "amazon", "aws", "meta", "oracle",
     "coreweave", "nvidia", "blackstone", "apollo", "ares", "kkr",
     "pimco", "wellington", "sk hynix", "samsung", "micron", "tsmc",
+]
+
+NEWS_HYPERSCALERS = [
+    "microsoft", "google", "alphabet", "amazon", "aws", "meta", "oracle",
+]
+
+NEWS_AI_INFRA_TERMS = [
+    "ai capex", "ai infrastructure", "data center", "datacenter",
+    "data centre", "gpu", "accelerator", "compute capacity",
+    "compute cluster", "training cluster", "inference cluster",
+    "cloud infrastructure", "server capacity", "hbm",
+]
+
+NEWS_MEMORY_TERMS = [
+    "hbm", "dram", "nand", "memory",
+]
+
+NEWS_MEMORY_EVENT_TERMS = [
+    "contract price", "contract pricing", "pricing",
+    "price increase", "price hike", "prepayment",
+    "supply agreement", "purchase agreement",
+]
+
+NEWS_GENERIC_FINANCE_TERMS = [
+    "bond issuance", "bond sale", "debt issuance", "debt financing",
+    "funding", "financing", "capital raise", "refinancing", "refinance",
+]
+
+NEWS_DISTRESS_TERMS = [
+    "default", "defaults", "bankruptcy", "restructuring", "distress",
+    "downgrade", "rating cut", "covenant breach", "liquidity",
+]
+
+NEWS_PRIVATE_CREDIT_TERMS = [
+    "private credit", "private debt", "direct lending",
+    "asset-backed", "securitization", "securitisation",
+    "project finance", "vendor financing",
 ]
 
 NEWS_NOISE_TERMS = [
@@ -2189,32 +2580,130 @@ NEWS_NOISE_TERMS = [
 
 
 def _news_importance_prefilter(title, body):
-    """명백히 중요하지 않은 뉴스는 Gemini에 보내기 전에 제거한다."""
+    """
+    뉴스는 '관련 있음'이 아니라 'AI 인프라 투자 판단을 바꿀 사건'만 남긴다.
+    특히 하이퍼스케일러의 일반 회사채는 AI CAPEX/데이터센터 연결이 없으면 탈락.
+    """
     text = f"{title} {strip_html(body)}".lower()
 
+    critical = any(x in text for x in NEWS_CRITICAL_TERMS)
+    ai_context = any(x in text for x in NEWS_AI_INFRA_TERMS)
+    memory_context = any(x in text for x in NEWS_MEMORY_TERMS)
+    memory_event = any(x in text for x in NEWS_MEMORY_EVENT_TERMS)
+    hyperscaler = any(x in text for x in NEWS_HYPERSCALERS)
+    generic_finance = any(x in text for x in NEWS_GENERIC_FINANCE_TERMS)
+    distress = any(x in text for x in NEWS_DISTRESS_TERMS)
+    private_credit = any(x in text for x in NEWS_PRIVATE_CREDIT_TERMS)
+    major_entity = any(x in text for x in NEWS_MAJOR_ENTITIES)
+
     if any(x in text for x in NEWS_NOISE_TERMS):
-        # 단, 금융/신용 이벤트가 동시에 있으면 살려둔다.
-        if not any(x in text for x in NEWS_CRITICAL_TERMS):
+        if not (critical or (memory_context and memory_event)):
             return False
 
-    critical_hits = sum(
-        1 for x in NEWS_CRITICAL_TERMS
-        if x in text
-    )
-    entity_hits = sum(
-        1 for x in NEWS_MAJOR_ENTITIES
-        if x in text
-    )
-
-    # 대형 금융 이벤트는 단일 강한 신호도 후보로 허용.
-    if critical_hits >= 2:
+    # 메모리 가격/계약은 그 자체로 핵심 관심사
+    if memory_context and memory_event:
         return True
 
-    # 주요 기업 + 핵심 금융 이벤트 조합만 허용.
-    if critical_hits >= 1 and entity_hits >= 1:
+    # CoreWeave 부실/신용 이벤트는 AI 인프라 자체의 자금조달 문제라 직접 통과
+    if "coreweave" in text and distress:
+        return True
+
+    # 사모크레딧/프로젝트 파이낸싱도 데이터센터·AI 인프라 연결이 있어야 한다.
+    if private_credit:
+        return ai_context
+
+    # 핵심 수정:
+    # Amazon/MS/Google/Meta/Oracle의 일반 채권 발행은 AI 용도 연결이 없으면 버린다.
+    if hyperscaler and generic_finance and not ai_context:
+        return False
+
+    # 나머지 금융 이벤트는 AI 인프라 문맥 + 주요 주체가 같이 있어야 후보
+    if critical and ai_context and major_entity:
+        return True
+
+    # 매우 명백한 AI 인프라 금융 이벤트는 회사명이 없어도 후보 허용
+    strong_ai_finance = sum(
+        1 for x in (
+            "data center financing",
+            "data centre financing",
+            "project finance",
+            "vendor financing",
+            "capex financing",
+            "prepayment",
+        )
+        if x in text
+    )
+    if ai_context and strong_ai_finance >= 1:
         return True
 
     return False
+
+
+def _news_event_key(title, body):
+    """같은 사건을 다른 언론사가 매일 다시 써도 며칠간 한 사건으로 묶는다."""
+    text = f"{title} {strip_html(body)}".lower()
+
+    entity = next(
+        (x for x in NEWS_MAJOR_ENTITIES if x in text),
+        "unknown",
+    )
+
+    if any(x in text for x in NEWS_MEMORY_EVENT_TERMS) and any(
+        x in text for x in NEWS_MEMORY_TERMS
+    ):
+        bucket = "memory_contract_price"
+    elif "private credit" in text or "private debt" in text:
+        bucket = "private_credit"
+    elif "project finance" in text or "data center financing" in text or "data centre financing" in text:
+        bucket = "data_center_financing"
+    elif any(x in text for x in NEWS_DISTRESS_TERMS):
+        bucket = "distress_rating"
+    elif "prepayment" in text:
+        bucket = "prepayment"
+    elif "supply agreement" in text or "purchase agreement" in text:
+        bucket = "supply_agreement"
+    elif any(x in text for x in ("bond issuance", "bond sale", "debt issuance")):
+        bucket = "bond"
+    elif any(x in text for x in NEWS_GENERIC_FINANCE_TERMS):
+        bucket = "financing"
+    else:
+        bucket = "other"
+
+    amount = ""
+    m = re.search(
+        r"(?:\$|£|€)?\s*\d+(?:\.\d+)?\s*(?:billion|million|bn|mn|b|m)\b",
+        text,
+    )
+    if m:
+        amount = re.sub(r"\s+", "", m.group(0))
+
+    currency = next(
+        (
+            x for x in (
+                "gbp", "sterling", "pound", "usd", "dollar",
+                "eur", "euro", "yen", "jpy"
+            )
+            if x in text
+        ),
+        "",
+    )
+
+    # 금액이 없으면 제목의 핵심어 일부를 보조키로 사용
+    if not amount:
+        title_key = _news_title_key(title)
+        stop = {
+            "the", "a", "an", "to", "of", "for", "in", "on", "and",
+            "with", "as", "at", "from", "says", "said",
+        }
+        words = [
+            w for w in title_key.split()
+            if w not in stop
+        ]
+        tail = "_".join(words[:5])
+    else:
+        tail = amount
+
+    return f"{entity}|{bucket}|{currency}|{tail}"[:240]
 
 
 def _news_duplicate(title, selected_titles):
@@ -2244,6 +2733,29 @@ def _news_duplicate(title, selected_titles):
     return False
 
 
+def _news_event_recent(state, event_key):
+    ts = (state.get("news_events") or {}).get(event_key)
+    if not ts:
+        return False
+
+    try:
+        dt = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+        return (
+            datetime.now(timezone.utc) - dt
+        ) < timedelta(days=NEWS_EVENT_TTL_DAYS)
+    except Exception:
+        return False
+
+
+def _mark_news_event(state, event_key):
+    if not event_key:
+        return
+
+    state.setdefault("news_events", {})[event_key] = (
+        datetime.now(timezone.utc).isoformat()
+    )
+
+
 def collect_news(state):
     seen = set(state["news"])
     cutoff = (
@@ -2254,6 +2766,7 @@ def collect_news(state):
     raw = []
     url_seen = set()
     title_seen = []
+    cycle_events = set()
 
     for q in NEWS_QUERIES:
         try:
@@ -2268,6 +2781,7 @@ def collect_news(state):
                 headers={"User-Agent": UA},
                 timeout=25,
             )
+            r.raise_for_status()
             d = feedparser.parse(r.content)
 
         except Exception as e:
@@ -2277,9 +2791,9 @@ def collect_news(state):
             )
             continue
 
-        for e in d.entries[:8]:
+        for e in d.entries[:12]:
             link = e.get("link", "")
-            title = e.get("title", "")
+            title = strip_html(e.get("title", ""))
             body = e.get("summary", "")
 
             if not link or link in seen or link in url_seen:
@@ -2295,19 +2809,36 @@ def collect_news(state):
                     continue
 
             url_seen.add(link)
+            event_key = _news_event_key(title, body)
 
-            # 명백한 잡음 제거
-            if not _news_importance_prefilter(title, body):
-                # 다시 검색되지 않도록 URL은 seen에 기록
+            # 과거 며칠 내 같은 사건을 이미 처리했으면 다른 언론사 기사도 차단
+            if _news_event_recent(state, event_key):
                 state["news"].append(link)
                 continue
 
-            # 같은 사건을 여러 언론사가 보도한 경우 대표 기사 하나만 남김
+            # 같은 실행 안에서 같은 사건 중복
+            if event_key in cycle_events:
+                state["news"].append(link)
+                continue
+
+            # 일반 회사채 등 명백한 잡음은 Gemini까지 보내지 않는다.
+            if not _news_importance_prefilter(title, body):
+                state["news"].append(link)
+                _mark_news_event(state, event_key)
+                print(
+                    f"  ⏭ [뉴스 사전탈락] {title[:75]}"
+                )
+                continue
+
+            # 제목 기반 중복도 한 번 더 제거
             if _news_duplicate(title, title_seen):
                 state["news"].append(link)
+                _mark_news_event(state, event_key)
                 continue
 
+            cycle_events.add(event_key)
             title_seen.append(title)
+
             raw.append(
                 {
                     "kind": "뉴스",
@@ -2319,12 +2850,12 @@ def collect_news(state):
                     "body": body,
                     "url": link,
                     "seen_key": ("news", link),
+                    "event_key": event_key,
                 }
             )
 
-        time.sleep(0.5)
+        time.sleep(0.4)
 
-    # 후보가 너무 많아져 팟캐스트/다른 콘텐츠를 밀어내지 않도록 제한
     raw = raw[:NEWS_MAX_CANDIDATES]
 
     print(
@@ -2365,6 +2896,9 @@ CREDIT_PROMPT = r"""
 - 기업 실적 자체가 아니라 단순 실적 요약
 - 스치듯 관련 키워드만 포함한 기사
 - 광고
+- Amazon/MS/Google/Meta/Oracle의 일반 회사채 발행·통화별 채권 조달처럼
+  AI CAPEX, 데이터센터, GPU/서버 조달, 전력 인프라와 직접 연결되지 않은 일반 재무 뉴스
+- 특히 영국 파운드화/유로화/달러화 채권 발행이라는 이유만으로 높은 점수를 주지 마라
 
 출력:
 JSON 배열만.
@@ -2406,6 +2940,31 @@ def judge_credit_batch(chunk):
         out,
         len(chunk),
     )
+
+
+def _mark_credit_seen(state, c):
+    key = c.get("seen_key")
+
+    if key:
+        kind = key[0]
+
+        if kind == "podcast" and len(key) >= 3:
+            _, name, eid = key[:3]
+            arr = state["podcast"].setdefault(name, [])
+            if eid not in arr:
+                arr.append(eid)
+
+        elif kind in ("youtube", "news") and len(key) >= 2:
+            value = key[1]
+            arr = state.setdefault(kind, [])
+            if value not in arr:
+                arr.append(value)
+
+    if c.get("kind") == "뉴스":
+        _mark_news_event(
+            state,
+            c.get("event_key"),
+        )
 
 
 def run_credit_watch():
@@ -2469,17 +3028,10 @@ def run_credit_watch():
             ):
                 if j is None:
                     print(
-                        f"⚠ 판정실패: "
+                        f"⚠ 판정실패(다음사이클 재시도): "
                         f"{c['title'][:50]}"
                     )
                     continue
-
-                if c["seen_key"]:
-                    state[
-                        c["seen_key"][0]
-                    ].append(
-                        c["seen_key"][1]
-                    )
 
                 try:
                     score = int(
@@ -2498,10 +3050,14 @@ def run_credit_watch():
                     else CREDIT_SCORE_THRESHOLD
                 )
 
-                if (
-                    score >= threshold
-                    and sent < CREDIT_MAX_SEND
-                ):
+                if score >= threshold:
+                    if sent >= CREDIT_MAX_SEND:
+                        print(
+                            f"⏸ 전송상한 도달 → seen 미처리/다음사이클 재시도 | "
+                            f"[{score}] {c['title'][:50]}"
+                        )
+                        continue
+
                     pts = "".join(
                         f"\n • {html.escape(str(p))}"
                         for p in (
@@ -2512,7 +3068,7 @@ def run_credit_watch():
                         )[:3]
                     )
 
-                    send_tg(
+                    ok = send_tg(
                         f"{c['icon']} "
                         f"<b>{html.escape(c['kind'])}</b> · "
                         f"{html.escape(c['source'])}\n"
@@ -2523,23 +3079,41 @@ def run_credit_watch():
                         f"{c['url']}"
                     )
 
-                    sent += 1
+                    if ok:
+                        _mark_credit_seen(
+                            state,
+                            c,
+                        )
+                        sent += 1
 
-                    print(
-                        f"✅ [{score}] "
-                        f"{c['source']} - "
-                        f"{c['title'][:50]}"
-                    )
+                        print(
+                            f"✅ [{score}] "
+                            f"{c['source']} - "
+                            f"{c['title'][:50]}"
+                        )
+                    else:
+                        print(
+                            f"⚠ 텔레그램 전송실패 → seen 미처리/다음사이클 재시도 | "
+                            f"[{score}] {c['title'][:50]}"
+                        )
 
                 else:
+                    # 판정이 정상 완료된 탈락 항목만 seen 처리
+                    _mark_credit_seen(
+                        state,
+                        c,
+                    )
+
                     print(
                         f"❌ [{score}] "
                         f"{c['title'][:50]}"
                     )
 
-            time.sleep(1.5)
+            save_credit_state(state)
+            time.sleep(1.2)
 
             if _gm["dead"]:
+                print("[크레딧] Gemini 중단 → 미판정 항목은 다음 사이클 재시도")
                 break
 
         save_credit_state(state)
