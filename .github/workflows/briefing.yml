@@ -1,41 +1,107 @@
-name: Semi-AI Daily Briefing
+name: AI Semiconductor News
+
 on:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: '23 */3 * * *'
+
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '체크하면 텔레그램 전송 없이 선별 결과만 확인'
+        type: boolean
+        default: false
+
 permissions:
   contents: write
+
 concurrency:
-  group: briefing
+  group: ai-semiconductor-news
   cancel-in-progress: false
+
+env:
+  BOT_DIR: '.'
+
 jobs:
-  briefing:
+  news:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
+
     steps:
-      - name: Checkout
+      - name: 저장소 가져오기
         uses: actions/checkout@v4
-      - name: Setup Python
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Python 설치
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-          cache: "pip"
-      - name: Install deps
-        run: pip install requests feedparser trafilatura deep-translator
-      - name: Run bot
+          python-version: '3.12'
+
+      - name: 필요한 패키지 설치
+        run: |
+          python -m pip install -r "$BOT_DIR/requirements-ai.txt"
+
+      - name: 뉴스 수집 및 텔레그램 전송
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
-        run: python bot.py
-      - name: Commit state files
+
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash-lite' }}
+
+          GEMINI_MAX_CALLS_PER_RUN: '24'
+          MAX_SEND_PER_RUN: '3'
+          NEWS_WINDOW_HOURS: '36'
+
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
+
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          touch seen.json queue.json news.json
-          git add seen.json queue.json news.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "update state [skip ci]"
-            git push
+          cd "$BOT_DIR"
+          python bot.py
+
+      - name: 전송 기록과 대기 기사 저장
+        if: always()
+        env:
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+
+        run: |
+          set -euo pipefail
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          for name in seen.json news.json; do
+            if [ -f "$BOT_DIR/$name" ]; then
+              git add -- "$BOT_DIR/$name"
+            fi
+          done
+
+          if git diff --cached --quiet; then
+            echo "저장할 변경 사항이 없습니다."
+            exit 0
           fi
+
+          git commit -m 'Save AI news decisions and deliveries [skip ci]'
+
+          for attempt in 1 2 3; do
+            git pull --rebase origin "$TARGET_BRANCH"
+
+            if git push origin "HEAD:$TARGET_BRANCH"; then
+              exit 0
+            fi
+          done
+
+          echo "전송 기록 저장에 실패했습니다."
+          exit 1
+
+      - name: 진단 결과 및 복구 파일 보관
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-news-diagnostics
+          path: |
+            ${{ env.BOT_DIR }}/diagnostics.json
+            ${{ env.BOT_DIR }}/seen.json
+            ${{ env.BOT_DIR }}/news.json
+          if-no-files-found: ignore
+          retention-days: 14
