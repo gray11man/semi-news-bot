@@ -95,6 +95,10 @@ def _validate(picks, items, limit):
     return results[:limit]
 
 
+class BatchReplyError(ValueError):
+    """배치 응답 실패. 부분 결과를 전송하지 않고 다른 배치는 계속 검토."""
+
+
 def _pick(items, history, limit, review=False):
     key = os.getenv("GEMINI_KEY", "")
     if not key:
@@ -107,6 +111,8 @@ def _pick(items, history, limit, review=False):
                    {"past_sent": history, "articles": records}, ensure_ascii=False)}]}],
                "generationConfig": {"maxOutputTokens": 8192,
                    "responseMimeType": "application/json", "responseSchema": SCHEMA}}
+    if model.startswith("gemini-2.5-flash"):
+        payload["generationConfig"]["thinkingConfig"] = {"thinkingBudget": 1024}
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     for attempt in range(3):
         try:
@@ -124,13 +130,46 @@ def _pick(items, history, limit, review=False):
             continue
         if r.status_code != 200:
             raise ValueError(f"Gemini HTTP {r.status_code}; 키/쿼터/모델 접근을 확인하세요")
-        data = r.json()
+        try:
+            data = r.json()
+        except ValueError:
+            if attempt < 2:
+                print("[pick] JSON 응답 손상: 재시도")
+                time.sleep(2)
+                continue
+            raise BatchReplyError("JSON 응답 손상: 재시도 소진") from None
+        if not isinstance(data, dict):
+            raise BatchReplyError("Gemini 응답 객체 형식 오류")
         candidates = data.get("candidates") or []
-        if not candidates or candidates[0].get("finishReason") != "STOP":
-            raise ValueError("Gemini 응답 미완료/차단")
+        finish = candidates[0].get("finishReason", "MISSING") if candidates else "NO_CANDIDATE"
+        feedback = data.get("promptFeedback", {}).get("blockReason", "NONE")
+        usage = data.get("usageMetadata", {})
+        print(f"[pick] 완료상태={finish}, 입력차단={feedback}, "
+              f"생각토큰={usage.get('thoughtsTokenCount', 0)}, "
+              f"출력토큰={usage.get('candidatesTokenCount', 0)}")
+        if feedback not in ("NONE", "BLOCK_REASON_UNSPECIFIED") or finish in (
+                "SAFETY", "RECITATION", "BLOCKLIST", "PROHIBITED_CONTENT", "SPII", "IMAGE_SAFETY"):
+            raise BatchReplyError(f"응답 차단: finishReason={finish}, blockReason={feedback}")
+        if finish != "STOP":
+            if attempt < 2:
+                if finish == "MAX_TOKENS":
+                    payload["generationConfig"]["maxOutputTokens"] = 16384
+                print(f"[pick] 불완전 응답 {finish}: 재시도 {attempt+1}/2")
+                time.sleep(2)
+                continue
+            raise BatchReplyError(f"재시도 후에도 미완료: finishReason={finish}")
         raw = "".join(p.get("text", "") for p in candidates[0].get("content", {}).get("parts", [])
                       if not p.get("thought"))
-        return _validate(json.loads(raw), items, limit)
+        try:
+            parsed = json.loads(raw)
+        except ValueError:
+            if attempt < 2:
+                print("[pick] 완료 응답의 JSON/본문 누락: 재시도")
+                time.sleep(2)
+                continue
+            raise BatchReplyError("완료 응답의 JSON/본문 오류: 재시도 소진") from None
+        return _validate(parsed, items, limit)
+
     raise ValueError("Gemini 재시도 소진")
 
 
@@ -148,9 +187,21 @@ def pick_critical(news_items, max_pick=None):
         # 모든 기사를 빠짐없이 분할 검토. 큰 입력에서 뒤쪽 피드가 잘리는 것을 방지.
         batch_size = 60
         candidates = []
+        successful_batches = 0
+        failed_batches = 0
         for offset in range(0, len(news_items), batch_size):
             batch = news_items[offset:offset + batch_size]
-            candidates.extend(_pick(batch, history, limit))
+            try:
+                candidates.extend(_pick(batch, history, limit))
+                successful_batches += 1
+            except BatchReplyError as exc:
+                failed_batches += 1
+                print(f"[pick] 배치 {offset//batch_size+1} 보류: {exc}; 다른 배치 계속")
+        if failed_batches:
+            print(f"[pick] 부분 심사: 정상 {successful_batches}배치 / 실패 {failed_batches}배치. "
+                  "실패 기사는 전송 기록하지 않으며 다음 수집창 안에서 재검토")
+        if not successful_batches:
+            raise BatchReplyError("모든 배치 판단 실패")
         if candidates:
             final = _pick(candidates, history, limit, review=True)
             print(f"[pick] 후보 {len(candidates)} → 최종 {len(final)}건")
