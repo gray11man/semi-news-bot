@@ -283,13 +283,13 @@ SEEN_FILE = os.path.join(BASE_DIR, "seen_celeb_ids.json")
 LOOKBACK_HOURS = 72
 
 # 기본 검색은 YouTube API 단계에서 20분 초과(long)만 받는다.
-# 핵심 인물만 4~20분(medium) 원본 인터뷰/키노트를 예외적으로 추가 검색한다.
+# 4~20분(medium)은 최핵심 인물만 예외적으로 추가 검색한다.
 MIN_DURATION_SEC = 1200
 CORE_MEDIUM_MIN_SEC = 240
 
-# 비핵심 인물은 4개 조로 나눠 6시간 슬롯마다 순환 검색한다.
-# GitHub Actions가 6시간마다 실행되면 하루 동안 전체 비핵심 인물을 한 번씩 훑는다.
-NONCORE_ROTATION_SHARDS = 4
+# 비핵심 인물은 6개 조로 나눠 6시간 슬롯마다 순환 검색한다.
+# LOOKBACK_HOURS=72라 36시간에 한 번 검색해도 최근 업로드를 놓치지 않는다.
+NONCORE_ROTATION_SHARDS = 6
 SEARCH_GROUP_SIZE = 8
 
 # 후보 우선순위용.
@@ -597,6 +597,24 @@ CORE_PERSONS = {
 }
 
 
+# 4~20분짜리까지 매 실행마다 따로 검색할 최핵심 인물.
+# medium 검색은 search.list를 추가로 소모하므로 정말 중요한 인물만 둔다.
+ULTRA_CORE_MEDIUM = {
+    "Jensen Huang",
+    "Sam Altman",
+    "Dario Amodei",
+    "Demis Hassabis",
+    "Sundar Pichai",
+    "Satya Nadella",
+    "Lisa Su",
+    "Mark Zuckerberg",
+    "Elon Musk",
+    "Hock Tan",
+    "Sanjay Mehrotra",
+    "C.C. Wei",
+}
+
+
 TOPIC_FREE_PERSONS = {
     "Marc Andreessen",
     "Ben Horowitz",
@@ -623,19 +641,21 @@ def _make_name_batches(names, duration):
 
 def build_search_batches(now=None):
     """
-    쿼터 절약형 검색 계획.
+    초절약형 검색 계획.
 
-    - 핵심 인물: 매 실행마다 20분 초과(long) 검색
-    - 핵심 인물: 4~20분(medium)도 별도 검색하되, 후단에서 직접출연 근거가 있어야 통과
-    - 비핵심 인물: 4개 조로 나눠 현재 6시간 슬롯에 해당하는 조만 long 검색
+    - 핵심 인물 전체: 매 실행마다 20분 초과(long) 검색
+    - 최핵심 인물만: 4~20분(medium) 추가 검색
+    - 비핵심 인물: 6개 조로 순환하며 해당 조만 long 검색
 
-    6시간마다 실행하면 하루에 비핵심 전체를 한 번씩 커버한다.
+    LOOKBACK_HOURS가 72시간이므로 비핵심은 36시간 주기로 돌아도
+    정상적인 6시간 스케줄에서는 최근 업로드를 다시 잡을 수 있다.
     """
     now = now or datetime.now(timezone.utc)
     slot = int(now.timestamp() // (6 * 3600)) % NONCORE_ROTATION_SHARDS
 
     names = list(PERSONS.keys())
     core_names = [n for n in names if n in CORE_PERSONS]
+    medium_names = [n for n in core_names if n in ULTRA_CORE_MEDIUM]
     noncore_names = [n for n in names if n not in CORE_PERSONS]
     rotated_noncore = [
         n for idx, n in enumerate(noncore_names)
@@ -644,10 +664,13 @@ def build_search_batches(now=None):
 
     batches = []
     batches += _make_name_batches(core_names, "long")
-    batches += _make_name_batches(core_names, "medium")
+    batches += _make_name_batches(medium_names, "medium")
     batches += _make_name_batches(rotated_noncore, "long")
 
-    return batches, slot, len(core_names), len(rotated_noncore), len(noncore_names)
+    return (
+        batches, slot, len(core_names), len(medium_names),
+        len(rotated_noncore), len(noncore_names)
+    )
 
 
 TITLE_BLACKLIST = [
@@ -1432,10 +1455,15 @@ def run_celeb_watch():
     candidates = {}
     quota_stopped = False
 
-    search_batches, rotation_slot, core_count, rotated_count, noncore_count = build_search_batches()
+    (
+        search_batches, rotation_slot, core_count, medium_count,
+        rotated_count, noncore_count
+    ) = build_search_batches()
     print(
-        f"[셀럽] 검색계획: 핵심 {core_count}명 매회(long+medium), "
-        f"비핵심 {rotated_count}/{noncore_count}명 순환조 {rotation_slot + 1}/{NONCORE_ROTATION_SHARDS}, "
+        f"[셀럽] 검색계획: 핵심 {core_count}명 long 매회, "
+        f"최핵심 {medium_count}명만 medium 추가, "
+        f"비핵심 {rotated_count}/{noncore_count}명 순환조 "
+        f"{rotation_slot + 1}/{NONCORE_ROTATION_SHARDS}, "
         f"search.list 최대 {len(search_batches)}회"
     )
 
