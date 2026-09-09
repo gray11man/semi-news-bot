@@ -1476,33 +1476,6 @@
         "sector": "광통신"
       }
     },
-    "6a45f5627892ec106667efcdd7111247f03de55b244a786e3a67ca38be7f578d": {
-      "title": "퀄컴, 아마존과 80조원 차세대 AI칩 동맹…5.4조원 신주인수권도(종합)",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE43YnFUU1VUWFNyNkMtZmJMbG4xa182aTV0SDJRSDVoX3Jud2lSWDJVSmpJMDVWUXdCS1hqNGdMaE0zazBDNVVMZVlVVmVIZ194cTEzclJyZ2NJdkpEbkRDRdIBYEFVX3lxTE43YnFUU1VUWFNyNkMtZmJMbG4xa182aTV0SDJRSDVoX3Jud2lSWDJVSmpJMDVWUXdCS1hqNGdMaE0zazBDNVVMZVlVVmVIZ194cTEzclJyZ2NJdkpEbkRDRQ?oc=5",
-      "summary": "퀄컴, 아마존과 80조원 차세대 AI칩 동맹…5.4조원 신주인수권도(종합) 연합뉴스",
-      "source": "연합뉴스",
-      "published": "2026-09-08T23:59:18+00:00",
-      "feed": "accelerators_ko",
-      "stage": "candidate"
-    },
-    "b774207ea82c3c7e695240ffc2cc62bfd7820df8714005fb06ac7d081a17919a": {
-      "title": "AWS, 퀄컴과 최대 600억달러 'AI 칩 동맹'… 엔비디아 빈틈 노린다",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBOc3RtcVphVzJmOHd0N1puVHlVVUwxaDRxSVVkUEg5ZDl4Ui1wQUNHSHJ0Z1llRTd5anMtczV0Tlg0X3NKTVBtdFFtTlVKYXhoT2t6UXV0T2tUQl9oc2c1djlNWER3cmJYRzloUEdrVnhEaVQz?oc=5",
-      "summary": "AWS, 퀄컴과 최대 600억달러 'AI 칩 동맹'… 엔비디아 빈틈 노린다 financialpost.co.kr",
-      "source": "financialpost.co.kr",
-      "published": "2026-09-08T23:48:58+00:00",
-      "feed": "accelerators_ko",
-      "stage": "candidate"
-    },
-    "0855cb182125be32a8bc0bd3a8248f94fedb842a1f28df533aeabe77231c8c40": {
-      "title": "2028년 신규수주 1조원 전망…지엔씨에너지 분석 개시",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBoMkF0WHRwbW5WY3RXUm1KUWhGQk1jWTJ3cjZlYUZNMXJ6VVJZVUdmdWJnLU45aTFoMUFEWFFvUVVkTXVia2owd0hyV1ZXOUl5UHBYaWpvb2VieVHSAVtBVV95cUxQaDJBdFh0cG1uVmN0V1JtSlFoRkJNY1kyd3I2ZWFGTTFyelVSWVVHZnViZy1OOWkxaDFBRFhRb1FVZE11YmtqMHdIcldWVzlJeVBwWGlqb29lYnlR?oc=5",
-      "summary": "2028년 신규수주 1조원 전망…지엔씨에너지 분석 개시 tokenpost.kr",
-      "source": "tokenpost.kr",
-      "published": "2026-09-08T23:37:30+00:00",
-      "feed": "infra_ko",
-      "stage": "candidate"
-    },
     "5173d78f3332428db0f95ad48ae4b727dbbc1823f420f59b3e9c14935a5a8f41": {
       "title": "삼성전기, AI·서버용 차세대 반도체 패키지기판 공개…2.5D·유리기판 등",
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBseVJ5UHNEYmZUS0hBYkxrTlhMOGZGbW9aRnBrRndOLUxnVUtfV3BhTjlmM3JvVWVpZVNaeDY5R0xTckZQQktmeGpQVzk4RUxsWmYwaWwyVlfSAVhBVV95cUxQbHlSeVBzRGJmVEtIQWJMa05YTDhmRm1vWkZwa0Z3Ti1MZ1VLX1dwYU45ZjNyb1VlaWVTWng2OUdMU3JGUEJLZnhqUFc5OEVMbFpmMGlsMlZX?oc=5",
@@ -1510,7 +1483,17 @@
       "source": "아주경제",
       "published": "2026-09-08T23:28:56+00:00",
       "feed": "materials",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "삼성전기, AI·서버용 차세대 반도체 패키지 기판 공개",
+        "fact": "삼성전기가 AI 및 서버용 차세대 반도체 패키지 기판으로 2.5D 및 유리기판 기술을 공개했습니다.",
+        "impact": "AI 모델의 성능과 전력 효율을 높이는 데 중요한 역할을 하는 고성능 패키지 기판 기술 개발은 AI 반도체 경쟁력을 강화하고, 데이터센터 및 AI 서버 시장의 기술 발전을 견인할 수 있습니다.",
+        "watch": "차세대 패키지 기판의 실제 양산 시점 및 주요 고객사 확보 여부",
+        "evidence": "삼성전기, AI·서버용 차세대 반도체 패키지기판 공개…2.5D·유리기판 등",
+        "evidence_kind": "언론 보도",
+        "sector": "AI 반도체 패키징"
+      }
     },
     "6f553d5944420e88a302403a1921362406c749c31954a69835f41b261e721eb0": {
       "title": "AI伺服器拉貨炸裂！這「ODM大廠」8月營收暴增177％、緯穎雙創新高 神達千億大關也穩了",
@@ -1519,25 +1502,17 @@
       "source": "FTNN 新聞網",
       "published": "2026-09-08T23:20:00+00:00",
       "feed": "taiwan",
-      "stage": "candidate"
-    },
-    "5b55414d22bff9e42dfebedadc7d43ecff080d029d9b0f75a418b77e5491e9c9": {
-      "title": "OpenAI GPT-6 Astra will run a retailer without cheating and sell more stuff than Anthropic",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNcDgzRjhlSjlDY3pZa0UwTGFIOEltSGRwM25QelZqSlk4c2JVYldCbnhkMllXVzVhV2JOVGllNXByQ08wUTB0cjVYZ3lia0tURV9kSzM0b2ItUjl0VF9NUTZrX3dIU3dyRkJQUnlwc09uRzRaUkNoZy1GOGtRLWdKS3ZoQVpKb3VaLUJ5Z0Zwd0xucU1oY0ZzaGl6WE9TbGQxX1JEbTBxQ05TbXJwdGRrdUNSNzVGRWlVY0t0M1FKbUJPeWJBMnVicHIxOEZYdzQ1dHhkSW0wQi1GcGd0QW1WVQ?oc=5",
-      "summary": "OpenAI GPT-6 Astra will run a retailer without cheating and sell more stuff than Anthropic theregister.com",
-      "source": "theregister.com",
-      "published": "2026-09-08T23:14:17+00:00",
-      "feed": "ai_models",
-      "stage": "candidate"
-    },
-    "8008b9f19d4555da51e5db56b46e713183d97cd24b5dad35fad2a3bdda6dbe16": {
-      "title": "지엔씨에너지, AI데이터센터 수주 본격화 기대-IBK",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPMk5jQVdjOXQyWFh0MnZ2MjJ2RC1pdndrS2pyZkdHSHRGRldHeG13UWFESEE1bS1XYVZaS0JYd0FROTVtcDlqS1Vld205TFg3SWYxZWo0VlBvNEpoMGZSMFF5dnJKZFZFTzZoUmVuZ3ZLZVZxUGQycFJqUGYtWjA3Wg?oc=5",
-      "summary": "지엔씨에너지, AI데이터센터 수주 본격화 기대-IBK edaily.co.kr",
-      "source": "edaily.co.kr",
-      "published": "2026-09-08T22:50:53+00:00",
-      "feed": "infra_ko",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "AI 서버 수요 폭발...ODM 업체 8월 매출 177% 급증, 緯穎 신기록",
+        "fact": "AI 서버 수요 증가로 인해 특정 ODM(Original Design Manufacturer) 업체의 8월 매출이 전년 대비 177% 급증했으며, 緯穎(Wiwynn) 또한 최고 매출 기록을 경신했습니다.",
+        "impact": "AI 서버 시장의 폭발적인 성장은 GPU, CPU, 메모리 등 관련 반도체 수요 증가로 이어질 뿐만 아니라, AI 서버 제조 및 공급망 전반의 역동적인 성장을 보여줍니다. 이는 AI 인프라 투자 확대 추세를 반영합니다.",
+        "watch": "다른 주요 AI 서버 ODM 업체들의 매출 및 수주 동향",
+        "evidence": "AI伺服器拉貨炸裂！這「ODM大廠」8月營收暴增177％、緯穎雙創新高 神達千億大關也穩了",
+        "evidence_kind": "언론 보도",
+        "sector": "AI 서버"
+      }
     },
     "a28b6ba98b1cb7d23a19d754dc931c601731455b835dcef05ea0efad3eb78893": {
       "title": "삼성전자, 반도체 AI ‘두뇌’도 내재화..미스트랄에 지분 투자",
@@ -1546,7 +1521,17 @@
       "source": "한국정경신문",
       "published": "2026-09-08T22:47:40+00:00",
       "feed": "accelerators_ko",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "삼성전자, 미스트랄 AI 지분 투자 및 자체 AI 칩 내재화 추진",
+        "fact": "삼성전자가 프랑스의 AI 스타트업 미스트랄 AI(Mistral AI)에 지분 투자를 단행하며, 자체 AI 칩 개발 및 내재화 전략을 강화하고 나섰다. 이는 NVIDIA 등 기존 강자들과의 경쟁에서 차별화된 AI 반도체 솔루션을 확보하려는 움직임으로 해석된다.",
+        "impact": "이번 투자는 삼성전자가 AI 모델 개발사와의 협력을 통해 최신 AI 기술 동향을 파악하고, 이를 기반으로 자체적인 AI 반도체 설계 역량을 강화하는 데 기여할 것으로 보인다. 파운드리 사업뿐만 아니라 AI 칩 설계 및 공급 능력까지 내재화함으로써 AI 반도체 시장에서의 경쟁 우위를 확보하려는 전략이다.",
+        "watch": "미스트랄 AI와의 구체적인 협력 내용, 삼성전자의 자체 AI 칩 개발 로드맵 및 성능, 그리고 향후 AI 반도체 시장에서의 파급력.",
+        "evidence": "삼성전자, 반도체 AI ‘두뇌’도 내재화..미스트랄에 지분 투자",
+        "evidence_kind": "언론 보도",
+        "sector": "AI 반도체, 시스템 반도체"
+      }
     },
     "8ce8639471a8704697e6cb53fdf6d1fd72c9bb06a937a5c9018f7fc0bfad7765": {
       "title": "Qualcomm inks AI chip, optical networking deal with Amazon",
@@ -1555,16 +1540,17 @@
       "source": "SiliconANGLE",
       "published": "2026-09-08T22:45:00+00:00",
       "feed": "network",
-      "stage": "candidate"
-    },
-    "15b58f5d5074484758489f738c75a5c7c02c756ba46c84137d4e26941e6ca650": {
-      "title": "FBI, NSA and CISA Accuse Six Chinese AI Firms of Stealing US Models",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZDBBbzFQaW5fY1VoR0lmZEZXY0pWUEk2WUJQam5ZdWZXYXpSajF6QncwRS1XaF9jclhTZXVmUks4Y2tsT0ZuNUFrVHI0cGJiN0JNZHh2M3hRNFJEU2RBc0dIOXRWaHNvd1JiQW1VVEI3aUZKcDVxUUJhOE81RnUzQndfNjh5elpReU5sQzJZMklPTVV6M2wyTFZ3?oc=5",
-      "summary": "FBI, NSA and CISA Accuse Six Chinese AI Firms of Stealing US Models Startup Fortune",
-      "source": "Startup Fortune",
-      "published": "2026-09-08T22:36:57+00:00",
-      "feed": "ai_china",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "퀄컴, 아마존과 AI 칩 및 광통신 솔루션 공급 계약 체결",
+        "fact": "퀄컴(Qualcomm)이 아마존(Amazon)과 AI 칩 공급 및 광통신(optical networking) 분야에 대한 파트너십 계약을 체결했다. 이번 계약을 통해 퀄컴은 AI 데이터센터 시장에서 아마존의 주요 공급업체로 자리매김할 것으로 예상된다.",
+        "impact": "이는 퀄컴의 AI 칩 시장 진출 확대와 함께, 아마존이 AI 하드웨어 공급망 다변화를 추구하는 중요한 전략적 움직임이다. 특히 광통신 기술의 통합은 AI 워크로드 처리에 필수적인 고속 데이터 전송 성능을 향상시키는 데 기여할 수 있다.",
+        "watch": "구체적인 AI 칩 모델 및 성능, 공급 물량, 광통신 기술 적용 범위, 그리고 퀄컴의 AI 데이터센터 시장 점유율 변화.",
+        "evidence": "Qualcomm inks AI chip, optical networking deal with Amazon",
+        "evidence_kind": "언론 보도",
+        "sector": "AI 반도체, 광통신"
+      }
     },
     "105db72a6a162e0c1616a849a02fb5469bf5402dcd9d555238c77922c258e033": {
       "title": "스스로 앱 열어 메일·예약·쇼핑…메타, AI 에이전트 출시",
@@ -1573,7 +1559,17 @@
       "source": "edaily.co.kr",
       "published": "2026-09-08T22:20:41+00:00",
       "feed": "ai_ko",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "메타, 자율 실행 AI 에이전트 출시…일상 업무 자동화 시대 개막",
+        "fact": "메타(Meta)가 사용자의 개입 없이 스스로 앱을 열고 이메일을 확인하거나 예약을 처리하는 등 다양한 일상 업무를 수행하는 AI 에이전트를 출시했다. 이는 AI가 단순 정보 제공을 넘어 실제적인 작업을 수행하는 수준으로 발전했음을 보여준다.",
+        "impact": "이러한 AI 에이전트의 등장은 개인 생산성 향상과 서비스 자동화에 크게 기여할 잠재력을 가진다. 또한, 복잡한 작업을 수행하는 AI 에이전트의 발전은 AI 모델의 추론 능력 향상과 더불어 관련 AI 인프라(GPU, 메모리 등)에 대한 수요 증가로 이어질 수 있다.",
+        "watch": "AI 에이전트의 실제 사용자 채택률, 수행 가능한 작업 범위 확장, 그리고 AI 하드웨어 및 소프트웨어 스택에 미치는 영향.",
+        "evidence": "스스로 앱 열어 메일·예약·쇼핑…메타, AI 에이전트 출시",
+        "evidence_kind": "언론 보도",
+        "sector": "AI 에이전트, AI 소프트웨어"
+      }
     },
     "00bc4231352cc212f9e6b9ccc99ce404d76e89e690cbb8586f21fecdb0e6bb67": {
       "title": "2026 MIC FORUM》AI硬體缺料何時解？MIC揭七大零組件時間表：NAND最快2027年底鬆動、HBM與DRAM缺口延至2028",
@@ -1582,16 +1578,17 @@
       "source": "風傳媒",
       "published": "2026-09-08T22:20:00+00:00",
       "feed": "taiwan",
-      "stage": "candidate"
-    },
-    "0284252de09a4b9e471c5c5baabc0efdc7eb11bf01ce12c8481881cad464155d": {
-      "title": "AI coding startup Cognition raises $2B at $48B valuation as revenue nears $900M",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZWdNZjBoSXZZLXNPRUNJNTZLc1J2OFRNNldUSVNnVEN6U0NJandrZUltNi1pb0tuUFljRmxERUFnYkxKbHR1a0xKNFNTX1pRX1BnXzdLeTItMGM3d3gzelhjMWF6ZmVDUlpDXzhTOWVJUDFXM1ZtOHVwTUlIRlpoeTl2Ukl4dzh1dS1WUTREX1R2RUR3ZWkxMnRDUjlhb1ozUnJfNDZ4QnJmdEs3eWNYQk55SQ?oc=5",
-      "summary": "AI coding startup Cognition raises $2B at $48B valuation as revenue nears $900M SiliconANGLE",
-      "source": "SiliconANGLE",
-      "published": "2026-09-08T22:18:00+00:00",
-      "feed": "ai_usage",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "AI 하드웨어 부품 부족 2027년 이후 점진적 완화 전망",
+        "fact": "MIC 포럼 보고서에 따르면, AI 하드웨어 핵심 부품의 공급 부족 현상은 NAND의 경우 2027년 말에 가장 먼저 완화될 것으로 예상되며, HBM과 DRAM의 공급 부족은 2028년까지 지속될 전망이다.",
+        "impact": "이는 AI 반도체 생산 및 AI 데이터센터 구축 계획에 중요한 시사점을 제공한다. 특히 HBM과 DRAM의 장기적인 공급 부족 예상은 고대역폭 메모리 시장의 경쟁 구도와 가격에 영향을 미칠 수 있으며, 관련 기업들의 생산 능력 증대 및 기술 개발 경쟁을 심화시킬 것으로 보인다.",
+        "watch": "실제 각 부품의 공급량 변화 추이, 가격 변동, 그리고 주요 제조사들의 증설 및 기술 개발 계획.",
+        "evidence": "2026 MIC FORUM》AI硬體缺料何時解？MIC揭七大零組件時間表：NAND最快2027年底鬆動、HBM與DRAM缺口延至2028",
+        "evidence_kind": "분석 자료",
+        "sector": "AI 반도체 부품 (NAND, HBM, DRAM)"
+      }
     },
     "3cd5f6476ff06922408a4e13dcd014aa46d2a37cae7b637acba7695e41f1e458": {
       "title": "Qualcomm pivots toward data centers with Amazon custom-silicon deal",
@@ -1600,7 +1597,17 @@
       "source": "Fierce Network",
       "published": "2026-09-08T22:10:00+00:00",
       "feed": "capex",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "퀄컴, 아마존과 AI 칩 맞춤형 실리콘 계약 체결... 데이터센터 시장 공략",
+        "fact": "퀄컴이 아마존 웹 서비스(AWS)와 데이터센터용 맞춤형 AI 칩 개발 및 공급 계약을 체결했습니다. 이는 퀄컴의 데이터센터 시장 진출을 가속화하고, AI 반도체 시장에서 엔비디아에 대한 대안을 제시할 것으로 보입니다.",
+        "impact": "이번 계약은 아마존이 자체 AI 칩 개발 역량을 강화하고, 퀄컴은 새로운 성장 동력을 확보하게 됨을 의미합니다. 또한, AI 연산 능력 확대를 위한 맞춤형 칩 수요 증가와 함께 데이터센터 인프라 시장 경쟁을 심화시킬 것입니다.",
+        "watch": "퀄컴의 맞춤형 칩 성능 및 양산 능력, 아마존의 AI 서비스 확장에 미치는 영향, 그리고 다른 클라우드 기업들의 자체 칩 개발 동향을 주시할 필요가 있습니다.",
+        "evidence": "Qualcomm pivots toward data centers with Amazon custom-silicon deal Fierce Network",
+        "evidence_kind": "언론 보도",
+        "sector": "AI 반도체, 데이터센터"
+      }
     },
     "af5f9ed432f2bbb3cae7d3aec65e51a9ee3d6ae5065888f7e89decbbb5c90617": {
       "title": "D램 2분기 글로벌 매출 1547억 달러 돌파… 삼성이 1위 굳히자 범용 메모리 품귀 번졌다",
@@ -1609,7 +1616,17 @@
       "source": "g-enews.com",
       "published": "2026-09-08T22:07:16+00:00",
       "feed": "memory_ko",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "D램 2분기 글로벌 매출 154.7억 달러 돌파… 삼성 1위 굳히자 범용 메모리 품귀 현상 심화",
+        "fact": "2분기 전 세계 D램 시장 매출이 154억 7천만 달러를 기록하며 전년 대비 큰 폭으로 성장했습니다. 삼성전자가 시장 점유율 1위를 굳건히 지키는 가운데, AI 및 고성능 컴퓨팅 수요 증가로 범용 D램의 공급 부족 현상이 심화되고 있습니다.",
+        "impact": "D램 시장의 견조한 성장과 공급 부족은 AI 서버 및 관련 기기 생산에 필수적인 메모리 반도체 확보 경쟁을 격화시킬 것입니다. 이는 삼성전자, SK하이닉스 등 메모리 반도체 기업들의 실적 개선에 긍정적인 영향을 미치며, 관련 장비 및 소재 산업에도 파급 효과를 줄 수 있습니다.",
+        "watch": "하반기 D램 수급 상황 변화, AI 관련 신규 수요 증가 추세, 삼성전자 및 경쟁사의 생산 능력 증대 및 기술 개발 동향을 면밀히 살펴볼 필요가 있습니다.",
+        "evidence": "D램 2분기 글로벌 매출 1547억 달러 돌파… 삼성이 1위 굳히자 범용 메모리 품귀 번졌다 g-enews.com",
+        "evidence_kind": "언론 보도",
+        "sector": "메모리 반도체, AI 인프라"
+      }
     },
     "e25f24290d9e5b29222743b9c4e9dd86d2f0115b855bb72fc8c902a8eb6937e3": {
       "title": "Take on your most ambitious work with GPT-6 Astra on Amazon Bedrock",
@@ -1618,7 +1635,17 @@
       "source": "aws.amazon.com",
       "published": "2026-09-08T22:06:58+00:00",
       "feed": "ai_models",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "OpenAI, 아마존 Bedrock 통해 'GPT-6 Astra' 공개…AI 모델 성능 및 접근성 혁신",
+        "fact": "OpenAI가 아마존 웹 서비스(AWS)의 Amazon Bedrock 플랫폼을 통해 새로운 AI 모델 'GPT-6 Astra'를 출시했습니다. 이는 기존 모델 대비 향상된 성능과 확장성을 제공하여, 사용자들이 더욱 복잡하고 야심 찬 AI 프로젝트를 수행할 수 있도록 지원합니다.",
+        "impact": "GPT-6 Astra의 출시는 AI 모델의 실질적인 성능 향상과 클라우드 기반 접근성 확대를 의미합니다. 이는 AI 기반 서비스 개발 및 상용화를 가속화하고, 관련 컴퓨팅 자원 및 인프라 수요 증가로 이어질 것입니다. 특히, 기업들이 AI를 활용하여 새로운 비즈니스 기회를 창출하는 데 기여할 것으로 예상됩니다.",
+        "watch": "GPT-6 Astra의 구체적인 성능 벤치마크 결과, 실제 서비스 적용 사례, 그리고 AWS 및 다른 클라우드 제공업체들의 AI 모델 경쟁 동향을 주목해야 합니다.",
+        "evidence": "Take on your most ambitious work with GPT-6 Astra on Amazon Bedrock aws.amazon.com",
+        "evidence_kind": "공식 발표",
+        "sector": "AI 모델, 클라우드 AI"
+      }
     },
     "660e4703a245fefffab4830c287e677d31e94239b76ef29dfb28b91d33a46b4d": {
       "title": "China's CXMT Breaks 10% DRAM Share, Shaking Samsung and SK Hynix as Supply Shortage Expected to Persist",
@@ -1627,7 +1654,17 @@
       "source": "finance.biggo.com",
       "published": "2026-09-08T22:05:00+00:00",
       "feed": "memory",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "中 CXMT, D램 시장 점유율 10% 돌파… 삼성·SK하이닉스 위협, 공급 부족 장기화 전망",
+        "fact": "중국 메모리 반도체 기업 CXMT가 글로벌 D램 시장에서 10% 이상의 점유율을 확보하며 주요 공급업체로 부상했습니다. 이는 기존 강자인 삼성전자와 SK하이닉스에 대한 경쟁 압력을 높이는 동시에, 지속될 것으로 예상되는 D램 공급 부족 현상 속에서 시장 구도를 변화시킬 잠재력을 보여줍니다.",
+        "impact": "CXMT의 약진은 D램 시장의 지정학적 다변화와 경쟁 심화를 예고합니다. 공급 부족 상황이 지속된다면, 이는 AI 서버 및 고성능 컴퓨팅 장비 생산에 필요한 D램 확보 경쟁을 더욱 치열하게 만들고, 가격 상승 요인으로 작용할 수 있습니다. 또한, 한국 및 대만 중심의 메모리 공급망에 변화를 줄 가능성이 있습니다.",
+        "watch": "CXMT의 기술력 발전 및 양산 능력 확대 추이, 삼성전자 및 SK하이닉스의 시장 방어 전략, 그리고 글로벌 D램 공급 및 수요 전망 변화를 지속적으로 관찰해야 합니다.",
+        "evidence": "China's CXMT Breaks 10% DRAM Share, Shaking Samsung and SK Hynix as Supply Shortage Expected to Persist finance.biggo.com",
+        "evidence_kind": "언론 보도",
+        "sector": "메모리 반도체, AI 인프라"
+      }
     },
     "6cd93d76a59c81fef0191597b248540fb72458527e954516077db772c17e17fa": {
       "title": "Forus Triples Raises $150M to Put AI Agents in Every Medical Practice",
@@ -1636,7 +1673,17 @@
       "source": "HIT Consultant",
       "published": "2026-09-08T22:02:08+00:00",
       "feed": "ai_agents",
-      "stage": "candidate"
+      "stage": "approved",
+      "body_status": "unavailable",
+      "analysis": {
+        "headline": "AI 의료 에이전트 스타트업 Forus Triples, 1.5억 달러 투자 유치…의료 현장 AI 도입 가속화",
+        "fact": "AI 에이전트 스타트업 Forus Triples가 1억 5천만 달러의 투자를 유치하며, 모든 의료 기관에 AI 에이전트를 보급하는 것을 목표로 하고 있습니다. 이번 투자 유치는 의료 분야에서 AI 기술의 실질적인 적용 및 확산에 대한 높은 기대감을 반영합니다.",
+        "impact": "Forus Triples의 AI 에이전트 도입 확대는 의료 서비스의 효율성을 높이고, 의료진의 업무 부담을 경감시킬 수 있습니다. 이는 AI 기술이 특정 산업의 고질적인 문제를 해결하고 생산성을 향상시키는 데 기여할 수 있음을 보여주는 사례이며, 향후 다른 전문 서비스 분야로의 AI 에이전트 확산 가능성을 시사합니다.",
+        "watch": "Forus Triples의 AI 에이전트가 실제 의료 현장에서 거두는 성과, 환자 데이터 보안 및 규제 준수 문제, 그리고 의료 AI 시장의 경쟁 환경 변화를 예의주시해야 합니다.",
+        "evidence": "Forus Triples Raises $150M to Put AI Agents in Every Medical Practice HIT Consultant",
+        "evidence_kind": "언론 보도",
+        "sector": "AI 에이전트, 헬스케어 AI"
+      }
     },
     "436362c607fea6df2308678b328ac7cfe45875b270fbab1c963f9cf109a71e6e": {
       "title": "TSMC to use ASML’s next-gen machines for high-volume chip manufacturing",
@@ -13891,6 +13938,48 @@
       "policy": "ai-industry-v3",
       "reason": "최종 사건 중복",
       "title": "코오롱인더, AI·반도체 핵심 원재료 'mPPO' 생산 늘린다"
+    },
+    "6a45f5627892ec106667efcdd7111247f03de55b244a786e3a67ca38be7f578d": {
+      "ts": 1788987713.304984,
+      "policy": "ai-industry-v3",
+      "reason": "기사 본문이 없어 실제 계약 내용을 확인할 수 없으며, '80조원'이라는 수치가 신주인수권 규모인지, AI 칩 동맹 전체 규모인지 불분명합니다. headline이 headline일 뿐, 구체적인 사실이 없습니다.",
+      "title": "퀄컴, 아마존과 80조원 차세대 AI칩 동맹…5.4조원 신주인수권도(종합)"
+    },
+    "b774207ea82c3c7e695240ffc2cc62bfd7820df8714005fb06ac7d081a17919a": {
+      "ts": 1788987713.304996,
+      "policy": "ai-industry-v3",
+      "reason": "기사 본문이 없어 실제 계약 내용을 확인할 수 없으며, '600억 달러'라는 수치가 어느 부분에 해당하는지 명확하지 않습니다. headline이 headline일 뿐, 구체적인 사실이 없습니다.",
+      "title": "AWS, 퀄컴과 최대 600억달러 'AI 칩 동맹'… 엔비디아 빈틈 노린다"
+    },
+    "0855cb182125be32a8bc0bd3a8248f94fedb842a1f28df533aeabe77231c8c40": {
+      "ts": 1788987713.304999,
+      "policy": "ai-industry-v3",
+      "reason": "AI/반도체 산업과 직접적인 관련이 없고, '지엔씨에너지'에 대한 분석 개시 및 수주 전망은 AI/반도체 산업의 변화를 설명하는 데 필요한 구체적인 사실을 담고 있지 않습니다.",
+      "title": "2028년 신규수주 1조원 전망…지엔씨에너지 분석 개시"
+    },
+    "5b55414d22bff9e42dfebedadc7d43ecff080d029d9b0f75a418b77e5491e9c9": {
+      "ts": 1788987713.305007,
+      "policy": "ai-industry-v3",
+      "reason": "OpenAI의 GPT-6 Astra 출시에 대한 언급이 있으나, '소매업체를 속이지 않고 더 많이 팔 것'이라는 내용은 구체적인 기술적 성능이나 시장 변화를 뒷받침하는 사실이 아닌 추측에 가깝습니다. 실제 성능 향상이나 비즈니스 모델 변화에 대한 증거가 부족합니다.",
+      "title": "OpenAI GPT-6 Astra will run a retailer without cheating and sell more stuff than Anthropic"
+    },
+    "8008b9f19d4555da51e5db56b46e713183d97cd24b5dad35fad2a3bdda6dbe16": {
+      "ts": 1788987720.395213,
+      "policy": "ai-industry-v3",
+      "reason": "This is an analyst report (IBK) which is a forecast and does not contain new, verifiable facts about actual contract wins or AI data center buildouts. The title suggests an expectation rather than a confirmed event.",
+      "title": "지엔씨에너지, AI데이터센터 수주 본격화 기대-IBK"
+    },
+    "15b58f5d5074484758489f738c75a5c7c02c756ba46c84137d4e26941e6ca650": {
+      "ts": 1788987720.395229,
+      "policy": "ai-industry-v3",
+      "reason": "This article reports accusations from government agencies about the theft of AI models by Chinese firms. While it touches upon AI and international relations, it lacks specific technical details about the AI models or a clear impact on the AI/semiconductor industry's supply chain, production, or cus",
+      "title": "FBI, NSA and CISA Accuse Six Chinese AI Firms of Stealing US Models"
+    },
+    "0284252de09a4b9e471c5c5baabc0efdc7eb11bf01ce12c8481881cad464155d": {
+      "ts": 1788987728.924374,
+      "policy": "ai-industry-v3",
+      "reason": "The article is about a startup's valuation and revenue, which is financial news and not a specific technological advancement or significant market shift in AI or semiconductors. The provided body is unavailable, so no specific facts can be extracted.",
+      "title": "AI coding startup Cognition raises $2B at $48B valuation as revenue nears $900M"
     }
   },
   "legacy": {
