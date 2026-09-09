@@ -1,4 +1,5 @@
 """RSS 증거 기반 선별. 실패는 None, 정상 무선별은 []."""
+import re
 import json
 import os
 import time
@@ -36,7 +37,8 @@ MOU, 연구실 기술 시연, 일반 신제품, 일일 유가/환율 변화, AI 
 최대 {limit}건, 산업 구조 변화의 중요도순. 해당 없으면 빈 배열.
 index는 원본 기사 번호. headline은 사실을 유지한 한국어 제목(100자 이내),
 reason은 '무엇이 바뀜 → 어느 산업의 이익 구조가 어떻게 바뀜'(180자 이내),
-evidence는 제공된 title 또는 summary의 연속 원문 인용(160자 이내).
+evidence는 제공된 title 또는 summary에서 그대로 복사한 연속 원문 인용(160자 이내).
+영문/중문 근거는 번역하지 말고 원문을 복사하라. 말줄임표나 설명을 덧붙이지 마라.
 설명은 한국어. 원문에 없는 수치·기업·사건을 추가하지 않는다.
 """
 REVIEW = """
@@ -55,24 +57,42 @@ SCHEMA = {"type": "ARRAY", "items": {"type": "OBJECT", "properties": {
 
 
 def _validate(picks, items, limit):
-    if not isinstance(picks, list) or len(picks) > limit:
-        raise ValueError("선별 배열/상한 오류")
+    if not isinstance(picks, list):
+        raise ValueError("선별 응답이 배열이 아닙니다")
     indices, results = set(), []
-    for p in picks:
-        if not isinstance(p, dict):
-            raise ValueError("선별 항목 오류")
-        idx = p.get("index")
-        if type(idx) is not int or not 0 <= idx < len(items) or idx in indices:
-            raise ValueError("중복/범위/타입 index 오류")
-        for name, maximum in (("headline", 100), ("reason", 180), ("evidence", 160)):
-            if not isinstance(p.get(name), str) or not p[name].strip() or len(p[name]) > maximum:
-                raise ValueError("설명 형식 오류")
-        evidence = p["evidence"].strip()
-        if evidence not in items[idx].get("title", "") and evidence not in items[idx].get("summary", ""):
-            raise ValueError("제공된 자료에 없는 근거")
-        indices.add(idx)
-        results.append({**items[idx], **{k: p[k] for k in ("headline", "reason", "evidence")}})
-    return results
+    rejected = 0
+    for position, p in enumerate(picks):
+        try:
+            if not isinstance(p, dict):
+                raise ValueError("선별 항목 형식")
+            idx = p.get("index")
+            if type(idx) is not int or not 0 <= idx < len(items) or idx in indices:
+                raise ValueError("중복/범위/타입 index 오류")
+            for name, maximum in (("headline", 100), ("reason", 180), ("evidence", 160)):
+                if not isinstance(p.get(name), str) or not p[name].strip() or len(p[name]) > maximum:
+                    raise ValueError("설명 형식/길이 오류")
+            # 공백과 줄바꿈만 동일하게 취급. 번역, 숫자 변경, 문장 재작성은 허용하지 않는다.
+            parts = p["evidence"].strip().split()
+            pattern = r"\s+".join(re.escape(part) for part in parts)
+            original = None
+            for field in ("title", "summary"):
+                match = re.search(pattern, items[idx].get(field, ""))
+                if match:
+                    original = match.group(0)
+                    break
+            if original is None:
+                raise ValueError("제공된 자료에 없는 근거")
+            indices.add(idx)
+            results.append({**items[idx], "headline": p["headline"],
+                            "reason": p["reason"], "evidence": original})
+        except ValueError as exc:
+            rejected += 1
+            print(f"[pick] 응답 항목 {position}만 제외: {exc}")
+    if rejected:
+        print(f"[pick] 검증 통과 {len(results)}건 / 검증 탈락 {rejected}건; 다른 기사 심사 계속")
+    if len(results) > limit:
+        print(f"[pick] 검증 통과 건 중 상한 {limit}건 적용")
+    return results[:limit]
 
 
 def _pick(items, history, limit, review=False):
