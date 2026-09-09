@@ -612,6 +612,11 @@ ULTRA_CORE_MEDIUM = {
     "Hock Tan",
     "Sanjay Mehrotra",
     "C.C. Wei",
+    # 4~20분이어도 놓치면 안 되는 AI 인프라/반도체 핵심 CEO
+    "Matt Murphy",       # Marvell
+    "Jayshree Ullal",    # Arista Networks
+    "Jitendra Mohan",    # Astera Labs
+    "Rene Haas",         # Arm
 }
 
 
@@ -751,6 +756,10 @@ TRUSTED_CHANNELS = [
     "harvard",
     "berkeley",
     "sequoia",
+    "six five media",
+    "the six five",
+    "moor insights",
+    "futurum",
     "oracle",
     "arm",
     "asml",
