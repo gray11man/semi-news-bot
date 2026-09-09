@@ -1,79 +1,97 @@
-name: AI Semiconductor News
+name: Industry Idea News
+
 on:
   schedule:
-    - cron: '23 */3 * * *'
+    - cron: '17 */6 * * *'
+
   workflow_dispatch:
     inputs:
       dry_run:
-        description: '전송하지 않고 선별 결과 확인'
+        description: '체크하면 텔레그램 전송 없이 선별 결과만 확인'
         type: boolean
-        default: true
+        default: false
+
 permissions:
   contents: write
+
 concurrency:
-  group: ai-semiconductor-news
+  group: bottleneck-news
   cancel-in-progress: false
-env:
-  # 기존 seen.json과 이 봇 코드가 있는 폴더. 저장소 최상위이면 '.' 유지.
-  BOT_DIR: '.'
+
 jobs:
   news:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+
     steps:
-      - uses: actions/checkout@v4
+      - name: 저장소 가져오기
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.repository.default_branch }}
-      - uses: actions/setup-python@v5
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Dependencies
-        run: python -m pip install -r "$BOT_DIR/requirements-ai.txt"
-      - name: Collect and analyze
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash-lite' }}
-          GEMINI_MAX_CALLS_PER_RUN: '24'
-          MAX_SEND_PER_RUN: '3'
-          NEWS_WINDOW_HOURS: '36'
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
+
+      - name: 필요한 패키지 설치
         run: |
-          cd "$BOT_DIR"
-          python ai_news_bot.py
-      - name: Save state even after partial failure
+          python -m pip install -r bottleneck/requirements.txt
+
+      - name: 산업 뉴스 수집 및 전송
+        working-directory: bottleneck
+        env:
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          BOTTLENECK_TOKEN: ${{ secrets.BOTTLENECK_TOKEN }}
+          BOTTLENECK_CHAT_ID: ${{ secrets.BOTTLENECK_CHAT_ID }}
+
+          PICK_MODEL: ${{ vars.PICK_MODEL || 'gemini-2.5-flash' }}
+          MAX_PICK: '3'
+
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
+
+        run: python main.py
+
+      - name: 전송 기록 저장
         if: always()
         env:
           TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+
         run: |
           set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          for name in seen.json news.json; do
-            if [ -f "$BOT_DIR/$name" ]; then
-              git add -- "$BOT_DIR/$name"
-            fi
-          done
-          if git diff --cached --quiet; then
+
+          if [ ! -f bottleneck/seen_ideas.json ]; then
             exit 0
           fi
-          git commit -m 'Save AI news decisions and deliveries [skip ci]'
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add -- bottleneck/seen_ideas.json
+
+          if git diff --cached --quiet; then
+            echo "저장할 변경 사항이 없습니다."
+            exit 0
+          fi
+
+          git commit -m 'Save industry news deliveries [skip ci]'
+
           for attempt in 1 2 3; do
             git pull --rebase origin "$TARGET_BRANCH"
+
             if git push origin "HEAD:$TARGET_BRANCH"; then
               exit 0
             fi
           done
+
+          echo "전송 기록 저장에 실패했습니다."
           exit 1
-      - name: Diagnostics and recovery copy
+
+      - name: 전송 기록 복구 파일 보관
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ai-news-diagnostics
-          path: |
-            ${{ env.BOT_DIR }}/diagnostics.json
-            ${{ env.BOT_DIR }}/seen.json
-            ${{ env.BOT_DIR }}/news.json
+          name: bottleneck-delivery-history
+          path: bottleneck/seen_ideas.json
           if-no-files-found: ignore
-          retention-days: 14
+          retention-days: 30
