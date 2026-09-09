@@ -1,48 +1,26 @@
-# -*- coding: utf-8 -*-
-"""
-fetch_news.py  (v3.2 - 중국어 산업매체 추가판)
-
-v3.1 → v3.2 변경:
-  - [핵심] 중국어 산업/금융 전문매체 쿼리 추가
-    (구글뉴스 한국/영어 헤드라인만으로는 뻔한 상위권 뉴스만 반복 노출되는 문제 해결)
-    예: 马士基(머스크) CEO의 실적 콜 발언, 航运界网(해운업계망) 같은
-    업종 심층 소식은 한국어/영어 구글뉴스에 거의 안 걸림
-  - SOURCE_BLACKLIST에 중국어 저신호 매체(연예/가십) 항목은 필요시 추가 가능
-
-v3 → v3.1 변경:
-  - [핵심] 같은 사건을 다른 제목으로 쓴 기사 차단 (유사도 판정 추가)
-    예: "미-이란 확전 우려로 유가 급등" vs "중동 확전에 유가 급등"
-    → 아침에 보낸 사건을 저녁에 또 해석하던 문제 해결
-  - seen 구조 확장: 해시키 → {ts, nt(정규화 제목)} (기존 파일과 호환)
-  - 실행 내 중복도 유사도로 판정 (같은 회차에 비슷한 기사 2건 방지)
-
-신선도 3중 검증 (v3과 동일):
-  1) RSS published 기준 24시간 이내만 수집
-  2) URL 경로 날짜 48시간 초과 차단 (구글 재색인 방어)
-  3) seen_ideas.json 30일 보존
-
-반환 형식: [{"title", "summary", "link", "source", "published"}, ...]
-"""
-
+"""기존 피드를 유지한 수집기. 제목 일치 제거 및 피드별 진단, 성공 전송 이력 저장."""
 import os
 import re
 import json
 import html
 import hashlib
 import datetime
-from difflib import SequenceMatcher
 from urllib.parse import urlparse, quote
 
 import feedparser
+import requests
+import tempfile
+from pathlib import Path
+from collections import Counter
 
 # ───────────────────────── 설정 ─────────────────────────
 FRESH_HOURS = 24            # 1일 이내 뉴스만
 URL_DATE_HARD_LIMIT_H = 48  # URL 날짜 기준 하드리밋 (재색인 방어)
-SEEN_FILE = "seen_ideas.json"
+SEEN_FILE = str(Path(__file__).with_name("seen_ideas.json"))
+FETCH_STATS = []
 SEEN_RETENTION_DAYS = 30
 RSS_MAX_ENTRIES = 40
 SUMMARY_MAX = 300
-SIMILARITY_THRESHOLD = 0.65  # [v3.1] 제목 유사도 이 이상이면 같은 사건 취급
 
 # 저신호 매체 차단 (게임/연예/커뮤니티)
 SOURCE_BLACKLIST = [
@@ -61,7 +39,7 @@ def _gnews(query, lang="ko"):
 
 
 # 전업종을 넓게 커버하는 소스.
-# 섹터 선별은 signals.py 몫이므로 쿼리는 넓은 그물이면 충분하다.
+# 산업 중요성은 pick_headlines.py에서 평가한다.
 FEEDS = [
     # 한국 경제/산업 헤드라인 토픽
     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ko&gl=KR&ceid=KR:ko",
@@ -97,13 +75,22 @@ def _load_json(path, default):
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
-    except Exception:
-        return default
+    except (OSError, ValueError) as exc:
+        raise RuntimeError("전송 이력 읽기 실패: 파일을 확인하세요") from exc
 
 
 def _save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=1)
+    path = Path(path)
+    fd, temp = tempfile.mkstemp(dir=path.parent, prefix=path.name + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(temp, path)
+    finally:
+        if os.path.exists(temp):
+            os.unlink(temp)
 
 
 def _title_key(title):
@@ -122,43 +109,11 @@ def _norm_for_sim(title):
     return re.sub(r"\s+", " ", t).strip().lower()
 
 
-def _tokens(s):
-    return {w for w in s.split() if len(w) >= 2}
-
-
-# [v3.1] 한국어 조사 제거 (확전에→확전, 우려로→우려 등을 같은 토큰으로)
-_PARTICLES = ("에서", "으로", "이라", "라고", "에는", "에도", "까지", "부터",
-              "에", "은", "는", "이", "가", "을", "를", "로", "의", "와", "과", "도")
-
-
-def _strip_particle(w):
-    for p in _PARTICLES:
-        if len(w) > len(p) + 1 and w.endswith(p):
-            return w[:-len(p)]
-    return w
-
-
-def _event_tokens(s):
-    return {_strip_particle(w) for w in s.split() if len(_strip_particle(w)) >= 2}
-
-
 def _is_similar(a, b):
-    """[v3.1] 같은 사건 판정 3단:
-    1) 문자열 유사도  2) 토큰 자카드  3) 조사 제거 후 핵심토큰 3개 이상 공유."""
+    # 유사 제목은 진단용. 숫자 변경/반대 방향 뉴스를 자동 탈락시키지 않는다.
     if not a or not b:
         return False
-    if SequenceMatcher(None, a, b).ratio() >= SIMILARITY_THRESHOLD:
-        return True
-    ta, tb = _tokens(a), _tokens(b)
-    if ta and tb and len(ta & tb) / len(ta | tb) >= 0.5:
-        return True
-    # 조사 제거 후 사건 핵심토큰 비교 (예: 확전+유가+급등 3개 공유 → 같은 사건)
-    ea, eb = _event_tokens(a), _event_tokens(b)
-    if ea and eb:
-        shared = ea & eb
-        if len(shared) >= 3:
-            return True
-    return False
+    return a == b
 
 
 def _entry_age_hours(entry):
@@ -225,6 +180,7 @@ def _prune_seen(seen):
 
 # ───────────────────────── 메인 수집 ─────────────────────────
 def fetch_news():
+    FETCH_STATS.clear()
     seen = _prune_seen(_load_json(SEEN_FILE, {}))
     # [v3.1] 과거 전송 기사의 정규화 제목 목록 (유사도 비교용)
     seen_titles = [v.get("nt", "") for v in seen.values() if v.get("nt")]
@@ -233,45 +189,65 @@ def fetch_news():
     dup_keys = set()
     run_titles = []   # [v3.1] 이번 실행 내 유사도 비교용
 
-    for url in FEEDS:
+    healthy = 0
+    for feed_index, url in enumerate(FEEDS):
+        stats = Counter(raw=0, accepted=0)
+        FETCH_STATS.append({"feed": feed_index, "url": url, "counts": stats})
         try:
-            feed = feedparser.parse(url)
-        except Exception as e:
-            print(f"[WARN] feed fail: {e}")
+            response = requests.get(url, timeout=(10, 25), headers={"User-Agent": "InvestmentNewsBot/4.0"})
+            response.raise_for_status()
+            feed = feedparser.parse(response.content)
+            if not feed.get("version"):
+                raise ValueError("RSS/Atom 아님")
+            if feed.get("bozo"):
+                raise ValueError("RSS 파싱 오류")
+            healthy += 1
+        except (requests.RequestException, ValueError):
+            stats["failed"] += 1
+            print(f"[fetch] feed={feed_index} 실패")
             continue
+        stats["raw"] = len(feed.entries)
+        stats["over_limit"] = max(0, len(feed.entries) - RSS_MAX_ENTRIES)
         for entry in feed.entries[:RSS_MAX_ENTRIES]:
             title = (entry.get("title") or "").strip()
             link = (entry.get("link") or "").strip()
-            if not title or not link:
+            if not title or urlparse(link).scheme not in ("http", "https"):
+                stats["invalid"] += 1
                 continue
 
             # 저신호 매체 차단
             src = _source_name(entry)
             if any(b in src for b in SOURCE_BLACKLIST):
+                stats["blacklist"] += 1
                 continue
 
             # ── 신선도 1차: published 24시간 이내 (날짜 없으면 차단) ──
             age = _entry_age_hours(entry)
-            if age is None or age > FRESH_HOURS + 1:
+            if age is None or age > FRESH_HOURS or age < -1:
+                stats["date_rejected"] += 1
                 continue
 
             # ── 신선도 2차: URL 날짜 48시간 초과 차단 (재색인 방어) ──
             u_age = _url_date_age_hours(link)
             if u_age is not None and u_age > URL_DATE_HARD_LIMIT_H:
+                stats["old_url"] += 1
                 continue
 
             # ── 중복 1: 완전일치 해시 (실행 내 + 실행 간) ──
             key = _title_key(title)
             if key in dup_keys or key in seen:
+                stats["exact_duplicate"] += 1
                 continue
 
-            # ── 중복 2 [v3.1]: 유사기사 판정 ──
+            # ── 정규화 제목 일치만 제거; 사건 중복은 LLM에서 평가 ──
             nt = _norm_for_sim(title)
-            #   (a) 과거에 전송한 사건과 유사 → 차단 (같은 사건 재해석 방지)
+            #   (a) 과거 전송 제목과 정규화 후 동일
             if any(_is_similar(nt, s) for s in seen_titles):
+                stats["exact_duplicate"] += 1
                 continue
-            #   (b) 이번 실행 내 유사 기사 → 차단
+            #   (b) 이번 실행 내 동일한 정규화 제목
             if any(_is_similar(nt, s) for s in run_titles):
+                stats["exact_duplicate"] += 1
                 continue
 
             dup_keys.add(key)
@@ -286,7 +262,9 @@ def fetch_news():
                 except Exception:
                     pub_iso = ""
 
+            stats["accepted"] += 1
             items.append({
+                "feed_id": feed_index,
                 "title": html.unescape(title),
                 "summary": _clean_summary(entry.get("summary", "")),
                 "link": link,
@@ -296,7 +274,10 @@ def fetch_news():
                 "_nt": nt,
             })
 
-    print(f"[fetch] {len(items)}건 수집 (24h 이내, 완전일치+유사 중복 제거 후)")
+    if healthy == 0:
+        raise RuntimeError("모든 피드 수집 실패: 뉴스 0건과 다릅니다")
+    items.sort(key=lambda it: it["published"], reverse=True)
+    print(f"[fetch] {healthy}/{len(FEEDS)} 피드 정상, {len(items)}건 수집")
     return items
 
 
@@ -320,7 +301,8 @@ def mark_sent(items):
             continue
         key = it.get("_seen_key") or _title_key(title)
         nt = it.get("_nt") or _norm_for_sim(title)
-        seen[key] = {"ts": now_ts, "nt": nt}
+        seen[key] = {"ts": now_ts, "nt": nt, "title": title,
+                     "link": it.get("link", ""), "reason": it.get("reason", "")}
         count += 1
     _save_json(SEEN_FILE, seen)
     print(f"[fetch] seen 기록 {count}건")
@@ -329,3 +311,10 @@ def mark_sent(items):
 if __name__ == "__main__":
     for it in fetch_news()[:10]:
         print(f"- [{it['source']}] {it['title'][:60]}")
+
+def recent_sent():
+    seen = _prune_seen(_load_json(SEEN_FILE, {}))
+    rows = sorted(seen.values(), key=lambda row: row["ts"], reverse=True)
+    return [{"title": row.get("title") or row.get("nt", ""),
+             "reason": row.get("reason", ""), "sent_ts": row["ts"]}
+            for row in rows if row.get("title") or row.get("nt")]
