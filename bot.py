@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""AI·반도체 중요 뉴스 v3. 전체 교체용. --dry-run / --diagnose.
+"""AI·반도체 중요 뉴스 v3.1 (부분 응답 이월 수정). 전체 교체용. --dry-run / --diagnose.
 상태 경로는 기존 코드와 같은 실행 폴더. seen.json은 v3 구조로 자동 이관.
 API 실패 시 미검토 제목 전송 금지. 키워드 점수 및 강제 경보 없음.
 """
@@ -441,8 +441,10 @@ class Gemini:
         raise APIError('Gemini 재시도 실패')
 
 
-def validate_rows(rows, count, flag='keep'):
-    if not isinstance(rows, list) or len(rows) != count:
+def validate_rows(rows, count, flag='keep', allow_partial=False):
+    if not isinstance(rows, list) or len(rows) > count:
+        raise APIError('기사 판단 배열 형식 오류')
+    if not allow_partial and len(rows) != count:
         raise APIError('일부 기사 판단 누락')
     indices = set()
     for row in rows:
@@ -452,11 +454,13 @@ def validate_rows(rows, count, flag='keep'):
         if type(idx) is not int or not 0 <= idx < count or idx in indices or type(row.get(flag)) is not bool:
             raise APIError('응답 index/판정 오류')
         indices.add(idx)
+    if allow_partial and len(rows) < count:
+        print(f'[DEFER] {count}건 중 {len(rows)}건 응답; 누락 {count-len(rows)}건은 대기 유지')
     return rows
 
 
 def validate_review(rows, batch):
-    validate_rows(rows, len(batch))
+    validate_rows(rows, len(batch), allow_partial=True)
     for row in rows:
         if not isinstance(row.get('reason'), str) or not row['reason'].strip():
             raise APIError('판정 이유 누락')
@@ -499,14 +503,15 @@ def choose(state, api, checkpoint):
     new_ids = [k for k, v in pending.items() if v.get('stage', 'new') == 'new']
     for offset in range(0, len(new_ids), 40):
         # 본문 재심사/최종 중복 검토 요청 여유를 남기며 나머지는 큐에 유지한다.
-        if api.maximum - api.calls <= 4:
+        reserve = min(8, max(2, api.maximum // 2))
+        if api.maximum - api.calls <= reserve:
             break
         ids = new_ids[offset:offset + 40]
         batch = [pending[k] for k in ids]
         rows = api.ask('예비 심사: 전체 기사를 하나씩 keep true/false와 이유로 반환. 최종 전송 개수 제한 없음. '
                        '본문을 읽어야 중요성을 알 수 있는 유력한 기사도 후보로 남겨라. 명백한 소음만 제외. '
                        'reason은 120자 이내.', {'articles': input_records(batch)}, SHORT_SCHEMA)
-        validate_rows(rows, len(batch))
+        validate_rows(rows, len(batch), allow_partial=True)
         for row in rows:
             if not isinstance(row.get('reason'), str) or not row['reason'].strip():
                 raise APIError('예비 판단 이유 누락')
@@ -552,7 +557,7 @@ def choose(state, api, checkpoint):
         '같은 기업의 다른 사건이나 중요한 새 업데이트는 중복 아님. 개수 제한 없이 전체 index 반환.',
         {'articles': [{'index': i, 'title': it['title'], **it['analysis']} for i, it in enumerate(batch)],
          'history': history(state)}, RANK_SCHEMA)
-    validate_rows(ranked, len(batch), 'duplicate')
+    validate_rows(ranked, len(batch), 'duplicate', allow_partial=True)
     order = []
     for row in ranked:
         ident = ids[row['index']]
