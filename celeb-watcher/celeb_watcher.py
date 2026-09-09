@@ -282,9 +282,15 @@ SEEN_FILE = os.path.join(BASE_DIR, "seen_celeb_ids.json")
 
 LOOKBACK_HOURS = 72
 
-# 직접 출연 감시이므로 너무 짧은 영상은 기본적으로 배제.
-# 다만 핵심 인물의 공식 키노트/인터뷰는 더 짧아도 후보로 유지.
-MIN_DURATION_SEC = 300
+# 기본 검색은 YouTube API 단계에서 20분 초과(long)만 받는다.
+# 핵심 인물만 4~20분(medium) 원본 인터뷰/키노트를 예외적으로 추가 검색한다.
+MIN_DURATION_SEC = 1200
+CORE_MEDIUM_MIN_SEC = 240
+
+# 비핵심 인물은 4개 조로 나눠 6시간 슬롯마다 순환 검색한다.
+# GitHub Actions가 6시간마다 실행되면 하루 동안 전체 비핵심 인물을 한 번씩 훑는다.
+NONCORE_ROTATION_SHARDS = 4
+SEARCH_GROUP_SIZE = 8
 
 # 후보 우선순위용.
 PREFERRED_DURATION_SEC = 1200
@@ -604,22 +610,44 @@ STRICT_PERSONS = {
 }
 
 
-def build_search_batches():
-    # YouTube search.list는 호출당 쿼터 비용이 크다.
-    # 한 번의 검색으로 여러 인물을 OR 검색하고, 길이는 videos.list 상세조회 뒤 필터한다.
-    names = list(PERSONS.keys())
+def _make_name_batches(names, duration):
     batches = []
-    group_size = 8
-
-    for i in range(0, len(names), group_size):
-        group = names[i:i + group_size]
+    for i in range(0, len(names), SEARCH_GROUP_SIZE):
+        group = names[i:i + SEARCH_GROUP_SIZE]
+        if not group:
+            continue
         q = "|".join(f'"{x}"' for x in group)
-        batches.append((q, False))
-
+        batches.append((q, duration))
     return batches
 
 
-SEARCH_BATCHES = build_search_batches()
+def build_search_batches(now=None):
+    """
+    쿼터 절약형 검색 계획.
+
+    - 핵심 인물: 매 실행마다 20분 초과(long) 검색
+    - 핵심 인물: 4~20분(medium)도 별도 검색하되, 후단에서 직접출연 근거가 있어야 통과
+    - 비핵심 인물: 4개 조로 나눠 현재 6시간 슬롯에 해당하는 조만 long 검색
+
+    6시간마다 실행하면 하루에 비핵심 전체를 한 번씩 커버한다.
+    """
+    now = now or datetime.now(timezone.utc)
+    slot = int(now.timestamp() // (6 * 3600)) % NONCORE_ROTATION_SHARDS
+
+    names = list(PERSONS.keys())
+    core_names = [n for n in names if n in CORE_PERSONS]
+    noncore_names = [n for n in names if n not in CORE_PERSONS]
+    rotated_noncore = [
+        n for idx, n in enumerate(noncore_names)
+        if idx % NONCORE_ROTATION_SHARDS == slot
+    ]
+
+    batches = []
+    batches += _make_name_batches(core_names, "long")
+    batches += _make_name_batches(core_names, "medium")
+    batches += _make_name_batches(rotated_noncore, "long")
+
+    return batches, slot, len(core_names), len(rotated_noncore), len(noncore_names)
 
 
 TITLE_BLACKLIST = [
@@ -831,9 +859,13 @@ class YouTubeQuotaError(RuntimeError):
     pass
 
 
-def yt_search(query, published_after, include_medium=False):
-    # videoDuration을 long/medium으로 나눠 두 번 호출하지 않는다.
-    # search.list 1회만 쓰고 실제 길이는 videos.list에서 확인한다.
+def yt_search(query, published_after, duration="long"):
+    # search.list 단계에서 길이를 먼저 거른다.
+    # long   = 20분 초과
+    # medium = 4~20분 (핵심 인물 예외 검색에만 사용)
+    if duration not in {"long", "medium"}:
+        duration = "long"
+
     r = requests.get(
         "https://www.googleapis.com/youtube/v3/search",
         params={
@@ -844,6 +876,7 @@ def yt_search(query, published_after, include_medium=False):
             "order": "date",
             "maxResults": 50,
             "publishedAfter": published_after,
+            "videoDuration": duration,
         },
         timeout=30,
     )
@@ -1178,10 +1211,15 @@ def hard_filter(item, detail):
         detail.get("contentDetails", {}).get("duration")
     )
 
-    min_dur = 180 if person in CORE_PERSONS else MIN_DURATION_SEC
+    if dur < MIN_DURATION_SEC:
+        # 20분 이하 영상은 원칙적으로 탈락.
+        # 단, 핵심 인물의 4~20분짜리 원본 인터뷰/키노트/패널은 예외 허용한다.
+        if person not in CORE_PERSONS or dur < CORE_MEDIUM_MIN_SEC:
+            return None, f"길이 미달 ({dur // 60}분)"
 
-    if dur < min_dur:
-        return None, f"길이 미달 ({dur // 60}분)"
+        direct_meta, direct_reason = direct_metadata_evidence(person, item, detail)
+        if not direct_meta:
+            return None, f"20분 이하 직접출연 근거 부족 ({dur // 60}분)"
 
     return person, None
 
@@ -1348,9 +1386,12 @@ def judge_celeb_batch(chunk):
             f"설명: {desc}"
         )
 
+    # CELEB_PROMPT 안의 JSON 예시 중괄호를 str.format이 변수로 오인하지 않도록
+    # 단순 replace로 판정 대상 자리만 치환한다.
     out = gemini_call(
-        CELEB_PROMPT.format(
-            items="\n\n".join(lines)
+        CELEB_PROMPT.replace(
+            "{items}",
+            "\n\n".join(lines),
         )
     )
 
@@ -1391,12 +1432,19 @@ def run_celeb_watch():
     candidates = {}
     quota_stopped = False
 
-    for q, inc_med in SEARCH_BATCHES:
+    search_batches, rotation_slot, core_count, rotated_count, noncore_count = build_search_batches()
+    print(
+        f"[셀럽] 검색계획: 핵심 {core_count}명 매회(long+medium), "
+        f"비핵심 {rotated_count}/{noncore_count}명 순환조 {rotation_slot + 1}/{NONCORE_ROTATION_SHARDS}, "
+        f"search.list 최대 {len(search_batches)}회"
+    )
+
+    for q, duration in search_batches:
         try:
             for it in yt_search(
                 q,
                 published_after,
-                inc_med,
+                duration,
             ):
                 vid = it.get("id", {}).get("videoId")
 
