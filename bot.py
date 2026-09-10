@@ -488,21 +488,60 @@ def validate_rows(rows, count, flag='keep', allow_partial=False):
 
 
 def validate_review(rows, batch):
+    # Gemini 한 항목의 형식 실수 때문에 전체 실행이 죽지 않도록 유효한 행만 남긴다.
+    # 길이 초과 문자열은 안전하게 잘라 쓰고, 보정 불가능한 행은 candidate 상태로 남겨 다음 실행에서 재심사한다.
     validate_rows(rows, len(batch), allow_partial=True)
+    valid = []
+    deferred = 0
+
     for row in rows:
-        if not isinstance(row.get('reason'), str) or not row['reason'].strip():
-            raise APIError('판정 이유 누락')
-        if not row['keep']:
+        idx = row.get('index')
+
+        reason = row.get('reason')
+        if not isinstance(reason, str) or not reason.strip():
+            print(f'[DEFER] 본문심사 index={idx}: 판정 이유 누락')
+            deferred += 1
             continue
+        row['reason'] = reason.strip()[:300]
+
+        if not row['keep']:
+            valid.append(row)
+            continue
+
+        malformed = None
         for key, maximum in FIELDS.items():
-            if not isinstance(row.get(key), str) or not row[key].strip() or len(row[key]) > maximum:
-                raise APIError('분석 필드 형식/길이 오류')
-        item = batch[row['index']]
-        evidence = row['evidence'].strip()
-        if not any(evidence in item.get(k, '') for k in ('title', 'summary', 'body')):
-            raise APIError('기사에 없는 근거 인용')
+            value = row.get(key)
+            if not isinstance(value, str) or not value.strip():
+                malformed = f'{key} 누락/형식 오류'
+                break
+            value = value.strip()
+            if len(value) > maximum:
+                print(f'[Gemini 보정] index={idx} {key}: {len(value)}자 → {maximum}자로 절단')
+                value = value[:maximum].rstrip()
+            row[key] = value
+
+        if malformed:
+            print(f'[DEFER] 본문심사 index={idx}: {malformed}')
+            deferred += 1
+            continue
+
+        item = batch[idx]
+        evidence = row['evidence']
+        if not any(evidence in (item.get(k, '') or '') for k in ('title', 'summary', 'body')):
+            print(f'[DEFER] 본문심사 index={idx}: 기사에 없는 근거 인용')
+            deferred += 1
+            continue
+
         if row['evidence_kind'] not in ('공식 발표', '언론 보도', '경영진 발언', '분석 자료'):
-            raise APIError('근거 종류 오류')
+            print(f'[DEFER] 본문심사 index={idx}: 근거 종류 오류')
+            deferred += 1
+            continue
+
+        valid.append(row)
+
+    rows[:] = valid
+    if deferred:
+        print(f'[DEFER] 본문심사 형식/근거 오류 {deferred}건 → 다음 실행 재심사')
     return rows
 
 
