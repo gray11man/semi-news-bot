@@ -5,7 +5,7 @@
 PART 1  공통 유틸 / Gemini 호출기
 PART 2  AI·반도체·데이터센터 업계 핵심인물의 "직접 출연" 유튜브 감시
 PART 3  네이버 블로그 감시
-PART 4  하이퍼스케일러 / 사모크레딧 / AI CAPEX 금융 감시
+PART 4  사모크레딧 / AI CAPEX 팟캐스트 감시
 
 핵심 설계:
 - 사람 목록은 넓게 잡는다.
@@ -28,7 +28,6 @@ import json
 import re
 import time
 import html
-import difflib
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, parse_qs
 
@@ -2105,7 +2104,7 @@ def run_blog_watch():
 
 
 # ============================================================
-# PART 4 — 크레딧 / 사모대출 / AI CAPEX 금융 감시
+# PART 4 — 크레딧 / 사모대출 / AI CAPEX 팟캐스트 감시
 # ============================================================
 
 CREDIT_STATE_FILE = os.path.join(BASE_DIR, "seen_credit.json")
@@ -2113,16 +2112,8 @@ FEED_CACHE_VERSION = 4
 
 ENABLE_PODCAST = True
 ENABLE_CREDIT_YT = False
-ENABLE_NEWS = True
 
 PODCAST_MAX_AGE_DAYS = 5
-NEWS_LOOKBACK_HOURS = 48
-
-# 뉴스는 "관련 뉴스"가 아니라 "투자 판단을 바꿀 정도의 중요 뉴스"만 전송
-NEWS_SCORE_THRESHOLD = 9
-NEWS_MAX_CANDIDATES = 10
-NEWS_TITLE_SIMILARITY = 0.72
-NEWS_EVENT_TTL_DAYS = 7
 
 CREDIT_SCORE_THRESHOLD = 7
 CREDIT_MAX_SEND = 8
@@ -2230,13 +2221,6 @@ CREDIT_YT_QUERIES = [
     'hyperscaler debt "bond issuance" OR "credit spread"',
 ]
 
-NEWS_QUERIES = [
-    '"private credit" ("data center" OR "data centre" OR "AI infrastructure")',
-    '("data center" OR "data centre") ("debt financing" OR "project finance" OR "credit spread")',
-    '("AI capex" OR "AI infrastructure") (bond OR debt OR financing OR prepayment)',
-    '(HBM OR DRAM OR NAND) ("contract price" OR pricing OR prepayment OR "supply agreement")',
-]
-
 CREDIT_YT_CHANNEL_BLACK = [
     r"주식",
     r"투자",
@@ -2262,50 +2246,20 @@ def load_credit_state():
     s.setdefault("podcast", {})
     s.setdefault("feeds", {})
     s.setdefault("youtube", [])
-    s.setdefault("news", [])
-    s.setdefault("news_events", {})
 
     if s.get("feed_ver") != FEED_CACHE_VERSION:
         print("[캐시] 피드 캐시 재해석")
         s["feeds"] = {}
         s["feed_ver"] = FEED_CACHE_VERSION
 
-    # 오래된 사건 중복키는 자동 정리
-    cutoff = datetime.now(timezone.utc) - timedelta(days=10)
-    cleaned = {}
-
-    for k, v in (s.get("news_events") or {}).items():
-        try:
-            dt = datetime.fromisoformat(str(v).replace("Z", "+00:00"))
-            if dt >= cutoff:
-                cleaned[k] = v
-        except Exception:
-            continue
-
-    s["news_events"] = cleaned
     return s
 
 
 def save_credit_state(s):
     s["youtube"] = s["youtube"][-1500:]
-    s["news"] = s["news"][-1500:]
 
     for k in s["podcast"]:
         s["podcast"][k] = s["podcast"][k][:100]
-
-    # 사건키는 최근 것만 유지
-    cutoff = datetime.now(timezone.utc) - timedelta(days=10)
-    cleaned = {}
-
-    for k, v in (s.get("news_events") or {}).items():
-        try:
-            dt = datetime.fromisoformat(str(v).replace("Z", "+00:00"))
-            if dt >= cutoff:
-                cleaned[k] = v
-        except Exception:
-            continue
-
-    s["news_events"] = cleaned
 
     atomic_json_dump(
         CREDIT_STATE_FILE,
@@ -2703,370 +2657,6 @@ def collect_credit_youtube(state):
     return out
 
 
-def _news_title_key(title):
-    """언론사/숫자/기호 차이로 같은 사건이 중복되는 것을 줄인다."""
-    t = (title or "").lower()
-    t = re.sub(r"\[[^\]]+\]", " ", t)
-    t = re.sub(r"\([^)]*\)", " ", t)
-    t = re.sub(r"[^a-z0-9가-힣]+", " ", t)
-    t = re.sub(r"\s+", " ", t).strip()
-    return t
-
-
-NEWS_CRITICAL_TERMS = [
-    "bond issuance", "bond sale", "debt issuance", "debt financing",
-    "credit facility", "loan facility", "private credit", "private debt",
-    "default", "defaults", "bankruptcy", "restructuring", "distress",
-    "downgrade", "rating cut", "credit rating", "credit spread",
-    "spread widening", "spread widens", "refinancing", "refinance",
-    "covenant breach", "covenant", "securitization", "asset-backed",
-    "funding", "financing", "capital raise", "liquidity",
-    "capex financing", "capital expenditure", "project finance",
-    "vendor financing", "prepayment", "prepayment agreement",
-    "long-term contract", "supply agreement", "purchase agreement",
-    "contract price", "contract pricing", "price increase", "price hike",
-]
-
-NEWS_MAJOR_ENTITIES = [
-    "microsoft", "google", "alphabet", "amazon", "aws", "meta", "oracle",
-    "coreweave", "nvidia", "blackstone", "apollo", "ares", "kkr",
-    "pimco", "wellington", "sk hynix", "samsung", "micron", "tsmc",
-]
-
-NEWS_HYPERSCALERS = [
-    "microsoft", "google", "alphabet", "amazon", "aws", "meta", "oracle",
-]
-
-NEWS_AI_INFRA_TERMS = [
-    "ai capex", "ai infrastructure", "data center", "datacenter",
-    "data centre", "gpu", "accelerator", "compute capacity",
-    "compute cluster", "training cluster", "inference cluster",
-    "cloud infrastructure", "server capacity", "hbm",
-]
-
-NEWS_MEMORY_TERMS = [
-    "hbm", "dram", "nand", "memory",
-]
-
-NEWS_MEMORY_EVENT_TERMS = [
-    "contract price", "contract pricing", "pricing",
-    "price increase", "price hike", "prepayment",
-    "supply agreement", "purchase agreement",
-]
-
-NEWS_GENERIC_FINANCE_TERMS = [
-    "bond issuance", "bond sale", "debt issuance", "debt financing",
-    "funding", "financing", "capital raise", "refinancing", "refinance",
-]
-
-NEWS_DISTRESS_TERMS = [
-    "default", "defaults", "bankruptcy", "restructuring", "distress",
-    "downgrade", "rating cut", "covenant breach", "liquidity",
-]
-
-NEWS_PRIVATE_CREDIT_TERMS = [
-    "private credit", "private debt", "direct lending",
-    "asset-backed", "securitization", "securitisation",
-    "project finance", "vendor financing",
-]
-
-NEWS_NOISE_TERMS = [
-    "stock price", "shares rise", "shares fall", "stock rises", "stock falls",
-    "analyst", "price target", "buy rating", "sell rating", "upgrade to",
-    "downgrade to buy", "market outlook", "investor outlook", "should buy",
-    "top stocks", "best stocks", "stock picks", "why investors",
-    "earnings preview", "earnings recap", "quarterly results", "ai tool",
-    "ai model", "new ai", "launches", "unveils", "introduces",
-]
-
-
-def _news_importance_prefilter(title, body):
-    """
-    뉴스는 '관련 있음'이 아니라 'AI 인프라 투자 판단을 바꿀 사건'만 남긴다.
-    특히 하이퍼스케일러의 일반 회사채는 AI CAPEX/데이터센터 연결이 없으면 탈락.
-    """
-    text = f"{title} {strip_html(body)}".lower()
-
-    critical = any(x in text for x in NEWS_CRITICAL_TERMS)
-    ai_context = any(x in text for x in NEWS_AI_INFRA_TERMS)
-    memory_context = any(x in text for x in NEWS_MEMORY_TERMS)
-    memory_event = any(x in text for x in NEWS_MEMORY_EVENT_TERMS)
-    hyperscaler = any(x in text for x in NEWS_HYPERSCALERS)
-    generic_finance = any(x in text for x in NEWS_GENERIC_FINANCE_TERMS)
-    distress = any(x in text for x in NEWS_DISTRESS_TERMS)
-    private_credit = any(x in text for x in NEWS_PRIVATE_CREDIT_TERMS)
-    major_entity = any(x in text for x in NEWS_MAJOR_ENTITIES)
-
-    if any(x in text for x in NEWS_NOISE_TERMS):
-        if not (critical or (memory_context and memory_event)):
-            return False
-
-    # 메모리 가격/계약은 그 자체로 핵심 관심사
-    if memory_context and memory_event:
-        return True
-
-    # CoreWeave 부실/신용 이벤트는 AI 인프라 자체의 자금조달 문제라 직접 통과
-    if "coreweave" in text and distress:
-        return True
-
-    # 사모크레딧/프로젝트 파이낸싱도 데이터센터·AI 인프라 연결이 있어야 한다.
-    if private_credit:
-        return ai_context
-
-    # 핵심 수정:
-    # Amazon/MS/Google/Meta/Oracle의 일반 채권 발행은 AI 용도 연결이 없으면 버린다.
-    if hyperscaler and generic_finance and not ai_context:
-        return False
-
-    # 나머지 금융 이벤트는 AI 인프라 문맥 + 주요 주체가 같이 있어야 후보
-    if critical and ai_context and major_entity:
-        return True
-
-    # 매우 명백한 AI 인프라 금융 이벤트는 회사명이 없어도 후보 허용
-    strong_ai_finance = sum(
-        1 for x in (
-            "data center financing",
-            "data centre financing",
-            "project finance",
-            "vendor financing",
-            "capex financing",
-            "prepayment",
-        )
-        if x in text
-    )
-    if ai_context and strong_ai_finance >= 1:
-        return True
-
-    return False
-
-
-def _news_event_key(title, body):
-    """같은 사건을 다른 언론사가 매일 다시 써도 며칠간 한 사건으로 묶는다."""
-    text = f"{title} {strip_html(body)}".lower()
-
-    entity = next(
-        (x for x in NEWS_MAJOR_ENTITIES if x in text),
-        "unknown",
-    )
-
-    if any(x in text for x in NEWS_MEMORY_EVENT_TERMS) and any(
-        x in text for x in NEWS_MEMORY_TERMS
-    ):
-        bucket = "memory_contract_price"
-    elif "private credit" in text or "private debt" in text:
-        bucket = "private_credit"
-    elif "project finance" in text or "data center financing" in text or "data centre financing" in text:
-        bucket = "data_center_financing"
-    elif any(x in text for x in NEWS_DISTRESS_TERMS):
-        bucket = "distress_rating"
-    elif "prepayment" in text:
-        bucket = "prepayment"
-    elif "supply agreement" in text or "purchase agreement" in text:
-        bucket = "supply_agreement"
-    elif any(x in text for x in ("bond issuance", "bond sale", "debt issuance")):
-        bucket = "bond"
-    elif any(x in text for x in NEWS_GENERIC_FINANCE_TERMS):
-        bucket = "financing"
-    else:
-        bucket = "other"
-
-    amount = ""
-    m = re.search(
-        r"(?:\$|£|€)?\s*\d+(?:\.\d+)?\s*(?:billion|million|bn|mn|b|m)\b",
-        text,
-    )
-    if m:
-        amount = re.sub(r"\s+", "", m.group(0))
-
-    currency = next(
-        (
-            x for x in (
-                "gbp", "sterling", "pound", "usd", "dollar",
-                "eur", "euro", "yen", "jpy"
-            )
-            if x in text
-        ),
-        "",
-    )
-
-    # 금액이 없으면 제목의 핵심어 일부를 보조키로 사용
-    if not amount:
-        title_key = _news_title_key(title)
-        stop = {
-            "the", "a", "an", "to", "of", "for", "in", "on", "and",
-            "with", "as", "at", "from", "says", "said",
-        }
-        words = [
-            w for w in title_key.split()
-            if w not in stop
-        ]
-        tail = "_".join(words[:5])
-    else:
-        tail = amount
-
-    return f"{entity}|{bucket}|{currency}|{tail}"[:240]
-
-
-def _news_duplicate(title, selected_titles):
-    key = _news_title_key(title)
-    if not key:
-        return True
-
-    for old in selected_titles:
-        old_key = _news_title_key(old)
-        if not old_key:
-            continue
-
-        ratio = difflib.SequenceMatcher(
-            None,
-            key,
-            old_key,
-        ).ratio()
-
-        # 제목 표현이 달라도 핵심 단어 집합이 거의 같으면 중복으로 처리
-        a = set(key.split())
-        b = set(old_key.split())
-        jaccard = len(a & b) / max(1, len(a | b))
-
-        if ratio >= NEWS_TITLE_SIMILARITY or jaccard >= 0.62:
-            return True
-
-    return False
-
-
-def _news_event_recent(state, event_key):
-    ts = (state.get("news_events") or {}).get(event_key)
-    if not ts:
-        return False
-
-    try:
-        dt = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
-        return (
-            datetime.now(timezone.utc) - dt
-        ) < timedelta(days=NEWS_EVENT_TTL_DAYS)
-    except Exception:
-        return False
-
-
-def _mark_news_event(state, event_key):
-    if not event_key:
-        return
-
-    state.setdefault("news_events", {})[event_key] = (
-        datetime.now(timezone.utc).isoformat()
-    )
-
-
-def collect_news(state):
-    seen = set(state["news"])
-    cutoff = (
-        datetime.now(timezone.utc)
-        - timedelta(hours=NEWS_LOOKBACK_HOURS)
-    )
-
-    raw = []
-    url_seen = set()
-    title_seen = []
-    cycle_events = set()
-
-    for q in NEWS_QUERIES:
-        try:
-            r = requests.get(
-                "https://news.google.com/rss/search",
-                params={
-                    "q": f"{q} when:2d",
-                    "hl": "en-US",
-                    "gl": "US",
-                    "ceid": "US:en",
-                },
-                headers={"User-Agent": UA},
-                timeout=25,
-            )
-            r.raise_for_status()
-            d = feedparser.parse(r.content)
-
-        except Exception as e:
-            print(
-                f"[뉴스] 실패 ({q}): "
-                f"{str(e)[:120]}"
-            )
-            continue
-
-        for e in d.entries[:12]:
-            link = e.get("link", "")
-            title = strip_html(e.get("title", ""))
-            body = e.get("summary", "")
-
-            if not link or link in seen or link in url_seen:
-                continue
-
-            pub = e.get("published_parsed") or e.get("updated_parsed")
-            if pub:
-                pub_dt = datetime(
-                    *pub[:6],
-                    tzinfo=timezone.utc,
-                )
-                if pub_dt < cutoff:
-                    continue
-
-            url_seen.add(link)
-            event_key = _news_event_key(title, body)
-
-            # 과거 며칠 내 같은 사건을 이미 처리했으면 다른 언론사 기사도 차단
-            if _news_event_recent(state, event_key):
-                state["news"].append(link)
-                continue
-
-            # 같은 실행 안에서 같은 사건 중복
-            if event_key in cycle_events:
-                state["news"].append(link)
-                continue
-
-            # 일반 회사채 등 명백한 잡음은 Gemini까지 보내지 않는다.
-            if not _news_importance_prefilter(title, body):
-                state["news"].append(link)
-                _mark_news_event(state, event_key)
-                print(
-                    f"  ⏭ [뉴스 사전탈락] {title[:75]}"
-                )
-                continue
-
-            # 제목 기반 중복도 한 번 더 제거
-            if _news_duplicate(title, title_seen):
-                state["news"].append(link)
-                _mark_news_event(state, event_key)
-                continue
-
-            cycle_events.add(event_key)
-            title_seen.append(title)
-
-            raw.append(
-                {
-                    "kind": "뉴스",
-                    "icon": "📰",
-                    "source": (
-                        e.get("source", {}) or {}
-                    ).get("title", "News"),
-                    "title": title,
-                    "body": body,
-                    "url": link,
-                    "seen_key": ("news", link),
-                    "event_key": event_key,
-                }
-            )
-
-        time.sleep(0.4)
-
-    raw = raw[:NEWS_MAX_CANDIDATES]
-
-    print(
-        f"[뉴스] 중요뉴스 후보 "
-        f"{len(raw)}건"
-    )
-
-    return raw
-
-
 CREDIT_PROMPT = r"""
 너는 반도체/AI 인프라 투자자를 위한 콘텐츠 선별 에이전트다.
 
@@ -3083,23 +2673,6 @@ CREDIT_PROMPT = r"""
 - 계약 협상/선급금
 - 위 주제로 업계 실무자가 직접 발언하는 인터뷰/대담
 
-뉴스는 특히 엄격하게 판정한다.
-뉴스의 경우 9점 이상만 통과시킨다.
-9점은 단순히 관련 있는 뉴스가 아니라, 실제 투자 판단이나 시장 구조를 바꿀 가능성이 높은 사건이어야 한다.
-예: 대규모 채권/대출/프로젝트 파이낸싱, 신용등급 강등, 디폴트/부실, 신용스프레드 급변, AI CAPEX 자금조달 구조 변화, 대형 데이터센터 금융 문제, 대형 벤더 파이낸싱/선급금/장기공급계약, HBM/DRAM/NAND 실제 계약가격 변화.
-
-뉴스 탈락:
-- 일반 AI 기술/제품 소개
-- 신제품 출시/모델 발표
-- 주가 등락이나 증권사 목표가/투자의견
-- 개인투자 채널의 종목추천/시황요약
-- 이미 널리 알려진 내용을 반복하는 기사
-- 기업 실적 자체가 아니라 단순 실적 요약
-- 스치듯 관련 키워드만 포함한 기사
-- 광고
-- Amazon/MS/Google/Meta/Oracle의 일반 회사채 발행·통화별 채권 조달처럼
-  AI CAPEX, 데이터센터, GPU/서버 조달, 전력 인프라와 직접 연결되지 않은 일반 재무 뉴스
-- 특히 영국 파운드화/유로화/달러화 채권 발행이라는 이유만으로 높은 점수를 주지 마라
 
 출력:
 JSON 배열만.
@@ -3155,17 +2728,11 @@ def _mark_credit_seen(state, c):
             if eid not in arr:
                 arr.append(eid)
 
-        elif kind in ("youtube", "news") and len(key) >= 2:
+        elif kind == "youtube" and len(key) >= 2:
             value = key[1]
             arr = state.setdefault(kind, [])
             if value not in arr:
                 arr.append(value)
-
-    if c.get("kind") == "뉴스":
-        _mark_news_event(
-            state,
-            c.get("event_key"),
-        )
 
 
 def run_credit_watch():
@@ -3183,12 +2750,6 @@ def run_credit_watch():
         if ENABLE_CREDIT_YT:
             print("── 크레딧 유튜브 ──")
             cands += collect_credit_youtube(
-                state
-            )
-
-        if ENABLE_NEWS:
-            print("── 뉴스 ──")
-            cands += collect_news(
                 state
             )
 
@@ -3245,11 +2806,7 @@ def run_credit_watch():
                 except Exception:
                     score = 0
 
-                threshold = (
-                    NEWS_SCORE_THRESHOLD
-                    if c["kind"] == "뉴스"
-                    else CREDIT_SCORE_THRESHOLD
-                )
+                threshold = CREDIT_SCORE_THRESHOLD
 
                 if score >= threshold:
                     if sent >= CREDIT_MAX_SEND:
