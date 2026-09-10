@@ -28,6 +28,7 @@ import json
 import re
 import time
 import html
+import difflib
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, parse_qs
 
@@ -278,21 +279,31 @@ def parse_json_array(out, n):
 # ============================================================
 
 SEEN_FILE = os.path.join(BASE_DIR, "seen_celeb_ids.json")
+CELEB_META_FILE = os.path.join(BASE_DIR, "seen_celeb_meta.json")
 
-LOOKBACK_HOURS = 72
+# 최근 7일을 다시 검색한다. seen ID가 이미 처리한 영상을 막아주므로
+# API/워크플로가 며칠 실패해도 중요한 장시간 영상이 복구될 가능성이 높다.
+LOOKBACK_HOURS = 24 * 7
 
-# 기본 검색은 YouTube API 단계에서 20분 초과(long)만 받는다.
-# 4~20분(medium)은 최핵심 인물만 예외적으로 추가 검색한다.
+# 외부 GitHub Actions가 실수로 매시간 실행되어도 YouTube search.list를
+# 매시간 때리지 않도록 유튜브 검색 자체는 6시간에 한 번만 허용한다.
+YOUTUBE_SEARCH_MIN_INTERVAL_HOURS = 6
+
+# 이미 전송한 인터뷰의 재업로드/중복본 차단 기록 유지 기간.
+CELEB_SENT_DUP_TTL_DAYS = 21
+
+# 유튜브는 20분 이상 장시간 콘텐츠만 허용한다.
+# YouTube API 검색 단계는 long(20분 초과)만 사용하고,
+# 상세조회에서도 1200초 미만은 무조건 탈락시켜 짧은 영상 전송을 이중 차단한다.
 MIN_DURATION_SEC = 1200
-CORE_MEDIUM_MIN_SEC = 240
 
 # 비핵심 인물은 6개 조로 나눠 6시간 슬롯마다 순환 검색한다.
-# LOOKBACK_HOURS=72라 36시간에 한 번 검색해도 최근 업로드를 놓치지 않는다.
+# 검색 범위가 7일이라 각 인물을 약 36시간마다 한 번 찾아도 충분한 안전망이 생긴다.
 NONCORE_ROTATION_SHARDS = 6
 SEARCH_GROUP_SIZE = 8
 
-# 후보 우선순위용.
-PREFERRED_DURATION_SEC = 1200
+# 후보 우선순위용. 30분 이상부터 장시간 콘텐츠 보너스를 준다.
+PREFERRED_DURATION_SEC = 1800
 
 # 최종 알림은 매우 엄격하게.
 SCORE_THRESHOLD = 8
@@ -596,26 +607,22 @@ CORE_PERSONS = {
 }
 
 
-# 4~20분짜리까지 매 실행마다 따로 검색할 최핵심 인물.
-# medium 검색은 search.list를 추가로 소모하므로 정말 중요한 인물만 둔다.
-ULTRA_CORE_MEDIUM = {
+# 이 인물들은 이름을 8명씩 묶지 않고 개별 q로 검색한다.
+# 긴 인터뷰가 다른 유명인의 검색결과 50개에 밀리는 문제를 줄이는 목적이다.
+# 전원을 개별검색하면 YouTube quota가 과도하게 늘어나므로 투자 중요도가 높은 인물만 둔다.
+ULTRA_CORE_INDIVIDUAL = {
     "Jensen Huang",
     "Sam Altman",
     "Dario Amodei",
     "Demis Hassabis",
-    "Sundar Pichai",
     "Satya Nadella",
     "Lisa Su",
-    "Mark Zuckerberg",
-    "Elon Musk",
     "Hock Tan",
     "Sanjay Mehrotra",
     "C.C. Wei",
-    # 4~20분이어도 놓치면 안 되는 AI 인프라/반도체 핵심 CEO
-    "Matt Murphy",       # Marvell
-    "Jayshree Ullal",    # Arista Networks
-    "Jitendra Mohan",    # Astera Labs
-    "Rene Haas",         # Arm
+    "Matt Murphy",
+    "Jayshree Ullal",
+    "Jitendra Mohan",
 }
 
 
@@ -643,23 +650,29 @@ def _make_name_batches(names, duration):
     return batches
 
 
+def _make_individual_batches(names, duration):
+    return [(f'"{name}"', duration) for name in names]
+
+
 def build_search_batches(now=None):
     """
-    초절약형 검색 계획.
+    장시간 영상 전용 검색 계획.
 
-    - 핵심 인물 전체: 매 실행마다 20분 초과(long) 검색
-    - 최핵심 인물만: 4~20분(medium) 추가 검색
+    - 최핵심 인물: 개별 long 검색 -> 다른 인물 영상에 밀리는 누락 감소
+    - 나머지 핵심 인물: 8명씩 묶어서 long 검색 -> quota 절약
     - 비핵심 인물: 6개 조로 순환하며 해당 조만 long 검색
-
-    LOOKBACK_HOURS가 72시간이므로 비핵심은 36시간 주기로 돌아도
-    정상적인 6시간 스케줄에서는 최근 업로드를 다시 잡을 수 있다.
+    - medium(4~20분) 검색은 사용하지 않는다.
+    - 검색 범위는 7일이므로 일시적인 API/워크플로 장애에도 복구 여유가 있다.
     """
     now = now or datetime.now(timezone.utc)
     slot = int(now.timestamp() // (6 * 3600)) % NONCORE_ROTATION_SHARDS
 
     names = list(PERSONS.keys())
-    core_names = [n for n in names if n in CORE_PERSONS]
-    medium_names = [n for n in core_names if n in ULTRA_CORE_MEDIUM]
+    individual_names = [n for n in names if n in ULTRA_CORE_INDIVIDUAL]
+    grouped_core = [
+        n for n in names
+        if n in CORE_PERSONS and n not in ULTRA_CORE_INDIVIDUAL
+    ]
     noncore_names = [n for n in names if n not in CORE_PERSONS]
     rotated_noncore = [
         n for idx, n in enumerate(noncore_names)
@@ -667,12 +680,12 @@ def build_search_batches(now=None):
     ]
 
     batches = []
-    batches += _make_name_batches(core_names, "long")
-    batches += _make_name_batches(medium_names, "medium")
+    batches += _make_individual_batches(individual_names, "long")
+    batches += _make_name_batches(grouped_core, "long")
     batches += _make_name_batches(rotated_noncore, "long")
 
     return (
-        batches, slot, len(core_names), len(medium_names),
+        batches, slot, len(individual_names), len(grouped_core),
         len(rotated_noncore), len(noncore_names)
     )
 
@@ -886,16 +899,110 @@ def save_seen(seen):
     )
 
 
+def load_celeb_meta():
+    try:
+        with open(CELEB_META_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+    except Exception:
+        d = {}
+
+    d.setdefault("last_youtube_search_at", None)
+    d.setdefault("sent_history", [])
+
+    cutoff = datetime.now(timezone.utc) - timedelta(days=CELEB_SENT_DUP_TTL_DAYS)
+    cleaned = []
+    for x in d.get("sent_history") or []:
+        try:
+            ts = datetime.fromisoformat(str(x.get("sent_at", "")).replace("Z", "+00:00"))
+            if ts >= cutoff:
+                cleaned.append(x)
+        except Exception:
+            continue
+    d["sent_history"] = cleaned[-300:]
+    return d
+
+
+def save_celeb_meta(d):
+    d["sent_history"] = (d.get("sent_history") or [])[-300:]
+    atomic_json_dump(CELEB_META_FILE, d, indent=2)
+
+
+def youtube_search_due(meta):
+    ts = meta.get("last_youtube_search_at")
+    if not ts:
+        return True, 0.0
+    try:
+        last = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+        elapsed = (datetime.now(timezone.utc) - last).total_seconds() / 3600
+        return elapsed >= YOUTUBE_SEARCH_MIN_INTERVAL_HOURS, elapsed
+    except Exception:
+        return True, 0.0
+
+
+def _normalize_video_title(title):
+    t = (title or "").lower()
+    t = re.sub(r"\[[^\]]+\]|\([^)]*\)", " ", t)
+    t = re.sub(r"\b(full|complete|official|video|podcast|episode|ep|interview)\b", " ", t)
+    t = re.sub(r"[^a-z0-9가-힣]+", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def is_sent_reupload_duplicate(meta, person, title, duration_sec):
+    """이미 보낸 같은 인터뷰의 재업로드를 보수적으로 차단한다.
+
+    사람은 같아야 하고, 제목 유사도가 높으며, 재생시간도 비슷해야 중복으로 본다.
+    서로 다른 인터뷰를 잘못 버리지 않도록 기준을 일부러 엄격하게 둔다.
+    """
+    key = _normalize_video_title(title)
+    if not key:
+        return False, None
+
+    a = set(key.split())
+    for old in reversed(meta.get("sent_history") or []):
+        if old.get("person") != person:
+            continue
+
+        old_key = old.get("title_key") or ""
+        if not old_key:
+            continue
+
+        old_dur = int(old.get("duration_sec") or 0)
+        if duration_sec and old_dur:
+            dur_gap = abs(duration_sec - old_dur) / max(duration_sec, old_dur)
+            if dur_gap > 0.08:
+                continue
+
+        ratio = difflib.SequenceMatcher(None, key, old_key).ratio()
+        b = set(old_key.split())
+        jaccard = len(a & b) / max(1, len(a | b))
+
+        if ratio >= 0.82 or jaccard >= 0.72:
+            return True, old
+
+    return False, None
+
+
+def mark_celeb_sent(meta, person, item, detail, video_id):
+    title = item.get("snippet", {}).get("title", "") or ""
+    dur = parse_duration(detail.get("contentDetails", {}).get("duration"))
+    meta.setdefault("sent_history", []).append({
+        "person": person,
+        "video_id": video_id,
+        "title_key": _normalize_video_title(title),
+        "duration_sec": dur,
+        "sent_at": datetime.now(timezone.utc).isoformat(),
+    })
+    meta["sent_history"] = meta["sent_history"][-300:]
+
+
 class YouTubeQuotaError(RuntimeError):
     pass
 
 
 def yt_search(query, published_after, duration="long"):
-    # search.list 단계에서 길이를 먼저 거른다.
-    # long   = 20분 초과
-    # medium = 4~20분 (핵심 인물 예외 검색에만 사용)
-    if duration not in {"long", "medium"}:
-        duration = "long"
+    # 짧은 영상 차단: 이 봇의 셀럽 검색은 항상 long(20분 초과)만 사용한다.
+    # 다른 코드가 실수로 medium을 넘겨도 강제로 long으로 바꾼다.
+    duration = "long"
 
     r = requests.get(
         "https://www.googleapis.com/youtube/v3/search",
@@ -1171,10 +1278,16 @@ def candidate_score(person, item, detail):
         detail.get("contentDetails", {}).get("duration")
     )
 
-    if dur >= PREFERRED_DURATION_SEC:
+    # 길이는 보조 신호다. 20분 미만은 하드 필터에서 차단하고,
+    # 장시간이라는 이유만으로 2시간짜리 해설이 35분짜리 원본 인터뷰를 이기지 않게 한다.
+    if dur >= 3600:
+        score += 3
+    elif dur >= 2700:
         score += 2
+    elif dur >= PREFERRED_DURATION_SEC:
+        score += 1
     elif dur < MIN_DURATION_SEC:
-        score -= 5
+        score -= 10
 
     if person in CORE_PERSONS:
         score += 1
@@ -1243,14 +1356,8 @@ def hard_filter(item, detail):
     )
 
     if dur < MIN_DURATION_SEC:
-        # 20분 이하 영상은 원칙적으로 탈락.
-        # 단, 핵심 인물의 4~20분짜리 원본 인터뷰/키노트/패널은 예외 허용한다.
-        if person not in CORE_PERSONS or dur < CORE_MEDIUM_MIN_SEC:
-            return None, f"길이 미달 ({dur // 60}분)"
-
-        direct_meta, direct_reason = direct_metadata_evidence(person, item, detail)
-        if not direct_meta:
-            return None, f"20분 이하 직접출연 근거 부족 ({dur // 60}분)"
+        # 예외 없음: 20분 미만은 핵심 인물/공식 채널/키노트라도 전송하지 않는다.
+        return None, f"길이 미달 ({dur // 60}분)"
 
     return person, None
 
@@ -1454,6 +1561,16 @@ def send_telegram_celeb(person, item, judge, video_id):
 
 def run_celeb_watch():
     seen = load_seen()
+    meta = load_celeb_meta()
+
+    due, elapsed = youtube_search_due(meta)
+    if not due:
+        remain = max(0.0, YOUTUBE_SEARCH_MIN_INTERVAL_HOURS - elapsed)
+        print(
+            f"[셀럽] YouTube 검색 쿨다운 — 마지막 검색 {elapsed:.1f}시간 전, "
+            f"약 {remain:.1f}시간 뒤 재검색"
+        )
+        return
 
     published_after = (
         datetime.now(timezone.utc)
@@ -1464,12 +1581,13 @@ def run_celeb_watch():
     quota_stopped = False
 
     (
-        search_batches, rotation_slot, core_count, medium_count,
+        search_batches, rotation_slot, individual_count, grouped_core_count,
         rotated_count, noncore_count
     ) = build_search_batches()
     print(
-        f"[셀럽] 검색계획: 핵심 {core_count}명 long 매회, "
-        f"최핵심 {medium_count}명만 medium 추가, "
+        f"[셀럽] 검색계획: 20분 초과 장시간 영상 전용 · 최근 7일 | "
+        f"최핵심 개별검색 {individual_count}명, "
+        f"나머지 핵심 묶음검색 {grouped_core_count}명, "
         f"비핵심 {rotated_count}/{noncore_count}명 순환조 "
         f"{rotation_slot + 1}/{NONCORE_ROTATION_SHARDS}, "
         f"search.list 최대 {len(search_batches)}회"
@@ -1501,6 +1619,11 @@ def run_celeb_watch():
             )
 
         time.sleep(0.5)
+
+    # 성공/쿼터중단 여부와 무관하게 이번 검색 시각을 기록해
+    # 외부 스케줄이 매시간 돌더라도 search.list를 연속 호출하지 않는다.
+    meta["last_youtube_search_at"] = datetime.now(timezone.utc).isoformat()
+    save_celeb_meta(meta)
 
     print(
         f"[셀럽] 신규 후보: {len(candidates)}건"
@@ -1725,6 +1848,25 @@ def run_celeb_watch():
             )
 
             if should_send:
+                duration_sec = parse_duration(
+                    detail.get("contentDetails", {}).get("duration")
+                )
+                duplicate, old = is_sent_reupload_duplicate(
+                    meta,
+                    person,
+                    item['snippet'].get('title', ''),
+                    duration_sec,
+                )
+
+                if duplicate:
+                    # 이미 보낸 인터뷰의 재업로드로 판단되면 이 video_id만 seen 처리한다.
+                    seen.add(vid)
+                    print(
+                        f"♻️ [재업로드 중복차단] {person} | "
+                        f"{item['snippet'].get('title', '')[:60]}"
+                    )
+                    continue
+
                 ok = send_telegram_celeb(
                     person,
                     item,
@@ -1734,6 +1876,8 @@ def run_celeb_watch():
 
                 if ok:
                     seen.add(vid)
+                    mark_celeb_sent(meta, person, item, detail, vid)
+                    save_celeb_meta(meta)
                     sent += 1
 
                     print(
@@ -1771,6 +1915,7 @@ def run_celeb_watch():
             break
 
     save_seen(seen)
+    save_celeb_meta(meta)
 
     if sent == 0 and NOTIFY_WHEN_EMPTY and not quota_stopped:
         send_tg(
