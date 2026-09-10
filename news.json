@@ -1,6 +1,27 @@
 {
-  "updated": "2026-09-10T12:04:45.426025+00:00",
+  "updated": "2026-09-10T15:05:03.483632+00:00",
   "items": [
+    {
+      "title": "TSMC 8월 매출 53% 급증, AI 칩 수요 강세로 사상 최대치 기록",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSFg0dDd3ZWxJU3RadUVmWFJvcVo2ZUh3VWxwY2QwRENWdDdEcERWZnRIbjl4QW1yRzlwN1V0a3U1RzVUX1dHUHNSZUM1LXM0S0hKT1FScFpHX3pxSFRfQS1vaUNmSmtsNzZjVVdES1psMGhtbmhhZFhCUUxBTnpIdG9wQlUtVFZBNkp1dXp5UXFvQVhkYlRxZ2lOTU5IcnhQQ01hWXZ6bENzQ1k?oc=5",
+      "source": "TradingView",
+      "published": "2026-09-10T12:06:56+00:00",
+      "summary": "TSMC의 8월 매출이 AI 칩에 대한 전 세계적인 수요 급증에 힘입어 전년 동월 대비 53% 증가하며 사상 최대치를 달성했다.\nAI 칩 제조의 핵심 파운드리인 TSMC의 기록적인 매출 성장은 AI 시장의 가파른 성장세를 방증하며, 관련 반도체 산업의 전반적인 호황을 시사한다. 이는 AI 인프라 구축을 위한 컴퓨팅 파워 수요가 지속적으로 증가하고 있음을 나타낸다."
+    },
+    {
+      "title": "구글, 핀란드에 20조 원 규모 AI 데이터센터 신설 및 원전 전력 22년간 확보",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE85VHFhT3FkZjRlTTJFWkp6cG9ncS1HQk1Bd2M3LWhQanBaVzB3Y3JSRUZDOWVIdGYySkJLRDhuNVQ5WnFmamJKN01NZnFiS1ZvcVYtM2tjakw4VjNVanFqZmY1Yl9ORGFnTEE?oc=5",
+      "source": "AI타임스",
+      "published": "2026-09-10T06:43:40+00:00",
+      "summary": "구글이 핀란드에 20조 원(약 130억 유로)을 투자하여 새로운 AI 데이터센터를 구축하고, 해당 지역 원자력 발전량의 50%를 22년간 확보하는 계약을 체결했다.\nAI 모델 학습 및 서비스 운영에 필요한 막대한 전력 수요를 충족시키기 위해 구글이 안정적이고 친환경적인 에너지원 확보에 나선 것은 AI 인프라 구축의 새로운 표준을 제시한다. 핀란드의 저렴한 전력 비용과 낮은 온도는 데이터센터 운영 효율성을 높이는 데 기여한다. 이는 AI 기술의 발전과 확산에 필수적인 인프라 투자 경쟁이 심화되고 있음을 보여준다."
+    },
+    {
+      "title": "OpenAI, 차세대 AI 모델 'GPT-6 Astra' 공개",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE11QUxBUVJLdC1jSmtJbmcxQzg4Qm9yUlNPS3JEMEVBanIyY1FRT2k2R0hBTlNnX2VqcWpTSDJUMDV0TjBJN1VGamlrZzVPZw?oc=5",
+      "source": "OpenAI",
+      "published": "2026-09-10T14:57:07+00:00",
+      "summary": "OpenAI는 차세대 인공지능 모델 'GPT-6 Astra'를 출시했습니다. 이 모델은 다양한 작업에서 향상된 성능과 효율성을 제공하며, API 가격은 입력 토큰당 10달러, 출력 토큰당 50달러부터 시작합니다.\nGPT-6 Astra의 출시는 AI 모델의 성능 기준을 한 단계 높이며, 다양한 산업 분야에서의 AI 도입 및 활용을 더욱 가속화할 것으로 예상됩니다. API 가격 정책은 AI 서비스 개발자 및 기업의 비용 부담에 영향을 줄 수 있습니다."
+    },
     {
       "title": "OpenAI, 최신 AI 모델 'GPT-6 Astra' 공개… 업무 생산성·안전성 대폭 강화",
       "url": "https://openai.com/index/gpt-6-astra-next-generation-work/",
@@ -1029,27 +1050,6 @@
       "source": "tokenpost.kr",
       "published": "2026-08-28T01:26:17+00:00",
       "summary": "엔비디아 CEO 젠슨 황은 내년에 생산 가능한 모든 칩이 이미 판매되었다고 밝혔다. 이는 AI 칩에 대한 강력한 수요를 시사하며, 공급망의 지속적인 압박을 보여준다. 구체적인 판매량이나 매출액은 언급되지 않았다. [분야 AI,GPU] [병목 악화] [유동성 유입] 왜중요: AI 칩 수요의 폭발적인 증가와 공급 부족 심화를 직접적으로 보여주는 발언으로, GPU 공급 병목 현상이 지속될 것임을 시사한다."
-    },
-    {
-      "title": "AWS, 엔비디아 GPU 200만 개 추가 배치 - 자체 AI 칩 '트레이니움'과 연계 강화",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1oWTN5WGwwZGEwcXJxODVzcUJVN0dmWWdxakxwM2ZYU3I2dWZCc2p1V0VZNFl0MWlwalVUdUdqWl85LXFLaHlQbWpWZHpWc1lfMmpieDJTejZBck1WVUdXaVNR0gFoQVVfeXFMTkVDQmJDMFBNRWdKWUI2Uk9Fd1BobV94VzlnVC0xN2NHR3l2N05HYzY0dThZaG8yMlJGQmt4VVNpek85US0xSUlJUDhUdFhlWkYyZlB5cmZlZkFzWVoxOVdFU2VEUWZxbjY?oc=5",
-      "source": "財経新聞",
-      "published": "2026-08-28T04:06:19+00:00",
-      "summary": "아마존 웹 서비스(AWS)가 엔비디아 GPU 200만 개를 추가로 배치할 계획이다. 이는 자체 개발한 AI 칩 '트레이니움'과의 연계를 강화하여 AI 워크로드 성능을 최적화하기 위한 전략의 일환이다. 이번 GPU 추가 도입은 AI 인프라 확장에 대한 AWS의 지속적인 투자를 보여준다. [분야 AI,GPU,데이터센터,AI수요] [병목 악화] [유동성 유입] 왜중요: AWS의 대규모 GPU 추가 도입은 AI 인프라 투자 지속성과 AI 수요 증가를 시사하며, GPU 공급망에 대한 압박을 가중시킬 수 있다."
-    },
-    {
-      "title": "SK하이닉스 CEO, \"모든 부지·모든 국가에 투자 열려있다\"",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBPc0RvWDVQU1pDQVF6MnJVc2NiYWt0amYxNWxDQlU0SExMM3VIU0Y3aGw4VTMtMl9EODRaNFlGcUp4RGJ3ZllLNDBUM1ZpMXd0ZTY4eFpWVk50SFJ5SG9IbnRTNENtLWt6NkV1a0NpZlFPLU9N?oc=5",
-      "source": "파이낸셜포스트",
-      "published": "2026-08-28T01:00:00+00:00",
-      "summary": "SK하이닉스 곽노정 최고경영자(CEO)는 회사의 투자 결정에 있어 특정 지역이나 국가에 국한되지 않고 유연성을 강조했다. 이는 HBM 등 AI 반도체 수요 증가에 대응하기 위한 선제적 투자 확대 의지를 시사한다. 구체적인 투자 계획이나 대상 지역은 언급되지 않았으나, 글로벌 공급망 재편 및 지정학적 리스크를 고려한 전략으로 해석된다. [분야 HBM,DRAM,AI수요] [병목 무관] [유동성 중립] 왜중요: SK하이닉스의 글로벌 투자 유연성 언급은 AI 반도체 시장의 성장세와 공급망 다변화 전략을 파악하는 데 중요한 단서를 제공한다."
-    },
-    {
-      "title": "엔비디아, AI 실적 호조로 하루 만에 4,410억 달러 증시 가치 상승",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZ1JvUzlsaWZ4MWhKUzVPUGFMTnhDSktVZ053aFNMZ2JBTE95MXU4MEIwNTNVd1JQWWk1eHFvd1hHQThyWnZRUEFJeXotSFBVR2pUZV9PVFhpeUo3Z1VuOTJOTXZ4Q1NDRUx1ZlNBdkg5NXdYTjUyeV82Z3ZvZUZfcmh1ME1MR01vcm4zZ19OdTNwT05xWHMtV1JrUkZ4a29JVjFEU0VObDk5c25zcDYzcXVQRlFWLXo1OW9Pckk0TWhiOHk4amtSdkNKT3NmX1FCbDZuT0lKWnpBdmRremx5ZWJzS2hNYjV2ZHdEOXZCUVhzSGpu?oc=5",
-      "source": "Proactive financial news",
-      "published": "2026-08-28T00:51:00+00:00",
-      "summary": "엔비디아의 AI 관련 실적이 예상치를 크게 상회하며 하루 만에 시가총액이 4,410억 달러 증가했다. 이는 AI 칩 수요의 강력한 지속성을 시사한다. [분야 AI,GPU,AI수요] [병목 악화] [유동성 유입] 왜중요: 엔비디아의 폭발적인 실적은 AI 수요의 견고함을 재확인시키며 관련 산업의 투자 심리를 강화한다."
     }
   ]
 }
