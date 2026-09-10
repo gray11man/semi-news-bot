@@ -3899,21 +3899,99 @@
       "policy": "ai-industry-v4-wide-strict",
       "reason": "This is a stock report for KC, classifying it as a growth stock rather than an asset stock, with no new industry developments.",
       "title": "[모닝 리포트] 케이씨, 자산주 아닌 반도체 성장주…\"NAV 할인 축소 기대\""
+    },
+    "ea6ecf1150a478aa740dc5afa066fb98d6a84c1f537ba959572b2e3ce92a8d19": {
+      "ts": 1789016090.893087,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI와 직접적인 연관성이 낮고, 특정 기업의 미래 전망에 대한 추측성 기사이므로 제외.",
+      "title": "Can New Era Energy & Digital Become the Next Nebius Group?"
+    },
+    "ec93d500d6cf442ac98df3869c20b06d504c84cb08cc0e78fa5b774675c5a7e7": {
+      "ts": 1789016090.8931,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "특정 기업 주가 상승 및 개인 투자자 매매 동향에 초점을 맞춘 뉴스로, AI 산업 전반의 중요 사안으로 보기 어려움.",
+      "title": "【12:36 即時新聞】禾伸堂(3026)股價震盪走高至786元、上漲3.69%，MLCC漲價與AI高階伺服器需求發酵＋均線多頭結構搭配投信買盤穩定進場"
+    },
+    "c376e9d598350286409c2399f763149512eecd226cf979a9bcde72c2efbbd933": {
+      "ts": 1789016090.893106,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "금리 변동, 애플 신제품 등 AI와 직접적인 연관성이 낮은 여러 경제 지표와 시장 동향을 혼합한 기사로, AI 산업 투자 관점에서 중요도가 낮음.",
+      "title": "美債殖利率飆破4.8%牽動資金！蘋果摺疊機問世，AI伺服器與半導體供應鏈分歧-財經焦點情報站"
+    },
+    "ed7876de811e7fdcc7571c4c7cdedf5d90b3b33191466ecbf5913d7064d6a5cf": {
+      "ts": 1789016090.893108,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "특정 기업 주가 상승 및 기술 테마에 대한 기사로, AI 산업 전반의 중요 사안으로 보기 어려움.",
+      "title": "【12:33 即時新聞】蔚華科(3055)股價走強至157元，上漲5.02%，受TGV玻璃基板檢測與AI先進封裝題材帶動，多頭挑戰前高下的高檔換手"
+    },
+    "9b5a0b13fd50c3190b327c03c255ff4c6935e2cedc685c51e7d34350de1a3dc0": {
+      "ts": 1789016090.893123,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI와 로봇이 아프리카 섬유 산업에 새로운 모델을 제공한다는 내용은 특정 지역 산업의 변화를 다루지만, AI·반도체 산업 전반의 중요 이슈로 보기 어려움.",
+      "title": "AI and robots offer new model for Africa’s textile industry"
+    },
+    "4aede7955057d2f45e95c8f3ec4147bda455816b5e2695079099daf7c4ceffbd": {
+      "ts": 1789016090.893127,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "대학생들의 AI 인식 및 활용에 대한 연구는 AI 교육 및 활용 측면에서 중요할 수 있으나, 투자 및 산업 관점에서 직접적인 영향은 제한적이므로 제외.",
+      "title": "Study: An Inside Look at How College Students Think About and Use AI"
+    },
+    "10a9815fbb3381c3024c50cc283b5285d7affbcacaacf118e07034f5ebd68130": {
+      "ts": 1789016090.893133,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "현대차그룹 주차 로봇 사업에 'AI 외관 검사' 기술을 공급한다는 내용은 특정 기업의 기술 적용 사례이나, AI 산업 전반에 대한 영향은 제한적이므로 제외.",
+      "title": "위플로, 현대차그룹 컨소 주차 로봇 사업 'AI 외관 검사' 기술 공급 - 머니투데이"
+    },
+    "7bdf15753fa83083cd1bc30577b6f70486f9469991215cbaa1c3086256a1e4a8": {
+      "ts": 1789016090.893135,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "특정 기업 주가 상승 및 투자자 동향에 대한 기사로, AI 산업 전반의 중요 사안으로 보기 어려움.",
+      "title": "【11:58 即時新聞】聚鼎(6224)股價小幅走揚守穩八字頭，AI伺服器保護元件題材發酵＋技術多頭排列搭配法人與主力偏多承接"
+    },
+    "867d54014241703bd6ba4bd997932c469e32c700349efbb5bec8984f5c040f74": {
+      "ts": 1789016090.893139,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "지역 데이터센터 운영에 대한 주민 정보 제공은 지역적 이슈로, AI 산업 투자자에게 필수적인 정보가 아님.",
+      "title": "What Woodbury Residents Should Know About IronGate’s Two Data Centers"
+    },
+    "2f15b615f905a5a0cbede99824133158a9ba0d4fa2a2479b7db3e27ef36b9a25": {
+      "ts": 1789016090.893144,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "특정 기업 주가 하락에 대한 뉴스로, AI 산업 전반의 중요 사안으로 보기 어려움.",
+      "title": "Arista Networks stock heads into the open after a 1% Nasdaq drop"
+    },
+    "de7fb8a9e061c70757db7c759345223f9199a3c94903898e4de6b699046c2b09": {
+      "ts": 1789016090.893147,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "애플 제품 발표 분석 기사로, AI 및 반도체 산업 전반의 중요 이슈보다는 특정 기업의 제품 전략에 집중되어 있어 제외.",
+      "title": "iPhone Duoからカメラ新機能、半導体まで。アップルの製品発表を分析する【西田宗千佳のRandomTracking】"
+    },
+    "4803867cb7b6ba9afa23fe31a0d68400bc071bc0a5277e002734aa4c5f0f62d6": {
+      "ts": 1789016090.89315,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "특정 기업 주가 상승 및 월 매출 증가에 대한 기사로, AI 산업 전반의 중요 사안으로 보기 어려움.",
+      "title": "【11:37 即時新聞】順達(3211)股價上攻至375元上漲2.18%，AI伺服器BBU題材帶動，月營收連三月成長＋投信先賣後買籌碼震盪收斂"
+    },
+    "55082a6f62454c5c95cd249f4863c8ea9dea562ddb0e47da820945c46f37c5a1": {
+      "ts": 1789016090.893154,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "특정 기업의 AI 액체 냉각 커넥터 사업 수익과 개인 투자자 매매 동향에 대한 기사로, AI 산업 전반의 중요 사안으로 보기 어려움.",
+      "title": "富世達靠AI液冷快接頭暴賺，為何散戶三個月瘋逃逾萬戶，大戶與外資卻在瘋狂鎖碼？"
+    },
+    "89164375a47cd92d03977c6c21ad51f595db27cce8d19479074f1181456a7286": {
+      "ts": 1789016090.893158,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "후장 개장 전 특정 종목의 주문 상황에 대한 뉴스로, AI 산업 전반의 중요 사안으로 보기 어려움.",
+      "title": "マーケット早耳情報＝話題株の後場寄り前成り行き注文状況―キオクシア、フジクラ、積水ハウスなど 速報"
+    },
+    "e02b9ab40998e51cf5e5785f26644de178e14b6c2d0d151670e8140c6fd568c1": {
+      "ts": 1789016090.893164,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "구마모토 대학 지진 피해액 산출 뉴스로, AI 및 반도체 산업 전반의 중요 이슈와 직접적인 관련성이 낮음.",
+      "title": "半導体関連の精密機器など被災 熊本大学の地震被害は数億円規模の見通し（熊本ニュース KAB ONLINE）"
     }
   },
   "legacy": {
-    "819d1311516625740e57d7c80e21d2e1": {
-      "ntitle": "nvidia lines up $500 billion in financing as ceo jensen huang tells cnbc his chips are investable asset",
-      "ts": 1786417326.750009
-    },
-    "3e5f8b49ed0d304081b11c2b006b2287": {
-      "ntitle": "ms 이르면 내달 자체 ai칩 공개 엔비디아 의존 낮춘다",
-      "ts": 1786417330.20186
-    },
-    "f2f2f14f692b6bfb947291b762f5d7f7": {
-      "ntitle": "cnbc exclusive: transcript: cnbc s becky quick speaks with nvidia s jensen huang & wall street leaders on $500b ai infrastructure push on closing bell: overtime today",
-      "ts": 1786417335.523831
-    },
     "71a3007ccb8382b90bba8c920ec61879": {
       "ntitle": "엔비디아 월가 손잡고 700조 ai 펀드 결성 gpu를 금융자산으로",
       "ts": 1786428131.1995
