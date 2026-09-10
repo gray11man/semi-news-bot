@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""AI·반도체 중요 뉴스 v4.0 — 광역 레이더 / 강한 선별 / pending 비축 방지.
+"""AI·반도체 중요 뉴스 v4.1 — 최신성 강제검증 / 사건중복 제거 / 광역 레이더.
 
 핵심 원칙
 - 검색은 넓게: 산업 + 기업 + 핵심인물 + 공식발표 + 신모델/신기술 + 실적/가이던스
@@ -8,6 +8,8 @@
 - 전송은 좁게: 투자자가 오늘 알아야 할 '새롭고 중요한 사실'만 보낸다.
 - 긍정/부정/중립 동일 기준. 전망도 출처와 구체성이 충분하면 중요 뉴스로 인정한다.
 - 미검토 new/candidate는 장기 이월하지 않는다. 다음 회차에 다시 수집될 수는 있으나 pending에 쌓지 않는다.
+- RSS 날짜만 믿지 않고 원문 발행/수정 날짜를 재검증한다. 오래된 재탕은 Python+Gemini 이중 차단.
+- URL + event_key + 장기 sent history + 최종 의미중복 심사로 중복 전송을 최대한 차단한다.
 - API 실패 시 미검토 제목 전송 금지. 키워드 점수만으로 전송하지 않는다.
 
 전체 교체용. --dry-run / --diagnose 지원. seen.json v3 상태 구조와 호환.
@@ -36,8 +38,8 @@ import trafilatura
 UTC = dt.timezone.utc
 STATE = Path('seen.json')
 REPORT = Path('diagnostics.json')
-UA = 'AIIndustryNewsBot/4.0 (+RSS news reader)'
-POLICY_VERSION = 'ai-industry-v4-wide-strict'
+UA = 'AIIndustryNewsBot/4.1 (+RSS news reader)'
+POLICY_VERSION = 'ai-industry-v4.1-fresh-dedupe'
 
 
 def now():
@@ -95,23 +97,104 @@ def canonical(url):
 
 
 def item_id(item):
-    # 같은 URL의 실질 업데이트는 재검토. 단순 매체명 꼬리는 수집 시 제거.
+    # 수집 레코드 ID. 제목/요약이 실제로 바뀐 경우는 재검토하되, 최종 중복은 URL+event_key+LLM으로 다시 막는다.
     return digest(norm(item['title']) + '\n' + clean(item.get('summary', '')))
 
 
-def iso_age(value):
+def parse_time(value):
+    """ISO-8601 / 흔한 RFC 날짜를 UTC aware datetime으로 정규화한다."""
+    if not value:
+        return None
+    text = str(value).strip()
     try:
-        value = dt.datetime.fromisoformat(str(value).replace('Z', '+00:00'))
-        if value.tzinfo is None:
-            value = value.replace(tzinfo=UTC)
-        return (now() - value.timestamp()) / 3600
+        parsed = dt.datetime.fromisoformat(text.replace('Z', '+00:00'))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=UTC)
+        return parsed.astimezone(UTC)
     except (TypeError, ValueError):
+        pass
+    try:
+        from email.utils import parsedate_to_datetime
+        parsed = parsedate_to_datetime(text)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=UTC)
+        return parsed.astimezone(UTC)
+    except (TypeError, ValueError, OverflowError):
         return None
 
 
+def iso_age(value):
+    parsed = parse_time(value)
+    return None if parsed is None else (now() - parsed.timestamp()) / 3600
+
+
 def fresh(item, hours=48):
+    # 1차 RSS 창. 이것만으로 '사건이 최신'이라고 판단하지 않는다.
     age = iso_age(item.get('published'))
     return age is not None and -1 <= age <= hours
+
+
+def event_key_norm(value):
+    text = norm(clean(value or ''))
+    text = re.sub(r'[^0-9a-z가-힣\u4e00-\u9fff]+', ' ', text)
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def url_norm(value):
+    if not value:
+        return ''
+    try:
+        u = canonical(value)
+        return u.rstrip('/')
+    except Exception:
+        return ''
+
+
+def source_freshness(item, hours):
+    """원문이 명백히 오래된 재탕이면 Python에서 탈락. 최근 수정된 오래된 원문은 LLM이 '새 사실'만 재검증."""
+    rss_age = iso_age(item.get('published'))
+    if rss_age is None or not -1 <= rss_age <= hours:
+        return False, 'RSS 게시시각이 최신 창 밖'
+
+    pub_age = iso_age(item.get('original_published'))
+    mod_age = iso_age(item.get('original_modified'))
+    # 기본은 뉴스창 + 약간의 시차 여유. 사용자가 창을 36h 등으로 늘리면 그보다 짧게 자르지 않는다.
+    original_limit = max(hours, setting('ORIGINAL_MAX_AGE_HOURS', 30, 12, 168))
+
+    if pub_age is not None and pub_age > original_limit:
+        # 오래된 원문이어도 실제 수정시각이 최근이면 '후속 업데이트 기사'일 수 있으므로 내용 심사로 보낸다.
+        if mod_age is not None and -1 <= mod_age <= hours:
+            return True, 'old_source_recently_modified'
+        return False, f'원문 발행일이 {original_limit}시간보다 오래됨'
+
+    return True, 'fresh_source'
+
+
+def sent_url_duplicate(state, item):
+    """이미 보낸 동일 원문 URL이면 차단. 다만 원문 수정시각이 전송 후 확실히 새로 갱신됐으면 재검토 허용."""
+    urls = {url_norm(item.get('link')), url_norm(item.get('resolved_url'))}
+    urls.discard('')
+    if not urls:
+        return False
+    modified = parse_time(item.get('original_modified'))
+    for row in state.get('sent', {}).values():
+        old_urls = {url_norm(row.get('link')), url_norm(row.get('resolved_url'))}
+        old_urls.discard('')
+        if urls & old_urls:
+            if modified is not None and modified.timestamp() > row.get('ts', 0) + 1800:
+                return False
+            return True
+    return False
+
+
+def sent_event_duplicate(state, event_key):
+    key = event_key_norm(event_key)
+    if not key:
+        return False
+    for row in state.get('sent', {}).values():
+        if event_key_norm(row.get('event_key')) == key:
+            return True
+    return False
 
 
 def load_state():
@@ -137,14 +220,16 @@ def load_state():
                 new = {k: item.get(k, '') for k in ('title', 'link', 'summary', 'source', 'published')}
                 new['stage'] = 'new'
                 state['pending'][item_id(new)] = new
-    cutoff = now() - 30 * 86400
+    # 장기 중복 방지: 보낸 뉴스는 기본 365일, legacy도 동일 기간 유지.
+    cutoff = now() - setting('SENT_HISTORY_DAYS', 365, 30, 1095) * 86400
     for key in ('sent', 'legacy'):
         rows = state.get(key, {})
         if not isinstance(rows, dict) or any(not isinstance(v, dict) for v in rows.values()):
             raise RuntimeError('전송 이력 형식 오류')
         state[key] = {k: v for k, v in rows.items() if isinstance(v.get('ts'), (int, float)) and v['ts'] > cutoff}
     state['decisions'] = {k: v for k, v in state['decisions'].items()
-                          if v.get('ts', 0) > now() - 3 * 86400 and v.get('policy') == POLICY_VERSION}
+                          if v.get('ts', 0) > now() - setting('DECISION_HISTORY_DAYS', 30, 3, 180) * 86400
+                          and v.get('policy') == POLICY_VERSION}
     state['pending'] = {k: v for k, v in state['pending'].items()
                         if fresh(v) and v.get('stage') == 'approved'}
     return state
@@ -474,14 +559,27 @@ class PageMetadata(HTMLParser):
         super().__init__()
         self.article_url = ''
         self.published = ''
+        self.modified = ''
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        # Google 전용 원문 속성만 읽는다. 임의의 첫 번째 외부 링크를 기사로 쓰지 않는다.
+        # Google News wrapper의 원문 주소.
         if attrs.get('data-n-au'):
             self.article_url = attrs['data-n-au']
-        if tag == 'meta' and attrs.get('property', '').lower() == 'article:published_time':
-            self.published = attrs.get('content', '')
+        if tag != 'meta':
+            return
+        key = (attrs.get('property') or attrs.get('name') or attrs.get('itemprop') or '').lower()
+        content = attrs.get('content', '')
+        if key in ('article:published_time', 'datepublished', 'pubdate', 'publishdate', 'date') and not self.published:
+            self.published = content
+        if key in ('article:modified_time', 'datemodified', 'lastmodified', 'last-modified') and not self.modified:
+            self.modified = content
+
+
+def jsonld_date(raw_html, field):
+    # 많은 언론사가 날짜를 JSON-LD에만 넣는다. 완전한 JSON 파싱보다 필드 추출이 장애 내성이 높다.
+    m = re.search(r'"' + re.escape(field) + r'"\s*:\s*"([^"\n]+)"', raw_html, re.I)
+    return html.unescape(m.group(1)).strip() if m else ''
 
 
 def wrapper(url):
@@ -499,26 +597,32 @@ def body_excerpt(text, maximum=6000):
 def enrich(item):
     result = dict(item)
     result['body_status'] = 'unavailable'
+    result['original_published'] = ''
+    result['original_modified'] = ''
     try:
         final, data = get_page(item['link'])
+        raw = data.decode('utf-8', errors='replace')
         metadata = PageMetadata()
-        metadata.feed(data.decode('utf-8', errors='replace'))
+        metadata.feed(raw)
         if wrapper(final):
             if not metadata.article_url or wrapper(metadata.article_url):
                 return result
             final, data = get_page(metadata.article_url)
+            raw = data.decode('utf-8', errors='replace')
             metadata = PageMetadata()
-            metadata.feed(data.decode('utf-8', errors='replace'))
+            metadata.feed(raw)
         if wrapper(final):
             return result
+
+        result['resolved_url'] = canonical(final)
+        result['original_published'] = metadata.published or jsonld_date(raw, 'datePublished')
+        result['original_modified'] = metadata.modified or jsonld_date(raw, 'dateModified')
+
         text = trafilatura.extract(data, include_comments=False, include_tables=True, favor_precision=True) or ''
         if len(text.strip()) < 160:
             return result
         result['body'] = body_excerpt(text)
         result['body_status'] = 'extracted'
-        result['resolved_url'] = final
-        # 추정 날짜나 URL 숫자로 무조건 폐기하지 않는다. 명시된 발행일만 보조근거로 쓴다.
-        result['original_published'] = metadata.published
     except (requests.RequestException, FetchError, ValueError, TypeError):
         pass
     return result
@@ -533,6 +637,16 @@ RULES = """너는 AI·반도체 산업의 '중요 뉴스만' 선별하는 한국
 긍정/부정/중립은 완전히 같은 중요도 기준으로 평가한다. 악재를 숨기거나 호재를 우대하지 마라.
 '관련 있다'와 '중요하다'를 구분한다. 관련만 있는 사소한 회사 뉴스는 버린다.
 최종 통과는 'AI·반도체 산업 투자자가 오늘 모르고 지나가면 산업 변화 이해에 의미 있는 구멍이 생기는가'로 판단한다.
+
+[최신성 - 최우선]
+RSS published는 검색/색인 시각일 수 있으므로 사건 발생일로 간주하지 마라.
+반드시 original_published, original_modified, 본문 표현을 함께 보고 '지금 새로 생긴 사실'이 무엇인지 확인한다.
+오래된 사건을 오늘 다시 설명·번역·재인용한 기사는 중요해도 탈락이다.
+오래된 원문이 최근 수정됐더라도 최근 수정분에 새 수치·새 계약·새 고객·새 가이던스·확정/취소·새 제품/양산 등 실질적 새 사실이 없으면 탈락이다.
+keep=true라면 fact에는 오직 이번 최신 창에서 새로 확인된 사실을 쓰고, new_fact_date에는 그 새 사실의 날짜/시각을 ISO-8601로 적는다.
+새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다.
+is_recycled_story는 과거 사건 재탕/번역/재인용/단순 회고이면 true다. true인 기사는 절대 keep=true로 두지 마라.
+event_key는 '주체|사건종류|상대/제품|핵심기간/핵심수치' 형식으로 사건을 짧고 안정적으로 정규화한다. 같은 사건이면 매체·언어·제목이 달라도 최대한 같은 event_key를 써라.
 
 [포함 범위]
 1) AI 모델/기술: 새 프런티어 모델, reasoning/agentic/multimodal/long-context, 학습·추론 알고리즘,
@@ -592,12 +706,14 @@ SHORT_SCHEMA = {'type': 'ARRAY', 'items': {'type': 'OBJECT', 'properties': {
     'priority': {'type': 'INTEGER'}},
     'required': ['index', 'keep', 'reason', 'priority']}}
 FIELDS = {'headline': 140, 'fact': 400, 'impact': 300, 'watch': 200,
-          'evidence': 180, 'evidence_kind': 20, 'sector': 60}
+          'evidence': 180, 'evidence_kind': 20, 'sector': 60,
+          'event_key': 220, 'new_fact_date': 40}
 REVIEW_SCHEMA = {'type': 'ARRAY', 'items': {'type': 'OBJECT', 'properties': {
     'index': {'type': 'INTEGER'}, 'keep': {'type': 'BOOLEAN'},
     'reason': {'type': 'STRING'}, 'importance': {'type': 'INTEGER'}, 'signal': {'type': 'STRING'},
+    'is_recycled_story': {'type': 'BOOLEAN'},
     **{k: {'type': 'STRING'} for k in FIELDS}},
-    'required': ['index', 'keep', 'reason', 'importance', 'signal', *FIELDS]}}
+    'required': ['index', 'keep', 'reason', 'importance', 'signal', 'is_recycled_story', *FIELDS]}}
 RANK_SCHEMA = {'type': 'ARRAY', 'items': {'type': 'OBJECT', 'properties': {
     'index': {'type': 'INTEGER'}, 'duplicate': {'type': 'BOOLEAN'}}, 'required': ['index', 'duplicate']}}
 
@@ -715,10 +831,13 @@ def validate_review(rows, batch):
         if row.get('signal') not in ('긍정', '부정', '혼합', '중립'):
             dropped += 1
             continue
+        if type(row.get('is_recycled_story')) is not bool:
+            dropped += 1
+            continue
         if not row['keep']:
             valid.append(row)
             continue
-        if importance < 80:
+        if importance < 80 or row['is_recycled_story']:
             dropped += 1
             continue
 
@@ -731,7 +850,7 @@ def validate_review(rows, batch):
             # 내용은 유지하되 모델이 글자 수를 조금 넘긴 경우에만 안전하게 절단한다.
             if len(value) > maximum:
                 row[key] = value[:maximum].rstrip()
-        if malformed:
+        if malformed or not event_key_norm(row.get('event_key')):
             dropped += 1
             continue
 
@@ -743,19 +862,31 @@ def validate_review(rows, batch):
         if row['evidence_kind'] not in ('공식 발표', '언론 보도', '경영진 발언', '분석 자료'):
             dropped += 1
             continue
+
+        # 오래된 원문이 최근 수정된 경우에는 '새 사실 날짜'까지 실제 최신 창 안이어야 통과.
+        if item.get('freshness_note') == 'old_source_recently_modified':
+            new_age = iso_age(row.get('new_fact_date'))
+            hours = setting('NEWS_WINDOW_HOURS', 24, 6, 48)
+            if new_age is None or not -1 <= new_age <= hours:
+                dropped += 1
+                continue
         valid.append(row)
 
     rows[:] = valid
     if dropped:
-        print(f'[DEFER] 분석 형식/근거 이상 {dropped}건만 보류; 나머지 {len(rows)}건 계속 처리')
+        print(f'[DEFER] 분석 형식/근거/최신성 이상 {dropped}건 제외; 나머지 {len(rows)}건 계속 처리')
     return rows
 
 
 def history(state):
-    sent = sorted(state['sent'].values(), key=lambda row: row['ts'], reverse=True)
+    # LLM에는 최근 일부만 보내 토큰 폭증을 막고, 1년 전체 event_key/URL 중복은 Python이 별도로 검사한다.
+    sent = sorted(state['sent'].values(), key=lambda row: row['ts'], reverse=True)[:250]
     legacy = sorted(state.get('legacy', {}).values(), key=lambda row: row['ts'], reverse=True)
-    return {'sent': [{k: r.get(k, '') for k in ('title', 'fact', 'ts')} for r in sent],
-            'legacy': [{'title': r.get('ntitle', ''), 'ts': r['ts']} for r in legacy[:200]]}
+    return {'sent': [{
+                'title': r.get('title', ''), 'fact': r.get('fact', '')[:260],
+                'event_key': r.get('event_key', ''), 'ts': r.get('ts', 0)
+            } for r in sent],
+            'legacy': [{'title': r.get('ntitle', ''), 'ts': r['ts']} for r in legacy[:100]]}
 
 
 def record_decision(state, ident, why):
@@ -766,7 +897,7 @@ def record_decision(state, ident, why):
 def input_records(batch, with_body=False):
     keys = ['title', 'summary', 'source', 'published']
     if with_body:
-        keys += ['body', 'body_status', 'original_published']
+        keys += ['body', 'body_status', 'resolved_url', 'original_published', 'original_modified', 'freshness_note']
     return [{'index': index, **{k: item.get(k, '') for k in keys}} for index, item in enumerate(batch)]
 
 
@@ -791,7 +922,9 @@ def choose(state, api, checkpoint):
             '특히 새 모델/신기술, 핵심 경영진의 새 수치·전망, CAPEX/자금조달/대형계약, 생산·가격·수율·재고, '
             '데이터센터/전력, 규제, 중요한 부정 뉴스는 제목만 평범해 보여도 후보로 남긴다. '
             '단순 주가/목표가/가십/행사/입문설명/재탕은 false. reason은 120자 이내.',
-            {'articles': input_records(batch)}, SHORT_SCHEMA)
+            {'current_time_utc': dt.datetime.now(UTC).isoformat(),
+             'news_window_hours': setting('NEWS_WINDOW_HOURS', 24, 6, 48),
+             'articles': input_records(batch)}, SHORT_SCHEMA)
         validate_rows(rows, len(batch), allow_partial=True)
         returned = set()
         for row in rows:
@@ -813,7 +946,8 @@ def choose(state, api, checkpoint):
     # 본문 심사: 비용을 아끼려고 중요도 순 키워드 점수로 자르지 않는다.
     # candidate를 최신순으로 읽으며 가능한 만큼 이번 회차 안에 끝낸다.
     candidate_ids = [k for k, v in pending.items() if v.get('stage') == 'candidate']
-    candidate_ids.sort(key=lambda k: (pending[k].get('precheck_priority', 0), pending[k].get('published', '')), reverse=True)
+    # 본문 심사 예산이 모자랄 때도 오래된 후보보다 최신 후보를 먼저 처리한다.
+    candidate_ids.sort(key=lambda k: (pending[k].get('published', ''), pending[k].get('precheck_priority', 0)), reverse=True)
     body_limit = setting('BODY_MAX_PER_RUN', 72, 12, 200)
     review_batch = setting('REVIEW_BATCH', 6, 3, 8)
     for offset in range(0, min(len(candidate_ids), body_limit), review_batch):
@@ -821,26 +955,56 @@ def choose(state, api, checkpoint):
             break
         ids = candidate_ids[offset:offset + min(review_batch, body_limit - offset)]
         with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-            batch = list(executor.map(enrich, [pending[k] for k in ids]))
+            enriched = list(executor.map(enrich, [pending[k] for k in ids]))
+
+        # LLM 호출 전에 명백한 구형 원문과 동일 URL 재탕을 Python에서 강제 제거한다.
+        filtered_ids, batch = [], []
+        hours = setting('NEWS_WINDOW_HOURS', 24, 6, 48)
+        for ident, item in zip(ids, enriched):
+            ok, note = source_freshness(item, hours)
+            item['freshness_note'] = note
+            if not ok:
+                record_decision(state, ident, '최신성 탈락: ' + note)
+                continue
+            if sent_url_duplicate(state, item):
+                record_decision(state, ident, '이미 전송한 동일 원문 URL')
+                continue
+            filtered_ids.append(ident)
+            batch.append(item)
+        ids = filtered_ids
+        if not batch:
+            checkpoint()
+            continue
+
         rows = api.ask(
             '최종 내용 심사. candidate라는 이유로 통과시키지 마라. 모든 기사에 importance 0~100과 '
-            'signal(긍정/부정/혼합/중립)을 부여한다. keep=true는 importance 80 이상인 경우만 허용한다. '
+            'signal(긍정/부정/혼합/중립), is_recycled_story를 부여한다. keep=true는 importance 80 이상이면서 '
+            'is_recycled_story=false인 경우만 허용한다. 가장 먼저 이 기사가 현재 news_window_hours 안에 생긴 실제 새 사실을 '
+            '담고 있는지 확인하라. RSS 날짜만 최근이고 사건은 과거인 재탕/번역/회고/재인용이면 false. '
+            '오래된 원문이 최근 수정된 경우 freshness_note=old_source_recently_modified로 들어온다. 이 경우 최근 수정분에 '
+            '새 수치·계약·고객·가이던스·확정/취소·양산/출시 등 실질적 새 사실이 명확해야만 keep=true다. '
             '80점은 "AI·반도체 산업 투자자가 오늘 모르고 지나가면 중요한 변화 이해를 놓칠 수준"이다. '
             '관련성만 높고 파급이 작으면 79 이하로 버린다. 긍정/부정은 동일 기준이다. '
             '미래 전망도 회사 공식 가이던스·핵심 경영진의 구체적 발언·신뢰도 높은 언론의 구체적 내부계획이면 평가한다. '
-            'keep=true이면 한국어 headline(140자), fact(400자: 새 사실만), impact(300자: 의미; 추론은 추론이라고 표시), '
-            'watch(200자: 다음 확인 지표), sector(60자), evidence(180자: 제공 텍스트의 연속 원문 인용), '
-            'evidence_kind(공식 발표/언론 보도/경영진 발언/분석 자료)를 채운다. false면 문자열 필드는 빈 문자열이어도 된다. '
+            'keep=true이면 한국어 headline(140자), fact(400자: 이번 최신 창의 새 사실만), impact(300자), '
+            'watch(200자), sector(60자), evidence(180자: 제공 텍스트의 연속 원문 인용), '
+            'evidence_kind(공식 발표/언론 보도/경영진 발언/분석 자료), event_key, new_fact_date를 채운다. '
+            'event_key는 같은 사건이면 다른 매체/언어에서도 최대한 동일하게 만들고, new_fact_date는 ISO-8601 또는 UNKNOWN. '
             '본문이 없으면 RSS에 구체적 근거가 충분할 때만 통과. 기사 밖 사실로 보강하지 마라.',
-            {'articles': input_records(batch, True), 'history': history(state)}, REVIEW_SCHEMA)
+            {'current_time_utc': dt.datetime.now(UTC).isoformat(), 'news_window_hours': hours,
+             'articles': input_records(batch, True), 'history': history(state)}, REVIEW_SCHEMA)
         validate_review(rows, batch)
         for row in rows:
             ident = ids[row['index']]
             if row['keep']:
+                if sent_event_duplicate(state, row['event_key']):
+                    record_decision(state, ident, '과거 전송 사건 event_key 중복')
+                    continue
                 pending[ident] = {
                     **batch[row['index']], 'stage': 'approved',
                     'analysis': {**{k: row[k] for k in FIELDS},
-                                 'importance': row['importance'], 'signal': row['signal']}
+                                 'importance': row['importance'], 'signal': row['signal'],
+                                 'is_recycled_story': row['is_recycled_story']}
                 }
             else:
                 record_decision(state, ident, row['reason'])
@@ -860,10 +1024,11 @@ def choose(state, api, checkpoint):
     ranked = api.ask(
         '최종 편집: 입력 articles에 존재하는 index만 중요도 순서로 반환한다. 각 index는 정확히 한 번만 반환하고 '
         '입력 기사 수보다 많은 행을 만들지 마라. 동일 사건은 근거가 가장 충실한 한 건만 남기고 '
-        '나머지를 duplicate=true로 표시한다. 과거 sent와 같은 사건 재탕도 true. '
+        '나머지를 duplicate=true로 표시한다. event_key가 같거나 사실상 같은 사건이면 매체/언어/제목이 달라도 중복이다. '         '과거 sent와 같은 사건 재탕도 true. '
         '같은 회사의 다른 사건, 새 수치·새 고객·후속 확정·취소·방향 반전은 중복이 아니다. '
         '긍정/부정은 동일 기준이다. 입력된 전체 index만 반환한다.',
-        {'articles': [{'index': i, 'title': it['title'], **it['analysis']} for i, it in enumerate(batch)],
+        {'current_time_utc': dt.datetime.now(UTC).isoformat(),
+         'articles': [{'index': i, 'title': it['title'], **it['analysis']} for i, it in enumerate(batch)],
          'history': history(state)}, RANK_SCHEMA)
     validate_rows(ranked, len(batch), 'duplicate', allow_partial=True)
 
@@ -945,7 +1110,12 @@ def telegram(text):
 def confirm_sent(state, ident, message_id):
     item = state['pending'][ident]
     state['sent'][ident] = {'ts': now(), 'title': item['title'], 'fact': item['analysis']['fact'],
-                           'link': item['link'], 'message_id': message_id}
+                           'link': item['link'], 'resolved_url': item.get('resolved_url', ''),
+                           'event_key': item['analysis'].get('event_key', ''),
+                           'new_fact_date': item['analysis'].get('new_fact_date', ''),
+                           'source_published': item.get('original_published', ''),
+                           'source_modified': item.get('original_modified', ''),
+                           'message_id': message_id}
     entry = {'title': item['analysis']['headline'], 'url': item.get('resolved_url') or item['link'],
              'source': item['source'], 'published': item['published'],
              'summary': item['analysis']['fact'] + '\n' + item['analysis']['impact']}
@@ -955,7 +1125,7 @@ def confirm_sent(state, ident, message_id):
 
 
 def run(dry=False, diagnose=False):
-    hours = setting('NEWS_WINDOW_HOURS', 36, 6, 48)
+    hours = setting('NEWS_WINDOW_HOURS', 24, 6, 48)
     if not dry and not diagnose:
         missing = [k for k in ('TELEGRAM_TOKEN', 'TELEGRAM_CHAT_ID', 'GEMINI_KEY') if not os.getenv(k)]
         if missing:
@@ -997,8 +1167,18 @@ def run(dry=False, diagnose=False):
         sent = 0
         for ident in order:
             item = state['pending'][ident]
-            if not fresh(item):
-                record_decision(state, ident, '전송 전 48시간 경과')
+            if not fresh(item, hours):
+                record_decision(state, ident, '전송 전 RSS 최신 창 경과')
+                checkpoint()
+                continue
+            ok, note = source_freshness(item, hours)
+            if not ok:
+                record_decision(state, ident, '전송 직전 최신성 탈락: ' + note)
+                checkpoint()
+                continue
+            # 최종 순서 안에서 LLM이 중복을 놓쳐도 앞 기사 전송 후 event_key/URL로 재차 차단한다.
+            if sent_url_duplicate(state, item) or sent_event_duplicate(state, item.get('analysis', {}).get('event_key')):
+                record_decision(state, ident, '전송 직전 사건/URL 중복')
                 checkpoint()
                 continue
             if dry:
