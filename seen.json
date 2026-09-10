@@ -273,6 +273,27 @@
       "fact": "OpenAI가 삼성전자와 차세대 AI 칩의 공동 개발 및 생산 협력을 강화하기로 했다.",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5yMFFzQUxEZHlpdC04VjMtSWJBakZxSTdDa1VkcWZGd21pdW9mMmd6YzZnUGxGeWMta2xINlRGS0tYakhWRUZXWExpMXZCUHdtemRadVNselVYLS1DMURjX2JsZlZPcW1H?oc=5",
       "message_id": 4669
+    },
+    "ef164dc75b2c1abd55f39cc894fa89783e961a231edb4360a31536ea6ed480b7": {
+      "ts": 1789063490.228408,
+      "title": "Nvidia Grace Blackwell shipments reportedly increased 27% from last month",
+      "fact": "Nvidia의 Grace Blackwell 칩 출하량이 지난달 대비 27% 증가한 것으로 보고되었습니다. 이는 AI 워크로드를 위한 고성능 컴퓨팅 수요가 여전히 강력함을 나타냅니다.",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBZeXh5RjRZaldDU0U1SXp6em1yd0dYMkNLamxjSE9EM2htcXhVU1RmX1ZhdnNIeW11Y2IxUFlmV0FJeWdWYXlsWlpsNEgxVEJvdFpsd2dXYW5tWm1KVlVWUU9HV3h0WHExQ1YySWlzVHQtOG5VUFV2ZA?oc=5",
+      "message_id": 4670
+    },
+    "8026dd770988f2b7da76c4500453e9a1f72e1db1e78c100351faacb554541848": {
+      "ts": 1789063491.833134,
+      "title": "TSMC Reports Record August Revenue as AI Chip Demand Builds",
+      "fact": "TSMC는 8월 매출이 AI 칩에 대한 전 세계적인 수요 급증에 힘입어 전년 동월 대비 53% 증가하며 사상 최대치를 달성했습니다. 이는 AI 연산 능력 확대를 위한 고성능 반도체 칩 제조 수요가 매우 강력함을 시사합니다.",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBCUTZpN2JUS21NM0dLNlVUaGp6LW9iem5WLWdfajFGU1l3X3VESWRRNlZUXzRZMGtTN2s1bTRIOThqWVlZY2FmTk54TEh4NklZZmxSTXNKMjZveVdtbVZSOUdUSzNlTmJkYkRxdE51bHBVR2xzbnR3UEVRNNIBgwFBVV95cUxQcDktbE5mUjFVcGc5d3hVb1pzNngzTUZhR2xoVnBTWS1fTVVpcjc0RG1FenlkeTBhOWZ2dWVFWGhfelVMQmZJU3U3VjRndmN2WkJwTXRDSWdiSVVtbnljcXhMSXNHSW5DQWwtM1plU01EdlYtUTBFZ1Fhc2VsYU82d2dYOA?oc=5",
+      "message_id": 4671
+    },
+    "e55f1b6057ce4be20bb4f0d5beb959c57c90d74a28cdd4e5fba535b6663a85ef": {
+      "ts": 1789063493.454047,
+      "title": "중국 AI칩 가격 50% 뛰었다…엔비디아 막았더니 ‘한국 HBM’이 병목 됐다",
+      "fact": "중국 내 AI 칩 가격이 50% 급등했으며, 이는 엔비디아 등 미국산 AI 칩 접근이 제한되면서 중국 내수 칩 수요가 늘어난 가운데, 고대역폭 메모리(HBM) 공급 부족이 주요 병목 현상으로 작용했기 때문입니다. 특히 한국산 HBM의 중요성이 부각되고 있습니다.",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5hOF9QX3RTSzZVTERuZzlydTJEUDhCYVlnc1dUY1hmNU95cFhLdHhHc3ZjSDBfYS1Nelprd3U2SW5PU05qOGFwa3VCUWV4UkF5S0ltTnJUNlZYRmxXNjQ1blBPR295SFo4VG1IMHBNLUZSQlHSAXNBVV95cUxOYThfUF90U0s2VUxEbmc5cnUyRFA4QmFZZ3NXVGNYZjVPeXBYS3R4R3N2Y0gwX2EtTXpaa3d1NkluT1NOajhhcGt1QlFleFJBeUtJbU5yVDZWWEZsVzY0NW5QT0dveUhaOFRtSDBwTS1GUkJR?oc=5",
+      "message_id": 4672
     }
   },
   "pending": {},
@@ -7530,6 +7551,1284 @@
       "policy": "ai-industry-v4-wide-strict",
       "reason": "중요 뉴스 과다일 최종 중요도 컷",
       "title": "From cHBM to 3D Stacked SRAM, AI inference drives AI accelerators toward memory architecture innovation"
+    },
+    "a5fcf1dcb0df616835ac2baa904a0a9c9934e13c56e52e2fbbe120e379847b4c": {
+      "ts": 1789063255.368317,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Alleged partnership between Nebius and Palantir is not substantiated with specific details or impact on the AI/semiconductor industry.",
+      "title": "Nebius Stock Gets Palantir Partnership What Changes For Investors"
+    },
+    "231e78051e26e756d01656e9d9342efe87676cd3e4b8eb0957c523c3dfdf1fa3": {
+      "ts": 1789063255.368331,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Protest for AI regulation in Poland is a social/political event, not a direct material impact on AI/semiconductor industry investment or technology.",
+      "title": "Robots protest in Poland, calling for AI regulation"
+    },
+    "4817db8760ef39d7b708cc5d204ababd18513bcad7d6ed4aedd6a555504c18ac": {
+      "ts": 1789063255.368334,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Stock price movement of TeraWulf, Applied Digital, and IREN due to profit taking is not a fundamental change in the AI/semiconductor industry's value or supply/demand.",
+      "title": "TeraWulf Drops 4% on Profit Taking After a 44% YTD Run; Applied Digital Falls 3%, IREN Pulls Back"
+    },
+    "5fa50592d2db8ebf772e6ced29f4bced6c2cf7d742cd00a27656eec8c642b403": {
+      "ts": 1789063255.368337,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Medeo AI's VideoClaw launch is a product feature update, not a significant shift in AI technology or market dynamics for investors.",
+      "title": "Medeo AI Launches VideoClaw, Bringing Real-Time Trend Discovery Into the AI Video Creation Workflow"
+    },
+    "2e4ff53cc0e870e422c91b760e845adb48cca15475eda8d4ef1d37a46137f238": {
+      "ts": 1789063255.368341,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Title is in Chinese and broadly states Dell supports AI, with a vague reference to the 'Taiwanese chain'. Lacks specific details on impact.",
+      "title": "戴爾挺代理AI 台鏈衝"
+    },
+    "16daea7d2c19002ab741960a91c86b9f26d3817ddd200a1ac4901a9d536e4fbe": {
+      "ts": 1789063255.368343,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Vague title about server revenue and price targets. Lacks specific company, product, or market impact details.",
+      "title": "伺服器雙引擎爆發！「這大廠」8月營收飆破4000億 目標價看上400元"
+    },
+    "89f9d1165018a220fe21345b556d828ebd317ec63eb243ee91250d1c44128ee5": {
+      "ts": 1789063255.368345,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Mentions AI server shipment strength and export growth but lacks specific company-level data or strategic shifts.",
+      "title": "AI伺服器拉貨強勁！8月電子設備出口增42%，緯創等概念股表現分歧-財經焦點情報站"
+    },
+    "6df76c449305237421ac9d8352d2f75ff4b08b6f0cd31972c8cb91f3c929df8e": {
+      "ts": 1789063255.368349,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Suggests Analog Devices' potential as an AI stock, but lacks concrete information about new technology, deals, or market shifts. It's speculative.",
+      "title": "Analog Devices Wants Robots to Think Without Nvidia | Is ADI the Next Big AI Stock?"
+    },
+    "ef8c9b18dceef67b6b299599e2e5c8e419583adc9dcc0f8325cf3d80c6fc6ffe": {
+      "ts": 1789063255.368352,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Prophecy launching AI data prep tools is a product update for a specific niche, not a broad industry-shaping event.",
+      "title": "Prophecy Launches AI Data Prep Tools to Close the Gap Between AI Investment and AI Results"
+    },
+    "316def6fb50e16f26e56a50e6e38a79764a6c0644a47218333117071ac06b5d8": {
+      "ts": 1789063255.368354,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "DDOG's growth drivers (observability, cloud migration) are general business factors. The AI mention is broad and doesn't signal a specific AI industry shift.",
+      "title": "DDOG: AI-driven observability, platform innovation, and enterprise cloud migration fuel growth and retention"
+    },
+    "64e50d67054f1928d96be03043a18c8ff15070c091fd2a99a07e96897bcc4e21": {
+      "ts": 1789063255.368358,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "OMC's growth drivers (integration, AI, media) are broad and lack specific AI/semiconductor industry impact.",
+      "title": "OMC: Integration and scale from the Interpublic deal drive growth, with AI and media leading performance"
+    },
+    "21d54114b1b077920df4a8eefd95ddf1dead58586389c1a15d60da29d9811ee8": {
+      "ts": 1789063255.36836,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Stock price drop of CoreWeave is not based on specific industry news or fundamentals but rather on speculative trading ('despite Michael Burry closing...').",
+      "title": "CoreWeave falls 5% despite Michael Burry closin..."
+    },
+    "3c71bd5a1e3312dca88ac855397c67e031cb4a6ae03a1995fb557f8945dd9808": {
+      "ts": 1789063255.368362,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "MOG.A's growth drivers (defense, space, industrial) are general and not specifically tied to AI/semiconductor industry shifts.",
+      "title": "MOG.A: Backlog and revenue growth accelerate, driven by defense, space, and industrial innovation"
+    },
+    "6942e5b0525c1a3d61bfb4566a9f456434e070a70f0ce4f6d513aa54e9d5f241": {
+      "ts": 1789063255.368365,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "General stock performance question about Oracle, lacking specific AI or semiconductor industry news.",
+      "title": "What's Going On With Oracle Stock Thursday?"
+    },
+    "fd718ec0e125799f8e727a655b6b2b56a33546a68142e2fe18f11ff450cb7417": {
+      "ts": 1789063255.368368,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Lawmakers calling for regulation due to AI threat is a political development, not a direct impact on AI/semiconductor industry economics or technology.",
+      "title": "Lawmakers Call For Regulation After Warning About AI Threat To Humanity"
+    },
+    "7aa8863520a0f9f113de51fe55faabd5b0b723133bdf318e33beec5044a7aefc": {
+      "ts": 1789063255.368371,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "General article about adapting enterprise networks for AI, lacking specific technological or market shifts.",
+      "title": "Why Enterprise Networks Need to Adapt for the AI Era"
+    },
+    "d64b19b9f13cc9ba663c5726e6a7653af3a7d7530d6b7923bab89e551b7717c8": {
+      "ts": 1789063255.368373,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Focuses on an AI researcher's personal situation and political targeting, not on industry developments.",
+      "title": "AI researcher who warned of ‘disaster’ is now a target of the right"
+    },
+    "5faee4308fd9c75952b6c7f3aca829825bb3a71f7833c23a01fd2d6001d8f2d4": {
+      "ts": 1789063255.368375,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "OpenAI's stance on AI bills is a regulatory discussion, not a concrete technological or market development impacting AI/semiconductor production or demand.",
+      "title": "OpenAI backs slew of California AI bills while calling for national regulation"
+    },
+    "9ab2dbe30f570a02297962e82d07439eddd1fd1fa08d9529351614dcea3acbdc": {
+      "ts": 1789063255.368377,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Mentions Apple's AI applications and server supply chain expansion, but is vague. Lacks specific details on AI hardware or significant market shifts.",
+      "title": "蘋果首款摺疊機與AI應用亮相，電信預購兩分鐘額滿，引爆伺服器供應鏈擴產商機！-財經焦點情報站"
+    },
+    "613d817f519b7167152a535c50f31e93d03e889e31ae7c1084f639ad6eefbe63": {
+      "ts": 1789063255.368379,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Alpha Compute's natural gas data center deal is specific to data center operations, not directly about AI hardware or core semiconductor industry trends.",
+      "title": "Alpha Compute (ALP) Advances Natural Gas Data Center Deal with S"
+    },
+    "583602e5f13eb5bab752b8a7ac7c20a7a2f26e49c30dd02f185c9e834033f886": {
+      "ts": 1789063255.368381,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Bending Spoons acquiring Miro is an M&A event in the AI workspace sector, not directly related to core AI semiconductor hardware or fundamental market shifts.",
+      "title": "Bending Spoons To Acquire Miro For $1.355 Billion As AI Workspace Reaches $600 Million ARR"
+    },
+    "a20d3c5ade806a99ae8be3d7a54e3baef02ea4c81785be11b02cb1b4010d5282": {
+      "ts": 1789063255.368383,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Lists stocks powering AI boom without Nvidia but provides no new information or analysis beyond a general theme.",
+      "title": "3 Stocks Powering the AI Boom That Are Not Named Nvidia"
+    },
+    "fd3ad9b3b99fe09677abd3a7f05e996c4647c100566e5b44a7a08f56f8d64e60": {
+      "ts": 1789063255.368385,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Discounted AI access deal for the government is a policy/procurement item, not a direct impact on AI/semiconductor industry supply or demand.",
+      "title": "Trump Administration, OpenAI Reach Discounted AI Access Deal for Government - News and Statistics"
+    },
+    "393057fdcbc7dedf24614014b1111325059e4dc773b8246ed1d6b469d715e68e": {
+      "ts": 1789063255.368387,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "CoreWeave stock drop and other company mentions lack specific AI/semiconductor industry news.",
+      "title": "CoreWeave Sinks 5% Despite Burry Pulling In His AI Short, Oracle Eases Into Earnings, Cloudflare Holds Steady"
+    },
+    "a29ba56eb011fcd681e4ab0658c49720e60ef8eeb962e766effe5c5f9be72c9a": {
+      "ts": 1789063255.368389,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Moonshot AI routing user requests through Claude relates to AI model usage, but lacks specific details on scale, performance, or market impact.",
+      "title": "Moonshot Secretly Routed User Requests Through Claude, Anthropic Says"
+    },
+    "8a21023a94946878c546beeca77512d41414fc3b6183ce88464b42e47cd4c689": {
+      "ts": 1789063255.368391,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Qatar Investment Authority investing in Positron AI's Series C is a funding event for an AI startup, but lacks specifics on its impact on the broader AI/semiconductor market.",
+      "title": "Qatar Investment Authority Invests in Positron AI's Series C Financing"
+    },
+    "c06de913b7ebac8efd4dfc635fcd4a5eda5b6db77b000eacbc2e62018d8eacfe": {
+      "ts": 1789063255.368394,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "General article about school year, not AI/semiconductor industry.",
+      "title": "5 things we're watching this school year"
+    },
+    "2b7f4dc43a797e9fcf473d633106c850bdc3e79911c40022d63f7033119b1e1e": {
+      "ts": 1789063255.368396,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Microsoft report on K-12 AI adoption is educational sector specific and doesn't directly impact the core AI/semiconductor market.",
+      "title": "Microsoft Report Highlights Trends in K–12 AI Adoption"
+    },
+    "30f0be5e4ac4e208acf5e6a2356ba5503bbcfea7a0d1dec2d3dc9c5729ab06b7": {
+      "ts": 1789063255.368398,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Article discussing AI investment strategy in advertising (linear vs. CTV), not core AI hardware or semiconductor market dynamics.",
+      "title": "Should AI investment start with linear or CTV?"
+    },
+    "002d71d664aefe7d27abab9af6331506f1bd3a43138453128ddf41108a7bdb81": {
+      "ts": 1789063255.3684,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Discusses China's AI models gaining ground but questions adoption translating to revenue. Lacks specific hardware or market impact details.",
+      "title": "China’s AI Models Gain Ground, But Can Adoption Translate Into Revenue?"
+    },
+    "9404cc3792cb454904fa7824579a1a03cf5460b4601b6c8ee8ffb14d243b0dc6": {
+      "ts": 1789063255.368402,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Moonshot AI expanding enterprise push through IT services partnerships is a business strategy, not a core AI/semiconductor hardware development or market shift.",
+      "title": "Moonshot AI Expands Enterprise Push Through IT Services Partnerships"
+    },
+    "636eb1dde2498baf2c4efe955d519136afb4541805cccc146a4e921ae490cb44": {
+      "ts": 1789063255.368404,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "How AI agents fix supply chains is an application of AI, not a fundamental development in AI hardware or semiconductor markets.",
+      "title": "Supply chains detect fast, act slow: How AI agents fix it"
+    },
+    "3347a960cc01539d2337773a249add66df7e5786ad0973b4eac565a6db4a110b": {
+      "ts": 1789063255.368406,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Elly launching AI-native recruiting is a niche AI application, not a significant event for the core AI/semiconductor industry.",
+      "title": "Elly Launches AI-Native Recruiting, Where Expert Recruiters and AI Work Together on Every Search"
+    },
+    "37174014c9c1092a403d042ed3afb9b4283124b8a110a80a259787d268d2b165": {
+      "ts": 1789063255.368409,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Panel discussion on battery technology for data centers is peripheral to core AI hardware.",
+      "title": "ZincFive’s Brandon Smith to Join Battery Technology Panel at Data Center World Power 2026"
+    },
+    "909d3a34c3b8d49fd9d0408f4d033827fba533ed7f96afb9178d023f05a68bf6": {
+      "ts": 1789063255.368411,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "DoiT equipping MSPs for AWS AI requirements is a service provider update, not a direct impact on AI/semiconductor market.",
+      "title": "DoiT Equips Existing and Aspiring MSPs to Meet AWS MSP Program's New Proof-of-AI-Delivery Requirements"
+    },
+    "bd35ccb913dd69130fe9d847d460be0b561ce2407e644c558edd982114ba359a": {
+      "ts": 1789063255.368412,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "SpaceX stock rise related to data center overhaul and UK defense deal is too general and not specifically about AI/semiconductor hardware.",
+      "title": "SpaceX stock rises with data center overhaul, budding UK defense deal in focus"
+    },
+    "99944a34c2df69b6ecf063ebff1cb52064679320f7aa9e03ffc4c0dc9b1e5c50": {
+      "ts": 1789063255.368414,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Polypropylene fill material market driven by cooling demand is indirect and not a primary AI/semiconductor industry trend.",
+      "title": "Polypropylene Fill Material Market To 2035: Cooling Demand Drives Growth - News and Statistics"
+    },
+    "93a8b017465721eb387197d80bb27d8dc0248969b54fda700ca17c0e6a7524b0": {
+      "ts": 1789063255.368416,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Discusses environmental costs of AI, a social/ethical concern, not an AI/semiconductor market development.",
+      "title": "AI Is Being Built as the Inevitable Future, but Who Pays for Its Environmental Costs?"
+    },
+    "c6583b700e3922a958f1597b29ccc0ac350f869348a236610501fc02d309c1f5": {
+      "ts": 1789063255.368418,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Apple positioning iPhone as AI hub with new features is a consumer product update, not a major shift in AI hardware or semiconductor market.",
+      "title": "Apple Positions iPhone as AI Hub While Rolling Out New Privacy, Health, and Camera Features"
+    },
+    "5d8ad4a9634496a7f38f447664b87d5b5aef1159236a8d2ccac86a88513356bf": {
+      "ts": 1789063255.368421,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "ElevenLabs' music platform deal is an AI application in media, not directly impacting the AI/semiconductor hardware market.",
+      "title": "ElevenLabs strikes first deal with a major label to launch AI-powered music platform and audio products"
+    },
+    "60b64daa04b394822b1f87ecc653a2c3357e4572d6795415f6db54d63f4a77cc": {
+      "ts": 1789063255.368424,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "CoreWeave stock price movement is not explained by specific industry news.",
+      "title": "CoreWeave (NASDAQ:CRWV) Shares Gap Down - What's Next?"
+    },
+    "6cb9d18ee30340f5c4eee36edb4073bebf3b2d951683bff454dfb6bdf738e3e5": {
+      "ts": 1789063255.368443,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Magister Digital AI launching a marketing agency is a service business, not a core AI/semiconductor industry development.",
+      "title": "Magister Digital AI Launches Full-Stack Marketing Agency in San Diego"
+    },
+    "bcb2820b709d9f47ce9120bf19f669ad23b4b0166afa31d23f3494e804f8eb0f": {
+      "ts": 1789063255.368445,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Hubstaff launching AI-ready workforce data layer is an application for AI agents, not a fundamental AI/semiconductor market shift.",
+      "title": "Hubstaff Launches AI-Ready Workforce Data Layer; Enabling AI Agents to Query and Act on Workforce Data Directly"
+    },
+    "1cc80e1debbbdbbcb86406b4d22ae0e9ccfe18a24be50b4d7a7f2b791ae87661": {
+      "ts": 1789063255.368447,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Codestrap naming CRO and customer need to break through architectural wall is a business update, not a core AI/semiconductor industry trend.",
+      "title": "Codestrap Names Wes Kapsa Chief Revenue Officer as Enterprise AI Customers Recognize Need to Break Through Architectural Wall"
+    },
+    "8170dca366e0faad57e9c03449da5135343029e092919091edf4cc190fe2d453": {
+      "ts": 1789063255.368451,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Asks if investors should buy ASML due to AI growth and valuation. It's an investment recommendation question, not news on ASML's specific AI-related production or technology shifts.",
+      "title": "Should Investors Buy ASML as AI Growth Meets a Premium Valuation?"
+    },
+    "9390914ca27fe4d4bf88929a1a1849abcbd1875214a1ffca05f63e1185a4c02d": {
+      "ts": 1789063255.368453,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Discusses app store distribution structure regarding features vs. apps. Not directly related to AI/semiconductor hardware market.",
+      "title": "앱이 아니라 기능이 팔린다, 앱스토어 유통 구조는 지속될까"
+    },
+    "0caff424e0148ebc674dacab8496c585641373d1db2a6329c0fd353687ad0f6d": {
+      "ts": 1789063255.368459,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Discusses lowering AI costs with Dell Pro Max and specific GPUs, which is a marketing/product positioning piece, not a fundamental industry development.",
+      "title": "How to lower your AI costs: 3 ways the NVIDIA-powered Dell Pro Max with GB10 and GB300 offer an alternative to token-maxxing"
+    },
+    "d991ac0ae59b389e927a374accc8f1361412f16d6a499e309d1c023be79225b1": {
+      "ts": 1789063255.368462,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Focuses on semiconductor stocks influenced by China tariff talks, not specific AI hardware or market shifts.",
+      "title": "3 Semiconductor Stocks Investors Are Watching As China Tariff Talks Ease"
+    },
+    "f0ef7429bb08e868744a43409fb7076bc8ce39d63d555935f1fc331f43adccfc": {
+      "ts": 1789063255.368464,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Blackstone acquiring Flow Control Holdings is a private equity deal, not directly related to AI/semiconductor industry trends.",
+      "title": "Blackstone to Acquire Flow Control Holdings From Audax Private Equity"
+    },
+    "81fc3480120ed214fb0f889b472c8462147b5d993f0c4d4948ef1739c206a8b5": {
+      "ts": 1789063276.462108,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "제목이 'AI Hurricane Model'을 언급하나, 구체적인 기술, 제품, 비즈니스 변화에 대한 정보가 없어 산업 투자 관점에서 중요도가 낮음.",
+      "title": "The AI Hurricane Model that Continues to Blow Away the Competition"
+    },
+    "ae9446f41c5f32472179de535acc9a0371a2e9318a65fb22ef0ac3a59fd2ef73": {
+      "ts": 1789063276.462119,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "SpaceX의 데이터 센터 개편 및 영국 방산 계약에 대한 내용이나, AI/반도체 산업에 대한 직접적인 중요 정보가 부족함.",
+      "title": "SpaceX shares higher as data center overhaul, budding UK defense deal in focus"
+    },
+    "f8af0bddf41c1f44d35ed61531e3aff44d3c2ac0c4ddea79b062e872c0d89422": {
+      "ts": 1789063276.462126,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 에이전트의 자율화와 업무 준비도 간극을 지적하나, 구체적인 산업 영향이나 기술적 진전에 대한 정보가 부족함.",
+      "title": "AI 에이전트 자율화 앞서가는데 업무 준비는 5%...실행권한·책임체계 서둘러야"
+    },
+    "29a64bb5178c48b4a25c765c76e9d265545824e4ba89ee6517789302d8b1a507": {
+      "ts": 1789063276.462128,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI와 산업 부문 간의 격차가 벌어진다는 일반적인 언급으로, 구체적인 데이터나 산업 투자에 영향을 줄 만한 정보가 부족함.",
+      "title": "AI and industrial sector gap widens: ratings firm"
+    },
+    "18b5fb7cbc9c800af1489b37970bfa7fc926b5a2870953355dbeb6bbf9afb4c0": {
+      "ts": 1789063276.46213,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "연구원이 Codex와 ChatGPT를 사용하여 새로운 항균 분자를 탐색하는 사례는 AI의 특정 응용을 보여주지만, AI/반도체 산업 전반에 대한 영향은 제한적.",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules"
+    },
+    "f9ec0349b05187b209ef05f4802195d34226c4f66588739a195f7dd65f8223c2": {
+      "ts": 1789063276.462132,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Oracle의 실적 발표를 앞두고 옵션 거래가 증가했다는 내용은 주가 관련 정보이며, AI 투자 지출 우려에 대한 구체적인 근거 제시가 부족함.",
+      "title": "Oracle Shares Show Options Surge Ahead of Earnings Amid AI Spending Concerns"
+    },
+    "7c99abc3fecbea1af2b185e5f3c54985c08278f6598f4d0808ef35e5ce7f330c": {
+      "ts": 1789063276.462134,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 수익에 대한 정확한 계산에 집착하지 말라는 골드만삭스 분석가의 발언은 투자 전략에 대한 의견일 뿐, 산업의 실질적 변화를 반영하지 않음.",
+      "title": "Stop obsessing over precise AI returns - Goldman's Tony Pasquariello"
+    },
+    "972ccd3c659678a04117de980680663fdbcd6444f0f039f952e1cde9a1d9113e": {
+      "ts": 1789063276.462138,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Datarails가 CFO 오피스 워크플로우 자동화를 위한 AI 기반 티켓팅 시스템을 출시한 것은 특정 기업의 솔루션 소개로, 산업 전반의 중요 뉴스로 보기 어려움.",
+      "title": "Datarails Launches AI-Native Ticketing System to Automate CFO Office Workflows"
+    },
+    "ef98b34026de186d602647e890e80256dc02160f286b178e4eb8306811d4376b": {
+      "ts": 1789063276.46214,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "금리 인상 가능성과 관련하여 주요 클라우드 서비스 제공업체의 위험성을 다루지만, AI 산업에 대한 직접적인 영향이나 새로운 정보는 부족함.",
+      "title": "How Dangerous Are Top Neoclouds as Rate Hike Odds Increase?"
+    },
+    "0a631fcdb2013b21e80ab484bff1888b929890606bca733a647dcc5ba8970696": {
+      "ts": 1789063276.462144,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 붐의 위험성을 지적하지만, TS Lombard의 '섣불리 공매도하지 말라'는 조언은 투자 의견으로, 산업의 실질적 변화를 담고 있지 않음.",
+      "title": "AI boom faces rising risks, but TS Lombard says don't short yet"
+    },
+    "422656a8c81493f878cea68552928db8aa9d7eed0c1d0046fd2c46214c14afb0": {
+      "ts": 1789063276.462147,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 붐과 관세 불확실성이 구리 가격을 사상 최고치로 밀어 올린다는 내용은 원자재 시장의 변화를 다루지만, AI/반도체 산업 자체의 핵심 뉴스는 아님.",
+      "title": "The AI boom and tariff uncertainty are pushing copper prices to record highs"
+    },
+    "1c2e27046a836c91f44b69386e61d48f469626b4464dcace69346bcfbfc31d73": {
+      "ts": 1789063276.462149,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 비용 대비 대체 인력 규모가 평가 기준이 되었다는 내용은 HR/평가 변화에 관한 것으로, AI 산업 투자 결정에 직접적인 영향을 주는 뉴스는 아님.",
+      "title": "\"얼마나 적은 AI 비용으로 몇명몫 대체했나\" 달라진 고과"
+    },
+    "b86b45ccd3350c05563f7ed0acbc178161938aaf2cfd10e97ac549a5f349c587": {
+      "ts": 1789063276.462151,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Celestica와 Corning 중 어느 AI 인프라 주식이 더 나은 매수 대상인지 비교하는 것은 투자 추천 기사로, 산업 자체의 중요 동향과는 거리가 멂.",
+      "title": "Celestica vs. Corning: Which AI Infrastructure Stock is a Better Buy?"
+    },
+    "74c0de226224fa98e752dc2a2a6dc413b2ebe2d9c9690d8364f97a94467efd56": {
+      "ts": 1789063276.462155,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "GoPro, Lumentum, Coherent 관련 뉴스로, AI 산업과의 직접적인 연관성이 부족하고 기업 인수합병이나 테마주 관련 내용임.",
+      "title": "GoPro Spikes 11% as Lumentum Eases and Coherent Holds Flat: Is This a Merger Trade or a Meme Trade?"
+    },
+    "82cd62533c82ab204fd93857431ed92cdce97642cda81ea57a20acd35721c619": {
+      "ts": 1789063276.462158,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "TSMC의 고 NA EUV용 대형 포토마스크 확장에 대한 협력은 반도체 제조 기술의 발전이지만, AI 산업에 직접적인 파급력은 다소 낮음.",
+      "title": "TSMC Collaborates to Expand Large-Format Photomasks for High NA EUV"
+    },
+    "fa06c32e72aa9ab2feb74888409a9fdcec8c4f809171848b315f7c3f5cd9a7fb": {
+      "ts": 1789063276.462162,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 서버 모멘텀 강세 속에서 8월 매출이 최고치를 기록했으나, 일부 종목의 주가와 기본 간의 괴리를 지적하는 내용은 시장 분석일 뿐, 산업의 핵심 동향은 아님.",
+      "title": "AI伺服器動能強勁！8月營收創高，為何緯創等指標股價與基本面現分歧？-財經焦點情報站"
+    },
+    "c36fc87024cd0d6fd8e4ba766b03096138cba66badb17dd588f0d7a09c7375cc": {
+      "ts": 1789063276.462165,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Peace of Growth가 Quartate를 AI 구현 파트너로 추가했다는 내용은 특정 기업 간의 파트너십으로, AI/반도체 산업 전반에 대한 중요도는 낮음.",
+      "title": "Peace of Growth Adds Quartate as AI Implementation Partner"
+    },
+    "7701d4eecc1c77d1e6eefef61e6bbd9870fc8e611cb3bd337209e17a4d820e80": {
+      "ts": 1789063276.462168,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Nokia가 광업, 비상 서비스, 방산 운영을 위한 AI 엣지 플랫폼을 출시한 것은 특정 산업 분야에 국한된 AI 적용 사례로, AI/반도체 산업 자체의 중요 뉴스로는 부족.",
+      "title": "Nokia launches AI-edge platform for mining, emergency services and defense operations"
+    },
+    "0ccffc039b0e3788037922a65e3024944a6390674dcd19ee4f56c8131efe522e": {
+      "ts": 1789063276.46217,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "메모리 붐에서 이익을 얻을 3개 칩 장비 주식을 소개하는 것은 투자 추천 기사로, 산업의 핵심 동향을 분석하는 뉴스라기보다는 개별 종목에 집중.",
+      "title": "3 Chip Equipment Stocks Set to Win the Memory Boom"
+    },
+    "5ffc7ab62b331b21fdc7a1b57218eba43669d6aeb40a08fe3311e5ba25d96495": {
+      "ts": 1789063276.462172,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Cogent의 발언은 AI 수요가 경기 침체를 상쇄할 것이라는 전망으로, 구체적인 데이터나 근거가 부족한 투자 전략 의견임.",
+      "title": "Cogent at Bank of America conference: ai demand offsets a hard reset"
+    },
+    "4851cf01b616eef9ba770ab6fa253a7e3353dd444454ded0e91f51c99a94fd04": {
+      "ts": 1789063276.462174,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "BNP가 과도한 AI 차입이 신용 시장의 강세장을 끝낼 수 있다고 경고하는 것은 거시 경제 및 금융 시장에 대한 분석으로, AI 산업 자체의 동향과는 거리가 멂.",
+      "title": "BNP Says Too Much AI Borrowing Will End Bull Market in Credit"
+    },
+    "3094532549a6260f356e450bafc9b983947e3c94140d379bc6cfa546f0ba76c2": {
+      "ts": 1789063276.462175,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Aragon Research가 엔터프라이즈 AI 전략 및 확장을 위한 P.A.T.H. AI 프레임워크를 출시한 것은 방법론 소개로, 산업 전반의 중요 뉴스로는 부족.",
+      "title": "Aragon Research Launches P.A.T.H. AI Framework to Guide Enterprise AI Strategy and Scaling"
+    },
+    "f2223cc3df19eaac912e88e53fa1821737bd26e38fe97a7f6c48458d3d585872": {
+      "ts": 1789063276.462177,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "cfo.ai가 실시간 재무 모델링을 위한 AI CFO 솔루션 Ari를 출시했다는 것은 특정 기업의 솔루션 소개로, 산업 전반의 중요 뉴스로 보기 어려움.",
+      "title": "cfo.ai Launches Ari: The Proactive AI CFO for Real-Time Financial Modeling"
+    },
+    "386be7d04df76d5ecac91f76321d77892e00bb046151df2d762c17ff5a236a97": {
+      "ts": 1789063276.46218,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Morgan Stanley가 Meta의 AI 성장 가능성으로 25% 상승을 예상하는 것은 투자 분석이며, Meta의 AI 사업 실제 성과나 기술 발전 자체에 대한 정보는 부족.",
+      "title": "Morgan Stanley Sees 25% Meta Gain on AI Upside"
+    },
+    "07faed432fd7740c839659cbd2e4f9f5190e48995a906c2073121f9766c78259": {
+      "ts": 1789063276.462182,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "로봇들이 AI 규제를 요구하며 시위했다는 내용은 AI의 사회적 영향에 대한 이슈이나, AI/반도체 산업 투자 관점에서 직접적인 중요 뉴스로는 부족.",
+      "title": "30 Robots Marched Outside a Government Ministry… To Demand AI Regulation"
+    },
+    "fc09ceadeb7774796d3c77f0ccc4d8edeb611f412f1eb9636f48caf7d82a8308": {
+      "ts": 1789063276.462186,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "崇友(Chung-Yu)의 8월 매출 소식은 대만 엘리베이터 시장 관련 뉴스로, AI 산업과의 직접적인 연관성이 부족함.",
+      "title": "在手訂單穩健！崇友前8月營收43.63億創同期新高 搶攻高端電梯市場"
+    },
+    "8b58615d5bb7175771dba38657c20e604b3e2a9470b87fec784f255b7d7877a7": {
+      "ts": 1789063276.462188,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Meta의 Muse AI 앱 출시 후 월스트리트의 주가 상향 조정은 투자 관점의 분석이며, Meta의 AI 기술 발전이나 사업 전략의 중대한 변화를 보여주지 않음.",
+      "title": "Meta Stock Scores Wall Street Upgrade After Muse AI App Launch"
+    },
+    "3a6ef12acc5e2f336f9277ecbf8728bbaeb8e8f29de325a64d4c0f152e728fdd": {
+      "ts": 1789063276.46219,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Noumena가 브랜드 성장을 위한 AI 마케팅 에이전트 구축을 위해 450만 달러를 조달했다는 것은 특정 스타트업의 자금 조달 소식으로, 산업 전반의 중요도는 낮음.",
+      "title": "Noumena raises $4.5M to build AI marketing agents for brand growth"
+    },
+    "e4a41d86ab9795d455cc786720240ad5b45803eb8ea10cb5c3076e08d4ded6b6": {
+      "ts": 1789063276.462192,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Corning의 Verizon과의 장기 회선 계약이 주가에 미칠 영향을 분석하는 것은 투자 분석 기사로, AI 산업 자체의 동향과는 거리가 멂.",
+      "title": "Can Corning's Long-Term Fiber Deal With Verizon Boost Its Shares?"
+    },
+    "9f5b8c7e6174db29a3e17e180a12615b4197f7ef9c51d3fd60fd394c00abdcba": {
+      "ts": 1789063276.462194,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "RDC.AI가 상업 은행을 위한 에이전트 AI로 북미 사업을 확장한다는 내용은 특정 기업의 사업 확장에 관한 것으로, 산업 전반의 중요 뉴스로는 부족.",
+      "title": "RDC.AI Expands North American Footprint with Agentic AI for Commercial Banking"
+    },
+    "b8cb28e7889b9b41dcf8f0ddd5c6768a440f9c8a6ed7d681ff0bc73bc9b987aa": {
+      "ts": 1789063276.462196,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AMD 주가가 2조 달러 AI 전망과 함께 특정 가격대를 목표로 움직인다는 것은 주가 분석으로, AMD의 AI 기술이나 시장에서의 위치 변화에 대한 직접적인 정보는 부족.",
+      "title": "AMD Stock Breaks Triangle as $2 Trillion AI Outlook Puts $524 in Focus"
+    },
+    "394734af6cdda26bd3f419b230ea8a527e8934cb1cd931abdd036bae988ed194": {
+      "ts": 1789063276.462198,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "노후 데이터 센터의 숨겨진 성능, 용량, 자본을 효율성을 통해 발굴한다는 내용은 데이터 센터 운영 효율화에 관한 것으로, AI 산업의 새로운 동향을 보여주진 않음.",
+      "title": "The hidden capacity inside aging data centers: Uncovering performance, capacity, and capital through efficiency"
+    },
+    "50a8271f431901a22428a3b7923d9827f5cd8bfa709a2ebb357aa8fa4bda8b3d": {
+      "ts": 1789063276.4622,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Spekit이 Revenue Enablement Platform에서 AI Deal Rooms를 강화했다는 것은 특정 SaaS 솔루션의 기능 개선으로, AI/반도체 산업 전반의 중요 뉴스로는 부족.",
+      "title": "Spekit Enhances AI Deal Rooms in Revenue Enablement Platform"
+    },
+    "8a6fd2f3300bf2501adbb76ea00c9950b4cf2e603b8b1119f6942c829df4ea95": {
+      "ts": 1789063276.462202,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Kyocera와 Tohoku 대학이 광학 아이솔레이터를 실리콘 포토닉스 칩에 직접 통합하는 기술을 개발했다는 것은 반도체 제조 기술의 발전이나, AI 산업에 대한 직접적인 파급력은 제한적.",
+      "title": "Kyocera and Tohoku University Develop Technology to Integrate Optical Isolators Directly onto Silicon Photonics Chips"
+    },
+    "b4ff66acbb579e6e11405174730a5d7a4e53f3cd0e623373f82b6894fb02f27b": {
+      "ts": 1789063276.462205,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "강원도지사와 SK 고위직의 회동으로 강릉 AIDC 해결책 모색 내용은 지역 현안으로, AI/반도체 산업 전반의 중요 뉴스로 보기는 어려움.",
+      "title": "우상호 지사-SK 고위직 회동…강릉 AIDC 해법 찾나"
+    },
+    "90ebc9e892afebfaaef41a30d4db6ac120fac9d4919d7a5bba6b5d4fa4d518f5": {
+      "ts": 1789063276.462207,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "화碩(Pegatron)의 8월 매출 및 iPhone 신제품 출시 대기 관련 뉴스는 IT 하드웨어 제조사 동향이나, AI/반도체 산업의 핵심 이슈와는 거리가 멂.",
+      "title": "平平淡淡就是福 和碩8月營收883億 靜待iPhone新機9月起發威"
+    },
+    "9ea50d38dcd192fb4db328665d9d67a9fa1c8c48da32d17411376e1a8faa27d4": {
+      "ts": 1789063276.462209,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "엔터프라이즈 AI의 경제성이 동적 모델 라우팅을 선호하는 이유를 설명하는 것은 기술적 분석으로, 산업 투자 결정에 필요한 새로운 정보는 부족.",
+      "title": "Why the economics of enterprise AI favor dynamic model routing"
+    },
+    "562ca00d2cefa6441c9a33c1397f4c74d61ff36cffef84ac2e84c6ebd05d524e": {
+      "ts": 1789063276.46221,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Google Cloud의 Gemini Enterprise for Industries를 활용한 산업별 성공을 위한 4가지 계획은 기업의 솔루션 활용 전략 소개로, 산업 전반의 중요 뉴스로는 부족.",
+      "title": "Google Cloud's 4-Point Plan for Industry-Specific Success with Gemini Enterprise for Industries"
+    },
+    "8e3c27b6ee1eaf09d12d172abd7ec2b6d02929dbf7950c397d90fbcab4a4de8b": {
+      "ts": 1789063276.462212,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "ChatGPT Work의 데이터 에이전트 소개는 특정 기능 업데이트로, AI/반도체 산업 투자 관점에서 중요도가 낮음.",
+      "title": "Now everyone can put data to work"
+    },
+    "2a4b58ff13bec72973d8dc59b4c48457b48ffcafc822350565485d500b52d6a8": {
+      "ts": 1789063276.462214,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "분석가들이 미국의 데이터 센터 리더십을 잘못 계산하고 있다는 주장은 시장 분석이며, 새로운 기술, 투자, 혹은 정책 변화를 담고 있지 않음.",
+      "title": "Analysts Are Miscalculating America’s Data Center Lead"
+    },
+    "da5eb42946419b96f3c8cfc98406d687a74621aa4b26a9483a6754e4d7a20bd9": {
+      "ts": 1789063276.462218,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI의 높은 물 소비량으로 인해 신선한 물이 디지털 경제의 핵심 자원이 되었다는 내용은 AI의 부수적인 영향에 대한 언급으로, AI/반도체 산업 투자 관점과는 거리가 멂.",
+      "title": "AI is thirsty: Fresh water has become a key resource of the digital economy"
+    },
+    "834cd1dad6f810aec25979d9cfb1bec9c92a24c8a1ae77229cc380680f296e1c": {
+      "ts": 1789063276.46222,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "인도 시나리오 작가들 사이에서 AI 채택이 증가하고 있으나 임금 및 크레딧 격차가 지속된다는 내용은 AI의 특정 산업 내 적용 사례 및 노동 시장 이슈로, AI/반도체 산업 전반의 중요 뉴스는 아님.",
+      "title": "AI Adoption Rises Among Indian Screenwriters as Pay, Credit Gaps Persist, Tulsea–Ormax Report Finds (Exclusive)"
+    },
+    "c294dcd4df9b7451179ec1875a908d5996e266207ee278798263989ad92d1641": {
+      "ts": 1789063276.462222,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Gerchamp가 사용 가능한 전력에 고밀도 컴퓨팅을 제공하기 위해 모듈식 AI 데이터센터를 출시했다는 것은 특정 기업의 솔루션 소개로, 산업 전반의 중요 뉴스로 보기 어려움.",
+      "title": "Gerchamp Launches Modular AI Data Center to Bring High-Density Compute to Available Power"
+    },
+    "4e7a9bc5191ab5a9a99a65ff811aebbeaf7463a716b5c4b0cb9c0d93d67f9899": {
+      "ts": 1789063276.462224,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Oracle 실적 발표 후 주목할 만한 클라우드 경쟁사, AI 공급업체, 하이퍼스케일러에 대한 내용은 투자 관점의 분석이며, AI/반도체 산업의 새로운 동향을 제시하지 않음.",
+      "title": "Oracle earnings read-throughs: cloud rivals, AI suppliers, and hyperscalers to watch"
+    },
+    "2be57e6f660bee419082dbac1b428e39d2b401a0b01fbe63f68b4ff544808e95": {
+      "ts": 1789063292.555384,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "오라클의 AI 지출이 테크 시장에 미칠 영향에 대한 4개 주식 노출 분석은 특정 보유 종목 매매를 가정하므로 투자자에게 불필요하다.",
+      "title": "4 stocks most exposed if Oracle’s AI spending triggers a tech pullback"
+    },
+    "85d0a420a348455d7d6c4b90de020c6e3692b04cb808b6ad2eae5e08bde5205d": {
+      "ts": 1789063292.555396,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "MRVL 주가 상승에 대한 분석은 특정 보유 종목 매매를 가정하므로 투자자에게 불필요하다.",
+      "title": "MRVL Stock Rises 8.6% Since Q2 Results: Time to Hold or Fold?"
+    },
+    "2f97b47ad867ae1b88db314fc0f53b9c4160d5c7aa132848e48faef832de4481": {
+      "ts": 1789063292.5554,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "UMG와 ElevenLabs의 AI 기반 음악 플랫폼 출시는 AI의 음악 산업 적용 사례이나 AI 반도체 산업 투자 관점에서 중요도가 낮다.",
+      "title": "UMG and ElevenLabs to launch AI-powered music platform as part of 'groundbreaking' deal"
+    },
+    "bd9afb25df72052a886c2fd09dee2305a975c4ddc018d38daac71b2452c1f18b": {
+      "ts": 1789063292.555405,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Universal Music Group과 ElevenLabs의 AI 기반 음악 플랫폼 출시는 AI의 음악 산업 적용 사례이나 AI 반도체 산업 투자 관점에서 중요도가 낮다.",
+      "title": "Universal Music Group and ElevenLabs to Launch AI-Powered Music Platform in Expansive Licensing Deal"
+    },
+    "422d11709b6aa485f40bd6a47eeb2c5531925622efe1d6355ae9dad8a7615598": {
+      "ts": 1789063292.555408,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 컴퓨트 거래에 대한 안내는 투자 상품에 대한 내용으로 AI 반도체 산업 자체의 기술 및 시장 동향과 직접적인 관련성이 낮다.",
+      "title": "What Are Compute Perpetuals? Trade AI Compute on Bitget (2026 Guide)"
+    },
+    "c2fff708830c633fd91cc5bf1ce09248b35a7eac6c5a8793a77e90434a59a6bd": {
+      "ts": 1789063292.55541,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Memory & Storage Supplement는 광범위한 주제를 다루며, 특정 산업 변화를 보여주는 구체적인 내용이 없어 중요도가 낮다.",
+      "title": "Memory & Storage Supplement 2026"
+    },
+    "f910ed18e0c374759187cf212b5050c53e831684565e716db13970f0008de33c": {
+      "ts": 1789063292.555412,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Workable의 AI ATS 비용 투명성 기능은 AI 활용 사례이나, AI 반도체 산업의 핵심 투자 관점과는 거리가 멀다.",
+      "title": "Workable Adds AI Cost Transparency to Its AI-Powered ATS, Showing Enterprises Exactly What Each Hire Costs in Agent Credits"
+    },
+    "339636943f072c0c0af02ba99d497c54522ff29f425db600e2aa409d54ffdc8c": {
+      "ts": 1789063292.555415,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Fairing의 새로운 속성 측정 기능은 마케팅 기술로, AI 반도체 산업 투자와 직접적인 관련성이 낮다.",
+      "title": "Fairing Launches Advanced Attribution to Measure What Actually Drives Sales Across Podcasts, TV, Creators and AI"
+    },
+    "6e3bb866471f3705ca3f61a0d4c88abb0c9f026b5d044c412928bb086d9f63a8": {
+      "ts": 1789063292.555418,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "통신사의 에이전트 AI로 인한 운영 비용 증가 뉴스는 AI의 간접적 영향이나, 핵심 산업 동향으로 보기에는 범위가 좁다.",
+      "title": "Telcos face opex hike from agentic AI"
+    },
+    "f1c28aee3b2512f70fa396b39c281c1c0982957b809aeb03b529d834f3e26b6b": {
+      "ts": 1789063292.55542,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Meta의 Stilla AI 인수 및 비즈니스 메시징 기능 확장 뉴스는 특정 기업의 제품 기능 개선 사례로, 산업 전반의 파급력이 크지 않다.",
+      "title": "Meta Acquires AI Startup Stilla AI To Expand Business Messaging Capabilities"
+    },
+    "ecbfdf93c2c54123d8d3aa7a7de058c07153257515fb7bcdd3e1316ee199ea38": {
+      "ts": 1789063292.555422,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Meta의 AI 에이전트가 쇼핑 카트에 영향을 미친다는 뉴스는 특정 기업의 활용 사례로, AI 반도체 산업 투자 관점에서 중요도가 낮다.",
+      "title": "Meta’s AI Agents Are Coming for Your Shopping Cart. These ETFs Could Cash In"
+    },
+    "a46213884641ca8331f685ebf5ac0267415bd7b955ceb8336c2f56de1ec4159f": {
+      "ts": 1789063292.555452,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중국 AI 기업 Moonshot의 홍콩 및 상하이 동시 IPO 탐색은 특정 기업의 자금 조달 계획으로, AI 반도체 산업 전반에 대한 영향력이 크지 않다.",
+      "title": "Chinese AI firm Moonshot to explore dual Hong Kong and Shanghai IPOs, SCMP reports"
+    },
+    "122f28b79d727e143af69f765c48687c0c0e218ec9cf6a36090ee24dab6f215e": {
+      "ts": 1789063292.555454,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "ASML vs. QCOM 주식 비교는 특정 보유 종목 매매를 가정하므로 투자자에게 불필요하다.",
+      "title": "ASML vs. QCOM: Which Semiconductor Stock is the Better Buy Now?"
+    },
+    "bb5732673180ae6f60d8085ddb6be6e0cce3bb64efa5a2d81c035889dcf36e2b": {
+      "ts": 1789063292.555457,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Candidly의 AI 기반 부채 관리 지원은 AI의 금융 서비스 적용 사례이나, AI 반도체 산업 투자 관점과는 거리가 멀다.",
+      "title": "Candidly's AI Assistance Stretches to Debt Management"
+    },
+    "97a47df054f8c45733f3b062623a056b18b8f15cfe5e0906cf75edfe5b2357a2": {
+      "ts": 1789063292.555461,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Arva AI의 고위험 은행 결정 자동화를 위한 연구소 출시는 AI의 금융 서비스 적용 사례이나, AI 반도체 산업 투자 관점과는 거리가 멀다.",
+      "title": "Arva AI Launches Research Lab to Automate High-Risk Banking Decisions"
+    },
+    "3c5572ba9a3c11a5dbf66dd553af7e81462820e2f31f56eeff156180fd21378e": {
+      "ts": 1789063292.555464,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Salesforce의 6가지 기능의 신뢰할 수 있는 AI 하네스 발표는 특정 기업의 제품 발표로, AI 반도체 산업 투자 관점에서 중요도가 낮다.",
+      "title": "Salesforce Unveils Six-Capability Trusted AI Harness for Enterprises"
+    },
+    "9ab23a8209f98b0a2d88153cadf11e7539163c5b46f8f7ff14c6f2fcc567e4a9": {
+      "ts": 1789063292.555467,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "이번 주 급등한 반도체 주식 2개에 대한 분석(Nvidia 제외)은 특정 보유 종목 매매를 가정하므로 투자자에게 불필요하다.",
+      "title": "今週急伸した半導体株2銘柄、エヌビディアではなし"
+    },
+    "adf708aa02115bb6787b0b0596949eacfba0b5a52e75a4e8019ab9bb96382cf8": {
+      "ts": 1789063292.55547,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "'AI가 우리 모두를 죽일 것인가?'라는 질문은 AI의 존재론적 논의로, AI 반도체 산업 투자와 직접적인 관련성이 낮다.",
+      "title": "‘Will AI Kill Us All?’ Is the Wrong Question to Ask | Analysis"
+    },
+    "4a7f38ac2ebff42c16d86349218807b67a20503d61a2d92d14152c37f7e59686": {
+      "ts": 1789063292.555473,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "KT 야구 감독의 600승 달성은 스포츠 뉴스로, AI 반도체 산업 투자와 관련이 없다.",
+      "title": "[AI그래픽] KT 이강철 감독, 10일 부산 롯데전서 600승 달성"
+    },
+    "f524acdf5821d16b551fdd2959d8fc86aaae6bf9afa20ff8fe36c55a50493681": {
+      "ts": 1789063292.555475,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Defiance의 AIMG: The AI Magnificent 10 ETF 출시는 투자 상품으로, AI 반도체 산업 자체의 기술 및 시장 동향과 직접적인 관련성이 낮다.",
+      "title": "Defiance Launches AIMG: The AI Magnificent 10 ETF"
+    },
+    "219adbca8d9e7fb48b311ea1d01b3c652b0ecc9a3a280c45aac5e3e6fd343f11": {
+      "ts": 1789063292.55548,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Omnilert의 AI 카메라 건강 모니터링 출시 뉴스는 AI의 보안 시스템 적용 사례이나, AI 반도체 산업 투자 관점과는 거리가 멀다.",
+      "title": "Omnilert Launches AI Camera Health Monitoring to Help Organizations Ensure Security Cameras Perform When It Matters Most"
+    },
+    "7a0a6c391075ab2f93d902bd305700b90778e3d24c8fb434b5f6438f01e35112": {
+      "ts": 1789063292.555483,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "건강 시스템 및 보험 회사의 제공자 데이터 부족과 AI 투자 위험에 대한 뉴스는 AI의 의료 분야 적용 관련성이 있으나, AI 반도체 산업 투자 관점에서는 중요도가 낮다.",
+      "title": "Nearly All Health Systems and Health Plans Need Better Provider Data. Few Have It, and AI Investment Is at Risk."
+    },
+    "4e1e4c1831230ef071296fd2a8ff7aa29677881eb4ebe1dff9077e3ccbb184f5": {
+      "ts": 1789063292.555486,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI를 활용하여 공급망 불확실성을 관리하는 캐나다 기업의 사례는 AI의 일반적인 활용 사례로, AI 반도체 산업 투자와 직접적인 관련성이 낮다.",
+      "title": "What if everything changes tomorrow? A Canadian company is using AI to help businesses navigate supply chain uncertainty"
+    },
+    "ec25d9c91f9bbe3c3760075380a69da1537b8cb44242afe24cf3fc9ceeecd6f8": {
+      "ts": 1789063292.555488,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "아시아 반도체 체인 재평가 기회를 목표로 하는 펀드 뉴스는 투자 상품에 대한 내용으로, AI 반도체 산업 자체의 기술 및 시장 동향과 직접적인 관련성이 낮다.",
+      "title": "安聯00412A瞄準亞洲半導體鏈評價重估契機 - 財經新聞 - PChome Online 新聞"
+    },
+    "1d8b18e054e9d232f468104fa9c1a6d1e81b82d9a9277bb99be8707164a26298": {
+      "ts": 1789063292.555491,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "고체 산화물 연료 전지 시장 보고서는 AI 반도체 산업과 직접적인 관련성이 낮다.",
+      "title": "Solid Oxide Fuel Cell Market Size Report, 2026-2033"
+    },
+    "fb633a957ae3136990080354a772fce3c34e24410fcc7809c6113ad08337557e": {
+      "ts": 1789063292.555493,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Microsoft 주가 전망 분석은 특정 보유 종목 매매를 가정하므로 투자자에게 불필요하다.",
+      "title": "Microsoft Remains Down Over 12 Months: A Wall Street Bull Expects 75% Gains to Materialize Soon"
+    },
+    "018fceb919bf5d549cff6749ba54233b3a195c2a1b638e6e20173cef4bf424af": {
+      "ts": 1789063292.555497,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "튀르키예의 AI 투자 드라이브 계획은 국가 차원의 정책 발표이나, AI 반도체 산업 투자와 직접적인 연관성이 낮다.",
+      "title": "Türkiye eyes major AI investment drive to become global hub: tech minister"
+    },
+    "3cd0cc783a05d6862afd5045d99ff18c2cd821c50b874171db26c4200b2fd69d": {
+      "ts": 1789063292.555499,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Nebius 주식 3년 전망 분석은 특정 보유 종목 매매를 가정하므로 투자자에게 불필요하다.",
+      "title": "Where Will Nebius Stock Be in 3 Years?"
+    },
+    "de1b2460e2f78319da110760769b577e5b82c6ad17f96b7d6c3b2ee4f044ec46": {
+      "ts": 1789063292.555501,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Microsoft 주가가 클라우드 성장 및 AI 지출로 인해 소폭 하락했다는 뉴스는 특정 기업의 주가 변동으로, AI 반도체 산업 투자와 직접적인 영향력이 크지 않다.",
+      "title": "Microsoft stock dips slightly as cloud growth and AI spending reshape the outlook"
+    },
+    "04bd9e7587888874f63d7cf1a9320b314cc60fe954210243822090c6ce83b61a": {
+      "ts": 1789063292.555504,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Per Scholas의 Salesforce AI Fellowship 파일럿 프로그램은 AI 교육 프로그램으로, AI 반도체 산업 투자와 직접적인 관련성이 낮다.",
+      "title": "Per Scholas Launches Innovative New Salesforce AI Fellowship Pilot"
+    },
+    "9b98771998257cf52440a627b7c80ebb957f317f988903b5fa793c7dcccdeaf5": {
+      "ts": 1789063292.555506,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "KAVIA AI가 Tata Elxsi로부터 투자를 유치했다는 뉴스는 AI 스타트업의 초기 투자 사례이나, 산업 전반의 파급력이 크지 않다.",
+      "title": "KAVIA AI Announces Strategic Investment From Tata Elxsi As Part Of Its Seed Financing"
+    },
+    "5232bec5fd0d7ac220ac3ee2b29166800c2c4bb2620d9d76314893c195845d39": {
+      "ts": 1789063292.555508,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Broadcom 주가가 AI 상승세 후 하락했으나 분석가들이 장기 전망을 주시한다는 뉴스는 특정 기업의 주가 변동으로, AI 반도체 산업 투자와 직접적인 영향력이 크지 않다.",
+      "title": "Broadcom stock slips from AI-fueled highs as analysts eye long-term guidance"
+    },
+    "d6856c66589bc29fb19b1f677660f14d0f49b3c0197504de59c961bf1120b86c": {
+      "ts": 1789063292.555511,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "NPCI가 Anthropic Claude 기반 AI 플랫폼을 구축하여 기업 채택을 확대한다는 뉴스는 AI의 금융 서비스 적용 사례이나, AI 반도체 산업 투자 관점과는 거리가 멀다.",
+      "title": "NPCI building AI platform on Claude to drive wider enterprise adoption: Anthropic India MD"
+    },
+    "dcbdaae16774008efd68ef2a62eb1040d14ec11f91bf071def514a317ef722e6": {
+      "ts": 1789063292.555514,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Sentinel Net Lease의 혁신 부사장 임명은 인사 소식으로, AI 반도체 산업 투자와 관련이 없다.",
+      "title": "Sentinel Net Lease Names Nikolas Mirando Vice President of Innovation"
+    },
+    "7253579d751aa0fdd3f0d8e58b15f2b08e959acd93ad6fd9df679f188a134022": {
+      "ts": 1789063306.483191,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Nvidia Groq 딜에 대한 법무부 조사로, 현재 AI 반도체 산업 투자에 직접적인 영향은 미미함.",
+      "title": "DOJ Opens Formal Probe Into Nvidia Groq Deal: Reverse-Acquihire Playbook Faces First Legal Test"
+    },
+    "76e41153281994534461c63a21d48c3ad7232d5eca804ccbc5e6d9a950a51c50": {
+      "ts": 1789063306.483202,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "보험 요율 산정 자동화는 AI 기술의 응용 사례이지만, AI 반도체 산업의 핵심 동향과는 거리가 멂.",
+      "title": "로민, 코리안리 보험요율 산정 자동화에 다큐먼트 AI 에이전트 구축"
+    },
+    "815614be74b4467f905f920d0b51e7114a044649ac82873ac4926341ca61503d": {
+      "ts": 1789063306.483206,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "DRAM 시장에 대한 일반적인 분석 기사로, 특정 투자 결정에 필요한 구체적인 산업 변화를 담고 있지 않음.",
+      "title": "DRAM: Walking Down A Different Kind Of Memory Lane (BATS:DRAM)"
+    },
+    "dc1a27d5815501846ba978136881c32a6145697ad03e9948b8947665be31984e": {
+      "ts": 1789063306.483209,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Intel의 칩 가격 인상 및 주가 분석은 개별 기업의 재무적 측면에 집중되어 있어, AI 반도체 산업 전반의 투자 관점에서는 중요도가 낮음.",
+      "title": "Intel May Raise Chip Prices 10% and the Stock Took Off. Why Most Analysts Still Refuse to Buy."
+    },
+    "6643bef8cdbf285166524319a118cfaf0d6d64618410ba33daa4db0b43b856e0": {
+      "ts": 1789063306.483214,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Pony.ai와 Verne의 자율주행 로보택시 테스트는 AI 응용 분야이나, 반도체 산업 자체의 투자 동향과는 직접적인 관련성이 낮음.",
+      "title": "Pony.ai, Verne Begin Fully Driverless Robotaxi Tests in Croatia"
+    },
+    "cf2e4b06fb0b13113e406dfa9600ce6accd17761d4dac5490e4afb7e949b66af": {
+      "ts": 1789063306.483218,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Tokyo Electron의 반도체 장비 사업 분석은 개별 기업의 강점에 초점을 맞추고 있어, 산업 전반의 변화를 반영하지 않음.",
+      "title": "Tokyo Electron: Strong Moat And High Growth From Semiconductor Equipment"
+    },
+    "99fb40e2eca8bd3910f49dea536b9baad3ad2bf4e47b1f8a260a450fc9ea5a34": {
+      "ts": 1789063306.483221,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Kioxia 공장장의 향후 전략 및 인재 확보 전망에 대한 인터뷰는 개별 기업의 내부 전략에 관한 것으로, 산업 전반의 투자 결정에 미치는 영향이 제한적임.",
+      "title": "キオクシア四日市工場、清水和裕工場長に聞く 今後の戦略や人材獲得の展望は？"
+    },
+    "e359e8bda52617b2b1232cd0f846361b6f8000d33752ab01bfc259c6db54baba": {
+      "ts": 1789063306.483223,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "ASML 목표가 하향 조정 및 중국/마진 우려는 개별 기업의 주가 변동 요인으로, 산업 전반의 투자 관점에서는 중요도가 낮음.",
+      "title": "ASML Holding stock slips after Morgan Stanley trims price target on China and margin worries"
+    },
+    "389ea7f331fc5d220677ecec7d9f503597391046170cbe7ab1bd9334563c3faa": {
+      "ts": 1789063306.483225,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AFT와 Microsoft 간 AI 프라이버시 협약은 특정 기업 간의 계약이며, AI 반도체 산업의 핵심 투자 동향과는 거리가 멂.",
+      "title": "AFT Reaches AI Privacy Deal With Microsoft"
+    },
+    "142648cf8eaebe20ad535def5a85c3a052e05e123c6ca971c27b8bb12adcf1fd": {
+      "ts": 1789063306.483228,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Briggs & Stratton의 Google Cloud 파트너십 확대는 특정 기업의 클라우드 활용 사례이며, AI 반도체 산업 투자에 직접적인 영향은 미미함.",
+      "title": "Briggs & Stratton Expands Google Cloud Partnership with Gemini Enterprise to Modernize Supply Chain and Upskill Workforce"
+    },
+    "73c4172bad07e1544fb3ec4bed7d61471d1a7d5516e7f13e6d6cb2577a654682": {
+      "ts": 1789063306.483232,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Nebius 주식에 대한 매수 등급 부여는 개별 기업에 대한 분석으로, AI 인프라 성장이라는 큰 흐름 안에서 중요도가 낮음.",
+      "title": "Truist initiates Nebius stock with buy rating on AI infrastructure growth"
+    },
+    "7a0e726f27101537f136e47dbff59685144d2c4a438706d5f2ae82f801460518": {
+      "ts": 1789063306.483234,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AMF1의 CoreWeave 물리적 AI 필드 엔지니어링 사용 사례는 특정 응용 사례이며, 산업 전반의 투자 결정에 미치는 영향이 제한적임.",
+      "title": "How AMF1 Use CoreWeave's Physical AI Field Engineering"
+    },
+    "22e5b540491c2c9957131fa58453aa95871c93a082fbe77b551fc0ce9b859c0e": {
+      "ts": 1789063306.483237,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "9월에 사야 할 AI 칩 주식 3개 추천은 투자 정보 제공이지만, 구체적인 산업 변화보다는 개별 종목 추천에 가까움.",
+      "title": "3 AI Chip Stocks to Buy in September"
+    },
+    "67a929a08d92cef230852b12a665b47fa4246d87d26317f74f036c3c55e4e60e": {
+      "ts": 1789063306.483241,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "SanDisk에 대한 목표가 상향 및 NAND/AI 추론 수요 분석은 개별 기업 및 시장 요인에 초점을 맞추고 있어, 산업 전반의 투자 결정에는 큰 영향이 없음.",
+      "title": "Goldman Reiterates Buy On SanDisk, 26.6% Upside On Tight NAND And AI Inference Demand"
+    },
+    "bc7cd5531795389c021d8dd169d099c94d740969c6cc1345eeb454371e7418d2": {
+      "ts": 1789063306.483243,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "브라질의 AI 데이터센터 건설과 물 부족 문제는 지역적 이슈이며, AI 반도체 산업의 핵심 투자 동향과는 거리가 멂.",
+      "title": "Huge AI data center project blindsides water-stressed town in Brazil"
+    },
+    "efc92250a6c4052919b4fb076da2e558ed2a33ef59f2b958683aa5560f00dd15": {
+      "ts": 1789063306.483246,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Rezolve Ai의 투자 컨퍼런스 참여는 개별 기업의 홍보 활동으로, 산업 전반의 투자 결정에 미치는 영향이 미미함.",
+      "title": "Rezolve Ai to Participate in the H.C. Wainwright 28th Annual Global Investment Conference"
+    },
+    "13d6474f2345cbb6e1f08df20430813a0d9ab1d9d247f5ee72285a479262b9b6": {
+      "ts": 1789063306.48325,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Meta 주가 상승 및 Muse AI 출시에 대한 분석은 개별 기업의 주가 움직임에 초점을 맞추고 있어, 산업 전반의 투자 결정에는 큰 영향이 없음.",
+      "title": "Meta Stock Surges on Muse AI Launch as $659 Breakout Comes Into Focus"
+    },
+    "eba45e07c8c79932b7c0330e2ee713479f6f0980573286423d3e538a1baf50b7": {
+      "ts": 1789063306.483254,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "캘리포니아주의 AI 도구 사용 규제 법안은 특정 지역의 규제 동향이며, AI 반도체 산업 전반의 투자 결정에는 직접적인 영향이 적음.",
+      "title": "California bill would ban AI tools that read employees’ emotions"
+    },
+    "8eb56f74fb73b294d6d3ba5b0ce55ad8cc5a09e19d42457edd4cde2250724e87": {
+      "ts": 1789063306.483256,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Security Journey의 AI 보안 교육 출시 및 확산은 AI 응용 분야의 보안 강화 노력이나, AI 반도체 산업 자체의 핵심 투자 동향과는 거리가 멂.",
+      "title": "Security Journey Launches AI Advantage: Extending Secure AI Training From Developers to Every Employee"
+    },
+    "1743036bc098c993d5cb7750c354b58c4d310bef77335999d2d66346325134c1": {
+      "ts": 1789063306.483258,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "경제 논평에서 비즈니스 투자가 느린 성장 경제를 이끈다는 내용은 일반적인 경제 분석으로, AI 반도체 산업에 특화된 내용은 아님.",
+      "title": "Economic commentary: Business investment leads a slow-growth economy |"
+    },
+    "f5f00533aa361ab58c162e8b3758aee69e5f1953b2cf57ce562fcce711b6a1c7": {
+      "ts": 1789063306.483263,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Meta 주가 상승 및 Muse AI 출시 관련 분석은 개별 기업의 주가 움직임에 초점을 맞추고 있어, 산업 전반의 투자 결정에는 큰 영향이 없음.",
+      "title": "Meta Stock Jumped 6.5% on the Muse Launch. The Street’s Targets Say There’s More Room."
+    },
+    "83f381a75bccaeb5fc9f7da3a6697b8fd8a8a8935cc67cc794bb46d82bc3e726": {
+      "ts": 1789063306.483265,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 서버 밀수 사건 및 불법 환적 관련 학자 의견은 규제 및 불법 행위에 관한 내용으로, AI 반도체 산업의 직접적인 투자 동향과는 거리가 멂.",
+      "title": "AI 伺服器走私案頻傳 學者：台灣應嚴查非法轉運"
+    },
+    "361b2985dd60f8818544285148741589411b0fbe1d2635399eaa3f6389d2b197": {
+      "ts": 1789063306.483269,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "OpenAI, Anthropic의 AI 공포 마케팅에 대한 분석은 AI 기술의 위험성에 대한 논의이며, 직접적인 산업 투자 결정과는 거리가 멂.",
+      "title": "오픈AI·앤트로픽의 AI공포 마케팅...여전히 SF, 통제벗어나는 건 현실"
+    },
+    "05eb9942ac2118c0df93e9e56f4c23338caad25ad6915e24206e2872593925cc": {
+      "ts": 1789063306.48327,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Oracle 실적 발표 및 AI 변동성에 대한 분석은 개별 기업의 재무 상태에 관한 것으로, 산업 전반의 투자 결정에는 큰 영향이 없음.",
+      "title": "Oracle Earnings and AI Volatility"
+    },
+    "9da1193a2131b5f63f4ae2e31156a47338b32562544c45293b1117313a8cbf6a": {
+      "ts": 1789063306.483272,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "공정 채용 및 규제 관련 내용은 AI 응용 분야의 사회적 영향에 관한 것으로, AI 반도체 산업 자체의 투자 동향과는 거리가 멂.",
+      "title": "What building fair hiring under real regulation taught us, and why the U.S. is next"
+    },
+    "b5fa3c2a4b182a870e1742a64b263aba98be3178ba93abbe8c09588d5870f4c2": {
+      "ts": 1789063306.483276,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Google Cloud의 산업별 Gemini Enterprise 출시 및 파트너십 강화는 클라우드 서비스의 B2B 확장에 관한 것으로, AI 반도체 산업 자체의 핵심 투자 동향과는 거리가 멂.",
+      "title": "Google Cloud Goes Industry-Specific With Gemini Enterprise: Skills + Data + Agents + Partners"
+    },
+    "2c84e90ee54e104d01f268a1ae7de79ac252b0588f42d97e7f5291d86ba33b15": {
+      "ts": 1789063306.483277,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 에이전트의 잠재적 문제점 관련 금융권 분석은 AI 응용 분야의 리스크 관리 측면이며, AI 반도체 산업 자체의 투자 결정과는 직접적인 관련성이 낮음.",
+      "title": "AI agents don't have to fail in order to cause major problems for banks"
+    },
+    "7f12605e83138d11754321d7497dbdc65c284e872e517d86e682e602f0c8ae0a": {
+      "ts": 1789063306.483282,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Oracle 실적 발표 및 CAPEX 위험 대비 클라우드 성장 분석은 개별 기업의 재무 상태에 관한 것으로, 산업 전반의 투자 결정에는 큰 영향이 없음.",
+      "title": "Oracle set to report as Street weighs capex risk against cloud growth"
+    },
+    "49b0f750430cd77c658f77e5df9a88e5a40a3d55502251f23b9434a4d80e61d9": {
+      "ts": 1789063306.483285,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "미국 Responsible Innovation 협회의 주별 AI 옹호 이니셔티브는 AI 정책 및 규제 관련 활동으로, AI 반도체 산업의 직접적인 투자 동향과는 거리가 멂.",
+      "title": "Americans for Responsible Innovation Launches State-Level AI Advocacy Initiative"
+    },
+    "7c8cdb7e669222fb838860fe10ed2e1ac0390207047c3846f9291325f3edc5db": {
+      "ts": 1789063306.483286,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI의 인류 멸종 가능성에 대한 경고는 AI의 위험성에 대한 논의이며, 직접적인 산업 투자 결정과는 거리가 멂.",
+      "title": "\"인류 멸종될 수도\"‥집단행동까지 하며 폭주하는 AI 충격"
+    },
+    "7342b6756435077a9df642b5320b47d7d96e2f0d1af16fc93f74bfb93c4ea81c": {
+      "ts": 1789063306.483308,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "한국의 반도체 경쟁력 및 2030년 전망에 대한 분석은 거시적인 관점이며, 특정 투자 결정을 내릴 만큼 구체적인 정보를 제공하지 않음.",
+      "title": "삼전닉스 있는데 한국이 불리?…2030년 반도체 멸망전 [반도체플러스]"
+    },
+    "31524d4b1680935c02876325240de68a2ade16c8a1c928b35a8fc338fe03107f": {
+      "ts": 1789063306.483313,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Celero Communications의 2.75억 달러 자금 조달은 통신 인프라 관련으로, AI 반도체 산업 자체의 핵심 투자 동향과는 거리가 멂.",
+      "title": "Celero Communications Raises $275M | Business | Sep 2026"
+    },
+    "4bc53d2e2e9a57a319eafbc19ac57d0651a6f309cb74bcb3a9c8665aea074543": {
+      "ts": 1789063306.483314,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Braze의 2분기 매출 증가 및 AI 채택 가속화는 개별 기업의 성장 지표이며, AI 반도체 산업 전반의 투자 결정에는 큰 영향이 없음.",
+      "title": "Braze: Q2 Revenue Rises 26% To $227.2 Million As AI Adoption Accelerates"
+    },
+    "1231696fa1328d7bf256c1c7af421c810eedaf1f32fef9f72507333fcaa18541": {
+      "ts": 1789063306.483316,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "데이터센터 혐오론자들에 대한 AI 옹호론자의 존중 촉구는 논쟁적인 의견이며, AI 반도체 산업의 직접적인 투자 동향과는 거리가 멂.",
+      "title": "Editorial: R-E-S-P-E-C-T is the only way for AI advocates to deal with data center haters"
+    },
+    "8a86707ad4231dc48c97043babed948f0deee79f4e9d40f7e40d0932f900448c": {
+      "ts": 1789063306.483318,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "ServiceTitan의 2분기 매출 증가 및 에이전트 AI 채택 확대는 개별 기업의 성장 지표이며, AI 반도체 산업 전반의 투자 결정에는 큰 영향이 없음.",
+      "title": "ServiceTitan: Q2 Revenue Rises 21% To $292.8 Million As Agentic AI Adoption Expands"
+    },
+    "46f7e1ebf025c0982f4045a6af5db76e8680d832105c0061d624c859030788da": {
+      "ts": 1789063306.48332,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "표준 CPU가 양자 피드백 루프를 처리할 수 있다는 내용은 양자 컴퓨팅 관련 기술이며, AI 반도체 산업의 직접적인 투자 동향과는 거리가 멂.",
+      "title": "Standard CPUs can handle quantum feedback loops, Xanadu and AMD say"
+    },
+    "baab01361986b39217c6d41eda56e7467e0527b724d2dfe7e756719c1bbba762": {
+      "ts": 1789063320.172327,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Data center build information in Vietnam is too vague and lacks specific AI/semiconductor industry impact.",
+      "title": "Build-to-suit data center"
+    },
+    "43a5f682fb1b0d3096c4fc2309036b9fdbab967498da280e5c3dbdda22fa3e54": {
+      "ts": 1789063320.172339,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "General commentary on AI spending fueled by FOMO, lacking specific industry or financial data.",
+      "title": "Bank FOMO fueling AI spending, Accenture exec says"
+    },
+    "9fafdd7d8d21810546e00786a5fd0e2fc31690ec1f3a79f7219bce54a1cc8ef2": {
+      "ts": 1789063320.172346,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "News about AI bans and screen-time caps in NYC schools is an educational policy matter, not directly impacting AI/semiconductor industry investment.",
+      "title": "NYC students return to class with AI ban, screen-time caps and free 2-K"
+    },
+    "0bb527af49f18ff5f78b9d3c364293d318603a35986b8b1c215fcb8e598bf6d1": {
+      "ts": 1789063320.172349,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Discusses the hidden costs of the AI boom and digital access, but lacks specific financial or industry impact details.",
+      "title": "AI 열풍의 숨은 비용 청구서… 저가 100달러폰 사라지며 ‘디지털 접근권’ 흔들린다"
+    },
+    "e8211da380a6db3ec58d5bb4e37721393954e5572a92e6868984e502e67e6033": {
+      "ts": 1789063320.172357,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Real estate news about a 'white field' in Kaohsiung becoming a new base for the semiconductor S-corridor is indirectly related and lacks direct AI/semiconductor industry impact.",
+      "title": "高雄「白埔」帶動高雄房市關鍵 將成半導體S廊帶新基地"
+    },
+    "b933fe002181ec644a91419e6130f85a54e7b8cd235bb54cf45c9c31986664e9": {
+      "ts": 1789063320.172359,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "General outlook on AI investment trends in Asia, focusing on supply chains in Taiwan, Japan, and South Korea, lacks specific actionable information.",
+      "title": "AI 投資下一棒看亞洲！投信點名三大趨勢台日韓供應鏈成焦點| 財經"
+    },
+    "daabccb3518e53cdd762051406dceb7570c2cb463a6f7d837896021368f08282": {
+      "ts": 1789063320.172364,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Funding for autonomous cardiology AI is a specific medical application, not core to the broader AI/semiconductor industry investment landscape.",
+      "title": "Tempus wins USD 9.5m in ARPA-H funding to develop autonomous cardiology AI"
+    },
+    "de454a0d03075e45872a07af9ed013dd12721cdf13de23da666913242a21d93e": {
+      "ts": 1789063320.172368,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Elon Musk's daughter's stance on AI in a fashion campaign is not relevant to the AI/semiconductor industry investment.",
+      "title": "Elon Musk’s transgender daughter Vivian speaks out against AI in new fashion campaign"
+    },
+    "13e78511eb31c42e8e4442954650d1d4a1a23296a3f792628c1e0f5f6637bf35": {
+      "ts": 1789063320.172375,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "HE Group securing a power distribution job for a NAND flash manufacturer is a project-level detail with limited broad industry impact.",
+      "title": "HE Group bags RM25m power distribution job for NAND flash manufacturer"
+    },
+    "ac363ac1955df5bd563d1c6b94e25c0cb0032408ac4fc735dbcd3dbc945326aa": {
+      "ts": 1789063320.172379,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Octa expanding its identity management for AI agents is a niche application, not a core AI/semiconductor industry investment driver.",
+      "title": "[글로벌 핫스톡] AI 에이전트도 신원 관리…영토 넓히는 옥타"
+    },
+    "53245fed2c55956e2c20b0671e7e23e391dedff058a021703ba8f13afb8571cc": {
+      "ts": 1789063320.172382,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Missouri partnering with Google for statewide AI and job skills training is an educational initiative, not a direct industry investment news.",
+      "title": "Missouri partners with Google to offer free AI, job skills statewide"
+    },
+    "7ee85ac3e722f993ae6ae9c1e68554e34486eaf7d2b0b5ed8f6115aa2ff9c906": {
+      "ts": 1789063320.172385,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Elon Musk's lawyer seeking a seat in Congress is political news, unrelated to AI/semiconductor industry.",
+      "title": "Elon Musk’s Lawyer Seeks Seat in Congress"
+    },
+    "712aac1e864d37a1c2b5de12b825093da83d0377c7fd992402aebca1a5b22ced": {
+      "ts": 1789063320.172391,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Noritake developing a polishing pad for power semiconductor materials that contributes to reducing industrial waste is a materials development story with limited direct impact on AI/semiconductor investment.",
+      "title": "ノリタケ、パワー半導体材料向け研磨パッドを開発 産業廃棄物減少に貢献：ニュース"
+    },
+    "cc8868b6376a8bb95114824ef76d7089b0577bb03c28ff3422d1e0f7a9d921dd": {
+      "ts": 1789063320.172395,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "This title is nonsensical and irrelevant to the AI/semiconductor industry.",
+      "title": "기능을 켜기 전에 조건을 읽는 슬롯 나라 ㅡ2"
+    },
+    "7834bd799be0f16baa4c5a854a14e319e9142d511f1446fc151ced5b05e24f40": {
+      "ts": 1789063320.172407,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Senator Sanders bringing AI risk researchers to a briefing on AI danger is a political and safety discussion, not directly related to industry investment.",
+      "title": "Sanders brings AI risk researchers to a closed Senate briefing on AI danger"
+    },
+    "24de755ae6aae1f96ff78b4f11d5aca60a2d2af137a0d585fcb02d68efcf9137": {
+      "ts": 1789063320.17241,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Kakao Games launching a new game is entertainment news, not relevant to the AI/semiconductor industry.",
+      "title": "Kakao Games to Launch ‘Dokkaebi’s World’ on Oct. 8"
+    },
+    "47aba0888b8d91f5f741493ad05766b170ba69739faf7a3def6d4639bfffbb05": {
+      "ts": 1789063361.433927,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 로봇이 조선소에서 용접하는 내용은 AI·반도체 산업 투자자에게 직접적인 중요도가 낮다고 판단됩니다.",
+      "title": "조선소 누비며 용접하는 AI 로봇…'지능형 기지국'이 지원"
+    },
+    "4e46a9d75ca9b5174ffe00bbfba206e0103a5599b1a8c1a61ad461557c8e96a5": {
+      "ts": 1789063361.433939,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI-RAN을 통한 피지컬 AI 확산 및 제조현장 실증은 산업 전반에 걸쳐 중요할 수 있으나, 구체적인 파급 효과나 투자 관점에서 즉각적인 중요도는 낮다고 판단됩니다.",
+      "title": "정부, AI-RAN으로 피지컬 AI 확산…제조현장 실증 본격화"
+    },
+    "77e3df1ae4c23f757093fef92b4d7e69d4080646a1c4379fd47c4fbcf1cc4cc9": {
+      "ts": 1789063361.433945,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 데이터센터 유치 협력은 지역 산업 활성화와 관련될 수 있으나, AI 및 반도체 산업 전반의 투자 흐름에 직접적인 영향을 주는 중요 뉴스로는 판단하기 어렵습니다.",
+      "title": "도-한국전력공사 \"AI 데이터센터 성공 유치 협력\""
+    },
+    "cd9219df27f850f7da1a5d47bc1fb33161b27f1e65030296000b491e46c05d80": {
+      "ts": 1789063361.433951,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "심텍의 차세대 반도체 기판 공개는 개별 기업의 기술력 발표에 해당하며, NVIDIA의 위상 상향 수혜 기대는 구체적인 계약이나 수주 물량 발표가 없어 중요도가 낮습니다.",
+      "title": "심텍, 차세대 반도체 기판 ‘엔비디아 위상 상향’ 수혜 기대"
+    },
+    "f0ee2cceb5031125cfc07c0bfb8e5b9ae833dbfc939b9f87fad6ba0df2fa1c64": {
+      "ts": 1789063361.433954,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 데이터센터 수요가 한국 연료전지 주가를 견인한다는 내용은 간접적인 연관성을 보여주지만, AI·반도체 산업의 핵심적인 투자 정보를 제공하지는 않습니다.",
+      "title": "AI data center demand powers Korea fuel cell stocks higher - CHOSUNBIZ"
+    },
+    "68b4ed326beb00ca04ce3793822d89b35b5e82b0abd191feed9977e193f434da": {
+      "ts": 1789063361.433961,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "GPU 관련주에서 전력 관련주로 수혜가 옮겨간다는 전망은 시장 트렌드 변화에 대한 분석일 뿐, 구체적인 수치나 기업의 발표가 없어 투자 판단에 직접적인 영향은 적습니다.",
+      "title": "인공지능 경쟁 수혜, GPU 관련주에서 전력 관련주로 옮긴다 [AI노스트라다무스⑥]"
+    },
+    "50f8fb786d80b5b55399c4a23498db0712bf8f220fc235300bb89e7486768c67": {
+      "ts": 1789063361.433967,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "현대차의 미국 딜러망에 AI 영업사원 투입은 자동차 산업 내 AI 활용 사례지만, AI·반도체 산업 자체의 핵심 투자 정보로 보기에는 관련성이 낮습니다.",
+      "title": "현대차, 美 830개 딜러망에 'AI 영업사원' 투입…마케팅 판도 변화 시동"
+    },
+    "a1044a8d6929d27e48551ccec857ff9b56921eeddd29b44851977c34440c7685": {
+      "ts": 1789063361.433972,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "심텍의 차세대 AI 기판 공개 및 수상 소식은 개별 기업의 기술 홍보 활동에 해당하며, 구체적인 대규모 계약이나 양산 계획 없이는 투자 중요도가 낮습니다.",
+      "title": "심텍, ‘KPCA Show 2026’서 차세대 AI 기판 공개…산자부 장관상 등 ‘3관왕’ 달성"
+    },
+    "94a6ce7b3f1640755ec0eea61c3a9ceb8ac8929b2a5aa646a5bb0a5091a6b576": {
+      "ts": 1789063361.433982,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "하와이 카운티의 데이터센터 금지 연기는 지역 규제 관련 소식으로, AI·반도체 산업 전반의 투자 흐름에 직접적인 중요도는 낮습니다.",
+      "title": "Hawaii County Defers AI Data Center Ban Until October"
+    },
+    "6daab61c0b7f74f55ec0eb64ddf6ab0882abdcd5ae1893df3eacc47345850ee2": {
+      "ts": 1789063361.433985,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "일본 반도체의 DRAM 실패 이유 분석은 개별 국가 산업의 과거 사례 분석으로, 현재 AI·반도체 시장 투자자에게 직접적인 중요도는 낮습니다.",
+      "title": "マイクロン、エヌビディアと大違い トレンドを読めないニッポン半導体がDRAMで失敗した理由"
+    },
+    "3a868fba2dde85d1bf5ebc8fe70aeeaacc9cbb9c290523df424fbe40d0de4657": {
+      "ts": 1789063361.43399,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Iren 주식 매수 여부에 대한 질문은 개별 종목 분석으로, AI·반도체 산업 전반의 투자자에게는 직접적인 중요도가 낮습니다.",
+      "title": "Is Iren Stock a Buy Now?"
+    },
+    "9fe391a4d40f203494eefa632860d7298f1b536f077d62836b1c6935f77a6c4f": {
+      "ts": 1789063361.434005,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "DealHub MCP가 Quote-to-Revenue에 에이전트 제어를 도입했다는 내용은 특정 소프트웨어 기능 업데이트에 해당하며, AI·반도체 산업 투자자에게 직접적인 중요도는 낮습니다.",
+      "title": "DealHub MCP Brings Agentic Control to Quote-to-Revenue"
+    },
+    "f640ca42b805abb29fac7812b1f8b9e74ccef50095c344a6ea08daa2f37f837d": {
+      "ts": 1789063380.259315,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "OpenAI가 ChatGPT를 통해 의료 기록에 접근하는 기능은 AI의 의료 분야 적용 확대 가능성을 보여주지만, 산업 전체에 미치는 영향이 즉각적이고 중대하다고 보기 어려움.",
+      "title": "AI in Healthcare: OpenAI Connects Clinicians to Patient Medical Records Inside ChatGPT"
+    },
+    "5da213d37cdd7f00569fe724fa6e8bbe1f5c9779d0df373fc58b48d956701ed9": {
+      "ts": 1789063380.259343,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Amazon CEO의 반도체 판매 전망과 특정 AI 칩 제조사에 대한 언급은 시장 전망을 담고 있으나, 구체적인 수치나 새로운 사실이 없어 중요도가 낮음.",
+      "title": "Amazon CEO Andy Jassy Explained Why Semiconductor Sales Could Keep Climbing for Years to Come. Here's My Favorite AI Chipmaker Right Now."
+    },
+    "c3133fec5020315589264cb111e315fcd1daeb1c027d1ee923354a10a35dbece": {
+      "ts": 1789063380.259346,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Microsoft가 아랍어권 엔터프라이즈 AI 시장 공략을 위해 HUMAIN과 협력하는 것은 특정 지역 시장 확대 전략이지만, 산업 전반에 미치는 영향은 제한적임.",
+      "title": "Microsoft Targets Arabic Enterprise AI Opportunity With HUMAIN Collaboration"
+    },
+    "e25cda7ba4422d430296e5dc17fc7c5f8a6c77b5b9988219d979e696f10b9118": {
+      "ts": 1789063380.259351,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 열풍이 은행권 청년 취업 문턱을 높인다는 내용은 AI 산업의 간접적인 사회적 영향이나, 직접적인 투자/산업 뉴스로 보기 어려움.",
+      "title": "[불황의 일상화] 은행권 청년 취업도 별따기…AI 열풍에 취업 문턱 ↑"
+    },
+    "a19b344b4c50a4674564564bb852b29d6bde902ccfd70dedafde9116fe7e8227": {
+      "ts": 1789063380.259376,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AI 열풍이 은행원 취업 문턱을 높인다는 내용은 AI 산업의 간접적인 사회적 영향이나, 직접적인 투자/산업 뉴스로 보기 어려움. (index 25와 유사 내용)",
+      "title": "은행권 공채 시즌… AI 열풍에 은행원 취업 문턱 ↑"
+    },
+    "28cc3a0f80bea1e9bb726e2863b18217ff23bb843e5477ab2949322e0db17109": {
+      "ts": 1789063380.259378,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "AgentsNexus India 2026 행사는 AI 분야의 컨퍼런스이나, 특정 기술이나 시장 동향에 대한 새로운 정보보다는 행사 자체에 대한 소개에 가까워 중요도가 낮음.",
+      "title": "AgentsNexus India 2026 draws 600+ practitioners to Indias first tech conference inside a Planetarium"
+    },
+    "b8ce699428c8715e9ec012b4af020b18400fc55f9e164804763d7c4fdc153045": {
+      "ts": 1789063380.259382,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "Microsoft KB 업데이트 관련 내용은 일반적인 IT 시스템 업데이트 이슈로, AI/반도체 산업의 주요 투자/산업 뉴스로 분류하기 어려움.",
+      "title": "KB5124008 (26200.9445) breaks machine secure channel / domain trust — reproducible, Server 2019 DCs"
+    },
+    "a9edbe71f7dfdda3f89abba17dfd52f2d2e5466d360ccb488d1f1954a2c6d8d3": {
+      "ts": 1789063380.972134,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "단순 산업전 참가 소식으로, AI·반도체 산업 투자자가 알아야 할 구체적인 기술, 시장, 혹은 재무적 변화를 담고 있지 않아 중요도가 낮음.",
+      "title": "강원도, 국제 반도체 기판·첨단 패키징 산업전 참가"
+    },
+    "08a9d03e461faca5daeca19eb4da58eba4d5a04e816add3aaaccdbd2757304f7": {
+      "ts": 1789063488.493184,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "삼성전자 3분기 영업이익이 전분기 대비 감소했다는 뉴스는 AI 및 반도체 산업 투자자가 알아야 할 중요 정보가 아니라고 판단됩니다. HBM 사업 지연이라는 원인이 언급되었으나, 구체적인 지연 정도나 그 영향에 대한 추가적인 설명이 부족하여 전반적인 산업 동향 파악에 미치는 영향이 제한적입니다.",
+      "title": "‘HBM사업 지연 직격탄’ 삼성전자, 3분기 영업익 9.1조원·2Q 대비 12.8% ↓"
+    },
+    "b9075946486ba8e12e64b92e836d06aaaa1e34ca30871f7c64e2f3d82c1cf5ef": {
+      "ts": 1789063488.493195,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "메모리 칩 재고가 10일 미만으로 떨어졌다는 뉴스는 과거(2026년)의 정보이며, 해당 정보만으로는 현재의 공급망 상황이나 시장의 변화를 파악하기에 부족합니다. AI 및 반도체 산업의 투자자가 현재 시점에서 주목해야 할 최신 동향이나 중대한 변화를 나타내지 않습니다.",
+      "title": "Memory Chip Shortage: Stockpiles Fall Below 10 Days [2026]"
+    },
+    "da3380820881815dc40c31139a2b5d6593f846d233995045d6371e47f686c9ff": {
+      "ts": 1789063489.65012,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "최종 사건 중복",
+      "title": "[News] Chinese AI Chipmakers Reportedly Hike Prices on HBM Costs, Huawei 950DT Up as Much as 50%"
+    },
+    "c645fa75500f318679466b4ebe3b0d5b3cd06a270b6dfe7300697e13d2cfb248": {
+      "ts": 1789063489.65013,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "최종 사건 중복",
+      "title": "CXMT Faces HBM Memory Chip Shock As Yields Sink To 25% With Close To 80 Out Of 100 HBM3 Chips Failing Final Tests, Says Report"
+    },
+    "834afb5445c46270ad6ca54eb2ef8427a463c769a24df41002b5cae917449237": {
+      "ts": 1789063489.650142,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "OpenAI、サムスンとの半導体協業を強化 - 次世代チップで共同開発・生産 | TECH+（テックプラス）"
+    },
+    "85ad9b93163a529dee8da7578dc3254f3b952ecc7fba18a289b00178b4bce64a": {
+      "ts": 1789063489.650144,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "NVIDIA Pouring Billions in Photonics, ASML Inks Deals With Leading Chipmakers"
+    },
+    "e2a2fa5bf18ee362bade7ec8953cedb7e15fa707830a38f52ee7a0b5ddd2eb49": {
+      "ts": 1789063489.650147,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "2330 台積電 - AI狂潮推升先進封裝需求！台積電CoWoS產能衝高- 股市爆料同學會"
+    },
+    "28d00bb21aa800c6d0d169e7282ededec3b12d8d03a8c3e15e1c113e11e7a1ee": {
+      "ts": 1789063489.650149,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "CXMT Reportedly Struggles With HBM3E, Yields Are Only 25%"
+    },
+    "e3cff97b04012296b1f6853600961c45b2c93dcdd8c1b1feb7c240af888e8f1f": {
+      "ts": 1789063489.650151,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "エヌビディア支援のアジア･ネオクラウド､31億ドルAI半導体資金を確保"
+    },
+    "0d191fe0f8a7fb56d86fa42b872700d0bf393f78621ba043b21d339c36c2f4f1": {
+      "ts": 1789063489.650152,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "Zankore builds 100 MW Nvidia AI infrastructure in Indonesia, secures USD 3.1 billion financing"
+    },
+    "2e84a309c63027e19ce2918ab1d5f6f055b897de5e4f22b77d0934409a2c5db3": {
+      "ts": 1789063489.650154,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "ASML Advances High NA EUV with Samsung, Intel, TSMC"
+    },
+    "56a98b97b1c94a8059bf1527efc6655f73c5c0a840542108881d3b175466ce9f": {
+      "ts": 1789063489.650155,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "Intel reports more than 1 million High-NA wafers—but stitching remains the hurdle"
+    },
+    "00ba5e01918aa3a84ed7e1996a5a9b47ff648fa757dd41bf56ce61ea02d3b61c": {
+      "ts": 1789063489.650157,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "GPT-6 Astra gives mathematicians a breather, and OpenAI says that's by design"
+    },
+    "808b78bf00e34b909e54b780d43c9c52a3c6818e3a7ab7dc82ec2fef2b1c2c5d": {
+      "ts": 1789063489.650159,
+      "policy": "ai-industry-v4-wide-strict",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "Micron, SK Hynix Are Top Bets in New NRAM ETF as AI Memory Demand Surges"
     }
   },
   "legacy": {
@@ -10664,6 +11963,27 @@
   },
   "archive": [
     {
+      "title": "중국 AI 칩 가격 50% 급등, 엔비디아 제재 속 한국 HBM이 병목 현상 초래",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5hOF9QX3RTSzZVTERuZzlydTJEUDhCYVlnc1dUY1hmNU95cFhLdHhHc3ZjSDBfYS1Nelprd3U2SW5PU05qOGFwa3VCUWV4UkF5S0ltTnJUNlZYRmxXNjQ1blBPR295SFo4VG1IMHBNLUZSQlHSAXNBVV95cUxOYThfUF90U0s2VUxEbmc5cnUyRFA4QmFZZ3NXVGNYZjVPeXBYS3R4R3N2Y0gwX2EtTXpaa3d1NkluT1NOajhhcGt1QlFleFJBeUtJbU5yVDZWWEZsVzY0NW5QT0dveUhaOFRtSDBwTS1GUkJR?oc=5",
+      "source": "the-economy.co.kr",
+      "published": "2026-09-10T12:32:02+00:00",
+      "summary": "중국 내 AI 칩 가격이 50% 급등했으며, 이는 엔비디아 등 미국산 AI 칩 접근이 제한되면서 중국 내수 칩 수요가 늘어난 가운데, 고대역폭 메모리(HBM) 공급 부족이 주요 병목 현상으로 작용했기 때문입니다. 특히 한국산 HBM의 중요성이 부각되고 있습니다.\nHBM 공급 부족은 중국 AI 칩 제조업체들의 생산 능력과 가격 경쟁력에 심각한 영향을 미치고 있으며, 이는 글로벌 AI 반도체 공급망의 불안정성을 심화시킬 수 있습니다. 한국 HBM 제조업체들은 이러한 상황 속에서 시장 지배력을 더욱 강화할 수 있습니다."
+    },
+    {
+      "title": "TSMC, AI 칩 수요 견인 속 8월 매출 사상 최대 기록",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBCUTZpN2JUS21NM0dLNlVUaGp6LW9iem5WLWdfajFGU1l3X3VESWRRNlZUXzRZMGtTN2s1bTRIOThqWVlZY2FmTk54TEh4NklZZmxSTXNKMjZveVdtbVZSOUdUSzNlTmJkYkRxdE51bHBVR2xzbnR3UEVRNNIBgwFBVV95cUxQcDktbE5mUjFVcGc5d3hVb1pzNngzTUZhR2xoVnBTWS1fTVVpcjc0RG1FenlkeTBhOWZ2dWVFWGhfelVMQmZJU3U3VjRndmN2WkJwTXRDSWdiSVVtbnljcXhMSXNHSW5DQWwtM1plU01EdlYtUTBFZ1Fhc2VsYU82d2dYOA?oc=5",
+      "source": "findarticles.com",
+      "published": "2026-09-10T12:56:20+00:00",
+      "summary": "TSMC는 8월 매출이 AI 칩에 대한 전 세계적인 수요 급증에 힘입어 전년 동월 대비 53% 증가하며 사상 최대치를 달성했습니다. 이는 AI 연산 능력 확대를 위한 고성능 반도체 칩 제조 수요가 매우 강력함을 시사합니다.\nTSMC의 기록적인 매출 증가는 AI 반도체 시장의 폭발적인 성장세를 재확인시켜 줍니다. 파운드리 산업의 선두 주자인 TSMC의 성과는 AI 인프라 구축 가속화 및 관련 기술 투자 확대에 긍정적인 영향을 미칠 것입니다."
+    },
+    {
+      "title": "Nvidia Grace Blackwell 칩 출하량, 전월 대비 27% 증가",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBZeXh5RjRZaldDU0U1SXp6em1yd0dYMkNLamxjSE9EM2htcXhVU1RmX1ZhdnNIeW11Y2IxUFlmV0FJeWdWYXlsWlpsNEgxVEJvdFpsd2dXYW5tWm1KVlVWUU9HV3h0WHExQ1YySWlzVHQtOG5VUFV2ZA?oc=5",
+      "source": "Crypto Briefing",
+      "published": "2026-09-10T16:11:44+00:00",
+      "summary": "Nvidia의 Grace Blackwell 칩 출하량이 지난달 대비 27% 증가한 것으로 보고되었습니다. 이는 AI 워크로드를 위한 고성능 컴퓨팅 수요가 여전히 강력함을 나타냅니다.\nGrace Blackwell은 Nvidia의 최신 고성능 AI 칩으로, 이 칩의 출하량 증가는 AI 모델 학습 및 추론을 위한 기업들의 적극적인 투자를 반영합니다. 이는 Nvidia의 지속적인 시장 지배력 강화와 함께, AI 인프라 구축 경쟁이 심화되고 있음을 시사합니다. GPU 공급 부족 현상이 지속될 가능성을 높이며, 관련 생태계 전반의 성장을 견인할 것으로 예상됩니다."
+    },
+    {
       "title": "OpenAI, 삼성과 차세대 AI 칩 공동 개발·생산 협력 강화",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5yMFFzQUxEZHlpdC04VjMtSWJBakZxSTdDa1VkcWZGd21pdW9mMmd6YzZnUGxGeWMta2xINlRGS0tYakhWRUZXWExpMXZCUHdtemRadVNselVYLS1DMURjX2JsZlZPcW1H?oc=5",
       "source": "マイナビニュース",
@@ -11691,27 +13011,6 @@
       "source": "네이트",
       "published": "2026-08-28T11:58:00+00:00",
       "summary": "SK하이닉스가 미국 내 HBM 생산을 검토하며 투자 압박에 직면하고 있다. 이는 미국 정부의 반도체 생산 지원 정책과 맞물려 현지 생산 필요성이 커지고 있음을 시사한다. 구체적인 투자 규모나 시점은 아직 확정되지 않았으나, 글로벌 HBM 수요 증가에 대응하기 위한 전략으로 풀이된다. [분야 HBM,AI,데이터센터] [병목 악화] [유동성 유입] 왜중요: SK하이닉스의 미국 HBM 생산 추진은 글로벌 HBM 공급망 재편 및 투자 확대 신호로, AI 인프라 구축 경쟁 심화와 연관되어 있다."
-    },
-    {
-      "title": "엔비디아, 스페이스X에 210억 달러 투자: 젠슨 황이 스페이스X를 좋아하는 한 가지 이유",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNEg0UWZqRzBTTUxzWVhiLWZ4UG45ZVZyNF91cE5EaHFITTdsTUVVbTgtZlludGFmc0JnNVY2Q3RrazBvYzJ6VDBWcnpTQmRFQXQ0X0ZmT2dJdHA5UDdyekF1QnV5bzJFYUhMZ20wTF9oZHkyRDBlYlZpQzBrRHgyMDhGS0J4YV9HTFdxMDVsc1FHWnMwYjRz?oc=5",
-      "source": "The Motley Fool",
-      "published": "2026-08-28T11:08:33+00:00",
-      "summary": "엔비디아는 스페이스X에 210억 달러를 투자했으며, 이는 스페이스X의 위성 인터넷 서비스인 스타링크를 통해 AI 데이터센터의 연결성을 강화하려는 전략의 일환으로 분석된다. 이 투자는 AI 인프라의 잠재적 병목 현상인 데이터센터 간 통신 및 연결성 문제를 해결하는 데 기여할 수 있다. [분야 AI,데이터센터,광통신] [병목 완화] [유동성 유입] 왜중요: AI 데이터센터의 연결성 강화라는 새로운 병목 해소 가능성을 제시하며, AI 인프라 투자 확대를 시사하기 때문이다."
-    },
-    {
-      "title": "엔비디아, AI 칩 수익 재투자…'순환 금융' 우려 속 투자 확대",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9XX2hOaWZPUEtwUHNkSFk5Rm8xWWRRSFlINWdXXy1VVWxxU2VXUDFaMjJpLUJHSlFBNThFMTlrVm1iQzdQcDNLNGwyUV9kS1dwRnl2T0xqaXBXMTBmZ2tXX9IBeEFVX3lxTE5kaktOWHp0b3FoMUNhTjFNVENsWm43dm5sQlFkY0xQVmVZeDl1ODFfYndDcUtqalVyY2lacFZRaHBzUjh4WmlCbHo3ZXVKUkdPM1J6WHRxZXl6MmY1c2hZS0lvQWYyYmR3MW13TUJsUHdhYVNkYkpkXw?oc=5",
-      "source": "뉴시스",
-      "published": "2026-08-28T06:28:51+00:00",
-      "summary": "엔비디아는 AI 칩 판매로 벌어들인 수익을 다시 AI 관련 분야에 재투자하고 있다. 이러한 '순환 금융' 방식에 대한 우려가 제기되고 있음에도 불구하고, 엔비디아는 AI 인프라 투자를 지속적으로 확대하고 있다. 이는 AI 시장의 성장과 함께 엔비디아의 사업 모델이 더욱 강화될 가능성을 시사한다. [분야 AI,GPU,데이터센터,AI수요] [병목 무관] [유동성 유입] 왜중요: 엔비디아의 AI 칩 수익 재투자는 AI 시장의 성장 지속성과 관련 기업들의 투자 확대 추세를 보여주는 지표이다."
-    },
-    {
-      "title": "NHN클라우드, 포항 IDC 20MW 확보로 AI GPU 영토 확장",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ocHg3dzJRUWgwMC1FaldmazNzazFDN1JvZkp6WHBJZGJ1dHVxRTZ5eUZfYzZiQkprNWlaa0JseVJublN1YkJ6djNuY1dDazFmajhLNFlET0RUTkM5UUNpSF9KUDNpbVl1Z0JzTjBoWGxJUQ?oc=5",
-      "source": "데이터투자",
-      "published": "2026-08-28T07:07:55+00:00",
-      "summary": "NHN클라우드는 포항에 20MW 규모의 데이터센터(IDC)를 확보하며 AI GPU 인프라 확장에 나섰다. 이는 AI 서비스 확대를 위한 컴퓨팅 파워 증강 노력의 일환으로 해석된다. 이번 확보를 통해 NHN클라우드는 AI GPU를 위한 물리적 공간을 넓히고 관련 사업 경쟁력을 강화할 것으로 보인다. [분야 데이터센터,AI] [병목 무관] [유동성 중립] 왜중요: NHN클라우드의 데이터센터 확장은 국내 AI 인프라 구축 경쟁 심화와 관련하여 참고할 만한 움직임이다."
     }
   ]
 }
