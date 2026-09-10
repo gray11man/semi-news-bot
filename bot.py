@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""AI·반도체 중요 뉴스 v4.1 — 최신성 강제검증 / 사건중복 제거 / 광역 레이더.
+"""AI·반도체 중요 뉴스 v4.2 — 최신성 강제검증 / 재탕차단 / 후속뉴스 보존 / 광역 레이더.
 
 핵심 원칙
 - 검색은 넓게: 산업 + 기업 + 핵심인물 + 공식발표 + 신모델/신기술 + 실적/가이던스
@@ -17,6 +17,7 @@
 import argparse
 import calendar
 import concurrent.futures
+from difflib import SequenceMatcher
 import datetime as dt
 import hashlib
 import html
@@ -38,8 +39,8 @@ import trafilatura
 UTC = dt.timezone.utc
 STATE = Path('seen.json')
 REPORT = Path('diagnostics.json')
-UA = 'AIIndustryNewsBot/4.1 (+RSS news reader)'
-POLICY_VERSION = 'ai-industry-v4.1-fresh-dedupe'
+UA = 'AIIndustryNewsBot/4.2 (+RSS news reader)'
+POLICY_VERSION = 'ai-industry-v4.2-fresh-dedupe-followup'
 
 
 def now():
@@ -150,28 +151,101 @@ def url_norm(value):
         return ''
 
 
+TITLE_STOPWORDS = {
+    'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'with', 'at', 'by',
+    'from', 'as', 'is', 'are', 'was', 'were', 'be', 'this', 'that', 'after', 'about',
+    'says', 'said', 'report', 'reports', 'reportedly', 'news', 'update', 'updates',
+    'new', 'latest', 'today', 'its', 'it', 'will', 'may', 'could', 'amid'
+}
+
+
+def title_parts(item_or_text):
+    """제목 유사중복용 정규화. 숫자는 따로 보존해 서로 다른 실적/계약 수치를 과병합하지 않는다."""
+    if isinstance(item_or_text, dict):
+        text = clean(item_or_text.get('title', ''))
+        source = clean(item_or_text.get('source', ''))
+        if source:
+            text = re.sub(r'\s[-–—|]\s*' + re.escape(source) + r'\s*$', '', text, flags=re.I)
+    else:
+        text = clean(str(item_or_text or ''))
+    normalized = norm(text)
+    normalized = re.sub(r'[^0-9a-z가-힣\u4e00-\u9fff]+', ' ', normalized)
+    normalized = re.sub(r'\s+', ' ', normalized).strip()
+    raw_tokens = normalized.split()
+    tokens = {t for t in raw_tokens if (len(t) >= 2 or t.isdigit()) and t not in TITLE_STOPWORDS}
+    numbers = set(re.findall(r'\d+(?:[.,]\d+)?%?', normalized))
+    return normalized, tokens, numbers
+
+
+def text_similarity(a, b):
+    """짧은 핵심 사실 비교. 문자 유사도와 토큰 중복 중 더 강한 신호를 사용한다."""
+    na, ta, nums_a = title_parts(a)
+    nb, tb, nums_b = title_parts(b)
+    if not na or not nb:
+        return 0.0
+    char_ratio = SequenceMatcher(None, na, nb).ratio()
+    if ta and tb:
+        inter = len(ta & tb)
+        union = len(ta | tb)
+        token_ratio = inter / union if union else 0.0
+        containment = inter / min(len(ta), len(tb)) if min(len(ta), len(tb)) else 0.0
+    else:
+        token_ratio = containment = 0.0
+    if nums_a and nums_b and nums_a != nums_b:
+        return max(token_ratio * 0.72, char_ratio * 0.72)
+    return max(char_ratio, token_ratio, containment * 0.94)
+
+
+def near_title_duplicate(a, b):
+    na, ta, nums_a = title_parts(a)
+    nb, tb, nums_b = title_parts(b)
+    if not na or not nb or len(ta) < 3 or len(tb) < 3:
+        return False
+    if nums_a and nums_b and nums_a != nums_b:
+        return False
+    inter = len(ta & tb)
+    union = len(ta | tb)
+    jaccard = inter / union if union else 0.0
+    containment = inter / min(len(ta), len(tb))
+    if jaccard >= 0.82 and containment >= 0.90:
+        return True
+    return containment >= 0.84 and SequenceMatcher(None, na, nb).ratio() >= 0.91
+
+
 def source_freshness(item, hours):
-    """원문이 명백히 오래된 재탕이면 Python에서 탈락. 최근 수정된 오래된 원문은 LLM이 '새 사실'만 재검증."""
+    """RSS/원문 날짜/본문 가용성을 함께 검사한다. 날짜 미상은 새 사실 날짜 증명이 있어야 통과한다."""
     rss_age = iso_age(item.get('published'))
     if rss_age is None or not -1 <= rss_age <= hours:
         return False, 'RSS 게시시각이 최신 창 밖'
 
     pub_age = iso_age(item.get('original_published'))
     mod_age = iso_age(item.get('original_modified'))
-    # 기본은 뉴스창 + 약간의 시차 여유. 사용자가 창을 36h 등으로 늘리면 그보다 짧게 자르지 않는다.
     original_limit = max(hours, setting('ORIGINAL_MAX_AGE_HOURS', 30, 12, 168))
 
-    if pub_age is not None and pub_age > original_limit:
-        # 오래된 원문이어도 실제 수정시각이 최근이면 '후속 업데이트 기사'일 수 있으므로 내용 심사로 보낸다.
-        if mod_age is not None and -1 <= mod_age <= hours:
-            return True, 'old_source_recently_modified'
-        return False, f'원문 발행일이 {original_limit}시간보다 오래됨'
+    if pub_age is not None and pub_age < -6:
+        return False, '원문 발행시각이 비정상적으로 미래'
+    if mod_age is not None and mod_age < -6:
+        return False, '원문 수정시각이 비정상적으로 미래'
 
-    return True, 'fresh_source'
+    if pub_age is not None:
+        if pub_age > original_limit:
+            if mod_age is not None and -1 <= mod_age <= hours:
+                return True, 'old_source_recently_modified'
+            return False, f'원문 발행일이 {original_limit}시간보다 오래됨'
+        return True, 'fresh_source'
+
+    if mod_age is not None:
+        if -1 <= mod_age <= hours:
+            return True, 'source_published_missing_recent_modified'
+        return False, '원문 발행일 미상 + 수정일도 최신 창 밖'
+
+    if item.get('body_status') == 'extracted' and item.get('body'):
+        return True, 'source_date_missing_requires_proof'
+    return False, '원문 날짜와 본문을 모두 확인할 수 없음'
 
 
 def sent_url_duplicate(state, item):
-    """이미 보낸 동일 원문 URL이면 차단. 다만 원문 수정시각이 전송 후 확실히 새로 갱신됐으면 재검토 허용."""
+    """이미 보낸 동일 원문 URL 차단. 명백한 신규 수정이 있으면 후속 심사 기회를 준다."""
     urls = {url_norm(item.get('link')), url_norm(item.get('resolved_url'))}
     urls.discard('')
     if not urls:
@@ -187,14 +261,69 @@ def sent_url_duplicate(state, item):
     return False
 
 
-def sent_event_duplicate(state, event_key):
-    key = event_key_norm(event_key)
+def sent_title_duplicate(state, item, analysis=None):
+    """event_key가 없던 과거 이력 보완. 분석 후에는 핵심 사실이 실제로 달라졌으면 후속 뉴스로 살린다."""
+    modified = parse_time(item.get('original_modified'))
+    current_published = parse_time(item.get('original_published')) or parse_time(item.get('published'))
+    new_fact = clean((analysis or {}).get('fact', ''))
+    new_date = parse_time((analysis or {}).get('new_fact_date'))
+
+    for row in state.get('sent', {}).values():
+        old = {'title': row.get('title', ''), 'source': row.get('source', '')}
+        if not near_title_duplicate(item, old):
+            continue
+        if modified is not None and modified.timestamp() > row.get('ts', 0) + 1800:
+            continue
+
+        # 분석이 끝난 뒤에는 제목이 비슷해도 '새 사실'이 충분히 다르고 더 늦게 발생했다면 보낸다.
+        old_fact = clean(row.get('fact', ''))
+        if analysis and new_fact and old_fact:
+            similarity = text_similarity(new_fact, old_fact)
+            old_date = parse_time(row.get('new_fact_date'))
+            if new_date is not None and old_date is not None and \
+                    new_date.timestamp() > old_date.timestamp() + 1800 and similarity < 0.92:
+                continue
+            if current_published is not None and current_published.timestamp() > row.get('ts', 0) + 1800 \
+                    and similarity < 0.62:
+                continue
+        return True
+    return False
+
+
+def sent_event_duplicate(state, item, analysis):
+    """같은 사건 재탕은 막되, 실제로 더 늦게 발생한 새 후속 사실은 통과시킨다."""
+    key = event_key_norm((analysis or {}).get('event_key'))
     if not key:
         return False
-    for row in state.get('sent', {}).values():
-        if event_key_norm(row.get('event_key')) == key:
-            return True
-    return False
+    matches = [r for r in state.get('sent', {}).values()
+               if event_key_norm(r.get('event_key')) == key]
+    if not matches:
+        return False
+
+    old = max(matches, key=lambda r: r.get('ts', 0))
+    new_fact = clean((analysis or {}).get('fact', ''))
+    old_fact = clean(old.get('fact', ''))
+    similarity = text_similarity(new_fact, old_fact) if new_fact and old_fact else 1.0
+
+    # 거의 동일한 핵심 사실은 날짜만 바뀐 재송고일 가능성이 매우 높다.
+    if similarity >= 0.94:
+        return True
+
+    new_date = parse_time((analysis or {}).get('new_fact_date'))
+    old_date = parse_time(old.get('new_fact_date'))
+    if new_date is not None and old_date is not None and \
+            new_date.timestamp() > old_date.timestamp() + 1800 and similarity < 0.92:
+        return False
+
+    source_times = [parse_time(item.get('original_modified')), parse_time(item.get('original_published')),
+                    parse_time(item.get('published'))]
+    newest_source = max((x.timestamp() for x in source_times if x is not None), default=0)
+    if newest_source > old.get('ts', 0) + 1800 and similarity < 0.62:
+        return False
+
+    if similarity >= 0.84:
+        return True
+    return True
 
 
 def load_state():
@@ -545,13 +674,39 @@ def collect(hours):
         for found, report in executor.map(lambda plan: read_feed(plan, hours), feeds(hours)):
             rows.extend(found)
             reports.append(report)
-    unique = {}
+
+    exact = {}
     for item in rows:
         ident = collection_key(item)
-        # 같은 제목이면 요약이 더 충실한 레코드를 채택한다.
-        if ident not in unique or len(item.get('summary', '')) > len(unique[ident].get('summary', '')):
-            unique[ident] = item
-    return list(unique.values()), reports
+        current = exact.get(ident)
+        if current is None or (len(item.get('summary', '')), item.get('published', '')) > \
+                (len(current.get('summary', '')), current.get('published', '')):
+            exact[ident] = item
+
+    ordered = sorted(exact.values(), key=lambda r: r.get('published', ''), reverse=True)
+    unique = []
+    token_index = {}
+    for item in ordered:
+        _, tokens, _ = title_parts(item)
+        candidate_indices = set()
+        for token in tokens:
+            candidate_indices.update(token_index.get(token, ()))
+        duplicate_index = None
+        for idx in candidate_indices:
+            if near_title_duplicate(item, unique[idx]):
+                duplicate_index = idx
+                break
+        if duplicate_index is None:
+            idx = len(unique)
+            unique.append(item)
+            for token in tokens:
+                token_index.setdefault(token, set()).add(idx)
+        else:
+            current = unique[duplicate_index]
+            if (len(item.get('summary', '')), item.get('published', '')) > \
+                    (len(current.get('summary', '')), current.get('published', '')):
+                unique[duplicate_index] = item
+    return unique, reports
 
 
 class PageMetadata(HTMLParser):
@@ -566,13 +721,21 @@ class PageMetadata(HTMLParser):
         # Google News wrapper의 원문 주소.
         if attrs.get('data-n-au'):
             self.article_url = attrs['data-n-au']
+        if tag == 'time':
+            stamp = attrs.get('datetime', '')
+            hint = ' '.join(str(attrs.get(k, '')) for k in ('itemprop', 'class', 'id')).lower()
+            if stamp and any(x in hint for x in ('modified', 'updated', 'update')) and not self.modified:
+                self.modified = stamp
+            elif stamp and any(x in hint for x in ('published', 'publish', 'date')) and not self.published:
+                self.published = stamp
+            return
         if tag != 'meta':
             return
-        key = (attrs.get('property') or attrs.get('name') or attrs.get('itemprop') or '').lower()
+        key = (attrs.get('property') or attrs.get('name') or attrs.get('itemprop') or attrs.get('http-equiv') or '').lower()
         content = attrs.get('content', '')
-        if key in ('article:published_time', 'datepublished', 'pubdate', 'publishdate', 'date') and not self.published:
+        if key in ('article:published_time', 'datepublished', 'pubdate', 'publishdate', 'date', 'parsely-pub-date') and not self.published:
             self.published = content
-        if key in ('article:modified_time', 'datemodified', 'lastmodified', 'last-modified') and not self.modified:
+        if key in ('article:modified_time', 'og:updated_time', 'datemodified', 'lastmodified', 'last-modified') and not self.modified:
             self.modified = content
 
 
@@ -644,7 +807,7 @@ RSS published는 검색/색인 시각일 수 있으므로 사건 발생일로 �
 오래된 사건을 오늘 다시 설명·번역·재인용한 기사는 중요해도 탈락이다.
 오래된 원문이 최근 수정됐더라도 최근 수정분에 새 수치·새 계약·새 고객·새 가이던스·확정/취소·새 제품/양산 등 실질적 새 사실이 없으면 탈락이다.
 keep=true라면 fact에는 오직 이번 최신 창에서 새로 확인된 사실을 쓰고, new_fact_date에는 그 새 사실의 날짜/시각을 ISO-8601로 적는다.
-새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다.
+새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다. 원문 발행일을 확인하지 못했거나 오래된 원문이 최근 수정된 경우에는 UNKNOWN을 허용하지 않는다.
 is_recycled_story는 과거 사건 재탕/번역/재인용/단순 회고이면 true다. true인 기사는 절대 keep=true로 두지 마라.
 event_key는 '주체|사건종류|상대/제품|핵심기간/핵심수치' 형식으로 사건을 짧고 안정적으로 정규화한다. 같은 사건이면 매체·언어·제목이 달라도 최대한 같은 event_key를 써라.
 
@@ -695,7 +858,7 @@ GPU 가격 하락을 자동 수요 붕괴로, 효율 향상을 자동 메모리 
 단독/익명소식통 보도는 매체와 보도 성격을 명확히 하면 통과 가능하나 무근거 루머는 제외한다.
 
 [중복]
-같은 사건의 번역/재해석/재송고는 한 건만 남긴다.
+같은 사건의 번역/재해석/재송고는 한 건만 남긴다. 단, 같은 사건이라도 새 수치·새 고객·확정/취소·가이던스 변경·양산/출시·규제 확정처럼 이후에 새로 발생한 사실이면 후속 뉴스로 인정한다.
 같은 회사라도 새 기간·새 수치·새 고객·후속 확정·취소·방향 반전·새 양산/계약이면 별도 사건이다.
 RSS 게시시각을 사건 발생시각으로 오인하지 않는다. 오래된 사건에 새 자료가 붙었으면 새 자료만 평가한다.
 legacy 이력에는 과거 탈락도 섞였으므로 무조건 이미 보낸 뉴스로 간주하지 않는다.
@@ -863,8 +1026,13 @@ def validate_review(rows, batch):
             dropped += 1
             continue
 
-        # 오래된 원문이 최근 수정된 경우에는 '새 사실 날짜'까지 실제 최신 창 안이어야 통과.
-        if item.get('freshness_note') == 'old_source_recently_modified':
+        # 원문 날짜가 불충분하거나 오래된 원문이 수정된 경우에는 '새 사실 날짜'를 실제 최신 창 안으로 증명해야 한다.
+        strict_freshness = {
+            'old_source_recently_modified',
+            'source_published_missing_recent_modified',
+            'source_date_missing_requires_proof',
+        }
+        if item.get('freshness_note') in strict_freshness:
             new_age = iso_age(row.get('new_fact_date'))
             hours = setting('NEWS_WINDOW_HOURS', 24, 6, 48)
             if new_age is None or not -1 <= new_age <= hours:
@@ -884,7 +1052,9 @@ def history(state):
     legacy = sorted(state.get('legacy', {}).values(), key=lambda row: row['ts'], reverse=True)
     return {'sent': [{
                 'title': r.get('title', ''), 'fact': r.get('fact', '')[:260],
-                'event_key': r.get('event_key', ''), 'ts': r.get('ts', 0)
+                'event_key': r.get('event_key', ''), 'new_fact_date': r.get('new_fact_date', ''),
+                'source_published': r.get('source_published', ''), 'source_modified': r.get('source_modified', ''),
+                'ts': r.get('ts', 0)
             } for r in sent],
             'legacy': [{'title': r.get('ntitle', ''), 'ts': r['ts']} for r in legacy[:100]]}
 
@@ -981,8 +1151,8 @@ def choose(state, api, checkpoint):
             'signal(긍정/부정/혼합/중립), is_recycled_story를 부여한다. keep=true는 importance 80 이상이면서 '
             'is_recycled_story=false인 경우만 허용한다. 가장 먼저 이 기사가 현재 news_window_hours 안에 생긴 실제 새 사실을 '
             '담고 있는지 확인하라. RSS 날짜만 최근이고 사건은 과거인 재탕/번역/회고/재인용이면 false. '
-            '오래된 원문이 최근 수정된 경우 freshness_note=old_source_recently_modified로 들어온다. 이 경우 최근 수정분에 '
-            '새 수치·계약·고객·가이던스·확정/취소·양산/출시 등 실질적 새 사실이 명확해야만 keep=true다. '
+            '오래된 원문이 최근 수정됐거나 원문 발행일을 확인하지 못한 경우 freshness_note가 별도로 들어온다. 이 경우 '
+            '최근 창 안에 발생한 새 수치·계약·고객·가이던스·확정/취소·양산/출시 등 실질적 새 사실과 그 날짜가 명확해야만 keep=true다. '
             '80점은 "AI·반도체 산업 투자자가 오늘 모르고 지나가면 중요한 변화 이해를 놓칠 수준"이다. '
             '관련성만 높고 파급이 작으면 79 이하로 버린다. 긍정/부정은 동일 기준이다. '
             '미래 전망도 회사 공식 가이던스·핵심 경영진의 구체적 발언·신뢰도 높은 언론의 구체적 내부계획이면 평가한다. '
@@ -997,8 +1167,8 @@ def choose(state, api, checkpoint):
         for row in rows:
             ident = ids[row['index']]
             if row['keep']:
-                if sent_event_duplicate(state, row['event_key']):
-                    record_decision(state, ident, '과거 전송 사건 event_key 중복')
+                if sent_event_duplicate(state, batch[row['index']], row):
+                    record_decision(state, ident, '과거 전송 사건 재탕(event_key/새 사실 비교)')
                     continue
                 pending[ident] = {
                     **batch[row['index']], 'stage': 'approved',
@@ -1024,7 +1194,7 @@ def choose(state, api, checkpoint):
     ranked = api.ask(
         '최종 편집: 입력 articles에 존재하는 index만 중요도 순서로 반환한다. 각 index는 정확히 한 번만 반환하고 '
         '입력 기사 수보다 많은 행을 만들지 마라. 동일 사건은 근거가 가장 충실한 한 건만 남기고 '
-        '나머지를 duplicate=true로 표시한다. event_key가 같거나 사실상 같은 사건이면 매체/언어/제목이 달라도 중복이다. '         '과거 sent와 같은 사건 재탕도 true. '
+        '나머지를 duplicate=true로 표시한다. event_key가 같거나 사실상 같은 사건이면 매체/언어/제목이 달라도 중복이다. '         '과거 sent와 같은 사건 재탕도 true. 다만 과거 전송 뒤 새 수치·새 고객·확정/취소·가이던스 변경 등 실질적 후속 사실이 생겼다면 중복이 아니다. '
         '같은 회사의 다른 사건, 새 수치·새 고객·후속 확정·취소·방향 반전은 중복이 아니다. '
         '긍정/부정은 동일 기준이다. 입력된 전체 index만 반환한다.',
         {'current_time_utc': dt.datetime.now(UTC).isoformat(),
@@ -1049,8 +1219,6 @@ def choose(state, api, checkpoint):
 
     max_send = setting('MAX_SEND_PER_RUN', 15, 0, 30)
     selected = order[:max_send]
-    selected_set = set(selected)
-
     # 중요하지만 그날 너무 많아 전송 상한 밖으로 밀린 것은 큐에 쌓지 않는다.
     # 다음 실행에서 같은 사실을 반복해서 보내지 않도록 최종 컷으로 기록한다.
     for ident in order[max_send:]:
@@ -1110,6 +1278,7 @@ def telegram(text):
 def confirm_sent(state, ident, message_id):
     item = state['pending'][ident]
     state['sent'][ident] = {'ts': now(), 'title': item['title'], 'fact': item['analysis']['fact'],
+                           'source': item.get('source', ''), 'rss_published': item.get('published', ''),
                            'link': item['link'], 'resolved_url': item.get('resolved_url', ''),
                            'event_key': item['analysis'].get('event_key', ''),
                            'new_fact_date': item['analysis'].get('new_fact_date', ''),
@@ -1177,8 +1346,9 @@ def run(dry=False, diagnose=False):
                 checkpoint()
                 continue
             # 최종 순서 안에서 LLM이 중복을 놓쳐도 앞 기사 전송 후 event_key/URL로 재차 차단한다.
-            if sent_url_duplicate(state, item) or sent_event_duplicate(state, item.get('analysis', {}).get('event_key')):
-                record_decision(state, ident, '전송 직전 사건/URL 중복')
+            if sent_url_duplicate(state, item) or sent_title_duplicate(state, item, item.get('analysis', {})) or \
+                    sent_event_duplicate(state, item, item.get('analysis', {})):
+                record_decision(state, ident, '전송 직전 사건/URL/제목 중복')
                 checkpoint()
                 continue
             if dry:
