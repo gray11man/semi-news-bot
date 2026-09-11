@@ -281,9 +281,10 @@ def parse_json_array(out, n):
 SEEN_FILE = os.path.join(BASE_DIR, "seen_celeb_ids.json")
 CELEB_META_FILE = os.path.join(BASE_DIR, "seen_celeb_meta.json")
 
-# 최근 7일을 다시 검색한다. seen ID가 이미 처리한 영상을 막아주므로
-# API/워크플로가 며칠 실패해도 중요한 장시간 영상이 복구될 가능성이 높다.
-LOOKBACK_HOURS = 24 * 7
+# 검색 자체는 최근 12시간을 훑고, 실제 전송은 최근 7시간 업로드만 허용한다.
+# 6시간 주기 + 약 1시간 실행 지연 여유를 둔 설계다.
+LOOKBACK_HOURS = 12
+SEND_MAX_AGE_HOURS = 7
 
 # 외부 GitHub Actions가 실수로 매시간 실행되어도 YouTube search.list를
 # 매시간 때리지 않도록 유튜브 검색 자체는 6시간에 한 번만 허용한다.
@@ -297,10 +298,9 @@ CELEB_SENT_DUP_TTL_DAYS = 21
 # 상세조회에서도 1200초 미만은 무조건 탈락시켜 짧은 영상 전송을 이중 차단한다.
 MIN_DURATION_SEC = 1200
 
-# 비핵심 인물은 6개 조로 나눠 6시간 슬롯마다 순환 검색한다.
-# 검색 범위가 7일이라 각 인물을 약 36시간마다 한 번 찾아도 충분한 안전망이 생긴다.
-NONCORE_ROTATION_SHARDS = 6
-SEARCH_GROUP_SIZE = 8
+# 모든 인물을 6시간마다 검색한다. 최핵심만 개별검색하고
+# 나머지는 12명씩 묶어 API 쿼터를 절약한다.
+SEARCH_GROUP_SIZE = 12
 
 # 후보 우선순위용. 30분 이상부터 장시간 콘텐츠 보너스를 준다.
 PREFERRED_DURATION_SEC = 1800
@@ -615,14 +615,10 @@ ULTRA_CORE_INDIVIDUAL = {
     "Sam Altman",
     "Dario Amodei",
     "Demis Hassabis",
-    "Satya Nadella",
     "Lisa Su",
     "Hock Tan",
     "Sanjay Mehrotra",
     "C.C. Wei",
-    "Matt Murphy",
-    "Jayshree Ullal",
-    "Jitendra Mohan",
 }
 
 
@@ -658,36 +654,20 @@ def build_search_batches(now=None):
     """
     장시간 영상 전용 검색 계획.
 
-    - 최핵심 인물: 개별 long 검색 -> 다른 인물 영상에 밀리는 누락 감소
-    - 나머지 핵심 인물: 8명씩 묶어서 long 검색 -> quota 절약
-    - 비핵심 인물: 6개 조로 순환하며 해당 조만 long 검색
+    - 최핵심 8명: 개별 long 검색
+    - 나머지 모든 인물: 12명씩 묶어 long 검색
+    - 모든 인물을 매 6시간 검색
     - medium(4~20분) 검색은 사용하지 않는다.
-    - 검색 범위는 7일이므로 일시적인 API/워크플로 장애에도 복구 여유가 있다.
     """
-    now = now or datetime.now(timezone.utc)
-    slot = int(now.timestamp() // (6 * 3600)) % NONCORE_ROTATION_SHARDS
-
     names = list(PERSONS.keys())
     individual_names = [n for n in names if n in ULTRA_CORE_INDIVIDUAL]
-    grouped_core = [
-        n for n in names
-        if n in CORE_PERSONS and n not in ULTRA_CORE_INDIVIDUAL
-    ]
-    noncore_names = [n for n in names if n not in CORE_PERSONS]
-    rotated_noncore = [
-        n for idx, n in enumerate(noncore_names)
-        if idx % NONCORE_ROTATION_SHARDS == slot
-    ]
+    grouped_names = [n for n in names if n not in ULTRA_CORE_INDIVIDUAL]
 
     batches = []
     batches += _make_individual_batches(individual_names, "long")
-    batches += _make_name_batches(grouped_core, "long")
-    batches += _make_name_batches(rotated_noncore, "long")
+    batches += _make_name_batches(grouped_names, "long")
 
-    return (
-        batches, slot, len(individual_names), len(grouped_core),
-        len(rotated_noncore), len(noncore_names)
-    )
+    return batches, len(individual_names), len(grouped_names)
 
 
 TITLE_BLACKLIST = [
@@ -1345,8 +1325,8 @@ def hard_filter(item, detail):
                 datetime.now(timezone.utc) - pub_dt
             ).total_seconds() / 3600
 
-            if age_hours > LOOKBACK_HOURS + 2:
-                return None, f"실제게시일 범위밖 ({age_hours / 24:.0f}일 전)"
+            if age_hours > SEND_MAX_AGE_HOURS:
+                return None, f"전송기한 초과 ({age_hours:.1f}시간 전)"
 
         except Exception:
             pass
@@ -1580,16 +1560,13 @@ def run_celeb_watch():
     candidates = {}
     quota_stopped = False
 
-    (
-        search_batches, rotation_slot, individual_count, grouped_core_count,
-        rotated_count, noncore_count
-    ) = build_search_batches()
+    search_batches, individual_count, grouped_count = build_search_batches()
     print(
-        f"[셀럽] 검색계획: 20분 초과 장시간 영상 전용 · 최근 7일 | "
+        f"[셀럽] 검색계획: 20분 초과 장시간 영상 전용 | "
         f"최핵심 개별검색 {individual_count}명, "
-        f"나머지 핵심 묶음검색 {grouped_core_count}명, "
-        f"비핵심 {rotated_count}/{noncore_count}명 순환조 "
-        f"{rotation_slot + 1}/{NONCORE_ROTATION_SHARDS}, "
+        f"나머지 묶음검색 {grouped_count}명, "
+        f"모든 인물 매 {YOUTUBE_SEARCH_MIN_INTERVAL_HOURS}시간 검색, "
+        f"전송은 최근 {SEND_MAX_AGE_HOURS}시간 이내, "
         f"search.list 최대 {len(search_batches)}회"
     )
 
