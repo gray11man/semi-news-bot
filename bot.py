@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""AI·반도체 중요 뉴스 v4.2 — 최신성 강제검증 / 재탕차단 / 후속뉴스 보존 / 광역 레이더.
+"""AI·반도체 중요 뉴스 v4.3 — 최신성 강제검증 / 재탕차단 / 후속뉴스 보존 / 광역 레이더.
 
 핵심 원칙
 - 검색은 넓게: 산업 + 기업 + 핵심인물 + 공식발표 + 신모델/신기술 + 실적/가이던스
@@ -11,6 +11,8 @@
 - RSS 날짜만 믿지 않고 원문 발행/수정 날짜를 재검증한다. 오래된 재탕은 Python+Gemini 이중 차단.
 - URL + event_key + 장기 sent history + 최종 의미중복 심사로 중복 전송을 최대한 차단한다.
 - API 실패 시 미검토 제목 전송 금지. 키워드 점수만으로 전송하지 않는다.
+- 대형 실적·가이던스·장기 CAPEX·데이터센터 증설은 전용 레이더와 우선심사로 누락을 줄인다.
+- 정상 수집/심사 후 전송할 중요 뉴스가 0건이면 텔레그램으로 0건 상태를 알린다.
 
 전체 교체용. --dry-run / --diagnose 지원. seen.json v3 상태 구조와 호환.
 """
@@ -39,8 +41,84 @@ import trafilatura
 UTC = dt.timezone.utc
 STATE = Path('seen.json')
 REPORT = Path('diagnostics.json')
-UA = 'AIIndustryNewsBot/4.2 (+RSS news reader)'
-POLICY_VERSION = 'ai-industry-v4.2-fresh-dedupe-followup'
+UA = 'AIIndustryNewsBot/4.3 (+RSS news reader)'
+POLICY_VERSION = 'ai-industry-v4.3-critical-events-36h'
+
+# 원문 추출이 실패해도 RSS 제목/요약만으로 최종심사까지 보낼 수 있는 1차 신뢰 소스.
+# 자동 통과 목록이 아니라 '심사 기회 보존'용이다.
+TRUSTED_SOURCE_HINTS = (
+    'reuters', 'bloomberg', 'financial times', 'wall street journal', 'wsj',
+    'cnbc', 'associated press', 'the information', 'nikkei', 'yahoo finance',
+    'businesswire', 'business wire', 'globe newswire', 'pr newswire',
+)
+
+CRITICAL_COMPANY_HINTS = (
+    'openai', 'anthropic', 'google', 'alphabet', 'deepmind', 'microsoft', 'amazon', 'aws',
+    'meta', 'oracle', 'xai', 'nvidia', 'amd', 'broadcom', 'marvell', 'micron',
+    'samsung', 'sk hynix', 'tsmc', 'asml', 'applied materials', 'lam research', 'kla',
+    'coreweave', 'nebius', 'iren', 'applied digital', 'crusoe', 'vertiv', 'eaton',
+    'ge vernova', 'bloom energy', 'arista', 'coherent', 'lumentum', 'credo', 'astera labs',
+)
+
+EARNINGS_TERMS = (
+    'earnings', 'results', 'quarterly results', 'revenue', 'sales', 'operating income',
+    'operating profit', 'eps', 'guidance', 'outlook', 'forecast', 'bookings', 'backlog',
+    'rpo', 'remaining performance obligations', 'cloud revenue', 'cloud growth',
+)
+
+INFRA_SCALE_TERMS = (
+    'data center', 'datacenter', 'capex', 'capital expenditure', 'capital spending',
+    'compute capacity', 'capacity', 'gigawatt', ' gw', 'megawatt', ' mw', 'campus',
+    'build', 'building', 'expand', 'expansion', 'triple', 'double', 'footprint',
+    '2030', '2031', '2032', 'multi-year', 'multiyear', 'five-year', 'long-term',
+)
+
+MAJOR_EVENT_TERMS = (
+    'contract', 'agreement', 'order', 'purchase commitment', 'prepayment', 'lease',
+    'financing', 'debt', 'bond', 'loan', 'funding', 'acquisition', 'merger',
+    'production', 'shipment', 'yield', 'shortage', 'allocation', 'price increase',
+    'price cut', 'delay', 'cancel', 'canceled', 'cancelled', 'export control',
+)
+
+
+def _combined_text(item):
+    return norm(' '.join(str(item.get(k, '') or '') for k in ('title', 'summary', 'source', 'feed')))
+
+
+def trusted_source(item):
+    """신뢰 소스 힌트. 자동승인이 아니라 원문추출 실패 시 심사 기회만 준다."""
+    text = _combined_text(item)
+    if any(name in text for name in TRUSTED_SOURCE_HINTS):
+        return True
+    feed = str(item.get('feed', ''))
+    return feed.startswith('official_') or feed == 'openai_rss'
+
+
+def critical_event_score(item):
+    """실적/CAPEX/대형 인프라/핵심 공급망 이벤트를 Python 단계에서 우선순위화한다."""
+    text = _combined_text(item)
+    score = 0
+    if any(name in text for name in CRITICAL_COMPANY_HINTS):
+        score += 24
+    if any(term in text for term in EARNINGS_TERMS):
+        score += 42
+    if ('data center' in text or 'datacenter' in text or 'compute' in text) and any(term in text for term in INFRA_SCALE_TERMS):
+        score += 42
+    elif any(term in text for term in INFRA_SCALE_TERMS):
+        score += 24
+    if any(term in text for term in MAJOR_EVENT_TERMS):
+        score += 22
+    if re.search(r'\b20(?:2[7-9]|3[0-5])\b|\b\d+(?:\.\d+)?\s*(?:gw|mw)\b|\$\s*\d+(?:\.\d+)?\s*(?:billion|bn|trillion)', text):
+        score += 18
+    if trusted_source(item):
+        score += 12
+    return min(score, 100)
+
+
+def force_review(item):
+    """대형 이벤트는 Gemini 예비심사가 false여도 본문 최종심사까지 보낸다."""
+    return critical_event_score(item) >= 62
+
 
 
 def now():
@@ -220,7 +298,7 @@ def source_freshness(item, hours):
 
     pub_age = iso_age(item.get('original_published'))
     mod_age = iso_age(item.get('original_modified'))
-    original_limit = max(hours, setting('ORIGINAL_MAX_AGE_HOURS', 30, 12, 168))
+    original_limit = max(hours, setting('ORIGINAL_MAX_AGE_HOURS', 48, 12, 168))
 
     if pub_age is not None and pub_age < -6:
         return False, '원문 발행시각이 비정상적으로 미래'
@@ -241,6 +319,11 @@ def source_freshness(item, hours):
 
     if item.get('body_status') == 'extracted' and item.get('body'):
         return True, 'source_date_missing_requires_proof'
+
+    # 핵심 이벤트에 한해 신뢰 소스의 RSS 제목/요약으로 최종심사 기회를 보존한다.
+    # 자동 통과가 아니며 Gemini가 재탕/근거부족이면 다시 탈락시킨다.
+    if trusted_source(item) and force_review(item) and len(clean(item.get('title', '') + ' ' + item.get('summary', ''))) >= 45:
+        return True, 'trusted_rss_critical_requires_review'
     return False, '원문 날짜와 본문을 모두 확인할 수 없음'
 
 
@@ -435,7 +518,8 @@ OFFICIAL_DOMAINS = [
     'nvidianews.nvidia.com', 'ir.amd.com', 'broadcom.com', 'marvell.com',
     'investors.micron.com', 'news.skhynix.com', 'news.samsung.com',
     'tsmc.com', 'asml.com', 'appliedmaterials.com', 'lamresearch.com', 'kla.com',
-    'investors.coreweave.com', 'nebius.com', 'oracle.com',
+    'investors.coreweave.com', 'nebius.com', 'oracle.com', 'investor.oracle.com',
+    'abc.xyz', 'investor.atmeta.com', 'ir.aboutamazon.com', 'investor.nvidia.com',
 ]
 
 
@@ -469,6 +553,27 @@ TOPICS = [
      'AI (inference OR training OR tokens) (price OR cost OR demand OR utilization OR revenue OR margin OR shortage)'),
     ('ai_enterprise_demand', 'en',
      'AI (enterprise OR customer OR adoption OR usage OR bookings OR backlog) (OpenAI OR Anthropic OR Microsoft OR Google OR Amazon OR Meta)'),
+
+    # 대형 실적/가이던스 전용 레이더 — 제목에 AI가 없어도 실적 자체를 잡는다.
+    ('hyperscaler_earnings', 'en',
+     '(Microsoft OR Amazon OR AWS OR Alphabet OR Google OR Meta OR Oracle) '
+     '(earnings OR results OR revenue OR sales OR EPS OR guidance OR outlook OR bookings OR backlog OR RPO OR "remaining performance obligations" OR "cloud revenue")'),
+    ('ai_infra_earnings', 'en',
+     '(Nvidia OR AMD OR Broadcom OR Marvell OR Micron OR CoreWeave OR Nebius OR IREN OR "Applied Digital" OR Vertiv OR Eaton OR "GE Vernova" OR "Bloom Energy") '
+     '(earnings OR results OR revenue OR guidance OR outlook OR bookings OR backlog OR orders OR margin)'),
+    ('semicap_earnings', 'en',
+     '(TSMC OR ASML OR "Applied Materials" OR "Lam Research" OR KLA OR "Tokyo Electron" OR Advantest) '
+     '(earnings OR results OR revenue OR guidance OR outlook OR orders OR backlog OR capex)'),
+
+    # 장기 데이터센터/컴퓨트 증설 전용 — 2030/2031, 2배/3배, GW 계획을 별도 포착.
+    ('hyperscaler_longterm_datacenter', 'en',
+     '(Microsoft OR Amazon OR AWS OR Google OR Alphabet OR Meta OR Oracle) '
+     '("data center" OR datacenter OR compute OR cloud) '
+     '(build OR building OR expand OR expansion OR triple OR double OR capacity OR footprint OR gigawatt OR GW OR 2030 OR 2031 OR 2032 OR "multi-year" OR "long-term")'),
+    ('hyperscaler_capacity_plan', 'en',
+     '(Microsoft OR Amazon OR Google OR Alphabet OR Meta OR Oracle) '
+     '(capacity OR infrastructure OR "AI infrastructure" OR "data center") '
+     '(plan OR plans OR target OR expects OR forecast OR roadmap OR investment OR spending OR capex OR 2030 OR 2031)'),
 
     # CAPEX / 자금조달 / 계약 / 전망 — OpenAI 2030 compute 지출 같은 뉴스 핵심 포착
     ('ai_capex_outlook', 'en',
@@ -504,7 +609,7 @@ TOPICS = [
 
     # 클라우드 / 데이터센터 / 전력 / 냉각
     ('hyperscaler_capex', 'en',
-     '(Microsoft OR Amazon OR Google OR Alphabet OR Meta OR Oracle OR Tencent OR Alibaba) (AI OR "data center") (capex OR spending OR guidance OR capacity OR gigawatt OR GW)'),
+     '(Microsoft OR Amazon OR AWS OR Google OR Alphabet OR Meta OR Oracle OR Tencent OR Alibaba) (AI OR "data center" OR datacenter OR cloud OR compute) (capex OR spending OR investment OR guidance OR outlook OR capacity OR expansion OR build OR gigawatt OR GW OR 2030 OR 2031)'),
     ('neocloud', 'en',
      '(CoreWeave OR Nebius OR IREN OR "Applied Digital" OR Crusoe OR Lambda OR Nscale) (capacity OR GPU OR contract OR financing OR debt OR customer OR revenue OR backlog)'),
     ('power_grid', 'en',
@@ -530,9 +635,9 @@ TOPICS = [
 
 # 기업 단위 레이더. 회사별 사소한 뉴스도 들어오지만 최종 RULES가 강하게 제거한다.
 COMPANY_EVENT_TERMS = (
-    '(AI OR semiconductor OR GPU OR HBM OR memory OR foundry OR datacenter OR "data center" OR cloud OR optical) '
-    '(capex OR guidance OR outlook OR forecast OR demand OR supply OR capacity OR production OR yield OR price OR inventory '
-    'OR contract OR customer OR order OR backlog OR financing OR debt OR bond OR funding OR acquisition OR delay OR cancel OR roadmap OR launch)'
+    '(AI OR semiconductor OR GPU OR HBM OR memory OR foundry OR datacenter OR "data center" OR cloud OR optical OR earnings OR results) '
+    '(earnings OR results OR revenue OR sales OR RPO OR capex OR guidance OR outlook OR forecast OR demand OR supply OR capacity OR production OR yield OR price OR inventory '
+    'OR expansion OR build OR triple OR double OR 2030 OR 2031 OR contract OR customer OR order OR backlog OR financing OR debt OR bond OR funding OR acquisition OR delay OR cancel OR roadmap OR launch)'
 )
 
 for i, group in enumerate(chunks(AI_COMPANIES, 5)):
@@ -562,9 +667,8 @@ for i, group in enumerate(chunks(AI_COMPANIES + CHIP_COMPANIES[:18] + HYPERSCALE
 for i, group in enumerate(chunks(OFFICIAL_DOMAINS, 4)):
     sites = '(' + ' OR '.join(f'site:{d}' for d in group) + ')'
     TOPICS.append((f'official_{i}', 'en',
-                   f'{sites} (AI OR model OR GPU OR HBM OR semiconductor OR data center OR capex OR guidance OR '
-                   f'contract OR financing OR roadmap OR launch OR production OR capacity)'))
-
+                   f'{sites} (AI OR model OR GPU OR HBM OR semiconductor OR data center OR earnings OR results OR revenue OR capex OR guidance OR '
+                   f'outlook OR contract OR financing OR roadmap OR launch OR production OR capacity OR expansion)'))
 
 def feeds(hours):
     result = []
@@ -807,7 +911,7 @@ RSS published는 검색/색인 시각일 수 있으므로 사건 발생일로 �
 오래된 사건을 오늘 다시 설명·번역·재인용한 기사는 중요해도 탈락이다.
 오래된 원문이 최근 수정됐더라도 최근 수정분에 새 수치·새 계약·새 고객·새 가이던스·확정/취소·새 제품/양산 등 실질적 새 사실이 없으면 탈락이다.
 keep=true라면 fact에는 오직 이번 최신 창에서 새로 확인된 사실을 쓰고, new_fact_date에는 그 새 사실의 날짜/시각을 ISO-8601로 적는다.
-새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다. 원문 발행일을 확인하지 못했거나 오래된 원문이 최근 수정된 경우에는 UNKNOWN을 허용하지 않는다.
+새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다. 원문 발행일을 확인하지 못했거나 오래된 원문이 최근 수정된 경우에는 UNKNOWN을 허용하지 않는다. 단 freshness_note='trusted_rss_critical_requires_review'는 신뢰 소스의 최근 RSS 제목/요약에 핵심 새 사실이 구체적으로 적힌 예외다. 이 경우 RSS published를 사건 발생시각으로 바꾸어 쓰지는 말고, 사건 날짜가 없으면 UNKNOWN을 허용하되 재탕 여부를 더 엄격히 확인한다.
 is_recycled_story는 과거 사건 재탕/번역/재인용/단순 회고이면 true다. true인 기사는 절대 keep=true로 두지 마라.
 event_key는 '주체|사건종류|상대/제품|핵심기간/핵심수치' 형식으로 사건을 짧고 안정적으로 정규화한다. 같은 사건이면 매체·언어·제목이 달라도 최대한 같은 event_key를 써라.
 
@@ -831,11 +935,11 @@ event_key는 '주체|사건종류|상대/제품|핵심기간/핵심수치' 형�
 [향후 전망도 뉴스다]
 이미 발생한 사건만 통과시키지 마라. 회사 공식 가이던스, 경영진의 구체적 전망, 신뢰도 높은 주요 언론의
 내부 계획 보도처럼 출처가 분명하고 규모·시점·방향이 구체적이면 미래 CAPEX/컴퓨트/수요/공급 전망도 중요하다.
-예: '2030년까지 수천억 달러 compute 지출 전망', '내년 HBM 공급 대부분 예약', 'CAPEX 대폭 상향/하향'.
+예: '2030년까지 수천억 달러 compute 지출 전망', '2031년까지 데이터센터/컴퓨트 용량을 2배·3배 확대', '내년 HBM 공급 대부분 예약', 'CAPEX 대폭 상향/하향'.
 반면 근거 없는 장기 희망론, 애널리스트의 막연한 수혜 기대, 숫자 없는 전망은 버린다.
 
 [중요한 긍정 뉴스 예]
-대형 계약/선구매/장기 공급계약, CAPEX 대폭 상향, 신규 공장·데이터센터 확정, 생산능력/수율 큰 개선,
+대형 실적 서프라이즈/가이던스 변화, 대형 계약/선구매/장기 공급계약, CAPEX 대폭 상향, 신규 공장·데이터센터 확정 또는 장기 증설계획, 생산능력/수율 큰 개선,
 중요 고객 인증/채택, 모델 성능·비용의 큰 점프, 실제 사용량/매출 급증, 공급부족 심화의 구체적 증거.
 
 [중요한 부정 뉴스 예]
@@ -1034,7 +1138,7 @@ def validate_review(rows, batch):
         }
         if item.get('freshness_note') in strict_freshness:
             new_age = iso_age(row.get('new_fact_date'))
-            hours = setting('NEWS_WINDOW_HOURS', 24, 6, 48)
+            hours = setting('NEWS_WINDOW_HOURS', 36, 6, 72)
             if new_age is None or not -1 <= new_age <= hours:
                 dropped += 1
                 continue
@@ -1077,6 +1181,8 @@ def choose(state, api, checkpoint):
     # 예비 심사: 넓게 수집하되 명백한 소음은 한 번에 큰 배치로 제거한다.
     # 이전 실행의 new/candidate는 load_state에서 제거되므로 여기에는 현재 회차 수집분이 중심이다.
     new_ids = [k for k, v in pending.items() if v.get('stage', 'new') == 'new']
+    # 최신순 단독 정렬 대신 핵심 실적/CAPEX/장기 증설을 가장 먼저 심사한다.
+    new_ids.sort(key=lambda k: (critical_event_score(pending[k]), pending[k].get('published', '')), reverse=True)
     pre_batch = setting('PRECHECK_BATCH', 70, 30, 100)
     for offset in range(0, len(new_ids), pre_batch):
         # 본문심사 + 최종중복용 호출을 반드시 남긴다.
@@ -1093,7 +1199,7 @@ def choose(state, api, checkpoint):
             '데이터센터/전력, 규제, 중요한 부정 뉴스는 제목만 평범해 보여도 후보로 남긴다. '
             '단순 주가/목표가/가십/행사/입문설명/재탕은 false. reason은 120자 이내.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(),
-             'news_window_hours': setting('NEWS_WINDOW_HOURS', 24, 6, 48),
+             'news_window_hours': setting('NEWS_WINDOW_HOURS', 36, 6, 72),
              'articles': input_records(batch)}, SHORT_SCHEMA)
         validate_rows(rows, len(batch), allow_partial=True)
         returned = set()
@@ -1105,9 +1211,14 @@ def choose(state, api, checkpoint):
                 raise APIError('예비 priority 범위 오류')
             returned.add(row['index'])
             ident = ids[row['index']]
-            if row['keep']:
+            item = pending[ident]
+            deterministic = critical_event_score(item)
+            # 핵심 이벤트는 예비 LLM이 한 번 false여도 최종심사 기회를 보존한다.
+            if row['keep'] or force_review(item):
                 pending[ident]['stage'] = 'candidate'
-                pending[ident]['precheck_priority'] = priority
+                pending[ident]['precheck_priority'] = max(priority, deterministic)
+                if not row['keep']:
+                    pending[ident]['precheck_override'] = 'critical_event_force_review'
             else:
                 record_decision(state, ident, row['reason'])
         # 부분응답으로 판단 못 한 항목은 여기서 결정하지 않는다. 실행 종료 시 pending에서 제거되고 다음 검색 때 재등장 가능.
@@ -1116,8 +1227,10 @@ def choose(state, api, checkpoint):
     # 본문 심사: 비용을 아끼려고 중요도 순 키워드 점수로 자르지 않는다.
     # candidate를 최신순으로 읽으며 가능한 만큼 이번 회차 안에 끝낸다.
     candidate_ids = [k for k, v in pending.items() if v.get('stage') == 'candidate']
-    # 본문 심사 예산이 모자랄 때도 오래된 후보보다 최신 후보를 먼저 처리한다.
-    candidate_ids.sort(key=lambda k: (pending[k].get('published', ''), pending[k].get('precheck_priority', 0)), reverse=True)
+    # 본문심사 예산이 모자라도 핵심 이벤트를 먼저 처리하고, 그 안에서 중요도/최신성을 본다.
+    candidate_ids.sort(key=lambda k: (critical_event_score(pending[k]),
+                                      pending[k].get('precheck_priority', 0),
+                                      pending[k].get('published', '')), reverse=True)
     body_limit = setting('BODY_MAX_PER_RUN', 72, 12, 200)
     review_batch = setting('REVIEW_BATCH', 6, 3, 8)
     for offset in range(0, min(len(candidate_ids), body_limit), review_batch):
@@ -1129,7 +1242,7 @@ def choose(state, api, checkpoint):
 
         # LLM 호출 전에 명백한 구형 원문과 동일 URL 재탕을 Python에서 강제 제거한다.
         filtered_ids, batch = [], []
-        hours = setting('NEWS_WINDOW_HOURS', 24, 6, 48)
+        hours = setting('NEWS_WINDOW_HOURS', 36, 6, 72)
         for ident, item in zip(ids, enriched):
             ok, note = source_freshness(item, hours)
             item['freshness_note'] = note
@@ -1160,6 +1273,7 @@ def choose(state, api, checkpoint):
             'watch(200자), sector(60자), evidence(180자: 제공 텍스트의 연속 원문 인용), '
             'evidence_kind(공식 발표/언론 보도/경영진 발언/분석 자료), event_key, new_fact_date를 채운다. '
             'event_key는 같은 사건이면 다른 매체/언어에서도 최대한 동일하게 만들고, new_fact_date는 ISO-8601 또는 UNKNOWN. '
+            'freshness_note=trusted_rss_critical_requires_review이면 본문 추출 실패 자체를 탈락 이유로 삼지 말고, 신뢰 소스의 제목/요약 안에 실적·가이던스·대형 CAPEX·데이터센터 증설 같은 새 핵심 사실이 구체적으로 있는지 평가한다. '
             '본문이 없으면 RSS에 구체적 근거가 충분할 때만 통과. 기사 밖 사실로 보강하지 마라.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(), 'news_window_hours': hours,
              'articles': input_records(batch, True), 'history': history(state)}, REVIEW_SCHEMA)
@@ -1250,6 +1364,17 @@ def message(item):
             f'<a href="{esc(link)}">원문 보기</a>')
 
 
+def no_news_message(report, selected_count):
+    """정상 실행됐지만 실제 뉴스 전송이 0건일 때 보내는 상태 메시지."""
+    collected = int(report.get('collected', 0) or 0)
+    healthy = int(report.get('healthy_feeds', 0) or 0)
+    radars = int(report.get('radars', 0) or 0)
+    critical = int(report.get('critical_candidates', 0) or 0)
+    return ("📭 <b>이번 회차에는 새로 전송할 중요 뉴스가 없습니다.</b>\n\n"
+            f"수집 {collected:,}건 · 정상 레이더 {healthy}/{radars} · "
+            f"핵심이벤트 후보 {critical}건 · 최종선정 {selected_count}건")
+
+
 def telegram(text):
     token, chat = os.getenv('TELEGRAM_TOKEN'), os.getenv('TELEGRAM_CHAT_ID')
     if not token or not chat:
@@ -1294,7 +1419,7 @@ def confirm_sent(state, ident, message_id):
 
 
 def run(dry=False, diagnose=False):
-    hours = setting('NEWS_WINDOW_HOURS', 24, 6, 48)
+    hours = setting('NEWS_WINDOW_HOURS', 36, 6, 72)
     if not dry and not diagnose:
         missing = [k for k in ('TELEGRAM_TOKEN', 'TELEGRAM_CHAT_ID', 'GEMINI_KEY') if not os.getenv(k)]
         if missing:
@@ -1309,10 +1434,11 @@ def run(dry=False, diagnose=False):
         rows, feed_reports = collect(hours)
         report['feeds'] = feed_reports
         report['collected'] = len(rows)
+        report['critical_candidates'] = sum(force_review(it) for it in rows)
         report['radars'] = len(feeds(hours))
         report['healthy_feeds'] = sum(bool(r.get('ok')) for r in feed_reports)
         if diagnose:
-            report['titles'] = [{'title': it['title'], 'feed': it['feed']} for it in rows]
+            report['titles'] = [{'title': it['title'], 'feed': it['feed'], 'critical_score': critical_event_score(it)} for it in rows]
             report['status'] = 'diagnose'
             if not report['healthy_feeds']:
                 raise RuntimeError('진단: 모든 피드 실패; feeds 항목의 error 확인')
@@ -1361,7 +1487,16 @@ def run(dry=False, diagnose=False):
             checkpoint()  # 개별 성공 즉시 저장
             sent += 1
             time.sleep(1.1)
-        report.update(status='dry_run' if dry else 'ok', selected=len(order), sent=sent)
+
+        status_message_sent = False
+        if not dry and sent == 0:
+            status_id = telegram(no_news_message(report, len(order)))
+            if not status_id:
+                raise RuntimeError('중요 뉴스 0건 상태 메시지 전송 실패')
+            status_message_sent = True
+
+        report.update(status='dry_run' if dry else 'ok', selected=len(order), sent=sent,
+                      no_news_message_sent=status_message_sent)
         if not dry:
             save('news.json', {'updated': dt.datetime.now(UTC).isoformat(), 'items': state.get('archive', [])})
         return report
