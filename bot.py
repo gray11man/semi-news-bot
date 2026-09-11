@@ -41,8 +41,8 @@ import trafilatura
 UTC = dt.timezone.utc
 STATE = Path('seen.json')
 REPORT = Path('diagnostics.json')
-UA = 'AIIndustryNewsBot/4.3 (+RSS news reader)'
-POLICY_VERSION = 'ai-industry-v4.3-critical-events-36h'
+UA = 'AIIndustryNewsBot/4.4 (+RSS news reader)'
+POLICY_VERSION = 'ai-industry-v4.4-fresh4h-critical-events'
 
 # 원문 추출이 실패해도 RSS 제목/요약만으로 최종심사까지 보낼 수 있는 1차 신뢰 소스.
 # 자동 통과 목록이 아니라 '심사 기회 보존'용이다.
@@ -207,7 +207,7 @@ def iso_age(value):
     return None if parsed is None else (now() - parsed.timestamp()) / 3600
 
 
-def fresh(item, hours=48):
+def fresh(item, hours=4):
     # 1차 RSS 창. 이것만으로 '사건이 최신'이라고 판단하지 않는다.
     age = iso_age(item.get('published'))
     return age is not None and -1 <= age <= hours
@@ -298,7 +298,7 @@ def source_freshness(item, hours):
 
     pub_age = iso_age(item.get('original_published'))
     mod_age = iso_age(item.get('original_modified'))
-    original_limit = max(hours, setting('ORIGINAL_MAX_AGE_HOURS', 48, 12, 168))
+    original_limit = hours  # RSS가 최근이어도 원문이 최신창보다 오래되면 과거 뉴스로 처리
 
     if pub_age is not None and pub_age < -6:
         return False, '원문 발행시각이 비정상적으로 미래'
@@ -906,12 +906,13 @@ RULES = """너는 AI·반도체 산업의 '중요 뉴스만' 선별하는 한국
 최종 통과는 'AI·반도체 산업 투자자가 오늘 모르고 지나가면 산업 변화 이해에 의미 있는 구멍이 생기는가'로 판단한다.
 
 [최신성 - 최우선]
+이 봇은 3시간마다 실행된다. 기본 최신 창은 4시간이며, 4시간을 넘은 과거 뉴스는 중요해도 보내지 않는다. 단, 오래된 기사에 4시간 이내의 실질적 새 업데이트가 추가된 경우 그 새 사실만 평가한다.
 RSS published는 검색/색인 시각일 수 있으므로 사건 발생일로 간주하지 마라.
 반드시 original_published, original_modified, 본문 표현을 함께 보고 '지금 새로 생긴 사실'이 무엇인지 확인한다.
 오래된 사건을 오늘 다시 설명·번역·재인용한 기사는 중요해도 탈락이다.
 오래된 원문이 최근 수정됐더라도 최근 수정분에 새 수치·새 계약·새 고객·새 가이던스·확정/취소·새 제품/양산 등 실질적 새 사실이 없으면 탈락이다.
 keep=true라면 fact에는 오직 이번 최신 창에서 새로 확인된 사실을 쓰고, new_fact_date에는 그 새 사실의 날짜/시각을 ISO-8601로 적는다.
-새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다. 원문 발행일을 확인하지 못했거나 오래된 원문이 최근 수정된 경우에는 UNKNOWN을 허용하지 않는다. 단 freshness_note='trusted_rss_critical_requires_review'는 신뢰 소스의 최근 RSS 제목/요약에 핵심 새 사실이 구체적으로 적힌 예외다. 이 경우 RSS published를 사건 발생시각으로 바꾸어 쓰지는 말고, 사건 날짜가 없으면 UNKNOWN을 허용하되 재탕 여부를 더 엄격히 확인한다.
+새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다. 원문 발행일을 확인하지 못했거나 오래된 원문이 최근 수정된 경우에는 UNKNOWN을 허용하지 않는다. freshness_note='trusted_rss_critical_requires_review'인 경우에도 예외적으로 오래된 기사를 허용하지 않는다. 본문/원문 날짜를 못 구했다면 RSS 제목·요약 안에서 이번 최신 창 내 새 사실의 날짜를 확인할 수 있어야 하며 UNKNOWN이면 keep=false로 둔다.
 is_recycled_story는 과거 사건 재탕/번역/재인용/단순 회고이면 true다. true인 기사는 절대 keep=true로 두지 마라.
 event_key는 '주체|사건종류|상대/제품|핵심기간/핵심수치' 형식으로 사건을 짧고 안정적으로 정규화한다. 같은 사건이면 매체·언어·제목이 달라도 최대한 같은 event_key를 써라.
 
@@ -1135,10 +1136,11 @@ def validate_review(rows, batch):
             'old_source_recently_modified',
             'source_published_missing_recent_modified',
             'source_date_missing_requires_proof',
+            'trusted_rss_critical_requires_review',
         }
         if item.get('freshness_note') in strict_freshness:
             new_age = iso_age(row.get('new_fact_date'))
-            hours = setting('NEWS_WINDOW_HOURS', 36, 6, 72)
+            hours = min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4)
             if new_age is None or not -1 <= new_age <= hours:
                 dropped += 1
                 continue
@@ -1199,7 +1201,7 @@ def choose(state, api, checkpoint):
             '데이터센터/전력, 규제, 중요한 부정 뉴스는 제목만 평범해 보여도 후보로 남긴다. '
             '단순 주가/목표가/가십/행사/입문설명/재탕은 false. reason은 120자 이내.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(),
-             'news_window_hours': setting('NEWS_WINDOW_HOURS', 36, 6, 72),
+             'news_window_hours': min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4),
              'articles': input_records(batch)}, SHORT_SCHEMA)
         validate_rows(rows, len(batch), allow_partial=True)
         returned = set()
@@ -1242,7 +1244,7 @@ def choose(state, api, checkpoint):
 
         # LLM 호출 전에 명백한 구형 원문과 동일 URL 재탕을 Python에서 강제 제거한다.
         filtered_ids, batch = [], []
-        hours = setting('NEWS_WINDOW_HOURS', 36, 6, 72)
+        hours = min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4)
         for ident, item in zip(ids, enriched):
             ok, note = source_freshness(item, hours)
             item['freshness_note'] = note
@@ -1263,7 +1265,7 @@ def choose(state, api, checkpoint):
             '최종 내용 심사. candidate라는 이유로 통과시키지 마라. 모든 기사에 importance 0~100과 '
             'signal(긍정/부정/혼합/중립), is_recycled_story를 부여한다. keep=true는 importance 80 이상이면서 '
             'is_recycled_story=false인 경우만 허용한다. 가장 먼저 이 기사가 현재 news_window_hours 안에 생긴 실제 새 사실을 '
-            '담고 있는지 확인하라. RSS 날짜만 최근이고 사건은 과거인 재탕/번역/회고/재인용이면 false. '
+            '담고 있는지 확인하라. 이 봇은 3시간마다 실행되므로 news_window_hours를 넘은 과거 뉴스는 중요해도 false다. RSS 날짜만 최근이고 사건은 과거인 재탕/번역/회고/재인용이면 false. '
             '오래된 원문이 최근 수정됐거나 원문 발행일을 확인하지 못한 경우 freshness_note가 별도로 들어온다. 이 경우 '
             '최근 창 안에 발생한 새 수치·계약·고객·가이던스·확정/취소·양산/출시 등 실질적 새 사실과 그 날짜가 명확해야만 keep=true다. '
             '80점은 "AI·반도체 산업 투자자가 오늘 모르고 지나가면 중요한 변화 이해를 놓칠 수준"이다. '
@@ -1370,9 +1372,10 @@ def no_news_message(report, selected_count):
     healthy = int(report.get('healthy_feeds', 0) or 0)
     radars = int(report.get('radars', 0) or 0)
     critical = int(report.get('critical_candidates', 0) or 0)
+    window = min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4)
     return ("📭 <b>이번 회차에는 새로 전송할 중요 뉴스가 없습니다.</b>\n\n"
             f"수집 {collected:,}건 · 정상 레이더 {healthy}/{radars} · "
-            f"핵심이벤트 후보 {critical}건 · 최종선정 {selected_count}건")
+            f"핵심이벤트 후보 {critical}건 · 최종선정 {selected_count}건 · 최신창 {window}시간")
 
 
 def telegram(text):
@@ -1419,7 +1422,7 @@ def confirm_sent(state, ident, message_id):
 
 
 def run(dry=False, diagnose=False):
-    hours = setting('NEWS_WINDOW_HOURS', 36, 6, 72)
+    hours = min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4)
     if not dry and not diagnose:
         missing = [k for k in ('TELEGRAM_TOKEN', 'TELEGRAM_CHAT_ID', 'GEMINI_KEY') if not os.getenv(k)]
         if missing:
