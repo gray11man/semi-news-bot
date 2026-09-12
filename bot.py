@@ -120,6 +120,83 @@ def force_review(item):
     return critical_event_score(item) >= 62
 
 
+# 예비심사용 짧은 규칙. 전체 RULES를 모든 배치마다 반복 전송하지 않는다.
+PRECHECK_RULES = """
+너는 AI·반도체·데이터센터 중요 뉴스의 예비 선별기다. 입력 기사 밖 사실을 만들지 마라.
+최근 뉴스 중 산업 구조·수요공급·가격·생산·수율·재고·CAPEX·대형계약·데이터센터/전력·자금조달·정책·
+핵심 경영진의 구체적 새 수치·프런티어 모델/중요 기술 변화만 후보로 남긴다.
+단순 주가/목표가/밸류에이션, 행사·가십, 입문설명, 작은 제품 기능, 광고, 숫자 없는 수혜론, 재탕은 버린다.
+호재와 악재는 같은 기준으로 본다. 개수를 채우지 말고 애매하면 false다.
+"""
+
+_LOW_SIGNAL = (
+    'price target','analyst rating','stock rises','stock falls','shares rise','shares fall','top pick','should you buy',
+    '목표가','투자의견','주가 상승','주가 하락','추천주','급등주','차트 분석','매수할까'
+)
+_BROAD_SIGNALS = (
+    'gpu','hbm','dram','nand','foundry','cowos','packaging','euv','asic','accelerator','inference','training',
+    'model','agent','reasoning','open weight','token','ethernet','infiniband','optical','cpo','cxl','memory bandwidth',
+    'data center','datacenter','cloud','capex','gw','power','grid','turbine','cooling','contract','backlog','guidance',
+    'capacity','production','yield','inventory','price','shipment','customer','financing','bond','debt','loan','export control',
+    'regulation','sanction','tariff','delay','cancel','shortage','oversupply','demand','supply','acquisition',
+    '반도체','메모리','데이터센터','광통신','네트워크','전력','가이던스','증설','감산','수율','재고','가격','수요','공급',
+    '계약','수주','고객','자금조달','회사채','수출통제','규제','지연','취소','공급부족','공급과잉'
+)
+
+
+def cheap_signal_score(item):
+    text = _combined_text(item)
+    score = critical_event_score(item)
+    score += min(sum(term in text for term in _BROAD_SIGNALS), 8) * 3
+    if re.search(r'(?:[$€£¥₩]\s*)?\d+(?:[.,]\d+)*(?:\s*(?:%|x|배|billion|bn|million|m|trillion|gw|mw|조|억))', text):
+        score += 8
+    if any(term in text for term in _LOW_SIGNAL):
+        score -= 25
+    if trusted_source(item):
+        score += 8
+    return score
+
+
+def cheap_preselect(items):
+    """수집은 넓게 유지하고 Gemini에 넣을 기사만 Python으로 압축한다."""
+    maximum = setting('LLM_PRECHECK_MAX', 180, 80, 320)
+    if len(items) <= maximum:
+        return list(items)
+
+    ranked = sorted(items, key=lambda it: (cheap_signal_score(it), it.get('published','')), reverse=True)
+    chosen = []
+    # 각 레이더/피드에서 최소 한 건은 남겨 낯선 중요 뉴스가 점수 때문에 사라지는 것을 방지한다.
+    per_feed = {}
+    for item in ranked:
+        feed = item.get('feed','')
+        if per_feed.get(feed, 0) >= 1:
+            continue
+        if any(near_title_duplicate(item, old) for old in chosen):
+            continue
+        chosen.append(item)
+        per_feed[feed] = 1
+        if len(chosen) >= maximum:
+            break
+
+    if len(chosen) < maximum:
+        for item in ranked:
+            if item in chosen:
+                continue
+            if any(near_title_duplicate(item, old) for old in chosen):
+                continue
+            chosen.append(item)
+            if len(chosen) >= maximum:
+                break
+
+    # force_review 급은 상한 밖이어도 반드시 보존하되 중복은 제외
+    for item in ranked:
+        if force_review(item) and item not in chosen and not any(near_title_duplicate(item, old) for old in chosen):
+            chosen.append(item)
+    chosen.sort(key=lambda it: (cheap_signal_score(it), it.get('published','')), reverse=True)
+    print(f'[token] Python 예비압축 {len(items)} → {len(chosen)}건')
+    return chosen
+
+
 
 def now():
     return dt.datetime.now(UTC).timestamp()
@@ -858,7 +935,7 @@ def body_excerpt(text, maximum=6000):
     # 서두에만 핵심이 있다는 가정을 피하고 앞/중간/뒤를 명시적으로 발췌한다.
     if len(text) <= maximum:
         return text
-    return text[:3000] + '\n[중간 발췌]\n' + text[len(text)//2:len(text)//2+1500] + '\n[후반 발췌]\n' + text[-1400:]
+    return text[:1800] + '\n[중간 발췌]\n' + text[len(text)//2:len(text)//2+700] + '\n[후반 발췌]\n' + text[-600:]
 
 
 def enrich(item):
@@ -997,19 +1074,20 @@ class BudgetEnd(APIError):
 class Gemini:
     def __init__(self):
         self.calls = 0
-        self.maximum = setting('GEMINI_MAX_CALLS_PER_RUN', 36, 8, 100)
+        self.maximum = setting('GEMINI_MAX_CALLS_PER_RUN', 12, 6, 40)
         self.tokens = 0
 
-    def ask(self, instruction, data, schema):
+    def ask(self, instruction, data, schema, compact=False):
         key = os.getenv('GEMINI_KEY', '').strip()
         if not key:
             raise APIError('GEMINI_KEY 없음')
         model = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash-lite').strip()
         if not re.fullmatch(r'[A-Za-z0-9._-]+', model):
             raise APIError('모델명 형식 오류')
-        payload = {'systemInstruction': {'parts': [{'text': RULES + '\n' + instruction}]},
+        rules = PRECHECK_RULES if compact else RULES
+        payload = {'systemInstruction': {'parts': [{'text': rules + '\n' + instruction}]},
                    'contents': [{'role': 'user', 'parts': [{'text': json.dumps(data, ensure_ascii=False)}]}],
-                   'generationConfig': {'maxOutputTokens': 10000, 'responseMimeType': 'application/json',
+                   'generationConfig': {'maxOutputTokens': 6000, 'responseMimeType': 'application/json',
                                         'responseSchema': schema}}
         for attempt in range(3):
             if self.calls >= self.maximum:
@@ -1171,10 +1249,26 @@ def record_decision(state, ident, why):
 
 
 def input_records(batch, with_body=False):
-    keys = ['title', 'summary', 'source', 'published']
-    if with_body:
-        keys += ['body', 'body_status', 'resolved_url', 'original_published', 'original_modified', 'freshness_note']
-    return [{'index': index, **{k: item.get(k, '') for k in keys}} for index, item in enumerate(batch)]
+    rows = []
+    for index, item in enumerate(batch):
+        row = {
+            'index': index,
+            'title': clean(item.get('title',''))[:260],
+            'summary': clean(item.get('summary',''))[:650],
+            'source': clean(item.get('source',''))[:100],
+            'published': item.get('published',''),
+        }
+        if with_body:
+            row.update({
+                'body': clean(item.get('body',''))[:3200],
+                'body_status': item.get('body_status',''),
+                'resolved_url': item.get('resolved_url',''),
+                'original_published': item.get('original_published',''),
+                'original_modified': item.get('original_modified',''),
+                'freshness_note': item.get('freshness_note',''),
+            })
+        rows.append(row)
+    return rows
 
 
 def choose(state, api, checkpoint):
@@ -1185,7 +1279,7 @@ def choose(state, api, checkpoint):
     new_ids = [k for k, v in pending.items() if v.get('stage', 'new') == 'new']
     # 최신순 단독 정렬 대신 핵심 실적/CAPEX/장기 증설을 가장 먼저 심사한다.
     new_ids.sort(key=lambda k: (critical_event_score(pending[k]), pending[k].get('published', '')), reverse=True)
-    pre_batch = setting('PRECHECK_BATCH', 70, 30, 100)
+    pre_batch = setting('PRECHECK_BATCH', 80, 40, 100)
     for offset in range(0, len(new_ids), pre_batch):
         # 본문심사 + 최종중복용 호출을 반드시 남긴다.
         reserve = max(8, min(14, api.maximum // 3))
@@ -1202,7 +1296,7 @@ def choose(state, api, checkpoint):
             '단순 주가/목표가/가십/행사/입문설명/재탕은 false. reason은 120자 이내.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(),
              'news_window_hours': min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4),
-             'articles': input_records(batch)}, SHORT_SCHEMA)
+             'articles': input_records(batch)}, SHORT_SCHEMA, compact=True)
         validate_rows(rows, len(batch), allow_partial=True)
         returned = set()
         for row in rows:
@@ -1233,8 +1327,8 @@ def choose(state, api, checkpoint):
     candidate_ids.sort(key=lambda k: (critical_event_score(pending[k]),
                                       pending[k].get('precheck_priority', 0),
                                       pending[k].get('published', '')), reverse=True)
-    body_limit = setting('BODY_MAX_PER_RUN', 72, 12, 200)
-    review_batch = setting('REVIEW_BATCH', 6, 3, 8)
+    body_limit = setting('BODY_MAX_PER_RUN', 32, 12, 80)
+    review_batch = setting('REVIEW_BATCH', 8, 4, 8)
     for offset in range(0, min(len(candidate_ids), body_limit), review_batch):
         if api.maximum - api.calls <= 2:
             break
@@ -1278,7 +1372,7 @@ def choose(state, api, checkpoint):
             'freshness_note=trusted_rss_critical_requires_review이면 본문 추출 실패 자체를 탈락 이유로 삼지 말고, 신뢰 소스의 제목/요약 안에 실적·가이던스·대형 CAPEX·데이터센터 증설 같은 새 핵심 사실이 구체적으로 있는지 평가한다. '
             '본문이 없으면 RSS에 구체적 근거가 충분할 때만 통과. 기사 밖 사실로 보강하지 마라.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(), 'news_window_hours': hours,
-             'articles': input_records(batch, True), 'history': history(state)}, REVIEW_SCHEMA)
+             'articles': input_records(batch, True)}, REVIEW_SCHEMA)
         validate_review(rows, batch)
         for row in rows:
             ident = ids[row['index']]
@@ -1300,38 +1394,28 @@ def choose(state, api, checkpoint):
     if not approved_ids:
         return []
 
-    # 중요도 높은 것부터 최종 중복 판정. 개수 채우기는 하지 않는다.
+    # 최종 순위/현재 회차 중복은 Python으로 처리해 Gemini 1회를 더 쓰지 않는다.
     approved_ids.sort(
         key=lambda k: (pending[k].get('analysis', {}).get('importance', 0), pending[k].get('published', '')),
         reverse=True)
     rank_limit = setting('RANK_MAX_PER_RUN', 60, 10, 100)
-    ids = approved_ids[:rank_limit]
-    batch = [pending[k] for k in ids]
-    ranked = api.ask(
-        '최종 편집: 입력 articles에 존재하는 index만 중요도 순서로 반환한다. 각 index는 정확히 한 번만 반환하고 '
-        '입력 기사 수보다 많은 행을 만들지 마라. 동일 사건은 근거가 가장 충실한 한 건만 남기고 '
-        '나머지를 duplicate=true로 표시한다. event_key가 같거나 사실상 같은 사건이면 매체/언어/제목이 달라도 중복이다. '         '과거 sent와 같은 사건 재탕도 true. 다만 과거 전송 뒤 새 수치·새 고객·확정/취소·가이던스 변경 등 실질적 후속 사실이 생겼다면 중복이 아니다. '
-        '같은 회사의 다른 사건, 새 수치·새 고객·후속 확정·취소·방향 반전은 중복이 아니다. '
-        '긍정/부정은 동일 기준이다. 입력된 전체 index만 반환한다.',
-        {'current_time_utc': dt.datetime.now(UTC).isoformat(),
-         'articles': [{'index': i, 'title': it['title'], **it['analysis']} for i, it in enumerate(batch)],
-         'history': history(state)}, RANK_SCHEMA)
-    validate_rows(ranked, len(batch), 'duplicate', allow_partial=True)
-
     order = []
-    ranked_id_set = set()
-    for row in ranked:
-        ident = ids[row['index']]
-        ranked_id_set.add(ident)
-        if row['duplicate']:
-            record_decision(state, ident, '최종 사건 중복')
-        else:
-            order.append(ident)
-
-    # 최종 랭킹 응답에서 누락된 approved는 장기 비축하지 않는다. 다음 회차 검색에서 다시 평가 가능하게 제거한다.
-    for ident in ids:
-        if ident not in ranked_id_set and ident in pending:
-            pending.pop(ident, None)
+    seen_events = set()
+    kept_items = []
+    for ident in approved_ids[:rank_limit]:
+        item = pending[ident]
+        analysis = item.get('analysis', {})
+        ek = event_key_norm(analysis.get('event_key'))
+        if ek and ek in seen_events:
+            record_decision(state, ident, '최종 사건 중복(event_key)')
+            continue
+        if any(near_title_duplicate(item, old) for old in kept_items):
+            record_decision(state, ident, '최종 사건 중복(제목)')
+            continue
+        if ek:
+            seen_events.add(ek)
+        kept_items.append(item)
+        order.append(ident)
 
     max_send = setting('MAX_SEND_PER_RUN', 15, 0, 30)
     selected = order[:max_send]
@@ -1448,7 +1532,9 @@ def run(dry=False, diagnose=False):
             return report
         if not report['healthy_feeds']:
             raise RuntimeError('모든 피드 실패 — 뉴스 0건이 아닙니다')
-        for item in sorted(rows, key=lambda r: r['published'], reverse=True):
+        llm_rows = cheap_preselect(rows)
+        report['llm_precheck_items'] = len(llm_rows)
+        for item in sorted(llm_rows, key=lambda r: r['published'], reverse=True):
             ident = item_id(item)
             if ident in state['sent'] or ident in state['decisions']:
                 continue
