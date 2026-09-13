@@ -53,7 +53,8 @@ GEMINI_MODELS = [
     "gemini-2.5-flash",
 ]
 
-MAX_GEMINI_CALLS = 5
+BASE_GEMINI_CALLS = 10
+MAX_GEMINI_CALLS = 15  # 최핵심 인터뷰가 남아 있을 때만 자동 확장
 BATCH_SIZE = 12
 NOTIFY_WHEN_EMPTY = False
 
@@ -151,16 +152,20 @@ def _retry_delay(body):
     return int(m.group(1)) if m else None
 
 
-def gemini_call(prompt, max_retry=2):
+def gemini_call(prompt, max_retry=2, allow_extended=False):
     if _gm["dead"]:
         return None
 
+    call_cap = MAX_GEMINI_CALLS if allow_extended else BASE_GEMINI_CALLS
+
     for model in GEMINI_MODELS:
         for attempt in range(max_retry):
-            if _gm["n"] >= MAX_GEMINI_CALLS:
-                print(f"[Gemini] 예산 {MAX_GEMINI_CALLS}회 소진")
+            if _gm["n"] >= call_cap:
+                # 일반 후보는 기본 10회에서 멈추되, 최핵심 인터뷰만 15회까지 확장한다.
+                print(f"[Gemini] 이번 사이클 비용상한 {call_cap}회 도달 → 남은 일반 후보는 다음 실행으로 보류")
+                if not allow_extended:
+                    return None
                 _gm["dead"] = True
-                _notify_gemini_dead(f"호출 예산 {MAX_GEMINI_CALLS}회 소진")
                 return None
 
             _gm["n"] += 1
@@ -1485,6 +1490,37 @@ Bloomberg/CNBC라도 뉴스 해설 영상이면 FALSE다.
 """
 
 
+CRITICAL_INTERVIEW_PERSONS = {
+    "Jensen Huang", "Sam Altman", "Dario Amodei", "Demis Hassabis",
+    "Sundar Pichai", "Satya Nadella", "Lisa Su", "Mark Zuckerberg",
+    "Elon Musk", "Hock Tan", "Sanjay Mehrotra", "C.C. Wei",
+    "Matt Murphy", "Jayshree Ullal", "Jitendra Mohan", "Rene Haas",
+}
+
+
+def is_high_priority_celeb(candidate):
+    """호출 상한과 후보 컷보다 먼저 보호해야 하는 인터뷰 후보."""
+    person, item, detail, _vid, meta_score = candidate
+    title = item.get("snippet", {}).get("title", "") or ""
+    channel = item.get("snippet", {}).get("channelTitle", "") or ""
+    desc = detail.get("snippet", {}).get("description", "") or ""
+    text = f"{title} {desc[:900]}"
+    trusted = any(t in channel.lower() for t in TRUSTED_CHANNELS)
+    interviewish = contains_any(text, [
+        "interview", "full interview", "in conversation", "fireside chat",
+        "keynote", "podcast", "panel", "q&a", "joins", "ceo", "cto",
+        "인터뷰", "대담", "키노트", "패널",
+    ])
+    direct_meta, _ = direct_metadata_evidence(person, item, detail)
+    return bool(
+        direct_meta and interviewish and (
+            person in CRITICAL_INTERVIEW_PERSONS or
+            (person in CORE_PERSONS and trusted) or
+            meta_score >= 8
+        )
+    )
+
+
 def deterministic_celeb_judge(candidate):
     """매우 강한 메타데이터는 Gemini 없이 확정해 토큰을 아낀다. 애매하면 None."""
     person, item, detail, _vid, meta_score = candidate
@@ -1517,7 +1553,7 @@ def deterministic_celeb_judge(candidate):
     }
 
 
-def judge_celeb_batch(chunk):
+def judge_celeb_batch(chunk, high_priority=False):
     lines = []
 
     for i, (person, item, detail, _vid, meta_score) in enumerate(chunk):
@@ -1557,7 +1593,8 @@ def judge_celeb_batch(chunk):
         CELEB_PROMPT.replace(
             "{items}",
             "\n\n".join(lines),
-        )
+        ),
+        allow_extended=high_priority,
     )
 
     return parse_json_array(
@@ -1670,28 +1707,51 @@ def run_celeb_watch():
             filtered.append(candidate)
         passed = filtered
 
+    # 최핵심 인터뷰는 후보 상한 때문에 잘리지 않게 먼저 보호한다.
     passed.sort(key=lambda x: x[4], reverse=True)
-    passed = passed[:MAX_CELEB_CANDIDATES]
+    protected = [c for c in passed if is_high_priority_celeb(c)]
+    normal = [c for c in passed if not is_high_priority_celeb(c)]
+    room = max(0, MAX_CELEB_CANDIDATES - len(protected))
+    passed = protected + normal[:room]
+    print(f"[셀럽] 최핵심 인터뷰 보호 {len(protected)}건 · 일반 후보 {len(passed)-len(protected)}건")
 
-    auto_pairs, llm_candidates = [], []
+    auto_pairs, priority_llm, normal_llm = [], [], []
     for candidate in passed:
         j = deterministic_celeb_judge(candidate)
-        if j is None:
-            llm_candidates.append(candidate)
-        else:
+        if j is not None:
             auto_pairs.append((candidate, j))
+        elif is_high_priority_celeb(candidate):
+            priority_llm.append(candidate)
+        else:
+            normal_llm.append(candidate)
 
-    nb = (len(llm_candidates) + BATCH_SIZE - 1) // BATCH_SIZE
-    print(f"[셀럽] 코드 확정 {len(auto_pairs)}건 · Gemini 판정 {len(llm_candidates)}건 → 배치 {nb}회")
+    p_batches = (len(priority_llm) + BATCH_SIZE - 1) // BATCH_SIZE
+    n_batches = (len(normal_llm) + BATCH_SIZE - 1) // BATCH_SIZE
+    print(
+        f"[셀럽] 코드 확정 {len(auto_pairs)}건 · 최핵심 Gemini {len(priority_llm)}건/{p_batches}배치 · "
+        f"일반 Gemini {len(normal_llm)}건/{n_batches}배치 | 기본 {BASE_GEMINI_CALLS}회, 최핵심 남으면 {MAX_GEMINI_CALLS}회까지"
+    )
 
     judged_pairs = list(auto_pairs)
-    for i in range(0, len(llm_candidates), BATCH_SIZE):
-        chunk = llm_candidates[i:i + BATCH_SIZE]
-        results = judge_celeb_batch(chunk)
+
+    # 최핵심 인터뷰를 무조건 먼저 판정한다. 이 구간만 15회까지 자동 확장한다.
+    for i in range(0, len(priority_llm), BATCH_SIZE):
+        chunk = priority_llm[i:i + BATCH_SIZE]
+        results = judge_celeb_batch(chunk, high_priority=True)
         judged_pairs.extend(zip(chunk, results))
         if _gm["dead"]:
-            print("[셀럽] Gemini 중단 → 미판정 항목은 다음 사이클 재시도")
+            print("[셀럽] 최핵심 인터뷰까지 15회 상한 도달 → 나머지는 다음 사이클 재시도")
             break
+
+    # 일반 후보는 비용 통제를 위해 기본 10회까지만 사용한다.
+    if not _gm["dead"]:
+        for i in range(0, len(normal_llm), BATCH_SIZE):
+            chunk = normal_llm[i:i + BATCH_SIZE]
+            results = judge_celeb_batch(chunk, high_priority=False)
+            judged_pairs.extend(zip(chunk, results))
+            if _gm["n"] >= BASE_GEMINI_CALLS:
+                print("[셀럽] 일반 후보 기본 10회 상한 도달 → 남은 일반 후보는 다음 사이클 재시도")
+                break
 
     sent = 0
     for candidate, j in judged_pairs:
@@ -2887,7 +2947,7 @@ def main():
 
     print(
         f"=== Gemini 총 호출 "
-        f"{_gm['n']}회 / 상한 {MAX_GEMINI_CALLS} · 총토큰 {_gm['tokens']} ==="
+        f"{_gm['n']}회 / 기본 {BASE_GEMINI_CALLS} · 최핵심 최대 {MAX_GEMINI_CALLS} · 총토큰 {_gm['tokens']} ==="
     )
 
 
