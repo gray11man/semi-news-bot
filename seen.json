@@ -453,6 +453,48 @@
       "source_published": "",
       "source_modified": "",
       "message_id": 4700
+    },
+    "53e8588bc9355fd0bdc3845f3703c395651fa8d9bce7b63d02cf1efbfb401bc4": {
+      "ts": 1789354900.337029,
+      "title": "Vertiv Sees Data Center Demand Strengthen as AI Infrastructure Pipeline Expands",
+      "fact": "Vertiv는 AI 인프라 파이프라인 확장에 따라 데이터센터 수요가 강화될 것으로 전망했습니다. 이는 AI 관련 하드웨어 및 서비스 제공업체에 긍정적인 신호입니다.",
+      "source": "Yahoo Finance",
+      "rss_published": "2026-09-14T02:02:00+00:00",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNnNIbXpaQ3JmbmlDVnJhS3k3UW1LVHVEUmxjZVpCMnFrQ2FVdV9VckRJYWNidE1BUUNjaHktZnQzVTU5X2F5MXNoNkJBbVhUMFgzVjNFdDl3WURoLW9TT2FxNHliOHVzMEVGdjJCLVpkQ0o0Ni03Z0I4bTQ5aUhuY1VQbmNWQUF2NVNIMkRoMTlrVjNCcURpT3Bn?oc=5",
+      "resolved_url": "",
+      "event_key": "Vertiv|수요 전망|데이터센터|AI 인프라 확장",
+      "new_fact_date": "2026-09-14T02:02:00+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4706
+    },
+    "79a51175069701daa01bc6a7eb7e354889d7870baf593fbc6b890e137d343ae7": {
+      "ts": 1789354902.133655,
+      "title": "Z.AI’s Cash Burn Drives Alibaba-Like Hong Kong Fundraising Spree",
+      "fact": "Z.AI의 높은 현금 소진율로 인해 홍콩에서 알리바바와 유사한 형태의 자금 조달이 늘고 있다는 블룸버그 보도입니다.",
+      "source": "Bloomberg.com",
+      "rss_published": "2026-09-14T02:41:00+00:00",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdnoyUGhrVWhNWVdXbEF2ajNtYWhGSWNTcVZjb3gyaTVQTktreS15WmdLdUNQRkRyU0luaVdSbFZiSXZlZ1lVeU5kaV9ISXVRelNfd2pQNlljbkZqSGFUdFVwWDB6QnpLOFBfMmVveGk1am9za19maF9hS3B6blZwcGM1aEJZOVA4NDhsWUg2Wm1HVmFCbGtzV1J2bTRQS1hCOUtPYWJFWkszZWFsNjVlLUdfWmtQQQ?oc=5",
+      "resolved_url": "",
+      "event_key": "Z.AI|현금 소진율|자금 조달|홍콩",
+      "new_fact_date": "2026-09-14T02:41:00+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4707
+    },
+    "e8e6474101bdbb951104e8a4945683aebdab12a18f5190cc47f2349878182172": {
+      "ts": 1789354903.974624,
+      "title": "Anthropic Sees Adjusted Operating Profit This Quarter, FT Says",
+      "fact": "FT 보도에 따르면, Anthropic은 이번 분기에 조정 영업 이익을 기록할 것으로 예상됩니다.",
+      "source": "Bloomberg.com",
+      "rss_published": "2026-09-13T23:41:43+00:00",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMGV3bGNRVEstaHRTWTJid0RqME9NUFdlQ0d5OHZnbnpKMWRBMFV5dzg4dlRxa2xhNTZrYXdSdll4TkFWY0M1T2c0YVJmSW9nV3Azd1Y5V29pZWVpVGp6WUJKWWVwc3ZQS0E3RUF0VkFxeHlSMnBjeFBicEtvcVFXRFMtbXB4OXAwMnotR1kza041UXR6dGs0akZUZUpHREpTQWxVcHR1VGRaV2FVbEE0UFBB?oc=5",
+      "resolved_url": "",
+      "event_key": "Anthropic|영업 이익|분기별|조정",
+      "new_fact_date": "2026-09-13T23:41:43+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4708
     }
   },
   "pending": {},
@@ -20526,6 +20568,402 @@
       "policy": "ai-industry-v4.4-fresh4h-critical-events",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "[Click eStock] \"Esprism Highlighted as Fuel Cell Demand Alternative Amid Worsening Power Bottleneck from AI Data Center Expansion\""
+    },
+    "74a2fbc2f2030b7259f504844284d0ff1a422a4398393c05dce62124bc90fd6d": {
+      "ts": 1789354865.057503,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 투자 둔화 우려에 따른 니케이 지수 하락은 시장 전반의 심리적 영향이며, 구체적인 산업 변화 정보 부족",
+      "title": "Nikkei Briefly Falls Below 63,000 on AI Investment Slowdown Concerns; Semiconductor Stocks Sold Off"
+    },
+    "84164b95b91f717132d29867f88fc40943f69b3b5f7ecf9be7aace8d5811bf46": {
+      "ts": 1789354865.057718,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "두 AI 기업의 매출 추이 비교는 투자 분석 기사이며, 산업 구조 변화에 대한 정보는 부족",
+      "title": "BigBear.ai vs. Cerebras Systems: What Quarterly Revenue Trends for These Artificial Intelligence Companies Tell Investors"
+    },
+    "07c77b2531faeda69eaf552deb6f8630d9550527a667ae424187b116de72a503": {
+      "ts": 1789354865.057802,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Avid와 Google Cloud의 파트너십 확대는 특정 기업 간의 협력으로 AI 산업 전반의 변화와는 거리가 멂",
+      "title": "Avid, Google Cloud Expand Partnership for Browser-Based Media Composer"
+    },
+    "5dbfdbbe17b3e1991da74b4275ec94145af08e1243866197bfb21f8b7a20d4aa": {
+      "ts": 1789354865.057931,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "드론 방어 시스템 아키텍처 확장은 AI와 연관될 수 있으나, 핵심 AI 산업 변화와는 거리가 멂",
+      "title": "DroneShield expands open counter-drone architecture"
+    },
+    "3ae0e7f8efe9cfa1abf0dea88815b48b6daa52b6223fcb9fa8012e1a91e3a886": {
+      "ts": 1789354865.05823,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Samsung Heavy Industries의 LNG 운반선 수주는 AI 산업과 직접적인 연관성 없음",
+      "title": "Samsung Heavy Industries Wins KRW 1.6 Trillion in LNG Carrier Orders, Surpassing Last Year’s Merchant Ship Record"
+    },
+    "eb1877fa3ab573718094620c0d13edca3eb73fb4823318139082acdc67b8551b": {
+      "ts": 1789354865.058375,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Samsung Heavy의 선박 수주 뉴스로 AI 산업과 직접적인 연관성 없음",
+      "title": "Samsung Heavy wins Korea orders for six LNG and crude carriers - CHOSUNBIZ"
+    },
+    "35926d76c0f1ad1f99acd9716afa5d062487844e21dd26332ad76803474dee3a": {
+      "ts": 1789354865.058461,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Samsung Heavy Industries의 LNG 운반선 수주는 AI 산업과 직접적인 연관성 없음",
+      "title": "Samsung Heavy Industries Wins KRW 1.41 Trillion Order for Four LNG Carriers"
+    },
+    "b8a8166bf3b3167996ac20b173c6982e92955c010471d4a3f47dd840be05785a": {
+      "ts": 1789354865.058577,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Shorooq 및 Emirates Growth Fund의 FMSi 파트너십은 AI 산업과 직접적인 연관성이 없는 금융/물류 분야 뉴스",
+      "title": "Shorooq and Emirates Growth Fund partner with FMSi to build a regional champion in fleet management solutions"
+    },
+    "ec448a0e52e15c6addc8aaa9ab5da00a5c37be549e43a5504eed9298ba236a3e": {
+      "ts": 1789354865.058709,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "ADP와 AWS의 파트너십 확대는 특정 기업 간의 협력이며, AI 산업 전반의 변화와는 거리가 멂",
+      "title": "ADP Deepens AWS Partnership To Accelerate AI-powered HCM Innovation"
+    },
+    "ed3333e80df37f0848d4d0bf7ab8fa54d7d21adb46c0da4b3cb48a9bbaa3750c": {
+      "ts": 1789354865.058911,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "BaroPharm의 AI 약국 에이전트 출시는 특정 분야의 AI 적용 사례이나, AI 산업 전반의 큰 변화와는 거리가 멂",
+      "title": "BaroPharm Launches Pharmacy-Exclusive AI 'OTC Agent'...Expanding AX for Pharmacy Operations"
+    },
+    "d35c33b9e672453e388e24fe4ea6c15ed38fe529a8f838d467ee00d873998ef9": {
+      "ts": 1789354865.059064,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Da Vinci의 AI 기반 수익화 및 서비스 매출 증가는 특정 기업의 성과이며, AI 산업 전반의 구조적 변화를 보여주지는 않음",
+      "title": "Da Vinci Achieves AI-Powered Monetization with Record $906 Million Quarterly Service Revenue"
+    },
+    "b5347e0d9dae961978dbf1aefd1f66cdb07e8c5bf3fe0b1dde311ceb918a7454": {
+      "ts": 1789354865.059444,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "DeepSeek API 업데이트는 기술적인 개선 사항이나, AI 산업 전반의 큰 변화를 보여주지는 않음",
+      "title": "DeepSeek Routes All V4-Pro API Traffic to V4.1-Flash at Flash Rates"
+    },
+    "4625e1d1719cba999e1b99ecd1a41e0188365a618bf65283d780a47490205f06": {
+      "ts": 1789354865.059549,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Daedong Mobility의 골프 카트 매출 증가는 AI와 직접적인 관련이 없는 특정 분야의 사업 성과",
+      "title": "Daedong Mobility's Golf Cart Revenue in Japan Grows 4.5 Times"
+    },
+    "ae299ddb61f3575ed0a1d88d2000068aba62b563d0adb1661efcad3811ab6699": {
+      "ts": 1789354865.05969,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "기업 법인세 수익 증가 관련 뉴스로 AI 산업과 직접적인 연관성 없음",
+      "title": "Corporate Tax Revenue to Surpass Income Tax for First Time in 15 Years"
+    },
+    "05f9df850ebee24754396d75cc670591a31e60da547ee4dc9eceb7372e0ba84b": {
+      "ts": 1789354865.059818,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "SoftBank 주가 하락은 AI 둔화 우려에 따른 것이나, 구체적인 산업 변화보다는 시장 심리 및 개별 기업 투자 위험에 초점",
+      "title": "SoftBank shares sink nearly 12% as AI slowdown talk hits its $64.6 billion OpenAI bet"
+    },
+    "2be80034f25f83941fdb15abdaa9663d64832c203720b62367883d29e56f685d": {
+      "ts": 1789354890.222324,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "인사이드 매각은 내부자의 자금 조달 활동일 뿐, 산업 전반의 구조적 변화를 보여주지 않습니다.",
+      "title": "Oracle’s $7.5 Billion Insider Sale — What Does It Mean?"
+    },
+    "5a23760f3c3a4d8cc64fa62f5ad828c8baf25a2382bbf677820d3d2b8ff11889": {
+      "ts": 1789354890.222684,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "주요 영업 담당자 임명은 회사 내부 인사 관련으로, 산업 전체에 미치는 영향은 미미합니다.",
+      "title": "Technetix Appoints Abhishek Sandhir as Chief Sales Officer, Europe"
+    },
+    "dc94aee0487d0a164433a67401925212759b4f7d2ab4f6170091464f54169d19": {
+      "ts": 1789354890.222907,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 랠리 정점 및 S&P 500 하락 예측은 주식 시장 분석으로, 직접적인 산업 영향보다는 투자 심리에 가깝습니다.",
+      "title": "Wall Street Warns AI-Fueled Rally May Peak With 21% S&P 500 Drop in 2027"
+    },
+    "a9d10efdd20cae9d60dc54cb64d6688a8c6f08bd22df2996db0ca85336aa1a86": {
+      "ts": 1789354890.223996,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "LNG 기술 관련 뉴스는 AI/반도체/데이터센터 산업과 직접적인 관련성이 낮습니다.",
+      "title": "Samsung Heavy Industries Showcases FLNG Technology Leadership at Gastech 2026, Secures Class Certifications and U.S. Partnerships"
+    },
+    "068d0caa0d4bb832be071e39f0560d581dc7c20c4760b135fc44f3528dfb0d79": {
+      "ts": 1789354890.224191,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "메타의 차세대 VR 기기 이미지는 작은 제품 기능 변경에 해당합니다.",
+      "title": "New images show Meta’s next-gen virtual reality device"
+    },
+    "10cb3a27bbaa55f7544e7e192cd507e9410f6d05f3994220a519642a606d7608": {
+      "ts": 1789354890.224283,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "삼성 갤럭시 이어폰 신제품 관련 정보는 단순 제품 기능 변경입니다.",
+      "title": "Samsung prepares Galaxy T1, Sport Earbuds with a hook behind the ear"
+    },
+    "675fb035a61c366649e74a2ef504caa9d2e40e53c962d888b7ca3fdbc1767393": {
+      "ts": 1789354890.224463,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "개별 종목의 순매수 동향은 시장 참여자의 투자 전략일 뿐, 산업 전체의 구조적 변화를 나타내지 않습니다.",
+      "title": "The top 1% return on equity investment was net buyers of SK Hynix, Samsung SDI, Samyang Foods, Samsu.."
+    },
+    "51477bca883e03beb817ad1e84155c19aba3418c5defbb4fb4dbc8a303f9e4ce": {
+      "ts": 1789354890.224579,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 검색 순위 및 브랜드 노출 관련 뉴스는 마케팅 및 SEO 영역으로, 산업의 핵심 동인과는 거리가 멉니다.",
+      "title": "Geolix.ai Joins Airwallex to Show Why Ranking #1 on Google No Longer Puts a Brand in the AI Answer"
+    },
+    "33420eaf8d3ef885c890483933cb6c8d8b681327c6d08994cb9d825b27ea394b": {
+      "ts": 1789354890.224768,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "SK하이닉스 기술적 분석 지표 관련 뉴스는 단기 주가 움직임 예측으로, 산업 전반의 파급력은 낮습니다.",
+      "title": "SK Hynix trapped in Ichimoku cloud near VWAP: Live levels"
+    },
+    "a1ffde794f903eb8a5a03c5c0be47c06ed19f6292284b68af77d6d580650e759": {
+      "ts": 1789354890.225068,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Oracle의 성장 동력 및 분석가 우려에 대한 기사는 개별 기업의 재무 상태 분석으로, 산업 전체의 파급력은 낮습니다.",
+      "title": "Oracle's 664 Billion Reasons to Grow, and One Shrinking Number That Worries Analysts"
+    },
+    "4cc166eef1aaf9434be4e2e75c4cdca5ff61f5b51238ec9195d102d15325c557": {
+      "ts": 1789354890.225333,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Samsung SDS의 소프트웨어 신뢰도 평가는 개별 기업의 위상에 관한 것으로, 산업 전반의 영향은 적습니다.",
+      "title": "Samsung SDS Ranked World's Most Trustworthy Software Company by Newsweek"
+    },
+    "be1b3276e4b4962ac53bed4c9e5321ac675299d27af6e4c8f5ffdd127de186f6": {
+      "ts": 1789354890.225438,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "광자 기술 기회에도 불구하고 북동 지역의 용량 제약에 대한 질문은 특정 지역의 기술 인프라 이슈로, 전반적인 파급력은 제한적입니다.",
+      "title": "Question over NorthEast's capacity constraint despite photonics opportunities coming its way"
+    },
+    "7ef84eaefc545a7bdfd2a9a09f4a6c6f04f5536130285dca99a8987b401e0b7e": {
+      "ts": 1789354890.225642,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "삼성 갤럭시 Z 시리즈의 진화에 대한 뉴스는 제품 라인업의 역사적 변화를 다루며, 산업 구조 변화와는 거리가 멉니다.",
+      "title": "Marking Eight Generations of Foldable Innovation: The Incredible Evolution of Samsung’s Galaxy Z Series"
+    },
+    "fb96f579958af8935ac71133ef8ff69dd6220301838018a9eead047fe3184210": {
+      "ts": 1789354890.225771,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "PC 할인 정보는 일반 소비자 대상 판매 정보로, AI/반도체/데이터센터 산업의 핵심 동인과는 관련이 적습니다.",
+      "title": "Excellent Ryzen 7 9850X3D PC deal with RTX 5070 Ti GPU, 2TB SSD, and 32GB DDR5 RAM gives massive $600 discount on Amazon"
+    },
+    "1eb186c5b80c64beb324cc042686c029bf7992eb8b0655613ea6f90f8e129b1b": {
+      "ts": 1789354890.225869,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "삼성 라이온즈 야구팀의 경기 결과는 스포츠 관련 뉴스로, 산업 분석과는 무관합니다.",
+      "title": "Samsung Lions' Title Hopes in Jeopardy, 5-13 Loss to LG"
+    },
+    "ee5dfe9e24ca64110423050bfb317a19f70a06114adad54cde692dc5fa5d070b": {
+      "ts": 1789354890.226281,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "OPPO 스마트폰의 AI 카메라 등 사양 정보는 단순 제품 기능으로, 산업 전반의 중요 뉴스가 아닙니다.",
+      "title": "OPPO A7 Pro 5G and A7 Pro Max 5G Malaysia pre-order release - 50MP AI Cameras, 10,000mAh Battery and more"
+    },
+    "ae870f6dc31fb783ba0da8212570e1ff96001781316eec630f104cb487a2a0f5": {
+      "ts": 1789354890.226578,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "CrowdStrike 주가 하락은 개별 기업의 주가 변동으로, 산업 전반의 중요 뉴스가 아닙니다.",
+      "title": "CrowdStrike stock heads into the open after a 2.0% drop"
+    },
+    "42c95f4af3c19b740cd20375c092ece9ae8269e71d88f22d751cd2f1786035fa": {
+      "ts": 1789354890.226661,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "FSS 직원들의 주식 투자 규정 위반 소식은 금융 규제 관련 내용으로, AI/반도체/데이터센터 산업과 직접적인 관련이 없습니다.",
+      "title": "147 FSS Employees Caught Violating Stock Investment Regulations"
+    },
+    "0b0fcab43f818e1ff03d9985c4d3a94059730dff740ee4d80b64776a80e0f97a": {
+      "ts": 1789354890.226787,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 기반 무인 주차 시스템 도입은 지역 단위의 기술 적용 사례로, 산업 전반의 파급력은 제한적입니다.",
+      "title": "Jung-gu Launches AI-Powered Unmanned Parking System — Starting in Front of Chosun Hotel!"
+    },
+    "1c9943508aba872a257efc32e9493cf2139d6530e1ab4dcdfc23cb056c9fd24b": {
+      "ts": 1789354890.227093,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "학자금 대출 상환 계획 변경 관련 뉴스는 금융 정책 및 개인 재무 관련으로, AI/반도체/데이터센터 산업과는 무관합니다.",
+      "title": "Student Loan Borrowers Scramble to Pick New Repayment Plans"
+    },
+    "a210ce04b4ab824c2d0e46ca9018e58b7d6782365b6f938eb7df1ba174385ab8": {
+      "ts": 1789354890.2272,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "송도 바이오 훈련 센터 개설은 인력 양성 관련으로, 산업 구조나 기술 동향과는 직접적인 관련성이 낮습니다.",
+      "title": "Songdo Opens Bio Training Center to Ease Talent Shortage"
+    },
+    "e0701937a054bc0b324b70630a2e559c1f77e8b971e8b2c39ff081c41784f369": {
+      "ts": 1789354890.227312,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Ecopro HN의 미국 및 대만 환경 솔루션 수주 소식은 환경 기술 분야의 사업 동향으로, AI/반도체/데이터센터와는 관련성이 낮습니다.",
+      "title": "Ecopro HN wins more environmental solution orders in U.S. and Taiwan"
+    },
+    "b6cb43fe5a93fdfe5598edfecfade5b227d0194571583a72d55986a1504c97f3": {
+      "ts": 1789354890.227389,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "채권 수익률 및 주식 시장 영향에 대한 분석은 거시 경제 및 투자 동향으로, 직접적인 산업 영향은 제한적입니다.",
+      "title": "Searing bond yields won't crash the sharemarket, just yet"
+    },
+    "c67b436ad6d7ee211d71a8cf2d5c78e9efefb5e480fdff68e8fca7c9a52eae30": {
+      "ts": 1789354890.227706,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "미국 태양광 설치량 증가는 재생 에너지 분야 뉴스이며, AI/반도체/데이터센터 산업과는 직접적인 관련성이 낮습니다.",
+      "title": "미국 태양광 2분기 11.4GW 설치…전년 대비 45% 증가"
+    },
+    "af0730c0a520d3cad41b71885869df34ed58a65f72dc78aa0e55ec2e8086b73d": {
+      "ts": 1789354890.227903,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "포토닉스 조립, 테스트, 광섬유 자동화 관련 뉴스는 특정 기술 분야의 공정 이슈로, 산업 전반의 파급력은 제한적입니다.",
+      "title": "Scaling Photonics: Assembly, Test and Fiber Automation at SEMICON Taiwan"
+    },
+    "08b2c2b7bda793b5a1471cc8a1daed8b8cf63ef26a1bc4eea8720345f4dad279": {
+      "ts": 1789354890.878774,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Jensen Huang forecasts 70% Nvidia revenue growth as AI demand expands"
+    },
+    "2d8fd3552e170ac26ee189e36c98f120d0b7d9c4c9cb3ef267b32f9ae679feba": {
+      "ts": 1789354890.878808,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "KOSPI Plunges 3% as AI Slowdown Calls Collide with Middle East Turmoil; Samsung Electronics, SK Hynix Slide in Tandem"
+    },
+    "751c4bceaf610ea7bb2353441be9bf5ada2d4925ce40ab10db08d4d9d3fca010": {
+      "ts": 1789354890.878828,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nvidia Reportedly Weighs Anthropic IPO Anchor Investment"
+    },
+    "73eae7b5ae771d67965484e24a3a3df7ea625ba7b2c52c2d0e8b7d264021bc2e": {
+      "ts": 1789354890.87885,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "South Korea's ICT exports hit a record. Without them, it ran a $6.6 billion trade deficit"
+    },
+    "66393776a30afb96b1fdea364b9d931fbdba0ddb23d2e6fb851ec660f3f27c23": {
+      "ts": 1789354890.878871,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Triazole-Based Corrosion Inhibitors Market Forecast to 2035, Driven by Water Treatment and Metalworking Demand"
+    },
+    "48c7dbfa9653e707e125d148c2929c6cb37999080bf03119511acbada1df9658": {
+      "ts": 1789354894.859004,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Amodei, Altman, Musk Urge Slower AI Development, Rattling Tech Stocks"
+    },
+    "dd134c0708cd98577fa72fb5057f75d697527a5c03487593c30a21307408fa8b": {
+      "ts": 1789354894.859028,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Weekly news roundup: HBM4 strain, Intel price hikes and the next AI infrastructure buildout"
+    },
+    "80550dce70244571cbd19188be93caba03894fbd81aeddb853bfa30d98245e54": {
+      "ts": 1789354894.859054,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "SK chairman calls for sustainable AI biz model amid investment boom"
+    },
+    "6262a16abd7ad7342833878d5cb5dea3e81ff1dcb51d0ed8010dd335de40d9b4": {
+      "ts": 1789354894.859071,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic Prepares for IPO with Positive Earnings Outlook"
+    },
+    "bbe6518b530ea17de40ca3e91f2902283221916be591d2d1bfad82b9f2c76cb7": {
+      "ts": 1789354894.859087,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Meta Funds Seven Gas Plants to Power Biggest Data Center"
+    },
+    "dce16704f14086e9d5f677f15a0b639921df1fae685c1c91f38057e8418dd984": {
+      "ts": 1789354898.885109,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Chey Tae-won Warns AI Boom Could Fizzle Without Returns"
+    },
+    "7003efbfa1ac375d2cda6022b802539acf2f6d6e32f6c64a0998148f2fb8d7f9": {
+      "ts": 1789354898.885147,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AWS: \"AI Agents Are Emerging as Transaction Actors…Transforming Corporate Cost and Organizational Structures\""
+    },
+    "d263ab4143b0f8692a8c045b63d04674f5a7dcc6ea10d13399e5c544c664fd66": {
+      "ts": 1789354898.885204,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic AI warning may hit chip demand, but trade outlook remains intact"
+    },
+    "0f35688bcd3c07406338bbdb67139b433dd9bb922c058a41e74d1a274501c43b": {
+      "ts": 1789354898.885237,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Park Hong-keun calls for preemptive large-scale AI investment, 2045 national development strategy"
+    },
+    "fe56ac8c62ec8b4af947dacd6f3fa994198cd1f917921fdd26a77aba999eac10": {
+      "ts": 1789354898.885257,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "BIMB: AI boom far from over"
+    },
+    "545956d862ffec91d6a1d78dc23b7fdea2378816667c1db034f28d43bcfdcb0d": {
+      "ts": 1789354898.885281,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI Boom Drives Tin Prices Higher, Forecast To Reach US$51,500 In 2026"
+    },
+    "fa9e9f1e5767799e3dcf23bbd39e7fa35a07dc1967699e7c03df9c9ab27689b9": {
+      "ts": 1789354898.885305,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI boom is a growth cushion for SEA amid mounting energy, tariff, and weather risks - Moody's"
+    },
+    "8adbfde6860c7d85792f8c27c136e58e9212f2e00213ec195233e6c71568d049": {
+      "ts": 1789354898.885327,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Does AI Infrastructure Revitalize the Construction Industry Chain Once Again?"
+    },
+    "d9b661f92ded55300c3c5db6b151d16e3e8c8765919baec37498caff8d4f58e9": {
+      "ts": 1789354899.47719,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Hard reset"
+    },
+    "9649be8e6bc08bdc96c5f961c442555d85e02f6dd8d6270b1ae143075e7c6918": {
+      "ts": 1789354899.477248,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI helped Pocket FM double its revenue but it can’t buy taste"
+    },
+    "1702ad79abfb1e662d05cc9ad62043ff71881840e4cdc9340ea8467b5410884c": {
+      "ts": 1789354899.477274,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Three AI Giants Rarely Call for Slowing Development; Taiwan Stocks Plunge Over 700 Points in Early Trading"
+    },
+    "fc1232856a8d5156c8757be12553117f25447b27f0407143f2ad51e310f491c1": {
+      "ts": 1789354899.477294,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Startup Nanoo Doubles Sales With Custom Coating for Paper Packaging"
+    },
+    "43bfa1f691ccb41933c66c12b492356435b68d771873511d9a21b600f3713d60": {
+      "ts": 1789354899.47731,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "South Korean Shares Fall on Middle East Risks"
+    },
+    "7cbd4f56cb412c180b09904682a51fb49c171302d8dfe8239a21c2040fcbdfb8": {
+      "ts": 1789354899.477333,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nokia’s AI Sales Doubled; Mobile Still Produces Nearly Twice the Segment Profit"
+    },
+    "0f773cecf7283ff089ad95b034872ff1a791f90f1566b0ea66ed1f5d90d02617": {
+      "ts": 1789354899.477351,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Hong Kong private equity firms seek control deals"
+    },
+    "f6b0adad95bb8555473d4615e6b75104c481053b73af1cdca2553a2437a3a5bb": {
+      "ts": 1789354899.477367,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "China's Top Major Wealthy Companies Suddenly Face Urgent Need to Borrow Money"
     }
   },
   "legacy": {
@@ -23640,6 +24078,27 @@
   },
   "archive": [
     {
+      "title": "Anthropic, 이번 분기 조정 영업 이익 발생 전망",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMGV3bGNRVEstaHRTWTJid0RqME9NUFdlQ0d5OHZnbnpKMWRBMFV5dzg4dlRxa2xhNTZrYXdSdll4TkFWY0M1T2c0YVJmSW9nV3Azd1Y5V29pZWVpVGp6WUJKWWVwc3ZQS0E3RUF0VkFxeHlSMnBjeFBicEtvcVFXRFMtbXB4OXAwMnotR1kza041UXR6dGs0akZUZUpHREpTQWxVcHR1VGRaV2FVbEE0UFBB?oc=5",
+      "source": "Bloomberg.com",
+      "published": "2026-09-13T23:41:43+00:00",
+      "summary": "FT 보도에 따르면, Anthropic은 이번 분기에 조정 영업 이익을 기록할 것으로 예상됩니다.\nAI 모델 개발 기업의 수익성 개선은 향후 연구개발 투자 확대 및 사업 확장에 긍정적인 영향을 줄 수 있으며, 투자자들에게 기업의 성장 잠재력을 가늠하는 중요한 지표가 됩니다."
+    },
+    {
+      "title": "Z.AI 현금 소진율, 홍콩 자금 조달 확대 추세 견인",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdnoyUGhrVWhNWVdXbEF2ajNtYWhGSWNTcVZjb3gyaTVQTktreS15WmdLdUNQRkRyU0luaVdSbFZiSXZlZ1lVeU5kaV9ISXVRelNfd2pQNlljbkZqSGFUdFVwWDB6QnpLOFBfMmVveGk1am9za19maF9hS3B6blZwcGM1aEJZOVA4NDhsWUg2Wm1HVmFCbGtzV1J2bTRQS1hCOUtPYWJFWkszZWFsNjVlLUdfWmtQQQ?oc=5",
+      "source": "Bloomberg.com",
+      "published": "2026-09-14T02:41:00+00:00",
+      "summary": "Z.AI의 높은 현금 소진율로 인해 홍콩에서 알리바바와 유사한 형태의 자금 조달이 늘고 있다는 블룸버그 보도입니다.\nAI 스타트업의 높은 현금 소진율은 지속적인 자금 조달의 필요성을 야기하며, 이는 투자 유치 경쟁 심화 및 재무적 부담 증가로 이어질 수 있습니다. 반면, 자금 조달 시장의 활성화는 산업 성장에 긍정적인 측면도 있습니다."
+    },
+    {
+      "title": "Vertiv, AI 인프라 확대로 데이터센터 수요 강화 전망",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNnNIbXpaQ3JmbmlDVnJhS3k3UW1LVHVEUmxjZVpCMnFrQ2FVdV9VckRJYWNidE1BUUNjaHktZnQzVTU5X2F5MXNoNkJBbVhUMFgzVjNFdDl3WURoLW9TT2FxNHliOHVzMEVGdjJCLVpkQ0o0Ni03Z0I4bTQ5aUhuY1VQbmNWQUF2NVNIMkRoMTlrVjNCcURpT3Bn?oc=5",
+      "source": "Yahoo Finance",
+      "published": "2026-09-14T02:02:00+00:00",
+      "summary": "Vertiv는 AI 인프라 파이프라인 확장에 따라 데이터센터 수요가 강화될 것으로 전망했습니다. 이는 AI 관련 하드웨어 및 서비스 제공업체에 긍정적인 신호입니다.\nAI 모델 훈련 및 추론을 위한 컴퓨팅 파워 수요 증가는 데이터센터 구축 및 확장에 대한 투자를 촉진하며, Vertiv와 같은 관련 기업의 실적에 긍정적인 영향을 미칠 수 있습니다."
+    },
+    {
       "title": "엔비디아, 앤트로픽 IPO에 100억 달러 투자 검토… 아마존, 이미 상당 규모 지분 보유",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQYUY1U1I2OXg0ZkhOdzQ4emlKOExjUDNXbzNqOHJFX0ZDbEt6QnRXT1lVNmdOZ05kbFVLX1RJRlhmcXdhT21uYTJfUmR3azE4MG5Kc1RJcUFxUFBiZjhIeUI4cjFfU0FMVXI4bndiN3pXNlJpd2R3YVRsUlA5X1pSaTFSMERoRDFMTThUdjdNS0hEZzQ?oc=5",
       "source": "Yahoo Finance",
@@ -24667,27 +25126,6 @@
       "source": "simplywall.st",
       "published": "2026-08-31T10:36:59+00:00",
       "summary": "AI 데이터센터의 전력 수요 급증이 캐터필러의 실적에 긍정적인 영향을 미치고 있으며, 최근 200억 달러 규모의 분기 실적 달성을 통해 낙관론이 형성될 수 있다. 이는 캐터필러의 사업 영역이 AI 인프라 확장에 따른 전력 공급망과 연관되어 있음을 보여준다. [분야 데이터센터,전력] [병목 악화] [유동성 유입] 왜중요: AI 데이터센터 전력 수요 증가는 전력 인프라 관련 기업의 실적 개선 가능성을 시사하며, 이는 데이터센터 확장과 관련된 투자 기회를 탐색하는 데 중요한 단서가 된다."
-    },
-    {
-      "title": "AI 전력 수요 급증에 전력망 투자 확대, 가온전선, 미국 대형 AI 데이터센터에 2,000억 규모 수주",
-      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxQQ2ZjVUZMT0NuRDJwakVHR0NsYUpERC0zcmgwWmdTeGg3R1FtX3BWUVhSQmFLY21zWnJsTWhpSkZKXzdlY25JTVRNZU9laEhJWUxRcUpHZmNhV19zUjlNdXp3Qzd6TGFvWDhYQWNfa2IxdXlBRTJWZW8xSFBwN2dMQXhlZDZpTlpFei1EN0ZVMUhoWGhBejBVYnNvajBrUkI5ZVNPaTNFR2dscG5Pa1lkeG40dlBhM3RMcEdKSWZvN0Y4RllsSnJ2QXV1SGFhcExrQVdxV29pc093cVFZcTlRWVZkWDc1YjdtTzJCQzd6aEtjN1dzMGlJblpDSUVuTGFvU0dBdURDbWhaVlNkYUhaSmZQYjdjUGdJY1pWeFdRRGl0WXVVUlBacDJLTW1TMm9OWHpSZUM0VVFLTFdaN3ZWdG4ya3lRdw?oc=5",
-      "source": "아이씨엔매거진",
-      "published": "2026-08-31T09:22:58+00:00",
-      "summary": "가온전선이 미국 대형 AI 데이터센터 건설 프로젝트에 2,000억 원 규모의 전력 케이블 공급 계약을 체결했다. 이는 AI 데이터센터의 전력 수요 증가에 따른 전력망 인프라 투자 확대 추세를 반영한다. 이번 수주는 가온전선의 해외 시장 진출 확대와 AI 관련 사업 성장에 긍정적인 영향을 미칠 것으로 예상된다. [분야 전력,데이터센터,AI수요] [병목 악화] [유동성 유입] 왜중요: AI 데이터센터의 전력 수요 증가로 인한 전력망 병목 현상이 심화되고 있으며, 이에 따른 관련 기업의 수주 확대 가능성을 보여주는 사례이기 때문이다."
-    },
-    {
-      "title": "일론 머스크, AI 전력 수요 급증에 스페이스X 자체 가스터빈 부품 생산 계획 밝혀",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZkZQdS1RVzRlRXFmamNBUE55czVjS2ZyZ1hMcW1KcmNNb25EaUFfR1p6ZVd6SUpSMXk1UllJTVloVUlCQ3JkSVIyME1KbG1mSnJQY0haeUs0dVotTzNubGwtV3dqZl9zbG9DNWpzN0NEUUdIY1ZMV2tjZV9MMlhkdU9pelZTQjJScXdkMnFNUkpmY2ZIU2JuYnRn?oc=5",
-      "source": "Business Insider",
-      "published": "2026-08-31T11:10:41+00:00",
-      "summary": "일론 머스크는 스페이스X가 AI 전력 수요 급증에 대응하기 위해 자체적으로 가스터빈 부품을 생산할 것이라고 밝혔다. 이는 AI 데이터센터의 전력 수요 증가가 기존의 전력 인프라 공급 능력을 초과하고 있음을 시사한다. 스페이스X의 자체 생산 계획은 전력 공급 병목 현상 심화에 대한 우려를 반영한다. [분야 전력, 데이터센터, AI수요] [병목 악화] [유동성 중립] 왜중요: AI 전력 수요 급증으로 인한 전력 공급 병목 현상이 심화될 수 있음을 보여주는 신호이다."
-    },
-    {
-      "title": "극심한 전력 수요 위기 속 일론 머스크, 가스터빈 블레이드 제조 시작 - 36Kr",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1JXzFqNXhpZzFSTXdLQkJNcTNiNEltSGF3SlVQdXFVbFhzQzhEb1NPU2kwSnRXSEkyMUd0bHhQV2NScmplZ1RIOVB0cHVwbVpuTTBZ?oc=5",
-      "source": "36 Kr",
-      "published": "2026-08-31T09:45:07+00:00",
-      "summary": "일론 머스크가 극심한 전력 수요 위기에 대응하기 위해 가스터빈 블레이드 제조 사업에 착수했다. 이는 데이터센터 증가로 인한 전력 수요 급증과 기존 전력망의 한계를 보여주는 신호다. [분야 전력,데이터센터] [병목 악화] [유동성 중립] 왜중요: 데이터센터 전력 수요 증가로 인한 전력 공급 병목 현상이 심화될 수 있음을 시사한다."
     }
   ]
 }
