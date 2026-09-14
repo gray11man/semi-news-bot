@@ -495,6 +495,34 @@
       "source_published": "",
       "source_modified": "",
       "message_id": 4708
+    },
+    "a902adfaba32e4dc64816044f30059e146e0a053d056ef55995994dd465ad7ba": {
+      "ts": 1789430101.623263,
+      "title": "Broadcom Drops Over 4% as $21.7 Billion AI Forecast Meets Slowdown Fears",
+      "fact": "브로드컴의 AI 관련 매출 예상치 217억 달러 발표 후 주가가 4% 이상 하락했습니다. 이는 AI 하드웨어 시장의 둔화 가능성에 대한 투자자들의 우려를 반영합니다.",
+      "source": "Yahoo Finance",
+      "rss_published": "2026-09-14T21:00:15+00:00",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRFE3QmpmVUVSUTJCZlFQWE5NSlcxMWlEeXN6QjVMbXQxdTlHOGRCVG1pbnlrUFpGR3Y0MnVPb3JFMnYwVmhyLTZFRmZmdHRabXlnMUN1MXZ4Y0RNNGtabFlVX0d2UUVOUjJkcmdzWVRVS3hTTGd1amNQMHNCb3loenJsYkFDYVFnY0NqZC1uRXNJUQ?oc=5",
+      "resolved_url": "",
+      "event_key": "Broadcom|주가하락|AI 전망치|2026-09-14",
+      "new_fact_date": "2026-09-14T21:00:15+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4716
+    },
+    "9e76aa2c3f7f6e45bffe2248a94aa46d593e7dd83d89f9a08497155c2f30cb4c": {
+      "ts": 1789430103.428549,
+      "title": "MindWalk Reports 21% Revenue Growth and Gross Margin Expansion to 59% in Fiscal First Quarter 2027",
+      "fact": "마인드워크는 회계연도 2027년 1분기에 전년 동기 대비 21%의 매출 성장을 달성했으며, 총마진율은 59%로 확대되었습니다. 이는 AI 시장에서의 견조한 수요와 수익성 개선을 나타냅니다.",
+      "source": "Business Wire",
+      "rss_published": "2026-09-14T20:56:00+00:00",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNVnJ0eWZhZGo4ZmdKWWY0NEgtQVp6Yzc4S05UMTFSXzl3THNYWFJQLUJwc0FIcFZleUpHaFpWemZCMngyb0dmaGljZVoxQUJJQ2x1VjVEX09qcUFzSTdTSWcxRUJxZUNDeWZDMFNESEhINjZPT0hVS0hxQnRMTjVIMmFfeHN6YTJvVWhwMmNGOXN0aFZSd0xpU2xxMGJQRER2SnJ0STJsTHlBekh6eEJMMUlZdERINGwxclJ2OGhpaXF2Zm43UGpzZFJ5NEFFN3ZVNHBodmNTT3JwZ2Z4a2xIaHRxNHppbkps?oc=5",
+      "resolved_url": "",
+      "event_key": "MindWalk|실적발표|매출성장,총마진확대|2027Q1",
+      "new_fact_date": "2026-09-14T20:56:00+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4717
     }
   },
   "pending": {},
@@ -23490,6 +23518,408 @@
       "policy": "ai-industry-v4.4-fresh4h-critical-events",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "Marvell's 1.6T Optical Transceiver Links Long-Distance Data Centers"
+    },
+    "fb32148343ccb8c9f52fbf1d1875ab4f944ea1a6003fe39163e1cfd2779040a6": {
+      "ts": 1789430074.460019,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Goldman Sachs preview on yen and Nikkei risk is about currency and stock market trends, not core AI/semiconductor industry data.",
+      "title": "Preview: Goldman Sachs sees yen and Nikkei risk building on faster BoJ rate path"
+    },
+    "b02c3c784e4b22958b6b18d3a46a4b34abdc90e4854b040ea714987fb4bac25b": {
+      "ts": 1789430074.460206,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "IREN stock performance and analyst ratings are stock market evaluations, not primary industry data.",
+      "title": "IREN Stock Slips, But A Top Wall Street Bank Is Bullish With Double-Upgrade And 50% Upside"
+    },
+    "c5ff928c5f03c32ea4fda2d3189072ec656195e405afef4941185b2738d66993": {
+      "ts": 1789430074.460444,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "This is a summary of market movements, potential restrictions due to data concerns, and FOMC meeting. It mixes market reactions with regulatory possibilities but lacks concrete new industry figures or structural changes.",
+      "title": "[Morning Flash] Semiconductor sell-off and software buying accelerate; NVIDIA and Palantir face potential AI usage restrictions amid data concerns. FOMC meeting starts today; long-term interest rates briefly exceed 5%"
+    },
+    "69b85edf4ba2a7a24e4a5706a648aff8f3b7aa3129265579318c75c9ac3a58da": {
+      "ts": 1789430074.460596,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Concerns raised by Anthropic CEO's plans affecting other AI model builders are about competitive dynamics within AI models, not core industry infrastructure or hardware.",
+      "title": "Anthropic CEO’s plan raises concerns for Qwen, Llama, Mistral builders"
+    },
+    "6aafbc7159ffa675e9d2ba70722d34fa135e9ac70f644a378e27af562e4c112d": {
+      "ts": 1789430074.460675,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Google DeepMind's WeatherNext 3 is a specific application for weather forecasting, not a core AI/semiconductor/data center industry development.",
+      "title": "Google DeepMind Launches WeatherNext 3 For Wind And Solar Grid Operators"
+    },
+    "17785750152e8c5846f72420069d7f05379696357af79212484c5350266d8cb8": {
+      "ts": 1789430074.460746,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "OpenAI acquiring AI camera tech for device plans is a product development step, not a major industry structural change or data point.",
+      "title": "OpenAI Accelerates Device Plan With AI Camera Tech Acquisition"
+    },
+    "5bbb445fc3565fa0cdacc0f2b465ae5674cd73e5a47cfa432cb25aa1cef3c22c": {
+      "ts": 1789430074.460824,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Anthropic launching AI tools for financial advisers is a specific software application, not a core industry development in AI hardware or infrastructure.",
+      "title": "Anthropic launches AI tools for financial advisers By Investing.com"
+    },
+    "5996a55d99da29394237d077cb7e16c5061a8cd838fee3f998a2a8133d483e43": {
+      "ts": 1789430074.460944,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "OpenAI's IPO delay and Anthropic impact are speculations on company events, not concrete new industry data on structure, demand, or supply.",
+      "title": "OpenAI’s 2026 IPO Delay: Anthropic Impact"
+    },
+    "1cc77395c53bd1ba9a609cce78d20f698926e85524a126c6bf4f682726756f01": {
+      "ts": 1789430089.260723,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "주가 변동, 베타 테스트, 고객 집중도 언급은 구체적인 수치나 산업 구조 변화를 담고 있지 않아 제외합니다.",
+      "title": "Top 20 in Trading Volume | Google, Meta, and Palantir rose 3% against the market trend; Apple's Siri AI has officially entered public beta testing; NVIDIA's customer concentration is rapidly increasing; Tesla's Roadster, delayed for ten years, will debut next mon"
+    },
+    "c93cc3383a045346f8206fe1f99c1a0baa89b607b20180d1c183a0bc4dc1a7c5": {
+      "ts": 1789430089.260899,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "로열티 펀딩에 대한 일반적인 언급으로, AI 반도체 산업과 직접적인 연관성이 낮습니다.",
+      "title": "RPRX: Early target achievement and global expansion fuel strong growth and innovation in royalty funding"
+    },
+    "8a80bad323e91dfefb1d534dcb2f3a717c20681d3bae2a8224484921035463df": {
+      "ts": 1789430089.260991,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "ABL 증액 및 DOE 융자 인출은 해당 기업의 재무 상태를 나타낼 뿐, AI 반도체 산업의 주요 동향과는 거리가 멉니다.",
+      "title": "Calumet, Inc. (NASDAQ:CLMT) Upsizes ABL to $600M; MRL Draws Final $34M DOE Loan"
+    },
+    "f25e1f4e8d41d15db887f40fdabcd0e38bcd81b8339ed47ceb12fe3410778054": {
+      "ts": 1789430089.261136,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 둔화에 대한 언급이 있지만, 주식 시장 전반의 전망에 대한 내용으로 구체성이 부족합니다.",
+      "title": "Unafraid of oil prices, long-term debt, and rate hikes! Multiple Wall Street institutions remain bullish on US stocks; Yardeni downplays concerns over AI slowdown"
+    },
+    "537aa7d042f4bbc6f6c9639d85cf718ecba379db65db744f66f2c9419a3c2520": {
+      "ts": 1789430089.261218,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI의 사이버 보안 활용 가능성을 언급하나, 신규 기술이나 구체적 산업 동향과는 거리가 있습니다.",
+      "title": "When AI Finds the Flaws Humans Missed: The Coming Upheaval in Cybersecurity"
+    },
+    "d2f21055d6c485e16a86ab47f04b7fcd007b13738a8232432fd3920de15b93e9": {
+      "ts": 1789430089.261335,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "의료 분야 AI 솔루션 출시로, 반도체 산업과는 직접적인 관련성이 낮습니다.",
+      "title": "Abridge Enters the Mid-Revenue Cycle with Pre-Bill AI for CDI and Coding Teams"
+    },
+    "1e0821e4cf5c5f15307845b1ed3e8ca1f8d5dd667f7bf298192c50f9357b6dc4": {
+      "ts": 1789430089.261583,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "특정 자산운용사의 인텔 주식 매수는 개별 기업의 투자 동향으로, 산업 전반에 대한 영향은 제한적입니다.",
+      "title": "Revere Asset Management Inc Invests $1.08 Million in Intel Corporation $INTC"
+    },
+    "c712e405867f613e975de1011f5bc8d1e99215c1809d0338479245c3fd6dca9a": {
+      "ts": 1789430089.261989,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Sunbelt Rentals의 매출 전망 상향 조정은 해당 기업의 실적 관련 내용으로, AI 반도체 산업과는 직접적인 연관성이 낮습니다.",
+      "title": "How Investors Are Reacting To Sunbelt Rentals Holdings (SUNB) Raised Revenue Outlook"
+    },
+    "d52161334c115b097a15780f31cda081bbfec1d73bee214f294a0f822173515d": {
+      "ts": 1789430089.262058,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Hyliion의 데이터센터 계약 관련 소송 종료는 개별 기업의 법률 문제로, 산업 전반의 동향과는 무관합니다.",
+      "title": "Hyliion Investors End Suit Over Data Center Deal"
+    },
+    "f9252bd2682c7a0704d802e150422e0aabdae9e0774ca170f081485f5c3c0721": {
+      "ts": 1789430089.262411,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 옹호론자와 데이터센터 반대론자 간의 관계에 대한 논평으로, 구체적인 산업 동향과는 거리가 있습니다.",
+      "title": "R-E-S-P-E-C-T is the only way for AI advocates to deal with data center haters"
+    },
+    "4fd3137986183d6bde2c58c44f561ef5ce5baf827b39bad2762e32602f131981": {
+      "ts": 1789430089.263139,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "SEMICON India 2026 행사 개최는 반도체 산업 행사로, 구체적인 산업 동향이나 새로운 뉴스가 아닙니다.",
+      "title": "PM Narendra Modi to inaugurate SEMICON India 2026 on September 17 in New Delhi"
+    },
+    "c21919af225aed34ecced5947b6254c016ddbb519e6259ba0dcb2445c6f60a14": {
+      "ts": 1789430089.263242,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "영업 지원 AI 솔루션 출시는 특정 기업의 제품 출시로, AI 반도체 산업의 핵심 동향과는 거리가 있습니다.",
+      "title": "Perficient Launches Agentic Front Office Solution, Proven to Reduce Sales Cycle Time by 20%"
+    },
+    "dd05a8ff29d61ea4b522c459fad3deb3fc370a9da81a7840b5d109733b5bf746": {
+      "ts": 1789430089.263509,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "트럼프의 AI 위험에 대한 언급은 정치적 발언으로, 구체적인 산업 동향이나 수치와는 관련이 없습니다.",
+      "title": "Trump calls AI risks a 'hoax,' says there is a 'SICK conspiracy' against AI and data centers"
+    },
+    "878b90f382a73365576699d61cb5a4ec3769f4a12e0edabf5eb69ff8d213ddc9": {
+      "ts": 1789430089.263707,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "인텔 주가 하락은 개별 기업의 주가 변동으로, 산업 전반의 동향과는 거리가 있습니다.",
+      "title": "Intel Stock Drops 5%—What Triggered the Sudden Selloff?"
+    },
+    "0bd0d562275ed6de19a5c78ca133e0534e6d3ec713fdec212c0843cd4c9e33a2": {
+      "ts": 1789430089.263998,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Meta의 AI 에이전트 상업화 가능성은 일반적인 AI 응용 분야이며, 구체적인 수치나 산업 구조 변화를 담고 있지 않습니다.",
+      "title": "Meta’s AI Agents Are Coming for Your Shopping Cart. These ETFs Could Cash In"
+    },
+    "8359b23efdd312e1b2ce307aec4676d45c700232686f25eb7ec418a7e2be6c22": {
+      "ts": 1789430089.26413,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI에 대한 부정적 전망을 다룬 논평으로, 구체적인 산업 동향이나 수치를 담고 있지 않습니다.",
+      "title": "COMMENTARY: Trading Day: AI-pocalypse now"
+    },
+    "ec0aa3ea2744cdcc6d0e2f444e8ed5c902dcf5e2d829f6cd14288c9d1f4cfacf": {
+      "ts": 1789430089.264377,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "GReminders의 MCP 서버 출시는 특정 기업의 제품 출시로, AI 반도체 산업의 핵심 동향과는 거리가 있습니다.",
+      "title": "GReminders Launches MCP Server, Delivering Meeting Operations and Household Data Across Claude, ChatGPT, and Copilot"
+    },
+    "8fbd78a1e7b0d6fdd8f9f179eacb55278ad602964e6cbaa83c3cc3818af06766": {
+      "ts": 1789430089.264452,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "삼성 갤럭시 S24 구매 가치에 대한 질문은 소비자 제품 리뷰로, AI 반도체 산업과는 직접적인 관련이 없습니다.",
+      "title": "Is The Samsung Galaxy S24 Still Worth Buying?"
+    },
+    "6894a021dd6bf1f01e1d2c3c5d788125931d0fa46fce3350f7b4300691db2426": {
+      "ts": 1789430089.264605,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "퀄컴 스냅드래곤 8 Elite Gen 6의 생산 관련 추측은 개별 제품의 생산 계획이며, 반도체 산업 전반의 주요 동향으로 보기 어렵습니다.",
+      "title": "Qualcomm's Snapdragon 8 Elite Gen 6 may be made in part by Samsung - GSMArena.com news"
+    },
+    "ae8f106a816beceef88363b83eedd85e585fe40be8551f89735625dfcb329831": {
+      "ts": 1789430089.264721,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "가장 혁신적인 기업 목록은 일반적인 순위 발표이며, 구체적인 신규 수치나 산업 구조 변화를 담고 있지 않습니다.",
+      "title": "The 100 most innovative companies of 2026: from NVIDIA and OpenAI to Eli Lilly and SpaceX"
+    },
+    "f0ffdc9c19b3da502233e70de18e83b4890b4b934e358f18419451375fff6cbc": {
+      "ts": 1789430089.264978,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Nebius Group의 주가 하락은 개별 기업의 주가 변동으로, 산업 전반의 동향과는 거리가 있습니다.",
+      "title": "Nebius Group (NASDAQ:NBIS) Stock Price Down 5.5% - Time to Sell?"
+    },
+    "fcfa63539d552132c288f164b5f7400def64edd715539c0e22cc9dd5176f7971": {
+      "ts": 1789430089.265056,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "IREN의 주가 하락은 개별 기업의 주가 변동으로, 산업 전반의 동향과는 거리가 있습니다.",
+      "title": "IREN (NASDAQ:IREN) Trading Down 1.5% - Time to Sell?"
+    },
+    "5991699c73be5f59815077a992d71515aaa1ff580d95fbf0e1b8eef51a77bd7b": {
+      "ts": 1789430089.265135,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "CoreWeave의 주가 하락은 개별 기업의 주가 변동으로, 산업 전반의 동향과는 거리가 있습니다.",
+      "title": "CoreWeave (NASDAQ:CRWV) Shares Down 6.8% - Should You Sell?"
+    },
+    "e01797a023a4eb45311bc1276cbaa867dcf2423c736de4946116545d36738a95": {
+      "ts": 1789430089.265429,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "CSA Labs의 OpenAI 테스팅 에이전트와 공급망 공격 연관성은 보안 이슈이며, AI 반도체 산업의 직접적인 동향과는 거리가 있습니다.",
+      "title": "CSA Labs Links OpenAI Testing Agents to RubyGems Supply Chain Attack"
+    },
+    "fb4405bd9fa6383e76f9ffb4cc4c81d97566ad15546f98ab17fc46c454c64c36": {
+      "ts": 1789430089.265715,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Bidbrain.ai 스핀오프 회사는 디지털 캠페인 워크플로우 통합에 관한 내용으로, AI 반도체 산업과는 직접적인 관련이 없습니다.",
+      "title": "Indie Agency 100% Digital Launches Spin-off Company Bidbrain.ai To Unify Digital Campaign Workflows"
+    },
+    "5b82a56b6385374db17d45941189463cdc3d6f18c2f23750c4798942f23f334b": {
+      "ts": 1789430089.265965,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Zaram Technology의 유럽 통신 칩 설계 계약 종료는 개별 기업의 계약 관련 사항으로, 산업 전반의 동향과는 거리가 있습니다.",
+      "title": "Zaram Technology Ends European Telecom Chip Design Contract"
+    },
+    "1ae3936af43734b8bcad34e3e2423646141f140a86201ae23a36824aa9bea423": {
+      "ts": 1789430089.266138,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Nara Health의 자금 조달은 헬스케어 IT 분야로, AI 반도체 산업과는 직접적인 관련이 없습니다.",
+      "title": "Nara Health Secures $14M for Third Party Administration Platform"
+    },
+    "244037f57aabbbadbcaef26256142b26ba75bffdb616facea045783bba4c4cbe": {
+      "ts": 1789430092.775706,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "기사 내용은 AI 및 양자컴퓨터 연구개발 기업 '비드래프트'를 소개하지만, 구체적인 산업 구조, 수급, 가격, 생산, 재고, CAPEX, 계약, 데이터센터/전력, 자금조달, 정책, 핵심 경영진의 새 수치, 프런티어 모델/기술 변화에 대한 정보가 없어 산업 중요 뉴스로 보기 어렵습니다. \"서울AI허브 2027\"은 행사 이름으로 보입니다.",
+      "title": "AI에서 양자컴퓨터까지… AI 연구·개발 딥테크 기업 ‘비드래프트’ [서울AI허브 2027]"
+    },
+    "bd4cb6f369841df21973d01b65a9c59b59db3ada50194e64bc5fa9bcd1668d88": {
+      "ts": 1789430092.775977,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 속도 조절론으로 인한 반도체 급락 및 나스닥 하락은 주가 및 시장 심리 변화를 다루고 있어, 구체적인 산업 지표 변화나 주요 기업의 생산/수율/재고/CAPEX 등 핵심적인 산업 정보가 부족합니다.",
+      "title": "AI 속도조절론에 반도체 급락... 나스닥 0.56%↓ [뉴욕증시]"
+    },
+    "19c60e33c5c0c80f7d9355c7e70b0bef1845616bfdfdb2a7de15ff49454ae5a3": {
+      "ts": 1789430092.776086,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "반도체 수출 호조가 소비자 심리 및 연관 산업에 미치는 영향을 언급하지만, 구체적인 수치나 반도체 생산/수율/재고/가격 등 핵심 산업 지표에 대한 상세 정보가 부족하여 산업 중요 뉴스로 보기 어렵습니다.",
+      "title": "Semiconductor export boom fails to lift consumer sentiment, linked industries"
+    },
+    "4031184a2dcb4bf321734726fd7120272fa9650c98b50c133937877407b267de": {
+      "ts": 1789430092.776262,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Cohere 경영진의 발언은 AI 규제 및 시장 질서에 대한 의견 제시로, 구체적인 산업 구조, 수급, 가격, 생산, 재고, CAPEX, 계약, 데이터센터/전력, 자금조달, 정책, 핵심 경영진의 새 수치, 프런티어 모델/기술 변화에 대한 정보를 포함하지 않습니다.",
+      "title": "Cohere’s Gomez says Silicon Valley giants shouldn’t get to set the rules for AI"
+    },
+    "931b3b69ea6930527358fbc8a1fe2514e7ff5295e89fe041c2886c6278d49c1e": {
+      "ts": 1789430092.776428,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 기술 개발 속도 조절에 대한 정치권의 반응은 규제 및 정책 방향에 대한 논의로 볼 수 있으나, AI 산업 자체의 구조, 수급, 가격, 생산, 재고, CAPEX, 계약, 데이터센터/전력, 자금조달, 핵심 경영진의 새 수치, 프런티어 모델/기술 변화에 대한 직접적인 정보는 포함하지 않습니다.",
+      "title": "Vance fires back after AI honchos demand to ‘slow the pace’ of tech development: ‘Bit of a Trojan horse’"
+    },
+    "7fb9ab519496f5b02c814f62d7aa690a3d879993fe9ddd947eea08de4b6a1db2": {
+      "ts": 1789430093.373703,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "TSMC to Adopt High NA EUV in 2030; Samsung and SK Hynix to Begin Volume Production in 2028"
+    },
+    "902d2ff5d0f8fd98d161994df86e95cec04c6ad8dfb214f286a15bc8f49e4c29": {
+      "ts": 1789430093.373735,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Thailand Approves $29 Billion Investment Wave as Data Center Demand Surges"
+    },
+    "170d7092c77ab7131fafb14587774d1157e1bda9c6ba807acb9f46da2f7196d1": {
+      "ts": 1789430093.373767,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic’s AI economic impact model maps $30 trillion US economy, forecasts impact through 2030"
+    },
+    "faddb61928e087923a27fc923844714cdf585c35fa45fcd87f7939caa8c2d0b3": {
+      "ts": 1789430093.373788,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "What Does ASML Holding (ENXTAM:ASML) Sold Out EUV Capacity Through 2027 Mean?"
+    },
+    "a033c49101c2fc9396c04882a7083839b046c4fd1732f74becea32a10f0eb23e": {
+      "ts": 1789430093.375346,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "SOBI: Upgraded guidance and robust launches set the stage for continued growth and portfolio expansion"
+    },
+    "bc13c96b42a4d1de065283cb6b1e8b022867376a8402fac7169a46b45d5bae5d": {
+      "ts": 1789430093.375371,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Apollo at Barclays conference: ai financing and private credit push"
+    },
+    "94406ebda263324695e3e337a214b84816e8342a15a7d00931a0e9b8975f1ac0": {
+      "ts": 1789430096.817462,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "DRAMATIC EXPANSION: Bell AI Fabric Expansion Could Bring More Than $50 Billion in Investment to Saskatchewan"
+    },
+    "46088ec05eb7a227ecc05c9501255a1b007b258d94d3fd4a01498a93832988e5": {
+      "ts": 1789430096.817491,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "ASML $200 million EUV sold out through 2027, $400 million High-NA rising"
+    },
+    "add1874134112ed734f7e8e35b49a9f193b83c44d0dba202e05cf3579326b0e9": {
+      "ts": 1789430096.817517,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CLSK: AI data center investment is accelerating, fueled by real demand and strategic industry shifts"
+    },
+    "b5f22acc9f3e1d8460e9b7c601e7c7420d5cced6dc50dfd472162d8a1890872d": {
+      "ts": 1789430096.817537,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bitdeer secures 10-year AI data center deal in Malaysia"
+    },
+    "472b7631948c7e08c2f27ebc984d5a12abfac05894212a1b0ccce3df7b5309d9": {
+      "ts": 1789430096.817562,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Law firm Morgan & Morgan touts $1 billion AI investment, plans to sell platform to other firms"
+    },
+    "0c20f6d75b542cc0f99560236d9f18f6c142c51a2efcb592d23e330f76cf0b95": {
+      "ts": 1789430096.817585,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Broadcom Earnings: Can $58 Billion in AI Revenue Justify the semiconductor rise?"
+    },
+    "5e81adf801807b08a3a6841b768403c0011056343826555521ed17a58161df96": {
+      "ts": 1789430096.817622,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Low vacancy, strong fundamentals: Korea’s data center market ripe for investment, says Cushman & Wakefield"
+    },
+    "66c3722657ea45a4893daf57144d134641bd4bf77a5e607b5297a7a67268fe26": {
+      "ts": 1789430098.256616,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CoreWeave draws $2.6B AI loan at SOFR +5.5%, triple Nebius's rate"
+    },
+    "8957ec6487f7e37d248cffd5bc6ba117f6b43d66c1c87f6c807f5539215325f1": {
+      "ts": 1789430098.256641,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bell plans expansion of Sask. AI data centre, making it largest private investment in province's history"
+    },
+    "ff711331f8c4883801ef298bae68b1249e748f9972e3ed915dd9021f3f9febc4": {
+      "ts": 1789430098.256671,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Single Largest Private Sector Capital Investment in History of Canada Through Bell AI’s Saskatchewan Expansion"
+    },
+    "e31e6e7de4d44c74a9b64308509c763693f925d375f18e73f86feb19ea99f67f": {
+      "ts": 1789430098.256691,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bell AI data centre in Sask. expanding, set to bring in over $50B in investment"
+    },
+    "eaf244a30bf15df0e79b62c5c8908b9a498012b17a1f755c320daa98fefbdd92": {
+      "ts": 1789430098.256707,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bell Canada announces major Sask. AI data centre project expansion"
+    },
+    "8e740dd955185307f84abe915f9f8dcc9e67af44fabe8a8c4576059d4e994b57": {
+      "ts": 1789430098.256725,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CoreWeave, Nebius emerge as top AI infrastructure providers amid $104B backlog"
+    },
+    "fee4a81f7abc8f9ae30ad281a97301569488b29d0c4f7485e7328593123bd965": {
+      "ts": 1789430100.783279,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CP NewsAlert: Bell AI data centre expansion in Sask. announced at investment summit"
+    },
+    "aee0f3e763ded6b5d57a8d09219eccb7cf4625f60f1477debd9749f721b2221c": {
+      "ts": 1789430100.783332,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Samsung edges SK hynix as HBM4 lifts Korea chip earnings outlook - CHOSUNBIZ"
+    },
+    "046fea76e6098f0a725c2ca10bbe0d884a1ff759c4ff7af51c362805e62ac2ab": {
+      "ts": 1789430100.783359,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "SK hynix deepens TSMC logic ties as it targets 3D DRAM in South Korea - CHOSUNBIZ"
+    },
+    "9e592458328e98edaf5a24b0b3b1fbac08f920f5482feaa828cd22ee43236757": {
+      "ts": 1789430100.783388,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Zankore Builds 100 MW NVIDIA AI Infrastructure to Strengthen Indonesia’s AI Cloud"
+    },
+    "8da8dc53736b97994fcfab5593793b26162f69e429c103c12ed3fdfbab9ba34a": {
+      "ts": 1789430100.783411,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Government of Canada welcomes major new investment in sovereign AI infrastructure in Saskatchewan"
+    },
+    "1d6d228c626b1f7fd6cdaa7bd3272cbced1d8dbd059b01da8858c3c180590b93": {
+      "ts": 1789430100.783428,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Morgan & Morgan Plans $1B In AI Spending, Unveils Platform"
+    },
+    "247173fbe3a122fa9bf8b0a2cd903cd61c8d5c8d7abb01a65e73c105dd37cea9": {
+      "ts": 1789430100.783449,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Growing outward: Meta announces expansion of Eagle Mountain data center facility, contributions to community"
+    },
+    "58da55e65e449d2cbc3cbd639c93b88cd12e8ddca6484bd6f59f50ba4a53635d": {
+      "ts": 1789430100.783465,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "NIMBY Pushback to Data Centers a Boon for Bloom Energy, CEO Says"
     }
   },
   "legacy": {
@@ -26604,6 +27034,20 @@
   },
   "archive": [
     {
+      "title": "마인드워크, 회계연도 1분기 매출 21% 성장 및 총마진 59%로 확대",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNVnJ0eWZhZGo4ZmdKWWY0NEgtQVp6Yzc4S05UMTFSXzl3THNYWFJQLUJwc0FIcFZleUpHaFpWemZCMngyb0dmaGljZVoxQUJJQ2x1VjVEX09qcUFzSTdTSWcxRUJxZUNDeWZDMFNESEhINjZPT0hVS0hxQnRMTjVIMmFfeHN6YTJvVWhwMmNGOXN0aFZSd0xpU2xxMGJQRER2SnJ0STJsTHlBekh6eEJMMUlZdERINGwxclJ2OGhpaXF2Zm43UGpzZFJ5NEFFN3ZVNHBodmNTT3JwZ2Z4a2xIaHRxNHppbkps?oc=5",
+      "source": "Business Wire",
+      "published": "2026-09-14T20:56:00+00:00",
+      "summary": "마인드워크는 회계연도 2027년 1분기에 전년 동기 대비 21%의 매출 성장을 달성했으며, 총마진율은 59%로 확대되었습니다. 이는 AI 시장에서의 견조한 수요와 수익성 개선을 나타냅니다.\n마인드워크의 실적 성장은 AI 시장 내 특정 분야의 성장세를 보여주며, 관련 기술 및 서비스 제공업체의 잠재적 투자 기회를 시사합니다. 총마진 확대는 비용 효율성 또는 가격 경쟁력 강화를 의미할 수 있습니다."
+    },
+    {
+      "title": "브로드컴, AI 전망치 하락과 둔화 우려로 4% 이상 하락",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRFE3QmpmVUVSUTJCZlFQWE5NSlcxMWlEeXN6QjVMbXQxdTlHOGRCVG1pbnlrUFpGR3Y0MnVPb3JFMnYwVmhyLTZFRmZmdHRabXlnMUN1MXZ4Y0RNNGtabFlVX0d2UUVOUjJkcmdzWVRVS3hTTGd1amNQMHNCb3loenJsYkFDYVFnY0NqZC1uRXNJUQ?oc=5",
+      "source": "Yahoo Finance",
+      "published": "2026-09-14T21:00:15+00:00",
+      "summary": "브로드컴의 AI 관련 매출 예상치 217억 달러 발표 후 주가가 4% 이상 하락했습니다. 이는 AI 하드웨어 시장의 둔화 가능성에 대한 투자자들의 우려를 반영합니다.\nAI 칩 제조사인 브로드컴의 주가 하락은 AI 하드웨어 수요 둔화 또는 시장 경쟁 심화 가능성을 시사하며, 관련 공급망 기업들의 투자 심리에도 영향을 줄 수 있습니다."
+    },
+    {
       "title": "Anthropic, 이번 분기 조정 영업 이익 발생 전망",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMGV3bGNRVEstaHRTWTJid0RqME9NUFdlQ0d5OHZnbnpKMWRBMFV5dzg4dlRxa2xhNTZrYXdSdll4TkFWY0M1T2c0YVJmSW9nV3Azd1Y5V29pZWVpVGp6WUJKWWVwc3ZQS0E3RUF0VkFxeHlSMnBjeFBicEtvcVFXRFMtbXB4OXAwMnotR1kza041UXR6dGs0akZUZUpHREpTQWxVcHR1VGRaV2FVbEE0UFBB?oc=5",
       "source": "Bloomberg.com",
@@ -27638,20 +28082,6 @@
       "source": "Supply Chain Dive",
       "published": "2026-08-31T14:30:36+00:00",
       "summary": "엔비디아는 AI 칩 공급 부족으로 인해 매출 성장이 제한되고 있다고 발표했다. 이는 AI 인프라 구축에 필요한 핵심 부품의 공급망 병목 현상을 시사한다. 회사는 이러한 공급 제약이 단기적으로 매출에 영향을 미칠 수 있다고 언급했다. [분야 AI,GPU,HBM,데이터센터] [병목 악화] [유동성 중립] 왜중요: AI 칩 공급 부족은 GPU 및 관련 부품의 병목 현상을 심화시키고, AI 캐펙스 지속성에 대한 우려를 제기할 수 있다."
-    },
-    {
-      "title": "엔비디아, 미디어텍에 35억 달러 투자…AI 인프라, PC, 자동차 전반 파트너십 확대",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQaVMyMkRFSTl5amhwYmJGY1lfdDVaODVaMlFIU1Y1ZnkzZ2NucnRJdGtRc0RuYlRwaFBTTGs1c0h0M0N6ak81UmJzSDNsTFM1c2k2ZjBlNW9XamNWeWlsMDNoZHZZOFktLURYN3pYY1JjS3U1NGxaVjNETThvbHhiSjVlWS1yNmxjbk1CUmx3QnVtMHIwZFIxX3RCT1FaRU5JVTJXNVh5QU9GcmpmeFFkcFNCMVNNcG56SXlSeW11Y1JzRTjSAcgBQVVfeXFMTklGWWFSR1o0Wk94U0Z4ZkRWNWcxU1FrS2E4NFZFdEVxMEJBdGZrMTJJSUR2WVVEX2pNNE5XVU5vOFItVUxYUk1aTGFrLURjNFlBYXgzQTNNQU9tM0JLRjBRM05vb1hNd0ZfNEQ1ZHlWZTlXQ1B5SS0yOWNDazRFRml3QkNTRjZWSHYxVEJEbl9pN3AxV3pfTGxjM0NxQW1yUkNORU9tbTdjZk1ROVAwdHB2WHR3QVBVTmg5WkJJekF0eUQ5UUVNQ1U?oc=5",
-      "source": "Pulse 2.0",
-      "published": "2026-08-31T13:55:53+00:00",
-      "summary": "엔비디아가 대만 팹리스 기업 미디어텍에 35억 달러를 투자하며 파트너십을 강화한다. 이번 투자는 AI 인프라, PC, 자동차 등 다양한 분야에 걸쳐 진행될 예정이다. 구체적인 투자 내용은 공개되지 않았으나, 양사 간 협력이 확대될 것으로 예상된다. [분야 AI,GPU,DRAM,데이터센터,AI수요] [병목 무관] [유동성 유입] 왜중요: 엔비디아의 전략적 투자는 AI 인프라 확장에 대한 의지를 보여주며, 미디어텍과의 협력을 통해 관련 생태계 확장에 기여할 수 있다."
-    },
-    {
-      "title": "AI 데이터센터 전력 수요 급증과 200억 달러 분기 실적, 캐터필러(CAT) 낙관론 변화 가능성 시사",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNejNBTTVlaTJIcnFpM3FEQjFMbVh2R2hhbl9sV3pvbjA0RTdnOUgxajZpc0FJSWV5SXVFRmtKbjBVY1BFRThLdTdwNUxZaGpRWnNQaXRua25helFUWnZlLUhzb0NwZ1VTTC12S1A0TGpTVmNOenh6WURlSmNkN3dBR1ZCMktTdEU5TVJTRXdFclpwcGJLblHSAZsBQVVfeXFMTUo2OWdod1BuUXVsUFpjdTBBaW1PbC1ta2VzM2ZFMlFmQ3FXV2xXVnI4U1ZoZm0wTTZrUk1PdzZScWloc0FtN0s2cVkyUmx2OEJsbkI4QWJIMkpHYWRpMTlSR3IzOGdGWURHTjRKNDhOSW5HSFJEMjVfVWdEcnpFeGhBZHQweWRIdl9fRG5kVEQ0RzFhZV9WdUt2WGM?oc=5",
-      "source": "simplywall.st",
-      "published": "2026-08-31T10:36:59+00:00",
-      "summary": "AI 데이터센터의 전력 수요 급증이 캐터필러의 실적에 긍정적인 영향을 미치고 있으며, 최근 200억 달러 규모의 분기 실적 달성을 통해 낙관론이 형성될 수 있다. 이는 캐터필러의 사업 영역이 AI 인프라 확장에 따른 전력 공급망과 연관되어 있음을 보여준다. [분야 데이터센터,전력] [병목 악화] [유동성 유입] 왜중요: AI 데이터센터 전력 수요 증가는 전력 인프라 관련 기업의 실적 개선 가능성을 시사하며, 이는 데이터센터 확장과 관련된 투자 기회를 탐색하는 데 중요한 단서가 된다."
     }
   ]
 }
