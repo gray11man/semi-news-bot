@@ -27140,6 +27140,564 @@
       "policy": "ai-industry-v4.4-fresh4h-critical-events",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "Nvidia, Broadcom Just Helped Break a 90-Year Earnings Trend—Now Comes the Hard Part"
+    },
+    "bbbbb7ae19e4a392334bd3d4ce6b4476d7f018ff758a1786028d19aac7c59c85": {
+      "ts": 1789506060.499584,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "OpenAI CFO discussion on AI safety is qualitative and not a direct industrial event.",
+      "title": "OpenAI CFO Doubles Down on AI Safety in CNBC Interview"
+    },
+    "0a7ec403051a999881416e2bc05e5500baf0c6c105a38f58d46fb7a7902d815e": {
+      "ts": 1789506060.499821,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Logistics lease announcement is too specific and localized to be a major industry driver without further context.",
+      "title": "Flint Development Announces Full-Building Lease at Capitol 95 Logistics in Stafford, Virginia"
+    },
+    "bf905394290953559e20a24db8335de48f53f79013c1ad401e5f986ecc3de14b": {
+      "ts": 1789506060.500327,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Nokia 800G deployment is infrastructure news, but not directly tied to AI/semiconductor industry drivers.",
+      "title": "Telxius Boosts Global Network Capacity and Efficiency with Nokia 800G Coherent Pluggable Deployment"
+    },
+    "0852a7687d6d6305707597fcc4fd0ab5e75138b594f5b042559f7cfc9834914b": {
+      "ts": 1789506060.5005,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Knak expanding AI production layer to mobile is a product feature expansion, not a core industry-moving event.",
+      "title": "Knak Expands Its AI Production Layer to Mobile as RCS Business Use Grows"
+    },
+    "33039357d73fdf4039cc45280bb3ad8fe3b20c0c0ed7da47bb8ee82d7f8d5188": {
+      "ts": 1789506075.004729,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 워크로드 라우팅 플랫폼은 기술적 발전이지만, 산업 구조나 수요에 미치는 영향이 명확하지 않아 우선순위 낮음.",
+      "title": "Cirrascale Inference Platform Routes AI Workloads Across NVIDIA, AMD and Other Accelerators"
+    },
+    "b55c8fdac2672dbd0856db0c767bb248cebef558db555ac397b6b618259a4083": {
+      "ts": 1789506075.004867,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "캐나다 투자 관련 정책으로 AI/반도체 산업에 대한 직접적인 영향이 불확실하여 우선순위 낮음.",
+      "title": "Canada Investment Summit live: Ottawa expands tax break in 'game changer for investment'"
+    },
+    "ef7b8e85ad62f3d4b37bb72e7ca68834962e96584a23752d9928517868a8de6a": {
+      "ts": 1789506075.005088,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "마이크로그리드 투자 증가는 전력망 분야이나 AI/반도체 산업과의 직접적 연관성이 낮아 우선순위 낮음.",
+      "title": "Magnetic Pull of Microgrids: Global Investment Consensus Expects Surge through 2030s"
+    },
+    "78472db48355c3c023fde62f2b5e3dc642dee4a989684b3eafc3388c132697aa": {
+      "ts": 1789506075.005417,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Astera Labs와 KLA의 주식 비교 분석은 개별 기업의 주가에 영향을 줄 수 있으나, 산업 전반의 구조 변화를 나타내지는 않음.",
+      "title": "Astera Labs vs. KLA: Which Semiconductor Stock Has More Upside?"
+    },
+    "24046ef3455dfedfed926969c166a075df060c53fcd2e0db18345b938339fe56": {
+      "ts": 1789506075.005515,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 기반 건물 운영 플랫폼 출시 소식은 특정 서비스 영역의 발전이지만, AI/반도체 산업 전반에 대한 영향은 제한적.",
+      "title": "Kitt launches AI building operations platform for office landlords"
+    },
+    "a36387ae124b022e1c67992c1ad28cc822bea59d7184db9de6d98a142f0f84c0": {
+      "ts": 1789506075.005704,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "OmniDimension의 대화형 AI 플랫폼 확장 소식은 개별 기업의 서비스 확장으로, 산업 구조 변화를 나타내지는 않음.",
+      "title": "OmniDimension Completes 21 Launches in 21 Days, Expanding Into a Full-Stack Conversational AI Platform"
+    },
+    "802cf7d4da716fb5638cc18d2e7e8dd4b4283fa8a080be3a5bc9bd41cac3a573": {
+      "ts": 1789506075.005997,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Samsung의 Tesla용 프로토타입 생산 시작은 공급망 관련 이슈이나, AI/반도체 산업 전반의 중요 변화는 아님.",
+      "title": "Samsung’s Taylor Fab Starts Prototype Production for Tesla"
+    },
+    "73cf58495eba64ea7512f0659146dbbe98cab58c04d627fe1590da4a757923f7": {
+      "ts": 1789506075.006175,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Robocurve의 1,000만 달러 시드 펀딩은 로봇 공학 벤치마킹 확장 목적이나, AI/반도체 산업 전반에 대한 영향은 제한적.",
+      "title": "Robocurve Raises $10M in Seed Funding to Expand Independent Robotics Benchmarking"
+    },
+    "e78b0611d635eeb4b9f216e23cbe0a6c2f9ff7ed99b6846c2000d08e27c6d2b3": {
+      "ts": 1789506075.006358,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Linden 시의 AI 데이터센터 입지 제한 관련 뉴스는 지역 정책으로, 산업 전반의 파급력은 낮음.",
+      "title": "Linden wants AI data centers out of every corner of the city"
+    },
+    "f9dc8bcc9e0969494354d56aa709f8b07fd9730a9ce9298494b909170f62e3fa": {
+      "ts": 1789506075.006451,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Poway 시의 AI 데이터센터 금지 고려 뉴스는 지역 규제 관련으로, 산업 전반의 파급력은 낮음.",
+      "title": "Poway City Council to consider AI data center ban"
+    },
+    "6883eee004123af2c4b490314d79ded0c63a0d0279e9c333560a767bd719af73": {
+      "ts": 1789506075.006558,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Fluor 주식 실적 관련 뉴스는 개별 기업의 주가에 관한 것으로, AI/반도체 산업의 중요 변화는 아님.",
+      "title": "Is Earnings Beat Altering The Investment Case For Fluor Stock (FLR)?"
+    },
+    "c4bbc4eeba2a1405e91c1b688d19f92f852b842460c6085c8e41dbd682ef1ca9": {
+      "ts": 1789506075.006687,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Ciena 경영진의 주식 매도 소식은 개인 거래로, 산업 구조나 수요 공급에 대한 영향은 없음.",
+      "title": "Ciena (NYSE: CIEN) exec plans 249-share sale after $351,235.30 in recent stock sales"
+    },
+    "46931eafe85fa8183d17128a7bef171ce78fac5a2bd759ab9cbccd860d9b79db": {
+      "ts": 1789506075.006765,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 기업 금융 플랫폼 트렌드 소개는 일반적인 동향 분석으로, 구체적인 산업 변화나 수치를 포함하지 않음.",
+      "title": "AI Corporate Finance Platforms"
+    },
+    "410d7ed2195dcd4dd9125d8a415152de91ab177d92eb21846a0a9e56ac23749f": {
+      "ts": 1789506075.006865,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "우루과이 Antel의 제로 물소비 데이터센터 건설 소식은 특정 기업의 친환경 노력이나, 산업 전반의 중요 변화는 아님.",
+      "title": "Uruguay's Antel to build its data center with \"zero water consumption\""
+    },
+    "2b28b5327975793dbc40f4b203447ce2ef95748bc2311dc72ac64091b00e22d1": {
+      "ts": 1789506075.007037,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Outreach의 Salesforce AgentExchange 통합 소식은 특정 SaaS 플랫폼 연동으로, AI/반도체 산업의 핵심 변화는 아님.",
+      "title": "Outreach Becomes First Revenue Orchestration Platform Available for Private Offers on Salesforce’s AgentExchange"
+    },
+    "c822046ca09da56ca93d417fa4eb8609dfab59ae5c34327aa7929c8d98671655": {
+      "ts": 1789506075.007184,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "뉴욕 지역 데이터센터의 메가와트당 수익 관련 뉴스는 지역 경제 및 규제 이슈로, 산업 전반의 중요 변화는 아님.",
+      "title": "New data centers could pay $1M per megawatt to towns in New York"
+    },
+    "d1c84967d49ee08c84d8a15c402711ec67bd84cfcb8d9b1ff6070c32e6a1f097": {
+      "ts": 1789506075.007367,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Enflame의 Tencent 의존도 분석은 개별 기업의 재무 상태 분석으로, 산업 전반의 중요 변화는 아님.",
+      "title": "Enflame’s 84% Revenue Dependency on Tencent Exposes the Compute Landlord Thesis at the Customer Level"
+    },
+    "b5eae56e5007dba9ad945693729f7af20dd606af7580462692aafbbcb5b27111": {
+      "ts": 1789506075.007489,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Kirkwood IG CEO의 AI 데이터센터 구축 관련 언급은 일반적인 동향 분석으로, 구체적인 수치나 산업 변화는 없음.",
+      "title": "Scott Bergs, CEO of Kirkwood IG: Fiber and the AI Data Center Buildout"
+    },
+    "8292021519b3a2de1c6e139fa07a3f082954fccff6769f7c827fcb94908cbe2c": {
+      "ts": 1789506075.007604,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "데이터센터 건강 영향 연구 관련 뉴스는 지역 보건 이슈로, AI/반도체 산업의 핵심 변화는 아님.",
+      "title": "Commissioners poised to award data center health study to EmPower Analytics"
+    },
+    "b6f99b401d432dc1bfc692f2d87deb8049cf5eb2d42e396df272e883deb149ce": {
+      "ts": 1789506075.007716,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Harbor PanAgora ETF 포트폴리오 검토는 금융 상품 분석으로, AI/반도체 산업의 구조적 변화와는 무관.",
+      "title": "Harbor PanAgora Dynamic Large Cap Core ETF Q2 2026 Portfolio Review"
+    },
+    "265150d69854d4bbf9396676b427258c09cf395a9ecc859e08f036da5da0727f": {
+      "ts": 1789506075.007872,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 데이터센터 경쟁 공식 변화에 대한 언급은 일반적인 시장 분석으로, 구체적인 수치나 새로운 기술/계약은 없음.",
+      "title": "The formula for competition in artificial intelligence (AI) data centers is changing from 'fast semi.."
+    },
+    "ec939b713f6783ef28a03f3d927875b08073fc5b4d7b594be40cdace23561484": {
+      "ts": 1789506075.008012,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "FuelCell Energy의 중립 등급 및 수주 잔고 관련 뉴스는 개별 기업의 재무 상태 분석으로, AI/반도체 산업과 직접적 연관성 낮음.",
+      "title": "FuelCell Energy started with Neutral rating at Citi as product backlog remains modest (FCEL:NASDAQ)"
+    },
+    "4c4f6ceab70252fa2b5ec866936d94bf364299dc7976295a8426acd18afa7a0d": {
+      "ts": 1789506075.008106,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "천연가스 가격 상승 전망은 에너지 시장 동향으로, AI/반도체 산업과는 직접적 연관성이 낮음.",
+      "title": "The Outlook for Stronger Demand Lifts Nat-Gas Prices"
+    },
+    "6bc3f08b7b5ebe416eb065bb97502cee8d1fec07117c0949c5f2caa15a738ad9": {
+      "ts": 1789506075.008256,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "데이터센터와 애리조나 물 부족 문제 관련 논쟁은 특정 지역 이슈로, 산업 전반의 중요 변화는 아님.",
+      "title": "Water experts say not to blame data centers for Arizona’s Colorado River cuts"
+    },
+    "267561cd5d279df86d4ee3aa7af4e8689e2954ff9e1a20793f749d630695686d": {
+      "ts": 1789506075.008543,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "DeepSeek 모델 성능 향상 관련 뉴스는 특정 AI 모델의 개선으로, 산업 전반의 구조 변화나 규모의 경제와는 무관.",
+      "title": "DeepSeek-V4.1-Flash & Hermes Boosted Resident Evil 7 Performance By 50% On A 4-Year-Old Smartphone With Upscaling And Reducing Textures By 68% Without Quality Loss"
+    },
+    "4a88e355cb548e239284cfcac2c4117917dd846d950b228e4e134603b03c30b1": {
+      "ts": 1789506075.008654,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 데이터센터 전력 공급 시설의 소음 관련 뉴스는 지역 환경 문제로, 산업 전반의 파급력은 낮음.",
+      "title": "Noise From Plant Powering Musk's AI Data Centres Keeps Mississippi Locals Awake"
+    },
+    "bbf702b447dc87ccb5339b411c767b4a72c965e0a0618d0db726d374823f57a4": {
+      "ts": 1789506075.008795,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "PagerDuty의 2026년 전망 및 AI 기회 관련 언급은 개별 기업의 경영 전략으로, AI/반도체 산업의 핵심 변화는 아님.",
+      "title": "PagerDuty's 2026 Outlook: Operational Discipline and New AI Opportunities Sustains Profitable Growth Model"
+    },
+    "f37e1e787566f033b340e7fbcdf6ff679267c270c9a061857f5159d03d8c0cb6": {
+      "ts": 1789506075.008869,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "데이터센터의 책임 있는 건설 가능성에 대한 언급은 일반론으로, 구체적인 산업 변화나 수치를 포함하지 않음.",
+      "title": "Data centers can be built responsibly"
+    },
+    "e8ed1843af4128adda71900fda18787e7396ccb4efcf222bab09ac834ca67d1d": {
+      "ts": 1789506075.00896,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Daikin의 칠레 데이터센터 투자 및 남미 시장 모니터링 소식은 특정 기업의 지역 시장 진출로, 산업 전반의 중요 변화는 아님.",
+      "title": "Daikin bets on Chile data centers, monitors Argentina and Paraguay"
+    },
+    "609d519fb15875e35dd07fa2089187bbe879696d1113700596129ff4f35d68e3": {
+      "ts": 1789506075.009074,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Salesforce CRM Koa 출시가 AI 전략에 미치는 영향 분석은 개별 제품의 의미로, 산업 전반의 파급력은 제한적.",
+      "title": "What Does Salesforce (CRM) Koa Launch Mean For Its AI Push?"
+    },
+    "a37a04dd86537d8a601f5894a51f5fb6ca9139111d597d6b0cb8fe40b12b8e96": {
+      "ts": 1789506075.009146,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Gilroy 시의 데이터센터 신규 건설 모라토리엄 채택 소식은 지역 규제 관련으로, 산업 전반의 파급력은 낮음.",
+      "title": "Gilroy City Council adopts moratorium on new data centers"
+    },
+    "32cfcc6111e599f6491f64a344ccd3e7aea01d5c983d320f2031c7a5dc6e37b7": {
+      "ts": 1789506075.009268,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "데이터센터 개발 관련 주정부 차원의 보호 조치에 대한 언급은 지역 규제 관련으로, 산업 전반의 중요 변화는 아님.",
+      "title": "State initiative protects against abusive data center development"
+    },
+    "17d9d681702d7ab71a446e9c8cb06f397b5326f2f85f54e4153624c4bac3b405": {
+      "ts": 1789506075.009365,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Adecco Group 직원의 Salesforce AI 팀원 접근 가능성에 대한 뉴스는 특정 기업 내 솔루션 활용 사례로, 산업 전반의 중요 변화는 아님.",
+      "title": "27,000명의 Adecco Group 직원이 Salesforce의 AI 팀원에 접근하게 됨"
+    },
+    "56f56cc610cdc8602d608a9405ca7716959cb8a78de7781cf4793f18e272515b": {
+      "ts": 1789506075.00948,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "QLCO의 실적 호조 및 AI 채택 가속화 관련 전망은 개별 기업 분석으로, 산업 전반의 새로운 수치나 기술 변화는 아님.",
+      "title": "QLCO: Record revenue and EBITDA, accelerated AI adoption, and international growth drive strong outlook"
+    },
+    "0332c3be9f3f77de7c016ed92d9e1a57462ef715f51baacfad27046302aa172b": {
+      "ts": 1789506075.009587,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "암호화폐 프리세일 관련 뉴스는 금융 투자 정보로, AI/반도체 산업과는 직접적 연관성이 낮음.",
+      "title": "Best Crypto Presales Under $0.05: AlphaPepe and 5 Early Tokens Hunting the Next Big Breakout"
+    },
+    "63af9a42ecdf02490ca8ce60f3a8c298679e0c0d3f8439b870e0fc0b9026bed7": {
+      "ts": 1789506075.009738,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Data Center World Power 2026 행사 관련 뉴스는 산업 전시회 정보로, 구체적인 산업 변화나 수치를 포함하지 않음.",
+      "title": "Data Center World Power 2026 Showcases Energy Infrastructure Solutions to Meet Growing Power Demands"
+    },
+    "f4073a076e6d0fe95f80c1dd1b49eb0e3985b26ccce87e49ed9a2a2a69c6e0e9": {
+      "ts": 1789506075.009824,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Splunk Conf 26에서 에이전트 AI에 대한 신뢰 구축 논의는 개별 기업의 전략 발표로, 산업 전반의 중요 변화는 아님.",
+      "title": "Splunk Conf 26: Splunk hopes to build confidence in agentic AI"
+    },
+    "f99902b907ad927bb39bae7cd0b3f00dd2d93d09b340406b54018c02fdae1a46": {
+      "ts": 1789506075.009945,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Salesforce의 CRM 인터페이스 제거 관련 뉴스는 제품 UI 변경으로, 산업 전반의 중요 변화는 아님.",
+      "title": "Salesforce removes CRM from its own interface"
+    },
+    "05e162164d6e90ea2f05534a95b167ce0b17e47654413c74bc34b00441a8358f": {
+      "ts": 1789506075.010029,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 규제 지연 및 데이터센터 비용 관련 하원 투표 소식은 정치적 이슈로, 산업 구조 변화를 직접적으로 나타내지는 않음.",
+      "title": "AI regulation stalls in Congress as House votes on data center costs"
+    },
+    "ac8cba878ec048ca15132b2941f2de95cb0fcaba2f8a66fca994812754e25e01": {
+      "ts": 1789506075.010117,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "우량 주식 6개 소개는 투자 분석으로, AI/반도체 산업의 구체적인 변화와는 무관.",
+      "title": "6 Top Stocks With Strong Earnings Growth Trading Well Below 52-Week Highs"
+    },
+    "a1aa47731c17936e6aad52d6ff4537a142c3e59c37ab6abd17805057f31d1dcb": {
+      "ts": 1789506075.010257,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 인프라와 공정 주거 간의 위험 관련 뉴스는 사회적 이슈로, AI/반도체 산업의 핵심 변화는 아님.",
+      "title": "AI Infrastructure Meets Fair Housing: Emerging Risk in Data Center Siting"
+    },
+    "d14017bbff78bd86537f9092528772288564b6a6bf4072326acb689db8d0d36f": {
+      "ts": 1789506075.010391,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Grab의 Atome Financial 인수 관련 뉴스는 M&A 소식이지만, AI/반도체 산업과는 직접적 연관성이 낮음.",
+      "title": "Grab To Acquire 60% Of Atome Financial For $1.49 Billion And Plans To Buy Remaining 40%"
+    },
+    "79eeb83921b52fd7803d7e77b84225325efbf0e8be6ef616b441aa0744e7385d": {
+      "ts": 1789506075.010517,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "캐나다의 대규모 투자 유치 관련 뉴스는 일반 경제 동향으로, AI/반도체 산업에 대한 직접적인 영향은 불확실.",
+      "title": "Canada Just Unleashed Nearly $500 Billion in New Investment: Here’s What I’d Buy Now"
+    },
+    "e8a8c048eb25a51e091c795fd75ccadf4cf9812e9dddbba87aa9b7f1bb418ff6": {
+      "ts": 1789506075.010598,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Mediaocean 벤처 부문의 AI 스타트업 지원 소식은 특정 투자 펀드 활동으로, 산업 전반의 중요 변화는 아님.",
+      "title": "Mediaocean's venture arm offers AI startups access to $200bn spend system"
+    },
+    "d8095a6d0b6142818d29f5dca5015ef0a72632ebef491a0b4a3d33cd0f417140": {
+      "ts": 1789506075.010884,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Google DeepMind 연구원의 AI 위험 경고는 AI 안전 논의 관련으로, 산업 구조나 수요 공급에 대한 직접적 영향은 적음.",
+      "title": "Former Google DeepMind researcher raises a new warning about AI risk"
+    },
+    "49cbc3d60fa9d6820e6dbd2602800f0732e06902023c42d19947c9c0e830e182": {
+      "ts": 1789506075.010954,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "OpenAI CFO의 AI 안전 접근 방식 강조는 AI 안전 논의 관련으로, 산업 구조나 수요 공급에 대한 직접적 영향은 적음.",
+      "title": "OpenAI CFO Calls for Serious AI Safety Approach on CNBC"
+    },
+    "17423c45ae43998b3bea20e51b3deaadc28bee918ae3b70ef39ea3476435385c": {
+      "ts": 1789506075.011033,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Micron의 Deirdre Hanford를 Micron Research Labs 리더로 임명한 소식은 인력 변동으로, 산업 전반의 중요 변화는 아님.",
+      "title": "Micron Appoints Deirdre Hanford to Lead Micron Research Labs"
+    },
+    "c85fc3c7afd160e89d22c25b97997d731c6e3fc569264a66520d4f0d240514b3": {
+      "ts": 1789506075.011126,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Nvidia와 Anthropic CEO의 AI 안전에 대한 의견 차이는 AI 안전 논의 관련으로, 산업 구조나 수요 공급에 대한 직접적 영향은 적음.",
+      "title": "Nvidia and Anthropic CEOs diverge on AI safety at Dreamforce: Huang says fast vs. pacing is 'false choice'"
+    },
+    "d9bdc6ec87e1ccfa08bfb79a9f9f4fc44f0db95d05cd1d37a45740181f0b0ecb": {
+      "ts": 1789506075.011206,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AMD AI Engine 관련 뉴스는 개별 기업의 기술 및 시장 상황 분석으로, 산업 전반의 새로운 수치나 기술 변화는 아님.",
+      "title": "AMD Rebounds 3% as Its 58% AI Engine Faces a Pause"
+    },
+    "417f10f8f0eb64a4d0914029c28ebfc75ffcfe99e6e9cd1620e4edf976f8c311": {
+      "ts": 1789506075.011275,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "OpenAI, Google, Anthropic의 AI 안전 협력 논의는 AI 안전 논의 관련으로, 산업 구조나 수요 공급에 대한 직접적 영향은 적음.",
+      "title": "OpenAI, Google, Anthropic discussing collaboration on AI safety issues"
+    },
+    "9573aaa20048e6c32af82950a9480ecb163343a388a67e79456c109f8762a240": {
+      "ts": 1789506075.01136,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "HSA Group의 AI 랩 출범 소식은 개별 기업의 내부 조직 개편으로, 산업 전반의 중요 변화는 아님.",
+      "title": "HSA Group Launches AI Lab to Drive Its Next Era of Transformation"
+    },
+    "b7497e7f3b044df85712b63d832424b9353cf998b5394f6fb1de6da44776fedb": {
+      "ts": 1789506075.011454,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI 인프라가 Arista Networks 시장 스토리에 미치는 영향 분석은 개별 기업 분석으로, 산업 전반의 새로운 수치나 기술 변화는 아님.",
+      "title": "Is AI Infrastructure Changing Arista Networks (NYSE:ANET) Market Story?"
+    },
+    "520b3a9a91bafbaacc83fd56d81df09cba83004f6579a7a512c4c8dad3a9957e": {
+      "ts": 1789506075.011525,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "ASML의 고가 칩 제조 장비 한계 관련 뉴스는 특정 장비의 성능 제한으로, 산업 전반의 중요 변화는 아님.",
+      "title": "ASML's $400M chipmaking machine hits limits, ra..."
+    },
+    "beaec01f3a31b2c2339741d5733ff112fd5f2436ed7ca75f774d6c6321c93daf": {
+      "ts": 1789506075.011718,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Oracle의 인력 감축 및 CFO 발언은 개별 기업의 경영 전략으로, AI/반도체 산업의 중요 변화는 아님.",
+      "title": "Oracle is cutting jobs, but its new CFO says the answer isn’t “doing more with less”"
+    },
+    "dc9e23b745649833384b1e2acfad98b8dc21cb0ccc66184dc7ebc7dd461d89ec": {
+      "ts": 1789506077.285722,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Cohere CEO의 발언은 AI 정책 방향에 대한 의견 표명일 뿐, 산업 구조, 수요공급, 가격, 생산, 수율, 재고, CAPEX, 데이터센터, 자금조달, 정책, 핵심 경영진의 새 수치, 기술 변화 등 구체적인 산업 동향을 담고 있지 않아 제외한다.",
+      "title": "Small group of AI companies should not set the policy on AI, says Cohere CEO Aidan Gomez"
+    },
+    "409f4b476c2428420960c2c3327e917378069efdb897a8a0e6d9ce6ebd3fde4b": {
+      "ts": 1789506077.285858,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "미국 증시 하락 소식은 주가 동향에 해당하며, AI 반도체 산업에 대한 구체적인 산업 동향을 제시하지 않아 제외한다.",
+      "title": "[N2 모닝 경제 브리핑-9월 16일] 美 증시, ‘금리·유가’ 겹악재에 휘청…나스닥 0.78%↓"
+    },
+    "7497f814e1dd5441c34b6383871e68bbdf31e0efd10e9c13d85a3890983734e9": {
+      "ts": 1789506077.286033,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "SpaceX 주가 하락 소식은 투자 동향에 해당하며, AI 반도체 산업에 대한 구체적인 산업 동향을 제시하지 않아 제외한다.",
+      "title": "SpaceX (SPCX) 주식 움직였습니다 하락 3.01%에 9월15일: 어떤 신호인가요?"
+    },
+    "8cd802b114141ece10df51c79cb4a69c670e4d3f1f67ccdc71c70360e5fdd14c": {
+      "ts": 1789506077.286146,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "트럼프와 젠슨 황의 만남은 정치적, 혹은 행사적 성격이 강하며, AI 산업의 구체적인 수치나 기술 변화, 공급망 동향 등을 담고 있지 않아 제외한다.",
+      "title": "Trump and Jensen Huang unite against AI doomers in surprise on-stage call"
+    },
+    "00d9188951dd4834b0961f52038b3f6f6ee72ab97c5c40e9b599eee4e9191bba": {
+      "ts": 1789506078.219497,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "EOSE Stock Rises As Google Data Center Deal Energizes Outlook"
+    },
+    "80bdb1bce7bf57ec36d33ed802f9aed3bbcc7a2f9e5c1cf83745fdf6b119d9da": {
+      "ts": 1789506078.219533,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CARR: Record backlog, data center growth, and innovation drive a strong outlook through 2027"
+    },
+    "605a9b198a3e5eb73fb435ff7bb7497b0505d086d32589063a023ed0b4ea8c1a": {
+      "ts": 1789506078.219552,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Oracle 6 AM Layoff Email Blindsides Workers Amid AI Spending Surge"
+    },
+    "935b30de1265dc214a97f5ea8f13181f4f0496ef4f33ca070f0450bda9a8e4ec": {
+      "ts": 1789506078.219569,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Broadcom Slips Again as AI Approaches 62% of Quarterly Sales"
+    },
+    "d1198bffa38254668307357e232314889f9278c022043b9088746d664e673717": {
+      "ts": 1789506078.219586,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Should Meta One Launch Require Action From Meta (META) Investors?"
+    },
+    "6b596387ce57c2357ff93cd17d4e5103dd7c2d92e031516ba1d1c32a96e09de5": {
+      "ts": 1789506078.219611,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Meta’s Next AI Chip Push Meets A Mixed Tech Tape"
+    },
+    "1a65ba5c2c596884b2f02394f1485453aa95cf7bc9cddf379c79a3df20ade71e": {
+      "ts": 1789506078.219629,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "What's Going On With Meta Platforms Stock Tuesday? - Meta Platforms (NASDAQ:META)"
+    },
+    "9c211993f7a2f1507696872439926889f70e937715b4a8e89e9b079c92424319": {
+      "ts": 1789506078.219645,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Oracle Makes Massive Clean-Energy Push to Feed Growing AI Power Demand"
+    },
+    "6b17874a421efbf31432c032e554d9a50a0b4c24231af90cbb68f1a724d41f0a": {
+      "ts": 1789506079.178662,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Data center backlash heats up"
+    },
+    "de079d9a7f2f26d28c816566bb73b7f5d557e404165a8034d5f6f895f98b26c4": {
+      "ts": 1789506079.178688,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Salesforce Takes Aim at AI Labs With Nvidia-Powered Koa Reasoning Model"
+    },
+    "84a6bddbbf731efdb3efd098c50a6676f579086b30036f5d776cc33ece8ed121": {
+      "ts": 1789506079.178708,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "GE HealthCare Launches AI Tool to Forecast Hospital Capacity Bottlenecks"
+    },
+    "a74049bf065b2072b1e0124ea327f343b0dd7a325161389f38fb0b58c1dc2e38": {
+      "ts": 1789506079.178739,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nvidia’s Huang and Trump Downplay AI Safety Concerns as Salesforce Debuts Enterprise Reasoning Model"
+    },
+    "ae98dc1c6d7d34f7489063a1ee051334f01194e01f71b006e749bfb1dc5c645c": {
+      "ts": 1789506079.178756,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Fundstrat Co-Founder Tom Lee: AI Debt Concerns Exaggerated"
+    },
+    "11f9f213f943ce2fd59ee22e82064b57a880a9ebcbf00b7ac3b33d6ae46bfbc0": {
+      "ts": 1789506079.178776,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CARR: Record backlog, strong data center growth, and disciplined execution set up robust multi-year outlook"
+    },
+    "291b47a7363d1d78ee972ffa4ffa099564121a4240e7892c695f43667931aaf5": {
+      "ts": 1789506079.17879,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Oracle Drops as Its $664 Billion Backlog Meets Reality"
+    },
+    "ea1066c3cce780fd6f05f113fc620df515f75c60b0bcb17955db1d7fd40da411": {
+      "ts": 1789506079.178808,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "From Incentives to Moratoriums: How Several Key States Are Responding to Data Center Development"
+    },
+    "f116d8d33bed203b5a3d1dc4ae45fea774923f1ed82936c71f29ddacc6cd46a7": {
+      "ts": 1789506080.220371,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Memphis City Council to make significant steps toward the future of data center development in the Bluff City"
+    },
+    "8085f28a80c9b722ec12f747741bd8b7370f33bb82ad7452bc74b43c4a8aca8d": {
+      "ts": 1789506080.220449,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bloom Energy Gains Another ‘Meaningful’ Proof Point With Project Phoenix, Says RBC — 2 GW Build Reinforces Data Center Opportunity"
+    },
+    "b46597577a2c13d0952684712db2f675f6c256b2cafd22a16e8fbf0e4a800cd3": {
+      "ts": 1789506080.220496,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Thermo Fisher CEO Says AI Will Drive More Pharma Spending — Sees 7% Organic Growth By 2028"
+    },
+    "d66b4dcadb1deeecdf48d2e2bd9047253e1041e3ef2254a34a7aeee3fe80e4b6": {
+      "ts": 1789506080.221596,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "From Megawatts to Tokens: How NVIDIA Maximizes AI Factory Production"
+    },
+    "ad7386d1d695b4aa8d1b6dad6a05c6de3d661e57c9e816508ec780018c3c5222": {
+      "ts": 1789506080.22162,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Crusoe Opens Second Tulsa Manufacturing Facility to Expand AI Infrastructure Production"
+    },
+    "af2702f007b19a21e54f27e3fe99951dfdfa6d62c68b848c55e9e54bf90f6737": {
+      "ts": 1789506080.221642,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Applied Materials to invest Rs 3,600 crore in Karnataka over the next decade"
+    },
+    "9e4d76e56d3c68f3bebb3ac8f7cd8530c6f7568938363bf1697d4a6e3d751e65": {
+      "ts": 1789506080.221664,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Karnataka Gets Rs 3,600 Crore Semiconductor Investment From US-Based Applied Materials"
+    },
+    "4187cc82932075cf6e6d754cfb0b4be29f907df053f6de394ca7819c2896ab0c": {
+      "ts": 1789506082.225684,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "There Is One Thing ASML's $400 Million Machine Still Cannot Do. AI Chips Keep Making It Worse."
+    },
+    "a6e01da191f900260363b3a0289ab00f41627a02bb9f38544a352ea536e524ab": {
+      "ts": 1789506082.22571,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Google invests $15bn in Finland and secures 500 MW power from Soviet-era nuclear power plant till 2050"
+    },
+    "0e000913b9fa560e8cae585f0b48c884a248f05ccc441712a812c77afee1a1cb": {
+      "ts": 1789506082.225733,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "RF Industries Posts Record $24 Million Quarterly Revenue As Interconnect Systems Demand Expands Into AI And Aerospace"
+    },
+    "6e4ab795ba190d63bfe80011b9b699b37445b39d3fe929c402ebeabaa738081e": {
+      "ts": 1789506082.225752,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Salesforce debuts Koa CRM AI on Nvidia Nemotron to boost secure enterprise work - CHOSUNBIZ"
+    },
+    "1fbc8d6d875ea1dd2845cf8e40835cd9b053a5f3caf9a7c62fced350215f5eb2": {
+      "ts": 1789506082.22577,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nvidia lets rival chipmaker d-Matrix plug into its racks, boosting AI data center ecosystem."
+    },
+    "98e3a73a7c8e12e5efbfdb2bd97c70cead4ae29892db9ad6a1132d00ee7f20c1": {
+      "ts": 1789506082.225797,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI Will Drive a Strong US Earnings Season, Goldman’s Snider Says"
+    },
+    "9b024932e079b082897e4313c05f103f24098cefd735d6fac95f5cbacad43998": {
+      "ts": 1789506082.225819,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Astera Labs Expands Leo Smart Memory Controllers To Accelerate Agentic AI Inference And Improve Data Center Memory Utilization"
+    },
+    "0f8bd4b7977bd807182801d6a73a0a9f410f138bbabd5fc7d9e5eda1379385ec": {
+      "ts": 1789506082.225834,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI outlook faces growing skepticism as market divide widens"
     }
   },
   "legacy": {
