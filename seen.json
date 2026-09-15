@@ -523,6 +523,20 @@
       "source_published": "",
       "source_modified": "",
       "message_id": 4717
+    },
+    "b8b7d168aeef70e2fe7c93240fa8e6163f30d4c976e012aa9b6de2ce8a496a49": {
+      "ts": 1789430476.108467,
+      "title": "Broadcom CEO addresses Anthropic's slowdown push, says AI revenue targets haven't changed",
+      "fact": "브로드컴 CEO 헹크 탕(Heng Tan)은 앤트로픽의 AI 인프라 투자 속도 조절 움직임에 대해 인지하고 있다고 밝혔으며, 브로드컴의 AI 관련 매출 목표는 변동 없음을 재확인했다. 이는 AI 칩 수요의 변동성과 주요 AI 기업들의 투자 전략 변화를 시사한다.",
+      "source": "CNBC",
+      "rss_published": "2026-09-14T22:43:25+00:00",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOamtMaEl3OW04aFdDZXY3Q0tDMnRWWHNna3h1ak5HTi1INUZIX0h6R1g1Z0JKOC1NSkR1R3VCVUFzTktFR0g0T2V4QzNRQkgtRlZ4YUltRGc0eGdITDhCY3N4M1VaRU5Nd2w1TWJXMnNSNTZPRHBkTUwwM0lUZkhmU1VzNnhtUXl2TTlPcGJ3c2NabEhmTDA3RGNaMGtKTmQzZG1hdm1sbzBDRHlmYXNZZ9IBtgFBVV95cUxQRk56b2o1TFpzTnZKNGpOVm5QeUxNZzk4SC11d1FGUnNNX1ltU0lTaGdYQjB4Qjl5aExrTjVJQ0xpWlVVQ2tqdGE4UU1tajBRZWM5NWVMVXJvcU1zZFFGX254NzV3V3RSLUVUR0E0VVc5REZxM01WbE9IZi1FWkNiaW5VbGJXbmtsdXQyS3Z4d0FNd2VlSDdJRlZDRDJZQnp1dmhyc2hQVDBBMENxaUlYc05IcHhfQQ?oc=5",
+      "resolved_url": "",
+      "event_key": "Broadcom|매출 전망|AI 칩|2026-2027",
+      "new_fact_date": "2026-09-14T22:43:25+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4718
     }
   },
   "pending": {},
@@ -23920,6 +23934,216 @@
       "policy": "ai-industry-v4.4-fresh4h-critical-events",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "NIMBY Pushback to Data Centers a Boon for Bloom Energy, CEO Says"
+    },
+    "800135ea6e1c8e5875445a5663a41d7ac10bd0c81e9167684b879e80291b752d": {
+      "ts": 1789430457.174763,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Anthropic CEO의 계획이 다른 AI 모델 빌더들에게 우려를 제기한다는 내용은 특정 기업 간의 경쟁 이슈임.",
+      "title": "Anthropic CEO’s plan raises concerns for Qwen, Llama, Mistral builders"
+    },
+    "f18fd14edfc49aa740187f371cdaeb31a8459524a6352fa3d0b112c25b017964": {
+      "ts": 1789430457.175011,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "OpenAI의 Glass Imaging 인수 및 기업 가치 평가는 특정 기업의 M&A 사례임.",
+      "title": "OpenAI Acquires Glass Imaging at $300M-Plus Valuation in Consumer Hardware Push"
+    },
+    "6a79a172867998d5527208e2d12527af777666103afad1bd7e7844cfbded8569": {
+      "ts": 1789430457.175116,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "RPRX의 성장 및 펀드레이징은 해당 기업에 국한된 내용임.",
+      "title": "RPRX: Early target achievement and global expansion fuel strong growth and innovation in royalty funding"
+    },
+    "4c0186f851cd84615ef7e734c3981f9e2aa0af4278139d989a2acf2e0bc8e453": {
+      "ts": 1789430457.175203,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Calumet, Inc.의 ABL 및 DOE 대출은 개별 기업의 자금 조달 사례임.",
+      "title": "Calumet, Inc. (NASDAQ:CLMT) Upsizes ABL to $600M; MRL Draws Final $34M DOE Loan"
+    },
+    "91afc078b8ae0760a46e82d5c07591504c5a236fef7dfef6cac737a4f6df80b0": {
+      "ts": 1789430457.17535,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "트럼프 전 대통령의 AI 위험 발언은 정치적 발언으로, 구체적인 산업 영향은 불확실함.",
+      "title": "Trump calls AI risks a 'hoax,' says there is a 'SICK conspiracy' against AI and data centers"
+    },
+    "58a8d1002ec882572f06d76068a0a54f623ee3039e0acc269e5af1c7283abe83": {
+      "ts": 1789430457.175503,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Revere Asset Management의 Intel 투자는 개별 기업의 투자 활동임.",
+      "title": "Revere Asset Management Inc Invests $1.08 Million in Intel Corporation $INTC"
+    },
+    "44b9aeccbdc65212c3ead59f790dfd2640845f91b62627d09a9929514571a00b": {
+      "ts": 1789430457.175901,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Signet Jewelers의 가이던스 상향 조정은 해당 기업의 재무 성과에 관한 내용임.",
+      "title": "How Raised Guidance At Signet Jewelers (SIG) Has Changed Its Investment Story"
+    },
+    "2d292d6e0c825cafea2b002f5f57f7afa45ac3365058bd2236e4ddecd918b7cb": {
+      "ts": 1789430465.660938,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Trump Calls AI Risk Concerns a ‘Hoax’ in Onstage Call With Nvidia CEO, Says Slowing Development Helps China"
+    },
+    "a3649c1d6bdbf598a6c34bf0aa5323bf60858df2590cccc51128c58a4d58dd45": {
+      "ts": 1789430465.660997,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "SOBI: Upgraded guidance and robust launches set the stage for continued growth and portfolio expansion"
+    },
+    "f8210394d2c1dbc4e9e338582d17093160ebdf9430b7d7652545528e4bb61df5": {
+      "ts": 1789430465.66102,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI pushes storage to the top of IT leaders' agenda"
+    },
+    "43fc032a2e4262aae4f53ec36592006f1ba0dfb63fece7841d851dc86d1316a6": {
+      "ts": 1789430465.661042,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CLSK: AI data center investment is accelerating, fueled by real demand and strategic industry shifts"
+    },
+    "457f631ec70cff673a133aae72144cf9e69f61dec083be4e36edbaa46e803a53": {
+      "ts": 1789430465.661071,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Low vacancy, strong fundamentals: Korea’s data center market ripe for investment, says Cushman & Wakefield"
+    },
+    "fdfaf1698e5fbac6dc72bb9e07760867e3a5a39acf9d8ae8659aa1309dc9de38": {
+      "ts": 1789430465.661094,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Law firm Morgan & Morgan touts $1 billion AI investment, plans to sell platform to other firms"
+    },
+    "7f393f16d69f18484ca8ef65a335ac2e266f935f54f4403ac990f9d27ef5f769": {
+      "ts": 1789430471.721233,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CoreWeave draws $2.6B AI loan at SOFR +5.5%, triple Nebius's rate"
+    },
+    "71b8cce3f7a1ab30b66b16fb65e8e2087460562b20001bdc5a91f6c255814a51": {
+      "ts": 1789430471.721253,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bank of Korea warns AI chip leverage threatens markets"
+    },
+    "55bbe8b52fcff7f25d5afd4689d89bdc80ee806be6ec361c9da8ea0bf261559e": {
+      "ts": 1789430471.721275,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Semiconductor Bonus Wars: SK Hynix Heads to Revote as Samsung, Micron, and TSMC Diverge on Pay Structures"
+    },
+    "0576497e44d335fda6af139d92e306585628139f04511a60367ae38379b0ed13": {
+      "ts": 1789430471.721294,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "SMCI Stock Fails to Hold $40 as AI Spending Concerns Return Despite Strong Earnings"
+    },
+    "78ae349226e28faeccfaa34eb13e0b3c97fce03d9d489b97c44848a977a80d98": {
+      "ts": 1789430471.721311,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Oregon regulators sound alarm on AI-powered investment fraud"
+    },
+    "ec47b417c1c10969aac246d19a6a5ffdcb05ead444bb5b210c9dd48e2dcbeb74": {
+      "ts": 1789430471.721328,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Ciena (CIEN) Stock Still Looks Pricey As AI Revenue Guidance Rises"
+    },
+    "8a2543b6c3084ff3e5d3dd78ac4577bf9cc5e614e531cef1944ceec089287e1e": {
+      "ts": 1789430474.717038,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "New initiative provides lawmakers with AI guidance"
+    },
+    "64ff3ac89c29674ba0e1ca1e6097d6147101e2a94bf3a79ad0cdc74e876ea183": {
+      "ts": 1789430474.717064,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Elon Musk Drops Apple From AI Antitrust Suit, Keeps Aiming At OpenAI"
+    },
+    "39260e5fb5a95bf715bd270327ac66b34514fafc2cca337dd328db18c46a8ba3": {
+      "ts": 1789430474.717085,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "ASML Holding NV (ASML) Shares Fall 7.2% -- What GF Score of 94 Tells Investors"
+    },
+    "e7b83f4de817eed564906a0ae5fb6740f4dc09d2d57e3c898e3fe77f7843cde9": {
+      "ts": 1789430474.717101,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI founder admits securities fraud"
+    },
+    "628e6213ca6dcdd99775fb4afbd45854f1b1b3afe02864f3bdc3a0759a9f4d23": {
+      "ts": 1789430474.717119,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "KLA Corporation stock falls over 6 percent as AI jitters hit chip sector"
+    },
+    "94e0bbf61da28ab04d177eebaf806379595a3e6cde81d79969103cc969dd2d0c": {
+      "ts": 1789430474.717137,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Lam Research Corp (LRCX) Shares Fall 8.3% -- GF Value Says Still Overvalued"
+    },
+    "3672f3e65058952e56ecfe55c9b998b3d52ffb04155c1f146ffbbf1ff71e25b8": {
+      "ts": 1789430474.717154,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Applied Materials Inc (AMAT) Shares Fall 7.1% -- GF Value Says Still Overvalued"
+    },
+    "8a69f99c6c3967b8ef463c0eaa19ee04310be36455c0888752ec124d077e2b7f": {
+      "ts": 1789430474.717171,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "KLA Corp (KLAC) Shares Fall 6.4% -- What GF Score of 91 Tells Investors"
+    },
+    "27c40e8fd74be326ce9742786ab12818fc3241a2184955a63c2aa759047790d4": {
+      "ts": 1789430475.492722,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "John Thune wants a ‘light touch’ on AI regulation, expects to soon have a bipartisan bill"
+    },
+    "ff8a72709f3dc977a7b04f3cd24f15e202306e76a7d9ba6023d78c9c80412080": {
+      "ts": 1789430475.492755,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "S&P Global Makes Strategic Investment in Crypto Data Firm"
+    },
+    "4f259b12b6b047e5e76a61b3e351dbca0b5b34aacf204f746cb5efb2a1da4f30": {
+      "ts": 1789430475.492776,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Lam Research (NASDAQ:LRCX) Stock Price Down 8.3% - Time to Sell?"
+    },
+    "2e9ef4865893bc141c625099521f63de44218efac8bfad35fd1dda0643fb298d": {
+      "ts": 1789430475.4928,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Beasley Media Uses Futuri’s AI Revenue Platform to Rebuild Its Sales Process"
+    },
+    "3cacb03afead30d88143f2fa46f6ee2877f9cceea30cff1acdcd2de87fdcc9b7": {
+      "ts": 1789430475.492817,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Zscaler Stock Jumps As AI Security And Guidance Top Wall Street"
+    },
+    "84a05ab907be295187ce5bf87e29e19f0c2c2f18123d2c6c770db0414ce6f990": {
+      "ts": 1789430475.492834,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "KLA Corp. stock outperforms competitors despite losses on the day"
+    },
+    "db31251a4413a1e614be62b08d740c85426cbb0f0797344b80b761879a752d96": {
+      "ts": 1789430475.492853,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "APO: Strong macro outlook and innovation in private asset solutions drive growth and fundraising"
+    },
+    "cf5e83166cfa8183aa0c849ee454a88d644d4495bb8233f96079a09f9f2446d3": {
+      "ts": 1789430475.49288,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AMD Stock Price Forecast — ($485) Drops 5.94% On AI Pacing Debate — $575 Target Against A $450 Floor"
     }
   },
   "legacy": {
@@ -27034,6 +27258,13 @@
   },
   "archive": [
     {
+      "title": "브로드컴 CEO, 앤트로픽의 AI 투자 둔화 언급 및 AI 매출 목표 유지",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOamtMaEl3OW04aFdDZXY3Q0tDMnRWWHNna3h1ak5HTi1INUZIX0h6R1g1Z0JKOC1NSkR1R3VCVUFzTktFR0g0T2V4QzNRQkgtRlZ4YUltRGc0eGdITDhCY3N4M1VaRU5Nd2w1TWJXMnNSNTZPRHBkTUwwM0lUZkhmU1VzNnhtUXl2TTlPcGJ3c2NabEhmTDA3RGNaMGtKTmQzZG1hdm1sbzBDRHlmYXNZZ9IBtgFBVV95cUxQRk56b2o1TFpzTnZKNGpOVm5QeUxNZzk4SC11d1FGUnNNX1ltU0lTaGdYQjB4Qjl5aExrTjVJQ0xpWlVVQ2tqdGE4UU1tajBRZWM5NWVMVXJvcU1zZFFGX254NzV3V3RSLUVUR0E0VVc5REZxM01WbE9IZi1FWkNiaW5VbGJXbmtsdXQyS3Z4d0FNd2VlSDdJRlZDRDJZQnp1dmhyc2hQVDBBMENxaUlYc05IcHhfQQ?oc=5",
+      "source": "CNBC",
+      "published": "2026-09-14T22:43:25+00:00",
+      "summary": "브로드컴 CEO 헹크 탕(Heng Tan)은 앤트로픽의 AI 인프라 투자 속도 조절 움직임에 대해 인지하고 있다고 밝혔으며, 브로드컴의 AI 관련 매출 목표는 변동 없음을 재확인했다. 이는 AI 칩 수요의 변동성과 주요 AI 기업들의 투자 전략 변화를 시사한다.\n앤트로픽과 같은 주요 AI 기업의 투자 속도 조절은 AI 칩 수요 증가세 둔화 가능성을 시사하며, 이는 GPU 공급망 전반에 영향을 미칠 수 있다. 그러나 브로드컴은 자체 AI 매출 목표를 유지함으로써, AI 칩 시장의 전반적인 수요는 여전히 견조할 것으로 예상하고 있음을 보여준다."
+    },
+    {
       "title": "마인드워크, 회계연도 1분기 매출 21% 성장 및 총마진 59%로 확대",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNVnJ0eWZhZGo4ZmdKWWY0NEgtQVp6Yzc4S05UMTFSXzl3THNYWFJQLUJwc0FIcFZleUpHaFpWemZCMngyb0dmaGljZVoxQUJJQ2x1VjVEX09qcUFzSTdTSWcxRUJxZUNDeWZDMFNESEhINjZPT0hVS0hxQnRMTjVIMmFfeHN6YTJvVWhwMmNGOXN0aFZSd0xpU2xxMGJQRER2SnJ0STJsTHlBekh6eEJMMUlZdERINGwxclJ2OGhpaXF2Zm43UGpzZFJ5NEFFN3ZVNHBodmNTT3JwZ2Z4a2xIaHRxNHppbkps?oc=5",
       "source": "Business Wire",
@@ -28075,13 +28306,6 @@
       "source": "Seeking Alpha",
       "published": "2026-08-31T16:32:51+00:00",
       "summary": "AI 관련 지출이 1조 달러에 육박하면서 거품이 가장 위험한 단계에 접어들고 있다는 분석이 나왔다. 이는 AI 인프라 구축 및 관련 기술 개발에 막대한 자금이 투입되고 있음을 시사한다. 이러한 과도한 투자는 향후 시장 조정 가능성을 높이며, 투자자들에게 신중한 접근을 요구한다. [분야 AI,데이터센터,AI수요] [병목 무관] [유동성 유입] 왜중요: AI 산업의 과열된 투자 양상을 보여주며 잠재적인 시장 위험을 경고하기 때문이다."
-    },
-    {
-      "title": "엔비디아, AI 매출 성장이 공급 부족으로 제한되고 있다고 밝혀",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONTF3RUFVSW9zSkFGRTlvVGFiVF9DTm9tZnZsX0lULTJfeVJkdnNzNEJmRjJtanRRMl9GTlZwNDBCRmZWQkFDeV8wenJvZGFGb09HZ3htS0FwYm9iTHhJMzFuTDl6S1NjNnVZNE0zWVFtc19WeXhZVkFCQmRCYTctUFB1UDJLRkdFcFd2ZHdQdjlBVWU3NUNFN3RMVmQ1Nk1RYThmc1VyOA?oc=5",
-      "source": "Supply Chain Dive",
-      "published": "2026-08-31T14:30:36+00:00",
-      "summary": "엔비디아는 AI 칩 공급 부족으로 인해 매출 성장이 제한되고 있다고 발표했다. 이는 AI 인프라 구축에 필요한 핵심 부품의 공급망 병목 현상을 시사한다. 회사는 이러한 공급 제약이 단기적으로 매출에 영향을 미칠 수 있다고 언급했다. [분야 AI,GPU,HBM,데이터센터] [병목 악화] [유동성 중립] 왜중요: AI 칩 공급 부족은 GPU 및 관련 부품의 병목 현상을 심화시키고, AI 캐펙스 지속성에 대한 우려를 제기할 수 있다."
     }
   ]
 }
