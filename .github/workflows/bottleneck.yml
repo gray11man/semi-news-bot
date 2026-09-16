@@ -2,13 +2,13 @@ name: Industry Idea News
 
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 0 * * *' # 매일 한국시간 오전 9시 17분 (UTC 00:17)
   workflow_dispatch:
     inputs:
       dry_run:
         description: '체크하면 Telegram 미전송. 실제 API 사용량은 하루 예산에 포함됩니다.'
         type: boolean
-        default: true
+        default: false
 
 permissions:
   contents: write
@@ -60,6 +60,7 @@ jobs:
           BOTTLENECK_CHAT_ID: ${{ secrets.BOTTLENECK_CHAT_ID }}
           RADAR_MODEL: ${{ vars.RADAR_MODEL || vars.PICK_MODEL || 'gemini-2.5-flash' }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
+          SEND_EMPTY: '1'
           MAX_GEMINI_CALLS: '10'
           MAX_INPUT_TOKENS: '36000'
           MAX_RUN_TOKENS: '160000'
