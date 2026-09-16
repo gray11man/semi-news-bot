@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""AI·반도체 중요 뉴스 v4.3 — 최신성 강제검증 / 재탕차단 / 후속뉴스 보존 / 광역 레이더.
+"""AI·반도체 중요 뉴스 v4.5 — 누락완화 / 최신성검증 / 재탕차단 / 후보재시도 / 광역 레이더.
 
 핵심 원칙
 - 검색은 넓게: 산업 + 기업 + 핵심인물 + 공식발표 + 신모델/신기술 + 실적/가이던스
   + CAPEX/자금조달 + 공급망/생산/가격 + 데이터센터/전력 + 규제/M&A + 부정 뉴스.
 - 전송은 좁게: 투자자가 오늘 알아야 할 '새롭고 중요한 사실'만 보낸다.
 - 긍정/부정/중립 동일 기준. 전망도 출처와 구체성이 충분하면 중요 뉴스로 인정한다.
-- 미검토 new/candidate는 장기 이월하지 않는다. 다음 회차에 다시 수집될 수는 있으나 pending에 쌓지 않는다.
+- 미검토 candidate는 짧게 이월해 다음 회차에 재심사한다. raw new만 장기 이월하지 않는다.
 - RSS 날짜만 믿지 않고 원문 발행/수정 날짜를 재검증한다. 오래된 재탕은 Python+Gemini 이중 차단.
 - URL + event_key + 장기 sent history + 최종 의미중복 심사로 중복 전송을 최대한 차단한다.
 - API 실패 시 미검토 제목 전송 금지. 키워드 점수만으로 전송하지 않는다.
@@ -18,6 +18,7 @@
 """
 import argparse
 import calendar
+from collections import Counter
 import concurrent.futures
 from difflib import SequenceMatcher
 import datetime as dt
@@ -41,8 +42,8 @@ import trafilatura
 UTC = dt.timezone.utc
 STATE = Path('seen.json')
 REPORT = Path('diagnostics.json')
-UA = 'AIIndustryNewsBot/4.4 (+RSS news reader)'
-POLICY_VERSION = 'ai-industry-v4.4-fresh4h-critical-events'
+UA = 'AIIndustryNewsBot/4.5 (+RSS news reader)'
+POLICY_VERSION = 'ai-industry-v4.5-balanced12h-retry'
 
 # 원문 추출이 실패해도 RSS 제목/요약만으로 최종심사까지 보낼 수 있는 1차 신뢰 소스.
 # 자동 통과 목록이 아니라 '심사 기회 보존'용이다.
@@ -50,6 +51,9 @@ TRUSTED_SOURCE_HINTS = (
     'reuters', 'bloomberg', 'financial times', 'wall street journal', 'wsj',
     'cnbc', 'associated press', 'the information', 'nikkei', 'yahoo finance',
     'businesswire', 'business wire', 'globe newswire', 'pr newswire',
+    'techcrunch', 'the verge', 'ars technica', 'tom\'s hardware', 'trendforce',
+    'digitimes', 'ee times', 'semiconductor engineering', 'the register',
+    'venturebeat', 'blocks and files',
 )
 
 CRITICAL_COMPANY_HINTS = (
@@ -159,7 +163,7 @@ def cheap_signal_score(item):
 
 def cheap_preselect(items):
     """수집은 넓게 유지하고 Gemini에 넣을 기사만 Python으로 압축한다."""
-    maximum = setting('LLM_PRECHECK_MAX', 180, 80, 320)
+    maximum = setting('LLM_PRECHECK_MAX', 220, 80, 320)
     if len(items) <= maximum:
         return list(items)
 
@@ -284,7 +288,7 @@ def iso_age(value):
     return None if parsed is None else (now() - parsed.timestamp()) / 3600
 
 
-def fresh(item, hours=4):
+def fresh(item, hours=12):
     # 1차 RSS 창. 이것만으로 '사건이 최신'이라고 판단하지 않는다.
     age = iso_age(item.get('published'))
     return age is not None and -1 <= age <= hours
@@ -399,8 +403,8 @@ def source_freshness(item, hours):
 
     # 핵심 이벤트에 한해 신뢰 소스의 RSS 제목/요약으로 최종심사 기회를 보존한다.
     # 자동 통과가 아니며 Gemini가 재탕/근거부족이면 다시 탈락시킨다.
-    if trusted_source(item) and force_review(item) and len(clean(item.get('title', '') + ' ' + item.get('summary', ''))) >= 45:
-        return True, 'trusted_rss_critical_requires_review'
+    if trusted_source(item) and len(clean(item.get('title', '') + ' ' + item.get('summary', ''))) >= 45:
+        return True, 'trusted_rss_requires_review'
     return False, '원문 날짜와 본문을 모두 확인할 수 없음'
 
 
@@ -483,7 +487,10 @@ def sent_event_duplicate(state, item, analysis):
 
     if similarity >= 0.84:
         return True
-    return True
+
+    # event_key가 같아도 핵심 사실이 충분히 다르면 후속 뉴스로 본다.
+    # URL/제목/재탕 판정이 별도로 있으므로 여기서 무조건 막지 않는다.
+    return False
 
 
 def load_state():
@@ -519,8 +526,9 @@ def load_state():
     state['decisions'] = {k: v for k, v in state['decisions'].items()
                           if v.get('ts', 0) > now() - setting('DECISION_HISTORY_DAYS', 30, 3, 180) * 86400
                           and v.get('policy') == POLICY_VERSION}
+    retry_hours = setting('PENDING_RETRY_HOURS', 12, 4, 24)
     state['pending'] = {k: v for k, v in state['pending'].items()
-                        if fresh(v) and v.get('stage') == 'approved'}
+                        if fresh(v, retry_hours) and v.get('stage') in ('candidate', 'approved')}
     return state
 
 
@@ -989,7 +997,7 @@ RSS published는 검색/색인 시각일 수 있으므로 사건 발생일로 �
 오래된 사건을 오늘 다시 설명·번역·재인용한 기사는 중요해도 탈락이다.
 오래된 원문이 최근 수정됐더라도 최근 수정분에 새 수치·새 계약·새 고객·새 가이던스·확정/취소·새 제품/양산 등 실질적 새 사실이 없으면 탈락이다.
 keep=true라면 fact에는 오직 이번 최신 창에서 새로 확인된 사실을 쓰고, new_fact_date에는 그 새 사실의 날짜/시각을 ISO-8601로 적는다.
-새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다. 원문 발행일을 확인하지 못했거나 오래된 원문이 최근 수정된 경우에는 UNKNOWN을 허용하지 않는다. freshness_note='trusted_rss_critical_requires_review'인 경우에도 예외적으로 오래된 기사를 허용하지 않는다. 본문/원문 날짜를 못 구했다면 RSS 제목·요약 안에서 이번 최신 창 내 새 사실의 날짜를 확인할 수 있어야 하며 UNKNOWN이면 keep=false로 둔다.
+새 사실의 정확한 날짜가 기사에 없으면 new_fact_date='UNKNOWN'을 허용하되, 원문 자체가 최근 발행된 기사일 때만 허용한다. 원문 발행일을 확인하지 못했거나 오래된 원문이 최근 수정된 경우에는 UNKNOWN을 허용하지 않는다. freshness_note='trusted_rss_requires_review'인 경우에도 예외적으로 오래된 기사를 허용하지 않는다. 본문/원문 날짜를 못 구했다면 RSS 제목·요약 안에서 이번 최신 창 내 새 사실의 날짜를 확인할 수 있어야 하며 UNKNOWN이면 keep=false로 둔다.
 is_recycled_story는 과거 사건 재탕/번역/재인용/단순 회고이면 true다. true인 기사는 절대 keep=true로 두지 마라.
 event_key는 '주체|사건종류|상대/제품|핵심기간/핵심수치' 형식으로 사건을 짧고 안정적으로 정규화한다. 같은 사건이면 매체·언어·제목이 달라도 최대한 같은 event_key를 써라.
 
@@ -1074,7 +1082,7 @@ class BudgetEnd(APIError):
 class Gemini:
     def __init__(self):
         self.calls = 0
-        self.maximum = setting('GEMINI_MAX_CALLS_PER_RUN', 12, 6, 40)
+        self.maximum = setting('GEMINI_MAX_CALLS_PER_RUN', 16, 8, 40)
         self.tokens = 0
 
     def ask(self, instruction, data, schema, compact=False):
@@ -1183,7 +1191,8 @@ def validate_review(rows, batch):
         if not row['keep']:
             valid.append(row)
             continue
-        if importance < 80 or row['is_recycled_story']:
+        final_min = setting('FINAL_IMPORTANCE_MIN', 75, 65, 90)
+        if importance < final_min or row['is_recycled_story']:
             dropped += 1
             continue
 
@@ -1202,7 +1211,10 @@ def validate_review(rows, batch):
 
         item = batch[row['index']]
         evidence = row['evidence'].strip()
-        if not any(evidence in item.get(k, '') for k in ('title', 'summary', 'body')):
+        evidence_norm = norm(clean(evidence))
+        if not evidence_norm or not any(
+                evidence_norm in norm(clean(item.get(k, '')))
+                for k in ('title', 'summary', 'body')):
             dropped += 1
             continue
         if row['evidence_kind'] not in ('공식 발표', '언론 보도', '경영진 발언', '분석 자료'):
@@ -1214,11 +1226,11 @@ def validate_review(rows, batch):
             'old_source_recently_modified',
             'source_published_missing_recent_modified',
             'source_date_missing_requires_proof',
-            'trusted_rss_critical_requires_review',
+            'trusted_rss_requires_review',
         }
         if item.get('freshness_note') in strict_freshness:
             new_age = iso_age(row.get('new_fact_date'))
-            hours = min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4)
+            hours = setting('NEWS_WINDOW_HOURS', 12, 4, 24)
             if new_age is None or not -1 <= new_age <= hours:
                 dropped += 1
                 continue
@@ -1280,6 +1292,7 @@ def choose(state, api, checkpoint):
     # 최신순 단독 정렬 대신 핵심 실적/CAPEX/장기 증설을 가장 먼저 심사한다.
     new_ids.sort(key=lambda k: (critical_event_score(pending[k]), pending[k].get('published', '')), reverse=True)
     pre_batch = setting('PRECHECK_BATCH', 80, 40, 100)
+    precheck_min = setting('PRECHECK_MIN', 58, 45, 75)
     for offset in range(0, len(new_ids), pre_batch):
         # 본문심사 + 최종중복용 호출을 반드시 남긴다.
         reserve = max(8, min(14, api.maximum // 3))
@@ -1289,13 +1302,13 @@ def choose(state, api, checkpoint):
         batch = [pending[k] for k in ids]
         rows = api.ask(
             '예비 심사: 기사 하나씩 keep true/false, 이유, priority 0~100을 반환한다. 최종 전송 개수는 채우지 않는다. '
-            'priority는 실제 산업 파급 가능성이다. keep=true는 대략 65점 이상 가능성이 있는 사건만 남겨라. '
+            f'priority는 실제 산업 파급 가능성이다. keep=true는 대략 {precheck_min}점 이상 가능성이 있는 사건만 남겨라. '
             '관련성만 있고 사소한 회사 동정은 여기서도 버려 candidate 폭증을 막아라. '
             '특히 새 모델/신기술, 핵심 경영진의 새 수치·전망, CAPEX/자금조달/대형계약, 생산·가격·수율·재고, '
             '데이터센터/전력, 규제, 중요한 부정 뉴스는 제목만 평범해 보여도 후보로 남긴다. '
             '단순 주가/목표가/가십/행사/입문설명/재탕은 false. reason은 120자 이내.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(),
-             'news_window_hours': min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4),
+             'news_window_hours': setting('NEWS_WINDOW_HOURS', 12, 4, 24),
              'articles': input_records(batch)}, SHORT_SCHEMA, compact=True)
         validate_rows(rows, len(batch), allow_partial=True)
         returned = set()
@@ -1324,11 +1337,12 @@ def choose(state, api, checkpoint):
     # candidate를 최신순으로 읽으며 가능한 만큼 이번 회차 안에 끝낸다.
     candidate_ids = [k for k, v in pending.items() if v.get('stage') == 'candidate']
     # 본문심사 예산이 모자라도 핵심 이벤트를 먼저 처리하고, 그 안에서 중요도/최신성을 본다.
-    candidate_ids.sort(key=lambda k: (critical_event_score(pending[k]),
-                                      pending[k].get('precheck_priority', 0),
+    candidate_ids.sort(key=lambda k: (pending[k].get('precheck_priority', 0),
+                                      critical_event_score(pending[k]),
                                       pending[k].get('published', '')), reverse=True)
-    body_limit = setting('BODY_MAX_PER_RUN', 32, 12, 80)
+    body_limit = setting('BODY_MAX_PER_RUN', 48, 16, 96)
     review_batch = setting('REVIEW_BATCH', 8, 4, 8)
+    final_min = setting('FINAL_IMPORTANCE_MIN', 75, 65, 90)
     for offset in range(0, min(len(candidate_ids), body_limit), review_batch):
         if api.maximum - api.calls <= 2:
             break
@@ -1338,7 +1352,7 @@ def choose(state, api, checkpoint):
 
         # LLM 호출 전에 명백한 구형 원문과 동일 URL 재탕을 Python에서 강제 제거한다.
         filtered_ids, batch = [], []
-        hours = min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4)
+        hours = setting('NEWS_WINDOW_HOURS', 12, 4, 24)
         for ident, item in zip(ids, enriched):
             ok, note = source_freshness(item, hours)
             item['freshness_note'] = note
@@ -1357,19 +1371,19 @@ def choose(state, api, checkpoint):
 
         rows = api.ask(
             '최종 내용 심사. candidate라는 이유로 통과시키지 마라. 모든 기사에 importance 0~100과 '
-            'signal(긍정/부정/혼합/중립), is_recycled_story를 부여한다. keep=true는 importance 80 이상이면서 '
+            f'signal(긍정/부정/혼합/중립), is_recycled_story를 부여한다. keep=true는 importance {final_min} 이상이면서 '
             'is_recycled_story=false인 경우만 허용한다. 가장 먼저 이 기사가 현재 news_window_hours 안에 생긴 실제 새 사실을 '
             '담고 있는지 확인하라. 이 봇은 3시간마다 실행되므로 news_window_hours를 넘은 과거 뉴스는 중요해도 false다. RSS 날짜만 최근이고 사건은 과거인 재탕/번역/회고/재인용이면 false. '
             '오래된 원문이 최근 수정됐거나 원문 발행일을 확인하지 못한 경우 freshness_note가 별도로 들어온다. 이 경우 '
             '최근 창 안에 발생한 새 수치·계약·고객·가이던스·확정/취소·양산/출시 등 실질적 새 사실과 그 날짜가 명확해야만 keep=true다. '
-            '80점은 "AI·반도체 산업 투자자가 오늘 모르고 지나가면 중요한 변화 이해를 놓칠 수준"이다. '
-            '관련성만 높고 파급이 작으면 79 이하로 버린다. 긍정/부정은 동일 기준이다. '
+            f'{final_min}점은 "AI·반도체 산업 투자자가 오늘 모르고 지나가면 중요한 변화 이해를 놓칠 수준"이다. '
+            f'관련성만 높고 파급이 작으면 {final_min-1} 이하로 버린다. 긍정/부정은 동일 기준이다. '
             '미래 전망도 회사 공식 가이던스·핵심 경영진의 구체적 발언·신뢰도 높은 언론의 구체적 내부계획이면 평가한다. '
             'keep=true이면 한국어 headline(140자), fact(400자: 이번 최신 창의 새 사실만), impact(300자), '
             'watch(200자), sector(60자), evidence(180자: 제공 텍스트의 연속 원문 인용), '
             'evidence_kind(공식 발표/언론 보도/경영진 발언/분석 자료), event_key, new_fact_date를 채운다. '
             'event_key는 같은 사건이면 다른 매체/언어에서도 최대한 동일하게 만들고, new_fact_date는 ISO-8601 또는 UNKNOWN. '
-            'freshness_note=trusted_rss_critical_requires_review이면 본문 추출 실패 자체를 탈락 이유로 삼지 말고, 신뢰 소스의 제목/요약 안에 실적·가이던스·대형 CAPEX·데이터센터 증설 같은 새 핵심 사실이 구체적으로 있는지 평가한다. '
+            'freshness_note=trusted_rss_requires_review이면 본문 추출 실패 자체를 탈락 이유로 삼지 말고, 신뢰 소스의 제목/요약 안에 실적·가이던스·대형 CAPEX·데이터센터 증설 같은 새 핵심 사실이 구체적으로 있는지 평가한다. '
             '본문이 없으면 RSS에 구체적 근거가 충분할 때만 통과. 기사 밖 사실로 보강하지 마라.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(), 'news_window_hours': hours,
              'articles': input_records(batch, True)}, REVIEW_SCHEMA)
@@ -1456,10 +1470,14 @@ def no_news_message(report, selected_count):
     healthy = int(report.get('healthy_feeds', 0) or 0)
     radars = int(report.get('radars', 0) or 0)
     critical = int(report.get('critical_candidates', 0) or 0)
-    window = min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4)
+    window = setting('NEWS_WINDOW_HOURS', 12, 4, 24)
+    reasons = report.get('rejection_reasons', {}) or {}
+    top = ' · '.join(f"{html.escape(str(k))} {v}건" for k, v in list(reasons.items())[:3])
+    suffix = f"\n주요 탈락: {top}" if top else ""
     return ("📭 <b>이번 회차에는 새로 전송할 중요 뉴스가 없습니다.</b>\n\n"
             f"수집 {collected:,}건 · 정상 레이더 {healthy}/{radars} · "
-            f"핵심이벤트 후보 {critical}건 · 최종선정 {selected_count}건 · 최신창 {window}시간")
+            f"핵심이벤트 후보 {critical}건 · 최종선정 {selected_count}건 · 최신창 {window}시간"
+            f"{suffix}")
 
 
 def telegram(text):
@@ -1506,7 +1524,8 @@ def confirm_sent(state, ident, message_id):
 
 
 def run(dry=False, diagnose=False):
-    hours = min(setting('NEWS_WINDOW_HOURS', 4, 1, 72), 4)
+    run_started = now()
+    hours = setting('NEWS_WINDOW_HOURS', 12, 4, 24)
     if not dry and not diagnose:
         missing = [k for k in ('TELEGRAM_TOKEN', 'TELEGRAM_CHAT_ID', 'GEMINI_KEY') if not os.getenv(k)]
         if missing:
@@ -1542,9 +1561,16 @@ def run(dry=False, diagnose=False):
         checkpoint()
         order = choose(state, api, checkpoint)
 
-        # 미검토/본문심사 미완료를 장기 이월하지 않는다. 다음 회차 검색에 다시 잡힐 수 있으나 큐에는 쌓지 않는다.
+        # 이번 회차 탈락 사유를 집계해 0건일 때 바로 원인을 볼 수 있게 한다.
+        run_reasons = Counter(
+            v.get('reason', '기타') for v in state.get('decisions', {}).values()
+            if v.get('ts', 0) >= run_started
+        )
+        report['rejection_reasons'] = dict(run_reasons.most_common(8))
+
+        # raw new만 버리고, candidate는 다음 회차 재심사를 위해 잠시 보존한다.
         for ident in list(state['pending']):
-            if state['pending'][ident].get('stage') in ('new', 'candidate'):
+            if state['pending'][ident].get('stage') == 'new':
                 state['pending'].pop(ident, None)
         checkpoint()
 
@@ -1591,10 +1617,15 @@ def run(dry=False, diagnose=False):
         return report
     except (APIError, RuntimeError) as exc:
         report.update(status='failed', error=str(exc))
+        if not dry:
+            try:
+                telegram("⚠️ <b>뉴스봇 실행 실패</b>\n" + html.escape(str(exc))[:700])
+            except Exception:
+                pass
         raise
     finally:
         for ident in list(state.get('pending', {})):
-            if state['pending'][ident].get('stage') in ('new', 'candidate'):
+            if state['pending'][ident].get('stage') == 'new':
                 state['pending'].pop(ident, None)
         checkpoint()
         report['calls'] = api.calls
