@@ -190,6 +190,18 @@ class Gemini:
         payload=dict(systemInstruction={'parts':[{'text':system}]},
                      contents=[{'role':'user','parts':[{'text':json.dumps(data,ensure_ascii=False)}]}],
                      generationConfig=config)
+        # Bound internal reasoning as well as visible JSON output.
+        if self.model.startswith('gemini-3'):
+            config['thinkingConfig']={'thinkingLevel':'LOW'}
+        elif self.model.startswith('gemini-2.5'):
+            config['thinkingConfig']={'thinkingBudget':1024}
+        stage='discovery' if 'candidates' in props else ('audit' if 'checks' in props else 'assessment')
+        system=system.replace('후보 수를 억지로 채우거나 상한으로 자르지 마세요.',
+                              '후보 수를 억지로 채우지 마세요. 이번 응답은 후보 최대 3개입니다.')
+        system+='\nJSON만 출력하고 설명 문자열은 간결하게 쓰세요. 스키마의 길이 제한을 지키세요.'
+        # Retain schema instructions even when the provider rejects structured mode.
+        system+='\n반환 JSON 스키마: '+json.dumps(schema,ensure_ascii=False)
+        payload['systemInstruction']={'parts':[{'text':system}]}
         input_tokens=self.count(payload)
         if input_tokens>self.input_limit:raise RequestTooLarge('Per-request input token limit reached; reduce batch/excerpt size')
         # A few model/version combinations reject an otherwise valid
@@ -230,7 +242,8 @@ class Gemini:
                     fallback_used=True
                     payload=dict(payload,generationConfig={
                         'maxOutputTokens':output_limit,
-                        'responseMimeType':'application/json'})
+                        'responseMimeType':'application/json',
+                        **({'thinkingConfig':config['thinkingConfig']} if 'thinkingConfig' in config else {})})
                     reuse_receipt=receipt
                     continue
                 if not detail and first_400_detail:
@@ -251,9 +264,13 @@ class Gemini:
             finish=candidates[0].get('finishReason','MISSING') if candidates else 'NO_CANDIDATE'
             block=result.get('promptFeedback',{}).get('blockReason','NONE')
             if finish!='STOP':
-                if finish=='MAX_TOKENS' and attempt<2 and self._tighten_candidate_schema(payload):
+                if finish=='MAX_TOKENS' and attempt<2 and output_limit<16384:
+                    self._tighten_candidate_schema(payload)
+                    output_limit=min(16384,output_limit*2)
+                    payload['generationConfig']['maxOutputTokens']=output_limit
+                    print(f'[retry] network-v13 stage={stage} MAX_TOKENS; output_limit={output_limit}')
                     continue
-                raise ApiError(f'Incomplete Gemini response: finishReason={finish}, blockReason={block}')
+                raise ApiError(f'Incomplete Gemini response: finishReason={finish}, blockReason={block}, version=network-v13, stage={stage}, model={self.model}, limit={output_limit}, output={usage.get("candidatesTokenCount")}, thinking={usage.get("thoughtsTokenCount")}')
             raw=''.join(p.get('text','') for p in candidates[0].get('content',{}).get('parts',[]) if not p.get('thought'))
             try:
                 obj=json.loads(raw); jsonschema.validate(obj,schema)
