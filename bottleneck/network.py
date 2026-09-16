@@ -159,7 +159,9 @@ class Gemini:
             # Keep provider details out of logs (they can contain request data),
             # but expose the status so a bad key/model is distinguishable from
             # a transient network failure.
-            raise ApiError(f'Token count HTTP {e.code}; check access/quota/model') from None
+            detail=self._http_detail(e)
+            suffix=f': {detail}' if detail else ''
+            raise ApiError(f'Token count HTTP {e.code}{suffix}; check access/quota/model') from None
         except (OSError,ValueError,KeyError):
             raise ApiError('Token count failed; generation blocked to protect budget') from None
 
@@ -175,15 +177,29 @@ class Gemini:
                     'responseFormat':{'text':{'mimeType':'application/json','schema':api_schema}}}
         else:
             config={'maxOutputTokens':output_limit,
-                    'responseMimeType':'application/json','responseSchema':api_schema}
+                    'responseMimeType':'application/json',
+                    # The legacy GenerateContent Schema uses enum values such
+                    # as OBJECT/STRING in raw REST JSON, unlike JSON Schema.
+                    'responseSchema':self._legacy_schema(api_schema)}
         payload=dict(systemInstruction={'parts':[{'text':system}]},
                      contents=[{'role':'user','parts':[{'text':json.dumps(data,ensure_ascii=False)}]}],
                      generationConfig=config)
         input_tokens=self.count(payload)
         if input_tokens>self.input_limit:raise RequestTooLarge('Per-request input token limit reached; reduce batch/excerpt size')
+        # A few model/version combinations reject an otherwise valid
+        # responseSchema with HTTP 400.  Keep the strict schema as the first
+        # attempt, then retry once in JSON mode (the response is still checked
+        # against the full local jsonschema below).  Reuse the same budget
+        # reservation so a rejected request is never double-counted.
+        fallback_used=False
+        reuse_receipt=None
+        first_400_detail=''
         for attempt in range(3):
             if self.calls>=self.max_calls: raise BudgetError('Gemini call budget exhausted; backlog retained')
-            receipt=self.budget.reserve(input_tokens+output_limit+2048) if self.budget else None
+            if reuse_receipt is not None:
+                receipt,reuse_receipt=reuse_receipt,None
+            else:
+                receipt=self.budget.reserve(input_tokens+output_limit+2048) if self.budget else None
             self.calls+=1
             request=urllib.request.Request(
                 f'https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent',
@@ -196,7 +212,28 @@ class Gemini:
                     try: delay=min(45,max(1,float(e.headers.get('Retry-After','10'))))
                     except ValueError: delay=10
                     time.sleep(delay); continue
-                raise ApiError(f'Gemini HTTP {code}; check access/quota/model') from None
+                detail=self._http_detail(e)
+                if code==400 and detail and not first_400_detail:
+                    first_400_detail=detail
+                detail_l=detail.lower()
+                schema_error=(not detail or any(x in detail_l for x in
+                    ('schema','responseformat','response format','generationconfig',
+                     'generation config','additionalproperties','unknown name',
+                     'invalid argument','json payload')))
+                if code==400 and not fallback_used and schema_error and attempt<2:
+                    fallback_used=True
+                    payload=dict(payload,generationConfig={
+                        'maxOutputTokens':output_limit,
+                        'responseMimeType':'application/json'})
+                    reuse_receipt=receipt
+                    continue
+                if not detail and first_400_detail:
+                    detail=first_400_detail
+                if not detail and code==400:
+                    mode='json-fallback' if fallback_used else 'structured'
+                    detail=f'provider detail unavailable (model={self.model}, mode={mode})'
+                suffix=f': {detail}' if detail else ''
+                raise ApiError(f'Gemini HTTP {code}{suffix}; check access/quota/model') from None
             except (OSError,ValueError):
                 raise ApiError('Gemini response unavailable') from None
             usage=result.get('usageMetadata',{})
@@ -220,11 +257,40 @@ class Gemini:
         """Remove JSON-Schema keywords unsupported by Gemini structured output."""
         if isinstance(value,dict):
             unsupported={'maxLength','minLength','pattern','formatMinimum','formatMaximum',
-                         'exclusiveMinimum','exclusiveMaximum','multipleOf','default','examples'}
+                         'exclusiveMinimum','exclusiveMaximum','multipleOf','default','examples',
+                         # `additionalProperties` belongs to full JSON Schema,
+                         # but is not a field of the legacy Gemini Schema used
+                         # by responseSchema (the 2.x models).
+                         'additionalProperties'}
             return {k:Gemini._api_schema(v) for k,v in value.items() if k not in unsupported}
         if isinstance(value,list):
             return [Gemini._api_schema(v) for v in value]
         return value
+
+    @staticmethod
+    def _legacy_schema(value,key=None):
+        """Convert JSON-Schema type names to the REST Schema enum spelling."""
+        if key=='type' and isinstance(value,str):
+            return value.upper()
+        if isinstance(value,dict):
+            return {k:Gemini._legacy_schema(v,k) for k,v in value.items()}
+        if isinstance(value,list):
+            return [Gemini._legacy_schema(v) for v in value]
+        return value
+
+    @staticmethod
+    def _http_detail(error):
+        """Extract only Google's short error message; never log request data."""
+        try:
+            body=error.read(4096).decode('utf-8','replace')
+            result=json.loads(body)
+            detail=result.get('error',{}).get('message','')
+            if isinstance(detail,str):
+                import re
+                return re.sub(r'\s+',' ',detail).strip()[:500]
+        except (OSError,ValueError,AttributeError,KeyError,TypeError):
+            pass
+        return ''
 
 
 def telegram(text,token,chat):
