@@ -28454,6 +28454,372 @@
       "policy": "ai-industry-v4.4-fresh4h-critical-events",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "Transient.AI secures investment from Nasdaq Ventures"
+    },
+    "f9a1a676de0562a0177bb4a361103a18ec32c2cefddd1f14b7920a3e489ffa58": {
+      "ts": 1789527679.408639,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "This is a product launch announcement for a rugged tablet, not a significant industry-wide development in AI, semiconductors, or data centers.",
+      "title": "CS Globiz Launches AMD-Powered AI Rugged Tablet Getac G140 in Korea"
+    },
+    "1426e7fb88395d34d55d5efd539f4d4304147c8c24308c248d48e3894f2b24ae": {
+      "ts": 1789527679.408741,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Googlebook pre-order announcement is a product launch detail, not a major industry trend or investment news.",
+      "title": "Google Confirms Googlebook Pre-Orders Start September 21"
+    },
+    "072ea650eddb9131d659c8af4f9e92869ad7010419c05318a546eeb334313797": {
+      "ts": 1789527679.408836,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "This is a stock comparison ('better buy' article) rather than news about industry structure, supply, demand, or significant new technology/investment.",
+      "title": "Credo (CRDO) vs. Marvell (MRVL): Which AI Chip Stock Is the Better Buy?"
+    },
+    "416aeaed76fbbfbd8226a09de5d8f0632df18257cd460edffad7f3d10c101815": {
+      "ts": 1789527679.408912,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Alibaba launching an AI tool for SMEs is a product announcement, not a significant industry-wide structural change or major investment news.",
+      "title": "Alibaba launches agentic AI tool to help SMEs expand"
+    },
+    "773324d3088046e859bf574753f09b289cce953a0225e2c5668f976aee40947d": {
+      "ts": 1789527679.409064,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "This article discusses 'AI Doomsday' hype and IPO fundraising, which is speculative and not directly related to core industry metrics like production, supply, or concrete investments.",
+      "title": "Shady Capital Mastermind Behind Company A's \"AI Doomsday\" Hype Exposed: Stoking Public Anxiety for IPO Fundraising & Hostility Toward DeepSeek's Open-Source Initiatives"
+    },
+    "5f23438eec8025dedeb9177956154d3d8461b7a87705e803b24b60763b6ec8ae": {
+      "ts": 1789527679.409168,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "While related to data centers, 'unexpected winners' is too vague and lacks specific industry impact information like CAPEX, supply, or demand shifts.",
+      "title": "The Data Center Boom’s Unexpected Winners"
+    },
+    "e0b9d455289f83479d508b0dbba3f09b36e4963ac7206cf7630d12ebbe7aabb6": {
+      "ts": 1789527679.409256,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Sovereign cloud expanding beyond data residency is a niche development and doesn't represent a major industry structural shift or significant new investment/production news.",
+      "title": "Sovereign cloud expands beyond data residency for Indian enterprises"
+    },
+    "02896bd652c02af23ea53e872e2bbce11c30253292dd069aaf356e32faed3e8f": {
+      "ts": 1789527679.409328,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "A list of 'power stocks to watch' is investment-focused and lacks specific news on the power sector's direct impact on AI/data centers' production, supply, or CAPEX.",
+      "title": "4 Power Stocks to Watch Amid the Data Center Boom"
+    },
+    "5583ac275414e60480d61c4d2cc77185e460a4cec930848eeb40f47fea87847d": {
+      "ts": 1789527679.409462,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "This is about AI crypto presales and technical validation on GitHub, which is speculative and not core semiconductor or data center industry news.",
+      "title": "AI Crypto Presales With Open Code: Inspecting MemeToro’s Proposal And Validation Pipeline On GitHub"
+    },
+    "a611f03130351e5a41c6520624a7b5a7f9fb2aa9bd7e5b5b012d46000e9cb99a": {
+      "ts": 1789527679.409544,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Discusses AI scaling but questions earnings impact, lacking concrete new data on production, supply, demand, or investment.",
+      "title": "AI is scaling, but where is the company-wide earnings impact?"
+    },
+    "0824cb39a8d14abf57862637a44e454ea236735332313351cc4a2064c18a5e8b": {
+      "ts": 1789527679.409629,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "How-to guide for setting up a specific AI model, not industry-impacting news.",
+      "title": "How to Setup DeepSeek as the Default Model on ChatGPT Codex"
+    },
+    "7c3a3de59c066f4d3dedad0b11ec21c2e7f5db8f94f0b748077abb95dae3d0de": {
+      "ts": 1789527679.409746,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "ETF commentary is about financial performance and strategy, not direct industry news on production, supply, or CAPEX.",
+      "title": "Virtus Terranova U.S. Quality Momentum ETF Q2 2026 Commentary (JOET)"
+    },
+    "5d1c93f56de7d5480d1f7ea0ca139f525b7adf7e1886074a6e6a5cb332887f6c": {
+      "ts": 1789527679.409829,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Focuses on stock outlook lifted by AI security demand, which is a market/valuation aspect rather than core industry news.",
+      "title": "Qualys Stock Outlook Gets A Lift From AI Security Demand"
+    },
+    "6ccd470708695e9bc0c73f0e6716114196828f9d11fdfaf9f4505f3787270c56": {
+      "ts": 1789527679.409898,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "TAIEX falling due to cautious AI outlook is market sentiment/stock performance related, not concrete industry news.",
+      "title": "TAIEX falls Tuesday on cautious AI outlook"
+    },
+    "9b2381457276f195591312a15bd98c38f4837b3f927e4816aab7f78a12f99641": {
+      "ts": 1789527679.409999,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "AI complexity in healthcare revenue cycle management is a specific application and not core AI/semiconductor industry news.",
+      "title": "AI Complexity in Healthcare Revenue Cycle Management Highlights Strategic Focus for Candid Health"
+    },
+    "ab196b888b1c8ca697f85b029ebcb878aaf7e44153e0b2099cfa8c525cac451d": {
+      "ts": 1789527679.410071,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Adobe Systems earnings call signals AI future, which is forward-looking but lacks specific new data on production, supply, or CAPEX.",
+      "title": "Adobe Systems Earnings Call Signals Confident AI Future"
+    },
+    "8186b3d8f4d1fc4ba68c322973fd6572a4a37694b0588de159b3998cdd940191": {
+      "ts": 1789527679.41017,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Sale of Salesforce shares is a financial transaction by an investment firm, not significant industry news.",
+      "title": "Reynders McVeigh Capital Management LLC Sells 2,701 Shares of Salesforce Inc. $CRM"
+    },
+    "f8f82be3915c31fe0083502e16a383a0ea0788d77cd1d5a5fbe5c0a46afabf43": {
+      "ts": 1789527679.410246,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Global Fintech investment is a broad financial market report, not specific to AI/semiconductor industry production, supply, or CAPEX.",
+      "title": "KPMG Report: Global Fintech Investment Reaches $103.1 Billion in H1 2026"
+    },
+    "daaaba7c0a9cd1a924ef0af925fb4dbb4cbbbeec34659607efcc37f4d8e392ca": {
+      "ts": 1789527679.410359,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Partnership for autonomous taxis is in the automotive sector, not directly AI/semiconductor or data center hardware/infrastructure news.",
+      "title": "GO, Waymo, and Nihon Kotsu have formed a strategic partnership to realize the commercialization of autonomous taxis in Japan by 2027."
+    },
+    "a184a7e5124ea7c8d013069a9c30701fbf4796709a17a071a2204ac7b1a4c161": {
+      "ts": 1789527679.410434,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Discussion of bond buybacks and yields is purely financial and unrelated to semiconductor/data center industry news.",
+      "title": "Bessent calls bond buybacks a success despite climb in yields"
+    },
+    "5caa261e957e499311bab44a7b640241519d73cf21d387bc24b9865b2ccd1df1": {
+      "ts": 1789527679.410556,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Launch of SBOM Archi for software supply chain security is software-focused, not hardware/semiconductor or data center news.",
+      "title": "LogiGear Launches SBOM Archi in the US to Strengthen Software Supply Chain Security and Support EU CRA Readiness"
+    },
+    "a201eced391c1db09dee8a0f2fcf7e9bf52031f76528041090e13b6f53679ebe": {
+      "ts": 1789527679.41067,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Article about investors contending with AI alarms and global risk is market sentiment and financial commentary, not concrete industry news.",
+      "title": "Investors Contend With AI Alarms, Global Risk at Future Proof｜Bloomberg Businessweek"
+    },
+    "50b3fc00a5184bd0f218ccd09adf2b461948da76296db002f312e3410e53462c": {
+      "ts": 1789527679.410778,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Stock valuation question (overvalued) is not news about industry structure, production, or supply/demand.",
+      "title": "Is IREN (NasdaqGS:IREN) Overvalued After Its 8x Three Year Run?"
+    },
+    "3aaa2e78a94701750b08c891be12012ea7e789acc33e5d754ae9a49e54173806": {
+      "ts": 1789527679.410876,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Sam Altman's confidence in AI safety policing is an opinion/statement, not news on concrete industry developments.",
+      "title": "OpenAI’s Sam Altman ‘confident’ industry can police AI safety"
+    },
+    "5c3d862cb9e108546d9e6711ff36fd6c1d7be1e855393c5ad496ef3cf180dcff": {
+      "ts": 1789527679.41097,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Yields and Fed/BOJ hikes are macroeconomic and financial news, not directly related to AI/semiconductor industry news.",
+      "title": "U.S. 10-Year Yield Tops 5% as Fed, BOJ Near Simultaneous Hikes"
+    },
+    "ef9276e7bc327f38d6bbfe4a7b837413c7a0b865474491039f7972fd63191518": {
+      "ts": 1789527679.411086,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "WTI Crude prices and Dow Jones performance are general market and commodity news, not specific to the AI/semiconductor industry.",
+      "title": "WTI Crude Surges Over 4% to Near $106, 10-Year Yield Tops 5%, Dow Falls for Second Straight Day"
+    },
+    "f1f712c2975f6bd0ac5c9e8b58e989c79d079d068971888d02547883327f4314": {
+      "ts": 1789527679.411183,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Market report on hardwood veneer with a mention of electronics demand is too indirect and not core AI/semiconductor/data center news.",
+      "title": "Rotary-Cut Hardwood Veneer Market 4.2% CAGR to 2035 on Electronics Demand - News and Statistics"
+    },
+    "ea139cadf5234d95186a50614c2b5c5a30e6c967702bc4efe3b69c8c0faa7f78": {
+      "ts": 1789527679.411262,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "News about a political verdict is irrelevant to the AI/semiconductor industry.",
+      "title": "Kosovo ex-president Thaci faces war crimes verdict in The Hague"
+    },
+    "8296c0f0a5fe8a243beffcee08a6e3eb67376185aacc3e62056b563935d22abb": {
+      "ts": 1789527679.411378,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "Elon Musk's suggestion for AI labs to test each other's models is a commentary, not news about industry structure, production, or investment.",
+      "title": "Elon Musk, per CNBC, urges AI labs and Chinese firms to test each other’s models"
+    },
+    "2e74a504727241ac518f789f7dc97a7e1b3a65634a4685246a43f4255c435356": {
+      "ts": 1789527680.58313,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "As a small, specific device for collaborative robots, this news lacks broader industry impact concerning AI, semiconductors, or data centers.",
+      "title": "A tiny Semtech device is now available to protect collaborative robots from power surges"
+    },
+    "d6018c722ef1b01339caff8f6732d41c632a76dba1b8f1bf697b738bbaf95e5b": {
+      "ts": 1789527682.97964,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: RSS 게시시각이 최신 창 밖",
+      "title": "AI, Data Center Spending by Multinationals Boosts Irish Economy"
+    },
+    "2e2fca2a96c290b02385a69865d6d22e6dfc6ea1e2c7165b9661d7aedbf78379": {
+      "ts": 1789527682.980769,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Asia fixed income draws support from capex boom, shrinking dollar supply: Principal"
+    },
+    "61a34d440e6219d98070a3ffc8497da7b0875632ff64800315bb174d011abbe7": {
+      "ts": 1789527682.980793,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nebius maintains buy rating with strong growth, raised capacity guidance, and improved profitability."
+    },
+    "81bac74e92ddd70b21738ad006998d596613dbed5d4a647ccc664bd473f96b58": {
+      "ts": 1789527682.980816,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "No sales, doubled revenue, rejected financing: a 14-person team's \"anti-consensus\" experiment in the AI wave"
+    },
+    "396115ff1b0ebf087dd98341d4805125064aab9f9e19cb8edb9ce1cfb5c931ad": {
+      "ts": 1789527682.980833,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Global pushback against data centers strains power grids, water"
+    },
+    "a9992772f9c6b097c1a7ecb129f079e0978935cebad9b496cae36191bba7a4f6": {
+      "ts": 1789527682.980852,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Surging electricity demand from AI data centers puts Iowa at an energy crossroads"
+    },
+    "3dcab054fe60caf452052fe6bb723c8e4d90243457d4bd3023110925b207b736": {
+      "ts": 1789527682.980874,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Brookfield Agrees to Acquire Reliance Worldwide Corporation in A$2.8 Billion All-Cash Transaction"
+    },
+    "5ecdcd13989bcae4c610f50d780887e5c3e34980eebf10471dd952dd93bdd18d": {
+      "ts": 1789527686.457311,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Kioxia CEO Urges Restraint on NAND Price Hikes to Protect AI Investment Sentiment"
+    },
+    "3faa271ad6e80eeb77585fe16c44cae8f9e0d491ad1d00be6f6e8388e5d1fe82": {
+      "ts": 1789527686.457335,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Broadcom Inc. Earnings Call Signals AI Supercycle"
+    },
+    "f3bf9d8d8f4f2771546b2eeb691521c81b5643b68e54ed860cfe42f73a7c69e6": {
+      "ts": 1789527686.457356,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron demonstrates 512GB DDR5 memory module for data centers By Investing.com"
+    },
+    "4d1a4207e77e50e4427dd49660c7dc2ca90e6a06fd35878d3e80b646ead2b7e4": {
+      "ts": 1789527686.457373,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron Stock Falls as AI Slowdown Debate Tests Memory Demand Outlook"
+    },
+    "ce57885a6215e641c091b161075206bfa7eeec7c9cc922a48b5a15c7ce24a792": {
+      "ts": 1789527686.45739,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Infratil boosts growth and guidance as AI drives data centre demand"
+    },
+    "1dd038c2004bf274c6275223a1d883d9118ceb9f3c74cfc5c80a86a927a8cfd7": {
+      "ts": 1789527686.457406,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Intel Leads Chip Stock Decline After Tech Leaders Demand AI Slowdown"
+    },
+    "19d569d4cf6941e2dfb767c5dedefdc890646d60d89dbefc912aafb01b5dfe25": {
+      "ts": 1789527686.457424,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Gates Foundation pledges $1B investment in AI access as industry faces scrutiny"
+    },
+    "69d14f8063cd0951efda97006dd74e59a9d4c36d1ab54777f0b9b17147898953": {
+      "ts": 1789527686.457442,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AVGO Stock Breaks Below the $340 Support as $300 Risk Emerges on AI Spending Concerns"
+    },
+    "56936416974e843c9de2feb3f19440325d8c6100d54fadcf979379aa3b08f2ce": {
+      "ts": 1789527688.094172,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Why ASML Holding (NasdaqGS:ASML) Is Getting Fresh Attention Now"
+    },
+    "c629fdeb44ff01ef887a2aecafa1a080f438e69a014b20279d0a75e7c4bc84d6": {
+      "ts": 1789527688.094217,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Irish central bank raises growth forecasts on AI investment boom"
+    },
+    "aecace358cf1b51af922840fa51012f2f988fb18d9980c6a0a8d63d62ce0505e": {
+      "ts": 1789527688.094243,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nvidia Tops Global Chip Design Rankings, Taiwan's MediaTek Lands Fifth"
+    },
+    "17069c09c69ef5dd19ac58308c694a0baa8dcc60d0515431c3d189bc2fd801f4": {
+      "ts": 1789527688.094276,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Credo Technology’s Earnings Call Signals Optical-Fueled Surge"
+    },
+    "8bd4f02232bb4d11155787915447a641e194b74532e6cd0b8829dd365ad9607b": {
+      "ts": 1789527688.094302,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "DeepSeek to hire its first CFO as it aims for public listing, expands workforce"
+    },
+    "3062b97974b714540d8af3cc2d91f8e521ee7e6a450432e041d6cc71b32f6b39": {
+      "ts": 1789527688.094338,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI progress and responsibility: Nvidia, Anthropic and OpenAI CEOs weigh in at Salesforce’s annual event"
+    },
+    "db7e4087152ab6db484f4ece3c6c13408b0b1d187d567980e3d76a93ca2cf326": {
+      "ts": 1789527688.094372,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Canada wants billions in AI investment, and Minister Solomon says it can ‘build right’"
+    },
+    "808e4e468febf1bf66d0900b11967d132244c95d6370ecb14f839409320a5e76": {
+      "ts": 1789527688.094403,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Kakao Brain Ex-CEO Probed for Misusing 9 Billion Won Investment Funds for Gambling"
+    },
+    "59c3fb5de1fd8f8f978e454bb3e8c3ebcd34f072d459e68278c75fd1b771cda4": {
+      "ts": 1789527689.705501,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic CEO sees untapped AI potential, Salesforce calls for more adoption support"
+    },
+    "e019b53411deec5a470709c8711059b87bd58c0282eeb1cb0ab53655bfbd5468": {
+      "ts": 1789527689.705552,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Labor accused of throwing creatives ‘under the bus’ with proposal to ease copyright protections for AI giants"
+    },
+    "e36bd39367bba9c958c4b5f3696e23c4918fcae157447364bf0fca7b6bb2e7cb": {
+      "ts": 1789527689.705579,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "SME firms focus on profit over turnover amid AI spending"
+    },
+    "9807f9a9c6f5fef682f0114709e8c0d3e331748a635c78db33f76ecc032d3604": {
+      "ts": 1789527689.705606,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI Considers Funding at $1.2 Trillion Valuation as Anthropic Calls to Slow AI Development"
+    },
+    "c65a7d557396571d5895abe98bb777fd3bb1330f605059b7233b2f1a8a21e732": {
+      "ts": 1789527689.705629,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI mulls funding round at $1.2 trillion valuation ahead of IPO"
+    },
+    "18c3938e38bdbe2596bb8312c7f7a91cfda3cd6928977059590fe89b123014e6": {
+      "ts": 1789527689.705652,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI Seeks Funding at $1.2 Trillion Value Even as It Urges AI Caution"
+    },
+    "05bfb32661b5a8c6d1e034f6e7932c4f054bcd0be1b86cbe2af99c5685b700b1": {
+      "ts": 1789527689.705674,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI targets mind-boggling $1.2 trillion valuation in shock new funding talks"
+    },
+    "4bf8fd488292859b2ce45a805abdded1cc9605f577bd2415dec529f19b66983e": {
+      "ts": 1789527689.705695,
+      "policy": "ai-industry-v4.4-fresh4h-critical-events",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI in talks for fresh funding at $1.2 trillion valuation ahead of IPO: Report"
     }
   },
   "legacy": {
