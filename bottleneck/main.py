@@ -278,6 +278,10 @@ def run(c,send=False,bootstrap=False):
     except (ApiError,ValueError) as exc:
         issues.append('분석 중단: '+str(exc))
         write_report(store,c['data']/('latest.md' if send else 'preview.md'),health,issues,ai)
+        # The final exception is intentionally generic for shell callers, but
+        # this short, already-sanitized issue makes the Actions log actionable
+        # without requiring the user to download the report artifact first.
+        print('[diagnostic] '+issues[-1],file=sys.stderr,flush=True)
         store.db.close()
         raise RuntimeError('Analysis incomplete; backlog and evidence retained. See report.') from None
     backlog=store.db.execute('SELECT COUNT(*) FROM articles WHERE screened=0').fetchone()[0]
