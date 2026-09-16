@@ -172,6 +172,12 @@ class Gemini:
         # Keep the full schema for local validation, but omit constraints that
         # the API does not support (for example maxLength).
         api_schema=self._api_schema(schema)
+        # Discovery must not expand an 80-article batch into an unbounded
+        # essay.  This API-side cap prevents MAX_TOKENS before local validation
+        # still checks the complete response schema.
+        props=api_schema.get('properties',{}) if isinstance(api_schema,dict) else {}
+        if isinstance(props,dict) and isinstance(props.get('candidates'),dict):
+            props['candidates']['maxItems']=8
         if self.model.startswith('gemini-3'):
             config={'maxOutputTokens':output_limit,
                     'responseFormat':{'text':{'mimeType':'application/json','schema':api_schema}}}
@@ -242,8 +248,10 @@ class Gemini:
             self.tokens+=actual if isinstance(actual,int) else input_tokens+output_limit+2048
             self.usage.append(dict(input=usage.get('promptTokenCount'),output=usage.get('candidatesTokenCount'),thinking=usage.get('thoughtsTokenCount'),total=actual))
             candidates=result.get('candidates',[])
-            if not candidates or candidates[0].get('finishReason')!='STOP':
-                raise ApiError('Incomplete Gemini response; not an empty result')
+            finish=candidates[0].get('finishReason','MISSING') if candidates else 'NO_CANDIDATE'
+            block=result.get('promptFeedback',{}).get('blockReason','NONE')
+            if finish!='STOP':
+                raise ApiError(f'Incomplete Gemini response: finishReason={finish}, blockReason={block}')
             raw=''.join(p.get('text','') for p in candidates[0].get('content',{}).get('parts',[]) if not p.get('thought'))
             try:
                 obj=json.loads(raw); jsonschema.validate(obj,schema)
