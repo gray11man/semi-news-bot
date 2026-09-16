@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""AI·반도체 중요 뉴스 v4.5.2 — 누락완화 / 최신성검증 / 재탕차단 / 후보재시도 / 광역 레이더.
+"""AI·반도체 중요 뉴스 v4.6 — 누락완화 / 최신성검증 / 재탕차단 / 후보재시도 / 광역 레이더.
 
 핵심 원칙
 - 검색은 넓게: 산업 + 기업 + 핵심인물 + 공식발표 + 신모델/신기술 + 실적/가이던스
@@ -42,8 +42,8 @@ import trafilatura
 UTC = dt.timezone.utc
 STATE = Path('seen.json')
 REPORT = Path('diagnostics.json')
-UA = 'AIIndustryNewsBot/4.5.2 (+RSS news reader)'
-POLICY_VERSION = 'ai-industry-v4.5.2-balanced12h-retry'
+UA = 'AIIndustryNewsBot/4.6 (+RSS news reader)'
+POLICY_VERSION = 'ai-industry-v4.6-executive-origin-radar'
 
 # 원문 추출이 실패해도 RSS 제목/요약만으로 최종심사까지 보낼 수 있는 1차 신뢰 소스.
 # 자동 통과 목록이 아니라 '심사 기회 보존'용이다.
@@ -54,6 +54,7 @@ TRUSTED_SOURCE_HINTS = (
     'techcrunch', 'the verge', 'ars technica', 'tom\'s hardware', 'trendforce',
     'digitimes', 'ee times', 'semiconductor engineering', 'the register',
     'venturebeat', 'blocks and files',
+    'six five', 'libsyn', 'seeking alpha', 'investing.com',
 )
 
 CRITICAL_COMPANY_HINTS = (
@@ -116,6 +117,9 @@ def critical_event_score(item):
         score += 18
     if trusted_source(item):
         score += 12
+    feed_name = str(item.get('feed', '') or '')
+    if feed_name.startswith('executive_origin_'):
+        score += 18
     return min(score, 100)
 
 
@@ -611,6 +615,12 @@ KEY_PEOPLE = [
     'Rick Wallace KLA', 'Toshiki Kawai Tokyo Electron', 'Jayshree Ullal',
     'Mike Intrator CoreWeave', 'Arkady Volozh', 'Giordano Albertazzi Vertiv',
     'Craig Arnold Eaton', 'Scott Strazik GE Vernova', 'KR Sridhar Bloom Energy',
+    # 임원 원발언을 자주 내는 CBO/EVP/SVP/CFO/사업부 책임자
+    'Sumit Sadana Micron', 'Mark Murphy Micron', 'Manish Bhatia Micron',
+    'Colette Kress Nvidia', 'Ian Buck Nvidia', 'Jay Puri Nvidia',
+    'Forrest Norrod AMD', 'Jean Hu AMD', 'Jack Huynh AMD',
+    'Wendell Huang TSMC', 'Cliff Hou TSMC',
+    'Charlie Kawwas Broadcom', 'Ram Velaga Broadcom',
 ]
 
 OFFICIAL_DOMAINS = [
@@ -758,11 +768,43 @@ PEOPLE_EVENT_TERMS = (
 for i, group in enumerate(chunks(KEY_PEOPLE, 6)):
     TOPICS.append((f'people_{i}', 'en', f'{or_query(group)} {PEOPLE_EVENT_TERMS}'))
 
-# 이름을 모르는 새 임원도 잡기 위한 직책 기반 레이더.
-for i, group in enumerate(chunks(AI_COMPANIES + CHIP_COMPANIES[:18] + HYPERSCALERS + INFRA_COMPANIES[:12] + MATERIAL_COMPANIES[:5], 7)):
+# 임원 원발언 레이더.
+# 기사 제목보다 인터뷰/컨퍼런스/팟캐스트/트랜스크립트에서 처음 공개되는
+# 수치·수급·CAPEX·로드맵 발언을 잡기 위한 별도 검색군이다.
+EXECUTIVE_ROLE_TERMS = (
+    'CEO OR CFO OR CTO OR COO OR CBO OR president OR founder OR '
+    '"chief business officer" OR "chief operating officer" OR "chief scientist" OR '
+    '"chief research officer" OR "executive vice president" OR EVP OR '
+    '"senior vice president" OR SVP OR "general manager" OR GM OR '
+    '"senior advisor" OR "head of AI" OR "head of infrastructure" OR '
+    '"head of data center" OR "head of datacenter" OR "VP infrastructure"'
+)
+
+EXECUTIVE_FORMAT_TERMS = (
+    'interview OR keynote OR summit OR conference OR "fireside chat" OR podcast OR '
+    'transcript OR webcast OR presentation OR forum OR symposium OR panel OR '
+    '"investor conference" OR "technology conference"'
+)
+
+EXECUTIVE_FACT_TERMS = (
+    'capacity OR supply OR demand OR shortage OR pricing OR price OR capex OR investment OR '
+    'production OR yield OR shipment OR customer OR backlog OR contract OR roadmap OR '
+    'guidance OR outlook OR forecast OR bandwidth OR memory OR HBM OR DRAM OR NAND OR '
+    'GPU OR ASIC OR compute OR inference OR training OR datacenter OR "data center"'
+)
+
+# 이름을 모르는 임원도 잡는다. 그룹을 작게 해 Google News OR 쿼리 희석을 줄인다.
+EXECUTIVE_RADAR_COMPANIES = (
+    AI_COMPANIES + CHIP_COMPANIES + HYPERSCALERS + INFRA_COMPANIES[:20] + MATERIAL_COMPANIES[:8]
+)
+for i, group in enumerate(chunks(EXECUTIVE_RADAR_COMPANIES, 4)):
     TOPICS.append((f'executive_role_{i}', 'en',
-                   f'{or_query(group)} (CEO OR CFO OR CTO OR president OR founder OR "chief scientist" OR '
-                   f'"chief research officer" OR "head of AI" OR "head of infrastructure" OR "VP infrastructure")'))
+                   f'{or_query(group)} ({EXECUTIVE_ROLE_TERMS}) ({EXECUTIVE_FACT_TERMS})'))
+
+# 인터뷰/컨퍼런스/팟캐스트/트랜스크립트라는 '발언 형식' 자체를 별도 탐색한다.
+for i, group in enumerate(chunks(EXECUTIVE_RADAR_COMPANIES, 4)):
+    TOPICS.append((f'executive_origin_{i}', 'en',
+                   f'{or_query(group)} ({EXECUTIVE_FORMAT_TERMS}) ({EXECUTIVE_FACT_TERMS})'))
 
 # 공식 발표 검색 보강. 직접 RSS가 없어도 Google News 색인에서 회사 공식 사이트를 별도 탐색한다.
 for i, group in enumerate(chunks(OFFICIAL_DOMAINS, 4)):
@@ -782,8 +824,13 @@ def feeds(hours):
     for name, lang, query in TOPICS:
         url = 'https://news.google.com/rss/search?q=' + quote(f'{query} when:{hours}h') + '&' + locales[lang]
         result.append((name, url))
-    # 공식 OpenAI RSS는 직접 수집. 장애가 나도 다른 검색 피드는 계속 돈다.
-    result.append(('openai_rss', 'https://openai.com/news/rss.xml'))
+    # 직접 원본 RSS. Google News 색인 전에 올라오는 인터뷰/팟캐스트 원발언을 잡는다.
+    # Six Five는 주요 AI/반도체 경영진 인터뷰와 Summit 세션을 정기적으로 공개한다.
+    direct_feeds = [
+        ('openai_rss', 'https://openai.com/news/rss.xml'),
+        ('executive_origin_sixfive', 'https://sixfive.libsyn.com/rss'),
+    ]
+    result.extend(direct_feeds)
     return result
 
 
@@ -1322,6 +1369,7 @@ def choose(state, api, checkpoint):
             '관련성만 있고 사소한 회사 동정은 여기서도 버려 candidate 폭증을 막아라. '
             '특히 새 모델/신기술, 핵심 경영진의 새 수치·전망, CAPEX/자금조달/대형계약, 생산·가격·수율·재고, '
             '데이터센터/전력, 규제, 중요한 부정 뉴스는 제목만 평범해 보여도 후보로 남긴다. '
+            '인터뷰·컨퍼런스·팟캐스트·트랜스크립트도 새 수치/수급/투자/로드맵의 최초 공개라면 반드시 후보로 남긴다. '
             '단순 주가/목표가/가십/행사/입문설명/재탕은 false. reason은 120자 이내.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(),
              'news_window_hours': tolerant_setting('NEWS_WINDOW_HOURS', 12, 1, 24),
@@ -1557,6 +1605,9 @@ def run(dry=False, diagnose=False):
         report['feeds'] = feed_reports
         report['collected'] = len(rows)
         report['critical_candidates'] = sum(force_review(it) for it in rows)
+        report['executive_origin_collected'] = sum(
+            str(it.get('feed', '')).startswith('executive_origin_') for it in rows
+        )
         report['radars'] = len(feeds(hours))
         report['healthy_feeds'] = sum(bool(r.get('ok')) for r in feed_reports)
         if diagnose:
