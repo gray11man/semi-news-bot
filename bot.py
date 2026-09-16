@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""AI·반도체 중요 뉴스 v4.5 — 누락완화 / 최신성검증 / 재탕차단 / 후보재시도 / 광역 레이더.
+"""AI·반도체 중요 뉴스 v4.5.1 — 누락완화 / 최신성검증 / 재탕차단 / 후보재시도 / 광역 레이더.
 
 핵심 원칙
 - 검색은 넓게: 산업 + 기업 + 핵심인물 + 공식발표 + 신모델/신기술 + 실적/가이던스
@@ -42,8 +42,8 @@ import trafilatura
 UTC = dt.timezone.utc
 STATE = Path('seen.json')
 REPORT = Path('diagnostics.json')
-UA = 'AIIndustryNewsBot/4.5 (+RSS news reader)'
-POLICY_VERSION = 'ai-industry-v4.5-balanced12h-retry'
+UA = 'AIIndustryNewsBot/4.5.1 (+RSS news reader)'
+POLICY_VERSION = 'ai-industry-v4.5.1-balanced12h-retry'
 
 # 원문 추출이 실패해도 RSS 제목/요약만으로 최종심사까지 보낼 수 있는 1차 신뢰 소스.
 # 자동 통과 목록이 아니라 '심사 기회 보존'용이다.
@@ -1230,7 +1230,7 @@ def validate_review(rows, batch):
         }
         if item.get('freshness_note') in strict_freshness:
             new_age = iso_age(row.get('new_fact_date'))
-            hours = setting('NEWS_WINDOW_HOURS', 12, 4, 24)
+            hours = setting('NEWS_WINDOW_HOURS', 12, 1, 24)
             if new_age is None or not -1 <= new_age <= hours:
                 dropped += 1
                 continue
@@ -1308,7 +1308,7 @@ def choose(state, api, checkpoint):
             '데이터센터/전력, 규제, 중요한 부정 뉴스는 제목만 평범해 보여도 후보로 남긴다. '
             '단순 주가/목표가/가십/행사/입문설명/재탕은 false. reason은 120자 이내.',
             {'current_time_utc': dt.datetime.now(UTC).isoformat(),
-             'news_window_hours': setting('NEWS_WINDOW_HOURS', 12, 4, 24),
+             'news_window_hours': setting('NEWS_WINDOW_HOURS', 12, 1, 24),
              'articles': input_records(batch)}, SHORT_SCHEMA, compact=True)
         validate_rows(rows, len(batch), allow_partial=True)
         returned = set()
@@ -1352,7 +1352,7 @@ def choose(state, api, checkpoint):
 
         # LLM 호출 전에 명백한 구형 원문과 동일 URL 재탕을 Python에서 강제 제거한다.
         filtered_ids, batch = [], []
-        hours = setting('NEWS_WINDOW_HOURS', 12, 4, 24)
+        hours = setting('NEWS_WINDOW_HOURS', 12, 1, 24)
         for ident, item in zip(ids, enriched):
             ok, note = source_freshness(item, hours)
             item['freshness_note'] = note
@@ -1470,7 +1470,7 @@ def no_news_message(report, selected_count):
     healthy = int(report.get('healthy_feeds', 0) or 0)
     radars = int(report.get('radars', 0) or 0)
     critical = int(report.get('critical_candidates', 0) or 0)
-    window = setting('NEWS_WINDOW_HOURS', 12, 4, 24)
+    window = setting('NEWS_WINDOW_HOURS', 12, 1, 24)
     reasons = report.get('rejection_reasons', {}) or {}
     top = ' · '.join(f"{html.escape(str(k))} {v}건" for k, v in list(reasons.items())[:3])
     suffix = f"\n주요 탈락: {top}" if top else ""
@@ -1525,7 +1525,7 @@ def confirm_sent(state, ident, message_id):
 
 def run(dry=False, diagnose=False):
     run_started = now()
-    hours = setting('NEWS_WINDOW_HOURS', 12, 4, 24)
+    hours = setting('NEWS_WINDOW_HOURS', 12, 1, 24)
     if not dry and not diagnose:
         missing = [k for k in ('TELEGRAM_TOKEN', 'TELEGRAM_CHAT_ID', 'GEMINI_KEY') if not os.getenv(k)]
         if missing:
