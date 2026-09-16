@@ -138,25 +138,44 @@ class Gemini:
 
     def count(self,payload):
         self.count_calls+=1
+        # countTokens accepts either `contents` or a GenerateContentRequest.
+        # Send only the input-bearing fields: generationConfig is not needed
+        # for counting and some model versions reject output-only options here.
+        count_request={
+            'model':'models/'+self.model,
+            'contents':payload['contents'],
+            'systemInstruction':payload.get('systemInstruction'),
+        }
         request=urllib.request.Request(
             f'https://generativelanguage.googleapis.com/v1beta/models/{self.model}:countTokens',
-            data=json.dumps({'generateContentRequest':dict(payload,model='models/'+self.model)}).encode(),
+            data=json.dumps({'generateContentRequest':count_request},ensure_ascii=False).encode(),
             headers={'Content-Type':'application/json','x-goog-api-key':self.key})
         try:
             with urllib.request.urlopen(request,timeout=40) as r: result=json.load(r)
             value=result['totalTokens']
             if not isinstance(value,int) or value<0:raise ValueError()
             return value
+        except urllib.error.HTTPError as e:
+            # Keep provider details out of logs (they can contain request data),
+            # but expose the status so a bad key/model is distinguishable from
+            # a transient network failure.
+            raise ApiError(f'Token count HTTP {e.code}; check access/quota/model') from None
         except (OSError,ValueError,KeyError):
             raise ApiError('Token count failed; generation blocked to protect budget') from None
 
     def json(self,system,data,schema):
         import jsonschema
         output_limit=4096 if 'checks' in schema.get('properties',{}) else self.output_limit
-        config={'maxOutputTokens':output_limit,'responseMimeType':'application/json','responseJsonSchema':schema}
+        # Gemini accepts a smaller JSON-Schema subset for structured output.
+        # Keep the full schema for local validation, but omit constraints that
+        # the API does not support (for example maxLength).
+        api_schema=self._api_schema(schema)
         if self.model.startswith('gemini-3'):
-            output_limit=4096 if 'checks' in schema.get('properties',{}) else self.output_limit
-        config={'maxOutputTokens':output_limit,'responseFormat':{'text':{'mimeType':'application/json','schema':schema}}}
+            config={'maxOutputTokens':output_limit,
+                    'responseFormat':{'text':{'mimeType':'application/json','schema':api_schema}}}
+        else:
+            config={'maxOutputTokens':output_limit,
+                    'responseMimeType':'application/json','responseSchema':api_schema}
         payload=dict(systemInstruction={'parts':[{'text':system}]},
                      contents=[{'role':'user','parts':[{'text':json.dumps(data,ensure_ascii=False)}]}],
                      generationConfig=config)
@@ -195,6 +214,17 @@ class Gemini:
                 raise ApiError('Gemini schema validation failed') from None
             return obj
         raise ApiError('Gemini retries exhausted')
+
+    @staticmethod
+    def _api_schema(value):
+        """Remove JSON-Schema keywords unsupported by Gemini structured output."""
+        if isinstance(value,dict):
+            unsupported={'maxLength','minLength','pattern','formatMinimum','formatMaximum',
+                         'exclusiveMinimum','exclusiveMaximum','multipleOf','default','examples'}
+            return {k:Gemini._api_schema(v) for k,v in value.items() if k not in unsupported}
+        if isinstance(value,list):
+            return [Gemini._api_schema(v) for v in value]
+        return value
 
 
 def telegram(text,token,chat):
