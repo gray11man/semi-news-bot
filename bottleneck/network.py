@@ -159,9 +159,7 @@ class Gemini:
             # Keep provider details out of logs (they can contain request data),
             # but expose the status so a bad key/model is distinguishable from
             # a transient network failure.
-            detail=self._http_detail(e)
-            suffix=f': {detail}' if detail else ''
-            raise ApiError(f'Token count HTTP {e.code}{suffix}; check access/quota/model') from None
+            raise ApiError(f'Token count HTTP {e.code}; check access/quota/model') from None
         except (OSError,ValueError,KeyError):
             raise ApiError('Token count failed; generation blocked to protect budget') from None
 
@@ -177,10 +175,7 @@ class Gemini:
                     'responseFormat':{'text':{'mimeType':'application/json','schema':api_schema}}}
         else:
             config={'maxOutputTokens':output_limit,
-                    'responseMimeType':'application/json',
-                    # The legacy GenerateContent Schema uses enum values such
-                    # as OBJECT/STRING in raw REST JSON, unlike JSON Schema.
-                    'responseSchema':self._legacy_schema(api_schema)}
+                    'responseMimeType':'application/json','responseSchema':api_schema}
         payload=dict(systemInstruction={'parts':[{'text':system}]},
                      contents=[{'role':'user','parts':[{'text':json.dumps(data,ensure_ascii=False)}]}],
                      generationConfig=config)
@@ -201,9 +196,7 @@ class Gemini:
                     try: delay=min(45,max(1,float(e.headers.get('Retry-After','10'))))
                     except ValueError: delay=10
                     time.sleep(delay); continue
-                detail=self._http_detail(e)
-                suffix=f': {detail}' if detail else ''
-                raise ApiError(f'Gemini HTTP {code}{suffix}; check access/quota/model') from None
+                raise ApiError(f'Gemini HTTP {code}; check access/quota/model') from None
             except (OSError,ValueError):
                 raise ApiError('Gemini response unavailable') from None
             usage=result.get('usageMetadata',{})
@@ -227,40 +220,11 @@ class Gemini:
         """Remove JSON-Schema keywords unsupported by Gemini structured output."""
         if isinstance(value,dict):
             unsupported={'maxLength','minLength','pattern','formatMinimum','formatMaximum',
-                         'exclusiveMinimum','exclusiveMaximum','multipleOf','default','examples',
-                         # `additionalProperties` belongs to full JSON Schema,
-                         # but is not a field of the legacy Gemini Schema used
-                         # by responseSchema (the 2.x models).
-                         'additionalProperties'}
+                         'exclusiveMinimum','exclusiveMaximum','multipleOf','default','examples'}
             return {k:Gemini._api_schema(v) for k,v in value.items() if k not in unsupported}
         if isinstance(value,list):
             return [Gemini._api_schema(v) for v in value]
         return value
-
-    @staticmethod
-    def _legacy_schema(value,key=None):
-        """Convert JSON-Schema type names to the REST Schema enum spelling."""
-        if key=='type' and isinstance(value,str):
-            return value.upper()
-        if isinstance(value,dict):
-            return {k:Gemini._legacy_schema(v,k) for k,v in value.items()}
-        if isinstance(value,list):
-            return [Gemini._legacy_schema(v) for v in value]
-        return value
-
-    @staticmethod
-    def _http_detail(error):
-        """Extract only Google's short error message; never log request data."""
-        try:
-            body=error.read(4096).decode('utf-8','replace')
-            result=json.loads(body)
-            detail=result.get('error',{}).get('message','')
-            if isinstance(detail,str):
-                import re
-                return re.sub(r'\s+',' ',detail).strip()[:500]
-        except (OSError,ValueError,AttributeError,KeyError,TypeError):
-            pass
-        return ''
 
 
 def telegram(text,token,chat):
