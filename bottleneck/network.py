@@ -173,11 +173,11 @@ class Gemini:
         # the API does not support (for example maxLength).
         api_schema=self._api_schema(schema)
         # Discovery must not expand an 80-article batch into an unbounded
-        # essay.  This API-side cap prevents MAX_TOKENS before local validation
-        # still checks the complete response schema.
+        # essay.  This API-side cap prevents MAX_TOKENS; local validation still
+        # checks the complete response schema.
         props=api_schema.get('properties',{}) if isinstance(api_schema,dict) else {}
         if isinstance(props,dict) and isinstance(props.get('candidates'),dict):
-            props['candidates']['maxItems']=8
+            props['candidates']['maxItems']=3
         if self.model.startswith('gemini-3'):
             config={'maxOutputTokens':output_limit,
                     'responseFormat':{'text':{'mimeType':'application/json','schema':api_schema}}}
@@ -251,6 +251,8 @@ class Gemini:
             finish=candidates[0].get('finishReason','MISSING') if candidates else 'NO_CANDIDATE'
             block=result.get('promptFeedback',{}).get('blockReason','NONE')
             if finish!='STOP':
+                if finish=='MAX_TOKENS' and attempt<2 and self._tighten_candidate_schema(payload):
+                    continue
                 raise ApiError(f'Incomplete Gemini response: finishReason={finish}, blockReason={block}')
             raw=''.join(p.get('text','') for p in candidates[0].get('content',{}).get('parts',[]) if not p.get('thought'))
             try:
@@ -285,6 +287,22 @@ class Gemini:
         if isinstance(value,list):
             return [Gemini._legacy_schema(v) for v in value]
         return value
+
+    @staticmethod
+    def _tighten_candidate_schema(payload):
+        """Shrink discovery output on MAX_TOKENS without changing input data."""
+        config=payload.get('generationConfig',{})
+        if 'responseFormat' in config:
+            schema=config.get('responseFormat',{}).get('text',{}).get('schema',{})
+        else:
+            schema=config.get('responseSchema',{})
+        props=schema.get('properties',{}) if isinstance(schema,dict) else {}
+        candidate=props.get('candidates') if isinstance(props,dict) else None
+        if not isinstance(candidate,dict): return False
+        current=candidate.get('maxItems')
+        if not isinstance(current,int) or current<=1: return False
+        candidate['maxItems']=max(1,current//2)
+        return True
 
     @staticmethod
     def _http_detail(error):
