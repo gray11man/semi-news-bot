@@ -2,7 +2,7 @@ name: celeb-watcher
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # 6시간마다 (쿼터 안전)
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -17,14 +17,41 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - run: pip install requests feedparser
+      - run: python -m pip install requests feedparser
+
+      - name: Validate saved state
+        working-directory: celeb-watcher
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          expected = {
+              'seen_celeb_ids.json': list,
+              'seen_celeb_meta.json': dict,
+              'seen_twitter_blog.json': dict,
+              'seen_credit.json': dict,
+          }
+          for name, kind in expected.items():
+              p = Path(name)
+              if not p.exists():
+                  print(f'::warning::{name} missing; no previous history available')
+                  continue
+              data = json.loads(p.read_text(encoding='utf-8'))
+              if not isinstance(data, kind):
+                  raise ValueError(f'{name}: invalid state type')
+              print(f'State loaded: {name}')
+          PY
 
       - name: Run watcher
+        id: watcher
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
@@ -33,52 +60,62 @@ jobs:
         working-directory: celeb-watcher
         run: python celeb_watcher.py
 
-      - name: Commit seen ids
-        if: always()          # 파이썬이 실패해도 그때까지의 상태는 저장
+      - name: Snapshot state
+        if: ${{ always() && steps.watcher.outcome != 'skipped' }}
+        id: snapshot
+        shell: bash
         run: |
+          set -euo pipefail
+          backup="$RUNNER_TEMP/celeb-state-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          mkdir -p "$backup"
+          for f in seen_celeb_ids.json seen_celeb_meta.json seen_twitter_blog.json seen_credit.json; do
+            if [ -f "celeb-watcher/$f" ]; then
+              cp "celeb-watcher/$f" "$backup/$f"
+            fi
+          done
+          echo "path=$backup" >> "$GITHUB_OUTPUT"
+
+      - name: Commit all state files
+        if: ${{ always() && steps.snapshot.outcome == 'success' }}
+        id: persist
+        shell: bash
+        run: |
+          set -euo pipefail
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-
-          # 상태 파일 목록 — 앞으로 추가될 파일은 여기 한 줄만 고치면 됨
-          STATE_FILES="seen_celeb_ids.json seen_twitter_blog.json seen_credit.json"
-
-          # 이번 실행이 만든 최신 상태 파일을 백업 (이 파일들이 항상 최신본)
-          for f in $STATE_FILES; do
-            cp "celeb-watcher/$f" "/tmp/$f" 2>/dev/null || true
-          done
-
-          PUSHED=0
-          for i in 1 2 3 4 5; do
-            # 원격 최신 상태로 맞춘 뒤 (충돌 원천 차단)
-            git fetch origin main
-            git reset --hard origin/main
-
-            # 백업해둔 최신 상태 파일 복원
-            for f in $STATE_FILES; do
-              cp "/tmp/$f" "celeb-watcher/$f" 2>/dev/null || true
-            done
-
-            for f in $STATE_FILES; do
-              git add "celeb-watcher/$f" || true
-            done
-
-            if git diff --cached --quiet; then
-              echo "변경사항 없음 - 커밋 생략"
-              PUSHED=1
-              break
+          for f in seen_celeb_ids.json seen_celeb_meta.json seen_twitter_blog.json seen_credit.json; do
+            if [ -f "celeb-watcher/$f" ]; then
+              git add -f -- "celeb-watcher/$f"
             fi
-            git commit -m "update seen ids"
-
-            if git push; then
-              echo "push 성공 (시도 $i)"
-              PUSHED=1
-              break
-            fi
-            echo "push 실패, 재시도 ($i/5)"
-            sleep $((RANDOM % 5 + 2))
           done
-
-          if [ "$PUSHED" -ne 1 ]; then
-            echo "::error::seen 상태 저장 실패 - 5회 재시도 모두 실패"
-            exit 1
+          if git diff --cached --quiet; then
+            echo "State unchanged"
+            exit 0
           fi
+          git commit -m "Persist watcher delivery history"
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "State persisted (attempt $i)"
+              exit 0
+            fi
+            if [ "$i" -lt 5 ]; then
+              git fetch origin main
+              if ! git rebase origin/main; then
+                git rebase --abort
+                echo "::error::State conflict. Preserve the backup artifact before rerunning."
+                exit 1
+              fi
+              sleep $((RANDOM % 5 + 2))
+            fi
+          done
+          echo "::error::State push failed. Restore the backup artifact before rerunning."
+          exit 1
+
+      - name: Keep recovery backup if state save failed
+        if: ${{ always() && steps.snapshot.outcome == 'success' && steps.persist.outcome != 'success' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: celeb-state-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.snapshot.outputs.path }}/*.json
+          if-no-files-found: error
+          retention-days: 30
