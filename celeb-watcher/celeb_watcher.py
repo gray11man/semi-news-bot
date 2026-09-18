@@ -71,8 +71,25 @@ UA = (
 _gm = {"n": 0, "dead": False, "notified": False, "tokens": 0}
 
 
+# User-confirmed deliveries. Keep these even if runtime JSON history is lost.
+CONFIRMED_DELIVERED_VIDEO_IDS = frozenset({
+    "Bh5bJrrJ6xs",  # Sam Altman / Dreamforce
+    "XzNjq6DNjSY",  # Jensen Huang
+    "Ho1gnEeVryA",  # Roland Busch / Dreamforce
+})
+BOT_VERSION = "dedup-v2-confirmed-3"
+
+
 def send_tg(msg):
     """텔레그램 전송 성공 여부를 반환한다. 실패한 항목은 seen 처리하지 않는다."""
+    linked_ids = set(re.findall(
+        r"https?://(?:www\.)?(?:youtu\.be/|youtube\.com/watch\?v=)([A-Za-z0-9_-]{11})(?![A-Za-z0-9_-])",
+        msg,
+    ))
+    if linked_ids & CONFIRMED_DELIVERED_VIDEO_IDS:
+        print("[중복 차단] 사용자가 이미 수신한 영상: " + ", ".join(sorted(linked_ids & CONFIRMED_DELIVERED_VIDEO_IDS)))
+        # Treat as handled so every caller can persist its normal completion state.
+        return True
     url = f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage"
     payload = {
         "chat_id": TG_CHAT,
@@ -1639,6 +1656,10 @@ def _celeb_state(meta):
     state = meta.setdefault('watch_v2', {})
     state.setdefault('records', {})
     state.setdefault('search_jobs', [])
+    for vid in CONFIRMED_DELIVERED_VIDEO_IDS:
+        state['records'].setdefault(vid, {}).update(
+            status='sent', updated_at=_celeb_now().isoformat(),
+            reason='사용자가 실제 수신을 확인한 영상 — 재전송 금지')
     # Legacy seen mixed rejects with successful deliveries. Only delivery history
     # is authoritative during migration; recover old false negatives automatically.
     for old in meta.get('sent_history', []):
@@ -1916,7 +1937,7 @@ def _celeb_deliver(meta, state, candidate, judge):
     pub = _celeb_dt(detail.get('snippet', {}).get('publishedAt'))
     recovery = pub and (_celeb_now()-pub).total_seconds() > 7*3600
     quote = str(judge.get('appearance_quote', ''))[:500]
-    message = (f"🎙 <b>{html.escape(person)}</b> 출연 영상" + (' · 누락 복구' if recovery else '') +
+    message = (f"🎙 <b>{html.escape(person)}</b> 출연 영상" + (' · 최근 7일 검색' if recovery else '') +
                f"\n📺 {html.escape(item['snippet'].get('channelTitle', ''))}" +
                f"\n<b>{html.escape(item['snippet'].get('title', ''))}</b>" +
                f"\n길이: {duration//60}분 {duration%60}초" +
@@ -3159,6 +3180,7 @@ def run_credit_watch():
 # ============================================================
 
 def main():
+    print(f"[버전] {BOT_VERSION}")
     try:
         run_celeb_watch()
     except Exception as e:
