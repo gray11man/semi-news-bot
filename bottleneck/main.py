@@ -10,7 +10,7 @@ import sqlite3
 import sys
 import time
 
-from core import Store, UTC, alert_key, chunks, digest, evaluate, now, render, validate_evidence
+from core import Store, UTC, alert_key, chunks, digest, evaluate, now, norm, render, validate_evidence
 from network import ApiError, BudgetError, RequestTooLarge, Gemini, collect, fetch_body, rss_url, telegram
 from prompts import ASSESS, ASSESS_SCHEMA, DISCOVERY, DISCOVERY_SCHEMA, AUDIT, AUDIT_SCHEMA
 from sources import DEFAULT_PRIMARY_DOMAINS, DRIVERS, SECTORS
@@ -65,6 +65,20 @@ def discover_specs(days):
         dict(sector='중화권·산업전환',url=rss_url('產能 OR 供應短缺 OR 新應用 OR 長期合約','zh',days)),
     ])
     return specs
+
+
+def reconcile_candidate(candidate, known_themes):
+    """Resolve identities from stored records, never from a guessed model ID."""
+    c=dict(candidate)
+    existing=c.get('existing_id','').strip()
+    known={t['id']:t for t in known_themes}
+    if not existing or existing in known:
+        c['existing_id']=existing
+        return c,''
+    matches=[t for t in known_themes if norm(t['chain_key'])==norm(c['chain_key'])]
+    c['existing_id']=matches[0]['id'] if len(matches)==1 else ''
+    action='동일 인과관계의 저장된 가설에 연결' if c['existing_id'] else '새 미검증 가설로 등록'
+    return c,'존재하지 않는 가설 ID 무시: '+action
 
 
 def audit_id_problem(evidence, checks):
@@ -309,6 +323,10 @@ def run(c,send=False,bootstrap=False):
                     raise ApiError('Discovery returned invalid article IDs')
                 if not candidate['queries'] or not candidate['chain_key'].strip():
                     raise ApiError('Discovery returned empty search plan')
+                candidate,identity_issue=reconcile_candidate(candidate,store.themes())
+                if identity_issue:
+                    issues.append(identity_issue)
+                    print('[warning] '+identity_issue,flush=True)
                 store.upsert_theme(candidate)
             reviewed_ids.update(a['id'] for a in batch)
             reviewed_sectors.update(a['sector'] for a in batch)
