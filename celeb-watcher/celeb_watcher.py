@@ -2319,6 +2319,12 @@ def run_blog_watch():
 
                 if ok:
                     newly_seen.add(p["id"])
+                    # Persist each delivery before processing the next post.
+                    history = seen_map.setdefault(blog_id, [])
+                    if p["id"] not in history:
+                        history.insert(0, p["id"])
+                    seen_map[blog_id] = history[:200]
+                    save_blog_state(state)
                     total += 1
                     print(
                         f"✅ [블로그] {blog_id} | "
@@ -2519,7 +2525,7 @@ def save_credit_state(s):
     s["youtube"] = s["youtube"][-1500:]
 
     for k in s["podcast"]:
-        s["podcast"][k] = s["podcast"][k][:100]
+        s["podcast"][k] = list(dict.fromkeys(s["podcast"][k]))[-100:]
 
     atomic_json_dump(
         CREDIT_STATE_FILE,
@@ -3102,6 +3108,7 @@ def run_credit_watch():
                             state,
                             c,
                         )
+                        save_credit_state(state)
                         sent += 1
 
                         print(
