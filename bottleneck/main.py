@@ -242,7 +242,31 @@ def deliver(store,c):
         time.sleep(1.1)
 
 
+def check_store_compatibility():
+    import inspect
+    required=('triage_articles','pending_count','pending_articles')
+    missing=[name for name in required if not callable(getattr(Store,name,None))]
+    if not missing and 'ranked' not in inspect.signature(Store.pending_articles).parameters:
+        missing.append('pending_articles(ranked)')
+    if missing:
+        raise RuntimeError('파일 버전 불일치: bottleneck/core.py도 함께 교체해야 합니다. 누락: '+', '.join(missing))
+
+
+def error_location(exc):
+    # Frame metadata only: no source lines, local values, URLs or credentials.
+    frames=[];tb=exc.__traceback__
+    while tb is not None:
+        frames.append(f'{Path(tb.tb_frame.f_code.co_filename).name}:{tb.tb_lineno} ({tb.tb_frame.f_code.co_name})')
+        tb=tb.tb_next
+    detail=''
+    if isinstance(exc,AttributeError):
+        name=getattr(exc,'name',None)
+        if isinstance(name,str) and name.isidentifier():detail=' missing_attribute='+name
+    return type(exc).__name__+detail+' | '+' -> '.join(frames[-6:])
+
+
 def run(c,send=False,bootstrap=False):
+    check_store_compatibility()
     if not c['key']: raise RuntimeError('GEMINI_KEY is required')
     if send and (not c['token'] or not c['chat']): raise RuntimeError('Telegram token/chat ID are required')
     c['data'].mkdir(parents=True,exist_ok=True)
@@ -378,5 +402,5 @@ if __name__=='__main__':
     try: main()
     except Exception as exc:
         # Never print a network exception containing tokens or key-bearing request URLs.
-        print('[error] '+(str(exc) if isinstance(exc,RuntimeError) else type(exc).__name__),file=sys.stderr)
+        print('[error] '+(str(exc) if isinstance(exc,RuntimeError) else error_location(exc)),file=sys.stderr)
         sys.exit(1)
