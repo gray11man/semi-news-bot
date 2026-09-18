@@ -59,6 +59,7 @@ class Store:
         CREATE TABLE IF NOT EXISTS outbox(id TEXT PRIMARY KEY, created TEXT, text TEXT,
             status TEXT NOT NULL DEFAULT 'pending', message_id INTEGER);
         CREATE TABLE IF NOT EXISTS meta(key TEXT PRIMARY KEY, value TEXT);
+        CREATE TABLE IF NOT EXISTS article_archive(id TEXT PRIMARY KEY, reason TEXT NOT NULL);
         ''')
         self.db.commit()
 
@@ -76,22 +77,54 @@ class Store:
                             (a['id'], a['published'], a['sector'], json.dumps(a, ensure_ascii=False)))
         self.db.commit()
 
-    def pending_articles(self, limit, newest=False):
-        # Sector round-robin. Backlog is retained; newest does not erase older unscreened news.
-        rows = self.db.execute('SELECT data FROM articles WHERE screened=0 ORDER BY published').fetchall()
-        groups = {}
+    def triage_articles(self, days=7):
+        """Reversible local exclusions; never label unreviewed articles as screened."""
+        cutoff=(dt.datetime.now(UTC)-dt.timedelta(days=days)).isoformat()
+        self.db.execute("DELETE FROM article_archive WHERE reason='expired' AND id IN (SELECT id FROM articles WHERE published>=?)",(cutoff,))
+        self.db.execute("INSERT OR IGNORE INTO article_archive SELECT id,'expired' FROM articles WHERE screened=0 AND published<?",(cutoff,))
+        seen=set()
+        for row in self.db.execute('SELECT id,data,screened FROM articles ORDER BY screened DESC,published DESC,id').fetchall():
+            a=json.loads(row['data'])
+            # Conservative exact title+publisher dedupe. Different numbers remain distinct.
+            key=(norm(a.get('title','')),norm(a.get('publisher','')))
+            if key[0] and key in seen and not row['screened']:
+                self.db.execute("INSERT OR IGNORE INTO article_archive VALUES(?,'duplicate')",(row['id'],))
+            seen.add(key)
+        self.db.commit()
+
+    def pending_count(self):
+        return self.db.execute('SELECT COUNT(*) FROM articles WHERE screened=0 AND id NOT IN (SELECT id FROM article_archive)').fetchone()[0]
+
+    def pending_articles(self, limit, newest=False, ranked=False):
+        rows=self.db.execute('SELECT data FROM articles WHERE screened=0 AND id NOT IN (SELECT id FROM article_archive) ORDER BY published DESC,id').fetchall()
+        groups={}
+        signals=('contract','capacity','shortage','investment','regulation','closure','demand','계약','증설','부족','투자','규제','철수','수요','납기')
         for row in rows:
-            a = json.loads(row[0]); groups.setdefault(a['sector'], []).append(a)
-        out = []
-        while groups and len(out) < limit:
-            for s in list(groups):
-                out.append(groups[s].pop(-1 if newest else 0))
-                if not groups[s]: del groups[s]
-                if len(out) >= limit: break
+            a=json.loads(row[0]);groups.setdefault(a['sector'],[]).append(a)
+        # Rotate sectors across runs, including when batch size is smaller than sector count.
+        sectors=sorted(groups)
+        last=self.meta('last_screen_sector')
+        sectors=[x for x in sectors if x>last]+[x for x in sectors if x<=last]
+        for sector,items in groups.items():
+            if newest:
+                items.sort(key=lambda a:a['published'],reverse=True)
+            elif ranked:
+                # Rank only within sector; unmatched titles remain eligible on newest rounds.
+                items.sort(key=lambda a:(sum(t in (a.get('title','')+' '+a.get('summary','')).lower() for t in signals),a['published']),reverse=True)
+            else:items.sort(key=lambda a:a['published'])
+        out=[]
+        while sectors and len(out)<limit:
+            for sector in sectors[:]:
+                out.append(groups[sector].pop(0))
+                if not groups[sector]:sectors.remove(sector)
+                if len(out)>=limit:break
         return out
 
     def screened(self, ids):
         self.db.executemany('UPDATE articles SET screened=1 WHERE id=?', [(i,) for i in ids])
+        if ids:
+            row=self.db.execute('SELECT sector FROM articles WHERE id=?',(ids[-1],)).fetchone()
+            if row:self.db.execute('INSERT OR REPLACE INTO meta VALUES(?,?)',('last_screen_sector',row[0]))
         self.db.commit()
 
     def themes(self):
