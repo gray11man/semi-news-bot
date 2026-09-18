@@ -77,7 +77,7 @@ CONFIRMED_DELIVERED_VIDEO_IDS = frozenset({
     "XzNjq6DNjSY",  # Jensen Huang
     "Ho1gnEeVryA",  # Roland Busch / Dreamforce
 })
-BOT_VERSION = "dedup-v2-confirmed-3"
+BOT_VERSION = "dedup-v3-strict-relevance"
 
 
 def send_tg(msg):
@@ -1872,14 +1872,30 @@ Reject third-party commentary, news about the person, fan edits, synthetic speak
 and compilations when the supplied metadata explicitly supports rejection.
 An absent keyword or unfamiliar channel is NOT evidence of rejection.
 When evidence is incomplete, return uncertain, not reject.
-All genuine appearances by the watched person are eligible regardless of investment score.
+A real appearance alone is NOT sufficient for an alert.
+Only accept substantive industry content about AI models/compute, semiconductors/memory,
+packaging/equipment, datacenter/networking/power, or financing tied to that infrastructure.
+The metadata must identify a concrete technical mechanism, product specification,
+capacity/supply constraint, customer contract, capital spending/financing decision,
+or a substantive industry outlook with a specific driver.
+Famous names, generic AI optimism/pessimism, AI doom debates, leadership/career advice,
+celebrity profiles, event promotion and generic company PR do NOT qualify by themselves.
+Score 0..7 for generic or weakly relevant content; 8..10 only when the concrete industry
+substance is explicitly supported by the supplied metadata. Never infer importance from fame.
+Do not claim a development is new unless the supplied metadata supports that claim.
+Return topic_quote as a verbatim quote proving the specific industry substance,
+and topic_category as exactly one of: ai_compute, semiconductor_memory,
+packaging_equipment, datacenter_network_power, infrastructure_finance.
+Accept requires relevance_score >=8, an allowed topic_category and grounded topic_quote.
+If the metadata clearly describes excluded material, reject with a rejection_quote.
+If there is too little description to establish substance, return uncertain.
 Return a JSON ARRAY, one object per exact video_id, with:
 video_id, decision (accept/reject/uncertain), confidence (integer 0..10),
 appearance_quote (verbatim contiguous quote from title or description proving participation),
 original_quote (verbatim contiguous quote from title or description supporting original event/episode),
 rejection_quote (verbatim metadata supporting a rejection, otherwise empty),
 reason_kr (brief), relevance_score (integer 0..10).
-Accept requires both quotes and confidence >=8. Rejection requires rejection_quote
+Accept requires appearance_quote, original_quote, topic_quote, the relevance criteria above, and confidence >=8. Rejection requires rejection_quote
 and confidence >=8. Otherwise return uncertain. Do not quote this prompt as evidence.
 Metadata:\n'''+json.dumps(inputs, ensure_ascii=False)
     out = gemini_call(prompt, allow_extended=any(c[0] in CRITICAL_INTERVIEW_PERSONS for c in chunk))
@@ -1921,7 +1937,16 @@ def _celeb_decision(judge, item, detail):
                 any(quote.strip().casefold() in text.casefold() for text in sources))
     decision = judge.get('decision')
     if decision == 'accept' and grounded('appearance_quote') and grounded('original_quote'):
-        return 'accept', str(judge.get('reason_kr', '출연 및 원본 문맥 확인'))[:500]
+        score = judge.get('relevance_score')
+        if type(score) is not int or not 0 <= score <= 10:
+            return 'uncertain', '산업 관련성 점수 누락/형식 오류'
+        if score < SCORE_THRESHOLD:
+            return 'rejected_low_relevance', '산업 관련성 8점 미만 — 알림 제외'
+        categories = {'ai_compute', 'semiconductor_memory', 'packaging_equipment',
+                      'datacenter_network_power', 'infrastructure_finance'}
+        if judge.get('topic_category') not in categories or not grounded('topic_quote'):
+            return 'uncertain', '구체적인 산업 정보 근거 부족 — 알림 보류'
+        return 'accept', str(judge.get('reason_kr', '구체적인 산업 정보 확인'))[:500]
     if decision == 'reject' and grounded('rejection_quote'):
         return 'reject', str(judge.get('reason_kr', '제외 근거 확인'))[:500]
     return 'uncertain', '출연/원본 근거 부족 — 재검토 대기'
@@ -1936,13 +1961,13 @@ def _celeb_deliver(meta, state, candidate, judge):
         return False
     pub = _celeb_dt(detail.get('snippet', {}).get('publishedAt'))
     recovery = pub and (_celeb_now()-pub).total_seconds() > 7*3600
-    quote = str(judge.get('appearance_quote', ''))[:500]
+    quote = str(judge.get('topic_quote', ''))[:500]
     message = (f"🎙 <b>{html.escape(person)}</b> 출연 영상" + (' · 최근 7일 검색' if recovery else '') +
                f"\n📺 {html.escape(item['snippet'].get('channelTitle', ''))}" +
                f"\n<b>{html.escape(item['snippet'].get('title', ''))}</b>" +
                f"\n길이: {duration//60}분 {duration%60}초" +
                f"\n게시: {html.escape(str(detail.get('snippet', {}).get('publishedAt', '')))}" +
-               f"\n\n출연 근거: {html.escape(quote)}" +
+               f"\n\n산업 정보 근거: {html.escape(quote)}" +
                "\n※ 제목·설명 기반 판정이며 영상 내용 요약이 아닙니다." +
                f"\nhttps://youtu.be/{vid}")
     if not send_tg(message):
@@ -2045,7 +2070,7 @@ def run_celeb_watch():
                 save_celeb_meta(meta)
                 if sent < CELEB_MAX_SEND:
                     sent += int(_celeb_deliver(meta, state, candidate, judge))
-            elif decision == 'reject':
+            elif decision in {'reject', 'rejected_low_relevance'}:
                 _celeb_record(state, vid, 'rejected', reason, judge=judge)
             else:
                 _celeb_retry(state, vid, reason)
