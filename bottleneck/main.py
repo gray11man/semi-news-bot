@@ -1,6 +1,7 @@
 """Industry Shift Radar. Default = preview; --send enables configured Telegram delivery."""
 import argparse
 import concurrent.futures
+from collections import Counter
 import datetime as dt
 import json
 import os
@@ -66,6 +67,18 @@ def discover_specs(days):
     return specs
 
 
+def audit_id_problem(evidence, checks):
+    """Require exactly one verdict per requested evidence ID; never guess mappings."""
+    expected={e['id'] for e in evidence}
+    counts=Counter(x['evidence_id'] for x in checks)
+    missing=expected-set(counts)
+    extra=set(counts)-expected
+    duplicate={key for key,n in counts.items() if n>1}
+    if missing or extra or duplicate:
+        return f'재검수 ID 불일치: 누락 {len(missing)} / 미요청 {len(extra)} / 중복 {len(duplicate)}; 해당 가설 알림 보류, 다음 검토에서 재시도'
+    return ''
+
+
 def research(theme,store,ai,c):
     issues=[]
     queries=list(dict.fromkeys(theme['queries']))[:5]
@@ -83,23 +96,32 @@ def research(theme,store,ai,c):
     groups={}
     for a in by_id.values(): groups.setdefault(a.get('publisher') or a['id'],[]).append(a)
     chosen=[]
-    while groups and len(chosen)<c['docs']:
+    while groups and len(chosen)<c['docs']*2:
         for p in list(groups):
             chosen.append(groups[p].pop(0))
             if not groups[p]: del groups[p]
-            if len(chosen)>=c['docs']: break
-    docs=[]; uncached=[]
-    for article in chosen:
-        cached=store.doc(article['id'])
-        if cached and (dt.datetime.now(UTC)-dt.datetime.fromisoformat(cached['fetched'])).days<7: docs.append(cached)
-        else: uncached.append(article)
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-        futures={pool.submit(fetch_body,a,c['primary']):a for a in uncached}
-        for future in concurrent.futures.as_completed(futures):
-            try:
-                doc=future.result(); store.save_doc(doc); docs.append(doc)
-            except Exception:
-                issues.append('원문 접근 실패')
+            if len(chosen)>=c['docs']*2: break
+    docs=[]; attempts=0; failures=0
+    offset=0
+    while offset<len(chosen) and len(docs)<c['docs']:
+        uncached=[]
+        count=min(4,c['docs']-len(docs))
+        group=chosen[offset:offset+count];offset+=len(group)
+        for article in group:
+            cached=store.doc(article['id'])
+            if cached and (dt.datetime.now(UTC)-dt.datetime.fromisoformat(cached['fetched'])).days<7:
+                docs.append(cached)
+            else:uncached.append(article)
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+            futures={pool.submit(fetch_body,a,c['primary']):a for a in uncached}
+            for future in concurrent.futures.as_completed(futures):
+                attempts+=1
+                try:
+                    doc=future.result();store.save_doc(doc);docs.append(doc)
+                except Exception:
+                    failures+=1
+        # Other publishers in the reserve pool replace failed bodies.
+    issues.append(f'원문 조회 {attempts}건 / 실패 {failures}건 / 확보 {len(docs)}건')
     if not docs:
         # Rotate failed themes so one paywall cannot starve the entire queue.
         store.db.execute('UPDATE themes SET reviewed=? WHERE id=?',(now(),theme['id'])); store.db.commit()
@@ -128,10 +150,20 @@ def research(theme,store,ai,c):
         raise ApiError('All model evidence failed source validation')
     merged={e['id']:e for e in prior}; merged.update({e['id']:e for e in valid})
     evidence=list(merged.values())
-    audit=ai.json(AUDIT,dict(today_utc=now(),assessment={k:v for k,v in response.items() if k!='evidence'},evidence=evidence,docs=audit_docs(docs,evidence)),AUDIT_SCHEMA)
+    audit_sources={d['id']:d for d in docs}
+    for e in evidence:
+        if e.get('doc_id') not in audit_sources:
+            cached=store.doc(e.get('doc_id',''))
+            if cached:audit_sources[cached['id']]=cached
+    audit=ai.json(AUDIT,dict(today_utc=now(),assessment={k:v for k,v in response.items() if k!='evidence'},evidence=evidence,docs=audit_docs(list(audit_sources.values()),evidence)),AUDIT_SCHEMA)
+    problem=audit_id_problem(evidence,audit['checks'])
+    if problem:
+        # Preserve prior verified evidence and input fingerprint so this remains retryable.
+        store.db.execute('UPDATE themes SET reviewed=? WHERE id=?',(now(),theme['id']))
+        store.db.commit()
+        print('[warning] '+problem,flush=True)
+        return None,issues+[problem]
     checks={x['evidence_id']:x for x in audit['checks']}
-    if set(checks)!={e['id'] for e in evidence}:
-        raise ApiError('Audit omitted or invented evidence IDs')
     for e in evidence:
         check=checks[e['id']]
         e['origin_key']=check['origin_key'].strip().lower()
@@ -166,19 +198,20 @@ def write_report(store,path,health,issues,ai):
            f'수집: {health.get("healthy",0)}/{health.get("total",0)} 피드 정상',
            f'Gemini 호출: {ai.calls}/{ai.max_calls}, 응답 토큰 통계 합계: {ai.tokens}',
            '이 보고서의 관찰 가설은 검증된 산업전환 또는 투자수익을 뜻하지 않습니다.']
-    backlog=store.db.execute('SELECT COUNT(*) FROM articles WHERE screened=0').fetchone()[0]
+    backlog=store.pending_count()
     if getattr(ai,'budget',None):
         lines.append(f'토큰 예산 사용/예약: 실행 {ai.budget.used}/{ai.budget.run_limit}, 한국 날짜 하루 {ai.budget.total()}/{ai.budget.day_limit}')
         lines.append(f'입력 사전 계수 API: {getattr(ai,"count_calls",0)}회 / 미리보기도 하루 예산에 포함')
     lines.append(f'아직 심사하지 못한 기사: {backlog}건 (삭제하지 않고 다음 실행에서 처리)')
     if issues: lines+=['','## 수집·검증 상태']+['- '+x for x in sorted(set(issues))]
     lines+=['','## 산업별 실제 검토 범위 (누적)',
-            '| 산업 | 수집 기사 | 심사 완료 | 대기 |', '|---|---:|---:|---:|']
-    coverage={r['sector']:r for r in store.db.execute('SELECT sector,COUNT(*) AS n,SUM(screened) AS done FROM articles GROUP BY sector')}
+            '| 산업 | 수집 기사 | 심사 완료 | 활성 대기 | 별도 보관 |', '|---|---:|---:|---:|---:|']
+    coverage={r['sector']:r for r in store.db.execute('SELECT sector,COUNT(*) AS n,SUM(CASE WHEN screened=1 THEN 1 ELSE 0 END) AS done FROM articles GROUP BY sector')}
     for sector in list(dict.fromkeys([s[0] for s in SECTORS]+list(coverage))):
         r=coverage.get(sector)
         n=r['n'] if r else 0;done=r['done'] if r else 0
-        lines.append(f'| {sector} | {n} | {done} | {n-done} |')
+        archived=store.db.execute('SELECT COUNT(*) FROM articles WHERE sector=? AND screened=0 AND id IN (SELECT id FROM article_archive)',(sector,)).fetchone()[0]
+        lines.append(f'| {sector} | {n} | {done} | {n-done-archived} | {archived} |')
     for theme in store.themes():
         row=store.db.execute('SELECT data FROM snapshots WHERE theme=? ORDER BY id DESC LIMIT 1',(theme['id'],)).fetchone()
         lines+=['',f'## {theme["title"]}']
@@ -224,12 +257,14 @@ def run(c,send=False,bootstrap=False):
     specs=discover_specs(days)+c['extra_feeds']
     articles,health=collect(specs,days)
     store.add_articles(articles)
+    store.triage_articles(days=30 if bootstrap else 7)
+    reviewed_ids=set(); reviewed_sectors=set(); researched=0
     if health['healthy']==0: raise RuntimeError('All feeds failed; this is not a no-signal result')
     if health['healthy']<health['total']: issues.append(f'피드 일부 실패: {health["total"]-health["healthy"]}개')
     try:
         for _ in range(c['screen_batches']):
             batch_cursor=int(store.meta('screen_cursor','0'))
-            batch=store.pending_articles(c['batch_size'],newest=batch_cursor%2==0)
+            batch=store.pending_articles(c['batch_size'],newest=batch_cursor%2==0,ranked=batch_cursor%2==1)
             if not batch: break
             if ai.calls>=ai.max_calls-2:
                 issues.append('호출 예산으로 기사 심사 일부 이월'); break
@@ -251,6 +286,8 @@ def run(c,send=False,bootstrap=False):
                 if not candidate['queries'] or not candidate['chain_key'].strip():
                     raise ApiError('Discovery returned empty search plan')
                 store.upsert_theme(candidate)
+            reviewed_ids.update(a['id'] for a in batch)
+            reviewed_sectors.update(a['sector'] for a in batch)
             store.screened([a['id'] for a in batch])
             store.set_meta('screen_cursor',batch_cursor+1)
         # Oldest reviewed first: quiet/negative themes cannot be displaced forever by popular sectors.
@@ -260,6 +297,7 @@ def run(c,send=False,bootstrap=False):
             store.set_meta('review_cursor',int(store.meta('review_cursor','0'))+1)
             print(f'[research] {theme["title"]}',flush=True)
             result,problems=research(theme,store,ai,c); issues+=problems
+            researched+=1
             if not result: continue
             assessment,evidence=result; gate=assessment['gate']
             if gate['state']=='관찰': continue
@@ -284,11 +322,15 @@ def run(c,send=False,bootstrap=False):
         print('[diagnostic] '+issues[-1],file=sys.stderr,flush=True)
         store.db.close()
         raise RuntimeError('Analysis incomplete; backlog and evidence retained. See report.') from None
-    backlog=store.db.execute('SELECT COUNT(*) FROM articles WHERE screened=0').fetchone()[0]
+    backlog=store.pending_count()
     unreviewed=sum(not t['reviewed'] for t in store.themes())
     if backlog or unreviewed: issues.append(f'처리 대기: 기사 {backlog}건 / 미검증 가설 {unreviewed}개')
+    stats=f'이번 실행: 기사 {len(reviewed_ids)}건 / {len(reviewed_sectors)}개 분야 심사 · 가설 {researched}개 조사'
+    archived=store.db.execute('SELECT COUNT(*) FROM article_archive').fetchone()[0]
+    issues.append(stats)
+    issues.append(f'미심사 별도 보관 {archived}건 (7일 경과 또는 중복; 심사 완료 아님)')
     if not alerts and c['empty']:
-        status='이번에 검증을 마친 범위에서 새 산업변화 알림이 없습니다.'
+        status='오늘 검토한 범위에서 알림 기준을 통과한 새 신호가 없습니다. 전체 산업에 변화가 없다는 뜻은 아닙니다.'
         if issues: status+='\n검증 범위 제한: '+' / '.join(sorted(set(issues)))
         store.enqueue(digest('status:'+now()),status)
     output=c['data']/('latest.md' if send else 'preview.md')
