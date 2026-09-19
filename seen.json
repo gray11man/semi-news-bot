@@ -1027,62 +1027,51 @@
       "source_published": "",
       "source_modified": "",
       "message_id": 4790
+    },
+    "108bf1f8cf54c8b938124bbe7d86aca8865a03741da487c218fbc97b92a3e365": {
+      "ts": 1789793187.474622,
+      "title": "OpenAI forecasts cash burn near $280 billion by 2030, FT reports",
+      "fact": "OpenAI는 2030년까지 약 2800억 달러의 현금을 소진할 것으로 전망된다. 이는 AI 개발 및 인프라 구축에 막대한 자금이 투입되고 있음을 보여주는 수치이다.",
+      "source": "Reuters",
+      "rss_published": "2026-09-18T23:27:51+00:00",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTmx6RU9kREhhaHRjaVpOblpSazFaSTdKQVlxT2ZIQ09YNE5Fci1wV1NQX21mMWxzbnRWbDZ4bFd1UGtCVHV2WnMzc2NpY3hVY0ppOEh2NXl5NEFFTUxCM1BmUGl2cTM3RkRxbmJydjA3QmlaTm5UTlRfY1l5bE56cU96cE5PNmk4WHRyaThXUEo2ZjZ6WDJMSXJPR1JjaEZTWmFpTkRHZVIzN1RkUWd6VC1R?oc=5",
+      "resolved_url": "",
+      "event_key": "OpenAI|자금 소진 예측|2030년|2800억 달러",
+      "new_fact_date": "2026-09-18T23:27:51+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4791
+    },
+    "97ba232532b09e216587a13f6ed2ef000b556ede93689734b3d0cea5d324ce30": {
+      "ts": 1789793189.098049,
+      "title": "AMD shares first official benchmarks for EPYC 'Venice' CPUs, targets Nvidia — company claims 256-core chip is more than twice as fast as Nvidia Vera, 96-core model 20% faster per-core",
+      "fact": "AMD가 EPYC 'Venice' CPU의 공식 벤치마크 결과를 공개하며 Nvidia를 겨냥했다. AMD는 256코어 칩이 Nvidia Vera 대비 2배 이상 빠르고, 96코어 모델은 코어당 20% 더 빠르다고 주장했다.",
+      "source": "Tom's Hardware",
+      "rss_published": "2026-09-18T21:51:29+00:00",
+      "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNMzA2X0J0ME1fMll3R21yMjNPeHpoVFJ0ZXpwaHJRb2ExT1otNjFkdXZGNXBZQ1dWajJPNC1WX1AybV9TNmtCb1ZsZERBa3VNQkVTOFlFQ0lvVGlnenZ4TWgxcWRoMlBvbklrZ0RwRWlSMHhUVXlSY3R1REJmb2RSWWtsUFhadFFQWTUydzJBMTJsTTdXY2Z1Zko2RDR2a1AzdDRlbzl0NVdfTjU2djlvbmVXNHc5N2czbkV1aTFwMUpLUkFaR0NJNHB4WS1xeDA3TlVHczJjQW90OHBOWHZTNHFwTjFMSkZHUEQtNWFwckQ1OE5pRWpVdUM3NVlXUVpVZ3BkQXB2djliX1dYV01nUkREWGhIWEZrUnQ4UGxUdUFHQk1ZOUdDM0RIQnhqTGNhUmVxRnFyVUcxa1ktWTNkTWZqdUdmaHVDdmphOFFKREVrZw?oc=5",
+      "resolved_url": "",
+      "event_key": "AMD|CPU 성능|EPYC Venice vs Nvidia Vera|2배 이상",
+      "new_fact_date": "2026-09-18T21:51:29Z",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4792
+    },
+    "5aa5fc85ce4e6e0c6d36aa25f389447f2328e6f53a02200c3665710fee4ef165": {
+      "ts": 1789793190.716966,
+      "title": "Meta-Tied Data Center Prices Junk Bond Amid Blowout Demand",
+      "fact": "Meta와 연계된 데이터센터가 발행한 첫 정크 본드(Junk Bond)가 기록적인 수요를 보이며 성공적으로 발행되었다. 이는 AI 인프라에 대한 투자 열기와 신흥 투자 상품으로서의 매력을 보여준다.",
+      "source": "Bloomberg.com",
+      "rss_published": "2026-09-18T20:24:12+00:00",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUVVzLXlhM3VLS0RMZTFPTHNSS1NFVUVkZG05Z001RWwxZHhvenpRcjFYRVl4YnpkcmJkWWUwb2drUjdKSklHakd0UHRscDhURDlFYXpfbHNoZzZBYUx0QmpTOWVkd24wNEdmRTB3eUhOd3NyWkZtUndTWVdOaVRfRVBaVWE5T0I4MGFNaWpnVUhQNTlsS2RtWkV0VnlJa2VmWjJOWGJ0ZldwTTFKSzE0Q0dpMA?oc=5",
+      "resolved_url": "",
+      "event_key": "Meta 연계 데이터센터|정크 본드 발행|사상 최대 수요|2026-09-18",
+      "new_fact_date": "2026-09-18T20:24:12+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4793
     }
   },
   "pending": {
-    "c66c89f53864d9aa0b82e852ed99ddbdaaf553f7d9f328655805dc31f6af2430": {
-      "title": "JPMorgan Names Top Semiconductor Equipment Stocks Amid AI Buildout By Investing.com",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObFZRX3d3ek9OSVpaTjdhcTFxYUw5dkRteV93bVJsSHRDZHVRS2pIU1VSNFJmcUdQZ0U4a21CZlo3S2FrM0Y4c0RmSC1TS3ROQnFDRzlvdExCUzRXanBuVzVwdjRIeWpkSjJGY2w0cWF4ek16eWdTLTJrLVZpQXBqaXBGeFlGMW1aMG1XTHZjTGF6RlhQMnMwWldobXZsRGR6TXh5cHRjdjN4dUNweFhlQnRPWDgweUJkdmtnVGRJQkVhRllMS0E?oc=5",
-      "summary": "JPMorgan Names Top Semiconductor Equipment Stocks Amid AI Buildout By Investing.com Investing.com South Africa",
-      "source": "Investing.com South Africa",
-      "published": "2026-09-18T16:12:13+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 90
-    },
-    "cb6252142f9972d59f4a872c5152c0d2107747627aae6b4f10eb20f0483b969e": {
-      "title": "Global AI Infrastructure Spending Will Hit $31.6 Trillion by 2050. This Is the Stock That Could Benefit the Most",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeFlkSS05UzdYMlp4dk1YenBGSDhiWlBLeWVrS1A5Vk1NUXRtSVVQWVVna0dJYS1nejFRbjYwemN6cVc5SlBSZ21kTlJLRFJhOGxmYlFyYVljZUlrUkU4eDBoSjlsbkJkTFJZQ21UQWdRTkJ0LUNjTGpvYlNlU3NRb3R0OTZsQUVNYV8xU2tieXplbHlNSHp1ZlN3SzBuYzN3UnBZ?oc=5",
-      "summary": "Global AI Infrastructure Spending Will Hit $31.6 Trillion by 2050. This Is the Stock That Could Benefit the Most Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-18T16:12:01+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 96
-    },
-    "c9e049ba6da4af04e1cbc65e8711b53ba84364252a4b0c7cf8cb908703bd81fa": {
-      "title": "U.S. Manufacturing Falls After 7-Month Growth Streak, AI Spending Booms",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdzdDQXVqQ2l5TGp2MVJsV3VRNVhfMmhlb0oyYnRGM0I4YlFrQXdVR0phbXNIYmhpSFBjQjNqNXluN1NsUjRxVzRZWUNmdUJRSUtXZ3JjSEJuR085ZkF2R1NyUmlJbVoxRkwzTHJkTnZSTW5KRGhhX0NfQXpDbDZXYzNDNk54S1dBMXQ0UEdhX1FwWklhUFRvZUtKZ1oyQjIxMWoxV29yRVFldw?oc=5",
-      "summary": "U.S. Manufacturing Falls After 7-Month Growth Streak, AI Spending Booms CryptoRank",
-      "source": "CryptoRank",
-      "published": "2026-09-18T15:40:48+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "d5362678ba22f3ec8fef533b4453ce8ce4acce495039e7306e68fc793e8e1bee": {
-      "title": "Micron: 3 Arguments For Buying The Shares (NASDAQ:MU)",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxON1NGQ3FXalpETjBVNmdDUGFsMDNBenNFRG1yanpVQ3RaWTMxUlBzaHlyRWpydXItSlhGUlZpLTRPSnRFMS1XS2ZvSVd1aTFXR05pOFZSclRPSl9LaGdaajFERHBQTVNuQXlTZmlrTFpwdFlZUjg3S1ZIbjBZLVg4ajhucTFydEZx?oc=5",
-      "summary": "Micron: 3 Arguments For Buying The Shares (NASDAQ:MU) Seeking Alpha",
-      "source": "Seeking Alpha",
-      "published": "2026-09-18T15:22:16+00:00",
-      "feed": "ai_infra_earnings",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "1136eaf3e86f849536fd29df9a0a34a40e28f6387b073129936c3e0e611ba4fd": {
-      "title": "Amazon Stock Holds $245 as AWS Backlog Sets Up Next Week’s $258 Test",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOajE3c3owaGFmYU1rbHZZSnhsVWxZU3ctejRpcVlkQVFVblRabXhSR0R4S3RaYUZ3RHFuMGpIdU05UlRYMkY4WHFtTF90WnlmbG90OC1FMU1OdGR2eGRDUXlacW9WR3hBZ29DMzJJZmtGNDA4bW5LSUcxY3JYYm1MU3llVDZOMkJBQlBnUVFqRnFtTktrM1dIdTBlbksteUpJLU9sNFduMkVjLTZ1cFdB?oc=5",
-      "summary": "Amazon Stock Holds $245 as AWS Backlog Sets Up Next Week’s $258 Test TradingKey",
-      "source": "TradingKey",
-      "published": "2026-09-18T15:02:15+00:00",
-      "feed": "ai_enterprise_demand",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
     "2933d080d121923a0e2fd06030dbfcfc0985b2b61c0c260b41f17cef723ed77b": {
       "title": "LRCX Rises As Lam Research Wins Higher Targets And Boosts Dividend",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPaTcyU01HWWlCNE9ybFZIR1p6VXlTd3NzSTl0YXhydXNfRGFkOEhTZVE0cEo0LWN2LVZEbHNRbTB6U21fYW1tSGtlMXBnQXg2V1BUMnRtRDVCWk5vNk9HUWpqa0pzYXI2d1dKb2dwX3Y3WXBVNXlEZkRUSkVibzROc0Fhaw?oc=5",
@@ -1262,16 +1251,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "7423f53f12ea06442e65360e0799fc10914471931dfc55326e9ecc39a7470bef": {
-      "title": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUVVzLXlhM3VLS0RMZTFPTHNSS1NFVUVkZG05Z001RWwxZHhvenpRcjFYRVl4YnpkcmJkWWUwb2drUjdKSklHakd0UHRscDhURDlFYXpfbHNoZzZBYUx0QmpTOWVkd24wNEdmRTB3eUhOd3NyWkZtUndTWVdOaVRfRVBaVWE5T0I4MGFNaWpnVUhQNTlsS2RtWkV0VnlJa2VmWjJOWGJ0ZldwTTFKSzE0Q0dpMA?oc=5",
-      "summary": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond Bloomberg.com",
-      "source": "Bloomberg.com",
-      "published": "2026-09-18T18:18:16+00:00",
-      "feed": "ai_financing",
-      "stage": "candidate",
-      "precheck_priority": 100
-    },
     "3fda7820fc5b9f08a6812f4dfbdd1a230c586bc57a9ed53012f8190850d10fd3": {
       "title": "AI Drives Cybersecurity Investment as Security Budgets Remain Nearly Flat",
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMVBDV3Q1WHlsMlR5dVllY3J4NXlrZ1lnbkxEWjBBN01UVUQ5TTBsaG8wWDFaSm9ZWDNwX0daQmdXTnZNOTktYks2QTlZbTdKMnhhME9nMllxdFc1cVA0eDN1b2tZZkxmbUM0MDI5aWtONjZ5eUpPekRlS3R5a00zT1ZYcWJWQXFlSy1yelFsWVBOY3hCbG1uWUxTQ1g2SHJEbDlWNTQ0blJESkNPSUtDa3RzdTJJZDhhQkJQbVJpMjYySHN3ZnFTcEhtNTJBZG9r?oc=5",
@@ -1358,135 +1337,6 @@
       "stage": "candidate",
       "precheck_priority": 76
     },
-    "61bad6af56e0454b7a487decaae6f2ee7c898826a6566d4dfe0c19254cdc8cd8": {
-      "title": "MW council talks AI guidance",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPYjRVbkJweUVhRVE1eEFpRENRdkJCT0JqQ0ZZb0dWTVFrX3pUb0Z6dWFlVzBRZGdVQ0ROU3czdEE1WjBjQjBkZjFZMDZzVVdIbVNjdGZ4VnFybmp0RUFfX1E5Q2dzS0dSZkpvdVdaS1lPOGY2TVRLZmhRMmI5TUNPT2ZmY0gwN2I3VGlEWkdOVnN4Nm1CODVmaHpXTEVGZ3dtMzVBOW5GV0xYdWhvV2x6dm1uVjR0SFFFVXZTZjIwbTA4SjVFLTgwNzBxNW1qUzR3elVlSkFYSHZLQQ?oc=5",
-      "summary": "MW council talks AI guidance Weatherford Democrat",
-      "source": "Weatherford Democrat",
-      "published": "2026-09-18T16:44:00+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "314657b1770d4cae23fa4ca6a25e24a3e747a1bc6aaa03893927a94868191300": {
-      "title": "Prediction: $950 Invested in Micron Today Will Be Worth This Much by 2030",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOZ3RRLThyaHgtWWxTdVZLTWxjVTlGRlpDRmp2NWtnMFZ4SmxQUmRMSWR5MHhiOHdjVW1lQnl0d2xxS2JJMG5kNGVMdzJ1VDFzY0YyMXRBNHpHcW9pLUJxZ2NiV3RMbEdRTjhLSy0xZGxyM3hFbXVrbUNubGVta1hkQXRQRE9xQnN4Z0JqX2QzSk4xbGp5LXdDY1RieVBYTm1jbGFN?oc=5",
-      "summary": "Prediction: $950 Invested in Micron Today Will Be Worth This Much by 2030 finance.yahoo.com",
-      "source": "finance.yahoo.com",
-      "published": "2026-09-18T16:15:00+00:00",
-      "feed": "chip_company_1",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "5517ceb97545ac49fa65ec868e4cd0c9b5d4bf5ffa386d31da5e4a2730bc4165": {
-      "title": "Can Micron (MU) Keep the Earnings Surprise Streak Alive?",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTEtIbHZzM25raGNzcVlNOVZ3MGkxQXd0aFlxS3VmQUFzUF9aTHRadXJCY1Zybnd5VFd2MXUzTEJFd3U1MnhRMXV0dnpQUWVqZEcwVEl6bFdZaXljU0lTMHRhaENGN1Jla1FSRWdvWGFpUmdlam81OHZGcUtsQTdFMkFGaXI2SmYwcUE5cGhvMDJBVGFneHhOSFF6LVk2Zw?oc=5",
-      "summary": "Can Micron (MU) Keep the Earnings Surprise Streak Alive? finance.yahoo.com",
-      "source": "finance.yahoo.com",
-      "published": "2026-09-18T16:10:02+00:00",
-      "feed": "chip_company_1",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "213563066f7f2ccd339657d15b370d118e4a4159816f4d24874f236a05bacc69": {
-      "title": "JPモルガン・チェース・アンド・カンパニーがAI拡大を背景に半導体製造装置の有望銘柄を選定 執筆",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBuY2FaUWZQcHN0WDdfdWVDTFlMWTFGVGZGX0wtTkNOWmoxYTB3WEVqNGR3cUJsMUp2aTBlXzNleENBQWVxQ1lEcFlRUmJOMDZfNkk4LU5zMlJEeTJQVk5tUmpEcEx5Sk1ERWlkT2lMeGRwWGRNbkU4?oc=5",
-      "summary": "JPモルガン・チェース・アンド・カンパニーがAI拡大を背景に半導体製造装置の有望銘柄を選定 執筆 Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
-      "source": "Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
-      "published": "2026-09-18T16:07:00+00:00",
-      "feed": "japan",
-      "stage": "candidate",
-      "precheck_priority": 85
-    },
-    "ea95f05cd6e7f4ee6be293786c0501c5343b696aaefc6c4a2d45a3a468c985ad": {
-      "title": "Colorado Springs leaders delay decision on Project Taurus data center",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSjAxcFVOQXdZcWtLbEV5Y1ZjV1dKS3M4d3dBVlFkMTVzejB2a2RIdGh3dGFYcFFLbzdkem9FenF2SGEtT3AtbTh5cG9IZGw1NXhVZ0JsT3o1Z0pzUUlsOWQ0dnhFN0M1UXQ5MjYwSUR5UDFTTFkwODh5bWx0SHFRX1BGOUNCMzFpeUVOWDBTWnZ6bk5waXJmNQ?oc=5",
-      "summary": "Colorado Springs leaders delay decision on Project Taurus data center Yahoo",
-      "source": "Yahoo",
-      "published": "2026-09-18T15:59:43+00:00",
-      "feed": "power_grid",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
-    "e2a6e8cbb8d49f7a55c305a609275772f9542bc44f57c9c969ea91b330e5f230": {
-      "title": "Nvidia Leads Analyst Upgrades, 2026 Outlook",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE93blJKREhrY3BDb1ZoYTBKU2d3a2lGTk9tZmthRy1GWHltQlR1V0JJU09aR2YyV2MzSjQ4emc5MnRwRGFrV2E3bkhTdFUyUzQxYkJnS2g2OWhHWU5BQ3F3Z05mbnFpZWNwVmVwNGFwbzdETmtSNVpUTUxQR0p4QQ?oc=5",
-      "summary": "Nvidia Leads Analyst Upgrades, 2026 Outlook blockchain.news",
-      "source": "blockchain.news",
-      "published": "2026-09-18T15:56:30+00:00",
-      "feed": "accelerators",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "eada487dc091406891458ee2cc738999500e9fb9e9ca002d31154927758332d5": {
-      "title": "Al Gore Says AI Safety Warnings, Not Data Center Emissions, Are the Real Concern",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOb0czalhkVWo1Z2liZVA3UzhpLWI4YmVhTGhTem5xT3pZVGF5dDEtZ3h3ZTlCYnlSZmItVnZzdllYUGswd3NEWU5rUE1HMlctWjE5R1FaSk9uTm8tZmtiYVh1ejUyU3hGNTZVbUdfM1MtaGVEWHlhbUgwTWtkNzBvQkxJNnlkdEI1VUNoaVlpS09DZDhZNHJLQ1FFOWtwd0NlSnFXbmxyUTlKZ09oV05IZUNhZ3cwaE0?oc=5",
-      "summary": "Al Gore Says AI Safety Warnings, Not Data Center Emissions, Are the Real Concern AI Insider",
-      "source": "AI Insider",
-      "published": "2026-09-18T15:49:58+00:00",
-      "feed": "ai_financing",
-      "stage": "candidate",
-      "precheck_priority": 64,
-      "precheck_override": "critical_event_force_review"
-    },
-    "7160b411281ee78116fda921c6e6c66edf37c9b3eebffaea66cbf522a0a715d2": {
-      "title": "MSP CEO Launches Current, A New Company Aimed At Bringing AI-First Automation To MSP Sales, Projects",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWlY5MGtpTkVnVno1N1NaN1FVWV81Z0FpRUN0bUpKLUxTMmZMRFh4LU5YTTlYOTV3MGxQYmRzYUVEeXNSMDBrcGFubW1PSEkxU1dZRGROdW5xa19jeTh0S1lyR00wTmhjNi1ITDY5eHM3dENYRF9OZHpYVDZ6cDdWQWswQzd5cTQtcG5xSEx3bnozeUhUTEJQTQ?oc=5",
-      "summary": "MSP CEO Launches Current, A New Company Aimed At Bringing AI-First Automation To MSP Sales, Projects crn.com",
-      "source": "crn.com",
-      "published": "2026-09-18T15:45:00+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 64,
-      "precheck_override": "critical_event_force_review"
-    },
-    "6212b4b97cb86cb48cd4e2b19f5c28a31fdd314656d0b892fca15350b879b789": {
-      "title": "Inflection Points: AI Monetization, Market Volatility, And Valuation Disconnects",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRTN0OXpZSDNWUm9FOWZXWXB4N0RPY3dacC1NU3gwMWM2dVJWa1FZdkRkaXFXRjdhRW1WUnB3NUNzR09PVERBQzhTeW0taGZja2g5aFkzRzJEZlB1LU5kMlFQMi1WeXRyZGUycjNGS2t1a2tkUDBia3dpak92QWw1ZzdNaEp4c0RRdEFWZjVBaXZvQmRDZlFfVFpJTzNPRFJmSWtSZ2VKNTVOM2sxMGRKeDdPbzM?oc=5",
-      "summary": "Inflection Points: AI Monetization, Market Volatility, And Valuation Disconnects Seeking Alpha",
-      "source": "Seeking Alpha",
-      "published": "2026-09-18T15:35:00+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "e12a880353db5806877d648c1a9119821d619bff69c0486d41eda446d7465cde": {
-      "title": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTmxnSUpodVcxRnRSZWFqOHlTS0dteFFOUllSUmR2YzNEajU0dGFrR1Z3cHQ1aXlXTEpVSVpITUVsYXJPSHBwU2lSQzdqZkFwZ3JKM1BfRW1LbE1DejhLaWtIZ3NHVmRaSWIwODBKZHk1UjcxeHhBZHFVZzNDNTFiS3FuX09wU0RUeDdEMG9nRThRUGJ0SVNObFNuVmhLaW13SU5ZSFhFd01PLTU3T3Ytd1pobGZQMjhoWUdR?oc=5",
-      "summary": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts aws.amazon.com",
-      "source": "aws.amazon.com",
-      "published": "2026-09-18T15:31:34+00:00",
-      "feed": "official_1",
-      "stage": "candidate",
-      "precheck_priority": 80
-    },
-    "5d2f64166348a107c81403dec33022039e5947637f0d4de56cfe3b15ebca1f1a": {
-      "title": "Spacexfy Broadens Investment Focus Across Technology, AI and Emerging Market Opportunities",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQnZIS0FwMEduVE55cEVYSVJmVEdnQTV6RHhZRjU1c2FXMG9EajNlWUM2NjljcS1fNFVxWXZQSGhjX1U1WXo3TGIyTUtYQXBQUTJORzVEUXdIbzljOXhZLWlxUGIxOEc1dlpVU3VTNU5fRkd0SDE2bHh2Z2hZWUhoOXJIVWlEZUwxNUNlT3J3M0hfVTll?oc=5",
-      "summary": "Spacexfy Broadens Investment Focus Across Technology, AI and Emerging Market Opportunities Yahoo Finance UK",
-      "source": "Yahoo Finance UK",
-      "published": "2026-09-18T15:09:00+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "330b1f0d42a8b6efa59ce4865faafca9648bb176752c8ccd953a4af3f1e3fe70": {
-      "title": "111: Revenue From Promotional Products Jumps 121% As Healthcare Platform Expands AI Agent Strategy",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPUWhueXprQzJiMVJGYmpyZDhpVjBKVkswMi1qUUJKdUhuX1hibUVpUllaOTIxNURYTThITnJqY3FaVFpJRlNLX1EwdUJnZnhFYWVMd2xlYUNoT2ZHNk5oWVhOMFJPeWNIaXRNdVRMUTAwRGp1YXRtSklKalFGYUxyVnBGY3FTT1lVOThMZlpoVXVRcjFZclpQVk5hODVCeDlDczR1Unl1SVI4c29PUFp6T0dCN3RLdFnSAbwBQVVfeXFMTkxDSmxpRFdUbWlJRElWMExnNzVRMGxxaGs2VHhWV0VZYnJIRE8zOHYyQ3VYcFRYb1lxZDJJMU5WOVZFMkNEUUdlcU8wY3U4dUswVWdHVUxlNGJmaGRRZlk0RXMxSGoxNDVGUUg2S29BUndnSUwwYm5RZWNOODZzMk1PX21sekJNWDFsdlY2ZGJOcjZHcjdNSW9xV09BcTJrZGs2dWtBWXdoMk1WSm94SC1oZXFnVGltc2xYSXY?oc=5",
-      "summary": "111: Revenue From Promotional Products Jumps 121% As Healthcare Platform Expands AI Agent Strategy Pulse 2.0",
-      "source": "Pulse 2.0",
-      "published": "2026-09-18T15:03:09+00:00",
-      "feed": "agents_usage",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
     "9d7f815c6461b8d14b12b9f5306ef15cc28bcf03a665f09829f3e943dbbc1a38": {
       "title": "Nscale IPO Files to Go Public, Shows Huge Revenue Jump And Steep Losses",
       "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNekktbGhvRlNueXhqVktrbUdxLWlsVXBqQ25ic0l6MWdmQk1ETncxYldnZThXRzFmbzRGV0E3dHVmRGI4a2lIVW9FREpuR2hqRTF6X2lHOG1BTmI4X3pFZ0ViYzVSSy1QVnBVdVhUT29pcWJHUkVMV2h0S3lkVF9GOS1OQV9UVzZ2ZkIwZlZHRUd1N1hsMTZEeW81cGJqZ2p6UHFXSGJ5UQ?oc=5",
@@ -1559,16 +1409,6 @@
       "precheck_priority": 78,
       "precheck_override": "critical_event_force_review"
     },
-    "4daa8329d75dbb8f03681492341f5868e8614dbaf26e34f3c74f40c0f825a840": {
-      "title": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUVVzLXlhM3VLS0RMZTFPTHNSS1NFVUVkZG05Z001RWwxZHhvenpRcjFYRVl4YnpkcmJkWWUwb2drUjdKSklHakd0UHRscDhURDlFYXpfbHNoZzZBYUx0QmpTOWVkd24wNEdmRTB3eUhOd3NyWkZtUndTWVdOaVRfRVBaVWE5T0I4MGFNaWpnVUhQNTlsS2RtWkV0VnlJa2VmWjJOWGJ0ZldwTTFKSzE0Q0dpMA?oc=5",
-      "summary": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond bloomberg.com",
-      "source": "bloomberg.com",
-      "published": "2026-09-18T18:18:16+00:00",
-      "feed": "ai_financing",
-      "stage": "candidate",
-      "precheck_priority": 100
-    },
     "5c41aef74388eb1d10f839879aca19ded13ca20029a1d7682367ea7c00da5b1d": {
       "title": "Malaga Fire Station Reopens With Modernized Facility, Microsoft Data Center Campus Debuts In Central Washington",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1kRVk3VXR4OE1Rb1p5dHlUM3ZURTdmdnFnVGI3cTRnUTJVQ0VaU1ZicnFfVTNPWThubF9kWGhQMV9PMW52eFhSMTJ0V01tSGU1bTBKcDNJY3prdWgteU9sbklaQnY2eW9u?oc=5",
@@ -1620,48 +1460,6 @@
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
-    },
-    "0b73b117a221381460e13790fa91c2ee0ec1d06d52787c8432da77ea9d5b4ef4": {
-      "title": "Prediction: $950 Invested in Micron Today Will Be Worth This Much by 2030",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOZ3RRLThyaHgtWWxTdVZLTWxjVTlGRlpDRmp2NWtnMFZ4SmxQUmRMSWR5MHhiOHdjVW1lQnl0d2xxS2JJMG5kNGVMdzJ1VDFzY0YyMXRBNHpHcW9pLUJxZ2NiV3RMbEdRTjhLSy0xZGxyM3hFbXVrbUNubGVta1hkQXRQRE9xQnN4Z0JqX2QzSk4xbGp5LXdDY1RieVBYTm1jbGFN?oc=5",
-      "summary": "Prediction: $950 Invested in Micron Today Will Be Worth This Much by 2030 Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-18T16:15:00+00:00",
-      "feed": "chip_company_1",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "a9e2de0a4456d8b59c9ded6306cc0e242e88b4729ec0528fb1060ee2cfcb9d98": {
-      "title": "What Is Semtech (SMTC) Signaling With Its New AI And Fiber Products?",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOOEpldVgxV3l0TFB6M2hqS2VRM3VlNUxsczFPN1lXYWtSakZ5OWNKQWFaSW9td09OSm9DVDVJcVJMZlN0YWIyY0EwNm9hQXJNUFM2QU13bG1IMGk2Nlg5X01JNFJDOFBMeEIzMkZZeElkdUlOVXE5UTJvLUVjOVhGZy1rMkxrZmM4d1FGVnlhb19aUEtKQUhYMFM1MA?oc=5",
-      "summary": "What Is Semtech (SMTC) Signaling With Its New AI And Fiber Products? Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-18T16:11:13+00:00",
-      "feed": "infra_company_3",
-      "stage": "candidate",
-      "precheck_priority": 80
-    },
-    "8ab39e717022fecb2f723395087c97b48711a425483748d31421c04e4c2eca3a": {
-      "title": "Can Micron (MU) Keep the Earnings Surprise Streak Alive?",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTEtIbHZzM25raGNzcVlNOVZ3MGkxQXd0aFlxS3VmQUFzUF9aTHRadXJCY1Zybnd5VFd2MXUzTEJFd3U1MnhRMXV0dnpQUWVqZEcwVEl6bFdZaXljU0lTMHRhaENGN1Jla1FSRWdvWGFpUmdlam81OHZGcUtsQTdFMkFGaXI2SmYwcUE5cGhvMDJBVGFneHhOSFF6LVk2Zw?oc=5",
-      "summary": "Can Micron (MU) Keep the Earnings Surprise Streak Alive? Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-18T16:10:02+00:00",
-      "feed": "chip_company_1",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "3ef4432d614474c726a60e9afc401344cff1077973759ee472dcbfaf7c5c9735": {
-      "title": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTmxnSUpodVcxRnRSZWFqOHlTS0dteFFOUllSUmR2YzNEajU0dGFrR1Z3cHQ1aXlXTEpVSVpITUVsYXJPSHBwU2lSQzdqZkFwZ3JKM1BfRW1LbE1DejhLaWtIZ3NHVmRaSWIwODBKZHk1UjcxeHhBZHFVZzNDNTFiS3FuX09wU0RUeDdEMG9nRThRUGJ0SVNObFNuVmhLaW13SU5ZSFhFd01PLTU3T3Ytd1pobGZQMjhoWUdR?oc=5",
-      "summary": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts Amazon Web Services (AWS)",
-      "source": "Amazon Web Services (AWS)",
-      "published": "2026-09-18T15:31:34+00:00",
-      "feed": "official_1",
-      "stage": "candidate",
-      "precheck_priority": 80
     },
     "dcd887b7cc4a3a7f29dd1451fecb94b039fdc4dcf70efe3fa990445eaab4f9a5": {
       "title": "NVIDIA Vs Intel Corporation (NASDAQ:INTC): Here’s The One Jim Cramer Likes",
@@ -1744,16 +1542,6 @@
       "feed": "accelerators",
       "stage": "candidate",
       "precheck_priority": 90
-    },
-    "97ba232532b09e216587a13f6ed2ef000b556ede93689734b3d0cea5d324ce30": {
-      "title": "AMD shares first official benchmarks for EPYC 'Venice' CPUs, targets Nvidia — company claims 256-core chip is more than twice as fast as Nvidia Vera, 96-core model 20% faster per-core",
-      "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNMzA2X0J0ME1fMll3R21yMjNPeHpoVFJ0ZXpwaHJRb2ExT1otNjFkdXZGNXBZQ1dWajJPNC1WX1AybV9TNmtCb1ZsZERBa3VNQkVTOFlFQ0lvVGlnenZ4TWgxcWRoMlBvbklrZ0RwRWlSMHhUVXlSY3R1REJmb2RSWWtsUFhadFFQWTUydzJBMTJsTTdXY2Z1Zko2RDR2a1AzdDRlbzl0NVdfTjU2djlvbmVXNHc5N2czbkV1aTFwMUpLUkFaR0NJNHB4WS1xeDA3TlVHczJjQW90OHBOWHZTNHFwTjFMSkZHUEQtNWFwckQ1OE5pRWpVdUM3NVlXUVpVZ3BkQXB2djliX1dYV01nUkREWGhIWEZrUnQ4UGxUdUFHQk1ZOUdDM0RIQnhqTGNhUmVxRnFyVUcxa1ktWTNkTWZqdUdmaHVDdmphOFFKREVrZw?oc=5",
-      "summary": "AMD shares first official benchmarks for EPYC 'Venice' CPUs, targets Nvidia — company claims 256-core chip is more than twice as fast as Nvidia Vera, 96-core model 20% faster per-core Tom's Hardware",
-      "source": "Tom's Hardware",
-      "published": "2026-09-18T21:51:29+00:00",
-      "feed": "accelerators",
-      "stage": "candidate",
-      "precheck_priority": 85
     },
     "69b3f4b797cbfcf92a92a9e3f2b934c6f3fec997fdc127c91de587ceab999a61": {
       "title": "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know",
@@ -1970,36 +1758,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "0a154dd6b7040fb86bb92c72c65f44c1e62836644df37cdaab1439a60492cbd2": {
-      "title": "JPMorgan Names Top Semiconductor Equipment Stocks Amid AI Buildout",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNcks2clNKOUZjYzlWT1VQRnpzRmx1cV9DMHkxUnY5TlFEdE5TTmg1ZlYzeXZTRXdMVXliSkZfcVBFOVoyLXBPcjNrazY0MVlPTDJzZHdjSFExM3dNQnZxTDR0eE01cVpnZklTU3VuUVhFUUFvbnVMU0U4akxiamM5QXBQTzdnZlZnMEU4RUlrcFFxVXp1dUE3RElLSFJsVjA5V1lhRzBrbDg0S3Fma1RHNGR2Mll0LTNVTksxZjZROXotSVQxejVR?oc=5",
-      "summary": "JPMorgan Names Top Semiconductor Equipment Stocks Amid AI Buildout Investing.com",
-      "source": "Investing.com",
-      "published": "2026-09-18T16:09:32+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 78
-    },
-    "7230f642a022e911f8f6e051e3b0289325f1970e1ec687d9314ab0c0846f344e": {
-      "title": "US factory production falls in August; outlook clouded by rising costs",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQekwzelo0S3RpaVZiQXFlQmZPSDVVSXNUMXo2N1JjTW1oTHUzbU1FZVljOHlZZ0R1WlRUdUVnWkFaTUJlTFZUQ3FaYVlxbHR0UEVQTXVlUk8wU05MSEtQbDFKbEVxY1lXUGZxR3VoVFkyTFNqZU93MUViajNyZm5sbDNUQVlBRHVMdzFncWJzcUI2Tkg4RFdHVUZsTlBwaXlQd0MtRHlvNy1PTkR0YmtBLTdCOUxIUmM?oc=5",
-      "summary": "US factory production falls in August; outlook clouded by rising costs Reuters",
-      "source": "Reuters",
-      "published": "2026-09-18T16:05:12+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 100
-    },
-    "308d5cee6d0e4d64759102bcc92130241858e5b319dfb78afb0ee305029c2f21": {
-      "title": "Nvidia backs AI power efficiency push with new deals",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaEt6aUpCVlVWRm1UVDlkaEMyUkpRYUVRVGtEUjFiLU1FSnZyc1BkQ2d1REpsMWgxeEFtbWFISGM3Q2xOLU9jLWJRcjJHOUtIdGJtTjhhM3JvS0RTVnZlZThaWGJ4QTRoM01ZMjgxWTNhTVdNcW5zOFdxUXd6RnNYOWttOEY3UTVaeUE?oc=5",
-      "summary": "Nvidia backs AI power efficiency push with new deals datacenter.news",
-      "source": "datacenter.news",
-      "published": "2026-09-18T16:00:00+00:00",
-      "feed": "frontier_capability",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
     "03e20a5cdfe7ac37801d3ed004cc0c99278b7c14f94b430b5e3d3bdbacf6a375": {
       "title": "NVIDIA Stock And 2 US AI Infrastructure Leaders Worth A Closer Look",
       "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNd0c2ZHJScWR2S3A2aVZfZ0ZnQ2xQWllVZkt1RExhdmhtZWdsa3FBM1FGemxwTW85RkVIcl9xb1psY205aHFSM29KT1hxM2NrbzY2MUpoYi1xY0FLVVo0NkU0VVQyMWRYM1VocU5zTzVUZ0ZhcVE5WFI4bGNlN0lYTmZISTBuTzhwSW5XQzZHZDZObVlLcU1BQU9zeWYwMUZ3Q29yX0VwZ05qZmkwQzJLOGxySGtDc2hTWDN6T3dwM2dseGw3NUJIZHlha9IB0AFBVV95cUxOSXE0YWpuXzB0RzRYRUtPSThLMkZUVElPWWhIRDNWYXVPUlo1bXMtelY1eUdvenlDZ0pUNDdwcXNlS2dfZ2Y0dEJQeDNOZkFBODF6SkVoU21lZnN4NHZEMDVDVHo5eGgyOVd6Tzl2RXVIS0gya2JYRVNXeHFGS3JpVENVOEJDamt4dkhZZjR1aGkzamIxTUd1Rnk1Umt2R0xxRzBYcXoweHFkRGhBb29xa2d5MHJxVVpEbTcwM1djZEFWWGdYTUFmanA2UlJYQ294?oc=5",
@@ -2124,26 +1882,6 @@
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
-    },
-    "39b7b79a4f40b52a77a6a4606288bbb61a577639a83008a653d11fe5e4943b16": {
-      "title": "Colorado Springs leaders delay decision on Project Taurus data center",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSjAxcFVOQXdZcWtLbEV5Y1ZjV1dKS3M4d3dBVlFkMTVzejB2a2RIdGh3dGFYcFFLbzdkem9FenF2SGEtT3AtbTh5cG9IZGw1NXhVZ0JsT3o1Z0pzUUlsOWQ0dnhFN0M1UXQ5MjYwSUR5UDFTTFkwODh5bWx0SHFRX1BGOUNCMzFpeUVOWDBTWnZ6bk5waXJmNQ?oc=5",
-      "summary": "Colorado Springs leaders delay decision on Project Taurus data center yahoo.com",
-      "source": "yahoo.com",
-      "published": "2026-09-18T15:59:43+00:00",
-      "feed": "power_grid",
-      "stage": "candidate",
-      "precheck_priority": 64
-    },
-    "8a9ffe0ecd5bdadd94a2a6f981eaabfa0c1d6f80217f832ff0040b0f091f4339": {
-      "title": "Lombardo order forces data center developers to fund Nevada schools and protect water and grid resources",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNd25NWkJvV3JHVXVZaVg3ajBJVFlSYm9lMHFxenZtUGlya2ZDNFhwSDhTQVotWUhxbjJPVDJUX3ZLMEpqZy1aRUl5bUhmc0xMUWtXRVFTMmtYSnhCUUZ3VHhHQXg1aUF1LW04WTNIUi1rdlFXXzVTRTV1dkpPVm4wWGlMQXhQNXQ0Zm9DZEEzR1lEc2FCNnM0?oc=5",
-      "summary": "Lombardo order forces data center developers to fund Nevada schools and protect water and grid resources lasvegassun.com",
-      "source": "lasvegassun.com",
-      "published": "2026-09-18T15:30:00+00:00",
-      "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 70
     },
     "a84718d28c0694396019a3e691e568fe4fceaa0944b0d0082ee26a7bb74f6a78": {
       "title": "AI drives data center rack power density surge",
@@ -2621,126 +2359,360 @@
       "stage": "candidate",
       "precheck_priority": 76
     },
-    "e6301449efed2824d4f0aef7f203e6d741441d6df605670d5a4966e95846daca": {
-      "title": "How this new startup plans to get data centers to pay for VPPs",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOSklJNEs0RUdPRVBrZHQtendHSmVTUVVIUXZqWDlkSzZ6eDFrbzRad2NKaTNfSUQ0WVRIaXdZZTA3UVpOSGVMNVR1aG9fc3piWTlEUHFzUHplWl9rZmtfUTk3MDk0UF9Vc2hQdElrOVUzX2hGNVVyM0d6dXJRZTk3TVptS29BSm0zeHVJcGlDTVA3eUpSZWJoa1ZnTnF3VGs?oc=5",
-      "summary": "How this new startup plans to get data centers to pay for VPPs Latitude Media",
-      "source": "Latitude Media",
-      "published": "2026-09-18T16:43:53+00:00",
+    "476d917c7c818d7efad72bac081b8ce08731af3095854a2207396ea68dad30f0": {
+      "title": "UBS now expects AI capex to reach nearly $1tn this year and around $1.4tn by 2027",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPRTVvUFZ6dE9CSjBIRlBUSGtfWlBvT2JmS3dSbVk3a0xjQ2haTVFhTmZBZUo2SE1qREh0aFVRZjdoS0RXSWFPOUhLNkJhS0lqU0xDaGE1MTRmd0l6WG9iZExTTG5aTnlxaFZOUll2bVJGRGlpNzFqU1VBNi1RTnAydFBSaEhsd3pzTlNTelh4Tlh4dk4zX2gxQWpoaEZ6a0ljTWNUSTlPSVQ5ZTBOd1ozTk1zZmtieEJRVFRTSzR2TDg5alZibVVvMHJXRzNCSlU?oc=5",
+      "summary": "UBS now expects AI capex to reach nearly $1tn this year and around $1.4tn by 2027 Investing.com Australia",
+      "source": "Investing.com Australia",
+      "published": "2026-09-19T04:23:39+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 99
+    },
+    "4f76a18b7c089beba94018c03b74363eaaca1869e8f90f7a5ff51795ba4b38d0": {
+      "title": "3 Software Stocks Riding Rising Enterprise AI Spending",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQYVoxeWM5YTFHc3d5Y0tYUnFqTndMbTUyWG1IeElXM25RMEhtUkhvTDI4RGFGaWtyQi01THJHOHZsWDM4N2NjZGtZOXpvNTFHVWZSU2dtQUpDUnAzT3BpQmJycHp5bG90YjVYMnJXV3h3dEpUZS1QNzdIcmt2TkhkX3dFcnVpbldoSC1nU2VXVk9EeWhRVElJNmxLbw?oc=5",
+      "summary": "3 Software Stocks Riding Rising Enterprise AI Spending Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": "2026-09-19T04:20:00+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 78,
+      "precheck_override": "critical_event_force_review"
+    },
+    "4138d231dac88e4ca50c0399f5321cbc0f5de02beb5593bf3dfe0c716de96b3b": {
+      "title": "Data centre cooling faces 'forever chemicals' surge as AI expands",
+      "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxQOElUMTRnaTlUdjdXYVJaUWZfd0FhN240RVhLR0NqdUVLNXFNek5DY00yWUJCYXB4ODI2S0RyQmtGZ2ZUZWNBVjFtSzZmSWNtdndoNzNfOUllM1V2UjE1T1plZUhsakIzU2JpN1FHWURucEM5WkJ0OWdnWjNJV1NDRlh2NEJIakdrd2JKMVZZODliOUhoOEVXM3A5NVI1YlJ5c2xsQjUtNWZYNllMdUx5UjhLY0J4Q3pzekhYVm5sam91S2N0YUgxU0hGNHZWcEplZUlBTjN6U0J1YjhGcVJlYzVLeTJKSDJKOHhoMEdYaXZIZjFWR3RlUVppMkRKb3J2UHpTLWhYRU1VdU5wSjFvN0d3QUFVMjBZVXc0a05MV1pMYzjSAfIBQVVfeXFMTjNaSG0xVFNSaG1UX2RkeXRCZEtJbFM0WXNWcm5HVlV3YUdRem91SEdvQlpWVFRJZnRCbUhQamZVLVpiYWw0WmJaa1ZFbXZEMTJURUNFOFFUMzY1M3R3UmpGQ2txZWpOQnQydWVvLUkwWWtjbWcwb0wtYVRyNDZHQS11OUJ6WDh0ZVlGQ0xPYUdnQ1FBQmhobWdTWHp4aS1sRUlSRjg0M3ZCQThaZ1VlU21wVmgxTjNveWh3bDhmWG5HVXE2aXFpQ0hFRWpxTUlBaHlOdWhWSnZJRUkzUHFyb3hDZ0ZrQ0V4dHliT0s3ODhZYUE?oc=5",
+      "summary": "Data centre cooling faces 'forever chemicals' surge as AI expands datacenters.economictimes.indiatimes.com",
+      "source": "datacenters.economictimes.indiatimes.com",
+      "published": "2026-09-19T03:05:53+00:00",
       "feed": "power_grid",
       "stage": "candidate",
-      "precheck_priority": 65
+      "precheck_priority": 75
     },
-    "df359044ae11f17857f79ea03fa601aa204a44a6ff8f5d740fb4bb9ff8992830": {
-      "title": "Data centers, drawing concerns over water and power, may have another surprise impact: Forever chemicals",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZUlXLVlSSXNKNHNVN1EzanpXN1RORWdwYU90LXRPSWJwX3pseWxxMlpxOTNHOTVKaVpqQlZnOWg5VkRSbHFZWmtuU3B1UnFCbzRmVGpwNDQyZGNQODJtSjdfQmNXUHBIN0Y4bFpON1pUWEFUWnNwRnB6bV9lQUVxSktjUjh0dW9ySFRadTVCcFVtUWwxNHEzcVBiN09vTV85Sk00UXVMWm8?oc=5",
-      "summary": "Data centers, drawing concerns over water and power, may have another surprise impact: Forever chemicals thehill.com",
-      "source": "thehill.com",
-      "published": "2026-09-18T16:43:00+00:00",
-      "feed": "cooling",
+    "d1474b29059eaf06ab98375d7e210c4f13318d4cb6b67cedc95e805fc70a236c": {
+      "title": "JP Morgan: Raising interest rates is not enough to end the US stock market rally; long-term rates, fiscal policies, and geopolitics are the real risks",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB5YzhKandHV1BsWFRRNE9iei1IT1BLZzlfdW1VRXRnOGhzZnZGaVMxX0NacWYyYmJxOVBoWFAtVHlaaGdMOVlxaGwwZGVWUXhwMFM0X0NHYnFsakQ5Tzg4VS03TdIBY0FVX3lxTFB5YzhKandHV1BsWFRRNE9iei1IT1BLZzlfdW1VRXRnOGhzZnZGaVMxX0NacWYyYmJxOVBoWFAtVHlaaGdMOVlxaGwwZGVWUXhwMFM0X0NHYnFsakQ5Tzg4VS03TQ?oc=5",
+      "summary": "JP Morgan: Raising interest rates is not enough to end the US stock market rally; long-term rates, fiscal policies, and geopolitics are the real risks Bitget",
+      "source": "Bitget",
+      "published": "2026-09-19T02:59:25+00:00",
+      "feed": "ai_capex_outlook",
       "stage": "candidate",
-      "precheck_priority": 70
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
     },
-    "af7878b5a342422dbf2f1f7659a818f976d5f5a8f7248c9d48d3276bd83725cf": {
-      "title": "Christopher Hill on the Special Forces' decision: Extremely disappointed, the KLA had limited capacities, Thaçi did not control everything on the ground",
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPV2ttME95czYtMXVuSGN6U0lHRlo2V1RQeG5vX2M4SURxbjAxN2gzSUJ4czRjdFp4Ty1xWWdTZTZVSElJNWlZcUdkdGt5Yl80Unk2LTk1Y0RNVld6WTRSOVYwOHg1VTRJQ0tkenpySjZaQW9wMm5BdncwWlhjem8xaTRSdjBxbndNUFBJODZPMTVTS1kyR1UwQmV1OWpGREFvZ0xkdFQ1Q2Vrcjkxc3pnX3JsWW9ZUmk1T0t0SWktLXFpVm12WE5mdUY2SFh2OERVbFc0NFdENlVCWURSeEpTQVZSaS1TZWk0SmZRMFJEeTFEazVfVXFn?oc=5",
-      "summary": "Christopher Hill on the Special Forces' decision: Extremely disappointed, the KLA had limited capacities, Thaçi did not control everything on the ground Gazeta Express",
-      "source": "Gazeta Express",
-      "published": "2026-09-18T16:42:00+00:00",
+    "76fc415fce2655046f4071d3a7301e793e52db682da58f00c5718b15089b6e63": {
+      "title": "Nvidia backs AI power efficiency push with new deals",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNVdzdVcxS0NPQzdxQ1Q2MzVERTlKaEQyeDFWMHAyZ2ozbU5VRVkweEJBMUM1TnFRTk1VMDdHTUp5VEtoWS1nSy1GUXZuMTI5VjBvNzE5VHJmRURxcFFfVmJwN0dodW54UnhlX0V4WnI3dTJ2N2FobFhpbHhUZGFWMEcwaFdaWG1aUmZabFBxUHNyWTNQZGU3UTlPVlpmdklwQjByQWVwaEt0UVNNT3NhVHd5dEJDVUgwa1VYX1JOWkw3VF9qbVhMay1GcWhxbk1aaTVMbXQ1dU9od9IB3gFBVV95cUxONWpPREFzVHVzT01hU3lVSTdBeGJVeS1SRHFiZXRkODJJOUJINW8xX0FzbGFJeHNrWUdQZ0VFY044QVd0ODRMTWJRYUxCUGNtcDFtUkNMYUZXVDNXSl9YZkd1Y09YckpmQ1VrU24zNm5Ldmo5VldCODFSSVhPSnM3YXdpYkJNTHlzWHpkQmdpMHZDajVISWxpN0VXOTByOEdmYlh5SWF5bUFhdW5pWlhWSHhlWTZDemVHNHFPLUlyc2hjek5lODIyV2hjdzNNTGxJQUxkVVpUZ0ZtaGo1MUE?oc=5",
+      "summary": "Nvidia backs AI power efficiency push with new deals datacenters.economictimes.indiatimes.com",
+      "source": "datacenters.economictimes.indiatimes.com",
+      "published": "2026-09-19T02:41:43+00:00",
+      "feed": "frontier_capability",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "bf48880c4acedf39749e65b2a6fe5e3965796962c1afcf12fabacaad68191a68": {
+      "title": "The rise of AI-first enterprises: What CIOs should prioritize in 2026",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQNDZzVFlCSXNadXBQOXN2NlUzLWxYR2Y5MTRmdWg0RUZmYjMxTzVJTVJhVGgtbW03YmlxcUUyLXNLb1JfT1poNWhzNWJ5WEY1cG1rcUxubDFjWk5hM1hiZmpmcEVWZUJYbmYxSWNvZWtzaGZUZml2R3NDY25aRTh2U2c5ZXRXMFpDLVN6ZUphb293ZlpKS1NTX3pXMzZCU1dvcmhhcjF5M2hQRF9sby03a3JOM1lGZjNOTTFGWEhFUVN2THhXMVFhMExuV1ZhNjlvMVZXUlJvNEZ4UlNueld4MDRR0gHnAUFVX3lxTE1kTEpiZEJSUlZqcFl0RDFmck1zMVRHUUluTTY5NkZRdWF2VWZDZnNOUlRpdFVKMVJRMjlNbXJvTkk4VGpBQnR3Q0VyalBmRVMyUm9ZRURsSmZDVjllZEJGN2F6Wm1JaTJmcExZUWhZckt3d3pjdmk3aTduT0NoV0pleGJqQ2hGanpoS1l6eEQ0U0NkaDNWRzEtN1E5YkdkSUJxV0VQakFHYm5ILWp0NUpqZVRDcEI1Y3VQS1NYeHBJaERiVWxTbkFicm9pa2xYQ3BTZVZNRmhWdTBSZ2JpbFlKWmcwQWFTZw?oc=5",
+      "summary": "The rise of AI-first enterprises: What CIOs should prioritize in 2026 ET CIO",
+      "source": "ET CIO",
+      "published": "2026-09-19T02:33:56+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "1bfbb3d9fe1a9d87cc9a860633d97b81e452cbd84e25b566d4f265af92afabbb": {
+      "title": "Two Rio Grande Valley credit unions knocked offline by data center cooling failure",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQLW91SnBwYldTNmFWYzZJb3dhQmNVdjJ6TEc5UjlINGFjamRiMkkwUEhBcUN5LXRmbnM1SmtSSEJ4dVUxOFRGcndYcnN1ejJsOHZIWHQzalV1ZGVqUElyeFRCdzVnQmhFT0hleTZzUy1vaVRndnVkZGJOUGlLOXgybnF6NDgtOXpZY09kN01lMW1jVzdWUjBRazRwSGZhV0hNM29aOXVEQ2pZYXNpUHc?oc=5",
+      "summary": "Two Rio Grande Valley credit unions knocked offline by data center cooling failure KRGV",
+      "source": "KRGV",
+      "published": "2026-09-19T02:28:16+00:00",
+      "feed": "ai_financing",
+      "stage": "candidate",
+      "precheck_priority": 64,
+      "precheck_override": "critical_event_force_review"
+    },
+    "07ed84e51401c8d6b37ae5885757aff5910b922e7bd54f1b0dd96dbd17fddfe5": {
+      "title": "Air Products to invest $250 million in Arizona semiconductor expansion",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbW9idkVoYUs2UHg4bDBYU0FSQm1Gbjc4eTNhN3FnRXNBNjdlZk5XU08xWENINllXSHRCVmh1aXpoVGoyd3ZmdEJoWk5DZl9oYzJzNF83LURmOHo5UGl3SHFPZ1hIbzJaYmo1N2d0VU4zU2VQLVlOcUY3M0NZMnFfQXgwd014WXdfenNrNDBJZ0syVFhsOS1mcF9iUlRtNEE3S0l6d1U2VXpzbWZKQmhZY24wVERNX2tYbld0QkNmLW0wZ9IByAFBVV95cUxOUThoV1FSWmNVa0wxY08zbFBOMXlsZU9obEFrOGhNcm9kb0IyUENZR25la3JRbEtkbThiRmo5dTkzTjJyTFc0M1BOem1zZUxXYS1pdDFEcnV4X21kQ3dUcGhWa21zNTNFRU1ybFNDMG1lYlUzRE1zQkRtUExHUDFqQXFUSGpfb1ROOXBaUmpwRlFPZ2ZpdlBTbHZHejBhY0EySnJYRHBtVmNSYUhEeXJqcUI3cWtyTVk0eWs5SWxJWkpqMHJZakRFRQ?oc=5",
+      "summary": "Air Products to invest $250 million in Arizona semiconductor expansion indianchemicalnews.com",
+      "source": "indianchemicalnews.com",
+      "published": "2026-09-19T02:04:01+00:00",
+      "feed": "ai_mergers",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "2cfa94a72aa88d42772811949132588089897cb415b3aa3acb1fb37951ab8df5": {
+      "title": "Why Is ASML Stock Falling Today?",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPMm54T1NtdzdKLUF3NG1GTVQ4WlZFOXQtT25JblptbzNVY0VraEM2QTk0Q3hLek1PZmZ0Qm1yMEZNNmRwWlZGOEswcHlfdllXNzExTWtIWGlRT3hGeHpTTGJDYmRSczNfRG5fUDBQYnN2YlFVa2hlZDloWHBfdDhTMlBueDZfckh5anZodkVIMXdUOElzdnNOempKTVdMbGtUdTUydWhFTWNmRmox?oc=5",
+      "summary": "Why Is ASML Stock Falling Today? Stocktwits",
+      "source": "Stocktwits",
+      "published": "2026-09-19T01:58:14+00:00",
       "feed": "semicap_earnings",
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "dde8454aef7f5d0e7e802e7a8a66b8921b85ee3aaaa6d641aef4626ca63ac2a7": {
-      "title": "Can GFS' Marvell Deal for SiGe Capacity Expansion Accelerate Growth?",
-      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNY0tGcGc0Sm53cFJKSHd2OC1sWXN3M0VJVWFTRmlxTDJ2NmVZakUxdEd1aDJTUWpwcmtWa1R6OXpUYzNWMmlMcUo0QThUSzJPc0hYaGc0bEp2dGxoSDlQMnVpOFVpdWZuTGM1WHlqNkItTjQ2LXBPMDRJeEZvTXY0RElpbHhEcTdtTFM4X0Rmd1lGb2YwMWVUNTRUSnFKVVRtOFdYR0Z2ZVZicHZ6Wk0wdXVPV3BMVGVpWEhTUUw3OThKM3ZzYk05UktSLVVDZS03Yk80VlpoclFmbHZuNGpaQnA5aHh2QQ?oc=5",
-      "summary": "Can GFS' Marvell Deal for SiGe Capacity Expansion Accelerate Growth? The Globe and Mail",
-      "source": "The Globe and Mail",
-      "published": "2026-09-18T16:37:03+00:00",
-      "feed": "foundry_packaging",
+    "86874959f3b2a8aabdf2779e95e848f6369fe8ef12a7c086408efbc6ff6f6d0b": {
+      "title": "矽光子與CPO同步升級，量產進度能否帶動EPS？-跟著大資走 澤明",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPS0UtS24yZnhCTFlUS3pLeTRJaFhfckZUbkQwV1VQNG5TNUNoMUEzd3FteGFHczFVZkNvNF80RmJBNEoySGtzTlJJQThiV1ZrQ1FqSDV2WWdaeUI4N0d1VDNNMG9CTDZjSVNIbGJZbUJCNHJSdEg4X3M0QTVxN3lmX3FxZw?oc=5",
+      "summary": "矽光子與CPO同步升級，量產進度能否帶動EPS？-跟著大資走 澤明 CMoney投資網誌",
+      "source": "CMoney投資網誌",
+      "published": "2026-09-19T01:47:40+00:00",
+      "feed": "taiwan",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "f8a6ae5ae2d70266aac841fb9cfd31c7737965363173322f99c7796c2fc3d072": {
+      "title": "TPS news rundown for Sept. 18 has CVSN Summit, AI guidance",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNUROTFpNOVFjRXljUlN4UVZIekp3WnVIRFdXei1wUGtPZWZFNlJkVzNfWGlHV3RQSnZEYmRzMnpMXzAtT1hrVHZwN21NMl96OEFUSGRhZmJSY1pjdVlfQ2Y2eFlVVDVzbmxUbVJSMTZCVE9mVHQzbEtkUGVPUHUxcTJpdy1CTTZ0UEx0N1hHUTJSQ2x4c3hnQnRMV1pyRmtJcFFvWXVtZmV0dndYUXBCRElhcTRCQQ?oc=5",
+      "summary": "TPS news rundown for Sept. 18 has CVSN Summit, AI guidance Trucks, Parts, Service",
+      "source": "Trucks, Parts, Service",
+      "published": "2026-09-19T01:47:28+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "502ce60bedd712d657fa96945ee036e5a4c8bd2bbd9a541cc32032ba2072de21": {
+      "title": "Anthropic, OpenAI의 약진 속 새 AI 모델 출시 검토",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE01OEsyWjdNT0d0SEJNSE1uUXQtcFUtZXdtSjRnc0xFeHVVTnZSS0hIX2loMkxvVUpNdnpWN05FOEVqaDg3WE04MTNTWDJyNzdvUHBkYmdScHhKTHYzQ3o4aWJJdVA5VkY2NEE?oc=5",
+      "summary": "Anthropic, OpenAI의 약진 속 새 AI 모델 출시 검토 kr.investing.com",
+      "source": "kr.investing.com",
+      "published": "2026-09-19T01:15:00+00:00",
+      "feed": "ai_models_ko",
+      "stage": "candidate",
+      "precheck_priority": 88
+    },
+    "ce89b6d4cc3ff3dc11cd922ce7389d4b44d40af043bd561b85eba3ed410e0735": {
+      "title": "3 Stocks Riding The Push For AI Safety And Governance Spending",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPMWJUSmVqMGFiT0xiZzktZWpRZll6a2VMaG4zTldycTZFMzRqS24wTmRiRXF1d1ZDeGIxSy12aGRpUzRRRUVOV0RGLXRFcGhTQ1FIaUk5RmJEV05uS3pxekg1cmhLbVZQUEZ2c0tneDhvenBMOHJyQW5VWDNUNXZaX3lIbmMzT0RseXNmYmptbFM?oc=5",
+      "summary": "3 Stocks Riding The Push For AI Safety And Governance Spending Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": "2026-09-19T01:14:00+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 78,
+      "precheck_override": "critical_event_force_review"
+    },
+    "0959c5a6d3ada7da9a1c9c2abe30617b8e7e6fb16b1367f391f7907730b0d1e2": {
+      "title": "Meta launches Muse app for Mac, expanding personal AI agent to desktop",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeEp4bEhJSVVoZ0pqM2daMG81eXN5ZFpMQVZSaWZrYkNXNDBJazBDeTFacGxuLW8zZVdnR05SdjFmdGJVOFJCUkVyUEFBWk8tZV9NR0twLXhoTDlIRVRUMTNfSUpHbTFPZjI3R3A2SERibHV2cVN4V1RzajZVbG1FSXhNcklnSjI0TkVlZFNtY1ZlSllhaXB0a3dReVVKRkZlODNRc3l2cnpSUXpVNlBJVmtDUQ?oc=5",
+      "summary": "Meta launches Muse app for Mac, expanding personal AI agent to desktop 디지털투데이",
+      "source": "디지털투데이",
+      "published": "2026-09-19T00:39:36+00:00",
+      "feed": "frontier_model_release",
+      "stage": "candidate",
+      "precheck_priority": 70,
+      "precheck_override": "critical_event_force_review"
+    },
+    "3c014115272c6f003ea808e5f0b478ca88852a5556a9af95ab87e5e740cf4fe2": {
+      "title": "This Analyst Sees 20% Upside For AMAT Stock – Says High Expectations Around Applied Materials’ Businesses Create Short-Term Risk",
+      "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxPMHgyS0FObjU4TEtBckdkQTFtOEo5bG80SENkSTZGWTN6SzBWcy1DaXlPRUYwMmk2bFFWOFNCelpnRi1OSk5CRVpMQm5RVFV3Zms5MkhvbzJVSEtWa1RGWlN6MVpSYjRrN3ZGQ2kycVVnSTdIOFJ3X0xhZlE1OFIwWWF6WXpkOTc5X2FpLUltaWpteDJ0eFJ1Z1VzNmNrS0tpWDRXZ0RWdjVQLVVaZjdZamF6NnVmSVFZbHJrZkZSQkZQVjF3REszejRleXlfWnlPNjAzel9CWW5JQWZlOE91ZF9aNXdQVC1lcTN6YmtHNzAzbC1CSzd0VGZZQXM5bll4ZzE5c3F0S25xVDNzQmVkZE5ZblR4OTQ?oc=5",
+      "summary": "This Analyst Sees 20% Upside For AMAT Stock – Says High Expectations Around Applied Materials’ Businesses Create Short-Term Risk Stocktwits",
+      "source": "Stocktwits",
+      "published": "2026-09-19T00:39:34+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "594962103fbb0e6c5d374b32a66ffb78aa8c3e765aed25c6e1e54d2b8a17686e": {
+      "title": "Lam Research and MicroStrategy among market cap stock movers on Friday",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxORnFyenR0Z2ZWMUJtWnJ1TnpZcExIcTFnNlJTNjhjUnFGdHJEakNia1hXaTZ3UFhxV1BBa25mUHo5ZUtfWDUteUpoU2tXWWx5VGlpZ09GNzZ5ZWpBSC1XbU16WlNaaGE1MjcwVHlUQWJUTHZMTDN3SjBvRTFVWUV5UVFZWDA4Ymg0aHpBNkdFeEhXSVN0a3NWb3F3LVgxR3dLSDV5NWt1c0ZfV3h4bTItVkdFYTBCMkUtdF9QWkpJaXNVMlYzM3Bvdm5adnY?oc=5",
+      "summary": "Lam Research and MicroStrategy among market cap stock movers on Friday Investing.com",
+      "source": "Investing.com",
+      "published": "2026-09-19T00:00:00+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 78,
+      "precheck_override": "critical_event_force_review"
+    },
+    "47b9627bb92ece699df38c7dffda2314428e532ad0a13cb8070e0458d517ff7b": {
+      "title": "Vantora Raises $100M to Build Physical AI Startups",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQeThwNWVSS1MxczczdmJOem0zM0NldENjeDFBNzhaMXBoWkU2Yl9iSnRGV3ZQSk9YZ2VNVC0tTkg0cTlBZENfMjF6QkJhX1hkU2lnZ2lNWDNSSEU1bER1Q0F0NVRPcXhkQnBLek9sZk1GNGNvQ0dQNzVsNHdlWWlGUXBFZ1VfRzhUc0E?oc=5",
+      "summary": "Vantora Raises $100M to Build Physical AI Startups The Tech Buzz",
+      "source": "The Tech Buzz",
+      "published": "2026-09-18T23:36:00+00:00",
+      "feed": "ai_financing",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "4de0f626cd93a4488bd2e55652d300862478c77e2c4707bad3cbe53ffc1cbd6f": {
+      "title": "Jim Cramer Said This AI Firm Has More Orders Than “Almost Anybody” Other Than NVIDIA",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNQ2NhSG1GdUw2b19rRngyTzZiOVJSdlg2V1J4SEFjZDlsN2JUeGNtemdBMFpNQXl4aXB2cmpPUVdzTk1nRjh2TFE4X2lUOWJ2WTFIX3lTV2Mwd1F4RkNTRldKRVpyejRqMzJwV245SGlNVXpJNFdmdUNqdUJIdE5XeXZaeVZnbjMwV2ZhVjVfU2k?oc=5",
+      "summary": "Jim Cramer Said This AI Firm Has More Orders Than “Almost Anybody” Other Than NVIDIA Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": "2026-09-18T23:21:54+00:00",
+      "feed": "accelerators",
+      "stage": "candidate",
+      "precheck_priority": 85
+    },
+    "0026b29773bd042a25e24bca83302cdffde2362a8af4af52f6acd69b82b1c784": {
+      "title": "Charts: Taiwan's memory makers are outgrowing TSMC by a factor of eight",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdlN4aW5ZcnFVbEc4MFpXYWhJU1B5M3daVmphbFhCNW14TDE4M1NHdDNTZG1HR1RycDZMXzRSWDJIR2Jpd2JFZzMzY2duUkZfUjJrNno5Rkp4MTBSbEJ4T3pIR3B6NkV0TEE5d21pS2xValEyUl9zOENzWVk0LXNWdTI4NEhIYW5Ca3RmMFFSdlZKUQ?oc=5",
+      "summary": "Charts: Taiwan's memory makers are outgrowing TSMC by a factor of eight digitimes",
+      "source": "digitimes",
+      "published": "2026-09-18T23:17:13+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "fc2fcdfb4f917e1cbbc7e1d2f48a8c1fbe687498dc81a4861186ff75d863d0d9": {
+      "title": "Elon Musk Says AI Will Double US Growth to 4%: Can It?",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQYXVwOUd3N1JGYkFkSEUtNGN4OUN1MU5UUU83STM5X21naXlPNmh6VXZKSGtnbXJjSzBNbTV3U2xRelA1MTVmWWxIRHZPSjZXcU4wU3BJbExIUzh2Um9YYlk0RHpZOGxxM2ZSeDcwM3d3WUlnNGZ5MzlCSDMwVk51aGIyZ2hXR1FvQkE?oc=5",
+      "summary": "Elon Musk Says AI Will Double US Growth to 4%: Can It? Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": "2026-09-18T23:00:00+00:00",
+      "feed": "people_3",
+      "stage": "candidate",
+      "precheck_priority": 90
+    },
+    "e91346d4729c8a86695e8a74c275ae18d95b2742499ce5f2e7724fbbc4d2ddd0": {
+      "title": "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNLWpoWVZqek12SlltZ1JwWlFpLWhXa0lFR1dGUTl3YUZyUDJpNlFPNTFVOTBEZ3c2N2REZnBESkMwRTJHWk1URzUzRElUWGowMjI2UDI4cnlINjU2eFBIaDgtaGVZSDl0XzR2ZzBLNkstTjZ2Y0VpcGx6c1ZHWDJoQ0tGWHNMeE5QZHRLUUc0MHQtTlVDaW44?oc=5",
+      "summary": "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": "2026-09-18T21:45:05+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 78,
+      "precheck_override": "critical_event_force_review"
+    },
+    "9f30467d37e1039483fdb8fd37e638b3fc34c85af36a755acd664747dcc9891e": {
+      "title": "Is Lam Research Corp (LRCX) Overvalued After 7.0% Rally? GF Valu",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVTNVQUw4VUxkeDBPRXJzZVJvRWpMNEtJWlZzY0tmLWktTnJBX2szTDBSTFJiaHc3OElwczhiV0RoMlNEV25oeHFFWHpjM3FFeV9NRWdfeHB3RFdHTE93bklkN3k5Y2JuNlh1b0tVU21vRFpabTBfZUJIdHFTV3pKYWxJMDF0WndraDhUMm5Rbzd3dkNGOVV6Yy02VlNBei0yaTZ6ci1VZlpRZWQ4V0JlVmEzUzBSdw?oc=5",
+      "summary": "Is Lam Research Corp (LRCX) Overvalued After 7.0% Rally? GF Valu GuruFocus",
+      "source": "GuruFocus",
+      "published": "2026-09-18T21:36:11+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "d3f1e3f88e29f6f3e864ee88607ec66482e9b57ed1752c861e18d5f984f5c72b": {
+      "title": "KLA Corp (KLAC) Shares Surge 4.7% -- What GF Score of 91 Tells I",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMUh3SmRTR2JackVzak1jc3dLemdyWTVSVk4yWTdfWXh2bXphM3FiWEFzdzdxVzg3Vmotb0NybzM4WDB0MW5aSjRpeU45RHoxdUc4UVBfREVweGc1Uy1pYkZJczJSazZoTU4zQjlaYm5wSE9HaFo0R2FUbFNfM1lfU3FHQlBFZ0pYeld5dlN4REk0cTRUNjZyVWJPQjhIV1VuaVJoUjk3dw?oc=5",
+      "summary": "KLA Corp (KLAC) Shares Surge 4.7% -- What GF Score of 91 Tells I GuruFocus",
+      "source": "GuruFocus",
+      "published": "2026-09-18T21:32:27+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "9fc10962d06de1f9ad45eecf6b4c78e5c9026ae83e2e9e6b28eec0cd9549d3f7": {
+      "title": "Spanberger issues executive order to hold data centers ‘accountable,’ form AI task force",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPS3MxT0w3RmlNNDZ5SEpoZFlSZ0MtdWkyd0tBT2NVdkl4eUU1TUliTTNhOTR0VUJtanNnUjNta25DckZXMnRqOHFBcTFYSkFuY2dBQjQtN0JJRWZXMXFxZndIRnlpSk1pLUNXa3hMS2hMdnZNQ3Y5VTRNa0xhQjJEcWZ1c0ppdkNYZWdLZl9DNk04aDlma0tOWkNKMXg4UzZMNWExRUw1YTVsdE0yY0V1VmVuSU0xM0UxYXFyY1ZhTQ?oc=5",
+      "summary": "Spanberger issues executive order to hold data centers ‘accountable,’ form AI task force cardinalnews.org",
+      "source": "cardinalnews.org",
+      "published": "2026-09-18T21:09:35+00:00",
+      "feed": "ai_commitments",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "e3663fe97b4a96c54d3061cd125f5b9e0f1f05b78955416ce3d45cce986f5ee3": {
+      "title": "RTB 디지털, 패러디엄.AI와 10년 전략 플랫폼 계약 체결…지분 49.5% 인수 추진",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBBWmozYzJaMWVrR0NwSzFjVk1oUUMwUGcxNUxzX3U4cWJyUDBLZkdDeDVFMkpLU2FkQ0VRV2lGMGlNVTF4SjQyT3VORlkzNlc1dThiY0NreFdrcjlSOXNBQVdhcDVMRzJBX1BwOXFJUEZXV28?oc=5",
+      "summary": "RTB 디지털, 패러디엄.AI와 10년 전략 플랫폼 계약 체결…지분 49.5% 인수 추진 데이터투자",
+      "source": "데이터투자",
+      "published": "2026-09-18T20:58:04+00:00",
+      "feed": "risk_ko",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "4f0ac00756646355e25c38280e31ddebe305c82fb68ef3effea36d5e92488f67": {
+      "title": "Canada’s Pembina Advances Gas-Fired Data Center Project",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNOWhUODk4R0FKYWFkRGlrQTN0STlUdTFFUlRrQjJwcEtMOUNCNGRDXzhjaHkwdm1SYWp2Zk4wVnVxSG1CbUhYczFSUkVQN2E0Nkl2cm04QVBxMUdsN185RFpqbnN2NTFSbGNSYkNabjdhZFdzWWFJZXdBX1ZKcjhkeWtoQU4ydlduQjItZExR?oc=5",
+      "summary": "Canada’s Pembina Advances Gas-Fired Data Center Project EnergyNow.com",
+      "source": "EnergyNow.com",
+      "published": "2026-09-18T20:46:02+00:00",
+      "feed": "ai_mergers",
       "stage": "candidate",
       "precheck_priority": 70
     },
-    "43bf684e3371ce6c8a9fd2dc4f29ccef14791f4463f2503aa1ff03326c275489": {
-      "title": "Trump wants more data centers, most Americans don’t. Here's what you need to know about data centers and why they are so polarizing.",
-      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOS2EzSmY2NG5tQm9CS2JMVDlYUEJUZEIxbXFJXzZjRVBkYmpRZlprVGJxOUl2OFNCSzdJcWtEZFh1NG01LUtyak8yd1JsVTVIV0Q2OC12c0FiV0w2eml4ZUI0bGp5OHFhY0EzbU1NRDcwMUN3cUZuZEEybnFEMDQ2WTZ2aC14Q3oyV0Q5bFNpcWFKbk9Rb29Lcmh4M21kMWZaSE50LThhLUxXeTJ1TDFCVzE3c0IyTGV0R2RwcGxEc0dPd1Z3b084TVV3UUFGV19raDhjd09yYmdOS2xIODZXQ1J3YUh2Ykl3T2tSQXZuLVNZYm1UWC1rY1BoR3FfUTNiQlZWd0VVZWk?oc=5",
-      "summary": "Trump wants more data centers, most Americans don’t. Here's what you need to know about data centers and why they are so polarizing. Yahoo Tech",
-      "source": "Yahoo Tech",
-      "published": "2026-09-18T16:36:55+00:00",
-      "feed": "power_grid",
+    "f112e5b1cd34b6d02248f0e244968f5697f4ebf43bd6603f49b54d55e5502b9a": {
+      "title": "Lam Research Corp. stock outperforms competitors on strong trading day",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQeXdCV3MxV25kYXlqWHM4UU93UzU0NHVIMGk3Q2R4ekdhY1JTSi1ZS0t1RDN5aFB6RlVmdDkyS2ZrLXdCallnT1pCR0U2amU5bHpEOGRzMVVHb2tOcGR1eGFSMS1ISFRndDQ5YXpRUU50S3hFUGNyMlhVbGtSSUFOMzlqSFN1aGhnOTlfNUpEd2tnel9Cc0VuWFlUTWtsYWdUTXRIeEhvb1Q1OVUwdDdFaVBrSGdwQmJUTjNxemowRFctN1VXcUhiaQ?oc=5",
+      "summary": "Lam Research Corp. stock outperforms competitors on strong trading day MarketWatch",
+      "source": "MarketWatch",
+      "published": "2026-09-18T20:30:00+00:00",
+      "feed": "semicap_earnings",
       "stage": "candidate",
-      "precheck_priority": 60
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
     },
-    "84a8263645d75a54a1d2eba27cb91869fef8cbc3358f170a09a9356814178f95": {
-      "title": "Anthropic Confirms Wet Lab as AI Drug Research Push Expands",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQLTRZa0lucWxxcTBXeVdIVWp4U0NLbXFzWWREcUNrbFl4LWZQbk56bmowd3hMb29iWDZfWl9aN2Y4RFFTMjV6aVU1ZlkyaWRRSVVudTFuelBOdXE1NWo5ZzgxYS11aEdMQXA5VllPUTNhdUoybjgySWRGOW5tejlFT3NfM3Zwb213TWpZc0wwRUZROS14clpuS2h3?oc=5",
-      "summary": "Anthropic Confirms Wet Lab as AI Drug Research Push Expands Mexico Business News",
-      "source": "Mexico Business News",
-      "published": "2026-09-18T16:25:09+00:00",
-      "feed": "ai_enterprise_demand",
+    "47beb5700639cbed94eb54d95b733c6fef4b815eb3bf14a4b079ee9480217347": {
+      "title": "Kidz AI Secures $1.9M to Expand Educational Robotics Platform",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQR1VrcDVRUWZSbW9rdkJyNjhmZVBoeF9ZOUdVVC11dHQ3RHFsUVFWZ1lXSGJHVWtRa2c2V1AybWtsckF0dnlDR0l2VkQwOHc3MmFQQm84b3p3SFZKU1lPWWdhMmhsYm1saWkwNFNBMVdBYTAzZ1Y0MGFuZ0ZOMjZEZGtIVnNSX3ZXaEVvbElOTE1LanhxWUxONG52WTJQajA?oc=5",
+      "summary": "Kidz AI Secures $1.9M to Expand Educational Robotics Platform AI Insider",
+      "source": "AI Insider",
+      "published": "2026-09-18T19:49:58+00:00",
+      "feed": "ai_financing",
       "stage": "candidate",
-      "precheck_priority": 65
+      "precheck_priority": 70
     },
-    "9376a170f94b0529c7883cb2633dccf86d946047ee64b7a8aa500e7b0541b790": {
-      "title": "Irish engineering firm opens North American HQ in Dallas, seeks to tap into data center gold rush",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVmRCd1VzZUlaY3doNVY5RG1aSHhpZXd4Um9Eamd1RC1Vc1p6Y2lFRHYyRXVHSW45UzZJWEVRV0FVRGlvV2oyRHZ5UHFQeVBYMXBOMVRVQTRVRGtfdlpzbUJKWWZzQ0M2ZXgwTm1tWTVFQjRNZzNJU0R5T3lJV0dfM19vRnRVYXZVLVBRS0Z0ZDlNQXNONjRhakgwc24wNjg?oc=5",
-      "summary": "Irish engineering firm opens North American HQ in Dallas, seeks to tap into data center gold rush The Real Deal",
-      "source": "The Real Deal",
-      "published": "2026-09-18T16:21:00+00:00",
-      "feed": "power_grid",
-      "stage": "candidate",
-      "precheck_priority": 60
-    },
-    "f5b736cfb7e78690a1c7911b3e3f7634dc9f82bc78a2f62ccdddef864f8a218b": {
-      "title": "$50,000 teacher checks have Louisiana parishes asking for data centers",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUVg3YUhTd2Y4UDlsTTZkUVg1QTdyMm1lZ2F6eGIzbVNPYXhYTXZZUWFvYkd0aVVJVlF4REhTOXZEVnRpWUMxTFc1azVZN1FKdndJS2FPT3NqVDhDSWNCS2NETkNZbEFZZVYzUWN1Zmxmdjl0V2Q5M2R3NDI2VVpYQXkyOEdrTnVKZnJYdGItamE3b3JWZUxjRw?oc=5",
-      "summary": "$50,000 teacher checks have Louisiana parishes asking for data centers New Orleans CityBusiness",
-      "source": "New Orleans CityBusiness",
-      "published": "2026-09-18T16:08:09+00:00",
-      "feed": "power_grid",
-      "stage": "candidate",
-      "precheck_priority": 60
-    },
-    "6390813abfa40255ac5f17cebd2e062eb209c287245d6a14a108906e29c04671": {
-      "title": "EYEING MORE: Chevron Eyes More Deals to Power US Data Centers",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZUpidFR4a2x3cWVINllXNFJRZzlnT1UzVUJBUnBEMXRjSnpoeUx0VkdQbHh3WXdpSWZIcjdEd3Fyb0ZVbzZSLXZUM3ZyTDlmWC1sdEN4YlBsT1JvMlZfMDZ5c0s5djFzVkxTMUJSUVBvd2x4cWxpeHV5dnJOMmtOeTYwZ1lzZw?oc=5",
-      "summary": "EYEING MORE: Chevron Eyes More Deals to Power US Data Centers EnergyNow.com",
-      "source": "EnergyNow.com",
-      "published": "2026-09-18T16:02:01+00:00",
+    "6b5096a4b3e51e28e25db739eb94fc3a203f36a609979eefd1de6abbfb6268e3": {
+      "title": "Virginia Gov. Spanberger’s New Data Center Rules Seek Cleaner, Cheaper Power",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5WR2Y0RkhQRmNNYjM1NHoxTFRDZGlMMHN6RFUzajBGdWpqQmhXVnNleWY0S21yOS16ZjEyNVRuQVVMZU14V3lveXExcEt4bW5BX3FsYkFlRE56bkgzdnZBdzdwUEFQa3ppcE02YTZWdUJRYWNiSmpwQUpseFVNems?oc=5",
+      "summary": "Virginia Gov. Spanberger’s New Data Center Rules Seek Cleaner, Cheaper Power RTO Insider",
+      "source": "RTO Insider",
+      "published": "2026-09-18T19:35:37+00:00",
       "feed": "power_grid",
       "stage": "candidate",
       "precheck_priority": 75
     },
-    "38f4109bdd9ab32ce71c73ad6d4d9ec82372afaed867a72c062124cb5c4269fc": {
-      "title": "ASML Rides on Strength in Installed Base Business: Will it Sustain?",
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQY3loRWZvQWFtM2dXdlVrbHVWZG00V0dzRVhZbkxtdXlyYWJXc3pfMWNnRGpTUzV6MDJSaUZPeDJJdWZibnRMWHhweFVqazdwX1Y3TFJyUUNISnJzYXlpTHpKTXJ0aUQtWTVoTVBfT0xZYzVWSFdXdFBsSGZQTmgxd3EybjhrWFVGN1BWMVJsbHIzWDBuRkVrdFRGeWJkRlkzXy12eFFZUmlmMzAwQzBvUGNkT1RmdGE4SldYSERDaU9pRWNxbzFsYlg5RWVUbFFEM3F0eDJYRWtQM09xcTZuYzA0bU0?oc=5",
-      "summary": "ASML Rides on Strength in Installed Base Business: Will it Sustain? The Globe and Mail",
-      "source": "The Globe and Mail",
-      "published": "2026-09-18T15:33:50+00:00",
-      "feed": "semicap_earnings",
+    "b735d2460efdc1995fac0df616c6936bd7ece1b5fc7c0379f87d4a002b86cbcc": {
+      "title": "Amsted Industries explores sale of Baltimore Aircoil on data center demand - Bloomberg",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOSjJzUW1TUElqOF9ZMVU2a0ZPQzBrbnJZVV9ZcnZxMG50VFBQeUxqYjVxU1NkbXduMDllbXlteFcwRVB2dDZpUG1wUk9TbUlNaXdIOU9aWkhQUTRNLW43Rk9QVXNoZkR0aS1tY2t3S2Z3d2xxUUpuSHpoOHhjajhsbHNLOENWa2ZWclQ0dlByZS00WFhwNXZuVnFabi1EQkhUaHJHczB1Z3FGUlNDa0FFaFQ0ME9NMDZfd3phdmtrZm1uYlZmMy1heDJRUFVxZ0RaVnQ3MXlRak1FbWdDM2JZ?oc=5",
+      "summary": "Amsted Industries explores sale of Baltimore Aircoil on data center demand - Bloomberg Investing.com Nigeria",
+      "source": "Investing.com Nigeria",
+      "published": "2026-09-18T19:21:57+00:00",
+      "feed": "cooling",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "d8a155010fce15ead0d8cc668a724fabacac40aede508c8da277713c1117a1dc": {
+      "title": "22 regional data center projects and where they stand",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQVFplN3R4RkxobWc5WlY5b1Q2QUY5QTQydFBBdEJxVVc3cGtiNlEzUk5KdWZ6UzQtY3RJM3FKa0JDbzRRcWQtTlVzS2I1a3JQRURxMHBIMER1UFRVdEI0UC1GZFM0RENXMlBqZzVGZW1YeTFzUnRVRlowZTlhd0V4SmJiR3B2cFd1ZkQwbVdYNFVpelc0Z1dmNUZpdTFvQQ?oc=5",
+      "summary": "22 regional data center projects and where they stand The Standard-Speaker",
+      "source": "The Standard-Speaker",
+      "published": "2026-09-18T19:18:24+00:00",
+      "feed": "power_grid",
       "stage": "candidate",
       "precheck_priority": 70
     },
-    "d4be39cc251ed0e557adb54023eb44093c6953de36c730e7593ea07925649229": {
-      "title": "Can Rising Adoption of Agentic AI Accelerate NET's Revenue Growth?",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPUG8wYnBqOVplWEkwSzh6QVZDYkpabUs3MGZQR1k3aF9IQThRc0ZWZEVWQktObjBvSXNMazhxdk1GQVU4UHNpYjJhZnJjU1dyTUVQZUVNajYtLU5Zb3c5T3AzNG1qUTliaEt4TlZhVGZHNzZycVpYdUFWQ21aOFVIZHZqczNGS24zLXlhQjl0QnRFRF9OX2NOT2R3V0RIUm9jSkZZRWgtOGdsb2UzX1FFa0hlQzdIVGFGQ1QzbHpoc0Z3RnZnSm1DLXZWWjVYRnBBdG1BZThmTFJvQ0R1QnF3Q1dR?oc=5",
-      "summary": "Can Rising Adoption of Agentic AI Accelerate NET's Revenue Growth? The Globe and Mail",
-      "source": "The Globe and Mail",
-      "published": "2026-09-18T15:28:38+00:00",
-      "feed": "ai_mergers",
+    "3cc0a2d8fef4ed496608f1387cc183719c4b71824b22918961f04397d149526d": {
+      "title": "Evansville credit union online banking affected by data center failure",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQUjgzd3oxcUgyMWZ3bkFmTmVOUkViRHhGYXhFYUtSY2tRdm03bHA2SnJ0ZmVTUUhfaGNqODhDYnJXalB6M25xLTBLQ3BqWTc4cWpZNno1RzFOR1Zab1d1eW1KZVdQUUE4VEJDeUdscFJZT1dtcUc1MTcwTEtWV3ZuTjJkTHIwR1BMSjgyaHl0cHZiMGxTcDNwWGhyMHN3S3hnLWM0YTZjX3owQVFqTW9qcnpnV0kxMUhwZDJpTnpZblNxa2s0?oc=5",
+      "summary": "Evansville credit union online banking affected by data center failure Courier & Press",
+      "source": "Courier & Press",
+      "published": "2026-09-18T18:02:00+00:00",
+      "feed": "ai_financing",
       "stage": "candidate",
-      "precheck_priority": 65
+      "precheck_priority": 64,
+      "precheck_override": "critical_event_force_review"
     },
-    "f719b9bc960c624a60217415e3275496074a1e537e8caed69969c96b004c9645": {
-      "title": "Single Senate Dem torpedoes bipartisan data center power bill after House passes it 417-3",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQTHZmSVg0dEx2c0tXajk3cHE1TjZnV3drOGhrZm1nVk1QYVlUd0lKeXZzSDEyZGYwalFCZVBSMnBYQWdETjJGVXF3M2t6aWZCNHJrV2NqdmpBeS1ENGFoVmFtRkVxS2pOMXZFYUJYalFkQzU4NjZnVUtHR1VFR0VLWUw4TzQ3bjRlbTlUOHBWVEwyU1FTQVV4a0U1b2Y4OEFUOGtqdDBVd1J4LUJqMjNrYTlpLUo2X0tsXzBSUTRuZmdvMndGc0pv?oc=5",
-      "summary": "Single Senate Dem torpedoes bipartisan data center power bill after House passes it 417-3 New York Post",
-      "source": "New York Post",
-      "published": "2026-09-18T15:14:00+00:00",
-      "feed": "cooling",
+    "b36d77bd9d4137497efa58ac07ef47ef3e5544016a812b3af8146e36bd8c523e": {
+      "title": "Gov. Spanberger unveils accountability framework for data centers, launches AI task force",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNTlRTM2g0VHFVUGFnNTMyRnVLRjg3Qk9kU2h2RnptVkVXZk5GT0ZVeVlnWGJJT0pDQTh5S0RGYlpxZ3lXa3ZsU1BtQ3NraHJuVENzWGFaNnJDUWgyV1ZCUFdDaDY4TmlRcmpsZEo2VEhwVnd4bTgtWGU5WXFxQ2RNeUE2bDl2SzRrMUZKR2k3T3FqcGpQNUJGUTlsQmtOTXFfZDB6aG9BamNmc0lDZmgzYVdmV0pqaGpKVnAzaGxwcEZoY2p5N25janVRNV8wbEtsTHVrNWN4d1oyMU82RG81NVRLNA?oc=5",
+      "summary": "Gov. Spanberger unveils accountability framework for data centers, launches AI task force wset.com",
+      "source": "wset.com",
+      "published": "2026-09-18T17:15:43+00:00",
+      "feed": "frontier_model_release",
       "stage": "candidate",
-      "precheck_priority": 65
+      "precheck_priority": 75
+    },
+    "c66c89f53864d9aa0b82e852ed99ddbdaaf553f7d9f328655805dc31f6af2430": {
+      "title": "JPMorgan Names Top Semiconductor Equipment Stocks Amid AI Buildout By Investing.com",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObFZRX3d3ek9OSVpaTjdhcTFxYUw5dkRteV93bVJsSHRDZHVRS2pIU1VSNFJmcUdQZ0U4a21CZlo3S2FrM0Y4c0RmSC1TS3ROQnFDRzlvdExCUzRXanBuVzVwdjRIeWpkSjJGY2w0cWF4ek16eWdTLTJrLVZpQXBqaXBGeFlGMW1aMG1XTHZjTGF6RlhQMnMwWldobXZsRGR6TXh5cHRjdjN4dUNweFhlQnRPWDgweUJkdmtnVGRJQkVhRllMS0E?oc=5",
+      "summary": "JPMorgan Names Top Semiconductor Equipment Stocks Amid AI Buildout By Investing.com Investing.com South Africa",
+      "source": "Investing.com South Africa",
+      "published": "2026-09-18T16:50:06+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 88
     }
   },
   "decisions": {
@@ -10987,6 +10959,288 @@
       "policy": "ai-industry-v4.6-executive-origin-radar",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "AWS, 탄력적 메모리와 빠른 콜드 스타트를 위해 Bedrock AgentCore 런타임을 재설계"
+    },
+    "0912f8fb4b4881ccf681520cdb9cef6bbfeea7839372bd976568da4437d3a549": {
+      "ts": 1789793163.714031,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "AI 인프라 수요 및 약세를 보이는 엔화에 힘입은 일본 수출주 3개 소개는 일반적인 투자 정보이며, 산업 자체의 구체적인 변화를 담고 있지 않습니다.",
+      "title": "3 Japanese Export Stocks Riding AI Infrastructure Demand and A Weak Yen"
+    },
+    "5f2a78453d41d90ded1361f0ecd2de2bdb3d0d99c446a8baf60ebd7151b42f23": {
+      "ts": 1789793163.714221,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Anthropic의 AI 모델 Claude를 이용한 자체 모델 개발 소식은 기술 내부 개발에 관한 내용으로, 산업 전반의 파급력이 크지 않습니다.",
+      "title": "Anthropic: AI model Claude helping build next version of it"
+    },
+    "503eb045316cc06f764863756d19f664483dbe63c2b44d9f2a267d3f498ecb7b": {
+      "ts": 1789793163.714423,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Samsung의 인도 시장 AI 가전 출시 소식은 개별 제품 출시로, 산업 전반의 중요 뉴스로 보기 어렵습니다.",
+      "title": "Samsung Launches 2026 Bespoke AI Appliances in India With Gemini-Powered Family Hub Refrigerator"
+    },
+    "19fe7bfe30f1331279fe05bb7fd8a30683a94470bde86c538a6484bee8484ce6": {
+      "ts": 1789793163.71452,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "RAM 가격 할인 소식은 개별 제품의 프로모션으로, 반도체 산업의 수급이나 가격 동향을 보여주는 뉴스가 아닙니다.",
+      "title": "32GB of CORSAIR Vengeance LPX DDR4 RAM gets tantalizing price cut in Amazon deal"
+    },
+    "a47fd0054ae807b36a848b009aadc4ed24a774c9dde32b49e84600b32a78e24b": {
+      "ts": 1789793163.71469,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Amazon의 AI를 활용한 면접관 도입은 작은 제품 기능 업데이트이며, 산업 전반의 중요성을 가지지 않습니다.",
+      "title": "Amazon launches AI agents to interview job appl..."
+    },
+    "dc9e217191648b69815aa0c627ead688263644a474a27c86dd174c7cb4821791": {
+      "ts": 1789793163.714758,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Google의 AI 에이전트 CC 출시 소식은 특정 서비스 기능 소개로, 산업 전반의 중요 뉴스가 아닙니다.",
+      "title": "Google launches AI agent CC to help families ma..."
+    },
+    "05213782eb7e4fa70ab13fa60f738449769713f5edad8c0a08f06265380d6ed0": {
+      "ts": 1789793163.715013,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "AI 서밋 개최 소식은 행사 관련 정보로, 산업의 구체적인 변화나 수치, 기술 동향을 포함하지 않습니다.",
+      "title": "Miami AI Summit Brings Hugging Face and NVIDIA to Coral Gables"
+    },
+    "7ce75c260c289fe9cd3cbbfd9568c53a96c7aad90ebf80ea31989c015e32ad35": {
+      "ts": 1789793163.715187,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "데이터센터 소음 민원은 개별 지역 주민의 불만으로, 산업 전반의 중요 뉴스가 아닙니다.",
+      "title": "Kentucky resident plays data center hum at meeting: 'Imagine hearing that 24 hours a day'"
+    },
+    "aac281877cba982fb1587aaa2085c5af9c1c9d62487a391e3946b010f1c4259d": {
+      "ts": 1789793163.715372,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Grok Imagine API 사용법 안내는 특정 서비스 이용 가이드로, 산업 전반의 중요 뉴스로 보기 어렵습니다.",
+      "title": "Grok Imagine API Setup: 13 Steps, $0.032/Image [2026]"
+    },
+    "2296d20530f36b168098cabc266842aea0bbeac3a503b485126da7f4f65c4f2c": {
+      "ts": 1789793163.715493,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "인스타그램 팔로워 늘리기 팁은 마케팅 관련 내용으로, AI 및 반도체 산업과는 무관합니다.",
+      "title": "10 Best Sites to Gain Free Instagram Followers: (Boost Views, Likes) IG Profile Growth Tips 2026 DrCy"
+    },
+    "7069372d5a7f7b46cabab5c296711179cfca79be7fc86f12d92476249964ee7e": {
+      "ts": 1789793163.715681,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Jim Cramer의 Intel 및 Micron 주식 추천은 개별 종목 분석이며, 산업의 구조적 변화를 나타내지 않습니다.",
+      "title": "Jim Cramer Calls Intel (INTC) the Best Stock in Show and Micron (MU) No. 2"
+    },
+    "c042f690c99a243801c4e2e5e923bda5a6a37d4f3f08dc764239be7ad0e4cb5f": {
+      "ts": 1789793163.715994,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "전 OpenAI 과학자의 AI 미래 예측은 흥미로운 발언이지만, 구체적인 수치나 산업 데이터보다는 철학적인 예측에 가깝습니다.",
+      "title": "Quote of the day by ex-OpenAI chief scientist and SSI co-founder Ilya Sutskever: 'AI will keep getting better and the day will come when AI will do all the things that we can do' — a staggering prediction about a future superintelligence"
+    },
+    "57432c3822cbfd165d3dfefd9ef98c7c967725ce21f8e17d68da242458bb7c30": {
+      "ts": 1789793163.716137,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Microsoft AI 책임자의 Anthropic 비판은 AI 윤리 논쟁의 일부이나, 산업 전반의 중요 뉴스라기보다는 특정 기업 간의 이슈입니다.",
+      "title": "Microsoft AI boss calls out Anthropic for chasing AI consciousness, reigniting old debate"
+    },
+    "8a61a85ca1647d12d8385a1078baf8218c6c8a47eb0a9ba9ef88f5d9cf5a40de": {
+      "ts": 1789793164.441789,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "단순 자금 조달 및 기업 가치 평가로, AI 반도체 산업 자체의 구조, 공급, 가격, 생산, 기술 변화와 직접적 관련이 적음.",
+      "title": "Angle Health Secures $600M at $2.7B Valuation to Scale AI-Native Small Business Health Plans"
+    },
+    "cea4911952a8f2d80f0f2bffe325c20e025a576981c20cd1a900406ac2fa6289": {
+      "ts": 1789793165.132098,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "ASML's Order Book Is Full Through 2027 as the Sector Rediscovers Its Appetite for Chip Equipment"
+    },
+    "48a7a86106b6a5e6e2160ec386363060ec5005e795a60e0b36776760ea761b1d": {
+      "ts": 1789793165.13213,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI expects to burn $278 billion over five years, targets $350 billion revenue by 2030"
+    },
+    "7ef24ff1a5e39f5dd2b8e73f7be5676b106935faa995b6dd9f08176d6369584d": {
+      "ts": 1789793165.133534,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Meta to Build C$13 Billion Alberta Data Center, its First in Canada"
+    },
+    "7423f53f12ea06442e65360e0799fc10914471931dfc55326e9ecc39a7470bef": {
+      "ts": 1789793171.028188,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "index 1과 동일한 사건에 대한 중복 보도로, 새로운 사실이나 추가 정보가 없다.",
+      "title": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond"
+    },
+    "4daa8329d75dbb8f03681492341f5868e8614dbaf26e34f3c74f40c0f825a840": {
+      "ts": 1789793171.028193,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "index 1과 동일한 사건에 대한 중복 보도로, 새로운 사실이나 추가 정보가 없다.",
+      "title": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond"
+    },
+    "61e8d38ee7494b785e1b333e83a45f68e8ff2b2b309bdebf88d6bb4fd4e3de04": {
+      "ts": 1789793171.028195,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "index 1과 동일한 사건에 대한 중복 보도로, 새로운 사실이나 추가 정보가 없다.",
+      "title": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond"
+    },
+    "b2e55c2556fef8feaa1afeacd57b7c86ac1c75e9a27c61e114455947b805fb51": {
+      "ts": 1789793171.663875,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "오픈AI, 2030년까지 현금흐름 2780억달러 부족 전망"
+    },
+    "3011423c97ed71b5cde04cdc35c809b0ef366114f05a4236ebbba23109d5eb51": {
+      "ts": 1789793171.663934,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nvidia CEO Vows to Double Chip Sales, Lifting HBM Hopes"
+    },
+    "4b8cb2253079082e08f7464ec15ace6e124eb0bad5094bd21ceb30040da4ac60": {
+      "ts": 1789793171.663959,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Gartner Forecasts Worldwide AI Spending to Grow 49.5% in 2026"
+    },
+    "fde08da9b6a3530533c7743d68a6286f413a26be81cbfacce55a599b9b5b2b69": {
+      "ts": 1789793171.663982,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "TSMC Scores Another 2nm Win: MediaTek's Dimensity 9600 Pro to Use N2P Process"
+    },
+    "3bfaadc4ae493d0482d951896389f31abbc244a7198c5c2d7dd328d1297a0099": {
+      "ts": 1789793171.664002,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Exclusive-Anthropic considers releasing new AI model ahead of IPO, sources say"
+    },
+    "a3f895e5c082b1c29e48c853de0b32772167a5d68f8194b7cf3e3a3910764d66": {
+      "ts": 1789793171.664022,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "CoreWeave Plans $3 Billion Debt Sale to Fund AI Infrastructure Expansion"
+    },
+    "6b40aabd3ad0aacbec240c4fb3970c77765c70dc26cab98361bfe2c62c15f760": {
+      "ts": 1789793175.27531,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Musk Claims AI Will Double US GDP Growth to 4% Next Year, Far Outpacing Mainstream Forecasts"
+    },
+    "bddbb823b30a7cde39565102878488bbe388fb08b19db3626013a098118eaa30": {
+      "ts": 1789793175.276817,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Huawei Moves Its Next AI Chip Forward as China Builds Around Nvidia Restrictions"
+    },
+    "c7159af8889581daae7675b3b79d20cad14374223a30b3ae51ae2aceb2a1126d": {
+      "ts": 1789793175.276843,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "NVDA Stock Swings In Premarket: Report Says Nvidia's Next-Gen AI Rack Delayed By A Year"
+    },
+    "dacc4dbd11f023f34714a3f68d6a9d43e718dcbab651bee2286d91514729bc43": {
+      "ts": 1789793175.276865,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron Adds 1.3% as Intel Extends Memory Scarcity Into 2027"
+    },
+    "ae55faaf561ffad7090cd9fd168a6a231b2fcb89443443853eee1181ea183a6d": {
+      "ts": 1789793175.277565,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "[비즈 인사이트] ‘샌디스크’ 올해 7배 폭등…‘HBM 다음은 NAND’ AI 메모리 전쟁 번진다"
+    },
+    "e2052a1b5ad2991f598d973501c445088a1f2ebdec6ede875ef6f961e3028cc3": {
+      "ts": 1789793175.277595,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nevada gov. signs order putting guardrails in place for data center development – KLAS"
+    },
+    "2e823aa50ecea425b773ff9277c1ac6ccbc7eb018b421efba2a6fee0dbf4f0a4": {
+      "ts": 1789793177.095149,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Oracle-linked New Mexico data center debt faces pricing pressure"
+    },
+    "0460c6b8887b60e825c75ac3f4a821cda33fa36ba715e59fbe05ca115dcb48e5": {
+      "ts": 1789793177.095188,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nvidia-Backed Nscale Reports 1252% Revenue Growth Ahead of Potential $30 Billion Valuation"
+    },
+    "35652d4719185efd4ed6b51ea93738193f1e9e416aa93aa94d90fe569db6f65b": {
+      "ts": 1789793177.096766,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI Will Drive a Strong US Earnings Season, Goldman’s Snider Says"
+    },
+    "ff95d87ba13a208109fe876f236c5af7b176b8d319c9aae5082558af4c6f1280": {
+      "ts": 1789793177.096792,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nvidia-backed AI cloud firm Nscale reveals revenue surge in US IPO filing"
+    },
+    "8ef8f485a689a7527a42d941e26159ffb1208e4d0a76bdc0d5d6e461c76cf990": {
+      "ts": 1789793177.096822,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "NaBFID sanctions over ₹3,000 crore for data centres, fuels AI infrastructure"
+    },
+    "dc2189a0fc3efe7c9fcaa127d74f893e9e842dbebbc7b0014f25d2946f0bdc59": {
+      "ts": 1789793177.096844,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Salesforce Flags Up To $600 Bn India GDP Impact From Agentic AI By 2035"
+    },
+    "b81fda5c32bdfdad51355cdefe461e0e931c921371a2170e05e216afd95af034": {
+      "ts": 1789793179.903006,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI start-up Nscale seeks New York listing"
+    },
+    "8f039025dc2765da16547a802cfb18e5ca3cff167575d4ad68379e4a62ac799e": {
+      "ts": 1789793179.90304,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI Doomsday By 2030? Nvidia CEO Jensen Huang Says 0% Chance'"
+    },
+    "4a9baf3de62af1b416e4cd496d8426bb5ad3f96c47a2ba3c6183abca1c0e9ab2": {
+      "ts": 1789793179.903069,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "China's AI supercluster completes 10-day global forecast in under an hour"
+    },
+    "b0d3490742226283e42c87e318e7ca3aa6888f6da94047c4c4a36e2b558afca8": {
+      "ts": 1789793179.903098,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic and Accenture Commit $2 Billion to AI Safety, With Evaluators Working Inside AI Labs"
+    },
+    "ac320bf03553a99af9e951326c684715a3e446a30436005facb4d6b7ceadc51c": {
+      "ts": 1789793179.903127,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic, Accenture to invest $2 billion in AI model evaluation as safety concerns rise"
+    },
+    "296e46c748b2c5b731b93b7fcf52cb97627c62860543e48f8cceeee9e219e8f6": {
+      "ts": 1789793179.904604,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI drives data center rack power density surge"
+    },
+    "3c3739f9a98efd5b9aaa0b9d6ee6f5296e78cdc7fba8669078cba5042f31e7eb": {
+      "ts": 1789793183.8805,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "DRAMのCXMTがNAND研究開発へ、Samsungやキオクシアとの競争に残る条件"
+    },
+    "b549c6c7a1fce82a638e7b0499b96bc2055739f099de9174664cba35a82422b4": {
+      "ts": 1789793183.880535,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines"
+    },
+    "28168cb5938f44cb13a9458ae6a12ed9b6f28d1a39e88c7a6579b36ba92c3356": {
+      "ts": 1789793183.881778,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "L&T Semiconductor, Tata Electronics partner to expand domestic chip manufacturing"
     }
   },
   "legacy": {
@@ -14101,6 +14355,27 @@
   },
   "archive": [
     {
+      "title": "Meta 연계 데이터센터, 사상 최대 수요로 정크 본드 발행 성공",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUVVzLXlhM3VLS0RMZTFPTHNSS1NFVUVkZG05Z001RWwxZHhvenpRcjFYRVl4YnpkcmJkWWUwb2drUjdKSklHakd0UHRscDhURDlFYXpfbHNoZzZBYUx0QmpTOWVkd24wNEdmRTB3eUhOd3NyWkZtUndTWVdOaVRfRVBaVWE5T0I4MGFNaWpnVUhQNTlsS2RtWkV0VnlJa2VmWjJOWGJ0ZldwTTFKSzE0Q0dpMA?oc=5",
+      "source": "Bloomberg.com",
+      "published": "2026-09-18T20:24:12+00:00",
+      "summary": "Meta와 연계된 데이터센터가 발행한 첫 정크 본드(Junk Bond)가 기록적인 수요를 보이며 성공적으로 발행되었다. 이는 AI 인프라에 대한 투자 열기와 신흥 투자 상품으로서의 매력을 보여준다.\nAI 데이터센터 구축을 위한 자금 조달이 활발하게 이루어지고 있음을 시사하며, 특히 Meta와 같은 빅테크 기업의 연계 투자는 해당 분야의 성장성과 안정성에 대한 투자자들의 신뢰를 높일 수 있다. 또한, 고금리 채권 시장에서도 AI 인프라 관련 상품에 대한 강력한 수요가 존재함을 증명한다."
+    },
+    {
+      "title": "AMD, EPYC 'Venice' CPU 공식 벤치마크 공개: Nvidia 견제, 256코어 칩 2배 이상, 96코어 칩 코어당 20% 빠르다고 주장",
+      "url": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNMzA2X0J0ME1fMll3R21yMjNPeHpoVFJ0ZXpwaHJRb2ExT1otNjFkdXZGNXBZQ1dWajJPNC1WX1AybV9TNmtCb1ZsZERBa3VNQkVTOFlFQ0lvVGlnenZ4TWgxcWRoMlBvbklrZ0RwRWlSMHhUVXlSY3R1REJmb2RSWWtsUFhadFFQWTUydzJBMTJsTTdXY2Z1Zko2RDR2a1AzdDRlbzl0NVdfTjU2djlvbmVXNHc5N2czbkV1aTFwMUpLUkFaR0NJNHB4WS1xeDA3TlVHczJjQW90OHBOWHZTNHFwTjFMSkZHUEQtNWFwckQ1OE5pRWpVdUM3NVlXUVpVZ3BkQXB2djliX1dYV01nUkREWGhIWEZrUnQ4UGxUdUFHQk1ZOUdDM0RIQnhqTGNhUmVxRnFyVUcxa1ktWTNkTWZqdUdmaHVDdmphOFFKREVrZw?oc=5",
+      "source": "Tom's Hardware",
+      "published": "2026-09-18T21:51:29+00:00",
+      "summary": "AMD가 EPYC 'Venice' CPU의 공식 벤치마크 결과를 공개하며 Nvidia를 겨냥했다. AMD는 256코어 칩이 Nvidia Vera 대비 2배 이상 빠르고, 96코어 모델은 코어당 20% 더 빠르다고 주장했다.\nAMD의 이러한 벤치마크 결과 발표는 서버 CPU 시장, 특히 AI 워크로드 처리에 있어 Nvidia와의 경쟁 구도에 중요한 영향을 미칠 수 있다. 성능 우위를 주장하며 Nvidia의 시장 점유율을 위협하고, AI 인프라 구축을 위한 CPU 선택지에 대한 논의를 촉발할 것으로 예상된다."
+    },
+    {
+      "title": "OpenAI, 2030년까지 약 2800억 달러 현금 소진 전망",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTmx6RU9kREhhaHRjaVpOblpSazFaSTdKQVlxT2ZIQ09YNE5Fci1wV1NQX21mMWxzbnRWbDZ4bFd1UGtCVHV2WnMzc2NpY3hVY0ppOEh2NXl5NEFFTUxCM1BmUGl2cTM3RkRxbmJydjA3QmlaTm5UTlRfY1l5bE56cU96cE5PNmk4WHRyaThXUEo2ZjZ6WDJMSXJPR1JjaEZTWmFpTkRHZVIzN1RkUWd6VC1R?oc=5",
+      "source": "Reuters",
+      "published": "2026-09-18T23:27:51+00:00",
+      "summary": "OpenAI는 2030년까지 약 2800억 달러의 현금을 소진할 것으로 전망된다. 이는 AI 개발 및 인프라 구축에 막대한 자금이 투입되고 있음을 보여주는 수치이다.\nOpenAI의 이러한 막대한 자금 소진 예측은 AI 산업 전반의 투자 규모와 수익성에 대한 중요한 시사점을 제공한다. 특히, AI 인프라 구축 및 모델 개발에 필요한 천문학적인 자금 조달 능력과 장기적인 재무 건전성에 대한 투자자들의 관심을 증폭시킬 수 있다."
+    },
+    {
       "title": "Ciena, 공급 부족 속 2029년까지 매출 140억 달러 목표: 광통신 수요 증가",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQd1BFcDdKTHl0RlpMYTZwUml3NFZkREZZVmZsTXhFX3JFdHF4OU12dkRHbDB3MDctd2FWX2k1M1hLRXRmNm9CYzcwazRFc3gxdVhwaE0temgtd05faGZrZTBUeXkxS0ROeFJjT2xxRVdQckN2Ym9wMk5MQkhOa212MVdNUWFlODEyOXF3V0RmbFM4MXhyVVE?oc=5",
       "source": "Yahoo Finance",
@@ -15128,27 +15403,6 @@
       "source": "The Motley Fool",
       "published": "2026-09-03T23:24:17+00:00",
       "summary": "브로드컴 CEO 호크 탄은 2028년까지 AI 관련 매출이 2,300억 달러에 달할 것으로 예상하며, 이는 올해 예상치보다 4배 증가한 수치다. 이는 AI 칩 및 관련 인프라 시장의 폭발적인 성장 가능성을 시사한다. [분야 AI,GPU,데이터센터] [병목 악화] [유동성 유입] 왜중요: 브로드컴의 AI 매출 전망은 AI 인프라 투자 확대와 관련 부품 수요 증가를 시사하며, 이는 AI 캐펙스 지속성 논제를 강화한다."
-    },
-    {
-      "title": "CXMT의 점유율 10% 공세에 한국, 하반기 HBM4 승부수",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5RSHJsNXpoZTdlQUZoQm1JNm5DR2Q1OHhGVlk2ZVVOZGtuM05yanFIcjBCT1ZqOGN5Q2N0X016QlB2ZzRvdXpRQ20tMTlsSDl1dDdB?oc=5",
-      "source": "네이트",
-      "published": "2026-09-03T22:02:00+00:00",
-      "summary": "중국 CXMT가 HBM 시장에서 점유율 10%를 확보하며 한국 기업들을 위협하고 있다. 이에 한국은 하반기 HBM4 시장 선점을 위한 승부수를 던질 계획이다. 이는 중국 메모리 기업의 추격이라는 위협 신호로 해석된다. [분야 HBM,NAND,AI] [병목 무관] [유동성 중립] 왜중요: 중국 메모리 기업의 시장 점유율 확대는 한국 반도체 산업의 경쟁 환경에 직접적인 영향을 미칠 수 있다."
-    },
-    {
-      "title": "키옥시아, CXL 모듈로 D램 대체 도전…HBM 투자 회수 셈법 흔드나",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOVHVlQmE4bnVxcVdhNnpFTkZkTllpd2dMdnZkSkxEN0ZZSGNZTmtCcHVDWmJVTEp2Nm93NnQ3Ul9LRE9WdGdSZUs2d25hbG55WFNnNW4yN285ejdXYklwV3ZEUEtZOVBTUTVxMW1JRGZPdWh4U1oyZG9ydkxnWGNPMWlPT0E2YVE?oc=5",
-      "source": "글로벌이코노믹",
-      "published": "2026-09-03T22:02:42+00:00",
-      "summary": "일본 반도체 기업 키옥시아가 차세대 인터커넥트 기술인 CXL(Compute Express Link) 모듈을 통해 기존 D램 시장에 도전장을 내밀었다. 이는 고대역폭 메모리(HBM)에 대한 막대한 투자를 회수해야 하는 삼성전자, SK하이닉스 등 메모리 반도체 기업들의 전략에 영향을 줄 수 있다는 분석이다. CXL 모듈은 D램보다 높은 대역폭과 낮은 지연 시간을 제공할 수 있어, 특정 워크로드에서 D램을 대체할 가능성이 제기된다. [분야 DRAM,HBM,AI] [병목 무관] [유동성 중립] 왜중요: CXL 모듈이 D램을 대체할 가능성은 HBM 투자 회수 전략에 영향을 미칠 수 있는 잠재적 요인이다."
-    },
-    {
-      "title": "브로드컴, AI 성장 스토리의 다음 단계 제시하며 2300억 달러 목표",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOekpGQzNEOUV2VTUyYUVsbEVsSTNjbXk1NjRzY3RnS1lGMU12RGFtNnRMUFA2SXczbTg5bVEtbGtldGVZV1pDX3ZScDh6ZDNWRWZMX2pfOW82UFg2QkZENFY1amNRT3ktMXZLQTZFcnR6VDJPeGY3RG10YlNtUEZUa0NGWmt2aC1YNTJpRTVtcU5ZVTBONFFKdWIzV3pESlUxdTZOWGhqYU04dGxHNHBYTDJJb185Zlk?oc=5",
-      "source": "MarketBeat",
-      "published": "2026-09-03T18:27:38+00:00",
-      "summary": "브로드컴은 AI 시장에서 2300억 달러 규모의 성장을 목표로 하고 있으며, 이를 위해 AI 네트워킹 및 커스텀 실리콘 분야에 집중할 계획이다. 특히 AI 데이터센터의 수요 증가와 함께 브로드컴의 제품 포트폴리오가 이러한 수요를 충족시킬 것으로 기대된다. 회사는 AI 관련 매출이 지속적으로 증가할 것으로 전망하고 있다. [분야 AI,데이터센터,GPU] [병목 무관] [유동성 중립] 왜중요: 브로드컴의 AI 성장 전략은 AI 인프라 구축 및 관련 부품 수요에 영향을 미칠 수 있다."
     }
   ]
 }
