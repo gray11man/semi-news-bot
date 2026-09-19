@@ -11,7 +11,7 @@ import sys
 import time
 
 from core import Store, UTC, alert_key, chunks, digest, evaluate, now, norm, render, validate_evidence
-from network import ApiError, BudgetError, RequestTooLarge, Gemini, collect, fetch_body, rss_url, telegram
+from network import ApiError, BudgetError, RequestTooLarge, ResponseValidationError, Gemini, collect, fetch_body, rss_url, telegram
 from prompts import ASSESS, ASSESS_SCHEMA, DISCOVERY, DISCOVERY_SCHEMA, AUDIT, AUDIT_SCHEMA
 from sources import DEFAULT_PRIMARY_DOMAINS, DRIVERS, SECTORS
 from efficiency import TokenBudget, BudgetExceeded, compact_docs, audit_docs, relevant_catalog, compact_evidence
@@ -338,8 +338,17 @@ def run(c,send=False,bootstrap=False):
                 issues.append('호출 예산으로 심층 검증 이월'); break
             store.set_meta('review_cursor',int(store.meta('review_cursor','0'))+1)
             print(f'[research] {theme["title"]}',flush=True)
-            result,problems=research(theme,store,ai,c); issues+=problems
             researched+=1
+            try:
+                result,problems=research(theme,store,ai,c)
+            except ResponseValidationError as exc:
+                issues.append('응답 형식 오류로 해당 가설 검증 보류: '+str(exc))
+                print('[warning] '+issues[-1],flush=True)
+                # Leave evidence and fingerprint intact; rotate fairly for a later retry.
+                store.db.execute('UPDATE themes SET reviewed=? WHERE id=?',(now(),theme['id']))
+                store.db.commit()
+                continue
+            issues+=problems
             if not result: continue
             assessment,evidence=result; gate=assessment['gate']
             if gate['state']=='관찰': continue
