@@ -18,6 +18,7 @@ from core import UTC, canonical, digest, now, primary
 
 class FetchError(RuntimeError): pass
 class ApiError(RuntimeError): pass
+class ResponseValidationError(ApiError): pass
 class BudgetError(ApiError): pass
 class RequestTooLarge(BudgetError): pass
 
@@ -212,6 +213,7 @@ class Gemini:
         fallback_used=False
         reuse_receipt=None
         first_400_detail=''
+        validation_retry=False
         for attempt in range(3):
             if self.calls>=self.max_calls: raise BudgetError('Gemini call budget exhausted; backlog retained')
             if reuse_receipt is not None:
@@ -274,8 +276,19 @@ class Gemini:
             raw=''.join(p.get('text','') for p in candidates[0].get('content',{}).get('parts',[]) if not p.get('thought'))
             try:
                 obj=json.loads(raw); jsonschema.validate(obj,schema)
-            except (ValueError,jsonschema.ValidationError):
-                raise ApiError('Gemini schema validation failed') from None
+            except (ValueError,jsonschema.ValidationError) as exc:
+                # Log schema-owned names only, never provider text or field values.
+                if isinstance(exc,jsonschema.ValidationError):
+                    location='/'.join(str(p) for p in exc.absolute_schema_path)
+                    detail=f'rule={exc.validator}, schema={location}'
+                else:
+                    detail='invalid JSON'
+                diagnostic=f'Gemini response invalid: stage={stage}, {detail}'
+                if not validation_retry and attempt<2 and self.calls<self.max_calls:
+                    validation_retry=True
+                    print('[retry] '+diagnostic+'; regenerate once within budget',flush=True)
+                    continue
+                raise ResponseValidationError(diagnostic) from None
             return obj
         raise ApiError('Gemini retries exhausted')
 
