@@ -259,6 +259,27 @@
       "title_key": "ai leaders are saying slow down inside the real story sep 2026",
       "duration_sec": 1633,
       "sent_at": "2026-09-19T15:19:09.955521+00:00"
+    },
+    {
+      "person": "Elon Musk",
+      "video_id": "Z1qAxRPrXAE",
+      "title_key": "elon musk shocks the industry with tesla s new 2000 mile battery 4 minute charge",
+      "duration_sec": 1300,
+      "sent_at": "2026-09-19T20:00:00.871874+00:00"
+    },
+    {
+      "person": "Elon Musk",
+      "video_id": "155uZUKTcN4",
+      "title_key": "quy n l c elon musk k khi n m v trung qu c ph i d ch ng",
+      "duration_sec": 1348,
+      "sent_at": "2026-09-19T20:00:05.591948+00:00"
+    },
+    {
+      "person": "Elon Musk",
+      "video_id": "By_mNTrbo7c",
+      "title_key": "elon musk a tesla v o vi t nam li u c ph c th nh tr vinfast tin vi t 365",
+      "duration_sec": 1514,
+      "sent_at": "2026-09-19T20:00:06.209424+00:00"
     }
   ],
   "watch_v2": {
@@ -751,7 +772,7 @@
       "Ho1gnEeVryA": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-19T15:18:28.269170+00:00",
+        "updated_at": "2026-09-19T19:59:57.187592+00:00",
         "first_seen_at": "2026-09-18T22:12:17.052304+00:00",
         "attempts": 0,
         "item": {
@@ -1099,7 +1120,7 @@
       "Bh5bJrrJ6xs": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-19T15:18:28.269158+00:00",
+        "updated_at": "2026-09-19T19:59:57.187605+00:00",
         "first_seen_at": "2026-09-18T22:12:17.060681+00:00",
         "attempts": 0,
         "item": {
@@ -2497,7 +2518,7 @@
       "XzNjq6DNjSY": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-19T15:18:28.269174+00:00",
+        "updated_at": "2026-09-19T19:59:57.187608+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462747+00:00",
         "attempts": 0,
         "item": {
@@ -16556,22 +16577,19 @@
       },
       "s-GQEEmgzdU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:19.448585+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:08.762869+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448584+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "Hw2W1-NTsUvrbfjUmc7TtG36Gsc",
           "id": {
-            "kind": "youtube#video",
             "videoId": "s-GQEEmgzdU"
           },
           "snippet": {
             "publishedAt": "2026-09-15T12:00:06Z",
             "channelId": "UCD4EOyXKjfDUhCI6jlOZZYQ",
             "title": "OpenAI Delays IPO - Sam Altman Knows OpenAI is DEAD",
-            "description": "Spotify - https://open.spotify.com/show/1KkKuQe82tf1bW78ReQ0wM Apple Podcasts ...",
+            "description": "Spotify - https://open.spotify.com/show/1KkKuQe82tf1bW78ReQ0wM\nApple Podcasts - https://podcasts.apple.com/us/podcast/eli-the-computer-guy/id1895967811\n\nLinkedIn at - https://www.linkedin.com/in/eli-etherton-a15362211/",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/s-GQEEmgzdU/default.jpg",
@@ -16605,29 +16623,141 @@
               }
             },
             "channelTitle": "Eli the Computer Guy",
+            "tags": [
+              "Eli",
+              "the",
+              "Computer",
+              "Guy",
+              "Repair",
+              "Networking",
+              "Tech",
+              "IT",
+              "Startup",
+              "Arduino",
+              "iot",
+              "ai",
+              "llm",
+              "model"
+            ],
+            "categoryId": "28",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-15T12:00:06Z"
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "OpenAI Delays IPO - Sam Altman Knows OpenAI is DEAD",
+              "description": "Spotify - https://open.spotify.com/show/1KkKuQe82tf1bW78ReQ0wM\nApple Podcasts - https://podcasts.apple.com/us/podcast/eli-the-computer-guy/id1895967811\n\nLinkedIn at - https://www.linkedin.com/in/eli-etherton-a15362211/"
+            },
+            "defaultAudioLanguage": "en-US"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "9K55dgRa_fZy18rQ_eJtg3RYxOs",
+          "id": "s-GQEEmgzdU",
+          "snippet": {
+            "publishedAt": "2026-09-15T12:00:06Z",
+            "channelId": "UCD4EOyXKjfDUhCI6jlOZZYQ",
+            "title": "OpenAI Delays IPO - Sam Altman Knows OpenAI is DEAD",
+            "description": "Spotify - https://open.spotify.com/show/1KkKuQe82tf1bW78ReQ0wM\nApple Podcasts - https://podcasts.apple.com/us/podcast/eli-the-computer-guy/id1895967811\n\nLinkedIn at - https://www.linkedin.com/in/eli-etherton-a15362211/",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/s-GQEEmgzdU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/s-GQEEmgzdU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/s-GQEEmgzdU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/s-GQEEmgzdU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/s-GQEEmgzdU/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/s-GQEEmgzdU/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Eli the Computer Guy",
+            "tags": [
+              "Eli",
+              "the",
+              "Computer",
+              "Guy",
+              "Repair",
+              "Networking",
+              "Tech",
+              "IT",
+              "Startup",
+              "Arduino",
+              "iot",
+              "ai",
+              "llm",
+              "model"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "OpenAI Delays IPO - Sam Altman Knows OpenAI is DEAD",
+              "description": "Spotify - https://open.spotify.com/show/1KkKuQe82tf1bW78ReQ0wM\nApple Podcasts - https://podcasts.apple.com/us/podcast/eli-the-computer-guy/id1895967811\n\nLinkedIn at - https://www.linkedin.com/in/eli-etherton-a15362211/"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT23M11S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "104789",
+            "likeCount": "1615",
+            "favoriteCount": "0",
+            "commentCount": "450"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:08.762850+00:00"
       },
       "oVVWmAozZvc": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:19.448591+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:08.762885+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448589+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "fMLqMOWhj9JAME-_CXL9Alg0sIo",
           "id": {
-            "kind": "youtube#video",
             "videoId": "oVVWmAozZvc"
           },
           "snippet": {
             "publishedAt": "2026-09-15T10:00:31Z",
             "channelId": "UCS8EJaPBU6qYeaJCfp4GWgg",
             "title": "Chapter 6: Sam Altman and the Genesis of OpenAI (2015–2019)",
-            "description": "FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free ...",
+            "description": "🎁 FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free subscription to our special offers newsletter!) 👉 https://payhip.com/b/lSjLs\n\n✉️ Direct Newsletter Subscription: Prefer to just join the newsletter directly without downloading the book? 👉 https://www.bedtime-biographies.com/\n\n📖 Browse the Biography Vault (Book, Audio, Bundles & More): 👉 https://payhip.com/BedtimeBiographies\n\n🎧 Audiobook Stream: https://www.curios.com/c/02R2A1⁠⁠\n\n📱 Ebook & Premium Bundles: https://payhip.com/BedtimeBiographies\n\n📘 Physical Paperback: (Coming Soon!)\n\nSubscribe for weekly deep-dives into the lives of history’s most influential figures.\n\nWelcome to Chapter 6 of Sam Altman: The Intelligence Architect. This complete biography spans 10 chapters and over 21 hours of immersive audio narration.\n\nIn late 2015, a private dinner in Silicon Valley sparked a movement born out of pure existential dread: the fear that an unconstrained, corporate monopoly over Artificial General Intelligence (AGI) would threaten humanity. Chapter 6 charts the birth of OpenAI as an open-source non-profit, the dramatic philosophical rift with Elon Musk, and the structural innovation that completely rewired the economics of frontier technology.\n\nWhat You Will Hear in Chapter 6:\nThe December 2015 Dinner: Uniting tech titans and brilliant researchers to confront Google’s acquisition of DeepMind, aiming to prevent a dangerous corporate monopoly on intelligence.\n\nThe Founding Coalition: Assembling an elite vanguard, blending strategic fundraising with Elon Musk’s capital and platform, Greg Brockman’s operational drive, and Ilya Sutskever’s technical brilliance.\n\nThe Non-Profit Charter: Committing OpenAI to open-source its research and patents to ensure AGI directly benefits all of humanity.\n\nThe Computational Chasm: Realizing that training cutting-edge deep learning models required an absolute mountain of compute, far outstripping a traditional non-profit budget.\n\nThe Musk Rift (2017–2018): Rejecting Elon Musk's proposal to absorb OpenAI into Tesla, leading to Musk stepping down from the board and withdrawing major funding commitments.\n\nThe Capped-Profit Structural Innovation: Designing a unique corporate architecture—a capped-profit subsidiary controlled by a non-profit parent—enabling the company to raise billions in venture equity.\n\nThe Pivot to Full-Time: Resigning from Y Combinator in March 2019 to place a massive personal bet on artificial general intelligence over a lucrative venture capital career.\n\nSecuring Microsoft's First $1 Billion: Forging a landmark deal that established Microsoft Azure as OpenAI's exclusive cloud provider, delivering customized supercomputing infrastructure.\n\nThe \"Tribes\" Divide: Navigating early, internal staff tensions between safety-focused alignment researchers and capabilities-driven scaling engineers.\n\n📚 Listen to the Full 21-Hour Audiobook\nThis video features the complete sixth chapter of a massive, 10-part biographical audio event. Keep listening through the unabridged 21-hour saga to hear how this newly funded supercomputer unleashed a global AI explosion.\n\n👉 Check our main channel profile page for direct storefront links to download the full audiobook or browse our entire historical catalog!\n\nThis audiobook was created with the assistance of AI, ensuring cutting-edge research and synthesis, though a human collaborator was always in the loop to guide, refine, and polish the final narrative.",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/oVVWmAozZvc/default.jpg",
@@ -16656,29 +16786,156 @@
               }
             },
             "channelTitle": "Bedtime Biographies: Sleep Stories",
+            "tags": [
+              "Bedtime Biographies",
+              "Sleep Biographies",
+              "Bedtime Stories for Adults",
+              "Deep Sleep Stories",
+              "Historical Biographies",
+              "History to Sleep To",
+              "Relaxing Biographies",
+              "Famous Lives",
+              "Biography Documentary",
+              "Sleep Aid History",
+              "Calm Stories",
+              "Educational Sleep",
+              "Audio Biographies",
+              "Storytelling Podcast",
+              "Elon Musk",
+              "Donald Trump",
+              "Taylor Swift",
+              "Abraham Lincoln",
+              "Queen Elizabeth",
+              "Steve Jobs",
+              "Albert Einstein",
+              "Julius Caesar",
+              "Leonardo da Vinci",
+              "Sam Altman"
+            ],
+            "categoryId": "24",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-15T10:00:31Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Chapter 6: Sam Altman and the Genesis of OpenAI (2015–2019)",
+              "description": "🎁 FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free subscription to our special offers newsletter!) 👉 https://payhip.com/b/lSjLs\n\n✉️ Direct Newsletter Subscription: Prefer to just join the newsletter directly without downloading the book? 👉 https://www.bedtime-biographies.com/\n\n📖 Browse the Biography Vault (Book, Audio, Bundles & More): 👉 https://payhip.com/BedtimeBiographies\n\n🎧 Audiobook Stream: https://www.curios.com/c/02R2A1⁠⁠\n\n📱 Ebook & Premium Bundles: https://payhip.com/BedtimeBiographies\n\n📘 Physical Paperback: (Coming Soon!)\n\nSubscribe for weekly deep-dives into the lives of history’s most influential figures.\n\nWelcome to Chapter 6 of Sam Altman: The Intelligence Architect. This complete biography spans 10 chapters and over 21 hours of immersive audio narration.\n\nIn late 2015, a private dinner in Silicon Valley sparked a movement born out of pure existential dread: the fear that an unconstrained, corporate monopoly over Artificial General Intelligence (AGI) would threaten humanity. Chapter 6 charts the birth of OpenAI as an open-source non-profit, the dramatic philosophical rift with Elon Musk, and the structural innovation that completely rewired the economics of frontier technology.\n\nWhat You Will Hear in Chapter 6:\nThe December 2015 Dinner: Uniting tech titans and brilliant researchers to confront Google’s acquisition of DeepMind, aiming to prevent a dangerous corporate monopoly on intelligence.\n\nThe Founding Coalition: Assembling an elite vanguard, blending strategic fundraising with Elon Musk’s capital and platform, Greg Brockman’s operational drive, and Ilya Sutskever’s technical brilliance.\n\nThe Non-Profit Charter: Committing OpenAI to open-source its research and patents to ensure AGI directly benefits all of humanity.\n\nThe Computational Chasm: Realizing that training cutting-edge deep learning models required an absolute mountain of compute, far outstripping a traditional non-profit budget.\n\nThe Musk Rift (2017–2018): Rejecting Elon Musk's proposal to absorb OpenAI into Tesla, leading to Musk stepping down from the board and withdrawing major funding commitments.\n\nThe Capped-Profit Structural Innovation: Designing a unique corporate architecture—a capped-profit subsidiary controlled by a non-profit parent—enabling the company to raise billions in venture equity.\n\nThe Pivot to Full-Time: Resigning from Y Combinator in March 2019 to place a massive personal bet on artificial general intelligence over a lucrative venture capital career.\n\nSecuring Microsoft's First $1 Billion: Forging a landmark deal that established Microsoft Azure as OpenAI's exclusive cloud provider, delivering customized supercomputing infrastructure.\n\nThe \"Tribes\" Divide: Navigating early, internal staff tensions between safety-focused alignment researchers and capabilities-driven scaling engineers.\n\n📚 Listen to the Full 21-Hour Audiobook\nThis video features the complete sixth chapter of a massive, 10-part biographical audio event. Keep listening through the unabridged 21-hour saga to hear how this newly funded supercomputer unleashed a global AI explosion.\n\n👉 Check our main channel profile page for direct storefront links to download the full audiobook or browse our entire historical catalog!\n\nThis audiobook was created with the assistance of AI, ensuring cutting-edge research and synthesis, though a human collaborator was always in the loop to guide, refine, and polish the final narrative."
+            },
+            "defaultAudioLanguage": "en"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "up0fbXy-ZzwwE3oQu7gFm7bVHUs",
+          "id": "oVVWmAozZvc",
+          "snippet": {
+            "publishedAt": "2026-09-15T10:00:31Z",
+            "channelId": "UCS8EJaPBU6qYeaJCfp4GWgg",
+            "title": "Chapter 6: Sam Altman and the Genesis of OpenAI (2015–2019)",
+            "description": "🎁 FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free subscription to our special offers newsletter!) 👉 https://payhip.com/b/lSjLs\n\n✉️ Direct Newsletter Subscription: Prefer to just join the newsletter directly without downloading the book? 👉 https://www.bedtime-biographies.com/\n\n📖 Browse the Biography Vault (Book, Audio, Bundles & More): 👉 https://payhip.com/BedtimeBiographies\n\n🎧 Audiobook Stream: https://www.curios.com/c/02R2A1⁠⁠\n\n📱 Ebook & Premium Bundles: https://payhip.com/BedtimeBiographies\n\n📘 Physical Paperback: (Coming Soon!)\n\nSubscribe for weekly deep-dives into the lives of history’s most influential figures.\n\nWelcome to Chapter 6 of Sam Altman: The Intelligence Architect. This complete biography spans 10 chapters and over 21 hours of immersive audio narration.\n\nIn late 2015, a private dinner in Silicon Valley sparked a movement born out of pure existential dread: the fear that an unconstrained, corporate monopoly over Artificial General Intelligence (AGI) would threaten humanity. Chapter 6 charts the birth of OpenAI as an open-source non-profit, the dramatic philosophical rift with Elon Musk, and the structural innovation that completely rewired the economics of frontier technology.\n\nWhat You Will Hear in Chapter 6:\nThe December 2015 Dinner: Uniting tech titans and brilliant researchers to confront Google’s acquisition of DeepMind, aiming to prevent a dangerous corporate monopoly on intelligence.\n\nThe Founding Coalition: Assembling an elite vanguard, blending strategic fundraising with Elon Musk’s capital and platform, Greg Brockman’s operational drive, and Ilya Sutskever’s technical brilliance.\n\nThe Non-Profit Charter: Committing OpenAI to open-source its research and patents to ensure AGI directly benefits all of humanity.\n\nThe Computational Chasm: Realizing that training cutting-edge deep learning models required an absolute mountain of compute, far outstripping a traditional non-profit budget.\n\nThe Musk Rift (2017–2018): Rejecting Elon Musk's proposal to absorb OpenAI into Tesla, leading to Musk stepping down from the board and withdrawing major funding commitments.\n\nThe Capped-Profit Structural Innovation: Designing a unique corporate architecture—a capped-profit subsidiary controlled by a non-profit parent—enabling the company to raise billions in venture equity.\n\nThe Pivot to Full-Time: Resigning from Y Combinator in March 2019 to place a massive personal bet on artificial general intelligence over a lucrative venture capital career.\n\nSecuring Microsoft's First $1 Billion: Forging a landmark deal that established Microsoft Azure as OpenAI's exclusive cloud provider, delivering customized supercomputing infrastructure.\n\nThe \"Tribes\" Divide: Navigating early, internal staff tensions between safety-focused alignment researchers and capabilities-driven scaling engineers.\n\n📚 Listen to the Full 21-Hour Audiobook\nThis video features the complete sixth chapter of a massive, 10-part biographical audio event. Keep listening through the unabridged 21-hour saga to hear how this newly funded supercomputer unleashed a global AI explosion.\n\n👉 Check our main channel profile page for direct storefront links to download the full audiobook or browse our entire historical catalog!\n\nThis audiobook was created with the assistance of AI, ensuring cutting-edge research and synthesis, though a human collaborator was always in the loop to guide, refine, and polish the final narrative.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/oVVWmAozZvc/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/oVVWmAozZvc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/oVVWmAozZvc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/oVVWmAozZvc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/oVVWmAozZvc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Bedtime Biographies: Sleep Stories",
+            "tags": [
+              "Bedtime Biographies",
+              "Sleep Biographies",
+              "Bedtime Stories for Adults",
+              "Deep Sleep Stories",
+              "Historical Biographies",
+              "History to Sleep To",
+              "Relaxing Biographies",
+              "Famous Lives",
+              "Biography Documentary",
+              "Sleep Aid History",
+              "Calm Stories",
+              "Educational Sleep",
+              "Audio Biographies",
+              "Storytelling Podcast",
+              "Elon Musk",
+              "Donald Trump",
+              "Taylor Swift",
+              "Abraham Lincoln",
+              "Queen Elizabeth",
+              "Steve Jobs",
+              "Albert Einstein",
+              "Julius Caesar",
+              "Leonardo da Vinci",
+              "Sam Altman"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Chapter 6: Sam Altman and the Genesis of OpenAI (2015–2019)",
+              "description": "🎁 FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free subscription to our special offers newsletter!) 👉 https://payhip.com/b/lSjLs\n\n✉️ Direct Newsletter Subscription: Prefer to just join the newsletter directly without downloading the book? 👉 https://www.bedtime-biographies.com/\n\n📖 Browse the Biography Vault (Book, Audio, Bundles & More): 👉 https://payhip.com/BedtimeBiographies\n\n🎧 Audiobook Stream: https://www.curios.com/c/02R2A1⁠⁠\n\n📱 Ebook & Premium Bundles: https://payhip.com/BedtimeBiographies\n\n📘 Physical Paperback: (Coming Soon!)\n\nSubscribe for weekly deep-dives into the lives of history’s most influential figures.\n\nWelcome to Chapter 6 of Sam Altman: The Intelligence Architect. This complete biography spans 10 chapters and over 21 hours of immersive audio narration.\n\nIn late 2015, a private dinner in Silicon Valley sparked a movement born out of pure existential dread: the fear that an unconstrained, corporate monopoly over Artificial General Intelligence (AGI) would threaten humanity. Chapter 6 charts the birth of OpenAI as an open-source non-profit, the dramatic philosophical rift with Elon Musk, and the structural innovation that completely rewired the economics of frontier technology.\n\nWhat You Will Hear in Chapter 6:\nThe December 2015 Dinner: Uniting tech titans and brilliant researchers to confront Google’s acquisition of DeepMind, aiming to prevent a dangerous corporate monopoly on intelligence.\n\nThe Founding Coalition: Assembling an elite vanguard, blending strategic fundraising with Elon Musk’s capital and platform, Greg Brockman’s operational drive, and Ilya Sutskever’s technical brilliance.\n\nThe Non-Profit Charter: Committing OpenAI to open-source its research and patents to ensure AGI directly benefits all of humanity.\n\nThe Computational Chasm: Realizing that training cutting-edge deep learning models required an absolute mountain of compute, far outstripping a traditional non-profit budget.\n\nThe Musk Rift (2017–2018): Rejecting Elon Musk's proposal to absorb OpenAI into Tesla, leading to Musk stepping down from the board and withdrawing major funding commitments.\n\nThe Capped-Profit Structural Innovation: Designing a unique corporate architecture—a capped-profit subsidiary controlled by a non-profit parent—enabling the company to raise billions in venture equity.\n\nThe Pivot to Full-Time: Resigning from Y Combinator in March 2019 to place a massive personal bet on artificial general intelligence over a lucrative venture capital career.\n\nSecuring Microsoft's First $1 Billion: Forging a landmark deal that established Microsoft Azure as OpenAI's exclusive cloud provider, delivering customized supercomputing infrastructure.\n\nThe \"Tribes\" Divide: Navigating early, internal staff tensions between safety-focused alignment researchers and capabilities-driven scaling engineers.\n\n📚 Listen to the Full 21-Hour Audiobook\nThis video features the complete sixth chapter of a massive, 10-part biographical audio event. Keep listening through the unabridged 21-hour saga to hear how this newly funded supercomputer unleashed a global AI explosion.\n\n👉 Check our main channel profile page for direct storefront links to download the full audiobook or browse our entire historical catalog!\n\nThis audiobook was created with the assistance of AI, ensuring cutting-edge research and synthesis, though a human collaborator was always in the loop to guide, refine, and polish the final narrative."
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT2H17M26S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "12",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:08.762881+00:00"
       },
       "Wtg3zYJsL_g": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:19.448595+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:08.762892+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448594+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "cvnuv_HoxC27vXImrA4i0TeL-zk",
           "id": {
-            "kind": "youtube#video",
             "videoId": "Wtg3zYJsL_g"
           },
           "snippet": {
             "publishedAt": "2026-09-15T07:49:35Z",
             "channelId": "UCYPvAwZP8pZhSMW8qs7cVCw",
             "title": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump",
-            "description": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump Anthropic chief Dario Amodei ...",
+            "description": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump\n\nAnthropic chief Dario Amodei has urged AI companies to slow capability gains and add embedded independent evaluators. Sam Altman and Elon Musk backed the call as safety worries, misuse risks and competition pressures grow.\n\n#rajdeepshow #rajdeepsardesai #ai #indiatodaylivestream  #aithreat #anthropic #darioamodei #samaltman #elonmusk #trump #openai #artificialintelligence #aifuture #aifears #aitrends #technews #aiwarning #geopolitics #indianews #latestnews #breakingnews #live  \n\n\nSubscribe to India Today for NEW VIDEOS EVERY DAY and make sure to enable Push Notifications so you'll never miss a new video. \n\nAll you need to do is PRESS THE BELL ICON next to the Subscribe button! \n\nIndia Today TV is India's leading English News Channel. India Today YouTube channel offers latest news videos on Politics, Business, Cricket, Bollywood, Lifestyle, Auto, Technology, Travel, Entertainment and a lot more. \n\nStay tuned for latest updates and in-depth analysis of news from India and around the world! \n\nFor more updates, subscribe our channel: https://www.youtube.com/channel/UCYPvAwZP8pZhSMW8qs7cVCw?sub_confirmation=1\n\nFor LIVE updates, analysis, and expert opinions — only on India Today\nhttps://youtube.com/live/sYZtOFzM78M\nhttps://youtube.com/live/lNe8hisFwMM \n\nNewsToday with Rajdeep sardesai: https://youtube.com/playlist?list=PLPPKwCCueQ_BDuN36y_c4eIFbbsTWudmi&si=Afk5JfoGFBsX8lvH\n\nIndia First with Gaurav Sawant: https://youtube.com/playlist?list=PLPPKwCCueQ_BFk7nVk4khuMvyci5nuX4Z&si=iYuw0hIt9NTcrcOo\n\nTo The Point with Preeti Choudhry: https://youtube.com/playlist?list=PLPPKwCCueQ_AARG0z9XWZ3_lMCiLlMzfD&si=5AewBYYZZC-GkCny\n\nNewsTrack with Marya Shakill:  https://youtube.com/playlist?list=PLPPKwCCueQ_AzhqTbhMb8kfaauJmeH_IQ&si=Pzh_FY-lYsSoSEVJ\n\nWhatsApp Channel: https://whatsapp.com/channel/0029Va2AnW3JENxxg7OuJv00\n\nDownload App: https://play.google.com/store/apps/details?id=com.indiatoday&hl=en_IN\n\nFollow us: Official website: https://www.indiatoday.in/\n\nTwitter: https://twitter.com/IndiaToday \n\nFacebook: https://www.facebook.com/IndiaToday",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/Wtg3zYJsL_g/default.jpg",
@@ -16712,29 +16969,167 @@
               }
             },
             "channelTitle": "India Today",
+            "tags": [
+              "Rajdeep Show Live",
+              "Rajdeep Sardesai",
+              "AI threat alert",
+              "AI threat",
+              "AI danger",
+              "AI threat hype or fake",
+              "Anthropic",
+              "Dario Amodei",
+              "Sam Altman",
+              "Elon Musk",
+              "Donald Trump",
+              "Trump AI",
+              "OpenAI",
+              "artificial intelligence",
+              "AI future",
+              "AI fears",
+              "AI warning",
+              "AI risks",
+              "AI safety",
+              "AI news",
+              "technology news",
+              "AI debate",
+              "geopolitics",
+              "India news",
+              "latest news",
+              "breaking news",
+              "live"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-15T07:49:35Z"
+            "defaultLanguage": "en-IN",
+            "localized": {
+              "title": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump",
+              "description": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump\n\nAnthropic chief Dario Amodei has urged AI companies to slow capability gains and add embedded independent evaluators. Sam Altman and Elon Musk backed the call as safety worries, misuse risks and competition pressures grow.\n\n#rajdeepshow #rajdeepsardesai #ai #indiatodaylivestream  #aithreat #anthropic #darioamodei #samaltman #elonmusk #trump #openai #artificialintelligence #aifuture #aifears #aitrends #technews #aiwarning #geopolitics #indianews #latestnews #breakingnews #live  \n\n\nSubscribe to India Today for NEW VIDEOS EVERY DAY and make sure to enable Push Notifications so you'll never miss a new video. \n\nAll you need to do is PRESS THE BELL ICON next to the Subscribe button! \n\nIndia Today TV is India's leading English News Channel. India Today YouTube channel offers latest news videos on Politics, Business, Cricket, Bollywood, Lifestyle, Auto, Technology, Travel, Entertainment and a lot more. \n\nStay tuned for latest updates and in-depth analysis of news from India and around the world! \n\nFor more updates, subscribe our channel: https://www.youtube.com/channel/UCYPvAwZP8pZhSMW8qs7cVCw?sub_confirmation=1\n\nFor LIVE updates, analysis, and expert opinions — only on India Today\nhttps://youtube.com/live/sYZtOFzM78M\nhttps://youtube.com/live/lNe8hisFwMM \n\nNewsToday with Rajdeep sardesai: https://youtube.com/playlist?list=PLPPKwCCueQ_BDuN36y_c4eIFbbsTWudmi&si=Afk5JfoGFBsX8lvH\n\nIndia First with Gaurav Sawant: https://youtube.com/playlist?list=PLPPKwCCueQ_BFk7nVk4khuMvyci5nuX4Z&si=iYuw0hIt9NTcrcOo\n\nTo The Point with Preeti Choudhry: https://youtube.com/playlist?list=PLPPKwCCueQ_AARG0z9XWZ3_lMCiLlMzfD&si=5AewBYYZZC-GkCny\n\nNewsTrack with Marya Shakill:  https://youtube.com/playlist?list=PLPPKwCCueQ_AzhqTbhMb8kfaauJmeH_IQ&si=Pzh_FY-lYsSoSEVJ\n\nWhatsApp Channel: https://whatsapp.com/channel/0029Va2AnW3JENxxg7OuJv00\n\nDownload App: https://play.google.com/store/apps/details?id=com.indiatoday&hl=en_IN\n\nFollow us: Official website: https://www.indiatoday.in/\n\nTwitter: https://twitter.com/IndiaToday \n\nFacebook: https://www.facebook.com/IndiaToday"
+            },
+            "defaultAudioLanguage": "en-IN"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "p7phqGhK1fRG0q17JsWUj3LB25g",
+          "id": "Wtg3zYJsL_g",
+          "snippet": {
+            "publishedAt": "2026-09-15T07:49:35Z",
+            "channelId": "UCYPvAwZP8pZhSMW8qs7cVCw",
+            "title": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump",
+            "description": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump\n\nAnthropic chief Dario Amodei has urged AI companies to slow capability gains and add embedded independent evaluators. Sam Altman and Elon Musk backed the call as safety worries, misuse risks and competition pressures grow.\n\n#rajdeepshow #rajdeepsardesai #ai #indiatodaylivestream  #aithreat #anthropic #darioamodei #samaltman #elonmusk #trump #openai #artificialintelligence #aifuture #aifears #aitrends #technews #aiwarning #geopolitics #indianews #latestnews #breakingnews #live  \n\n\nSubscribe to India Today for NEW VIDEOS EVERY DAY and make sure to enable Push Notifications so you'll never miss a new video. \n\nAll you need to do is PRESS THE BELL ICON next to the Subscribe button! \n\nIndia Today TV is India's leading English News Channel. India Today YouTube channel offers latest news videos on Politics, Business, Cricket, Bollywood, Lifestyle, Auto, Technology, Travel, Entertainment and a lot more. \n\nStay tuned for latest updates and in-depth analysis of news from India and around the world! \n\nFor more updates, subscribe our channel: https://www.youtube.com/channel/UCYPvAwZP8pZhSMW8qs7cVCw?sub_confirmation=1\n\nFor LIVE updates, analysis, and expert opinions — only on India Today\nhttps://youtube.com/live/sYZtOFzM78M\nhttps://youtube.com/live/lNe8hisFwMM \n\nNewsToday with Rajdeep sardesai: https://youtube.com/playlist?list=PLPPKwCCueQ_BDuN36y_c4eIFbbsTWudmi&si=Afk5JfoGFBsX8lvH\n\nIndia First with Gaurav Sawant: https://youtube.com/playlist?list=PLPPKwCCueQ_BFk7nVk4khuMvyci5nuX4Z&si=iYuw0hIt9NTcrcOo\n\nTo The Point with Preeti Choudhry: https://youtube.com/playlist?list=PLPPKwCCueQ_AARG0z9XWZ3_lMCiLlMzfD&si=5AewBYYZZC-GkCny\n\nNewsTrack with Marya Shakill:  https://youtube.com/playlist?list=PLPPKwCCueQ_AzhqTbhMb8kfaauJmeH_IQ&si=Pzh_FY-lYsSoSEVJ\n\nWhatsApp Channel: https://whatsapp.com/channel/0029Va2AnW3JENxxg7OuJv00\n\nDownload App: https://play.google.com/store/apps/details?id=com.indiatoday&hl=en_IN\n\nFollow us: Official website: https://www.indiatoday.in/\n\nTwitter: https://twitter.com/IndiaToday \n\nFacebook: https://www.facebook.com/IndiaToday",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Wtg3zYJsL_g/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Wtg3zYJsL_g/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Wtg3zYJsL_g/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Wtg3zYJsL_g/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Wtg3zYJsL_g/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/Wtg3zYJsL_g/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "India Today",
+            "tags": [
+              "Rajdeep Show Live",
+              "Rajdeep Sardesai",
+              "AI threat alert",
+              "AI threat",
+              "AI danger",
+              "AI threat hype or fake",
+              "Anthropic",
+              "Dario Amodei",
+              "Sam Altman",
+              "Elon Musk",
+              "Donald Trump",
+              "Trump AI",
+              "OpenAI",
+              "artificial intelligence",
+              "AI future",
+              "AI fears",
+              "AI warning",
+              "AI risks",
+              "AI safety",
+              "AI news",
+              "technology news",
+              "AI debate",
+              "geopolitics",
+              "India news",
+              "latest news",
+              "breaking news",
+              "live"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-IN",
+            "localized": {
+              "title": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump",
+              "description": "Rajdeep Sardesai Live: AI Threat Alert Hype Or Fake? | Anthropic | Amodei | Altman | Musk | Trump\n\nAnthropic chief Dario Amodei has urged AI companies to slow capability gains and add embedded independent evaluators. Sam Altman and Elon Musk backed the call as safety worries, misuse risks and competition pressures grow.\n\n#rajdeepshow #rajdeepsardesai #ai #indiatodaylivestream  #aithreat #anthropic #darioamodei #samaltman #elonmusk #trump #openai #artificialintelligence #aifuture #aifears #aitrends #technews #aiwarning #geopolitics #indianews #latestnews #breakingnews #live  \n\n\nSubscribe to India Today for NEW VIDEOS EVERY DAY and make sure to enable Push Notifications so you'll never miss a new video. \n\nAll you need to do is PRESS THE BELL ICON next to the Subscribe button! \n\nIndia Today TV is India's leading English News Channel. India Today YouTube channel offers latest news videos on Politics, Business, Cricket, Bollywood, Lifestyle, Auto, Technology, Travel, Entertainment and a lot more. \n\nStay tuned for latest updates and in-depth analysis of news from India and around the world! \n\nFor more updates, subscribe our channel: https://www.youtube.com/channel/UCYPvAwZP8pZhSMW8qs7cVCw?sub_confirmation=1\n\nFor LIVE updates, analysis, and expert opinions — only on India Today\nhttps://youtube.com/live/sYZtOFzM78M\nhttps://youtube.com/live/lNe8hisFwMM \n\nNewsToday with Rajdeep sardesai: https://youtube.com/playlist?list=PLPPKwCCueQ_BDuN36y_c4eIFbbsTWudmi&si=Afk5JfoGFBsX8lvH\n\nIndia First with Gaurav Sawant: https://youtube.com/playlist?list=PLPPKwCCueQ_BFk7nVk4khuMvyci5nuX4Z&si=iYuw0hIt9NTcrcOo\n\nTo The Point with Preeti Choudhry: https://youtube.com/playlist?list=PLPPKwCCueQ_AARG0z9XWZ3_lMCiLlMzfD&si=5AewBYYZZC-GkCny\n\nNewsTrack with Marya Shakill:  https://youtube.com/playlist?list=PLPPKwCCueQ_AzhqTbhMb8kfaauJmeH_IQ&si=Pzh_FY-lYsSoSEVJ\n\nWhatsApp Channel: https://whatsapp.com/channel/0029Va2AnW3JENxxg7OuJv00\n\nDownload App: https://play.google.com/store/apps/details?id=com.indiatoday&hl=en_IN\n\nFollow us: Official website: https://www.indiatoday.in/\n\nTwitter: https://twitter.com/IndiaToday \n\nFacebook: https://www.facebook.com/IndiaToday"
+            },
+            "defaultAudioLanguage": "en-IN"
+          },
+          "contentDetails": {
+            "duration": "PT4H32M55S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "6086",
+            "likeCount": "7",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:08.762890+00:00"
       },
       "YewiAp_aSnE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:19.448600+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:08.762899+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448598+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "zdaxuj8fe7Lpx6fFi7W61fXQQDo",
           "id": {
-            "kind": "youtube#video",
             "videoId": "YewiAp_aSnE"
           },
           "snippet": {
             "publishedAt": "2026-09-14T23:02:21Z",
             "channelId": "UCRfwEMns_JPDRhbLefW1qJQ",
-            "title": "EXPOSING WHAT SAM ALTMAN &amp; OPENAI ARE HIDING FROM THE PUBLIC",
-            "description": "The feed is extinction. Slowdown. AI might become us. Sam Altman says OpenAI is too dangerous to go public in 2026. The word ...",
+            "title": "EXPOSING WHAT SAM ALTMAN & OPENAI ARE HIDING FROM THE PUBLIC",
+            "description": "The feed is extinction. Slowdown. AI might become us. Sam Altman says OpenAI is too dangerous to go public in 2026. The word is safety.\n\nThat line is doing two jobs.\n\nOne: it covers the money. The listing that isn’t happening. The private books. The burn. Oracle and the circular stack from the last video. Stay private and nobody gets a clean look at what this thing actually costs.\n\nTwo: it covers the war. Iran is not a sidebar. There are still strikes. \n\nFamilies. Children in the local reporting. Trump saying the U.S. could stay and keep the oil, and tying the ending to the midterms. That is not a small story. It is just a quieter one this week.\n\nI’m not saying AI doesn't have the potential to be dangerous. I am saying timing is very convenient when multiple sides need a certain narrative fed to the public for their own means.\n\nFear of AI is a cleaner headline than an unfinished war or a crashing business model.\n\nThis is part 3 of the AI series.\n\n📩 Got a tip you think deserves a deep dive? Drop it in the comments or email me at support@ashleybrianaeve.com \n\n📣 Please like, subscribe, & hit get notifications so you don't miss a thing!\n\n🐴 Donate to our farm animal rescue: https://www.paypal.com/paypalme/ashleybrianaeve\n\n🛸 New merch coming SOON! Hang tight!: https://ashleybrianaeve-shop.fourthwall.com/en-cad/collections/all\n\n⚡️ Instagram: https://www.instagram.com/ashleybrianaeve/\n\n 📌 Facebook: https://www.facebook.com/ashleybrianaevetv/\n\n#OpenAI #IPO #SamAltman #Iran #AI",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/YewiAp_aSnE/default.jpg",
@@ -16763,29 +17158,140 @@
               }
             },
             "channelTitle": "Ashley Briana Eve",
+            "tags": [
+              "AI Panic",
+              "OpenAI IPO",
+              "Trump Iran War",
+              "JD Vance Iran War",
+              "Ai Extinction",
+              "AI Russia & China",
+              "Iran War",
+              "AI dangerous",
+              "Anthropic AI",
+              "OpenAI IPO delayed",
+              "war updates",
+              "Trump updates",
+              "Trump statement on AI",
+              "is AI dangerous",
+              "AI humanity threat",
+              "AI national security threat"
+            ],
+            "categoryId": "24",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-14T23:02:21Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "EXPOSING WHAT SAM ALTMAN & OPENAI ARE HIDING FROM THE PUBLIC",
+              "description": "The feed is extinction. Slowdown. AI might become us. Sam Altman says OpenAI is too dangerous to go public in 2026. The word is safety.\n\nThat line is doing two jobs.\n\nOne: it covers the money. The listing that isn’t happening. The private books. The burn. Oracle and the circular stack from the last video. Stay private and nobody gets a clean look at what this thing actually costs.\n\nTwo: it covers the war. Iran is not a sidebar. There are still strikes. \n\nFamilies. Children in the local reporting. Trump saying the U.S. could stay and keep the oil, and tying the ending to the midterms. That is not a small story. It is just a quieter one this week.\n\nI’m not saying AI doesn't have the potential to be dangerous. I am saying timing is very convenient when multiple sides need a certain narrative fed to the public for their own means.\n\nFear of AI is a cleaner headline than an unfinished war or a crashing business model.\n\nThis is part 3 of the AI series.\n\n📩 Got a tip you think deserves a deep dive? Drop it in the comments or email me at support@ashleybrianaeve.com \n\n📣 Please like, subscribe, & hit get notifications so you don't miss a thing!\n\n🐴 Donate to our farm animal rescue: https://www.paypal.com/paypalme/ashleybrianaeve\n\n🛸 New merch coming SOON! Hang tight!: https://ashleybrianaeve-shop.fourthwall.com/en-cad/collections/all\n\n⚡️ Instagram: https://www.instagram.com/ashleybrianaeve/\n\n 📌 Facebook: https://www.facebook.com/ashleybrianaevetv/\n\n#OpenAI #IPO #SamAltman #Iran #AI"
+            },
+            "defaultAudioLanguage": "en-CA"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "1nLePqi6Hze4Bicx2c_uqqqBGw8",
+          "id": "YewiAp_aSnE",
+          "snippet": {
+            "publishedAt": "2026-09-14T23:02:21Z",
+            "channelId": "UCRfwEMns_JPDRhbLefW1qJQ",
+            "title": "EXPOSING WHAT SAM ALTMAN & OPENAI ARE HIDING FROM THE PUBLIC",
+            "description": "The feed is extinction. Slowdown. AI might become us. Sam Altman says OpenAI is too dangerous to go public in 2026. The word is safety.\n\nThat line is doing two jobs.\n\nOne: it covers the money. The listing that isn’t happening. The private books. The burn. Oracle and the circular stack from the last video. Stay private and nobody gets a clean look at what this thing actually costs.\n\nTwo: it covers the war. Iran is not a sidebar. There are still strikes. \n\nFamilies. Children in the local reporting. Trump saying the U.S. could stay and keep the oil, and tying the ending to the midterms. That is not a small story. It is just a quieter one this week.\n\nI’m not saying AI doesn't have the potential to be dangerous. I am saying timing is very convenient when multiple sides need a certain narrative fed to the public for their own means.\n\nFear of AI is a cleaner headline than an unfinished war or a crashing business model.\n\nThis is part 3 of the AI series.\n\n📩 Got a tip you think deserves a deep dive? Drop it in the comments or email me at support@ashleybrianaeve.com \n\n📣 Please like, subscribe, & hit get notifications so you don't miss a thing!\n\n🐴 Donate to our farm animal rescue: https://www.paypal.com/paypalme/ashleybrianaeve\n\n🛸 New merch coming SOON! Hang tight!: https://ashleybrianaeve-shop.fourthwall.com/en-cad/collections/all\n\n⚡️ Instagram: https://www.instagram.com/ashleybrianaeve/\n\n 📌 Facebook: https://www.facebook.com/ashleybrianaevetv/\n\n#OpenAI #IPO #SamAltman #Iran #AI",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/YewiAp_aSnE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/YewiAp_aSnE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/YewiAp_aSnE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/YewiAp_aSnE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/YewiAp_aSnE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Ashley Briana Eve",
+            "tags": [
+              "AI Panic",
+              "OpenAI IPO",
+              "Trump Iran War",
+              "JD Vance Iran War",
+              "Ai Extinction",
+              "AI Russia & China",
+              "Iran War",
+              "AI dangerous",
+              "Anthropic AI",
+              "OpenAI IPO delayed",
+              "war updates",
+              "Trump updates",
+              "Trump statement on AI",
+              "is AI dangerous",
+              "AI humanity threat",
+              "AI national security threat"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "EXPOSING WHAT SAM ALTMAN & OPENAI ARE HIDING FROM THE PUBLIC",
+              "description": "The feed is extinction. Slowdown. AI might become us. Sam Altman says OpenAI is too dangerous to go public in 2026. The word is safety.\n\nThat line is doing two jobs.\n\nOne: it covers the money. The listing that isn’t happening. The private books. The burn. Oracle and the circular stack from the last video. Stay private and nobody gets a clean look at what this thing actually costs.\n\nTwo: it covers the war. Iran is not a sidebar. There are still strikes. \n\nFamilies. Children in the local reporting. Trump saying the U.S. could stay and keep the oil, and tying the ending to the midterms. That is not a small story. It is just a quieter one this week.\n\nI’m not saying AI doesn't have the potential to be dangerous. I am saying timing is very convenient when multiple sides need a certain narrative fed to the public for their own means.\n\nFear of AI is a cleaner headline than an unfinished war or a crashing business model.\n\nThis is part 3 of the AI series.\n\n📩 Got a tip you think deserves a deep dive? Drop it in the comments or email me at support@ashleybrianaeve.com \n\n📣 Please like, subscribe, & hit get notifications so you don't miss a thing!\n\n🐴 Donate to our farm animal rescue: https://www.paypal.com/paypalme/ashleybrianaeve\n\n🛸 New merch coming SOON! Hang tight!: https://ashleybrianaeve-shop.fourthwall.com/en-cad/collections/all\n\n⚡️ Instagram: https://www.instagram.com/ashleybrianaeve/\n\n 📌 Facebook: https://www.facebook.com/ashleybrianaevetv/\n\n#OpenAI #IPO #SamAltman #Iran #AI"
+            },
+            "defaultAudioLanguage": "en-CA"
+          },
+          "contentDetails": {
+            "duration": "PT21M33S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "10879",
+            "likeCount": "132",
+            "favoriteCount": "0",
+            "commentCount": "44"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:08.762896+00:00"
       },
       "mS8Nn0LA6UE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:19.448605+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:10.162745+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448603+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "6Gzr7WUHrDGr2n7IpE1zQNpDsAw",
           "id": {
-            "kind": "youtube#video",
             "videoId": "mS8Nn0LA6UE"
           },
           "snippet": {
             "publishedAt": "2026-09-14T20:50:17Z",
             "channelId": "UCc5VMh6Bb9WHnwj7I_k2apQ",
             "title": "AI巨頭集體踩煞車？Altman喊停IPO、生物武器陰影襲來！智譜狂融335億、KIMI等蒸餾見真章｜港股熱點全解析【不段說】",
-            "description": "9月14日財經重磅！AI巨頭集體「踩煞車」？ Anthropic 執行長Dario Amodei 發表文章呼籲放緩前沿模型開發，Sam Altman 與Elon ...",
+            "description": "9月14日財經重磅！AI巨頭集體「踩煞車」？\nAnthropic 執行長 Dario Amodei 發表文章呼籲放緩前沿模型開發，Sam Altman 與 Elon Musk 公開背書支持！Altman 更親口證實 OpenAI 今年確定不推推進 IPO！究竟是安全威脅（生物武器風險）還是市場變局？\n\n與此同時，智譜 AI 狂融 335 億人民幣，聯想 x86 伺服器出貨量創紀錄登頂全球第一！港股大盤微漲但個股劇烈分化，廣汽突發緊急停牌、希音跌創新低、俊知暴漲 45%！美聯儲加息陰影逼近，美股接下來怎麼走？本期節目帶你一次看懂！\n\n【時間軸 / 本集章節】\n00:00 節目亮點介紹\n00:45 【重磅】AI巨頭集體喊停？Altman 喊停 IPO、生物武器威脅大公開\n03:15 【獨家點評】內卷 vs 降速：中資 LLM「蒸餾」面臨大考？\n04:30 【算力大戰】智譜狂融 335 億！聯想 x86 伺服器出貨量登頂全球第一\n06:20 【港股】醫藥/汽車逆勢狂飆，半導體回踩\n07:50 【焦點個股】廣汽突發停牌！希音創新低 vs 俊知狂漲 45%\n09:10 【美股/宏觀】美聯儲加息倒計時？歷史數據揭示四個月走勢\n10:30 總結與互動\n\n【歡迎訂閱與關注】\n喜歡我們的節目，請記得按讚、訂閱並開啟小鈴鐺！\n每週為你帶來最新、最專業的美股、港股及 AI 前沿財經解讀。\n\n 【本期互動話題】\n\n1. 你認為 AI 行業這波集體「踩煞車」會不會讓 AI 交易降溫？\n2. 廣汽今晚緊急停牌，你覺得會宣佈什麼大動作？歡迎在評論區留言分享你的看法！\n免責聲明：\n本頻道所有影片及內容僅代表個人觀點，不構成任何投資建議。市場有風險，投資需謹慎。\n\n#AI安全性 #OpenAI #SamAltman #Anthropic #智譜AI #02513HK #聯想集團 #00992HK #廣汽集團 #02238HK #港股分析 #美聯儲加息 #AI算力 #美股行情 #財經新聞",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/mS8Nn0LA6UE/default.jpg",
@@ -16819,29 +17325,109 @@
               }
             },
             "channelTitle": "說財經 InvesTalk",
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-14T20:50:17Z"
+            "defaultLanguage": "zh-Hant",
+            "localized": {
+              "title": "AI巨頭集體踩煞車？Altman喊停IPO、生物武器陰影襲來！智譜狂融335億、KIMI等蒸餾見真章｜港股熱點全解析【不段說】",
+              "description": "9月14日財經重磅！AI巨頭集體「踩煞車」？\nAnthropic 執行長 Dario Amodei 發表文章呼籲放緩前沿模型開發，Sam Altman 與 Elon Musk 公開背書支持！Altman 更親口證實 OpenAI 今年確定不推推進 IPO！究竟是安全威脅（生物武器風險）還是市場變局？\n\n與此同時，智譜 AI 狂融 335 億人民幣，聯想 x86 伺服器出貨量創紀錄登頂全球第一！港股大盤微漲但個股劇烈分化，廣汽突發緊急停牌、希音跌創新低、俊知暴漲 45%！美聯儲加息陰影逼近，美股接下來怎麼走？本期節目帶你一次看懂！\n\n【時間軸 / 本集章節】\n00:00 節目亮點介紹\n00:45 【重磅】AI巨頭集體喊停？Altman 喊停 IPO、生物武器威脅大公開\n03:15 【獨家點評】內卷 vs 降速：中資 LLM「蒸餾」面臨大考？\n04:30 【算力大戰】智譜狂融 335 億！聯想 x86 伺服器出貨量登頂全球第一\n06:20 【港股】醫藥/汽車逆勢狂飆，半導體回踩\n07:50 【焦點個股】廣汽突發停牌！希音創新低 vs 俊知狂漲 45%\n09:10 【美股/宏觀】美聯儲加息倒計時？歷史數據揭示四個月走勢\n10:30 總結與互動\n\n【歡迎訂閱與關注】\n喜歡我們的節目，請記得按讚、訂閱並開啟小鈴鐺！\n每週為你帶來最新、最專業的美股、港股及 AI 前沿財經解讀。\n\n 【本期互動話題】\n\n1. 你認為 AI 行業這波集體「踩煞車」會不會讓 AI 交易降溫？\n2. 廣汽今晚緊急停牌，你覺得會宣佈什麼大動作？歡迎在評論區留言分享你的看法！\n免責聲明：\n本頻道所有影片及內容僅代表個人觀點，不構成任何投資建議。市場有風險，投資需謹慎。\n\n#AI安全性 #OpenAI #SamAltman #Anthropic #智譜AI #02513HK #聯想集團 #00992HK #廣汽集團 #02238HK #港股分析 #美聯儲加息 #AI算力 #美股行情 #財經新聞"
+            },
+            "defaultAudioLanguage": "zh-Hant"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "w_a9tu3tRU9B-e-eWh9UY8FYkks",
+          "id": "mS8Nn0LA6UE",
+          "snippet": {
+            "publishedAt": "2026-09-14T20:50:17Z",
+            "channelId": "UCc5VMh6Bb9WHnwj7I_k2apQ",
+            "title": "AI巨頭集體踩煞車？Altman喊停IPO、生物武器陰影襲來！智譜狂融335億、KIMI等蒸餾見真章｜港股熱點全解析【不段說】",
+            "description": "9月14日財經重磅！AI巨頭集體「踩煞車」？\nAnthropic 執行長 Dario Amodei 發表文章呼籲放緩前沿模型開發，Sam Altman 與 Elon Musk 公開背書支持！Altman 更親口證實 OpenAI 今年確定不推推進 IPO！究竟是安全威脅（生物武器風險）還是市場變局？\n\n與此同時，智譜 AI 狂融 335 億人民幣，聯想 x86 伺服器出貨量創紀錄登頂全球第一！港股大盤微漲但個股劇烈分化，廣汽突發緊急停牌、希音跌創新低、俊知暴漲 45%！美聯儲加息陰影逼近，美股接下來怎麼走？本期節目帶你一次看懂！\n\n【時間軸 / 本集章節】\n00:00 節目亮點介紹\n00:45 【重磅】AI巨頭集體喊停？Altman 喊停 IPO、生物武器威脅大公開\n03:15 【獨家點評】內卷 vs 降速：中資 LLM「蒸餾」面臨大考？\n04:30 【算力大戰】智譜狂融 335 億！聯想 x86 伺服器出貨量登頂全球第一\n06:20 【港股】醫藥/汽車逆勢狂飆，半導體回踩\n07:50 【焦點個股】廣汽突發停牌！希音創新低 vs 俊知狂漲 45%\n09:10 【美股/宏觀】美聯儲加息倒計時？歷史數據揭示四個月走勢\n10:30 總結與互動\n\n【歡迎訂閱與關注】\n喜歡我們的節目，請記得按讚、訂閱並開啟小鈴鐺！\n每週為你帶來最新、最專業的美股、港股及 AI 前沿財經解讀。\n\n 【本期互動話題】\n\n1. 你認為 AI 行業這波集體「踩煞車」會不會讓 AI 交易降溫？\n2. 廣汽今晚緊急停牌，你覺得會宣佈什麼大動作？歡迎在評論區留言分享你的看法！\n免責聲明：\n本頻道所有影片及內容僅代表個人觀點，不構成任何投資建議。市場有風險，投資需謹慎。\n\n#AI安全性 #OpenAI #SamAltman #Anthropic #智譜AI #02513HK #聯想集團 #00992HK #廣汽集團 #02238HK #港股分析 #美聯儲加息 #AI算力 #美股行情 #財經新聞",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/mS8Nn0LA6UE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/mS8Nn0LA6UE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/mS8Nn0LA6UE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/mS8Nn0LA6UE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/mS8Nn0LA6UE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/mS8Nn0LA6UE/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "說財經 InvesTalk",
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh-Hant",
+            "localized": {
+              "title": "AI巨頭集體踩煞車？Altman喊停IPO、生物武器陰影襲來！智譜狂融335億、KIMI等蒸餾見真章｜港股熱點全解析【不段說】",
+              "description": "9月14日財經重磅！AI巨頭集體「踩煞車」？\nAnthropic 執行長 Dario Amodei 發表文章呼籲放緩前沿模型開發，Sam Altman 與 Elon Musk 公開背書支持！Altman 更親口證實 OpenAI 今年確定不推推進 IPO！究竟是安全威脅（生物武器風險）還是市場變局？\n\n與此同時，智譜 AI 狂融 335 億人民幣，聯想 x86 伺服器出貨量創紀錄登頂全球第一！港股大盤微漲但個股劇烈分化，廣汽突發緊急停牌、希音跌創新低、俊知暴漲 45%！美聯儲加息陰影逼近，美股接下來怎麼走？本期節目帶你一次看懂！\n\n【時間軸 / 本集章節】\n00:00 節目亮點介紹\n00:45 【重磅】AI巨頭集體喊停？Altman 喊停 IPO、生物武器威脅大公開\n03:15 【獨家點評】內卷 vs 降速：中資 LLM「蒸餾」面臨大考？\n04:30 【算力大戰】智譜狂融 335 億！聯想 x86 伺服器出貨量登頂全球第一\n06:20 【港股】醫藥/汽車逆勢狂飆，半導體回踩\n07:50 【焦點個股】廣汽突發停牌！希音創新低 vs 俊知狂漲 45%\n09:10 【美股/宏觀】美聯儲加息倒計時？歷史數據揭示四個月走勢\n10:30 總結與互動\n\n【歡迎訂閱與關注】\n喜歡我們的節目，請記得按讚、訂閱並開啟小鈴鐺！\n每週為你帶來最新、最專業的美股、港股及 AI 前沿財經解讀。\n\n 【本期互動話題】\n\n1. 你認為 AI 行業這波集體「踩煞車」會不會讓 AI 交易降溫？\n2. 廣汽今晚緊急停牌，你覺得會宣佈什麼大動作？歡迎在評論區留言分享你的看法！\n免責聲明：\n本頻道所有影片及內容僅代表個人觀點，不構成任何投資建議。市場有風險，投資需謹慎。\n\n#AI安全性 #OpenAI #SamAltman #Anthropic #智譜AI #02513HK #聯想集團 #00992HK #廣汽集團 #02238HK #港股分析 #美聯儲加息 #AI算力 #美股行情 #財經新聞"
+            },
+            "defaultAudioLanguage": "zh-Hant"
+          },
+          "contentDetails": {
+            "duration": "PT31M11S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "221",
+            "likeCount": "4",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:10.162726+00:00"
       },
       "VOtpC73LvJU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:19.448610+00:00",
+        "reason": "구체적인 산업 정보 근거 부족 — 알림 보류",
+        "updated_at": "2026-09-19T20:00:10.162859+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448608+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "4KTFVCnW0TcdHjwFnMVIQpby1P8",
           "id": {
-            "kind": "youtube#video",
             "videoId": "VOtpC73LvJU"
           },
           "snippet": {
             "publishedAt": "2026-09-14T20:31:58Z",
             "channelId": "UClSsqIDLGzwZzjbe-I-395Q",
             "title": "Why ChatGPT’s Founder Wants to Pump the Brakes on AI | Fortune Daily",
-            "description": "Should the tech industry drastically slow down AI development? On today's episode of Fortune Daily, we break down an intense ...",
+            "description": "Should the tech industry drastically slow down AI development?\n\nOn today’s episode of Fortune Daily, we break down an intense weekend of debate surrounding long-term AI safety and frontier model development. Following Anthropic CEO Dario Amodei’s essay urging the industry to “pace the frontier,” OpenAI CEO Sam Altman sat down with Fortune Editor-in-Chief Alyson Shontell for an exclusive interview.\nIn a striking moment from one of the central figures accelerating the AI race, Altman agrees that development may need to be paced. We share exclusive clips from the interview and sit down with Fortune’s senior AI reporter Emily Forlini to break down what this means for the future of tech, safety regulations, and the global race for artificial intelligence.\n\nIn this episode: \nDario Amodei’s call to “pace the frontier” \nExclusive clips: Sam Altman sits down with Alyson Shontell \nAnalysis and context with Fortune Senior AI Reporter Emily Forlini\n\nWatch Alyson Shontel’s full interview with Sam Altman on Titans and Distruptors: https://youtu.be/RSZSGa9if8k\n\nFollow Emily Forlini on Instagram - @emily.forlini \n\nSubscribe to Fortune: https://fortune.com/subscribe/ \n\nAdditional images courtesy of Getty Images\n\n00:00 - Introduction & The AI Safety Debate\n01:39 - Exclusive: Sam Altman on AI Extinction Risks & Pacing Development\n03:08 - Jacob Coxon's Viral Post & Growing AI Concerns\n05:22 - Why Haven't AI Leaders Paused Development?\n06:29 - Accountability & Regulation in Big Tech\n08:24 - AI Panic or IPO Marketing Strategy?\n08:55 - Sam Altman on OpenAI's Potential IPO Timeline\n11:00 - How Everyday People Should Navigate the AI Boom\n13:03 - Under the Radar: Declining Birth Rates & Claudia Goldin's Research\n16:35 - The Business of Luxury: Billionaires Buying Up American Farmland\n20:30 - Outro",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/VOtpC73LvJU/default.jpg",
@@ -16875,10 +17461,103 @@
               }
             },
             "channelTitle": "Fortune Daily",
+            "tags": [
+              "AI threat",
+              "sam altman",
+              "openai"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-14T20:31:58Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Why ChatGPT’s Founder Wants to Pump the Brakes on AI | Fortune Daily",
+              "description": "Should the tech industry drastically slow down AI development?\n\nOn today’s episode of Fortune Daily, we break down an intense weekend of debate surrounding long-term AI safety and frontier model development. Following Anthropic CEO Dario Amodei’s essay urging the industry to “pace the frontier,” OpenAI CEO Sam Altman sat down with Fortune Editor-in-Chief Alyson Shontell for an exclusive interview.\nIn a striking moment from one of the central figures accelerating the AI race, Altman agrees that development may need to be paced. We share exclusive clips from the interview and sit down with Fortune’s senior AI reporter Emily Forlini to break down what this means for the future of tech, safety regulations, and the global race for artificial intelligence.\n\nIn this episode: \nDario Amodei’s call to “pace the frontier” \nExclusive clips: Sam Altman sits down with Alyson Shontell \nAnalysis and context with Fortune Senior AI Reporter Emily Forlini\n\nWatch Alyson Shontel’s full interview with Sam Altman on Titans and Distruptors: https://youtu.be/RSZSGa9if8k\n\nFollow Emily Forlini on Instagram - @emily.forlini \n\nSubscribe to Fortune: https://fortune.com/subscribe/ \n\nAdditional images courtesy of Getty Images\n\n00:00 - Introduction & The AI Safety Debate\n01:39 - Exclusive: Sam Altman on AI Extinction Risks & Pacing Development\n03:08 - Jacob Coxon's Viral Post & Growing AI Concerns\n05:22 - Why Haven't AI Leaders Paused Development?\n06:29 - Accountability & Regulation in Big Tech\n08:24 - AI Panic or IPO Marketing Strategy?\n08:55 - Sam Altman on OpenAI's Potential IPO Timeline\n11:00 - How Everyday People Should Navigate the AI Boom\n13:03 - Under the Radar: Declining Birth Rates & Claudia Goldin's Research\n16:35 - The Business of Luxury: Billionaires Buying Up American Farmland\n20:30 - Outro"
+            },
+            "defaultAudioLanguage": "en"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "fvxlYi6KA-d95EONvU0eXgA6jsg",
+          "id": "VOtpC73LvJU",
+          "snippet": {
+            "publishedAt": "2026-09-14T20:31:58Z",
+            "channelId": "UClSsqIDLGzwZzjbe-I-395Q",
+            "title": "Why ChatGPT’s Founder Wants to Pump the Brakes on AI | Fortune Daily",
+            "description": "Should the tech industry drastically slow down AI development?\n\nOn today’s episode of Fortune Daily, we break down an intense weekend of debate surrounding long-term AI safety and frontier model development. Following Anthropic CEO Dario Amodei’s essay urging the industry to “pace the frontier,” OpenAI CEO Sam Altman sat down with Fortune Editor-in-Chief Alyson Shontell for an exclusive interview.\nIn a striking moment from one of the central figures accelerating the AI race, Altman agrees that development may need to be paced. We share exclusive clips from the interview and sit down with Fortune’s senior AI reporter Emily Forlini to break down what this means for the future of tech, safety regulations, and the global race for artificial intelligence.\n\nIn this episode: \nDario Amodei’s call to “pace the frontier” \nExclusive clips: Sam Altman sits down with Alyson Shontell \nAnalysis and context with Fortune Senior AI Reporter Emily Forlini\n\nWatch Alyson Shontel’s full interview with Sam Altman on Titans and Distruptors: https://youtu.be/RSZSGa9if8k\n\nFollow Emily Forlini on Instagram - @emily.forlini \n\nSubscribe to Fortune: https://fortune.com/subscribe/ \n\nAdditional images courtesy of Getty Images\n\n00:00 - Introduction & The AI Safety Debate\n01:39 - Exclusive: Sam Altman on AI Extinction Risks & Pacing Development\n03:08 - Jacob Coxon's Viral Post & Growing AI Concerns\n05:22 - Why Haven't AI Leaders Paused Development?\n06:29 - Accountability & Regulation in Big Tech\n08:24 - AI Panic or IPO Marketing Strategy?\n08:55 - Sam Altman on OpenAI's Potential IPO Timeline\n11:00 - How Everyday People Should Navigate the AI Boom\n13:03 - Under the Radar: Declining Birth Rates & Claudia Goldin's Research\n16:35 - The Business of Luxury: Billionaires Buying Up American Farmland\n20:30 - Outro",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/VOtpC73LvJU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/VOtpC73LvJU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/VOtpC73LvJU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/VOtpC73LvJU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/VOtpC73LvJU/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "uhd": {
+                "url": "https://i.ytimg.com/vi/VOtpC73LvJU/uhddefault.jpg",
+                "width": 3840,
+                "height": 2160
+              }
+            },
+            "channelTitle": "Fortune Daily",
+            "tags": [
+              "AI threat",
+              "sam altman",
+              "openai"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Why ChatGPT’s Founder Wants to Pump the Brakes on AI | Fortune Daily",
+              "description": "Should the tech industry drastically slow down AI development?\n\nOn today’s episode of Fortune Daily, we break down an intense weekend of debate surrounding long-term AI safety and frontier model development. Following Anthropic CEO Dario Amodei’s essay urging the industry to “pace the frontier,” OpenAI CEO Sam Altman sat down with Fortune Editor-in-Chief Alyson Shontell for an exclusive interview.\nIn a striking moment from one of the central figures accelerating the AI race, Altman agrees that development may need to be paced. We share exclusive clips from the interview and sit down with Fortune’s senior AI reporter Emily Forlini to break down what this means for the future of tech, safety regulations, and the global race for artificial intelligence.\n\nIn this episode: \nDario Amodei’s call to “pace the frontier” \nExclusive clips: Sam Altman sits down with Alyson Shontell \nAnalysis and context with Fortune Senior AI Reporter Emily Forlini\n\nWatch Alyson Shontel’s full interview with Sam Altman on Titans and Distruptors: https://youtu.be/RSZSGa9if8k\n\nFollow Emily Forlini on Instagram - @emily.forlini \n\nSubscribe to Fortune: https://fortune.com/subscribe/ \n\nAdditional images courtesy of Getty Images\n\n00:00 - Introduction & The AI Safety Debate\n01:39 - Exclusive: Sam Altman on AI Extinction Risks & Pacing Development\n03:08 - Jacob Coxon's Viral Post & Growing AI Concerns\n05:22 - Why Haven't AI Leaders Paused Development?\n06:29 - Accountability & Regulation in Big Tech\n08:24 - AI Panic or IPO Marketing Strategy?\n08:55 - Sam Altman on OpenAI's Potential IPO Timeline\n11:00 - How Everyday People Should Navigate the AI Boom\n13:03 - Under the Radar: Declining Birth Rates & Claudia Goldin's Research\n16:35 - The Business of Luxury: Billionaires Buying Up American Farmland\n20:30 - Outro"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT20M47S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "9665",
+            "likeCount": "19",
+            "favoriteCount": "0",
+            "commentCount": "7"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:10.162855+00:00"
       },
       "DUDbByw9Ce4": {
         "status": "pending",
@@ -23059,23 +23738,20 @@
         }
       },
       "Z1qAxRPrXAE": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436663+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-19T20:00:00.871789+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436661+00:00",
         "attempts": 0,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "9CRZRekowJslNbtJHbVWi78XFt8",
           "id": {
-            "kind": "youtube#video",
             "videoId": "Z1qAxRPrXAE"
           },
           "snippet": {
             "publishedAt": "2026-09-18T19:00:22Z",
             "channelId": "UCaOw2f8tyW6GaJ6nCzFLTPQ",
-            "title": "ELON MUSK SHOCKS THE INDUSTRY WITH TESLA’S NEW 2000-MILE BATTERY &amp; 4-MINUTE CHARGE!",
-            "description": "TESLA JUST CHANGED THE EV GAME — OR DID IT? Imagine charging your Tesla for just 4 minutes and getting enough range ...",
+            "title": "ELON MUSK SHOCKS THE INDUSTRY WITH TESLA’S NEW 2000-MILE BATTERY & 4-MINUTE CHARGE!",
+            "description": "🚨 TESLA JUST CHANGED THE EV GAME — OR DID IT?\nImagine charging your Tesla for just 4 minutes and getting enough range to travel nearly 2,000 miles.\nThat sounds impossible… until you start looking at the technology behind the claim.\nIn this episode of NATURE MYSTERY, we explore the shocking battery breakthrough surrounding Elon Musk and Tesla — from solid-state battery architecture and silicon anodes to ultra-fast charging, advanced cooling, dry-electrode manufacturing, and the enormous engineering challenges that could determine whether this technology becomes the future of transportation… or another ambitious promise.\n🔋 2,000-mile range?\n⚡ 4-minute charging?\n🏭 Next-generation battery manufacturing?\n🌎 A potential threat to the traditional auto and oil industries?\nBut there's a mystery hiding underneath the headlines.\nHow could a battery store this much energy while charging at megawatt-level speeds? Could Tesla actually manufacture millions of these cells reliably? What happens to the electrical grid if thousands of vehicles demand enormous amounts of power at the same time? And perhaps most importantly — is this technology really ready for the real world?\nWe'll break down the science, the potential breakthroughs, the manufacturing obstacles, the competition from global battery giants, and the geopolitical consequences of a transportation system built around ultra-dense energy storage.\nFrom silicon-graphene technology and solid electrolytes to Tesla's Gigafactories and the future of electric trucks, shipping, aviation, and energy infrastructure, this story goes far beyond a single car.\nBecause if the technology described in this story can actually reach mass production, the consequences could extend far beyond Tesla.\nIt could change how we travel, how we store energy, how cities are designed, and how the world depends on fossil fuels.\nAnd that's where the real mystery begins…\n⚠️ IMPORTANT: This video explores reported, proposed, speculative, and future-facing battery technologies and scenarios. Some claims discussed are presented as possibilities or projections rather than confirmed production specifications. Always verify official Tesla announcements and independent technical evidence before treating specific performance figures as established fact.\n👇 WATCH UNTIL THE END to see the biggest challenges Tesla would have to overcome before a 2,000-mile, 4-minute-charge EV could become a reality.\n🔔 Subscribe to NATURE MYSTERY for more fascinating stories about technology, science, unexplained discoveries, future innovations, and mysteries shaping our world.\n💬 QUESTION: If a car could genuinely travel 2,000 miles and recharge in only 4 minutes, would you switch from gasoline to electric?\n#Tesla #ElonMusk #TeslaBattery #ElectricVehicles #EV #BatteryTechnology #SolidStateBattery #FutureTechnology #Innovation #Science #NatureMystery",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/Z1qAxRPrXAE/default.jpg",
@@ -23104,29 +23780,115 @@
               }
             },
             "channelTitle": "Nature Mystery",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T19:00:22Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "ELON MUSK SHOCKS THE INDUSTRY WITH TESLA’S NEW 2000-MILE BATTERY & 4-MINUTE CHARGE!",
+              "description": "🚨 TESLA JUST CHANGED THE EV GAME — OR DID IT?\nImagine charging your Tesla for just 4 minutes and getting enough range to travel nearly 2,000 miles.\nThat sounds impossible… until you start looking at the technology behind the claim.\nIn this episode of NATURE MYSTERY, we explore the shocking battery breakthrough surrounding Elon Musk and Tesla — from solid-state battery architecture and silicon anodes to ultra-fast charging, advanced cooling, dry-electrode manufacturing, and the enormous engineering challenges that could determine whether this technology becomes the future of transportation… or another ambitious promise.\n🔋 2,000-mile range?\n⚡ 4-minute charging?\n🏭 Next-generation battery manufacturing?\n🌎 A potential threat to the traditional auto and oil industries?\nBut there's a mystery hiding underneath the headlines.\nHow could a battery store this much energy while charging at megawatt-level speeds? Could Tesla actually manufacture millions of these cells reliably? What happens to the electrical grid if thousands of vehicles demand enormous amounts of power at the same time? And perhaps most importantly — is this technology really ready for the real world?\nWe'll break down the science, the potential breakthroughs, the manufacturing obstacles, the competition from global battery giants, and the geopolitical consequences of a transportation system built around ultra-dense energy storage.\nFrom silicon-graphene technology and solid electrolytes to Tesla's Gigafactories and the future of electric trucks, shipping, aviation, and energy infrastructure, this story goes far beyond a single car.\nBecause if the technology described in this story can actually reach mass production, the consequences could extend far beyond Tesla.\nIt could change how we travel, how we store energy, how cities are designed, and how the world depends on fossil fuels.\nAnd that's where the real mystery begins…\n⚠️ IMPORTANT: This video explores reported, proposed, speculative, and future-facing battery technologies and scenarios. Some claims discussed are presented as possibilities or projections rather than confirmed production specifications. Always verify official Tesla announcements and independent technical evidence before treating specific performance figures as established fact.\n👇 WATCH UNTIL THE END to see the biggest challenges Tesla would have to overcome before a 2,000-mile, 4-minute-charge EV could become a reality.\n🔔 Subscribe to NATURE MYSTERY for more fascinating stories about technology, science, unexplained discoveries, future innovations, and mysteries shaping our world.\n💬 QUESTION: If a car could genuinely travel 2,000 miles and recharge in only 4 minutes, would you switch from gasoline to electric?\n#Tesla #ElonMusk #TeslaBattery #ElectricVehicles #EV #BatteryTechnology #SolidStateBattery #FutureTechnology #Innovation #Science #NatureMystery"
+            },
+            "defaultAudioLanguage": "en"
           }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "YiXJXYDozEDQHg7GcSAJKFYNR6c",
+          "id": "Z1qAxRPrXAE",
+          "snippet": {
+            "publishedAt": "2026-09-18T19:00:22Z",
+            "channelId": "UCaOw2f8tyW6GaJ6nCzFLTPQ",
+            "title": "ELON MUSK SHOCKS THE INDUSTRY WITH TESLA’S NEW 2000-MILE BATTERY & 4-MINUTE CHARGE!",
+            "description": "🚨 TESLA JUST CHANGED THE EV GAME — OR DID IT?\nImagine charging your Tesla for just 4 minutes and getting enough range to travel nearly 2,000 miles.\nThat sounds impossible… until you start looking at the technology behind the claim.\nIn this episode of NATURE MYSTERY, we explore the shocking battery breakthrough surrounding Elon Musk and Tesla — from solid-state battery architecture and silicon anodes to ultra-fast charging, advanced cooling, dry-electrode manufacturing, and the enormous engineering challenges that could determine whether this technology becomes the future of transportation… or another ambitious promise.\n🔋 2,000-mile range?\n⚡ 4-minute charging?\n🏭 Next-generation battery manufacturing?\n🌎 A potential threat to the traditional auto and oil industries?\nBut there's a mystery hiding underneath the headlines.\nHow could a battery store this much energy while charging at megawatt-level speeds? Could Tesla actually manufacture millions of these cells reliably? What happens to the electrical grid if thousands of vehicles demand enormous amounts of power at the same time? And perhaps most importantly — is this technology really ready for the real world?\nWe'll break down the science, the potential breakthroughs, the manufacturing obstacles, the competition from global battery giants, and the geopolitical consequences of a transportation system built around ultra-dense energy storage.\nFrom silicon-graphene technology and solid electrolytes to Tesla's Gigafactories and the future of electric trucks, shipping, aviation, and energy infrastructure, this story goes far beyond a single car.\nBecause if the technology described in this story can actually reach mass production, the consequences could extend far beyond Tesla.\nIt could change how we travel, how we store energy, how cities are designed, and how the world depends on fossil fuels.\nAnd that's where the real mystery begins…\n⚠️ IMPORTANT: This video explores reported, proposed, speculative, and future-facing battery technologies and scenarios. Some claims discussed are presented as possibilities or projections rather than confirmed production specifications. Always verify official Tesla announcements and independent technical evidence before treating specific performance figures as established fact.\n👇 WATCH UNTIL THE END to see the biggest challenges Tesla would have to overcome before a 2,000-mile, 4-minute-charge EV could become a reality.\n🔔 Subscribe to NATURE MYSTERY for more fascinating stories about technology, science, unexplained discoveries, future innovations, and mysteries shaping our world.\n💬 QUESTION: If a car could genuinely travel 2,000 miles and recharge in only 4 minutes, would you switch from gasoline to electric?\n#Tesla #ElonMusk #TeslaBattery #ElectricVehicles #EV #BatteryTechnology #SolidStateBattery #FutureTechnology #Innovation #Science #NatureMystery",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Z1qAxRPrXAE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Z1qAxRPrXAE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Z1qAxRPrXAE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Z1qAxRPrXAE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Z1qAxRPrXAE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Nature Mystery",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "ELON MUSK SHOCKS THE INDUSTRY WITH TESLA’S NEW 2000-MILE BATTERY & 4-MINUTE CHARGE!",
+              "description": "🚨 TESLA JUST CHANGED THE EV GAME — OR DID IT?\nImagine charging your Tesla for just 4 minutes and getting enough range to travel nearly 2,000 miles.\nThat sounds impossible… until you start looking at the technology behind the claim.\nIn this episode of NATURE MYSTERY, we explore the shocking battery breakthrough surrounding Elon Musk and Tesla — from solid-state battery architecture and silicon anodes to ultra-fast charging, advanced cooling, dry-electrode manufacturing, and the enormous engineering challenges that could determine whether this technology becomes the future of transportation… or another ambitious promise.\n🔋 2,000-mile range?\n⚡ 4-minute charging?\n🏭 Next-generation battery manufacturing?\n🌎 A potential threat to the traditional auto and oil industries?\nBut there's a mystery hiding underneath the headlines.\nHow could a battery store this much energy while charging at megawatt-level speeds? Could Tesla actually manufacture millions of these cells reliably? What happens to the electrical grid if thousands of vehicles demand enormous amounts of power at the same time? And perhaps most importantly — is this technology really ready for the real world?\nWe'll break down the science, the potential breakthroughs, the manufacturing obstacles, the competition from global battery giants, and the geopolitical consequences of a transportation system built around ultra-dense energy storage.\nFrom silicon-graphene technology and solid electrolytes to Tesla's Gigafactories and the future of electric trucks, shipping, aviation, and energy infrastructure, this story goes far beyond a single car.\nBecause if the technology described in this story can actually reach mass production, the consequences could extend far beyond Tesla.\nIt could change how we travel, how we store energy, how cities are designed, and how the world depends on fossil fuels.\nAnd that's where the real mystery begins…\n⚠️ IMPORTANT: This video explores reported, proposed, speculative, and future-facing battery technologies and scenarios. Some claims discussed are presented as possibilities or projections rather than confirmed production specifications. Always verify official Tesla announcements and independent technical evidence before treating specific performance figures as established fact.\n👇 WATCH UNTIL THE END to see the biggest challenges Tesla would have to overcome before a 2,000-mile, 4-minute-charge EV could become a reality.\n🔔 Subscribe to NATURE MYSTERY for more fascinating stories about technology, science, unexplained discoveries, future innovations, and mysteries shaping our world.\n💬 QUESTION: If a car could genuinely travel 2,000 miles and recharge in only 4 minutes, would you switch from gasoline to electric?\n#Tesla #ElonMusk #TeslaBattery #ElectricVehicles #EV #BatteryTechnology #SolidStateBattery #FutureTechnology #Innovation #Science #NatureMystery"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT21M40S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "5552",
+            "likeCount": "28",
+            "favoriteCount": "0",
+            "commentCount": "1"
+          }
+        },
+        "approved_judge": {
+          "video_id": "Z1qAxRPrXAE",
+          "decision": "accept",
+          "confidence": 9,
+          "appearance_quote": "Elon Musk",
+          "original_quote": "In this episode of NATURE MYSTERY, we explore the shocking battery breakthrough surrounding Elon Musk and Tesla",
+          "rejection_quote": "",
+          "reason_kr": "The video discusses Elon Musk and Tesla's potential advancements in battery technology, including solid-state battery architecture, silicon anodes, ultra-fast charging, and manufacturing challenges. It touches upon the implications for energy storage and the electrical grid, which are relevant to infrastructure and potentially finance.",
+          "relevance_score": 8,
+          "topic_quote": "From silicon-graphene technology and solid electrolytes to Tesla's Gigafactories and the future of electric trucks, shipping, aviation, and energy infrastructure, this story goes far beyond a single car.",
+          "topic_category": "datacenter_network_power"
         }
       },
       "v8qIH0rCPLc": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436668+00:00",
+        "status": "rejected",
+        "reason": "The title and description are vague and appear to be clickbait, with no clear connection to substantive industry content related to AI, compute, semiconductors, or infrastructure. The content seems to be of a spiritual or self-help nature.",
+        "updated_at": "2026-09-19T20:00:00.917758+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436666+00:00",
         "attempts": 0,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "Y-H327RZHHbQixhB7jduC4w4x3c",
           "id": {
-            "kind": "youtube#video",
             "videoId": "v8qIH0rCPLc"
           },
           "snippet": {
             "publishedAt": "2026-09-18T18:45:19Z",
             "channelId": "UC73Hz6b1NEKi_dJt9O3Nfvw",
             "title": "👉Elon Musk Begging You. This is not Normal Call for You. 120 Seconds left, Open Before too late!!!",
-            "description": "7-Sec Brain Wave Ritual Attracts Money To You. https://tinyurl.com/7-sec-Brain-28.",
+            "description": "🔴 7-Sec Brain Wave Ritual Attracts Money To You.\n👉 https://tinyurl.com/7-sec-Brain-28",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/v8qIH0rCPLc/default.jpg",
@@ -23155,29 +23917,173 @@
               }
             },
             "channelTitle": "Michael Prophetic Word",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T18:45:19Z"
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👉Elon Musk Begging You. This is not Normal Call for You. 120 Seconds left, Open Before too late!!!",
+              "description": "🔴 7-Sec Brain Wave Ritual Attracts Money To You.\n👉 https://tinyurl.com/7-sec-Brain-28"
+            },
+            "defaultAudioLanguage": "en-US"
           }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "xCeQvsOjeBswaNqONmykaMKKHaI",
+          "id": "v8qIH0rCPLc",
+          "snippet": {
+            "publishedAt": "2026-09-18T18:45:19Z",
+            "channelId": "UC73Hz6b1NEKi_dJt9O3Nfvw",
+            "title": "👉Elon Musk Begging You. This is not Normal Call for You. 120 Seconds left, Open Before too late!!!",
+            "description": "🔴 7-Sec Brain Wave Ritual Attracts Money To You.\n👉 https://tinyurl.com/7-sec-Brain-28",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/v8qIH0rCPLc/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/v8qIH0rCPLc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/v8qIH0rCPLc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/v8qIH0rCPLc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/v8qIH0rCPLc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Michael Prophetic Word",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👉Elon Musk Begging You. This is not Normal Call for You. 120 Seconds left, Open Before too late!!!",
+              "description": "🔴 7-Sec Brain Wave Ritual Attracts Money To You.\n👉 https://tinyurl.com/7-sec-Brain-28"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT42M49S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1425",
+            "likeCount": "194",
+            "favoriteCount": "0",
+            "commentCount": "491"
+          }
+        },
+        "judge": {
+          "video_id": "v8qIH0rCPLc",
+          "decision": "reject",
+          "confidence": 9,
+          "appearance_quote": "Elon Musk",
+          "original_quote": "Elon Musk Begging You. This is not Normal Call for You. 120 Seconds left, Open Before too late!!!",
+          "rejection_quote": "This is not Normal Call for You. 120 Seconds left, Open Before too late!!!",
+          "reason_kr": "The title and description are vague and appear to be clickbait, with no clear connection to substantive industry content related to AI, compute, semiconductors, or infrastructure. The content seems to be of a spiritual or self-help nature.",
+          "relevance_score": 1
         }
       },
       "y5_FyDYeh-4": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436673+00:00",
+        "status": "rejected",
+        "reason": "The video's description and title are focused on religious or spiritual themes and membership drives, with no discernible connection to substantive industry content related to AI, compute, semiconductors, or infrastructure.",
+        "updated_at": "2026-09-19T20:00:00.917810+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436671+00:00",
         "attempts": 0,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "Aq6WbVZVOkzv_71WrNsMqMdk7YA",
           "id": {
-            "kind": "youtube#video",
             "videoId": "y5_FyDYeh-4"
           },
           "snippet": {
             "publishedAt": "2026-09-18T18:30:02Z",
             "channelId": "UCEPws8vMKBiMHKma3ZbC3Kw",
-            "title": "🚨 Elon Musk Has Finally Made His Choice… You&#39;re Part of It",
-            "description": "ONLY 188 SPOTS LEFT — Grace Membership is filling up FAST Already a member? Bless us back with a Super Thanks   ...",
+            "title": "🚨 Elon Musk Has Finally Made His Choice… You're Part of It",
+            "description": "🚨 ONLY 188 SPOTS LEFT — Grace Membership is filling up FAST 😱🙏\nAlready a member? Bless us back with a Super Thanks💛\nhttps://gracemembership.com/src\n\n👉 Join here: https://gracemembership.com\n\nTAKE THE NEXT STEP IN FAITH — ANSWER GOD’S CALL:\n👉\n\n🚨 Elon Musk Has Finally Made His Choice… You're Part of It\n\n#Archangel #Faith #Gratitude #SpiritualJourney #Jesus\n#Godmessage #godmessage #jesus #jesusmessage\n#godmessages #lawofattraction #manifesting\n#godsaystoday #godmessagetoday #godwords\n#lordmessagei #godmessagesforme #jesusewords\n#godsmessages #godmessageforme",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/y5_FyDYeh-4/default.jpg",
@@ -23206,29 +24112,113 @@
               }
             },
             "channelTitle": "Saint Michael's Shield",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T18:30:02Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "🚨 Elon Musk Has Finally Made His Choice… You're Part of It",
+              "description": "🚨 ONLY 188 SPOTS LEFT — Grace Membership is filling up FAST 😱🙏\nAlready a member? Bless us back with a Super Thanks💛\nhttps://gracemembership.com/src\n\n👉 Join here: https://gracemembership.com\n\nTAKE THE NEXT STEP IN FAITH — ANSWER GOD’S CALL:\n👉\n\n🚨 Elon Musk Has Finally Made His Choice… You're Part of It\n\n#Archangel #Faith #Gratitude #SpiritualJourney #Jesus\n#Godmessage #godmessage #jesus #jesusmessage\n#godmessages #lawofattraction #manifesting\n#godsaystoday #godmessagetoday #godwords\n#lordmessagei #godmessagesforme #jesusewords\n#godsmessages #godmessageforme"
+            },
+            "defaultAudioLanguage": "en"
           }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "tN2zy4aPHU-FbzyvhSmhMJUe8Qw",
+          "id": "y5_FyDYeh-4",
+          "snippet": {
+            "publishedAt": "2026-09-18T18:30:02Z",
+            "channelId": "UCEPws8vMKBiMHKma3ZbC3Kw",
+            "title": "🚨 Elon Musk Has Finally Made His Choice… You're Part of It",
+            "description": "🚨 ONLY 188 SPOTS LEFT — Grace Membership is filling up FAST 😱🙏\nAlready a member? Bless us back with a Super Thanks💛\nhttps://gracemembership.com/src\n\n👉 Join here: https://gracemembership.com\n\nTAKE THE NEXT STEP IN FAITH — ANSWER GOD’S CALL:\n👉\n\n🚨 Elon Musk Has Finally Made His Choice… You're Part of It\n\n#Archangel #Faith #Gratitude #SpiritualJourney #Jesus\n#Godmessage #godmessage #jesus #jesusmessage\n#godmessages #lawofattraction #manifesting\n#godsaystoday #godmessagetoday #godwords\n#lordmessagei #godmessagesforme #jesusewords\n#godsmessages #godmessageforme",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/y5_FyDYeh-4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/y5_FyDYeh-4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/y5_FyDYeh-4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/y5_FyDYeh-4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/y5_FyDYeh-4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Saint Michael's Shield",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "🚨 Elon Musk Has Finally Made His Choice… You're Part of It",
+              "description": "🚨 ONLY 188 SPOTS LEFT — Grace Membership is filling up FAST 😱🙏\nAlready a member? Bless us back with a Super Thanks💛\nhttps://gracemembership.com/src\n\n👉 Join here: https://gracemembership.com\n\nTAKE THE NEXT STEP IN FAITH — ANSWER GOD’S CALL:\n👉\n\n🚨 Elon Musk Has Finally Made His Choice… You're Part of It\n\n#Archangel #Faith #Gratitude #SpiritualJourney #Jesus\n#Godmessage #godmessage #jesus #jesusmessage\n#godmessages #lawofattraction #manifesting\n#godsaystoday #godmessagetoday #godwords\n#lordmessagei #godmessagesforme #jesusewords\n#godsmessages #godmessageforme"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT1H1M34S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "72",
+            "likeCount": "12",
+            "favoriteCount": "0",
+            "commentCount": "23"
+          }
+        },
+        "judge": {
+          "video_id": "y5_FyDYeh-4",
+          "decision": "reject",
+          "confidence": 9,
+          "appearance_quote": "Elon Musk",
+          "original_quote": "🚨 Elon Musk Has Finally Made His Choice… You're Part of It",
+          "rejection_quote": "ONLY 188 SPOTS LEFT — Grace Membership is filling up FAST 😱🙏 Already a member? Bless us back with a Super Thanks💛 https://gracemembership.com/src 👉 Join here: https://gracemembership.com TAKE THE NEXT STEP IN FAITH — ANSWER GOD’S CALL: 👉 🚨 Elon Musk Has Finally Made His Choice… You're Part of It",
+          "reason_kr": "The video's description and title are focused on religious or spiritual themes and membership drives, with no discernible connection to substantive industry content related to AI, compute, semiconductors, or infrastructure.",
+          "relevance_score": 1
         }
       },
       "zV85dUexxkc": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436677+00:00",
+        "status": "rejected",
+        "reason": "산업 관련성 8점 미만 — 알림 제외",
+        "updated_at": "2026-09-19T20:00:00.917847+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436675+00:00",
         "attempts": 0,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "LohSEakSpl12JZBvM6w7MvbwsJg",
           "id": {
-            "kind": "youtube#video",
             "videoId": "zV85dUexxkc"
           },
           "snippet": {
             "publishedAt": "2026-09-18T18:21:55Z",
             "channelId": "UChBImQkofulq8RH0AMEVESQ",
             "title": "Los argentinos que diseñaron para Elon Musk, Vercel y MrBeast: José Rago y Facu Santana de Basement",
-            "description": "Facundo Santana y José Rago, co-founders de Basement, nos abren las puertas de sus oficinas para hablar de los orígenes de ...",
+            "description": "Facundo Santana y José Rago, co-founders de Basement, nos abren las puertas de sus oficinas para hablar de los orígenes de uno de los mejores estudios de diseño global. Charlamos sobre qué tienen en cuenta para elegir clientes, cómo funciona su laboratorio, la vara de calidad, el trabajo con Vercel, MrBeast y X, hacia dónde va el diseño y mucho más.\n\nMuchas gracias a Firmaway, belo, Wallbit y Yafu por apoyar a SLA 🌎\n\n📱SLA EN REDES:\n\nX: https://twitter.com/slatv_\nInstagram: https://www.instagram.com/slatv_/\nTikTok: https://www.tiktok.com/@slatv_\nLinkedIn: https://www.linkedin.com/company/slatv/\n\n🎧UNITE AL DISCORD DE SLA:\n\nhttps://discord.com/invite/w4HCbAzDaU",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/zV85dUexxkc/default.jpg",
@@ -23262,22 +24252,113 @@
               }
             },
             "channelTitle": "SLA TV",
+            "categoryId": "24",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T18:21:55Z"
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "Los argentinos que diseñaron para Elon Musk, Vercel y MrBeast: José Rago y Facu Santana de Basement",
+              "description": "Facundo Santana y José Rago, co-founders de Basement, nos abren las puertas de sus oficinas para hablar de los orígenes de uno de los mejores estudios de diseño global. Charlamos sobre qué tienen en cuenta para elegir clientes, cómo funciona su laboratorio, la vara de calidad, el trabajo con Vercel, MrBeast y X, hacia dónde va el diseño y mucho más.\n\nMuchas gracias a Firmaway, belo, Wallbit y Yafu por apoyar a SLA 🌎\n\n📱SLA EN REDES:\n\nX: https://twitter.com/slatv_\nInstagram: https://www.instagram.com/slatv_/\nTikTok: https://www.tiktok.com/@slatv_\nLinkedIn: https://www.linkedin.com/company/slatv/\n\n🎧UNITE AL DISCORD DE SLA:\n\nhttps://discord.com/invite/w4HCbAzDaU"
+            },
+            "defaultAudioLanguage": "es"
           }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "nwI6mi-d0ywim0nghdhCZA2KDLA",
+          "id": "zV85dUexxkc",
+          "snippet": {
+            "publishedAt": "2026-09-18T18:21:55Z",
+            "channelId": "UChBImQkofulq8RH0AMEVESQ",
+            "title": "Los argentinos que diseñaron para Elon Musk, Vercel y MrBeast: José Rago y Facu Santana de Basement",
+            "description": "Facundo Santana y José Rago, co-founders de Basement, nos abren las puertas de sus oficinas para hablar de los orígenes de uno de los mejores estudios de diseño global. Charlamos sobre qué tienen en cuenta para elegir clientes, cómo funciona su laboratorio, la vara de calidad, el trabajo con Vercel, MrBeast y X, hacia dónde va el diseño y mucho más.\n\nMuchas gracias a Firmaway, belo, Wallbit y Yafu por apoyar a SLA 🌎\n\n📱SLA EN REDES:\n\nX: https://twitter.com/slatv_\nInstagram: https://www.instagram.com/slatv_/\nTikTok: https://www.tiktok.com/@slatv_\nLinkedIn: https://www.linkedin.com/company/slatv/\n\n🎧UNITE AL DISCORD DE SLA:\n\nhttps://discord.com/invite/w4HCbAzDaU",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/zV85dUexxkc/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/zV85dUexxkc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/zV85dUexxkc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/zV85dUexxkc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/zV85dUexxkc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "qhd": {
+                "url": "https://i.ytimg.com/vi/zV85dUexxkc/qhddefault.jpg",
+                "width": 2560,
+                "height": 1440
+              }
+            },
+            "channelTitle": "SLA TV",
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "Los argentinos que diseñaron para Elon Musk, Vercel y MrBeast: José Rago y Facu Santana de Basement",
+              "description": "Facundo Santana y José Rago, co-founders de Basement, nos abren las puertas de sus oficinas para hablar de los orígenes de uno de los mejores estudios de diseño global. Charlamos sobre qué tienen en cuenta para elegir clientes, cómo funciona su laboratorio, la vara de calidad, el trabajo con Vercel, MrBeast y X, hacia dónde va el diseño y mucho más.\n\nMuchas gracias a Firmaway, belo, Wallbit y Yafu por apoyar a SLA 🌎\n\n📱SLA EN REDES:\n\nX: https://twitter.com/slatv_\nInstagram: https://www.instagram.com/slatv_/\nTikTok: https://www.tiktok.com/@slatv_\nLinkedIn: https://www.linkedin.com/company/slatv/\n\n🎧UNITE AL DISCORD DE SLA:\n\nhttps://discord.com/invite/w4HCbAzDaU"
+            },
+            "defaultAudioLanguage": "es"
+          },
+          "contentDetails": {
+            "duration": "PT1H41M36S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "860",
+            "likeCount": "28",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "judge": {
+          "video_id": "zV85dUexxkc",
+          "decision": "accept",
+          "confidence": 8,
+          "appearance_quote": "Elon Musk",
+          "original_quote": "Los argentinos que diseñaron para Elon Musk, Vercel y MrBeast: José Rago y Facu Santana de Basement",
+          "rejection_quote": "",
+          "reason_kr": "The video features individuals who have designed for Elon Musk's ventures (X) and other tech companies like Vercel. While not directly about Musk's technical contributions, it touches upon design work for a major tech platform (X) and its implications for the design industry, which can be indirectly related to the infrastructure of digital services.",
+          "relevance_score": 6,
+          "topic_quote": "Charlamos sobre qué tienen en cuenta para elegir clientes, cómo funciona su laboratorio, la vara de calidad, el trabajo con Vercel, MrBeast y X, hacia dónde va el diseño y mucho más.",
+          "topic_category": "datacenter_network_power"
         }
       },
       "9vrAAg9Jg8I": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436682+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:02.599613+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436680+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "6defi6HOiZDvrs2tOh7_BjyDrYk",
           "id": {
-            "kind": "youtube#video",
             "videoId": "9vrAAg9Jg8I"
           },
           "snippet": {
@@ -23313,10 +24394,88 @@
               }
             },
             "channelTitle": "Mystery Orbit",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T17:12:52Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk: “This NEW Motor Could CHANGE the Entire EV Industry!”",
+              "description": "Elon Musk: “This NEW Motor Could CHANGE the Entire EV Industry!”"
+            },
+            "defaultAudioLanguage": "es"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "TdzXKNa5PfgjT7L9G_VrrsN3V7w",
+          "id": "9vrAAg9Jg8I",
+          "snippet": {
+            "publishedAt": "2026-09-18T17:12:52Z",
+            "channelId": "UCngjJlrQIjngbAOdkZz5PiA",
+            "title": "Elon Musk: “This NEW Motor Could CHANGE the Entire EV Industry!”",
+            "description": "Elon Musk: “This NEW Motor Could CHANGE the Entire EV Industry!”",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/9vrAAg9Jg8I/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/9vrAAg9Jg8I/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/9vrAAg9Jg8I/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/9vrAAg9Jg8I/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/9vrAAg9Jg8I/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Mystery Orbit",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk: “This NEW Motor Could CHANGE the Entire EV Industry!”",
+              "description": "Elon Musk: “This NEW Motor Could CHANGE the Entire EV Industry!”"
+            },
+            "defaultAudioLanguage": "es"
+          },
+          "contentDetails": {
+            "duration": "PT20M21S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "6",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:02.599594+00:00"
       },
       "muRPispbJFs": {
         "status": "pending",
@@ -23371,22 +24530,19 @@
       },
       "kQVSYwTqQrY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436692+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:02.599629+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436690+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "YQh5UxT9RhjiStoP4WTl9LV-3zg",
           "id": {
-            "kind": "youtube#video",
             "videoId": "kQVSYwTqQrY"
           },
           "snippet": {
             "publishedAt": "2026-09-18T16:00:13Z",
             "channelId": "UCUsYqncetFw0NmdvHJHS3Kg",
             "title": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs",
-            "description": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs.",
+            "description": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/kQVSYwTqQrY/default.jpg",
@@ -23415,29 +24571,104 @@
               }
             },
             "channelTitle": "Nova Discovery",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T16:00:13Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs",
+              "description": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs"
+            },
+            "defaultAudioLanguage": "en"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "DHGG3yt_62gEQw48TuZG7OfvS9E",
+          "id": "kQVSYwTqQrY",
+          "snippet": {
+            "publishedAt": "2026-09-18T16:00:13Z",
+            "channelId": "UCUsYqncetFw0NmdvHJHS3Kg",
+            "title": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs",
+            "description": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/kQVSYwTqQrY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/kQVSYwTqQrY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/kQVSYwTqQrY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/kQVSYwTqQrY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/kQVSYwTqQrY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Nova Discovery",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs",
+              "description": "Elon Musk Shocked With New Battery Adds 500 KM of Range in Just 5 Minutes — Cheapest Battery for EVs"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT20M52S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "753",
+            "likeCount": "29",
+            "favoriteCount": "0",
+            "commentCount": "2"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:02.599625+00:00"
       },
       "1K7Cw5mVmTM": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436701+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:02.599636+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436698+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "55RksDswsjQOzVs2-WTGRIPoWkk",
           "id": {
-            "kind": "youtube#video",
             "videoId": "1K7Cw5mVmTM"
           },
           "snippet": {
             "publishedAt": "2026-09-18T14:23:14Z",
             "channelId": "UCWjGtyMImqTEqg8_Lm1Up7g",
-            "title": "Elon Musk&#39;s First Prototype of Flying Tesla Roadster is COMING in 2026",
-            "description": "Tesla's futuristic Roadster has been surrounded by ambitious promises, and the idea of a car that could eventually take to the air ...",
+            "title": "Elon Musk's First Prototype of Flying Tesla Roadster is COMING in 2026",
+            "description": "Tesla’s futuristic Roadster has been surrounded by ambitious promises, and the idea of a car that could eventually take to the air has captured the imagination of technology fans around the world. In this video, we explore the latest claims and developments surrounding the Tesla Roadster, including the proposed flying capabilities, rocket-style technology, acceleration, design, and the engineering challenges involved.\n\nCould Tesla actually bring a flying Roadster prototype closer to reality in 2026? What technology would be required to make a road-going vehicle capable of controlled flight or hovering, and how different would it be from a conventional car?\n\nWe break down what has been publicly discussed, separate confirmed information from speculation, and examine what this futuristic vehicle could mean for the next generation of transportation.\n\nWatch until the end for a closer look at Tesla’s Roadster vision and the technology that could shape the future of personal mobility.\n\nSubscribe for more videos covering Tesla, Elon Musk, electric vehicles, robotics, artificial intelligence, and futuristic technology.\n\n#Tesla #TeslaRoadster #ElonMusk #FlyingCar #FutureTechnology #Tesla2026 #ElectricVehicles #Innovation #Robotics #Technology",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/1K7Cw5mVmTM/default.jpg",
@@ -23466,29 +24697,104 @@
               }
             },
             "channelTitle": "Dr Maaz Jhujh ",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T14:23:14Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk's First Prototype of Flying Tesla Roadster is COMING in 2026",
+              "description": "Tesla’s futuristic Roadster has been surrounded by ambitious promises, and the idea of a car that could eventually take to the air has captured the imagination of technology fans around the world. In this video, we explore the latest claims and developments surrounding the Tesla Roadster, including the proposed flying capabilities, rocket-style technology, acceleration, design, and the engineering challenges involved.\n\nCould Tesla actually bring a flying Roadster prototype closer to reality in 2026? What technology would be required to make a road-going vehicle capable of controlled flight or hovering, and how different would it be from a conventional car?\n\nWe break down what has been publicly discussed, separate confirmed information from speculation, and examine what this futuristic vehicle could mean for the next generation of transportation.\n\nWatch until the end for a closer look at Tesla’s Roadster vision and the technology that could shape the future of personal mobility.\n\nSubscribe for more videos covering Tesla, Elon Musk, electric vehicles, robotics, artificial intelligence, and futuristic technology.\n\n#Tesla #TeslaRoadster #ElonMusk #FlyingCar #FutureTechnology #Tesla2026 #ElectricVehicles #Innovation #Robotics #Technology"
+            },
+            "defaultAudioLanguage": "en-US"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "ghEKN1fMHzEhBXFr0Xf5HWrgRYM",
+          "id": "1K7Cw5mVmTM",
+          "snippet": {
+            "publishedAt": "2026-09-18T14:23:14Z",
+            "channelId": "UCWjGtyMImqTEqg8_Lm1Up7g",
+            "title": "Elon Musk's First Prototype of Flying Tesla Roadster is COMING in 2026",
+            "description": "Tesla’s futuristic Roadster has been surrounded by ambitious promises, and the idea of a car that could eventually take to the air has captured the imagination of technology fans around the world. In this video, we explore the latest claims and developments surrounding the Tesla Roadster, including the proposed flying capabilities, rocket-style technology, acceleration, design, and the engineering challenges involved.\n\nCould Tesla actually bring a flying Roadster prototype closer to reality in 2026? What technology would be required to make a road-going vehicle capable of controlled flight or hovering, and how different would it be from a conventional car?\n\nWe break down what has been publicly discussed, separate confirmed information from speculation, and examine what this futuristic vehicle could mean for the next generation of transportation.\n\nWatch until the end for a closer look at Tesla’s Roadster vision and the technology that could shape the future of personal mobility.\n\nSubscribe for more videos covering Tesla, Elon Musk, electric vehicles, robotics, artificial intelligence, and futuristic technology.\n\n#Tesla #TeslaRoadster #ElonMusk #FlyingCar #FutureTechnology #Tesla2026 #ElectricVehicles #Innovation #Robotics #Technology",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/1K7Cw5mVmTM/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/1K7Cw5mVmTM/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/1K7Cw5mVmTM/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/1K7Cw5mVmTM/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/1K7Cw5mVmTM/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Dr Maaz Jhujh ",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk's First Prototype of Flying Tesla Roadster is COMING in 2026",
+              "description": "Tesla’s futuristic Roadster has been surrounded by ambitious promises, and the idea of a car that could eventually take to the air has captured the imagination of technology fans around the world. In this video, we explore the latest claims and developments surrounding the Tesla Roadster, including the proposed flying capabilities, rocket-style technology, acceleration, design, and the engineering challenges involved.\n\nCould Tesla actually bring a flying Roadster prototype closer to reality in 2026? What technology would be required to make a road-going vehicle capable of controlled flight or hovering, and how different would it be from a conventional car?\n\nWe break down what has been publicly discussed, separate confirmed information from speculation, and examine what this futuristic vehicle could mean for the next generation of transportation.\n\nWatch until the end for a closer look at Tesla’s Roadster vision and the technology that could shape the future of personal mobility.\n\nSubscribe for more videos covering Tesla, Elon Musk, electric vehicles, robotics, artificial intelligence, and futuristic technology.\n\n#Tesla #TeslaRoadster #ElonMusk #FlyingCar #FutureTechnology #Tesla2026 #ElectricVehicles #Innovation #Robotics #Technology"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT22M3S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "25",
+            "likeCount": "1",
+            "favoriteCount": "0",
+            "commentCount": "1"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:02.599634+00:00"
       },
       "AHJ_OPxsUD4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436706+00:00",
+        "reason": "판정 확신도 부족",
+        "updated_at": "2026-09-19T20:00:02.599642+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436704+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "iPnKdHVwZtJDcSQ7s3U4ljThl7g",
           "id": {
-            "kind": "youtube#video",
             "videoId": "AHJ_OPxsUD4"
           },
           "snippet": {
             "publishedAt": "2026-09-18T14:15:05Z",
             "channelId": "UC5ashtOYe_vU0YnJ4SpOMTg",
             "title": "Will Elon Musk Actually Build the $25,000 Tesla by 2027?",
-            "description": "Will Elon Musk Actually Build the $25000 Tesla by 2027? Tesla's affordable EV plan may be making a comeback as competition ...",
+            "description": "🚗 Will Elon Musk Actually Build the $25,000 Tesla by 2027? Tesla’s affordable EV plan may be making a comeback as competition from BYD, Ford, and GM puts increasing pressure on the electric vehicle market. In this video, we break down Tesla’s reported low-cost vehicle project, the rumored Redwood platform, new manufacturing technology, battery cost strategies, and why a cheaper Tesla could become a major turning point for the company. We also look at the challenges surrounding a $25,000 price target and what Tesla buyers could realistically expect in the coming years. If you enjoy Tesla, Elon Musk, EV news, electric cars, and future technology, make sure to subscribe to the channel and stay connected for more updates and deep-dive videos. 🚀\nThis video is for informational and commentary purposes only. Some details discussed are based on reported information and may change as Tesla officially announces future products.\n\n\n\n\n\n\n\n \n#Tesla #ElonMusk #Tesla25000 #Tesla2027 #ElectricCars #EVNews #TeslaNews #BYD #ElectricVehicles #FutureCars",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/AHJ_OPxsUD4/default.jpg",
@@ -23517,29 +24823,156 @@
               }
             },
             "channelTitle": "Zavqora",
+            "tags": [
+              "Tesla",
+              "Elon Musk",
+              "Tesla 25000 car",
+              "$25000 Tesla",
+              "Tesla 2027",
+              "Tesla cheap car",
+              "affordable Tesla",
+              "Tesla new car",
+              "Tesla news",
+              "Tesla EV",
+              "electric cars",
+              "electric vehicle news",
+              "Tesla Redwood",
+              "Tesla NV9X",
+              "BYD vs Tesla",
+              "BYD electric cars",
+              "Tesla Model 3",
+              "Tesla Model Y",
+              "future Tesla",
+              "EV market",
+              "cheap electric car",
+              "Tesla price",
+              "Elon Musk Tesla",
+              "Tesla latest news"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T14:15:05Z"
+            "defaultLanguage": "en-GB",
+            "localized": {
+              "title": "Will Elon Musk Actually Build the $25,000 Tesla by 2027?",
+              "description": "🚗 Will Elon Musk Actually Build the $25,000 Tesla by 2027? Tesla’s affordable EV plan may be making a comeback as competition from BYD, Ford, and GM puts increasing pressure on the electric vehicle market. In this video, we break down Tesla’s reported low-cost vehicle project, the rumored Redwood platform, new manufacturing technology, battery cost strategies, and why a cheaper Tesla could become a major turning point for the company. We also look at the challenges surrounding a $25,000 price target and what Tesla buyers could realistically expect in the coming years. If you enjoy Tesla, Elon Musk, EV news, electric cars, and future technology, make sure to subscribe to the channel and stay connected for more updates and deep-dive videos. 🚀\nThis video is for informational and commentary purposes only. Some details discussed are based on reported information and may change as Tesla officially announces future products.\n\n\n\n\n\n\n\n \n#Tesla #ElonMusk #Tesla25000 #Tesla2027 #ElectricCars #EVNews #TeslaNews #BYD #ElectricVehicles #FutureCars"
+            },
+            "defaultAudioLanguage": "en-GB"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "70vB48Hr6AzGJRV2CczqjBfuRiA",
+          "id": "AHJ_OPxsUD4",
+          "snippet": {
+            "publishedAt": "2026-09-18T14:15:05Z",
+            "channelId": "UC5ashtOYe_vU0YnJ4SpOMTg",
+            "title": "Will Elon Musk Actually Build the $25,000 Tesla by 2027?",
+            "description": "🚗 Will Elon Musk Actually Build the $25,000 Tesla by 2027? Tesla’s affordable EV plan may be making a comeback as competition from BYD, Ford, and GM puts increasing pressure on the electric vehicle market. In this video, we break down Tesla’s reported low-cost vehicle project, the rumored Redwood platform, new manufacturing technology, battery cost strategies, and why a cheaper Tesla could become a major turning point for the company. We also look at the challenges surrounding a $25,000 price target and what Tesla buyers could realistically expect in the coming years. If you enjoy Tesla, Elon Musk, EV news, electric cars, and future technology, make sure to subscribe to the channel and stay connected for more updates and deep-dive videos. 🚀\nThis video is for informational and commentary purposes only. Some details discussed are based on reported information and may change as Tesla officially announces future products.\n\n\n\n\n\n\n\n \n#Tesla #ElonMusk #Tesla25000 #Tesla2027 #ElectricCars #EVNews #TeslaNews #BYD #ElectricVehicles #FutureCars",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/AHJ_OPxsUD4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/AHJ_OPxsUD4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/AHJ_OPxsUD4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/AHJ_OPxsUD4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/AHJ_OPxsUD4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Zavqora",
+            "tags": [
+              "Tesla",
+              "Elon Musk",
+              "Tesla 25000 car",
+              "$25000 Tesla",
+              "Tesla 2027",
+              "Tesla cheap car",
+              "affordable Tesla",
+              "Tesla new car",
+              "Tesla news",
+              "Tesla EV",
+              "electric cars",
+              "electric vehicle news",
+              "Tesla Redwood",
+              "Tesla NV9X",
+              "BYD vs Tesla",
+              "BYD electric cars",
+              "Tesla Model 3",
+              "Tesla Model Y",
+              "future Tesla",
+              "EV market",
+              "cheap electric car",
+              "Tesla price",
+              "Elon Musk Tesla",
+              "Tesla latest news"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-GB",
+            "localized": {
+              "title": "Will Elon Musk Actually Build the $25,000 Tesla by 2027?",
+              "description": "🚗 Will Elon Musk Actually Build the $25,000 Tesla by 2027? Tesla’s affordable EV plan may be making a comeback as competition from BYD, Ford, and GM puts increasing pressure on the electric vehicle market. In this video, we break down Tesla’s reported low-cost vehicle project, the rumored Redwood platform, new manufacturing technology, battery cost strategies, and why a cheaper Tesla could become a major turning point for the company. We also look at the challenges surrounding a $25,000 price target and what Tesla buyers could realistically expect in the coming years. If you enjoy Tesla, Elon Musk, EV news, electric cars, and future technology, make sure to subscribe to the channel and stay connected for more updates and deep-dive videos. 🚀\nThis video is for informational and commentary purposes only. Some details discussed are based on reported information and may change as Tesla officially announces future products.\n\n\n\n\n\n\n\n \n#Tesla #ElonMusk #Tesla25000 #Tesla2027 #ElectricCars #EVNews #TeslaNews #BYD #ElectricVehicles #FutureCars"
+            },
+            "defaultAudioLanguage": "en-GB"
+          },
+          "contentDetails": {
+            "duration": "PT22M13S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "0",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-20T02:00:02.599640+00:00"
       },
       "YJKaydpvQeA": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436711+00:00",
+        "status": "rejected",
+        "reason": "Title is about a comparison between a historical figure and Elon Musk, not a substantive discussion of Musk's industry contributions.",
+        "updated_at": "2026-09-19T20:00:04.978622+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436709+00:00",
         "attempts": 0,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "Gcyq_jS7mrLSBuc8E_nxBoNnXvY",
           "id": {
-            "kind": "youtube#video",
             "videoId": "YJKaydpvQeA"
           },
           "snippet": {
             "publishedAt": "2026-09-18T12:13:39Z",
             "channelId": "UCESTwDXpoMgiYBHipMdKTkQ",
             "title": "Comment André Bercoff est passé de Joseph Staline à Elon Musk ?",
-            "description": "Retrouvez Bercoff dans tous ses états avec André Bercoff du lundi au vendredi sur #SudRadio. --- Abonnez-vous pour plus de ...",
+            "description": "Retrouvez Bercoff dans tous ses états avec André Bercoff du lundi au vendredi sur #SudRadio.\n---\nAbonnez-vous pour plus de contenus : http://ow.ly/7FZy50G1rry \n\n———————————————————————\n\n▶️ Suivez le direct : https://dai.ly/x8jqxru \n🎧 Retrouvez nos podcasts et articles : https://www.sudradio.fr/ \n\n———————————————————————\n\n🔴 Nous suivre sur les réseaux sociaux 🔴\n\n▪️ Facebook : https://www.facebook.com/profile.php?id=100063607629498\n▪️ Instagram : https://www.instagram.com/sudradioofficiel/\n▪️ Twitter : https://twitter.com/SudRadio \n▪️ TikTok : https://www.tiktok.com/@sudradio?lang=fr\n———————————————————————\n\n☀️ Et pour plus de vidéos de Bercoff dans tous ses états : https://www.youtube.com/playlist?list=PLaXVMKmPLMDQe5oKZlhHutOQlGCq7EVU4\n\n##GENERATION_BERCOFF-2026-09-18##",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/YJKaydpvQeA/default.jpg",
@@ -23568,29 +25001,141 @@
               }
             },
             "channelTitle": "Sud Radio",
+            "tags": [
+              "Bercoff",
+              "actu",
+              "actualite",
+              "actualité",
+              "actualités",
+              "news",
+              "radio",
+              "radio actu",
+              "radio actualité",
+              "radio news",
+              "sud radio",
+              "sudradio"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T12:13:39Z"
+            "defaultLanguage": "fr",
+            "localized": {
+              "title": "Comment André Bercoff est passé de Joseph Staline à Elon Musk ?",
+              "description": "Retrouvez Bercoff dans tous ses états avec André Bercoff du lundi au vendredi sur #SudRadio.\n---\nAbonnez-vous pour plus de contenus : http://ow.ly/7FZy50G1rry \n\n———————————————————————\n\n▶️ Suivez le direct : https://dai.ly/x8jqxru \n🎧 Retrouvez nos podcasts et articles : https://www.sudradio.fr/ \n\n———————————————————————\n\n🔴 Nous suivre sur les réseaux sociaux 🔴\n\n▪️ Facebook : https://www.facebook.com/profile.php?id=100063607629498\n▪️ Instagram : https://www.instagram.com/sudradioofficiel/\n▪️ Twitter : https://twitter.com/SudRadio \n▪️ TikTok : https://www.tiktok.com/@sudradio?lang=fr\n———————————————————————\n\n☀️ Et pour plus de vidéos de Bercoff dans tous ses états : https://www.youtube.com/playlist?list=PLaXVMKmPLMDQe5oKZlhHutOQlGCq7EVU4\n\n##GENERATION_BERCOFF-2026-09-18##"
+            },
+            "defaultAudioLanguage": "fr"
           }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "CR_dNuLHA0fmbVrTV-jJoWG7Ico",
+          "id": "YJKaydpvQeA",
+          "snippet": {
+            "publishedAt": "2026-09-18T12:13:39Z",
+            "channelId": "UCESTwDXpoMgiYBHipMdKTkQ",
+            "title": "Comment André Bercoff est passé de Joseph Staline à Elon Musk ?",
+            "description": "Retrouvez Bercoff dans tous ses états avec André Bercoff du lundi au vendredi sur #SudRadio.\n---\nAbonnez-vous pour plus de contenus : http://ow.ly/7FZy50G1rry \n\n———————————————————————\n\n▶️ Suivez le direct : https://dai.ly/x8jqxru \n🎧 Retrouvez nos podcasts et articles : https://www.sudradio.fr/ \n\n———————————————————————\n\n🔴 Nous suivre sur les réseaux sociaux 🔴\n\n▪️ Facebook : https://www.facebook.com/profile.php?id=100063607629498\n▪️ Instagram : https://www.instagram.com/sudradioofficiel/\n▪️ Twitter : https://twitter.com/SudRadio \n▪️ TikTok : https://www.tiktok.com/@sudradio?lang=fr\n———————————————————————\n\n☀️ Et pour plus de vidéos de Bercoff dans tous ses états : https://www.youtube.com/playlist?list=PLaXVMKmPLMDQe5oKZlhHutOQlGCq7EVU4\n\n##GENERATION_BERCOFF-2026-09-18##",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/YJKaydpvQeA/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/YJKaydpvQeA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/YJKaydpvQeA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/YJKaydpvQeA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/YJKaydpvQeA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Sud Radio",
+            "tags": [
+              "Bercoff",
+              "actu",
+              "actualite",
+              "actualité",
+              "actualités",
+              "news",
+              "radio",
+              "radio actu",
+              "radio actualité",
+              "radio news",
+              "sud radio",
+              "sudradio"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "fr",
+            "localized": {
+              "title": "Comment André Bercoff est passé de Joseph Staline à Elon Musk ?",
+              "description": "Retrouvez Bercoff dans tous ses états avec André Bercoff du lundi au vendredi sur #SudRadio.\n---\nAbonnez-vous pour plus de contenus : http://ow.ly/7FZy50G1rry \n\n———————————————————————\n\n▶️ Suivez le direct : https://dai.ly/x8jqxru \n🎧 Retrouvez nos podcasts et articles : https://www.sudradio.fr/ \n\n———————————————————————\n\n🔴 Nous suivre sur les réseaux sociaux 🔴\n\n▪️ Facebook : https://www.facebook.com/profile.php?id=100063607629498\n▪️ Instagram : https://www.instagram.com/sudradioofficiel/\n▪️ Twitter : https://twitter.com/SudRadio \n▪️ TikTok : https://www.tiktok.com/@sudradio?lang=fr\n———————————————————————\n\n☀️ Et pour plus de vidéos de Bercoff dans tous ses états : https://www.youtube.com/playlist?list=PLaXVMKmPLMDQe5oKZlhHutOQlGCq7EVU4\n\n##GENERATION_BERCOFF-2026-09-18##"
+            },
+            "defaultAudioLanguage": "fr"
+          },
+          "contentDetails": {
+            "duration": "PT40M37S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "6088",
+            "likeCount": "96",
+            "favoriteCount": "0",
+            "commentCount": "14"
+          }
+        },
+        "judge": {
+          "video_id": "YJKaydpvQeA",
+          "decision": "reject",
+          "confidence": 9,
+          "appearance_quote": "Elon Musk",
+          "original_quote": "Comment André Bercoff est passé de Joseph Staline à Elon Musk ?",
+          "rejection_quote": "Comment André Bercoff est passé de Joseph Staline à Elon Musk ?",
+          "reason_kr": "Title is about a comparison between a historical figure and Elon Musk, not a substantive discussion of Musk's industry contributions.",
+          "relevance_score": 1
         }
       },
       "155uZUKTcN4": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436715+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-19T20:00:05.591755+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436714+00:00",
         "attempts": 0,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "xgv7xlzeT0XCbTeq9H7hXVo5W4A",
           "id": {
-            "kind": "youtube#video",
             "videoId": "155uZUKTcN4"
           },
           "snippet": {
             "publishedAt": "2026-09-18T12:00:06Z",
             "channelId": "UCqFuK6iLs7mS72mIeZ9dfGg",
             "title": "Quyền Lực Elon Musk: Kẻ Khiến Mỹ Và Trung Quốc Phải Dè Chừng",
-            "description": "Khối lượng tài sản một nghìn tỷ đô la của Elon Musk chỉ là bề nổi của một đế chế quyền lực chưa từng có trong lịch sử nhân loại.",
+            "description": "Khối lượng tài sản một nghìn tỷ đô la của Elon Musk chỉ là bề nổi của một đế chế quyền lực chưa từng có trong lịch sử nhân loại. Không chỉ đơn thuần là một tỷ phú công nghệ hay một nhà phát minh lập dị, Elon Musk đang nắm giữ những \"yết hầu\" sinh tử của thế giới: từ mạng lưới internet vệ tinh Starlink có khả năng định đoạt cục diện chiến trường, nền tảng mạng xã hội thao túng truyền thông toàn cầu, cho đến tham vọng thâu tóm hệ thống máy chủ không gian cho trí tuệ nhân tạo. Việc một cá nhân tư nhân có khả năng thiết lập vị thế ngoại giao độc lập, mặc cả ngang hàng với các siêu cường như Mỹ và Trung Quốc đang làm đảo lộn hoàn toàn mọi nguyên tắc về địa chính trị. Hãy cùng Kênh YouTube Chín Phút Kinh Doanh Đột Phá đi sâu bóc tách những toan tính chiến lược, những nước cờ thao túng tài chính và cả những rủi ro khổng lồ đằng sau sự vươn lên của thế lực quyền lực nhất thế kỷ hai mươi mốt. Nếu bạn thấy những góc nhìn phân tích này sắc bén và hữu ích, đừng quên nhấn nút đăng ký kênh và bật chuông thông báo để đón xem những video tài liệu tiếp theo!\n\n🔔 Đừng quên thích, đăng ký kênh và bật thông báo!\n💬 Bình luận: \"Vâng, tôi sẵn sàng nhận những kiến thức tài chính\" để nhận được một trái tim! ❤️\nTuyên bố miễn trừ trách nhiệm (DISCLAIMER):\nTất cả thông tin trong video này được thu thập từ các nguồn tin tức được cho là đáng tin cậy và có uy tín.\nTuy nhiên, nội dung chỉ nhằm mục đích cung cấp thông tin tham khảo và giúp người xem có góc nhìn toàn diện hơn về các sự kiện và nhân vật nổi bật.\nVideo không có mục đích xúc phạm, vu khống, gây tổn hại danh dự, hay công kích bất kỳ cá nhân, tổ chức nào.\nChúng tôi không đảm bảo mọi thông tin trong video là hoàn toàn chính xác hoặc cập nhật.\nTuy nhiên, nội dung được trình bày một cách trung thực, không bóp méo hay xuyên tạc bản chất thông tin gốc.\nNgười xem được khuyến khích tự kiểm chứng thông tin từ nhiều nguồn khác nhau để có cái nhìn khách quan và đầy đủ hơn.\n\nMột số hình ảnh và giọng nói trong video có thể được tạo ra hoặc chỉnh sửa bằng công nghệ AI nhằm mục đích minh họa và phân tích nội dung.\nẢnh thumbnail được thiết kế lại có tính chất minh họa.\n#AIgenerated, #phân_tích_chính_trị, #disclaimer, #bình_luận_kinh_tế\n\nLƯU Ý:\nTôi không phải là cố vấn tài chính. Những video này chỉ nhằm mục đích giáo dục. Đầu tư dưới bất kỳ hình thức nào cũng đều có rủi ro. Mặc dù có thể giảm thiểu rủi ro, nhưng các khoản đầu tư của bạn hoàn toàn là trách nhiệm của riêng bạn. Điều quan trọng là bạn phải tự nghiên cứu. Tôi chỉ chia sẻ quan điểm của mình dựa trên kiến thức thu được từ các sách tài chính và sự khôn ngoan mà Chúa đã ban cho tôi. Hãy nhớ rằng, sự khôn ngoan là việc áp dụng kiến thức để đạt được kết quả mà bạn mong muốn.\n#làmgiàu #tưduylamgiau #kiemtien #marketing #kynanglamgiau\n\n-------------------------------------\nCopyright © 2024 9 Phút Kinh Doanh Đột Phá\nDo not Reup!\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/155uZUKTcN4/default.jpg",
@@ -23624,29 +25169,162 @@
               }
             },
             "channelTitle": "9 Phút Kinh Doanh Đột Phá",
+            "tags": [
+              "kinh doanh",
+              "kinh doanh đột phá",
+              "9 phút kinh doanh",
+              "bài học kinh doanh",
+              "chiến lược kinh doanh",
+              "9 phút kinh doanh đột phá",
+              "Tài Chính",
+              "Phân tích chính trị",
+              "Cách Làm Giàu",
+              "Bất Động Sản",
+              "quyền lực elon musk",
+              "đế chế công nghệ tesla spacex",
+              "cạnh tranh mỹ trung",
+              "trí tuệ nhân tạo ai",
+              "Mỹ",
+              "Trung Quốc",
+              "Tập Cận Bình",
+              "Elon Musk",
+              "neuralink"
+            ],
+            "categoryId": "27",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T12:00:06Z"
+            "defaultLanguage": "vi",
+            "localized": {
+              "title": "Quyền Lực Elon Musk: Kẻ Khiến Mỹ Và Trung Quốc Phải Dè Chừng",
+              "description": "Khối lượng tài sản một nghìn tỷ đô la của Elon Musk chỉ là bề nổi của một đế chế quyền lực chưa từng có trong lịch sử nhân loại. Không chỉ đơn thuần là một tỷ phú công nghệ hay một nhà phát minh lập dị, Elon Musk đang nắm giữ những \"yết hầu\" sinh tử của thế giới: từ mạng lưới internet vệ tinh Starlink có khả năng định đoạt cục diện chiến trường, nền tảng mạng xã hội thao túng truyền thông toàn cầu, cho đến tham vọng thâu tóm hệ thống máy chủ không gian cho trí tuệ nhân tạo. Việc một cá nhân tư nhân có khả năng thiết lập vị thế ngoại giao độc lập, mặc cả ngang hàng với các siêu cường như Mỹ và Trung Quốc đang làm đảo lộn hoàn toàn mọi nguyên tắc về địa chính trị. Hãy cùng Kênh YouTube Chín Phút Kinh Doanh Đột Phá đi sâu bóc tách những toan tính chiến lược, những nước cờ thao túng tài chính và cả những rủi ro khổng lồ đằng sau sự vươn lên của thế lực quyền lực nhất thế kỷ hai mươi mốt. Nếu bạn thấy những góc nhìn phân tích này sắc bén và hữu ích, đừng quên nhấn nút đăng ký kênh và bật chuông thông báo để đón xem những video tài liệu tiếp theo!\n\n🔔 Đừng quên thích, đăng ký kênh và bật thông báo!\n💬 Bình luận: \"Vâng, tôi sẵn sàng nhận những kiến thức tài chính\" để nhận được một trái tim! ❤️\nTuyên bố miễn trừ trách nhiệm (DISCLAIMER):\nTất cả thông tin trong video này được thu thập từ các nguồn tin tức được cho là đáng tin cậy và có uy tín.\nTuy nhiên, nội dung chỉ nhằm mục đích cung cấp thông tin tham khảo và giúp người xem có góc nhìn toàn diện hơn về các sự kiện và nhân vật nổi bật.\nVideo không có mục đích xúc phạm, vu khống, gây tổn hại danh dự, hay công kích bất kỳ cá nhân, tổ chức nào.\nChúng tôi không đảm bảo mọi thông tin trong video là hoàn toàn chính xác hoặc cập nhật.\nTuy nhiên, nội dung được trình bày một cách trung thực, không bóp méo hay xuyên tạc bản chất thông tin gốc.\nNgười xem được khuyến khích tự kiểm chứng thông tin từ nhiều nguồn khác nhau để có cái nhìn khách quan và đầy đủ hơn.\n\nMột số hình ảnh và giọng nói trong video có thể được tạo ra hoặc chỉnh sửa bằng công nghệ AI nhằm mục đích minh họa và phân tích nội dung.\nẢnh thumbnail được thiết kế lại có tính chất minh họa.\n#AIgenerated, #phân_tích_chính_trị, #disclaimer, #bình_luận_kinh_tế\n\nLƯU Ý:\nTôi không phải là cố vấn tài chính. Những video này chỉ nhằm mục đích giáo dục. Đầu tư dưới bất kỳ hình thức nào cũng đều có rủi ro. Mặc dù có thể giảm thiểu rủi ro, nhưng các khoản đầu tư của bạn hoàn toàn là trách nhiệm của riêng bạn. Điều quan trọng là bạn phải tự nghiên cứu. Tôi chỉ chia sẻ quan điểm của mình dựa trên kiến thức thu được từ các sách tài chính và sự khôn ngoan mà Chúa đã ban cho tôi. Hãy nhớ rằng, sự khôn ngoan là việc áp dụng kiến thức để đạt được kết quả mà bạn mong muốn.\n#làmgiàu #tưduylamgiau #kiemtien #marketing #kynanglamgiau\n\n-------------------------------------\nCopyright © 2024 9 Phút Kinh Doanh Đột Phá\nDo not Reup!\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+            },
+            "defaultAudioLanguage": "vi"
           }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "afFhkTTq92Atb4RNh989VU1miPY",
+          "id": "155uZUKTcN4",
+          "snippet": {
+            "publishedAt": "2026-09-18T12:00:06Z",
+            "channelId": "UCqFuK6iLs7mS72mIeZ9dfGg",
+            "title": "Quyền Lực Elon Musk: Kẻ Khiến Mỹ Và Trung Quốc Phải Dè Chừng",
+            "description": "Khối lượng tài sản một nghìn tỷ đô la của Elon Musk chỉ là bề nổi của một đế chế quyền lực chưa từng có trong lịch sử nhân loại. Không chỉ đơn thuần là một tỷ phú công nghệ hay một nhà phát minh lập dị, Elon Musk đang nắm giữ những \"yết hầu\" sinh tử của thế giới: từ mạng lưới internet vệ tinh Starlink có khả năng định đoạt cục diện chiến trường, nền tảng mạng xã hội thao túng truyền thông toàn cầu, cho đến tham vọng thâu tóm hệ thống máy chủ không gian cho trí tuệ nhân tạo. Việc một cá nhân tư nhân có khả năng thiết lập vị thế ngoại giao độc lập, mặc cả ngang hàng với các siêu cường như Mỹ và Trung Quốc đang làm đảo lộn hoàn toàn mọi nguyên tắc về địa chính trị. Hãy cùng Kênh YouTube Chín Phút Kinh Doanh Đột Phá đi sâu bóc tách những toan tính chiến lược, những nước cờ thao túng tài chính và cả những rủi ro khổng lồ đằng sau sự vươn lên của thế lực quyền lực nhất thế kỷ hai mươi mốt. Nếu bạn thấy những góc nhìn phân tích này sắc bén và hữu ích, đừng quên nhấn nút đăng ký kênh và bật chuông thông báo để đón xem những video tài liệu tiếp theo!\n\n🔔 Đừng quên thích, đăng ký kênh và bật thông báo!\n💬 Bình luận: \"Vâng, tôi sẵn sàng nhận những kiến thức tài chính\" để nhận được một trái tim! ❤️\nTuyên bố miễn trừ trách nhiệm (DISCLAIMER):\nTất cả thông tin trong video này được thu thập từ các nguồn tin tức được cho là đáng tin cậy và có uy tín.\nTuy nhiên, nội dung chỉ nhằm mục đích cung cấp thông tin tham khảo và giúp người xem có góc nhìn toàn diện hơn về các sự kiện và nhân vật nổi bật.\nVideo không có mục đích xúc phạm, vu khống, gây tổn hại danh dự, hay công kích bất kỳ cá nhân, tổ chức nào.\nChúng tôi không đảm bảo mọi thông tin trong video là hoàn toàn chính xác hoặc cập nhật.\nTuy nhiên, nội dung được trình bày một cách trung thực, không bóp méo hay xuyên tạc bản chất thông tin gốc.\nNgười xem được khuyến khích tự kiểm chứng thông tin từ nhiều nguồn khác nhau để có cái nhìn khách quan và đầy đủ hơn.\n\nMột số hình ảnh và giọng nói trong video có thể được tạo ra hoặc chỉnh sửa bằng công nghệ AI nhằm mục đích minh họa và phân tích nội dung.\nẢnh thumbnail được thiết kế lại có tính chất minh họa.\n#AIgenerated, #phân_tích_chính_trị, #disclaimer, #bình_luận_kinh_tế\n\nLƯU Ý:\nTôi không phải là cố vấn tài chính. Những video này chỉ nhằm mục đích giáo dục. Đầu tư dưới bất kỳ hình thức nào cũng đều có rủi ro. Mặc dù có thể giảm thiểu rủi ro, nhưng các khoản đầu tư của bạn hoàn toàn là trách nhiệm của riêng bạn. Điều quan trọng là bạn phải tự nghiên cứu. Tôi chỉ chia sẻ quan điểm của mình dựa trên kiến thức thu được từ các sách tài chính và sự khôn ngoan mà Chúa đã ban cho tôi. Hãy nhớ rằng, sự khôn ngoan là việc áp dụng kiến thức để đạt được kết quả mà bạn mong muốn.\n#làmgiàu #tưduylamgiau #kiemtien #marketing #kynanglamgiau\n\n-------------------------------------\nCopyright © 2024 9 Phút Kinh Doanh Đột Phá\nDo not Reup!\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/155uZUKTcN4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/155uZUKTcN4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/155uZUKTcN4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/155uZUKTcN4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/155uZUKTcN4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/155uZUKTcN4/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "9 Phút Kinh Doanh Đột Phá",
+            "tags": [
+              "kinh doanh",
+              "kinh doanh đột phá",
+              "9 phút kinh doanh",
+              "bài học kinh doanh",
+              "chiến lược kinh doanh",
+              "9 phút kinh doanh đột phá",
+              "Tài Chính",
+              "Phân tích chính trị",
+              "Cách Làm Giàu",
+              "Bất Động Sản",
+              "quyền lực elon musk",
+              "đế chế công nghệ tesla spacex",
+              "cạnh tranh mỹ trung",
+              "trí tuệ nhân tạo ai",
+              "Mỹ",
+              "Trung Quốc",
+              "Tập Cận Bình",
+              "Elon Musk",
+              "neuralink"
+            ],
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "vi",
+            "localized": {
+              "title": "Quyền Lực Elon Musk: Kẻ Khiến Mỹ Và Trung Quốc Phải Dè Chừng",
+              "description": "Khối lượng tài sản một nghìn tỷ đô la của Elon Musk chỉ là bề nổi của một đế chế quyền lực chưa từng có trong lịch sử nhân loại. Không chỉ đơn thuần là một tỷ phú công nghệ hay một nhà phát minh lập dị, Elon Musk đang nắm giữ những \"yết hầu\" sinh tử của thế giới: từ mạng lưới internet vệ tinh Starlink có khả năng định đoạt cục diện chiến trường, nền tảng mạng xã hội thao túng truyền thông toàn cầu, cho đến tham vọng thâu tóm hệ thống máy chủ không gian cho trí tuệ nhân tạo. Việc một cá nhân tư nhân có khả năng thiết lập vị thế ngoại giao độc lập, mặc cả ngang hàng với các siêu cường như Mỹ và Trung Quốc đang làm đảo lộn hoàn toàn mọi nguyên tắc về địa chính trị. Hãy cùng Kênh YouTube Chín Phút Kinh Doanh Đột Phá đi sâu bóc tách những toan tính chiến lược, những nước cờ thao túng tài chính và cả những rủi ro khổng lồ đằng sau sự vươn lên của thế lực quyền lực nhất thế kỷ hai mươi mốt. Nếu bạn thấy những góc nhìn phân tích này sắc bén và hữu ích, đừng quên nhấn nút đăng ký kênh và bật chuông thông báo để đón xem những video tài liệu tiếp theo!\n\n🔔 Đừng quên thích, đăng ký kênh và bật thông báo!\n💬 Bình luận: \"Vâng, tôi sẵn sàng nhận những kiến thức tài chính\" để nhận được một trái tim! ❤️\nTuyên bố miễn trừ trách nhiệm (DISCLAIMER):\nTất cả thông tin trong video này được thu thập từ các nguồn tin tức được cho là đáng tin cậy và có uy tín.\nTuy nhiên, nội dung chỉ nhằm mục đích cung cấp thông tin tham khảo và giúp người xem có góc nhìn toàn diện hơn về các sự kiện và nhân vật nổi bật.\nVideo không có mục đích xúc phạm, vu khống, gây tổn hại danh dự, hay công kích bất kỳ cá nhân, tổ chức nào.\nChúng tôi không đảm bảo mọi thông tin trong video là hoàn toàn chính xác hoặc cập nhật.\nTuy nhiên, nội dung được trình bày một cách trung thực, không bóp méo hay xuyên tạc bản chất thông tin gốc.\nNgười xem được khuyến khích tự kiểm chứng thông tin từ nhiều nguồn khác nhau để có cái nhìn khách quan và đầy đủ hơn.\n\nMột số hình ảnh và giọng nói trong video có thể được tạo ra hoặc chỉnh sửa bằng công nghệ AI nhằm mục đích minh họa và phân tích nội dung.\nẢnh thumbnail được thiết kế lại có tính chất minh họa.\n#AIgenerated, #phân_tích_chính_trị, #disclaimer, #bình_luận_kinh_tế\n\nLƯU Ý:\nTôi không phải là cố vấn tài chính. Những video này chỉ nhằm mục đích giáo dục. Đầu tư dưới bất kỳ hình thức nào cũng đều có rủi ro. Mặc dù có thể giảm thiểu rủi ro, nhưng các khoản đầu tư của bạn hoàn toàn là trách nhiệm của riêng bạn. Điều quan trọng là bạn phải tự nghiên cứu. Tôi chỉ chia sẻ quan điểm của mình dựa trên kiến thức thu được từ các sách tài chính và sự khôn ngoan mà Chúa đã ban cho tôi. Hãy nhớ rằng, sự khôn ngoan là việc áp dụng kiến thức để đạt được kết quả mà bạn mong muốn.\n#làmgiàu #tưduylamgiau #kiemtien #marketing #kynanglamgiau\n\n-------------------------------------\nCopyright © 2024 9 Phút Kinh Doanh Đột Phá\nDo not Reup!\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+            },
+            "defaultAudioLanguage": "vi"
+          },
+          "contentDetails": {
+            "duration": "PT22M28S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "2775",
+            "likeCount": "60",
+            "favoriteCount": "0",
+            "commentCount": "7"
+          }
+        },
+        "approved_judge": {
+          "video_id": "155uZUKTcN4",
+          "decision": "accept",
+          "confidence": 8,
+          "appearance_quote": "Elon Musk",
+          "original_quote": "Quyền Lực Elon Musk: Kẻ Khiến Mỹ Và Trung Quốc Phải Dè Chừng",
+          "rejection_quote": "",
+          "reason_kr": "Discusses Elon Musk's influence on global geopolitics through Starlink, social media, and AI infrastructure, touching on strategic calculations and financial manipulation.",
+          "relevance_score": 8,
+          "topic_quote": "từ mạng lưới internet vệ tinh Starlink có khả năng định đoạt cục diện chiến trường, nền tảng mạng xã hội thao túng truyền thông toàn cầu, cho đến tham vọng thâu tóm hệ thống máy chủ không gian cho trí tuệ nhân tạo.",
+          "topic_category": "ai_compute"
         }
       },
       "hfhOXd5yGNE": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436720+00:00",
+        "status": "rejected",
+        "reason": "The title and description are vague and appear to be clickbait for a financial/abundance ritual, not substantive industry content.",
+        "updated_at": "2026-09-19T20:00:05.638414+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436718+00:00",
         "attempts": 0,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "VLFfAi_lTdmqDO0tuqU13xN5HGA",
           "id": {
-            "kind": "youtube#video",
             "videoId": "hfhOXd5yGNE"
           },
           "snippet": {
             "publishedAt": "2026-09-18T11:45:18Z",
             "channelId": "UC73Hz6b1NEKi_dJt9O3Nfvw",
             "title": "👉Elon Musk bought you something special... It could be worth a fortune. Don’t wait—open your gift...",
-            "description": "7-Sec Ritual to Attracting Abundance Today. https://tinyurl.com/Do-not-miss-out-this.",
+            "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/hfhOXd5yGNE/default.jpg",
@@ -23675,29 +25353,173 @@
               }
             },
             "channelTitle": "Michael Prophetic Word",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T11:45:18Z"
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👉Elon Musk bought you something special... It could be worth a fortune. Don’t wait—open your gift...",
+              "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this"
+            },
+            "defaultAudioLanguage": "en-US"
           }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "Y9xJDyaY7YXfqu9Q8ppIIRvlvBQ",
+          "id": "hfhOXd5yGNE",
+          "snippet": {
+            "publishedAt": "2026-09-18T11:45:18Z",
+            "channelId": "UC73Hz6b1NEKi_dJt9O3Nfvw",
+            "title": "👉Elon Musk bought you something special... It could be worth a fortune. Don’t wait—open your gift...",
+            "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/hfhOXd5yGNE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/hfhOXd5yGNE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/hfhOXd5yGNE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/hfhOXd5yGNE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/hfhOXd5yGNE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Michael Prophetic Word",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👉Elon Musk bought you something special... It could be worth a fortune. Don’t wait—open your gift...",
+              "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT31M46S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1999",
+            "likeCount": "253",
+            "favoriteCount": "0",
+            "commentCount": "407"
+          }
+        },
+        "judge": {
+          "video_id": "hfhOXd5yGNE",
+          "decision": "reject",
+          "confidence": 9,
+          "appearance_quote": "Elon Musk",
+          "original_quote": "👉Elon Musk bought you something special... It could be worth a fortune. Don’t wait—open your gift...",
+          "rejection_quote": "👉Elon Musk bought you something special... It could be worth a fortune. Don’t wait—open your gift...",
+          "reason_kr": "The title and description are vague and appear to be clickbait for a financial/abundance ritual, not substantive industry content.",
+          "relevance_score": 0
         }
       },
       "By_mNTrbo7c": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436725+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-19T20:00:06.209230+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436723+00:00",
         "attempts": 0,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "kqvFaQqSZzH7MFTHNSvVO2-a4zk",
           "id": {
-            "kind": "youtube#video",
             "videoId": "By_mNTrbo7c"
           },
           "snippet": {
             "publishedAt": "2026-09-18T11:40:09Z",
             "channelId": "UCA8fuUFgZAHhMKBIJnMY5pQ",
             "title": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365",
-            "description": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365 Tesla chính thức đặt chân vào Việt ...",
+            "description": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365\n\nTesla chính thức đặt chân vào Việt Nam với một bước đi tưởng nhỏ nhưng có thể mở ra cuộc cạnh tranh lớn trên thị trường xe điện. Vì sao Elon Musk chọn Việt Nam lúc này? Tesla sẽ đối đầu thế nào với lợi thế sân nhà, hệ sinh thái xe điện và hạ tầng sạc của VinFast?\n\nVideo này của Tin Việt 365 sẽ phân tích từ câu chuyện bảy mươi bảy phẩy bảy tỷ đồng, chiến lược thị trường, cuộc cạnh tranh Tesla, VinFast và xe điện Trung Quốc, cho tới bài toán trạm sạc, khách hàng cao cấp, trí tuệ nhân tạo và dữ liệu.\n\nĐăng ký Tin Việt 365 để cùng theo dõi những câu chuyện kinh tế, công nghệ và thị trường đáng chú ý dưới góc nhìn dễ hiểu và nhiều chiều.\nhttps://www.youtube.com/channel/UCA8fuUFgZAHhMKBIJnMY5pQ?sub_confirmation=1\n\n#TeslaVietNam #Tesla #ElonMusk #VinFast #TeslaVsVinFast #XeDien #XeDienVietNam #OToDien #ThiTruongOTo #VGreen #CongNghe #TriTueNhanTao #KinhTeVietNam #TinViet365",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/By_mNTrbo7c/default.jpg",
@@ -23726,9 +25548,158 @@
               }
             },
             "channelTitle": "Tin Việt 365 TV",
+            "tags": [
+              "tin tức và phân tích",
+              "Tesla Việt Nam",
+              "Tesla Motors Việt Nam",
+              "Tesla Việt Nam 2026",
+              "Tesla vào Việt Nam",
+              "Tesla xe điện",
+              "xe điện Việt Nam",
+              "thị trường xe điện Việt Nam",
+              "Elon Musk Việt Nam",
+              "VinFast",
+              "xe điện VinFast",
+              "trạm sạc V-Green",
+              "hạ tầng xe điện",
+              "xe điện Trung Quốc",
+              "BYD",
+              "Model 3",
+              "Model Y",
+              "xe điện cao cấp",
+              "thị trường ô tô Việt Nam",
+              "dữ liệu xe điện",
+              "công nghệ tự lái",
+              "taxi không người lái",
+              "cạnh tranh xe điện",
+              "ngành ô tô Việt Nam",
+              "giá xe vinfast",
+              "vinfast",
+              "tin việt 365",
+              "tin 24h"
+            ],
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T11:40:09Z"
+            "defaultLanguage": "vi",
+            "localized": {
+              "title": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365",
+              "description": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365\n\nTesla chính thức đặt chân vào Việt Nam với một bước đi tưởng nhỏ nhưng có thể mở ra cuộc cạnh tranh lớn trên thị trường xe điện. Vì sao Elon Musk chọn Việt Nam lúc này? Tesla sẽ đối đầu thế nào với lợi thế sân nhà, hệ sinh thái xe điện và hạ tầng sạc của VinFast?\n\nVideo này của Tin Việt 365 sẽ phân tích từ câu chuyện bảy mươi bảy phẩy bảy tỷ đồng, chiến lược thị trường, cuộc cạnh tranh Tesla, VinFast và xe điện Trung Quốc, cho tới bài toán trạm sạc, khách hàng cao cấp, trí tuệ nhân tạo và dữ liệu.\n\nĐăng ký Tin Việt 365 để cùng theo dõi những câu chuyện kinh tế, công nghệ và thị trường đáng chú ý dưới góc nhìn dễ hiểu và nhiều chiều.\nhttps://www.youtube.com/channel/UCA8fuUFgZAHhMKBIJnMY5pQ?sub_confirmation=1\n\n#TeslaVietNam #Tesla #ElonMusk #VinFast #TeslaVsVinFast #XeDien #XeDienVietNam #OToDien #ThiTruongOTo #VGreen #CongNghe #TriTueNhanTao #KinhTeVietNam #TinViet365"
+            },
+            "defaultAudioLanguage": "vi"
           }
+        },
+        "last_attempt_at": "2026-09-19T19:59:57.187629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "_irT7-IoKaOscID7EpMoHgkEM7E",
+          "id": "By_mNTrbo7c",
+          "snippet": {
+            "publishedAt": "2026-09-18T11:40:09Z",
+            "channelId": "UCA8fuUFgZAHhMKBIJnMY5pQ",
+            "title": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365",
+            "description": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365\n\nTesla chính thức đặt chân vào Việt Nam với một bước đi tưởng nhỏ nhưng có thể mở ra cuộc cạnh tranh lớn trên thị trường xe điện. Vì sao Elon Musk chọn Việt Nam lúc này? Tesla sẽ đối đầu thế nào với lợi thế sân nhà, hệ sinh thái xe điện và hạ tầng sạc của VinFast?\n\nVideo này của Tin Việt 365 sẽ phân tích từ câu chuyện bảy mươi bảy phẩy bảy tỷ đồng, chiến lược thị trường, cuộc cạnh tranh Tesla, VinFast và xe điện Trung Quốc, cho tới bài toán trạm sạc, khách hàng cao cấp, trí tuệ nhân tạo và dữ liệu.\n\nĐăng ký Tin Việt 365 để cùng theo dõi những câu chuyện kinh tế, công nghệ và thị trường đáng chú ý dưới góc nhìn dễ hiểu và nhiều chiều.\nhttps://www.youtube.com/channel/UCA8fuUFgZAHhMKBIJnMY5pQ?sub_confirmation=1\n\n#TeslaVietNam #Tesla #ElonMusk #VinFast #TeslaVsVinFast #XeDien #XeDienVietNam #OToDien #ThiTruongOTo #VGreen #CongNghe #TriTueNhanTao #KinhTeVietNam #TinViet365",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/By_mNTrbo7c/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/By_mNTrbo7c/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/By_mNTrbo7c/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/By_mNTrbo7c/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/By_mNTrbo7c/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Tin Việt 365 TV",
+            "tags": [
+              "tin tức và phân tích",
+              "Tesla Việt Nam",
+              "Tesla Motors Việt Nam",
+              "Tesla Việt Nam 2026",
+              "Tesla vào Việt Nam",
+              "Tesla xe điện",
+              "xe điện Việt Nam",
+              "thị trường xe điện Việt Nam",
+              "Elon Musk Việt Nam",
+              "VinFast",
+              "xe điện VinFast",
+              "trạm sạc V-Green",
+              "hạ tầng xe điện",
+              "xe điện Trung Quốc",
+              "BYD",
+              "Model 3",
+              "Model Y",
+              "xe điện cao cấp",
+              "thị trường ô tô Việt Nam",
+              "dữ liệu xe điện",
+              "công nghệ tự lái",
+              "taxi không người lái",
+              "cạnh tranh xe điện",
+              "ngành ô tô Việt Nam",
+              "giá xe vinfast",
+              "vinfast",
+              "tin việt 365",
+              "tin 24h"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "vi",
+            "localized": {
+              "title": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365",
+              "description": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365\n\nTesla chính thức đặt chân vào Việt Nam với một bước đi tưởng nhỏ nhưng có thể mở ra cuộc cạnh tranh lớn trên thị trường xe điện. Vì sao Elon Musk chọn Việt Nam lúc này? Tesla sẽ đối đầu thế nào với lợi thế sân nhà, hệ sinh thái xe điện và hạ tầng sạc của VinFast?\n\nVideo này của Tin Việt 365 sẽ phân tích từ câu chuyện bảy mươi bảy phẩy bảy tỷ đồng, chiến lược thị trường, cuộc cạnh tranh Tesla, VinFast và xe điện Trung Quốc, cho tới bài toán trạm sạc, khách hàng cao cấp, trí tuệ nhân tạo và dữ liệu.\n\nĐăng ký Tin Việt 365 để cùng theo dõi những câu chuyện kinh tế, công nghệ và thị trường đáng chú ý dưới góc nhìn dễ hiểu và nhiều chiều.\nhttps://www.youtube.com/channel/UCA8fuUFgZAHhMKBIJnMY5pQ?sub_confirmation=1\n\n#TeslaVietNam #Tesla #ElonMusk #VinFast #TeslaVsVinFast #XeDien #XeDienVietNam #OToDien #ThiTruongOTo #VGreen #CongNghe #TriTueNhanTao #KinhTeVietNam #TinViet365"
+            },
+            "defaultAudioLanguage": "vi"
+          },
+          "contentDetails": {
+            "duration": "PT25M14S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "207",
+            "likeCount": "4",
+            "favoriteCount": "0",
+            "commentCount": "1"
+          }
+        },
+        "approved_judge": {
+          "video_id": "By_mNTrbo7c",
+          "decision": "accept",
+          "confidence": 8,
+          "appearance_quote": "Elon Musk",
+          "original_quote": "Elon Musk Đưa Tesla Vào VIỆT NAM, Liệu Có Phá Được Thành Trì VINFAST? | Tin Việt 365",
+          "rejection_quote": "",
+          "reason_kr": "Discusses Tesla's entry into Vietnam, market competition with VinFast, and touches on AI, data, and charging infrastructure.",
+          "relevance_score": 8,
+          "topic_quote": "Tesla chính thức đặt chân vào Việt Nam với một bước đi tưởng nhỏ nhưng có thể mở ra cuộc cạnh tranh lớn trên thị trường xe điện. Vì sao Elon Musk chọn Việt Nam lúc này? Tesla sẽ đối đầu thế nào với lợi thế sân nhà, hệ sinh thái xe điện và hạ tầng sạc của VinFast? Video này của Tin Việt 365 sẽ phân tích từ câu chuyện bảy mươi bảy phẩy bảy tỷ đồng, chiến lược thị trường, cuộc cạnh tranh Tesla, VinFast và xe điện Trung Quốc, cho tới bài toán trạm sạc, khách hàng cao cấp, trí tuệ nhân tạo và dữ liệu.",
+          "topic_category": "ai_compute"
         }
       },
       "a5MZNtp94tg": {
@@ -26506,9 +28477,9 @@
         }
       },
       "rnT6ue27zHg": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:28.179974+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188192+00:00",
         "first_seen_at": "2026-09-18T22:12:28.179972+00:00",
         "attempts": 0,
         "item": {
@@ -28647,9 +30618,9 @@
         }
       },
       "cTpXsHRWSRg": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:31.781145+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188332+00:00",
         "first_seen_at": "2026-09-18T22:12:31.781143+00:00",
         "attempts": 0,
         "item": {
@@ -29274,9 +31245,9 @@
         }
       },
       "mHyAONuPBYw": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:34.580776+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188364+00:00",
         "first_seen_at": "2026-09-18T22:12:34.580774+00:00",
         "attempts": 0,
         "item": {
@@ -29427,9 +31398,9 @@
         }
       },
       "tHr-yNVneKk": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:35.433120+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188376+00:00",
         "first_seen_at": "2026-09-18T22:12:35.433118+00:00",
         "attempts": 0,
         "item": {
@@ -29636,9 +31607,9 @@
         }
       },
       "yOtpLru7ByY": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:36.270028+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188391+00:00",
         "first_seen_at": "2026-09-18T22:12:36.270026+00:00",
         "attempts": 0,
         "item": {
@@ -32272,9 +34243,9 @@
         }
       },
       "RRCEE36b6D0": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152230+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188549+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152228+00:00",
         "attempts": 0,
         "item": {
@@ -32328,9 +34299,9 @@
         }
       },
       "2my-NU6LuCM": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152235+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188554+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152233+00:00",
         "attempts": 0,
         "item": {
@@ -38533,9 +40504,9 @@
         }
       },
       "T-QyKzfoVtQ": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315674+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188973+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315671+00:00",
         "attempts": 0,
         "item": {
@@ -38584,9 +40555,9 @@
         }
       },
       "_ZTSNKhz_zo": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315682+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188980+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315679+00:00",
         "attempts": 0,
         "item": {
@@ -38635,9 +40606,9 @@
         }
       },
       "z_BN_DXe-EA": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315690+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188985+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315687+00:00",
         "attempts": 0,
         "item": {
@@ -38686,9 +40657,9 @@
         }
       },
       "_Q8w9z9cQYU": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315698+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-19T19:59:57.188989+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315695+00:00",
         "attempts": 0,
         "item": {
