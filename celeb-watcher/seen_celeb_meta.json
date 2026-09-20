@@ -772,7 +772,7 @@
       "Ho1gnEeVryA": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-19T21:51:56.075756+00:00",
+        "updated_at": "2026-09-20T03:15:51.223707+00:00",
         "first_seen_at": "2026-09-18T22:12:17.052304+00:00",
         "attempts": 0,
         "item": {
@@ -1120,7 +1120,7 @@
       "Bh5bJrrJ6xs": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-19T21:51:56.075760+00:00",
+        "updated_at": "2026-09-20T03:15:51.223704+00:00",
         "first_seen_at": "2026-09-18T22:12:17.060681+00:00",
         "attempts": 0,
         "item": {
@@ -2518,7 +2518,7 @@
       "XzNjq6DNjSY": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-19T21:51:56.075737+00:00",
+        "updated_at": "2026-09-20T03:15:51.223666+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462747+00:00",
         "attempts": 0,
         "item": {
@@ -18670,10 +18670,10 @@
       },
       "QcJwwI8th-Y": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355612+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426928+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355610+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "AJLMik5lGcgregcf7iJX4QLJM_M",
@@ -18717,14 +18717,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T05:43:37Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "CK33nGaI8XZuJrqMD2F53rZ3TVg",
+          "id": "QcJwwI8th-Y",
+          "snippet": {
+            "publishedAt": "2026-09-17T05:43:37Z",
+            "channelId": "UCs4dj_bt6Pbq8V1S0av5fzg",
+            "title": "L'IA è un pericolo? - Uno sguardo da Vicino",
+            "description": "Nel breve saggio \"We Must Pace the Frontier\" pubblicato sabato scorso, il CEO di Anthropic, Dario Amodei, sostiene che le aziende dell'IA dovrebbero rallentare il passo e che bisognerebbe introdurre al più presto agenzie internazionali per regolare lo sviluppo di queste tecnologie al fine di non incorrere in scenari catastrofici. Genuina preoccupazione di un uomo con una coscienza più grande del portafoglio o... C'è dell'altro? \n\nNell'appuntamento di oggi di Uno sguardo da Vicino parliamo di limiti, prospettive e rischi dell'IA. \n\nA cura di Ludovico Vicino.\n\n#ai #proitalia",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/QcJwwI8th-Y/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/QcJwwI8th-Y/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/QcJwwI8th-Y/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/QcJwwI8th-Y/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/QcJwwI8th-Y/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Pro Italia",
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "it",
+            "localized": {
+              "title": "L'IA è un pericolo? - Uno sguardo da Vicino",
+              "description": "Nel breve saggio \"We Must Pace the Frontier\" pubblicato sabato scorso, il CEO di Anthropic, Dario Amodei, sostiene che le aziende dell'IA dovrebbero rallentare il passo e che bisognerebbe introdurre al più presto agenzie internazionali per regolare lo sviluppo di queste tecnologie al fine di non incorrere in scenari catastrofici. Genuina preoccupazione di un uomo con una coscienza più grande del portafoglio o... C'è dell'altro? \n\nNell'appuntamento di oggi di Uno sguardo da Vicino parliamo di limiti, prospettive e rischi dell'IA. \n\nA cura di Ludovico Vicino.\n\n#ai #proitalia"
+            },
+            "defaultAudioLanguage": "it"
+          },
+          "contentDetails": {
+            "duration": "PT1H5M16S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1366",
+            "likeCount": "49",
+            "favoriteCount": "0",
+            "commentCount": "6"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "2gSx6Fxjq_8": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355617+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426934+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355615+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "w1TN5drLgul6cTZqOp2NNgaJpEY",
@@ -18768,14 +18840,96 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T21:59:05Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "mTK_hKpwbnyoYL_xJ4n2fYg3_8U",
+          "id": "2gSx6Fxjq_8",
+          "snippet": {
+            "publishedAt": "2026-09-16T21:59:05Z",
+            "channelId": "UC3-0cwZ6YfM9rNtwv9Oasng",
+            "title": "The AI Watchdog Is in Bed With Anthropic - The Friends You've Never Heard Of",
+            "description": "What are Anthropic CEO Dario Amodei's Real Intentions?\nThe CEO warning that AI could end humanity just chose the watchdog. They share investors, history, and even an old house.\n\nCardio Miracle- https://cardiomiracle.com/gregmatsen\n\nDario Amodei wants outside referees inside every AI lab. The referee he picked should set off alarm bells.\nSilicon Valley's New Priesthood Wants Control of AI\nWhy Would an AI Company Beg to Be Regulated?\nAnthropic's CEO says the whole industry must slow down, right before an IPO. Follow the money before you believe the fear.\nTrump Calls AI Doom a Hoax. Is He Right?\nOne side says AI could kill us all. The President says it's fake. The truth is more complicated, and more concerning, than either.\nAI Doomers and Accelerationists Are BOTH Wrong\n\nhttps://darioamodei.com",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/2gSx6Fxjq_8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/2gSx6Fxjq_8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/2gSx6Fxjq_8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/2gSx6Fxjq_8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/2gSx6Fxjq_8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The Greg Matsen Show",
+            "tags": [
+              "dario adomei",
+              "anthropic",
+              "ai",
+              "metr",
+              "xai",
+              "openai",
+              "chatgpt",
+              "elon musk"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "The AI Watchdog Is in Bed With Anthropic - The Friends You've Never Heard Of",
+              "description": "What are Anthropic CEO Dario Amodei's Real Intentions?\nThe CEO warning that AI could end humanity just chose the watchdog. They share investors, history, and even an old house.\n\nCardio Miracle- https://cardiomiracle.com/gregmatsen\n\nDario Amodei wants outside referees inside every AI lab. The referee he picked should set off alarm bells.\nSilicon Valley's New Priesthood Wants Control of AI\nWhy Would an AI Company Beg to Be Regulated?\nAnthropic's CEO says the whole industry must slow down, right before an IPO. Follow the money before you believe the fear.\nTrump Calls AI Doom a Hoax. Is He Right?\nOne side says AI could kill us all. The President says it's fake. The truth is more complicated, and more concerning, than either.\nAI Doomers and Accelerationists Are BOTH Wrong\n\nhttps://darioamodei.com"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT37M21S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1204",
+            "likeCount": "28",
+            "favoriteCount": "0",
+            "commentCount": "11"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "qx_DKmpXaMI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355628+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426940+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355626+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "VaOyMDYG907uFm7WCqS0AtyK3as",
@@ -18819,14 +18973,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T13:00:15Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "dvvK3lhulp2sgjxaTqzPgmNKqN4",
+          "id": "qx_DKmpXaMI",
+          "snippet": {
+            "publishedAt": "2026-09-16T13:00:15Z",
+            "channelId": "UCqP9aubjvP5n-6O4rN2NjuQ",
+            "title": "Why Anthropic Just Asked AI to Slow Down",
+            "description": "Anthropic's Dario Amodei says AI labs must pace the frontier. Is it safety, or cost control ahead of an IPO? With Cam Stromme sitting in for Michael, four stories on the clock: that slowdown call, a Fed hike priced in with the 10-year above 5%, foreign money picking US stocks over Treasuries, and the bank deposit fight inside the CLARITY Act. Where's the signal, and where's the noise?\n\n*OPEN A FREE ONRAMP FINANCE ACCOUNT*\nOne free account to buy Bitcoin, use the Onramp Terminal, and access the rest of Onramp: Bitcoin IRA, Bitcoin-backed loans, and Multi-Institution Custody. Recurring buys carry no Onramp trading fee. Active clients are eligible for Onramp-funded rewards up to 5%. Cash back on the Onramp Card converts to Bitcoin in one click. Takes a few minutes to open.\n👉 https://go.onrampbitcoin.com/finance-svn-youtube\n\n*GET ON THE LIST*\nOur research, event invites, and the week's Bitcoin news in one free email.\n📩 https://go.onrampbitcoin.com/research-svn\n\n*CHAPTERS*\n00:00 - Intro\n01:03 - Topic 1 - Anthropic's Dario Amodei Says AI Labs Must Pace the Frontier\n09:23 - Topic 2 - Polymarket Prices a Fed Rate Hike as the 10-Year Yield Tops 5%\n17:06 - Topic 3 - Foreign Investors Now Prefer US Stocks to US Treasuries\n25:17 - Topic 4 - The Battle for Bank Deposits and the CLARITY Act Vote\n33:39 - Wrap-Up & the Strategic Bitcoin Reserve\n\n*ABOUT THE SHOW*\nSignal vs Noise is a twice-weekly livestream and show unpacking the biggest stories across capital, markets, technology, and people, six minutes on the clock for each, with Jackson Mikalic, Michael Tanguma, Liam Nelson, and Brian Cubellis.\n▶️ Watch live: https://www.youtube.com/@SignalvsNoiseLIVE\n✖️ https://x.com/OnrampMedia\n\n*MORE FROM ONRAMP MEDIA*\n• The Last Trade, Final Settlement, and First Principles: https://www.youtube.com/@OnrampMedia\n• Audio, every show: https://podcasts.apple.com/us/podcast/id1690709152 or search Onramp Bitcoin Media on Spotify\n• News and data: https://onramp.media\n\nOnramp does not provide financial, tax, or legal advice. Nothing here is a recommendation to buy or sell any asset. This episode is for entertainment purposes only.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/qx_DKmpXaMI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/qx_DKmpXaMI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/qx_DKmpXaMI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/qx_DKmpXaMI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/qx_DKmpXaMI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Signal vs. Noise (SVN) by Onramp Media",
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Why Anthropic Just Asked AI to Slow Down",
+              "description": "Anthropic's Dario Amodei says AI labs must pace the frontier. Is it safety, or cost control ahead of an IPO? With Cam Stromme sitting in for Michael, four stories on the clock: that slowdown call, a Fed hike priced in with the 10-year above 5%, foreign money picking US stocks over Treasuries, and the bank deposit fight inside the CLARITY Act. Where's the signal, and where's the noise?\n\n*OPEN A FREE ONRAMP FINANCE ACCOUNT*\nOne free account to buy Bitcoin, use the Onramp Terminal, and access the rest of Onramp: Bitcoin IRA, Bitcoin-backed loans, and Multi-Institution Custody. Recurring buys carry no Onramp trading fee. Active clients are eligible for Onramp-funded rewards up to 5%. Cash back on the Onramp Card converts to Bitcoin in one click. Takes a few minutes to open.\n👉 https://go.onrampbitcoin.com/finance-svn-youtube\n\n*GET ON THE LIST*\nOur research, event invites, and the week's Bitcoin news in one free email.\n📩 https://go.onrampbitcoin.com/research-svn\n\n*CHAPTERS*\n00:00 - Intro\n01:03 - Topic 1 - Anthropic's Dario Amodei Says AI Labs Must Pace the Frontier\n09:23 - Topic 2 - Polymarket Prices a Fed Rate Hike as the 10-Year Yield Tops 5%\n17:06 - Topic 3 - Foreign Investors Now Prefer US Stocks to US Treasuries\n25:17 - Topic 4 - The Battle for Bank Deposits and the CLARITY Act Vote\n33:39 - Wrap-Up & the Strategic Bitcoin Reserve\n\n*ABOUT THE SHOW*\nSignal vs Noise is a twice-weekly livestream and show unpacking the biggest stories across capital, markets, technology, and people, six minutes on the clock for each, with Jackson Mikalic, Michael Tanguma, Liam Nelson, and Brian Cubellis.\n▶️ Watch live: https://www.youtube.com/@SignalvsNoiseLIVE\n✖️ https://x.com/OnrampMedia\n\n*MORE FROM ONRAMP MEDIA*\n• The Last Trade, Final Settlement, and First Principles: https://www.youtube.com/@OnrampMedia\n• Audio, every show: https://podcasts.apple.com/us/podcast/id1690709152 or search Onramp Bitcoin Media on Spotify\n• News and data: https://onramp.media\n\nOnramp does not provide financial, tax, or legal advice. Nothing here is a recommendation to buy or sell any asset. This episode is for entertainment purposes only."
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT37M7S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "127",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "qeV6Rnbyftw": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355634+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426946+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355632+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "eRo-rp2Xr7TmVj_dR2fFDJnBu6U",
@@ -18870,7 +19096,89 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T13:01:39Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "4nmh2hzVwdhRJhgCGaX58IOXsxw",
+          "id": "qeV6Rnbyftw",
+          "snippet": {
+            "publishedAt": "2026-09-16T13:01:39Z",
+            "channelId": "UCuc5f8pdFcC6wZhFSppxtKA",
+            "title": "Abbiamo un problema con l'Intelligenza Artificiale (e ce lo stanno dicendo solo ora)",
+            "description": "Se negli ultimi giorni avete aperto i social o letto un giornale, vi sarete accorti che non si parla d'altro: l'ennesima ondata di allarmi apocalittici sui rischi dell'intelligenza artificiale, spinta dalle dichiarazioni dei vertici delle Big Tech.\n\nPrima sono arrivate le dimissioni di alcuni ricercatori di Anthropic e OpenAI, che sui social hanno denunciato la fretta irresponsabile con cui si sta sviluppando l’IA. Qualche giorno dopo, il CEO di Anthropic Dario Amodei ha pubblicato un saggio per chiedere di rallentare i ritmi di sviluppo e fare entrare controllori esterni nei laboratori. Infine, Sam Altman ed Elon Musk gli hanno dato ragione, continuando però nel frattempo a spingere sull’acceleratore dell’innovazione dei modelli.\n\nQuesta sequenza però non sembra essere casuale. Il testo di Amodei non nasce da un’improvvisa folgorazione etica sulla via di Damasco, ma sarebbe da un lato una mossa di contenimento dei danni dopo le dimissioni pubbliche dei suoi dipendenti e dall’altro un tentativo di tagliare fuori i concorrenti oltreoceano.\n\nNel nuovo video vi spiego cosa sta succedendo e perché dietro questi appelli alla responsabilità ci potrebbero essere ben altri interessi da difendere.\n\nPer approfondire:\n\nIl tweet delle dimissioni di Jacob Coxon https://x.com/hilbertspaess/status/2097476196791709843\n\nI precedenti in OpenAI e Anthropic https://www.ilpost.it/2026/09/10/jacob-coxon-ricercatori-anthropic-lasciano-aziende-ai/\n\nIl manifesto di Dario Amodei https://darioamodei.com/post/we-must-pace-the-frontier\n\nLe reazioni di Musk e Altman https://x.com/sama/status/2098811563415150910 e https://x.com/elonmusk/status/2098789109980332057\n\nL’intervista di Amodei a CBS https://www.corriere.it/tecnologia/26_settembre_13/dario-amodei-alla-cbs-cosi-possiamo-rallentare-lo-sviluppo-dell-ai-segnali-dall-allarme-ma-non-facciamoci-prendere-dal-panico-6478a65e-3028-4775-92be-759688807xlk.shtml?refresh_ce\n\n🚀 ISCRIVITI ALLA NEWSLETTER SU SUBSTACK (Inchieste e approfondimenti):\n👉 https://charlottematteini.substack.com\n\n📢 ENTRA NEL GRUPPO TELEGRAM (Discussioni e aggiornamenti):\n👉 https://t.me/charlymattacdc (canale)\n👉 https://t.me/+GPcIyb3sa601N2Zk (gruppo, possiamo chattare)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👇 SEGUIMI ANCHE SUI SOCIAL:\n▪️ Tik Tok: https://tiktok.com/@chamatteini\n▪️ Instagram: https://instagram.com/charlymatt_\n▪️ Twitter: https://twitter.com/CharlyMatt\n\n📧 CONTATTI (per collaborazioni e segnalazioni)\n👉 charlotte@charlottematteini.it",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/qeV6Rnbyftw/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/qeV6Rnbyftw/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/qeV6Rnbyftw/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/qeV6Rnbyftw/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/qeV6Rnbyftw/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Charlotte Matteini - A.C.D.C. ",
+            "tags": [
+              "intelligenza artificiale",
+              "sam altman",
+              "dario amodei",
+              "elon musk",
+              "ai",
+              "openAI",
+              "Anthropic",
+              "Jacob Coxon"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "it",
+            "localized": {
+              "title": "Abbiamo un problema con l'Intelligenza Artificiale (e ce lo stanno dicendo solo ora)",
+              "description": "Se negli ultimi giorni avete aperto i social o letto un giornale, vi sarete accorti che non si parla d'altro: l'ennesima ondata di allarmi apocalittici sui rischi dell'intelligenza artificiale, spinta dalle dichiarazioni dei vertici delle Big Tech.\n\nPrima sono arrivate le dimissioni di alcuni ricercatori di Anthropic e OpenAI, che sui social hanno denunciato la fretta irresponsabile con cui si sta sviluppando l’IA. Qualche giorno dopo, il CEO di Anthropic Dario Amodei ha pubblicato un saggio per chiedere di rallentare i ritmi di sviluppo e fare entrare controllori esterni nei laboratori. Infine, Sam Altman ed Elon Musk gli hanno dato ragione, continuando però nel frattempo a spingere sull’acceleratore dell’innovazione dei modelli.\n\nQuesta sequenza però non sembra essere casuale. Il testo di Amodei non nasce da un’improvvisa folgorazione etica sulla via di Damasco, ma sarebbe da un lato una mossa di contenimento dei danni dopo le dimissioni pubbliche dei suoi dipendenti e dall’altro un tentativo di tagliare fuori i concorrenti oltreoceano.\n\nNel nuovo video vi spiego cosa sta succedendo e perché dietro questi appelli alla responsabilità ci potrebbero essere ben altri interessi da difendere.\n\nPer approfondire:\n\nIl tweet delle dimissioni di Jacob Coxon https://x.com/hilbertspaess/status/2097476196791709843\n\nI precedenti in OpenAI e Anthropic https://www.ilpost.it/2026/09/10/jacob-coxon-ricercatori-anthropic-lasciano-aziende-ai/\n\nIl manifesto di Dario Amodei https://darioamodei.com/post/we-must-pace-the-frontier\n\nLe reazioni di Musk e Altman https://x.com/sama/status/2098811563415150910 e https://x.com/elonmusk/status/2098789109980332057\n\nL’intervista di Amodei a CBS https://www.corriere.it/tecnologia/26_settembre_13/dario-amodei-alla-cbs-cosi-possiamo-rallentare-lo-sviluppo-dell-ai-segnali-dall-allarme-ma-non-facciamoci-prendere-dal-panico-6478a65e-3028-4775-92be-759688807xlk.shtml?refresh_ce\n\n🚀 ISCRIVITI ALLA NEWSLETTER SU SUBSTACK (Inchieste e approfondimenti):\n👉 https://charlottematteini.substack.com\n\n📢 ENTRA NEL GRUPPO TELEGRAM (Discussioni e aggiornamenti):\n👉 https://t.me/charlymattacdc (canale)\n👉 https://t.me/+GPcIyb3sa601N2Zk (gruppo, possiamo chattare)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👇 SEGUIMI ANCHE SUI SOCIAL:\n▪️ Tik Tok: https://tiktok.com/@chamatteini\n▪️ Instagram: https://instagram.com/charlymatt_\n▪️ Twitter: https://twitter.com/CharlyMatt\n\n📧 CONTATTI (per collaborazioni e segnalazioni)\n👉 charlotte@charlottematteini.it"
+            },
+            "defaultAudioLanguage": "it"
+          },
+          "contentDetails": {
+            "duration": "PT30M6S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "14892",
+            "likeCount": "471",
+            "favoriteCount": "0",
+            "commentCount": "132"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "cOano3Jl_NA": {
         "status": "pending",
@@ -19120,10 +19428,10 @@
       },
       "wXqPNbaDBVk": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355649+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426951+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355647+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "FEKDC1CVvYtwlYc3Fp93PU5v1AM",
@@ -19167,7 +19475,79 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T11:05:21Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "t7wSP9uAjtTLn3ew_wVrR1jGeHw",
+          "id": "wXqPNbaDBVk",
+          "snippet": {
+            "publishedAt": "2026-09-16T11:05:21Z",
+            "channelId": "UCPSXdSF94f7obG2O0OsXWgQ",
+            "title": "AI開発者たちが警告する「人類への危険」――いま何が起きているのか解説【ゆっくり解説】",
+            "description": "AIを作る当事者たちは、なぜ「人類への危険」を警告するのか。\nAIの現在地、開発者・研究者の警告、開発競争が続く理由、各国と日本の対応を、霊夢と魔理沙が全20章で解説します。\n\n2026年9月16日時点の情報をもとに制作しています。将来についての予測・見解と、報告された出来事を分けてご覧ください。\n\n【主な出典・参考資料】\nDario Amodei：We Must Pace the Frontier\nhttps://darioamodei.com/post/we-must-pace-the-frontier\n\nOpenAI：Hugging Face incident and the road ahead\nhttps://openai.com/index/hugging-face-incident-and-the-road-ahead/\n\nMETR：Hugging Face事件の独立調査\nhttps://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/\n\nAnthropic：サイバー評価の調査報告\nhttps://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\n\nFuture of Life Institute：AI開発の一時停止を求める公開書簡\nhttps://futureoflife.org/open-letter/pause-giant-ai-experiments/\n\nCenter for AI Safety：AIの絶滅リスクに関する声明\nhttps://safe.ai/work/statement-on-ai-extinction-risk\n\nPacing the Frontier\nhttps://www.pacingthefrontier.com/\n\nGoogle DeepMind：AlphaFold\nhttps://deepmind.google/science/alphafold/\n\n日本AIセーフティ・インスティテュート：OpenAIとの協力覚書\nhttps://aisi.go.jp/activity/activity_international/260529/\n\nJST-CRDS・文部科学省共催シンポジウム\nhttps://www.jst.go.jp/crds/sympo/20260917/\n\n【音楽】\nMusic: LAKEY INSPIRED - Better Days\nhttps://www.rfmofficialpage.com/2019/09/no-copyright-music-lakey-inspired.html\n\n【効果音】\n効果音ラボ https://soundeffect-lab.info/\n\n#AIニュース #ChatGPT #AI安全性 #OpenAI #Anthropic #アンソロピック #Claude #イーロンマスク #サムアルトマン #ダリオアモデイ #人工知能 #ゆっくり解説",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/wXqPNbaDBVk/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/wXqPNbaDBVk/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/wXqPNbaDBVk/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/wXqPNbaDBVk/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/wXqPNbaDBVk/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "san AI News",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "ja",
+            "localized": {
+              "title": "AI開発者たちが警告する「人類への危険」――いま何が起きているのか解説【ゆっくり解説】",
+              "description": "AIを作る当事者たちは、なぜ「人類への危険」を警告するのか。\nAIの現在地、開発者・研究者の警告、開発競争が続く理由、各国と日本の対応を、霊夢と魔理沙が全20章で解説します。\n\n2026年9月16日時点の情報をもとに制作しています。将来についての予測・見解と、報告された出来事を分けてご覧ください。\n\n【主な出典・参考資料】\nDario Amodei：We Must Pace the Frontier\nhttps://darioamodei.com/post/we-must-pace-the-frontier\n\nOpenAI：Hugging Face incident and the road ahead\nhttps://openai.com/index/hugging-face-incident-and-the-road-ahead/\n\nMETR：Hugging Face事件の独立調査\nhttps://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/\n\nAnthropic：サイバー評価の調査報告\nhttps://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\n\nFuture of Life Institute：AI開発の一時停止を求める公開書簡\nhttps://futureoflife.org/open-letter/pause-giant-ai-experiments/\n\nCenter for AI Safety：AIの絶滅リスクに関する声明\nhttps://safe.ai/work/statement-on-ai-extinction-risk\n\nPacing the Frontier\nhttps://www.pacingthefrontier.com/\n\nGoogle DeepMind：AlphaFold\nhttps://deepmind.google/science/alphafold/\n\n日本AIセーフティ・インスティテュート：OpenAIとの協力覚書\nhttps://aisi.go.jp/activity/activity_international/260529/\n\nJST-CRDS・文部科学省共催シンポジウム\nhttps://www.jst.go.jp/crds/sympo/20260917/\n\n【音楽】\nMusic: LAKEY INSPIRED - Better Days\nhttps://www.rfmofficialpage.com/2019/09/no-copyright-music-lakey-inspired.html\n\n【効果音】\n効果音ラボ https://soundeffect-lab.info/\n\n#AIニュース #ChatGPT #AI安全性 #OpenAI #Anthropic #アンソロピック #Claude #イーロンマスク #サムアルトマン #ダリオアモデイ #人工知能 #ゆっくり解説"
+            },
+            "defaultAudioLanguage": "ja"
+          },
+          "contentDetails": {
+            "duration": "PT36M7S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "631",
+            "likeCount": "4",
+            "favoriteCount": "0",
+            "commentCount": "2"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "FIZbdjj1EPQ": {
         "status": "sent",
@@ -20075,10 +20455,10 @@
       },
       "wd00r9MkBFs": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355687+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426957+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355685+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "t6ZzEtt-l7Cd6fCPZemlIZm7Qww",
@@ -20122,7 +20502,96 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T01:45:55Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "BeshPuDAsMM8gdf8PaxsKLQxmh4",
+          "id": "wd00r9MkBFs",
+          "snippet": {
+            "publishedAt": "2026-09-16T01:45:55Z",
+            "channelId": "UC55wSYkkdkW6De5vKejqbaA",
+            "title": "O Alerta Mais Assustador Sobre a IA",
+            "description": "Neste vídeo, comento o texto publicado por Dario Amodei no final de semana, no qual o CEO da Anthropic pede que o ritmo de avanço da inteligência artificial seja desacelerado por questões de segurança.\nEle também alerta para os riscos que o desenvolvimento acelerado da IA pode representar para a humanidade e o que esse posicionamento pode significar para o futuro da tecnologia.\n\n👉 Gostou do conteúdo? Deixe o seu like e inscreva-se no canal!\n\n🐺 Faça parte do nosso grupo fechado no WhatsApp: https://luckytraders.academy/\n\n💰 Abra sua conta Webull gratuitamente: https://webullbr.onelink.me/Gt3o/jzvja3sh\n=======================================\n\nVÍDEOS SUGERIDOS\nIA Pode Destruir a Humanidade Até 2030?\nhttps://youtu.be/EU_vPsc6GGU\n\n=======================================\n\nRedes Sociais\n📷 Me segue lá no instagram: @kevin_gervasoni\n✖️ Me segue lá no X: @KevinGervasoni \n\n=======================================\n\n#MercadoFinanceiroHoje #Investimentos #BolsaDeValores #ECONOMIA \n\nNão dou recomendações de investimentos, o conteúdo dos vídeos é meramente educacional e são opiniões próprias. Rentabilidade passada não representa garantia de resultados futuros.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/wd00r9MkBFs/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/wd00r9MkBFs/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/wd00r9MkBFs/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/wd00r9MkBFs/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/wd00r9MkBFs/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Lucky Traders",
+            "tags": [
+              "IA",
+              "inteligência artificial",
+              "Dario Amodei",
+              "Anthropic",
+              "AI",
+              "inteligência artificial 2026",
+              "segurança da IA",
+              "riscos da inteligência artificial",
+              "perigo da IA",
+              "avanço da IA",
+              "AI risk",
+              "mercado de IA",
+              "investimentos em IA",
+              "Semicondutores",
+              "Semis"
+            ],
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "pt-BR",
+            "localized": {
+              "title": "O Alerta Mais Assustador Sobre a IA",
+              "description": "Neste vídeo, comento o texto publicado por Dario Amodei no final de semana, no qual o CEO da Anthropic pede que o ritmo de avanço da inteligência artificial seja desacelerado por questões de segurança.\nEle também alerta para os riscos que o desenvolvimento acelerado da IA pode representar para a humanidade e o que esse posicionamento pode significar para o futuro da tecnologia.\n\n👉 Gostou do conteúdo? Deixe o seu like e inscreva-se no canal!\n\n🐺 Faça parte do nosso grupo fechado no WhatsApp: https://luckytraders.academy/\n\n💰 Abra sua conta Webull gratuitamente: https://webullbr.onelink.me/Gt3o/jzvja3sh\n=======================================\n\nVÍDEOS SUGERIDOS\nIA Pode Destruir a Humanidade Até 2030?\nhttps://youtu.be/EU_vPsc6GGU\n\n=======================================\n\nRedes Sociais\n📷 Me segue lá no instagram: @kevin_gervasoni\n✖️ Me segue lá no X: @KevinGervasoni \n\n=======================================\n\n#MercadoFinanceiroHoje #Investimentos #BolsaDeValores #ECONOMIA \n\nNão dou recomendações de investimentos, o conteúdo dos vídeos é meramente educacional e são opiniões próprias. Rentabilidade passada não representa garantia de resultados futuros."
+            },
+            "defaultAudioLanguage": "pt-BR"
+          },
+          "contentDetails": {
+            "duration": "PT23M21S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "393",
+            "likeCount": "7",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "yZc-6vU4kCw": {
         "status": "sent",
@@ -27796,10 +28265,10 @@
       },
       "2ZIUVuF11Wo": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436811+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426837+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436809+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "SLTfwBQGMhFmuLx9G-2MNDwlDgk",
@@ -27843,7 +28312,90 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T05:43:30Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "mukNkhAOI44l3h1Ao4ar40s1UmI",
+          "id": "2ZIUVuF11Wo",
+          "snippet": {
+            "publishedAt": "2026-09-18T05:43:30Z",
+            "channelId": "UCTny63qrDrHxytgXSfQ588A",
+            "title": "¡Cómo Elon Musk engañó al mundo entero!",
+            "description": "Un nino maltratado, una imagen cuidadosamente construida, y un plan que engañó al mundo entero.\n\nElon Musk es el hombre más rico de la historia. Pero detrás de la imagen del genio visionario que quiere salvar a la humanidad, existe una historia mucho más calculada. Desde su infancia marcada por la violencia, hasta las promesas incumplidas que se repiten una y otra vez, esta es la verdad completa detrás del mito del billón de dólares.\n\nEn este video descubrirás:\n\n La infancia real de Elon Musk en Sudáfrica\n\n Cómo PayPal, Tesla y SpaceX casi colapsan por completo\n\n La verdadera estrategia detrás de la misión a Marte\n\n El patrón de promesas rota que se repite desde hace 20 años\n\n Cómo les billonarios evitar pagar impuestos con la estrategia \"Comprar, Pedir Prestado, Moriri\n\n Las conexiones políticas detrás de su fortuna actual\n\nInformación basada en entrevistas públicas, reportes financieros, y análisis de expertos en economía y tecnología.\n\n#ElonMusk\n\n#SpaceX\n\n#Tesla\n\n#Billonarios\n\n#Documentales\n\n#VerdadOculta\n\nelon musk, elon musk verdad, elon musk expuesto, elon musk historia real, spacex, tesla, elon musk billonario, elon musk infancia, elon musk impuestos, elon musk trillonario, elon musk mentiras, biografia elon musk",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/2ZIUVuF11Wo/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/2ZIUVuF11Wo/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/2ZIUVuF11Wo/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/2ZIUVuF11Wo/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/2ZIUVuF11Wo/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Rolbox",
+            "tags": [
+              "Elon musk verdad",
+              "Tesla",
+              "biografia elon musk",
+              "elon musk",
+              "elon musk expuesto",
+              "elon musk hiatoria real",
+              "elon musk interview",
+              "elon musk trillonario",
+              "musk trillionaire"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "¡Cómo Elon Musk engañó al mundo entero!",
+              "description": "Un nino maltratado, una imagen cuidadosamente construida, y un plan que engañó al mundo entero.\n\nElon Musk es el hombre más rico de la historia. Pero detrás de la imagen del genio visionario que quiere salvar a la humanidad, existe una historia mucho más calculada. Desde su infancia marcada por la violencia, hasta las promesas incumplidas que se repiten una y otra vez, esta es la verdad completa detrás del mito del billón de dólares.\n\nEn este video descubrirás:\n\n La infancia real de Elon Musk en Sudáfrica\n\n Cómo PayPal, Tesla y SpaceX casi colapsan por completo\n\n La verdadera estrategia detrás de la misión a Marte\n\n El patrón de promesas rota que se repite desde hace 20 años\n\n Cómo les billonarios evitar pagar impuestos con la estrategia \"Comprar, Pedir Prestado, Moriri\n\n Las conexiones políticas detrás de su fortuna actual\n\nInformación basada en entrevistas públicas, reportes financieros, y análisis de expertos en economía y tecnología.\n\n#ElonMusk\n\n#SpaceX\n\n#Tesla\n\n#Billonarios\n\n#Documentales\n\n#VerdadOculta\n\nelon musk, elon musk verdad, elon musk expuesto, elon musk historia real, spacex, tesla, elon musk billonario, elon musk infancia, elon musk impuestos, elon musk trillonario, elon musk mentiras, biografia elon musk"
+            },
+            "defaultAudioLanguage": "es"
+          },
+          "contentDetails": {
+            "duration": "PT32M34S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "25",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "VWFRcJ7tWyo": {
         "status": "pending",
@@ -27898,10 +28450,10 @@
       },
       "yPvXDLN856k": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436823+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426855+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436821+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "m-EiplIM-dUekTkadAUqMwypL2U",
@@ -27940,14 +28492,81 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T04:44:12Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "U8ySMsxuBpu15m2Py--wE7NqHwY",
+          "id": "yPvXDLN856k",
+          "snippet": {
+            "publishedAt": "2026-09-18T04:44:12Z",
+            "channelId": "UCZ3vPnc3z4F7fpVZ9yQJXFg",
+            "title": "👉ELON MUSK SAYS.. TONIGHT YOU WILL JOIN THE 2% BILLIONAIRE...",
+            "description": "#Archangel #Faith\n #Gratitude\n\n👉ELON MUSK SAYS.. TONIGHT YOU WILL JOIN THE 2% BILLIONAIRE...\n\n\n\n\n#Archangel #Faith\n #Gratitude #SpiritualJourney\n#Jesus\n#Godmessage \n#godmessage\n#jesus\n#jesusmessage \n#godmessages\n#lawofattraction\n#manifesting\n#godsaystoday\n#godmessagetoday\n#godwords\n#lordmessagei\n#godmessagesforme \n#jesusewords\n#godsmessages\n#godsmessageforme",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/yPvXDLN856k/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/yPvXDLN856k/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/yPvXDLN856k/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/yPvXDLN856k/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Archangel Michael Says",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "👉ELON MUSK SAYS.. TONIGHT YOU WILL JOIN THE 2% BILLIONAIRE...",
+              "description": "#Archangel #Faith\n #Gratitude\n\n👉ELON MUSK SAYS.. TONIGHT YOU WILL JOIN THE 2% BILLIONAIRE...\n\n\n\n\n#Archangel #Faith\n #Gratitude #SpiritualJourney\n#Jesus\n#Godmessage \n#godmessage\n#jesus\n#jesusmessage \n#godmessages\n#lawofattraction\n#manifesting\n#godsaystoday\n#godmessagetoday\n#godwords\n#lordmessagei\n#godmessagesforme \n#jesusewords\n#godsmessages\n#godsmessageforme"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT55M40S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1141",
+            "likeCount": "196",
+            "favoriteCount": "0",
+            "commentCount": "247"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "Fjw1IklhxQE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436829+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426864+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436827+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "w6Ixoiv1PF3he2tFFCqA-7Z6Gow",
@@ -27991,14 +28610,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T02:01:54Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "PtEgF1goqQ5cDwNa3d-WyFTa5-A",
+          "id": "Fjw1IklhxQE",
+          "snippet": {
+            "publishedAt": "2026-09-18T02:01:54Z",
+            "channelId": "UCA43l8hOBASpHX4-7bTX92Q",
+            "title": "NAKU PO! CEO NG FACEBOOK BIBILHIN NA ANG KONGRESO? MARK ZUCKERBERG PINAPATAWAG NG KAMARA!",
+            "description": "All clips are property of their respective owners. No copyright infringement is intended.\n\n\"Copyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is made for \"fair use\" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use. All clips are property of their respective owners. No copyright infringement is intended.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Fjw1IklhxQE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Fjw1IklhxQE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Fjw1IklhxQE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Fjw1IklhxQE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Fjw1IklhxQE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "REACTION UPDATE PH",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "fil",
+            "localized": {
+              "title": "NAKU PO! CEO NG FACEBOOK BIBILHIN NA ANG KONGRESO? MARK ZUCKERBERG PINAPATAWAG NG KAMARA!",
+              "description": "All clips are property of their respective owners. No copyright infringement is intended.\n\n\"Copyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is made for \"fair use\" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use. All clips are property of their respective owners. No copyright infringement is intended."
+            },
+            "defaultAudioLanguage": "und"
+          },
+          "contentDetails": {
+            "duration": "PT1H4M23S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "11952",
+            "likeCount": "278",
+            "favoriteCount": "0",
+            "commentCount": "21"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "KCXtJ6RdjH8": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436835+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426871+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436833+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "wMJ1B9XzW-1FXSUe0Zelk9ruWEs",
@@ -28042,14 +28733,116 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T01:45:20Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "GoTy4MkcXIvPYvpWbQwJfpuKkQw",
+          "id": "KCXtJ6RdjH8",
+          "snippet": {
+            "publishedAt": "2026-09-18T01:45:20Z",
+            "channelId": "UCwcpWb1MwJ-91NeR7N3ILzA",
+            "title": "👁️2 MINUTES LEFT! ELON MUSK HAS A MESSAGE FOR YOU... OPEN THIS BEFORE HE LEAVES!!",
+            "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/KCXtJ6RdjH8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/KCXtJ6RdjH8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/KCXtJ6RdjH8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/KCXtJ6RdjH8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/KCXtJ6RdjH8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Archangel Michael Says",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👁️2 MINUTES LEFT! ELON MUSK HAS A MESSAGE FOR YOU... OPEN THIS BEFORE HE LEAVES!!",
+              "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT33M38S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "49",
+            "likeCount": "7",
+            "favoriteCount": "0",
+            "commentCount": "27"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "ouOMHYYHgt0": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436840+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426877+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436838+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "UxwwYMcna5S9LIWbu_1tuRKLXvA",
@@ -28093,14 +28886,115 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T01:32:32Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "mCAy408AVbSV8lsvmVPJLQTqE6c",
+          "id": "ouOMHYYHgt0",
+          "snippet": {
+            "publishedAt": "2026-09-18T01:32:32Z",
+            "channelId": "UCw8Fc5R0Q5yyS3KrDCPM3xg",
+            "title": "WORLD NEWS LIVE: Trump & Elon Musk Shock Washington | Cabinet Reacts to Surprise Move",
+            "description": "A new political controversy involving Donald Trump and Elon Musk is triggering intense reactions in Washington. Questions are growing over Musk’s potential role, influence and relationship with the Trump administration.\n\nJoin us LIVE for the latest developments, political reactions and analysis as we examine what has actually been announced, what remains unconfirmed, and what this could mean for the Trump administration and US politics. \n\n#live #trump #elonmusk #trumpnews #musk #uspolitics #breakingnews #livenews #washington #trumpadministration #whitehouse #politicalnews #breakingnewslive\n \n\n\nIn this Times Now World News report, we break down the this topic:\n\n\n\nStay connected with Times Now World for real-time global news and analysis:\n🌐 Read full coverage: https://www.timesnownews.com/world\n📱 Instagram: https://www.instagram.com/timesnow.world\n🐦 Follow us on X: https://x.com/TimesNow_World\n\n#timesnowworld #worldnews #breakingnews",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/ouOMHYYHgt0/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/ouOMHYYHgt0/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/ouOMHYYHgt0/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/ouOMHYYHgt0/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/ouOMHYYHgt0/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Times Now World",
+            "tags": [
+              "trump elon musk",
+              "trump musk",
+              "elon musk trump",
+              "donald trump",
+              "elon musk news",
+              "trump news",
+              "elon musk latest",
+              "trump latest news",
+              "trump administration",
+              "trump cabinet",
+              "trump cabinet news",
+              "cabinet reaction",
+              "washington news",
+              "us politics",
+              "us political news",
+              "white house news",
+              "elon musk appointment",
+              "musk government role",
+              "breaking news",
+              "breaking news live",
+              "live news",
+              "us news",
+              "washington dc news",
+              "trump announcement",
+              "latest us news",
+              "america news",
+              "world news live"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "WORLD NEWS LIVE: Trump & Elon Musk Shock Washington | Cabinet Reacts to Surprise Move",
+              "description": "A new political controversy involving Donald Trump and Elon Musk is triggering intense reactions in Washington. Questions are growing over Musk’s potential role, influence and relationship with the Trump administration.\n\nJoin us LIVE for the latest developments, political reactions and analysis as we examine what has actually been announced, what remains unconfirmed, and what this could mean for the Trump administration and US politics. \n\n#live #trump #elonmusk #trumpnews #musk #uspolitics #breakingnews #livenews #washington #trumpadministration #whitehouse #politicalnews #breakingnewslive\n \n\n\nIn this Times Now World News report, we break down the this topic:\n\n\n\nStay connected with Times Now World for real-time global news and analysis:\n🌐 Read full coverage: https://www.timesnownews.com/world\n📱 Instagram: https://www.instagram.com/timesnow.world\n🐦 Follow us on X: https://x.com/TimesNow_World\n\n#timesnowworld #worldnews #breakingnews"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT7H58M56S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": false,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "4049",
+            "likeCount": "13",
+            "favoriteCount": "0",
+            "commentCount": "13"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "jQrInDYDzJA": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436847+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426884+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436845+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "L1oKUWcYdfsySHbYpmkt7gFJEU0",
@@ -28144,14 +29038,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T01:00:34Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "WxTIo70FaCyTmXdFwkYjpl1LjOI",
+          "id": "jQrInDYDzJA",
+          "snippet": {
+            "publishedAt": "2026-09-18T01:00:34Z",
+            "channelId": "UCqVVboHWW1MKz-VnaTXSJhw",
+            "title": "Stop Trusting Everyone || 50 Lessons That Make You Wiser-Elon Musk",
+            "description": "Stop Trusting Everyone — 50 Lessons That Make You Wiser\n\nNot everyone who smiles at you has good intentions. Not everyone who calls themselves a friend truly wants to see you succeed. And sometimes, the biggest lessons in life come from the people we trusted the most.\n\nIn this powerful motivational video, you’ll discover 50 important lessons about trust, people, boundaries, self-respect, human behavior, and wisdom.\n\nThese lessons will help you understand why you shouldn't trust blindly, why actions matter more than words, how to recognize hidden intentions, and why protecting your peace is sometimes more important than pleasing others.\n\nYou don't need to become cold or suspicious of everyone. You simply need to become wiser about who you trust, what you share, and where you place your energy.\n\nIf you've ever been betrayed, disappointed, manipulated, or taken for granted, this video may give you a different perspective on people and relationships.\n\nWatch until the end — one of these 50 lessons might change the way you see people forever.\n\n👉 Subscribe for more powerful lessons on wisdom, discipline, self-growth, and becoming a stronger version of yourself.\n\n🔥 Topics Covered:\nHow to stop trusting people blindly\nRecognizing fake friends\nActions vs. words\nProtecting your peace\nSetting healthy boundaries\nUnderstanding human behavior\nLearning from betrayal\nSelf-respect and confidence\nBecoming wiser with experience\nKnowing who deserves your trust\nHashtags\n\n#StopTrustingEveryone #LifeLessons #Wisdom #SelfGrowth #Motivation #Mindset #SelfRespect #HumanBehavior #PersonalGrowth #LifeAdvice #Discipline #SuccessMindset",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/jQrInDYDzJA/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/jQrInDYDzJA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/jQrInDYDzJA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/jQrInDYDzJA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/jQrInDYDzJA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Inspiring Life",
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "Stop Trusting Everyone || 50 Lessons That Make You Wiser-Elon Musk",
+              "description": "Stop Trusting Everyone — 50 Lessons That Make You Wiser\n\nNot everyone who smiles at you has good intentions. Not everyone who calls themselves a friend truly wants to see you succeed. And sometimes, the biggest lessons in life come from the people we trusted the most.\n\nIn this powerful motivational video, you’ll discover 50 important lessons about trust, people, boundaries, self-respect, human behavior, and wisdom.\n\nThese lessons will help you understand why you shouldn't trust blindly, why actions matter more than words, how to recognize hidden intentions, and why protecting your peace is sometimes more important than pleasing others.\n\nYou don't need to become cold or suspicious of everyone. You simply need to become wiser about who you trust, what you share, and where you place your energy.\n\nIf you've ever been betrayed, disappointed, manipulated, or taken for granted, this video may give you a different perspective on people and relationships.\n\nWatch until the end — one of these 50 lessons might change the way you see people forever.\n\n👉 Subscribe for more powerful lessons on wisdom, discipline, self-growth, and becoming a stronger version of yourself.\n\n🔥 Topics Covered:\nHow to stop trusting people blindly\nRecognizing fake friends\nActions vs. words\nProtecting your peace\nSetting healthy boundaries\nUnderstanding human behavior\nLearning from betrayal\nSelf-respect and confidence\nBecoming wiser with experience\nKnowing who deserves your trust\nHashtags\n\n#StopTrustingEveryone #LifeLessons #Wisdom #SelfGrowth #Motivation #Mindset #SelfRespect #HumanBehavior #PersonalGrowth #LifeAdvice #Discipline #SuccessMindset"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT23M4S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "9",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "Q1LUFVmN9OI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436852+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426889+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436850+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "C-3H4l_BoBohcsktpg_k07aCuLk",
@@ -28195,14 +29161,116 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T01:00:10Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "9JpUJLVP4O1-rpb053Yq13WXvBM",
+          "id": "Q1LUFVmN9OI",
+          "snippet": {
+            "publishedAt": "2026-09-18T01:00:10Z",
+            "channelId": "UC73Hz6b1NEKi_dJt9O3Nfvw",
+            "title": "👉Elon Musk, THIS SPECIAL ELON MUSK MESSAGE IS GOING VIRAL - THIS MESSAGE EXPIRE IN 6 Seconds...",
+            "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Q1LUFVmN9OI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Q1LUFVmN9OI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Q1LUFVmN9OI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Q1LUFVmN9OI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Q1LUFVmN9OI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Michael Prophetic Word",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👉Elon Musk, THIS SPECIAL ELON MUSK MESSAGE IS GOING VIRAL - THIS MESSAGE EXPIRE IN 6 Seconds...",
+              "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT34M37S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1484",
+            "likeCount": "142",
+            "favoriteCount": "0",
+            "commentCount": "255"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "w2gEDK3r9zU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436856+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426895+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436854+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "4zyJaZ8fSvaGKXXBma-K_PmzUSw",
@@ -28241,14 +29309,81 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T00:30:21Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "nbLDPVnGpceH1wvHsFi2J0L2AGc",
+          "id": "w2gEDK3r9zU",
+          "snippet": {
+            "publishedAt": "2026-09-18T00:30:21Z",
+            "channelId": "UCvl61qSD7lseOTKVTUux6GQ",
+            "title": "📃YOUR MONEY HAS FINALLY ARRIVED! ELON MUSK JUST APPROVED $89,000,000 FOR YOU ",
+            "description": "📃YOUR MONEY HAS FINALLY ARRIVED! ELON MUSK JUST APPROVED $89,000,000 FOR YOU OPEN THIS WITHIN 10 MINUTES BEFORE IT'S GONE!\n\ngodmessagetoday #godsaystoday #godmessagenow #godmessage #GodSays #MessageFromGod #GodIsSpeaking\n#DivineWarning #PropheticWord #UrgentWordFromHeaven\n#JesusIsCalling #HeavenlyMessage\n#GodIsExposing #Ar..changelMichael #GodWillProtectYou #GodsTimingIsPerfect\n#SpiritualWarfare #DivineRevelation #GodIsNotSilent #TrustGod #PrayAndBelieve\n#HolySpiritSpeaks #AngelsAreWithYou\n#GodIsWatching #GodKnowsEverything\n#GodIsWithYou #YouAreChosen #MiracleIsComing #GodWillMakeAWay\n#HeavenKnows #JudgmentIsNear\n#GodsPlanUnfolding #YourNameInHeaven #DivineRescue #SpiritualExposure #ListenToGod\n#WakeUpCall #GodSeesAll #NoMoreDelays\n#PropheticUrgency #SuddenBreakthrough\n#GodWillReveal #GodKnowsYourPain #TestedByGod #GodFightsYourBattles #HeavenlyAlert #EmergencyFromHeaven #GodsLastWarning #YouAreNotAlone #GodKnowsHerTruth #AngelMessageToday #GodSaidNoMore #FinalExposure #englishHeavenHasHeardYou",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/w2gEDK3r9zU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/w2gEDK3r9zU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/w2gEDK3r9zU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/w2gEDK3r9zU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Archangel micheal ",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "📃YOUR MONEY HAS FINALLY ARRIVED! ELON MUSK JUST APPROVED $89,000,000 FOR YOU ",
+              "description": "📃YOUR MONEY HAS FINALLY ARRIVED! ELON MUSK JUST APPROVED $89,000,000 FOR YOU OPEN THIS WITHIN 10 MINUTES BEFORE IT'S GONE!\n\ngodmessagetoday #godsaystoday #godmessagenow #godmessage #GodSays #MessageFromGod #GodIsSpeaking\n#DivineWarning #PropheticWord #UrgentWordFromHeaven\n#JesusIsCalling #HeavenlyMessage\n#GodIsExposing #Ar..changelMichael #GodWillProtectYou #GodsTimingIsPerfect\n#SpiritualWarfare #DivineRevelation #GodIsNotSilent #TrustGod #PrayAndBelieve\n#HolySpiritSpeaks #AngelsAreWithYou\n#GodIsWatching #GodKnowsEverything\n#GodIsWithYou #YouAreChosen #MiracleIsComing #GodWillMakeAWay\n#HeavenKnows #JudgmentIsNear\n#GodsPlanUnfolding #YourNameInHeaven #DivineRescue #SpiritualExposure #ListenToGod\n#WakeUpCall #GodSeesAll #NoMoreDelays\n#PropheticUrgency #SuddenBreakthrough\n#GodWillReveal #GodKnowsYourPain #TestedByGod #GodFightsYourBattles #HeavenlyAlert #EmergencyFromHeaven #GodsLastWarning #YouAreNotAlone #GodKnowsHerTruth #AngelMessageToday #GodSaidNoMore #FinalExposure #englishHeavenHasHeardYou"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT28M53S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "2",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "b7EtaEQA19s": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436861+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426902+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436859+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "GKlEDESZzfXaWSxs5rO9cPtu65Y",
@@ -28292,14 +29427,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T00:28:22Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "lpDvZXn62cYY2x2LVaY0fOpVyT0",
+          "id": "b7EtaEQA19s",
+          "snippet": {
+            "publishedAt": "2026-09-18T00:28:22Z",
+            "channelId": "UCsARWC_d1HIZ6j25qQHJNAQ",
+            "title": "More Macklemore. Universal Studios may shelve Elon Musk Doc from Academy Award Director, but why?",
+            "description": "Check out my book Too Real: A Hollywood Memoir for a fun and salacious trip back to 90s Hollywood before Titanic ruined everything. You'll laugh, you'll cry, you'll throw it against the wall and shout, \"noooo!\" at least once. You can order a copy from your local bookstore, read it for free on Kindle Unlimited (free trial available), pick up the ebook on Amazon  or grab a paperback at most online retailers like Barnes & Noble.  For a signed copy visit  www.TooRealBook.com and save 20% with the code tooreal20 at checkout.\n\n#freedonsplum #popculture #podcast #hollywood #entertainment",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/b7EtaEQA19s/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/b7EtaEQA19s/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/b7EtaEQA19s/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/b7EtaEQA19s/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/b7EtaEQA19s/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Dale Wheatley",
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "More Macklemore. Universal Studios may shelve Elon Musk Doc from Academy Award Director, but why?",
+              "description": "Check out my book Too Real: A Hollywood Memoir for a fun and salacious trip back to 90s Hollywood before Titanic ruined everything. You'll laugh, you'll cry, you'll throw it against the wall and shout, \"noooo!\" at least once. You can order a copy from your local bookstore, read it for free on Kindle Unlimited (free trial available), pick up the ebook on Amazon  or grab a paperback at most online retailers like Barnes & Noble.  For a signed copy visit  www.TooRealBook.com and save 20% with the code tooreal20 at checkout.\n\n#freedonsplum #popculture #podcast #hollywood #entertainment"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT2H18M1S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "212",
+            "likeCount": "6",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "B0TPJ3mVWns": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436866+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426907+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436864+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "W4TPduTdGNZTqyGAc8Njo92IWsA",
@@ -28343,14 +29550,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T00:21:15Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "uohgwcYXKKeQyLDg9Ld9A80VaHM",
+          "id": "B0TPJ3mVWns",
+          "snippet": {
+            "publishedAt": "2026-09-18T00:21:15Z",
+            "channelId": "UCZ5OtEhM7Y5C1X7Ddv3E7Cg",
+            "title": "Elon Musk Engaged to a Terrorist Who Got Plastic Surgery To Impersonate Hannah Wu",
+            "description": "Even though I walk through the shadow of the valley of death I feel no evil  - 43 U.S president George Walker Bush\n\nI don’t know how much longer I can survive, but if I die please file lawsuit for me.\n\nI’m under 24/7 illegal monitor, be trafficked, be impersonated,be assassinated daily since Jan 2026.\n\nTwo of Elon Musk's Chinese employees at Neuralink (male) and X (female) have turned Neuralink into a serial killing / terrorist 'nuclear' weapon that can massacre humans on Earth REMOTELY by invading their neuron brain and body remotely. \n\nThe Chinese male's Dad came to the US and Canada around July this year and came to Vancouver recently, his name is Wang Jun. The Chinese female that works at X got an engagement ring from Elon Musk. All of them have been working with Epstein to traffick and serial kill humans, assisted by Shivon Zillis (Neuralink), and Wang Yi (SpaceX, Elon Musk's Ex-wife) . There might be some other people who are in his company that are also involved in this. \n\nThey have turned Neuralink into a REMOTE SERIAL KILLing terrorists weapon & they are planning a massacre on Earth, maybe within the next 3 years: \n\nIt’s REMOTE killing: a combination of mind manipulation + neuron Brain attack + neuron body attack + bioweapon attack + 巫术 (witchcraft) from China instilled into Neuralink:\n\n1. Force illegally connecting human brains REMOTELY to manipulate humans’ minds.\n\n2. Conduct neuron brain attack REMOTELY. For example, they can pass the neuron that fires a bullet to someone’s brain live to the living human REMOTELY. They can also temporarily block someone’s temporary memory on the fly. \n\n3. To steal someone’s private information such as financial information, banking passwords, and passport numbers. \n\n4. Conduct Remote human physical body attack, ie.pass the energy of needling someone’s body parts, that has the possibility to take over someone’s life REMOTELY. \n\n5. Conduct bio-weapon attack Remotely. For example, they can force injecting air like bio toxins to the victim's location like NAZI. NAZI locks victims in factories and kills them, but they can inject those toxins anywhere and kill them, but they can inject those toxins anywhere and start KILLING REMOTELY. \n\n6. They also instilled 巫术 ( from China: translation maybe witchcraft) to control living humans facial expression, eyes iris movement, mouth,teeth, and tongue movement. Here is a link of the video of them trying to manipulate my facial expression live. Some videos are very DISTURBING.\n\n7. They also threaten to start a massacre on Earth without a trace since this technology can REMOTE manipulate living humans’ minds + conduct neuron brain attack + neuron body attack + inject toxin air like NAZI + use 巫术 (witchcraft from China) to control humans’ body such as facial expression and the way of talking.\n\nTheir purpose is to Serial Kill more humans on earth without a trace since everything is REMOTE and they can just hide behind computer screens to massacre targeted humans. \n\nHuman lives are precious. Please work out a solution together with our current governments, medical, tech and legal systems so humans on earth won’t be serial killed by this type of technology without a trace. If something like this unfortunate is happening to you, please hold on to it for a bit longer, we will find a solution soon and we will all survive and thrive.\n\nI read an article online I think it would be helpful to understand similar technology: (not exactly the same, the criminals has turned this into a REMOTE terrorism “nuclear” weapon):\n\nhttps://news.mit.edu/2...\n\n\nMy emails are:\nHannahkagomewu@gmail.com\nKacykagomewu@icloud.com\n\n911 Instagram, YouTube, X: HannahwurldSOS",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/B0TPJ3mVWns/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/B0TPJ3mVWns/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/B0TPJ3mVWns/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/B0TPJ3mVWns/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/B0TPJ3mVWns/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Hannah Wu",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk Engaged to a Terrorist Who Got Plastic Surgery To Impersonate Hannah Wu",
+              "description": "Even though I walk through the shadow of the valley of death I feel no evil  - 43 U.S president George Walker Bush\n\nI don’t know how much longer I can survive, but if I die please file lawsuit for me.\n\nI’m under 24/7 illegal monitor, be trafficked, be impersonated,be assassinated daily since Jan 2026.\n\nTwo of Elon Musk's Chinese employees at Neuralink (male) and X (female) have turned Neuralink into a serial killing / terrorist 'nuclear' weapon that can massacre humans on Earth REMOTELY by invading their neuron brain and body remotely. \n\nThe Chinese male's Dad came to the US and Canada around July this year and came to Vancouver recently, his name is Wang Jun. The Chinese female that works at X got an engagement ring from Elon Musk. All of them have been working with Epstein to traffick and serial kill humans, assisted by Shivon Zillis (Neuralink), and Wang Yi (SpaceX, Elon Musk's Ex-wife) . There might be some other people who are in his company that are also involved in this. \n\nThey have turned Neuralink into a REMOTE SERIAL KILLing terrorists weapon & they are planning a massacre on Earth, maybe within the next 3 years: \n\nIt’s REMOTE killing: a combination of mind manipulation + neuron Brain attack + neuron body attack + bioweapon attack + 巫术 (witchcraft) from China instilled into Neuralink:\n\n1. Force illegally connecting human brains REMOTELY to manipulate humans’ minds.\n\n2. Conduct neuron brain attack REMOTELY. For example, they can pass the neuron that fires a bullet to someone’s brain live to the living human REMOTELY. They can also temporarily block someone’s temporary memory on the fly. \n\n3. To steal someone’s private information such as financial information, banking passwords, and passport numbers. \n\n4. Conduct Remote human physical body attack, ie.pass the energy of needling someone’s body parts, that has the possibility to take over someone’s life REMOTELY. \n\n5. Conduct bio-weapon attack Remotely. For example, they can force injecting air like bio toxins to the victim's location like NAZI. NAZI locks victims in factories and kills them, but they can inject those toxins anywhere and kill them, but they can inject those toxins anywhere and start KILLING REMOTELY. \n\n6. They also instilled 巫术 ( from China: translation maybe witchcraft) to control living humans facial expression, eyes iris movement, mouth,teeth, and tongue movement. Here is a link of the video of them trying to manipulate my facial expression live. Some videos are very DISTURBING.\n\n7. They also threaten to start a massacre on Earth without a trace since this technology can REMOTE manipulate living humans’ minds + conduct neuron brain attack + neuron body attack + inject toxin air like NAZI + use 巫术 (witchcraft from China) to control humans’ body such as facial expression and the way of talking.\n\nTheir purpose is to Serial Kill more humans on earth without a trace since everything is REMOTE and they can just hide behind computer screens to massacre targeted humans. \n\nHuman lives are precious. Please work out a solution together with our current governments, medical, tech and legal systems so humans on earth won’t be serial killed by this type of technology without a trace. If something like this unfortunate is happening to you, please hold on to it for a bit longer, we will find a solution soon and we will all survive and thrive.\n\nI read an article online I think it would be helpful to understand similar technology: (not exactly the same, the criminals has turned this into a REMOTE terrorism “nuclear” weapon):\n\nhttps://news.mit.edu/2...\n\n\nMy emails are:\nHannahkagomewu@gmail.com\nKacykagomewu@icloud.com\n\n911 Instagram, YouTube, X: HannahwurldSOS"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT21M45S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1765",
+            "likeCount": "22",
+            "favoriteCount": "0",
+            "commentCount": "17"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "xYa7wAPpzwA": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436871+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426913+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436869+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "kKrzvgSSNSo1ZT5igC21JQTPXKM",
@@ -28394,14 +29673,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T23:00:04Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "ZoYtaWfAIlEBgO8BNRMex0YxgXs",
+          "id": "xYa7wAPpzwA",
+          "snippet": {
+            "publishedAt": "2026-09-17T23:00:04Z",
+            "channelId": "UC4a6zeCnsOVmnjuMNBOHPBQ",
+            "title": "1👉Elon Musk Beg for 5 Minutes   You Made a Serious Mistake  Something Incredible Is About to Happen",
+            "description": "#godmessage #jesus #jesusmessage #godmessages #lawofattraction #manifesting #godsaystoday #godmessagetoday #godwords #godmsg #lordmessage #godmessagesforme #jesusewords #godsmessages #angelsmessage",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/xYa7wAPpzwA/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/xYa7wAPpzwA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/xYa7wAPpzwA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/xYa7wAPpzwA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/xYa7wAPpzwA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Michael Prophetic Word",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "1👉Elon Musk Beg for 5 Minutes   You Made a Serious Mistake  Something Incredible Is About to Happen",
+              "description": "#godmessage #jesus #jesusmessage #godmessages #lawofattraction #manifesting #godsaystoday #godmessagetoday #godwords #godmsg #lordmessage #godmessagesforme #jesusewords #godsmessages #angelsmessage"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT46M41S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "0",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "nLInqZfwFvY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436875+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T03:15:51.426919+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436874+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "EDbZj5e2bsY9eIFb4CsIniHioE4",
@@ -28445,7 +29796,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T23:00:25Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T03:15:51.223734+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "Nb8f-_VBkponzMja04_5STpvu68",
+          "id": "nLInqZfwFvY",
+          "snippet": {
+            "publishedAt": "2026-09-17T23:00:25Z",
+            "channelId": "UCa3rahAQjfeRzzhRW1Am2yA",
+            "title": "Elon Musk te envió 998 mil millones de dólares   ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús",
+            "description": "Elon Musk te envió 998 mil millones de dólares   ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/nLInqZfwFvY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/nLInqZfwFvY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/nLInqZfwFvY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/nLInqZfwFvY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/nLInqZfwFvY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "El Ángel Habla",
+            "tags": [
+              "#DiosTeHabla",
+              "#Arrepentimiento",
+              "#ProtecciónCelestial",
+              "#RevelaciónUrgente",
+              "#PalabraProfética"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "Elon Musk te envió 998 mil millones de dólares   ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús",
+              "description": "Elon Musk te envió 998 mil millones de dólares   ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús"
+            },
+            "defaultAudioLanguage": "es"
+          },
+          "contentDetails": {
+            "duration": "PT28M22S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "69",
+            "likeCount": "16",
+            "favoriteCount": "0",
+            "commentCount": "20"
+          }
+        },
+        "next_retry_at": "2026-09-27T03:15:51.223734+00:00"
       },
       "LN54tSmmG3k": {
         "status": "pending",
@@ -31823,9 +33253,9 @@
         }
       },
       "Ct0LacaI6xI": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:31.781134+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T03:15:51.224293+00:00",
         "first_seen_at": "2026-09-18T22:12:31.781132+00:00",
         "attempts": 0,
         "item": {
@@ -31874,9 +33304,9 @@
         }
       },
       "t9-OrjvCHWc": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:31.781139+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T03:15:51.224300+00:00",
         "first_seen_at": "2026-09-18T22:12:31.781137+00:00",
         "attempts": 0,
         "item": {
@@ -32292,9 +33722,9 @@
         }
       },
       "XNlL98NqvaM": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:33.637657+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T03:15:51.224317+00:00",
         "first_seen_at": "2026-09-18T22:12:33.637655+00:00",
         "attempts": 0,
         "item": {
@@ -32863,9 +34293,9 @@
         }
       },
       "fKlQtD-xydw": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:36.270023+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T03:15:51.224338+00:00",
         "first_seen_at": "2026-09-18T22:12:36.270020+00:00",
         "attempts": 0,
         "item": {
@@ -35402,9 +36832,9 @@
         }
       },
       "nEfnVWEFQJQ": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152215+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T03:15:51.224451+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152213+00:00",
         "attempts": 0,
         "item": {
@@ -35453,9 +36883,9 @@
         }
       },
       "5l6dl5GQayU": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152220+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T03:15:51.224455+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152218+00:00",
         "attempts": 0,
         "item": {
@@ -35499,9 +36929,9 @@
         }
       },
       "MPfeUdyGFHc": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152225+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T03:15:51.224458+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152223+00:00",
         "attempts": 0,
         "item": {
@@ -41760,9 +43190,9 @@
         }
       },
       "sLt0EmA1S44": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315663+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T03:15:51.224782+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315660+00:00",
         "attempts": 0,
         "item": {
