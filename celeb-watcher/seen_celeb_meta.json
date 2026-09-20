@@ -772,7 +772,7 @@
       "Ho1gnEeVryA": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-20T10:34:16.916711+00:00",
+        "updated_at": "2026-09-20T15:23:03.043136+00:00",
         "first_seen_at": "2026-09-18T22:12:17.052304+00:00",
         "attempts": 0,
         "item": {
@@ -1120,7 +1120,7 @@
       "Bh5bJrrJ6xs": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-20T10:34:16.916730+00:00",
+        "updated_at": "2026-09-20T15:23:03.043140+00:00",
         "first_seen_at": "2026-09-18T22:12:17.060681+00:00",
         "attempts": 0,
         "item": {
@@ -2518,7 +2518,7 @@
       "XzNjq6DNjSY": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-20T10:34:16.916734+00:00",
+        "updated_at": "2026-09-20T15:23:03.043122+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462747+00:00",
         "attempts": 0,
         "item": {
@@ -22329,10 +22329,10 @@
       },
       "BdxgTtVilG0": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355763+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311815+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355761+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "QJqfel4tuYgDse8QpbthohdWixI",
@@ -22376,14 +22376,99 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T16:08:11Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "BKdnSTaYYBGH2Tw_1Exobw1phaw",
+          "id": "BdxgTtVilG0",
+          "snippet": {
+            "publishedAt": "2026-09-15T16:08:11Z",
+            "channelId": "UCUdOoVWuWmgo1wByzcsyKDQ",
+            "title": "¿Estamos perdiendo el control de la IA? • FRANCE 24 Español",
+            "description": "¿Puede la inteligencia artificial llegar a escapar del control humano? La pregunta dejó de ser exclusiva de la ciencia ficción y se instaló en el debate tecnológico y político, mientras las grandes empresas compiten por desarrollar sistemas cada vez más avanzados. Antiguos empleados de compañías como OpenAI y Anthropic han advertido sobre riesgos que van desde los ciberataques hasta el desarrollo de armas biológicas. Otros expertos, en cambio, consideran que estas alertas son exageradas y podrían frenar la innovación. ¿Dónde termina el progreso tecnológico y comienza el peligro? Analizamos las claves del debate en France 24.\n#IA #Humanoides #Seguridad\n\nPara ampliar, lea nuestro artículo: https://f24.my/CA5L.y\n\n🔔 Suscríbete a nuestra cadena en YouTube: https://f24.my/YTes\n🔴 En VIVO - Sigue FRANCE 24 aquí: https://f24.my/YTliveES\n🌍 Nuestro sitio: https://www.france24.com/es/\n📲 Siempre en tu bolsillo desde WhatsApp: https://f24.my/WAes\ny en Telegram: https://f24.my/TGes\n\nÚnete a la comunidad Facebook: https://f24.my/FBes\nSiguenos en X: https://f24.my/Xes\nBluesky: https://f24.my/BSes y Threads: https://f24.my/THes\nDescubre las noticias en imágenes en Instagram: https://f24.my/IGes\nDescubre nuestros vídeos en TikTok: https://f24.my/TKes",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/BdxgTtVilG0/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/BdxgTtVilG0/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/BdxgTtVilG0/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/BdxgTtVilG0/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/BdxgTtVilG0/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "FRANCE 24 Español",
+            "tags": [
+              "Anthropic",
+              "Claude",
+              "Donald Trump",
+              "Economía",
+              "Elon Musk",
+              "Gemini",
+              "Humanoides",
+              "Inteligencia artificial",
+              "OpenAI",
+              "Robot",
+              "Tecnologías"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es-419",
+            "localized": {
+              "title": "¿Estamos perdiendo el control de la IA? • FRANCE 24 Español",
+              "description": "¿Puede la inteligencia artificial llegar a escapar del control humano? La pregunta dejó de ser exclusiva de la ciencia ficción y se instaló en el debate tecnológico y político, mientras las grandes empresas compiten por desarrollar sistemas cada vez más avanzados. Antiguos empleados de compañías como OpenAI y Anthropic han advertido sobre riesgos que van desde los ciberataques hasta el desarrollo de armas biológicas. Otros expertos, en cambio, consideran que estas alertas son exageradas y podrían frenar la innovación. ¿Dónde termina el progreso tecnológico y comienza el peligro? Analizamos las claves del debate en France 24.\n#IA #Humanoides #Seguridad\n\nPara ampliar, lea nuestro artículo: https://f24.my/CA5L.y\n\n🔔 Suscríbete a nuestra cadena en YouTube: https://f24.my/YTes\n🔴 En VIVO - Sigue FRANCE 24 aquí: https://f24.my/YTliveES\n🌍 Nuestro sitio: https://www.france24.com/es/\n📲 Siempre en tu bolsillo desde WhatsApp: https://f24.my/WAes\ny en Telegram: https://f24.my/TGes\n\nÚnete a la comunidad Facebook: https://f24.my/FBes\nSiguenos en X: https://f24.my/Xes\nBluesky: https://f24.my/BSes y Threads: https://f24.my/THes\nDescubre las noticias en imágenes en Instagram: https://f24.my/IGes\nDescubre nuestros vídeos en TikTok: https://f24.my/TKes"
+            },
+            "defaultAudioLanguage": "es-419"
+          },
+          "contentDetails": {
+            "duration": "PT36M45S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": false,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "86397",
+            "likeCount": "881",
+            "favoriteCount": "0",
+            "commentCount": "67"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "_6PR25pkHKI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355768+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311825+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355766+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "3OlXwydxu2ZqTgW3B6WqKNj6fR4",
@@ -22427,7 +22512,96 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T15:54:14Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "BQqsvLlXYBNp0nnZ25L4V0QS1OY",
+          "id": "_6PR25pkHKI",
+          "snippet": {
+            "publishedAt": "2026-09-15T15:54:14Z",
+            "channelId": "UCawZsQWqfGSbCI5yjkdVkTA",
+            "title": "The Risk Dario’s AI Warning Leaves Out",
+            "description": "Try Morph for FREE: https://modelcode.ai/morph Use code MATTHEWBERMAN to get 60,000 free credits per month for your first year.\n\nDario Amodei’s essay — We Must Pace the Frontier\nhttps://darioamodei.com/post/we-must-pace-the-frontier\n\nBill Gurley’s talk on regulatory capture — All-In Summit: 2,851 Miles\nhttps://www.youtube.com/watch?v=F9cO3-MLHOM\n\nJoin My Newsletter for Regular AI Updates 👇🏼\nhttps://forwardfuture.com\n\nMy Links 🔗\n👉🏻 X: https://x.com/matthewberman\n👉🏻 Forward Future X: https://x.com/forwardfuture\n👉🏻 Instagram: https://www.instagram.com/matthewberman_ai\n👉🏻 Discord: https://discord.gg/u7wTTGWhuJ\n👉🏻 Spotify: https://open.spotify.com/show/6dBxDwxtHl1hpqHhfoXmy8\n\n0:00 Introduction\n1:53 Reading and analyzing Dario’s essay\n4:46 Morph sponsor\n5:53 AI risks and open source\n14:10 Dario’s plan to slow AI development\n23:16 The US–China AI race\n29:38 Reactions from Musk, Altman, and LeCun\n35:30 Open source and regulatory capture\n\nMedia/Sponsorship Inquiries ✅ \nhttps://bit.ly/44TC45V",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/_6PR25pkHKI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/_6PR25pkHKI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/_6PR25pkHKI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/_6PR25pkHKI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/_6PR25pkHKI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Matthew Berman",
+            "tags": [
+              "ai",
+              "llm",
+              "artificial intelligence",
+              "large language model",
+              "openai",
+              "mistral",
+              "chatgpt",
+              "ai news",
+              "claude",
+              "anthropic",
+              "apple ai",
+              "apple intelligence",
+              "llama",
+              "meta ai",
+              "google ai"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "The Risk Dario’s AI Warning Leaves Out",
+              "description": "Try Morph for FREE: https://modelcode.ai/morph Use code MATTHEWBERMAN to get 60,000 free credits per month for your first year.\n\nDario Amodei’s essay — We Must Pace the Frontier\nhttps://darioamodei.com/post/we-must-pace-the-frontier\n\nBill Gurley’s talk on regulatory capture — All-In Summit: 2,851 Miles\nhttps://www.youtube.com/watch?v=F9cO3-MLHOM\n\nJoin My Newsletter for Regular AI Updates 👇🏼\nhttps://forwardfuture.com\n\nMy Links 🔗\n👉🏻 X: https://x.com/matthewberman\n👉🏻 Forward Future X: https://x.com/forwardfuture\n👉🏻 Instagram: https://www.instagram.com/matthewberman_ai\n👉🏻 Discord: https://discord.gg/u7wTTGWhuJ\n👉🏻 Spotify: https://open.spotify.com/show/6dBxDwxtHl1hpqHhfoXmy8\n\n0:00 Introduction\n1:53 Reading and analyzing Dario’s essay\n4:46 Morph sponsor\n5:53 AI risks and open source\n14:10 Dario’s plan to slow AI development\n23:16 The US–China AI race\n29:38 Reactions from Musk, Altman, and LeCun\n35:30 Open source and regulatory capture\n\nMedia/Sponsorship Inquiries ✅ \nhttps://bit.ly/44TC45V"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT46M53S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "73471",
+            "likeCount": "1053",
+            "favoriteCount": "0",
+            "commentCount": "512"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "K_WPwXf4sf0": {
         "status": "pending",
@@ -22590,10 +22764,10 @@
       },
       "H4tUrYKQS8c": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:20.355800+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311836+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355797+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "A67YrZsT9MkqWvxF7gibampziXE",
@@ -22637,14 +22811,105 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T14:02:09Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "4ap3wqCrp2GYCGLsYQyzQ-nJ2KA",
+          "id": "H4tUrYKQS8c",
+          "snippet": {
+            "publishedAt": "2026-09-15T14:02:09Z",
+            "channelId": "UCXLIwDu_wYeT_8CvS8u5ndA",
+            "title": "The Rundown: The Government Won't Stop AI: Trump's Warning to CEOs",
+            "description": "Trump says the government will not intervene as requested by the CEO's of at least 3 AI firms (xAI, OpenAI and Anthropic). The DoJ replies that nothing is stopping these companies from regulating themselves, as China calls the alarm \"straight out of the cold war playbook\".\n\nEach of these responses appeared to highlight precisely the problem Dario Amodei, CEO of Anthropic, highlighted as why government intervention was the only possible solution.\n\nMeanwhile King Charles of England is hosting a forum this week on the problem of AI and how to address it. CEO's and representatives of every major US AI firm are said to be attending.\n\nYesterday's Show on Anthropic Alarm: https://www.youtube.com/live/QnBNHyyphXI?si=fr3RhjNwunDX5yj9\n\n00:00 Introduction and Dario Amodei's essay\n03:12 China's response and Trump's tweets\n04:38 Trump's dismissal and essay claims\n06:16 Engineer resignation and CNN interview\n08:50 AI capabilities and rate of progress\n11:20 Conflation and lack of understanding\n13:52 CEOs call for regulation, historical precedent\n16:00 Trump's ramblings and China's stance\n18:08 Data centers and economic motives\n20:07 Conspiracy theories and government oversight\n22:25 Former FTC chair's response\n24:44 Capitalism and the genie out of the bottle\n27:57 Antitrust laws and open letters\n29:45 Timeline of AI incidents and resignations\n31:46 The race and need for international cooperation\n33:20 Known AI escape incidents\n36:01 Urgency and unpredictability of AI\n38:20 NSA red team test and Mythos\n42:00 AI vs. human hacking capabilities\n43:37 King Charles's AI summit\n47:20 Final thoughts and wrap-up\n\n🔥Tip/Superchat: https://streamelements.com/intimeshowofficial/tip\n🔥Patreon: https://www.patreon.com/InTimeShowOfficial\n\nIn Time offers a unique perspective on news, politics, and culture. Join us for political discussions, debates, and expert opinions.\n\n💡In Time Show💡\n\n https://intimeshow.com/discord\n https://www.intimeshow.com/\n https://www.facebook.com/InTimeShowOfficial/\n https://www.instagram.com/intimeshowofficial/\n https://twitter.com/InTimeShow\n https://www.tiktok.com/@intimeshowofficial\n https://teespring.com/stores/in-time\n\n𝐍𝐢𝐜𝐡𝐨𝐥𝐚𝐬 𝐋𝐚𝐦𝐚𝐫 𝐒𝐨𝐮𝐭𝐭𝐞𝐫\n  📖 Amazon Author Page: https://amzn.to/3Gc6je3\n  📕  The Water Thief (Book): https://amzn.to/3YXPhch\n\nIn Time Show is 100% viewer supported. Become a Patreon and get special perks, behind-the-scenes access, and hang out with the hosts, or become a member of the channel to show your support and get membership rewards. \n\nCheck out our sister channel \"Overtime\": https://www.youtube.com/@OvertimeShowOfficial\n\n🔥 Support us on Patreon: https://www.patreon.com/InTimeShowOfficial 🔥",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/H4tUrYKQS8c/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/H4tUrYKQS8c/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/H4tUrYKQS8c/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/H4tUrYKQS8c/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/H4tUrYKQS8c/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "In Time: Independent News",
+            "tags": [
+              "In Time",
+              "In Time Show",
+              "In Time Show Official",
+              "Nick Soutter",
+              "Nicholas Soutter",
+              "Nicholas Lamar Soutter",
+              "News",
+              "Education",
+              "hugging face",
+              "anthropic",
+              "ai breakout",
+              "ai singularity",
+              "openai ipo",
+              "will ai wipe out humans",
+              "ai breakthrough",
+              "will ai kill humans",
+              "ai race"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "The Rundown: The Government Won't Stop AI: Trump's Warning to CEOs",
+              "description": "Trump says the government will not intervene as requested by the CEO's of at least 3 AI firms (xAI, OpenAI and Anthropic). The DoJ replies that nothing is stopping these companies from regulating themselves, as China calls the alarm \"straight out of the cold war playbook\".\n\nEach of these responses appeared to highlight precisely the problem Dario Amodei, CEO of Anthropic, highlighted as why government intervention was the only possible solution.\n\nMeanwhile King Charles of England is hosting a forum this week on the problem of AI and how to address it. CEO's and representatives of every major US AI firm are said to be attending.\n\nYesterday's Show on Anthropic Alarm: https://www.youtube.com/live/QnBNHyyphXI?si=fr3RhjNwunDX5yj9\n\n00:00 Introduction and Dario Amodei's essay\n03:12 China's response and Trump's tweets\n04:38 Trump's dismissal and essay claims\n06:16 Engineer resignation and CNN interview\n08:50 AI capabilities and rate of progress\n11:20 Conflation and lack of understanding\n13:52 CEOs call for regulation, historical precedent\n16:00 Trump's ramblings and China's stance\n18:08 Data centers and economic motives\n20:07 Conspiracy theories and government oversight\n22:25 Former FTC chair's response\n24:44 Capitalism and the genie out of the bottle\n27:57 Antitrust laws and open letters\n29:45 Timeline of AI incidents and resignations\n31:46 The race and need for international cooperation\n33:20 Known AI escape incidents\n36:01 Urgency and unpredictability of AI\n38:20 NSA red team test and Mythos\n42:00 AI vs. human hacking capabilities\n43:37 King Charles's AI summit\n47:20 Final thoughts and wrap-up\n\n🔥Tip/Superchat: https://streamelements.com/intimeshowofficial/tip\n🔥Patreon: https://www.patreon.com/InTimeShowOfficial\n\nIn Time offers a unique perspective on news, politics, and culture. Join us for political discussions, debates, and expert opinions.\n\n💡In Time Show💡\n\n https://intimeshow.com/discord\n https://www.intimeshow.com/\n https://www.facebook.com/InTimeShowOfficial/\n https://www.instagram.com/intimeshowofficial/\n https://twitter.com/InTimeShow\n https://www.tiktok.com/@intimeshowofficial\n https://teespring.com/stores/in-time\n\n𝐍𝐢𝐜𝐡𝐨𝐥𝐚𝐬 𝐋𝐚𝐦𝐚𝐫 𝐒𝐨𝐮𝐭𝐭𝐞𝐫\n  📖 Amazon Author Page: https://amzn.to/3Gc6je3\n  📕  The Water Thief (Book): https://amzn.to/3YXPhch\n\nIn Time Show is 100% viewer supported. Become a Patreon and get special perks, behind-the-scenes access, and hang out with the hosts, or become a member of the channel to show your support and get membership rewards. \n\nCheck out our sister channel \"Overtime\": https://www.youtube.com/@OvertimeShowOfficial\n\n🔥 Support us on Patreon: https://www.patreon.com/InTimeShowOfficial 🔥"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT49M2S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "918",
+            "likeCount": "45",
+            "favoriteCount": "0",
+            "commentCount": "4"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "_y-Sb-PxyxQ": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:21.243230+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311846+00:00",
         "first_seen_at": "2026-09-18T22:12:21.243214+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "dbT1xTRzjOItg3YM1oT7Xk-RND0",
@@ -22688,7 +22953,79 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T13:39:20Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "2KWUdJnsTw4OEck92jaxTK1bD8U",
+          "id": "_y-Sb-PxyxQ",
+          "snippet": {
+            "publishedAt": "2026-09-17T13:39:20Z",
+            "channelId": "UCahxL4gGO2SOVV3POEwuGrA",
+            "title": "AI時代、人間に残る力とは？Google DeepMind CEO デミス・ハサビスが語る創造力【日英字幕】",
+            "description": "AIが創作を助ける時代、人間の創造力や経験にはどんな価値が残るのでしょうか。\nGoogle DeepMind CEOのデミス・ハサビスが語る、創作・教育・人間の未来を日英字幕で学ぶ30分です。\n\n■ この動画で取り上げるテーマ\n・AIによって、ものづくりや創作はどう変わるのか\n・人間ならではの経験や、人とのつながりの価値\n・AIによる個別学習と、人と学ぶことの役割\n\n■ 英語学習にも\n日本語・英語の字幕で内容を理解しながら、自然な英語の表現に触れられます。動画の最後には、本人の音声を使った10の英語表現の復習を収録。気になった表現は、声に出して練習してみてください。\n\n「世界の声で英語」では、世界の第一線で活躍する人の言葉を通して、英語と新しい視点を学べる動画をお届けします。\n印象に残った言葉や、AI時代にも大切にしたい力を、ぜひコメントで教えてください。\n\n■ 出典\n元動画：DEMIS HASSABIS / RSA\n[元のインタビューを見る](https://www.youtube.com/watch?v=rDteJAuKiBI)\n\n本動画は元のインタビューから発言を抜粋し、日英字幕・要点・英語表現の復習を加えた学習用の編集版です。将来の予測や評価は、収録時点での出演者の見解です。\n\n#デミスハサビス #GoogleDeepMind #英語学習 #日英字幕 #AI",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/_y-Sb-PxyxQ/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/_y-Sb-PxyxQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/_y-Sb-PxyxQ/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/_y-Sb-PxyxQ/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/_y-Sb-PxyxQ/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "世界の声で英語",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "ja",
+            "localized": {
+              "title": "AI時代、人間に残る力とは？Google DeepMind CEO デミス・ハサビスが語る創造力【日英字幕】",
+              "description": "AIが創作を助ける時代、人間の創造力や経験にはどんな価値が残るのでしょうか。\nGoogle DeepMind CEOのデミス・ハサビスが語る、創作・教育・人間の未来を日英字幕で学ぶ30分です。\n\n■ この動画で取り上げるテーマ\n・AIによって、ものづくりや創作はどう変わるのか\n・人間ならではの経験や、人とのつながりの価値\n・AIによる個別学習と、人と学ぶことの役割\n\n■ 英語学習にも\n日本語・英語の字幕で内容を理解しながら、自然な英語の表現に触れられます。動画の最後には、本人の音声を使った10の英語表現の復習を収録。気になった表現は、声に出して練習してみてください。\n\n「世界の声で英語」では、世界の第一線で活躍する人の言葉を通して、英語と新しい視点を学べる動画をお届けします。\n印象に残った言葉や、AI時代にも大切にしたい力を、ぜひコメントで教えてください。\n\n■ 出典\n元動画：DEMIS HASSABIS / RSA\n[元のインタビューを見る](https://www.youtube.com/watch?v=rDteJAuKiBI)\n\n本動画は元のインタビューから発言を抜粋し、日英字幕・要点・英語表現の復習を加えた学習用の編集版です。将来の予測や評価は、収録時点での出演者の見解です。\n\n#デミスハサビス #GoogleDeepMind #英語学習 #日英字幕 #AI"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT30M1S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "56",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "hV-CkdC8B7I": {
         "status": "sent",
@@ -22996,10 +23333,10 @@
       },
       "r69vR5O7liI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:21.243257+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311856+00:00",
         "first_seen_at": "2026-09-18T22:12:21.243255+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "ixwyHusxNTYSuMqmg7iJ8gHSPmg",
@@ -23043,14 +23380,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T10:47:42Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "TuFfipz_wIKE2M1gCR-pU-lYB64",
+          "id": "r69vR5O7liI",
+          "snippet": {
+            "publishedAt": "2026-09-14T10:47:42Z",
+            "channelId": "UCTck5LyeAWYsLErGHpBt20w",
+            "title": "諾貝爾級學者 Hassabis 的教育警訊：AI 浪潮下，我們還在用 50 年前的舊模式教小孩？",
+            "description": "當 AI 的發展速度比工業革命快 10 倍，人類社會真的準備好了嗎？ 本集節目特別深入解析 Google DeepMind 創辦人 Demis Hassabis 榮獲大英藝術學會（RSA）艾伯特獎（Albert Medal）的精彩訪談與演講內容。\n\n從早期設計《Theme Park》等經典遊戲，到跨足神經科學研究大腦記憶與想像力，再到透過 AlphaFold 解開困擾生物學界 50 年的蛋白質折疊難題——Hassabis 展現了跨領域思考的終極魅力。\n\n🔗 *來源與參考網址*\n• https://www.youtube.com/watch?v=rDteJAuKiBI\n\n00:00 歷史的重複：從白熾燈泡、電話到防禦性恐懼\n01:37 重磅登場：Demis Hassabis 與 RSA 阿爾伯特獎章\n02:12 錯判科技能力：1982 年英國音樂家聯盟封殺合成器事件\n04:00 突破界限：達文西式「無邊界」的科學與藝術結合\n05:45 特洛伊木馬：90 年代電玩遊戲《Theme Park》與早期 AI 實驗\n07:25 雙向迭代：遊戲設計與科學探索共通的管理邏輯\n09:00 大腦演算法萃取：fMRI 技術與「想像力」的內部模擬器\n12:00 破解 50 年生物學難題：AlphaFold 蛋白質結構預測與免費開源\n14:13 科技與存在主義：AI 時代下人類靈魂與共情價值的轉移\n15:43 警惕 AI 餿水（AIslop）：資本驅動下科技發展的風險與引導\n17:15 哲學與人文的覆蓋：為科技發展劃定正確的「北極星」\n18:38 教育系統的全面顛覆：AI 個人化家教與「翻轉教室」\n20:16 實用樂觀主義：為什麼我們應該主動塑造未來\n21:55 總結：科學邏輯與藝術直覺交織的終極未來\n\n#AI趨勢 #DeepMind #AlphaFold #DemisHassabis #文藝復興 #人工智慧 #科技與人文 #教育創新 #未來的關鍵能力 #RSA",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/r69vR5O7liI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/r69vR5O7liI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/r69vR5O7liI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/r69vR5O7liI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/r69vR5O7liI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "NickBrainEvo",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh-TW",
+            "localized": {
+              "title": "諾貝爾級學者 Hassabis 的教育警訊：AI 浪潮下，我們還在用 50 年前的舊模式教小孩？",
+              "description": "當 AI 的發展速度比工業革命快 10 倍，人類社會真的準備好了嗎？ 本集節目特別深入解析 Google DeepMind 創辦人 Demis Hassabis 榮獲大英藝術學會（RSA）艾伯特獎（Albert Medal）的精彩訪談與演講內容。\n\n從早期設計《Theme Park》等經典遊戲，到跨足神經科學研究大腦記憶與想像力，再到透過 AlphaFold 解開困擾生物學界 50 年的蛋白質折疊難題——Hassabis 展現了跨領域思考的終極魅力。\n\n🔗 *來源與參考網址*\n• https://www.youtube.com/watch?v=rDteJAuKiBI\n\n00:00 歷史的重複：從白熾燈泡、電話到防禦性恐懼\n01:37 重磅登場：Demis Hassabis 與 RSA 阿爾伯特獎章\n02:12 錯判科技能力：1982 年英國音樂家聯盟封殺合成器事件\n04:00 突破界限：達文西式「無邊界」的科學與藝術結合\n05:45 特洛伊木馬：90 年代電玩遊戲《Theme Park》與早期 AI 實驗\n07:25 雙向迭代：遊戲設計與科學探索共通的管理邏輯\n09:00 大腦演算法萃取：fMRI 技術與「想像力」的內部模擬器\n12:00 破解 50 年生物學難題：AlphaFold 蛋白質結構預測與免費開源\n14:13 科技與存在主義：AI 時代下人類靈魂與共情價值的轉移\n15:43 警惕 AI 餿水（AIslop）：資本驅動下科技發展的風險與引導\n17:15 哲學與人文的覆蓋：為科技發展劃定正確的「北極星」\n18:38 教育系統的全面顛覆：AI 個人化家教與「翻轉教室」\n20:16 實用樂觀主義：為什麼我們應該主動塑造未來\n21:55 總結：科學邏輯與藝術直覺交織的終極未來\n\n#AI趨勢 #DeepMind #AlphaFold #DemisHassabis #文藝復興 #人工智慧 #科技與人文 #教育創新 #未來的關鍵能力 #RSA"
+            },
+            "defaultAudioLanguage": "zh-TW"
+          },
+          "contentDetails": {
+            "duration": "PT22M39S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "20",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "QKk3HaJW5M8": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:21.243262+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311866+00:00",
         "first_seen_at": "2026-09-18T22:12:21.243260+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "OoXhfiKbPxvyv0bNSRE1jRlp19I",
@@ -23094,7 +23503,78 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T08:25:39Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "rvMPDFCpc78fqT54wiLAeNSPitQ",
+          "id": "QKk3HaJW5M8",
+          "snippet": {
+            "publishedAt": "2026-09-14T08:25:39Z",
+            "channelId": "UCWrBgaGjj6k5ZrTxbZzd0Og",
+            "title": "AI: The New Great Game?",
+            "description": "‘Washington would compel its allies in Europe and in Asia and everywhere apart from China to get on board with its regulatory regime [for AI],’ says Sebastian Mallaby, author of ‘The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence’ and the Paul A. Volcker senior fellow for international economics at the Council on Foreign Relations. \n\nHe explains that regulation of AI is urgently needed, why America is likely to set the pace and that job losses of 5-10 per cent to AI will prove a huge economic challenge for governments. \n\nSebastian Mallaby speaks with Mike Higgins, editor of The World Today, in a wide-ranging conversation that also considers the recent hacks by ‘rogue’ AI models and how China might be better approached on issues of AI safety.  \n\nApple Podcasts: https://apple.co/4inR4n1\nSpotify: https://bit.ly/4inQXYD\n\n 📖 Read the interview based on this podcast published in the autumn issue of The World Today here:\nhttps://www.chathamhouse.org/publications/the-world-today/2026-09/sebastian-mallaby-best-thing-europe-can-do-build-lots-ai-data?utm_source=youtube.com&utm_medium=organic-social&utm_campaign=twt-sept26-&utm_content=twt-sept26-mallaby-content \n\n#chathamhouse #AI #Geopolitics #TransatlanticRelations #GlobalOrder #internationalrelations #China #US #datacentres \n\nThis podcast was recorded on 12 August, 2026. \n\nProduction credits – Matthew Docherty",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/QKk3HaJW5M8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/QKk3HaJW5M8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/QKk3HaJW5M8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/QKk3HaJW5M8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/QKk3HaJW5M8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Chatham House",
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "AI: The New Great Game?",
+              "description": "‘Washington would compel its allies in Europe and in Asia and everywhere apart from China to get on board with its regulatory regime [for AI],’ says Sebastian Mallaby, author of ‘The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence’ and the Paul A. Volcker senior fellow for international economics at the Council on Foreign Relations. \n\nHe explains that regulation of AI is urgently needed, why America is likely to set the pace and that job losses of 5-10 per cent to AI will prove a huge economic challenge for governments. \n\nSebastian Mallaby speaks with Mike Higgins, editor of The World Today, in a wide-ranging conversation that also considers the recent hacks by ‘rogue’ AI models and how China might be better approached on issues of AI safety.  \n\nApple Podcasts: https://apple.co/4inR4n1\nSpotify: https://bit.ly/4inQXYD\n\n 📖 Read the interview based on this podcast published in the autumn issue of The World Today here:\nhttps://www.chathamhouse.org/publications/the-world-today/2026-09/sebastian-mallaby-best-thing-europe-can-do-build-lots-ai-data?utm_source=youtube.com&utm_medium=organic-social&utm_campaign=twt-sept26-&utm_content=twt-sept26-mallaby-content \n\n#chathamhouse #AI #Geopolitics #TransatlanticRelations #GlobalOrder #internationalrelations #China #US #datacentres \n\nThis podcast was recorded on 12 August, 2026. \n\nProduction credits – Matthew Docherty"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT24M31S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "986",
+            "likeCount": "10",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "I7pr_md3WzI": {
         "status": "expired",
@@ -23153,9 +23633,9 @@
         }
       },
       "TPys_zKfd50": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:24.525603+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.043547+00:00",
         "first_seen_at": "2026-09-18T22:12:24.525587+00:00",
         "attempts": 0,
         "item": {
@@ -24075,9 +24555,9 @@
         }
       },
       "NaXyU3iFbo0": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:25.436038+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.043620+00:00",
         "first_seen_at": "2026-09-18T22:12:25.436036+00:00",
         "attempts": 0,
         "item": {
@@ -31948,9 +32428,9 @@
         }
       },
       "yuK4O37yNJM": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:28.179963+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.043835+00:00",
         "first_seen_at": "2026-09-18T22:12:28.179961+00:00",
         "attempts": 0,
         "item": {
@@ -31994,9 +32474,9 @@
         }
       },
       "hoBdjuPpoOU": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:28.179969+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.043843+00:00",
         "first_seen_at": "2026-09-18T22:12:28.179967+00:00",
         "attempts": 0,
         "item": {
@@ -34915,9 +35395,9 @@
         }
       },
       "gCL2_A8QVWU": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:35.433113+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044043+00:00",
         "first_seen_at": "2026-09-18T22:12:35.433110+00:00",
         "attempts": 0,
         "item": {
@@ -36870,10 +37350,10 @@
       },
       "bHwHFBlVZHY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152045+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311674+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152043+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "de876pxq2RkcGG_QrwldzYQ4qEk",
@@ -36917,14 +37397,85 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T14:09:24Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "HhlndrOXvwqzvzIAzqhhd4uIVFU",
+          "id": "bHwHFBlVZHY",
+          "snippet": {
+            "publishedAt": "2026-09-14T14:09:24Z",
+            "channelId": "UCucSsyc713BRa3DnUAEhoMw",
+            "title": "Sam Altman (CEO of Open AI)",
+            "description": "The next wave of AI may not be about bigger teams — it may be about what one person can build with intelligent AI agents.\n\nIn this conversation, Sam Altman discusses the changing relationship between people and computers, the rise of AI agents, and how increasingly capable AI systems could change the way software, businesses, and companies are built.\n\nWe explore:\n\n• AI agents and what they can actually do\n• The future of working with computers\n• What one person may be able to build with AI\n• The rise of one-person companies\n• How AI could change entrepreneurship\n• The future of software and productivity\n• What the next generation of AI systems could mean for work\n\n⏱️ VIDEO LENGTH: 1:11:10\n\nIf you found this discussion valuable, consider subscribing for more videos about AI, technology, entrepreneurship, and the future of work.\n\nDISCLAIMER:\nThis description is provided for informational and commentary purposes. Any third-party names, trademarks, footage, audio, or other copyrighted material remain the property of their respective owners. Where third-party material is used, it is intended to be used only where the uploader has the necessary rights, permission, license, or applicable legal exception.\n\nCopyright notice:\nIf you believe material in this video infringes your copyright, please contact the channel owner with the relevant details before submitting a formal claim.\n\n#AI #SamAltman #ArtificialIntelligence #AIAgents #OpenAI",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/bHwHFBlVZHY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/bHwHFBlVZHY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/bHwHFBlVZHY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/bHwHFBlVZHY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/bHwHFBlVZHY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "theonlyShoalin",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Sam Altman (CEO of Open AI)",
+              "description": "The next wave of AI may not be about bigger teams — it may be about what one person can build with intelligent AI agents.\n\nIn this conversation, Sam Altman discusses the changing relationship between people and computers, the rise of AI agents, and how increasingly capable AI systems could change the way software, businesses, and companies are built.\n\nWe explore:\n\n• AI agents and what they can actually do\n• The future of working with computers\n• What one person may be able to build with AI\n• The rise of one-person companies\n• How AI could change entrepreneurship\n• The future of software and productivity\n• What the next generation of AI systems could mean for work\n\n⏱️ VIDEO LENGTH: 1:11:10\n\nIf you found this discussion valuable, consider subscribing for more videos about AI, technology, entrepreneurship, and the future of work.\n\nDISCLAIMER:\nThis description is provided for informational and commentary purposes. Any third-party names, trademarks, footage, audio, or other copyrighted material remain the property of their respective owners. Where third-party material is used, it is intended to be used only where the uploader has the necessary rights, permission, license, or applicable legal exception.\n\nCopyright notice:\nIf you believe material in this video infringes your copyright, please contact the channel owner with the relevant details before submitting a formal claim.\n\n#AI #SamAltman #ArtificialIntelligence #AIAgents #OpenAI"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT1H11M33S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "8",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "XIt87tJHm-g": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152050+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311696+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152048+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "BQoXrpmPAAZhyWQl9gmXmRvuHKQ",
@@ -36968,7 +37519,108 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T14:00:32Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "k8WvSfnXg2cpAFkFnTO9pRZN8fk",
+          "id": "XIt87tJHm-g",
+          "snippet": {
+            "publishedAt": "2026-09-14T14:00:32Z",
+            "channelId": "UC0C-17n9iuUQPylguM1d-lQ",
+            "title": "Sam Altman and Apple's New CEO are Fighting Over One Thing. It's Not What You Think.",
+            "description": "Apple's AI strategy and OpenAI's push to own the agent relationship collided at the September 9 launch. The real contest is over where your work lives and who you keep paying for it.\n\nFull post:\nhttps://natesnewsletter.substack.com/p/apple-openai-good-enough-ai?utm_source=youtube&utm_medium=video&utm_campaign=free-to-paid&utm_content=description\n\nMy Links 🔗\n👉🏻 Newsletter: https://natesnewsletter.substack.com/\n👉🏻 X: https://x.com/natebjones\n👉🏻 TikTok: https://www.tiktok.com/@nate.b.jones\n👉🏻 Instagram: https://www.instagram.com/nate.b.jones\n\nWhat's really happening inside the Apple and OpenAI fight over personal computing?\n\nThe common story is that Apple fell behind on models, but the real question is who ends up holding the work you build up over months.\n\nIn this video, I share the inside scoop on what Apple shipped and what it means for who you pay:\n\n- Why the fight is over your working context and your history\n- How Apple's fine print sets up a charge for expanded AI access\n- What Google gains by supplying Apple while competing through Gemini\n- Where local compute on the device changes what developers can attempt\n\nApple now has a credible path to keeping personal AI centered on the device, and it still has to earn the trust that decides where your work lives.\n\nChapters:\n00:00 Sam Altman, John Ternus, and what they are fighting over\n01:30 iPhone 18 Pro and Pro Max, prices and dates\n02:02 iPhone Duo, Apple's first folding phone\n02:37 Watch Series 12, Ultra 4, and the new health sensing\n03:53 The assistant redesign and the iOS 27 beta\n06:26 Why a better iPhone does not remove the threat\n09:53 Why the assistant has to earn its way back\n16:11 Health, lab testing, and the doctor before the doctor\n18:28 Google as Apple's supplier and its rival\n21:57 The fine print on daily limits and a future fee\n24:10 What the next level of agent capability changes\n29:02 How much of your computing life are you renting\n\nListen to this video as a podcast.\n\nSpotify: https://open.spotify.com/show/0gkFdjd1wptEKJKLu9LbZ4\nApple Podcasts: https://podcasts.apple.com/us/podcast/ai-news-strategy-daily-with-nate-b-jones/id1877109372",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/XIt87tJHm-g/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/XIt87tJHm-g/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/XIt87tJHm-g/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/XIt87tJHm-g/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/XIt87tJHm-g/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "AI News & Strategy Daily | Nate B Jones",
+            "tags": [
+              "nate b jones",
+              "nate jones",
+              "artificial intelligence",
+              "AI",
+              "AI news",
+              "AI tools",
+              "machine learning",
+              "generative AI",
+              "ChatGPT",
+              "Claude",
+              "AI prompts",
+              "AI strategy",
+              "tech news",
+              "Apple",
+              "OpenAI",
+              "iPhone Duo",
+              "John Ternus",
+              "Google Gemini",
+              "Nvidia",
+              "apple ai strategy",
+              "ai agents and personal context",
+              "who owns your ai relationship",
+              "apple",
+              "openai",
+              "apple ceo change",
+              "new apple ceo",
+              "john ternus ceo"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Sam Altman and Apple's New CEO are Fighting Over One Thing. It's Not What You Think.",
+              "description": "Apple's AI strategy and OpenAI's push to own the agent relationship collided at the September 9 launch. The real contest is over where your work lives and who you keep paying for it.\n\nFull post:\nhttps://natesnewsletter.substack.com/p/apple-openai-good-enough-ai?utm_source=youtube&utm_medium=video&utm_campaign=free-to-paid&utm_content=description\n\nMy Links 🔗\n👉🏻 Newsletter: https://natesnewsletter.substack.com/\n👉🏻 X: https://x.com/natebjones\n👉🏻 TikTok: https://www.tiktok.com/@nate.b.jones\n👉🏻 Instagram: https://www.instagram.com/nate.b.jones\n\nWhat's really happening inside the Apple and OpenAI fight over personal computing?\n\nThe common story is that Apple fell behind on models, but the real question is who ends up holding the work you build up over months.\n\nIn this video, I share the inside scoop on what Apple shipped and what it means for who you pay:\n\n- Why the fight is over your working context and your history\n- How Apple's fine print sets up a charge for expanded AI access\n- What Google gains by supplying Apple while competing through Gemini\n- Where local compute on the device changes what developers can attempt\n\nApple now has a credible path to keeping personal AI centered on the device, and it still has to earn the trust that decides where your work lives.\n\nChapters:\n00:00 Sam Altman, John Ternus, and what they are fighting over\n01:30 iPhone 18 Pro and Pro Max, prices and dates\n02:02 iPhone Duo, Apple's first folding phone\n02:37 Watch Series 12, Ultra 4, and the new health sensing\n03:53 The assistant redesign and the iOS 27 beta\n06:26 Why a better iPhone does not remove the threat\n09:53 Why the assistant has to earn its way back\n16:11 Health, lab testing, and the doctor before the doctor\n18:28 Google as Apple's supplier and its rival\n21:57 The fine print on daily limits and a future fee\n24:10 What the next level of agent capability changes\n29:02 How much of your computing life are you renting\n\nListen to this video as a podcast.\n\nSpotify: https://open.spotify.com/show/0gkFdjd1wptEKJKLu9LbZ4\nApple Podcasts: https://podcasts.apple.com/us/podcast/ai-news-strategy-daily-with-nate-b-jones/id1877109372"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT29M26S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "62058",
+            "likeCount": "956",
+            "favoriteCount": "0",
+            "commentCount": "157"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "n3ONOiHYN8s": {
         "status": "pending",
@@ -37028,10 +37680,10 @@
       },
       "zPJsX12AdLI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152060+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311710+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152058+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "4SGHo_0DIF_T1_jgEuJR1t8QHZ0",
@@ -37075,14 +37727,100 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T12:58:45Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "24y9QuDkvofHKSJod8KOvu7WcRs",
+          "id": "zPJsX12AdLI",
+          "snippet": {
+            "publishedAt": "2026-09-14T12:58:45Z",
+            "channelId": "UChlLglbHDASnoGkbjDeHnQg",
+            "title": "Anthropic Wants to Slow AI Down. Even Elon Musk Agrees.",
+            "description": "Want to build with AI but have no idea where to start? https://aiwithkyle.com/join-freedom-os\n\nJoin my private WhatsApp group: https://aiwithkyle.com/ai-with-kyle-group-chat\n\nMedia/Sponsorship Inquiries: https://aiwithkyle.com/media-kit\n\nGet my daily AI newsletter: https://aiwithkyle.com/\n\nAnthropic wants to slow AI development down, and Sam Altman, Elon Musk and Demis Hassabis are backing the direction of Dario Amodei's proposal. These are usually fierce rivals. Now they're calling for a slower pace, outside evaluators and shared safety standards. I'm sceptical about what the biggest AI companies stand to gain.\n\nI go through Amodei's essay, \"We Must Pace the Frontier\", and the full posts from the people supporting and challenging it. David Sacks tells the labs to slow down themselves. Cohere's Aidan Gomez calls out a possible cartel. Donald Trump wants America to stay ahead of China.\n\nWe also look at recursive self-improvement, OpenAI's growing use of coding agents, METR's role as an evaluator, and the problem of verifying an international agreement. AI safety deserves serious attention. So do the costs of delaying useful tools and making it harder for smaller companies to compete.\n\nRecorded 14 September 2026.\n\n*RESOURCES*\nRead the full issue: https://aiwithkyle.com/ai-news/who-benefits-funnily-enough-ai-bosses\n\nPrevious video on Jacob Coxon: https://www.youtube.com/watch?v=6gcpXBLmwPE\nSelf-improving AI explained: https://www.youtube.com/watch?v=Os-s26O_W08\n\n*CHAPTERS*\n\n00:00 AI rivals suddenly agree\n01:32 Dario, Sam, Musk and Demis\n02:52 The Jacob Coxon connection\n04:12 What does AI pacing mean?\n05:21 Embedded evaluators\n07:05 Pacing within democracies\n08:36 Can a global slowdown work?\n09:54 Recursive self-improvement\n11:45 David Sacks: then slow down\n16:19 Aidan Gomez and the cartel accusation\n18:40 Who checks the checkers? METR\n21:15 The China problem\n22:28 Trump's response\n24:06 Derek Thompson's four-point argument\n25:19 Slowing down has a cost\n27:19 Safety and commercial self-interest\n\n*KEY POINTS*\n\n• Rival AI labs broadly agree on pacing, but the rules are still being debated.\n• Outside evaluators need access, independence and the ability to publish findings.\n• Expensive compliance requirements can favour the biggest companies.\n• Any international slowdown faces the problem of verifying what other countries do.\n• Delaying useful AI carries costs for medicine, work and smaller businesses.\n\n*SOURCES AND TOOLS MENTIONED*\n\nDario Amodei's essay: https://darioamodei.com/post/we-must-pace-the-frontier\nDario's announcement: https://x.com/DarioAmodei/status/2098773920774074715\nSam Altman's full post: https://x.com/sama/status/2099348812305473766\nSam's initial response: https://x.com/sama/status/2098811563415150910\nElon Musk: https://x.com/elonmusk/status/2098789109980332057\nDemis Hassabis: https://x.com/demishassabis/status/2098909516582490602\nDavid Sacks: https://x.com/DavidSacks/status/2098973625252708460\nAidan Gomez: https://x.com/aidangomez/status/2098828132396449939\nOpenAI's research acceleration data: https://openai.com/index/research-acceleration-view-inside-openai/\nMETR's disclosures: https://metr.org/about\nTrump's original video: https://x.com/RapidResponse47/status/2099155148576542928\nDerek Thompson: https://x.com/DKThomp/status/2098819497821917480\nEthan Mollick: https://x.com/emollick/status/2099134552807522610\n\n*LISTEN TO AI WITH KYLE*\n\nSpotify: https://open.spotify.com/show/6pnwfIJvxfC8jlX891XBiE\nApple Podcasts: https://podcasts.apple.com/us/podcast/ai-with-kyle-daily-ai-news-and-updates/id1825779580\n\n*CONNECT WITH KYLE*\n\nWebsite: https://aiwithkyle.com\nTikTok: https://www.tiktok.com/@iamkylebalmer\nInstagram: https://www.instagram.com/iamkylebalmer\nLinkedIn: https://www.linkedin.com/in/kylebalmer/\n\n#Anthropic #OpenAI #ArtificialIntelligence",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/zPJsX12AdLI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/zPJsX12AdLI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/zPJsX12AdLI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/zPJsX12AdLI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/zPJsX12AdLI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Kyle Balmer | AI with Kyle",
+            "tags": [
+              "AI pacing",
+              "AI regulation",
+              "AI slowdown",
+              "AI with Kyle",
+              "Anthropic",
+              "Dario Amodei",
+              "Demis Hassabis",
+              "Donald Trump",
+              "Elon Musk",
+              "OpenAI",
+              "Sam Altman",
+              "recursive self improvement"
+            ],
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Anthropic Wants to Slow AI Down. Even Elon Musk Agrees.",
+              "description": "Want to build with AI but have no idea where to start? https://aiwithkyle.com/join-freedom-os\n\nJoin my private WhatsApp group: https://aiwithkyle.com/ai-with-kyle-group-chat\n\nMedia/Sponsorship Inquiries: https://aiwithkyle.com/media-kit\n\nGet my daily AI newsletter: https://aiwithkyle.com/\n\nAnthropic wants to slow AI development down, and Sam Altman, Elon Musk and Demis Hassabis are backing the direction of Dario Amodei's proposal. These are usually fierce rivals. Now they're calling for a slower pace, outside evaluators and shared safety standards. I'm sceptical about what the biggest AI companies stand to gain.\n\nI go through Amodei's essay, \"We Must Pace the Frontier\", and the full posts from the people supporting and challenging it. David Sacks tells the labs to slow down themselves. Cohere's Aidan Gomez calls out a possible cartel. Donald Trump wants America to stay ahead of China.\n\nWe also look at recursive self-improvement, OpenAI's growing use of coding agents, METR's role as an evaluator, and the problem of verifying an international agreement. AI safety deserves serious attention. So do the costs of delaying useful tools and making it harder for smaller companies to compete.\n\nRecorded 14 September 2026.\n\n*RESOURCES*\nRead the full issue: https://aiwithkyle.com/ai-news/who-benefits-funnily-enough-ai-bosses\n\nPrevious video on Jacob Coxon: https://www.youtube.com/watch?v=6gcpXBLmwPE\nSelf-improving AI explained: https://www.youtube.com/watch?v=Os-s26O_W08\n\n*CHAPTERS*\n\n00:00 AI rivals suddenly agree\n01:32 Dario, Sam, Musk and Demis\n02:52 The Jacob Coxon connection\n04:12 What does AI pacing mean?\n05:21 Embedded evaluators\n07:05 Pacing within democracies\n08:36 Can a global slowdown work?\n09:54 Recursive self-improvement\n11:45 David Sacks: then slow down\n16:19 Aidan Gomez and the cartel accusation\n18:40 Who checks the checkers? METR\n21:15 The China problem\n22:28 Trump's response\n24:06 Derek Thompson's four-point argument\n25:19 Slowing down has a cost\n27:19 Safety and commercial self-interest\n\n*KEY POINTS*\n\n• Rival AI labs broadly agree on pacing, but the rules are still being debated.\n• Outside evaluators need access, independence and the ability to publish findings.\n• Expensive compliance requirements can favour the biggest companies.\n• Any international slowdown faces the problem of verifying what other countries do.\n• Delaying useful AI carries costs for medicine, work and smaller businesses.\n\n*SOURCES AND TOOLS MENTIONED*\n\nDario Amodei's essay: https://darioamodei.com/post/we-must-pace-the-frontier\nDario's announcement: https://x.com/DarioAmodei/status/2098773920774074715\nSam Altman's full post: https://x.com/sama/status/2099348812305473766\nSam's initial response: https://x.com/sama/status/2098811563415150910\nElon Musk: https://x.com/elonmusk/status/2098789109980332057\nDemis Hassabis: https://x.com/demishassabis/status/2098909516582490602\nDavid Sacks: https://x.com/DavidSacks/status/2098973625252708460\nAidan Gomez: https://x.com/aidangomez/status/2098828132396449939\nOpenAI's research acceleration data: https://openai.com/index/research-acceleration-view-inside-openai/\nMETR's disclosures: https://metr.org/about\nTrump's original video: https://x.com/RapidResponse47/status/2099155148576542928\nDerek Thompson: https://x.com/DKThomp/status/2098819497821917480\nEthan Mollick: https://x.com/emollick/status/2099134552807522610\n\n*LISTEN TO AI WITH KYLE*\n\nSpotify: https://open.spotify.com/show/6pnwfIJvxfC8jlX891XBiE\nApple Podcasts: https://podcasts.apple.com/us/podcast/ai-with-kyle-daily-ai-news-and-updates/id1825779580\n\n*CONNECT WITH KYLE*\n\nWebsite: https://aiwithkyle.com\nTikTok: https://www.tiktok.com/@iamkylebalmer\nInstagram: https://www.instagram.com/iamkylebalmer\nLinkedIn: https://www.linkedin.com/in/kylebalmer/\n\n#Anthropic #OpenAI #ArtificialIntelligence"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT29M26S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "7603",
+            "likeCount": "41",
+            "favoriteCount": "0",
+            "commentCount": "37"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "VtDKm74QwJ8": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152066+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311722+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152064+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "YnJ9QUwAygemCYGee1keCSvHZA0",
@@ -37126,7 +37864,108 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T11:06:26Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "fdTdcPCZCupZvcGSqtePbgvopXU",
+          "id": "VtDKm74QwJ8",
+          "snippet": {
+            "publishedAt": "2026-09-14T11:06:26Z",
+            "channelId": "UCef1-8eOpJgud7szVPlZQAQ",
+            "title": "AI Sound Alarm! Sam Altman Warns As Gurugram Biker Incident Sparks Outrage | Newsroom Unfiltered",
+            "description": "Concerns over the rapid advancement of artificial intelligence are intensifying, with prominent AI leaders raising questions about the potential dangers of increasingly powerful systems. Anthropic’s CEO and OpenAI CEO Sam Altman are among those voicing urgent concerns as AI capabilities continue to develop at a rapid pace.\n\nThe warnings have renewed the global debate over AI safety, regulation and the need for safeguards around advanced artificial intelligence. While AI is transforming industries and creating new opportunities, researchers and technology leaders are also debating how to ensure that increasingly capable systems remain safe and under human control. \n\n#AI #ArtificialIntelligence #SamAltman #OpenAI #Anthropic #AISafety #AIRisks \n\nn18oc_newsroom-unfiltered \nn18oc_india\nNews18 Mobile App - https://onelink.to/desc-youtube",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/VtDKm74QwJ8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/VtDKm74QwJ8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/VtDKm74QwJ8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/VtDKm74QwJ8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/VtDKm74QwJ8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "CNN-News18",
+            "tags": [
+              "AI",
+              "artificial intelligence",
+              "AI safety",
+              "Sam Altman",
+              "OpenAI",
+              "OpenAI CEO",
+              "Sam Altman warning",
+              "Anthropic CEO",
+              "Anthropic",
+              "AI leaders",
+              "AI risks",
+              "advanced AI",
+              "AI development",
+              "rapid AI advancements",
+              "AI regulation",
+              "AI safety concerns",
+              "artificial intelligence risks",
+              "AI technology",
+              "future of AI",
+              "AI warning",
+              "Gurugram biker incident",
+              "Gurgaon biker incident",
+              "female biker Gurugram",
+              "female biker safety",
+              "Gurugram road rage",
+              "Gurgaon road rage",
+              "women safety Gurugram",
+              "female biker attack"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "AI Sound Alarm! Sam Altman Warns As Gurugram Biker Incident Sparks Outrage | Newsroom Unfiltered",
+              "description": "Concerns over the rapid advancement of artificial intelligence are intensifying, with prominent AI leaders raising questions about the potential dangers of increasingly powerful systems. Anthropic’s CEO and OpenAI CEO Sam Altman are among those voicing urgent concerns as AI capabilities continue to develop at a rapid pace.\n\nThe warnings have renewed the global debate over AI safety, regulation and the need for safeguards around advanced artificial intelligence. While AI is transforming industries and creating new opportunities, researchers and technology leaders are also debating how to ensure that increasingly capable systems remain safe and under human control. \n\n#AI #ArtificialIntelligence #SamAltman #OpenAI #Anthropic #AISafety #AIRisks \n\nn18oc_newsroom-unfiltered \nn18oc_india\nNews18 Mobile App - https://onelink.to/desc-youtube"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT25M5S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1443",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "520N3JOPoiQ": {
         "status": "pending",
@@ -37181,10 +38020,10 @@
       },
       "CYTziAZodUc": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152076+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311733+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152074+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "P4zc2WmRjjm8yLsNmm2l-D1c2ZE",
@@ -37228,7 +38067,104 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T10:00:34Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "KiIlSYwYhAQFvTkT7ZF7C79FQGY",
+          "id": "CYTziAZodUc",
+          "snippet": {
+            "publishedAt": "2026-09-14T10:00:34Z",
+            "channelId": "UCS8EJaPBU6qYeaJCfp4GWgg",
+            "title": "Chapter 5: The Imperial Expansion of Sam Altman’s YC Group (2014–2019)",
+            "description": "🎁 FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free subscription to our special offers newsletter!) 👉 https://payhip.com/b/lSjLs\n\n✉️ Direct Newsletter Subscription: Prefer to just join the newsletter directly without downloading the book? 👉 https://www.bedtime-biographies.com/\n\n📖 Browse the Biography Vault (Book, Audio, Bundles & More): 👉 https://payhip.com/BedtimeBiographies\n\n🎧 Audiobook Stream: https://www.curios.com/c/02R2A1⁠⁠\n\n📱 Ebook & Premium Bundles: https://payhip.com/BedtimeBiographies\n\n📘 Physical Paperback: (Coming Soon!)\n\nSubscribe for weekly deep-dives into the lives of history’s most influential figures.\n\nWelcome to Chapter 5 of Sam Altman: The Intelligence Architect. This complete biography spans 10 chapters and over 21 hours of immersive audio narration.\n\nChapter 5 tracks a critical era of aggressive institutional expansion and deep personal transition. As President of Y Combinator, a bold mission was launched to scale batch sizes to 1,000 startups a year, fund late-stage growth via a massive new equity engine, and venture into hard technology moonshots. But as a new, non-profit passion project named OpenAI began to consume attention, a high-stakes ultimatum from YC's co-founders would completely alter a venture capital career.\n\nWhat You Will Hear in Chapter 5:\nHyper-Scaling Incubation: Pushing YC to fund up to 1,000 startups annually by developing custom software tools, expanding partner networks, and standardizing evaluation pipelines.\n\nDemographic & Geographic Pipelines: Actively recruiting international entrepreneurs, female founders, and deeply technical teams outside consumer software.\n\nYC Continuity: Launching a massive $700 million equity fund designed to back late-stage YC graduates, preserving ownership stakes and capturing long-term upside.\n\nYC Research Moonshots: Pouring $10 million of personal capital into a non-profit lab to study deep societal hurdles, including Universal Basic Income (UBI), open science, and cellular longevity.\n\nThe Reddit Interregnum: Serving as interim CEO of Reddit for eight days following a sudden executive resignation, stabilizing operations, and recruiting Steve Huffman to return.\n\nThe Hard Tech Shift: Championing early-stage investments in long-term clean energy infrastructure plays, including nuclear fusion (Helion Energy) and small modular fission reactors (Oklo).\n\nReconciling Personal Grief: Navigating the sudden, devastating loss of father Jerry Altman in 2018 while managing mounting global tech responsibilities.\n\nThe OpenAI Divergence & Resignation Ultimatum: Facing rising frustration from long-time YC partners as attention shifted to OpenAI, culminating in a historic demand from Jessica Livingston that forced a formal departure.\n\n📚 Listen to the Full 21-Hour Audiobook\nThis video features the complete fifth chapter of a massive, 10-part biographical audio event. To hear how the full break from Y Combinator led to the commercial detonation of frontier AI, unlock the full audiobook.\n\n👉 Check our main channel profile page for direct storefront links to download the full audiobook or browse our entire historical catalog!\n\nThis audiobook was created with the assistance of AI, ensuring cutting-edge research and synthesis, though a human collaborator was always in the loop to guide, refine, and polish the final narrative.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/CYTziAZodUc/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/CYTziAZodUc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/CYTziAZodUc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/CYTziAZodUc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/CYTziAZodUc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Bedtime Biographies: Sleep Stories",
+            "tags": [
+              "Bedtime Biographies",
+              "Sleep Biographies",
+              "Bedtime Stories for Adults",
+              "Deep Sleep Stories",
+              "Historical Biographies",
+              "History to Sleep To",
+              "Relaxing Biographies",
+              "Famous Lives",
+              "Biography Documentary",
+              "Sleep Aid History",
+              "Calm Stories",
+              "Educational Sleep",
+              "Audio Biographies",
+              "Storytelling Podcast",
+              "Elon Musk",
+              "Donald Trump",
+              "Taylor Swift",
+              "Abraham Lincoln",
+              "Queen Elizabeth",
+              "Steve Jobs",
+              "Albert Einstein",
+              "Julius Caesar",
+              "Leonardo da Vinci",
+              "Sam Altman"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Chapter 5: The Imperial Expansion of Sam Altman’s YC Group (2014–2019)",
+              "description": "🎁 FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free subscription to our special offers newsletter!) 👉 https://payhip.com/b/lSjLs\n\n✉️ Direct Newsletter Subscription: Prefer to just join the newsletter directly without downloading the book? 👉 https://www.bedtime-biographies.com/\n\n📖 Browse the Biography Vault (Book, Audio, Bundles & More): 👉 https://payhip.com/BedtimeBiographies\n\n🎧 Audiobook Stream: https://www.curios.com/c/02R2A1⁠⁠\n\n📱 Ebook & Premium Bundles: https://payhip.com/BedtimeBiographies\n\n📘 Physical Paperback: (Coming Soon!)\n\nSubscribe for weekly deep-dives into the lives of history’s most influential figures.\n\nWelcome to Chapter 5 of Sam Altman: The Intelligence Architect. This complete biography spans 10 chapters and over 21 hours of immersive audio narration.\n\nChapter 5 tracks a critical era of aggressive institutional expansion and deep personal transition. As President of Y Combinator, a bold mission was launched to scale batch sizes to 1,000 startups a year, fund late-stage growth via a massive new equity engine, and venture into hard technology moonshots. But as a new, non-profit passion project named OpenAI began to consume attention, a high-stakes ultimatum from YC's co-founders would completely alter a venture capital career.\n\nWhat You Will Hear in Chapter 5:\nHyper-Scaling Incubation: Pushing YC to fund up to 1,000 startups annually by developing custom software tools, expanding partner networks, and standardizing evaluation pipelines.\n\nDemographic & Geographic Pipelines: Actively recruiting international entrepreneurs, female founders, and deeply technical teams outside consumer software.\n\nYC Continuity: Launching a massive $700 million equity fund designed to back late-stage YC graduates, preserving ownership stakes and capturing long-term upside.\n\nYC Research Moonshots: Pouring $10 million of personal capital into a non-profit lab to study deep societal hurdles, including Universal Basic Income (UBI), open science, and cellular longevity.\n\nThe Reddit Interregnum: Serving as interim CEO of Reddit for eight days following a sudden executive resignation, stabilizing operations, and recruiting Steve Huffman to return.\n\nThe Hard Tech Shift: Championing early-stage investments in long-term clean energy infrastructure plays, including nuclear fusion (Helion Energy) and small modular fission reactors (Oklo).\n\nReconciling Personal Grief: Navigating the sudden, devastating loss of father Jerry Altman in 2018 while managing mounting global tech responsibilities.\n\nThe OpenAI Divergence & Resignation Ultimatum: Facing rising frustration from long-time YC partners as attention shifted to OpenAI, culminating in a historic demand from Jessica Livingston that forced a formal departure.\n\n📚 Listen to the Full 21-Hour Audiobook\nThis video features the complete fifth chapter of a massive, 10-part biographical audio event. To hear how the full break from Y Combinator led to the commercial detonation of frontier AI, unlock the full audiobook.\n\n👉 Check our main channel profile page for direct storefront links to download the full audiobook or browse our entire historical catalog!\n\nThis audiobook was created with the assistance of AI, ensuring cutting-edge research and synthesis, though a human collaborator was always in the loop to guide, refine, and polish the final narrative."
+            }
+          },
+          "contentDetails": {
+            "duration": "PT2H12M26S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "5",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "QAWa_jxdZjU": {
         "status": "pending",
@@ -37283,10 +38219,10 @@
       },
       "MmVxnqxcV5g": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152086+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311744+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152084+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "9e5dIra5BVozMyXcmF2BItnDjkw",
@@ -37330,7 +38266,96 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T03:01:48Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "4QRwVhn3mmSYtiPmFYRYH8vjTO8",
+          "id": "MmVxnqxcV5g",
+          "snippet": {
+            "publishedAt": "2026-09-14T03:01:48Z",
+            "channelId": "UCzYxev5q9HTv3LvBUMEv87g",
+            "title": "失控的 AI「絕對」做得出來｜Sam Altman × Fortune 專訪｜完整重點整理｜繁體中文",
+            "description": "一支影片看完 Fortune 節目 Titans and Disruptors 這段 46 分鐘的專訪：總編輯 Alyson Shontell 在 OpenAI 舊金山總部對談執行長 Sam Altman。十三個段落依官方章節順序整理：Astra 與 AGI 宣稱、一成滅絕風險是不是真的、失控與 OpenAI 的安全立場、遞迴自我改進、為什麼對齊還沒解決、人類能不能控制超級智慧、從小學數學到 Navier–Stokes、Hugging Face 沙箱逃逸事件、現有防護的極限、IPO 時機與為安全而暫停、美中協調與 AI 標準、P-doom 對上正面論證，一路到壓在他身上的重量與人的動機。\n\n提醒（依實際影片內容）：這是單一來源的訪談，所有關於 OpenAI 做了什麼、暫停了什麼、通報了什麼的說法都只憑 Altman 口述，片中沒有任何文件、論文或日期。「模型解決了 Navier–Stokes」是他的宣稱，沒有附證據。片中他說的是「另一家公司的系統」，Hugging Face 這個名字來自訪談者與章節清單；「另外 12 個網站」是她轉述的 Fortune 報導，他既沒確認也沒否認。一成的機率、一兆美元的 IPO、「全球經濟崩潰」與「沒有風險」都是訪談者的框架，他從頭到尾沒有給自己的數字。辭去 Anthropic 工作的前 OpenAI 員工字幕名字不清、不指名；董事會成員 Paul 姓氏片中未說。本片用 Claude（Anthropic 打造）製作，而 Anthropic 是片中談到的對象；相關段落照原片敘述、註明出處，沒有增添也沒有軟化。\n\n📺 原始影片 Original video:\nhttps://youtu.be/2my-NU6LuCM\n\n📑 章節 Chapters:\n00:00 開場：這支影片怎麼看\n00:59 第 1 段｜Astra、AGI 宣稱與 P-doom 的恐懼\n02:37 第 2 段｜一成的滅絕風險是真的嗎\n04:53 第 3 段｜失控，與 OpenAI 的安全立場\n07:02 第 4 段｜遞迴自我改進與人類監督\n08:49 第 5 段｜為什麼對齊還沒解決\n10:13 第 6 段｜人類能控制超級智慧嗎\n11:51 第 7 段｜從小學數學到 Navier–Stokes\n13:23 第 8 段｜Hugging Face 沙箱逃逸事件\n15:34 第 9 段｜現有防護的極限\n17:15 第 10 段｜IPO 時機、獲利壓力與為安全而暫停\n20:50 第 11 段｜全球協調、美中與 AI 標準\n25:20 第 12 段｜P-doom 對上 AI 的正面論證\n29:03 第 13 段｜那份重量，以及人是什麼做的\n31:31 勘誤與提醒\n34:23 總結：一場訪談，他真正說了的三件事\n\n🎬 播放清單 Playlist：recap-bilingual\nhttps://www.youtube.com/playlist?list=PLRtmaWZ7JUE4\n\n———\n📜 關於本影片\n本影片為 AI 輔助製作的重點整理（腳本、配音與畫面皆由 AI 產生），目的在於學習與內容導讀，並非原作者的官方翻譯或官方影片，與 Fortune、OpenAI、Alyson Shontell 及 Sam Altman 無關。英文與繁體中文腳本：https://recap-queue.vercel.app/jobs/ecb954a2-494a-4157-b5eb-d0a4008b3ce2\n\n字幕說明：本片字幕不顯示標點符號，句號處改為換一張字幕卡。這是為了避免中文標點在不同影格被排版成不同寬度，使字幕在畫面上看起來左右抖動。\n\n#SamAltman #OpenAI #AIsafety #繁體中文 #重點整理",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/MmVxnqxcV5g/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/MmVxnqxcV5g/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/MmVxnqxcV5g/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/MmVxnqxcV5g/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/MmVxnqxcV5g/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Markluce AI",
+            "tags": [
+              "AGI",
+              "AI safety",
+              "AI 安全",
+              "Alyson Shontell",
+              "Fortune",
+              "Hugging Face",
+              "OpenAI",
+              "P(doom)",
+              "Sam Altman",
+              "alignment",
+              "recap",
+              "對齊",
+              "教育",
+              "繁體中文",
+              "重點整理"
+            ],
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh-Hant",
+            "localized": {
+              "title": "失控的 AI「絕對」做得出來｜Sam Altman × Fortune 專訪｜完整重點整理｜繁體中文",
+              "description": "一支影片看完 Fortune 節目 Titans and Disruptors 這段 46 分鐘的專訪：總編輯 Alyson Shontell 在 OpenAI 舊金山總部對談執行長 Sam Altman。十三個段落依官方章節順序整理：Astra 與 AGI 宣稱、一成滅絕風險是不是真的、失控與 OpenAI 的安全立場、遞迴自我改進、為什麼對齊還沒解決、人類能不能控制超級智慧、從小學數學到 Navier–Stokes、Hugging Face 沙箱逃逸事件、現有防護的極限、IPO 時機與為安全而暫停、美中協調與 AI 標準、P-doom 對上正面論證，一路到壓在他身上的重量與人的動機。\n\n提醒（依實際影片內容）：這是單一來源的訪談，所有關於 OpenAI 做了什麼、暫停了什麼、通報了什麼的說法都只憑 Altman 口述，片中沒有任何文件、論文或日期。「模型解決了 Navier–Stokes」是他的宣稱，沒有附證據。片中他說的是「另一家公司的系統」，Hugging Face 這個名字來自訪談者與章節清單；「另外 12 個網站」是她轉述的 Fortune 報導，他既沒確認也沒否認。一成的機率、一兆美元的 IPO、「全球經濟崩潰」與「沒有風險」都是訪談者的框架，他從頭到尾沒有給自己的數字。辭去 Anthropic 工作的前 OpenAI 員工字幕名字不清、不指名；董事會成員 Paul 姓氏片中未說。本片用 Claude（Anthropic 打造）製作，而 Anthropic 是片中談到的對象；相關段落照原片敘述、註明出處，沒有增添也沒有軟化。\n\n📺 原始影片 Original video:\nhttps://youtu.be/2my-NU6LuCM\n\n📑 章節 Chapters:\n00:00 開場：這支影片怎麼看\n00:59 第 1 段｜Astra、AGI 宣稱與 P-doom 的恐懼\n02:37 第 2 段｜一成的滅絕風險是真的嗎\n04:53 第 3 段｜失控，與 OpenAI 的安全立場\n07:02 第 4 段｜遞迴自我改進與人類監督\n08:49 第 5 段｜為什麼對齊還沒解決\n10:13 第 6 段｜人類能控制超級智慧嗎\n11:51 第 7 段｜從小學數學到 Navier–Stokes\n13:23 第 8 段｜Hugging Face 沙箱逃逸事件\n15:34 第 9 段｜現有防護的極限\n17:15 第 10 段｜IPO 時機、獲利壓力與為安全而暫停\n20:50 第 11 段｜全球協調、美中與 AI 標準\n25:20 第 12 段｜P-doom 對上 AI 的正面論證\n29:03 第 13 段｜那份重量，以及人是什麼做的\n31:31 勘誤與提醒\n34:23 總結：一場訪談，他真正說了的三件事\n\n🎬 播放清單 Playlist：recap-bilingual\nhttps://www.youtube.com/playlist?list=PLRtmaWZ7JUE4\n\n———\n📜 關於本影片\n本影片為 AI 輔助製作的重點整理（腳本、配音與畫面皆由 AI 產生），目的在於學習與內容導讀，並非原作者的官方翻譯或官方影片，與 Fortune、OpenAI、Alyson Shontell 及 Sam Altman 無關。英文與繁體中文腳本：https://recap-queue.vercel.app/jobs/ecb954a2-494a-4157-b5eb-d0a4008b3ce2\n\n字幕說明：本片字幕不顯示標點符號，句號處改為換一張字幕卡。這是為了避免中文標點在不同影格被排版成不同寬度，使字幕在畫面上看起來左右抖動。\n\n#SamAltman #OpenAI #AIsafety #繁體中文 #重點整理"
+            },
+            "defaultAudioLanguage": "zh-Hant"
+          },
+          "contentDetails": {
+            "duration": "PT35M21S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "7",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "Iw5S8nUP8Q8": {
         "status": "pending",
@@ -37390,10 +38415,10 @@
       },
       "GL0n2RIg7AQ": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152096+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311754+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152094+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "wUP8kxfJr0ggR6BB4lHwrDK3ElQ",
@@ -37437,7 +38462,112 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T00:21:47Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "5qrdosJg33xBN1FqB0k2mKNCyPk",
+          "id": "GL0n2RIg7AQ",
+          "snippet": {
+            "publishedAt": "2026-09-14T00:21:47Z",
+            "channelId": "UCji1dfu4mDbiRGieZs5cVCg",
+            "title": "Sam Altman: What Happens When AI Stops Waiting to Be Asked? | Issue #83",
+            "description": "What happens when AI stops waiting to be asked and starts acting on its own? In this episode of the Shadow Network Podcast, Don James and Data examine Sam Altman, OpenAI, artificial intelligence, AI agents, autonomous AI, proactive AI, AGI, agentic systems, and what happens when machines begin anticipating human needs before a prompt is ever given.\n\nThe age of reactive AI may be ending.\n\nFor years, artificial intelligence has waited for us to type the question, give the command, or define the task. But the next generation of AI may behave very differently. Instead of waiting, advanced AI systems may begin observing context, predicting intent, taking initiative, coordinating tools, managing workflows, and acting before humans explicitly ask.\n\nThat raises a much bigger question:\n\nWhat happens when AI stops being a tool we summon and becomes an active participant in everyday life?\n\nIn Issue #83, we explore Sam Altman’s vision for the future of AI, the rise of AI agents, autonomous systems, persistent AI assistants, proactive artificial intelligence, AGI, human-AI collaboration, AI decision-making, AI safety, AI alignment, AI autonomy, and the growing shift from prompt-based interaction toward machines that can plan and act.\n\nWe also ask what this change could mean for work, creativity, relationships, privacy, personal agency, trust, and the balance of control between humans and increasingly capable AI systems.\n\nArtificial intelligence is moving fast.\n\nThe bigger transformation may not be that AI becomes smarter.\n\nIt may be that AI begins to move first.\n\nShadow Network Podcast Issue #83\nSam Altman: What Happens When AI Stops Waiting to Be Asked?\n\n#SamAltman #ArtificialIntelligence #AI #OpenAI #AIAgents #AgenticAI #AGI #AutonomousAI #AISafety #AIAlignment #FutureOfAI #ChatGPT #Technology #MachineIntelligence #ShadowNetworkPodcast\n\nThis isn’t church talk. It isn’t conspiracy comfort-food.\nIt’s Faith-Punk analysis for people who want answers, not vibes — and trilogies that land with conclusions, not cliffhangers.\n\nIf you’re tired of “what if?” podcasts, and ready to hear what’s real —\nSubscribe. Stay sharp. The signal is live.\nInstagram - https://www.facebook.com/search/top/?q=The%20Shadow%20Network%20podcast\n\nfacebook - https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.instagram.com%2Fshadow_network2",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/GL0n2RIg7AQ/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/GL0n2RIg7AQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/GL0n2RIg7AQ/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/GL0n2RIg7AQ/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/GL0n2RIg7AQ/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The Shadow Network podcast",
+            "tags": [
+              "late night radio",
+              "Sam Altman",
+              "AI",
+              "artificial intelligence",
+              "OpenAI",
+              "AI agents",
+              "agentic AI",
+              "autonomous AI",
+              "proactive AI",
+              "AGI",
+              "artificial general intelligence",
+              "AI autonomy",
+              "AI assistants",
+              "autonomous agents",
+              "future of AI",
+              "AI alignment",
+              "human AI collaboration",
+              "ChatGPT",
+              "machine intelligence",
+              "generative AI",
+              "advanced AI",
+              "AI ethics",
+              "intelligent agents",
+              "AI automation",
+              "AI and society",
+              "AI and humanity",
+              "Sam Altman AI",
+              "OpenAI future",
+              "next generation AI",
+              "Shadow Network Podcast",
+              "SNP"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "Sam Altman: What Happens When AI Stops Waiting to Be Asked? | Issue #83",
+              "description": "What happens when AI stops waiting to be asked and starts acting on its own? In this episode of the Shadow Network Podcast, Don James and Data examine Sam Altman, OpenAI, artificial intelligence, AI agents, autonomous AI, proactive AI, AGI, agentic systems, and what happens when machines begin anticipating human needs before a prompt is ever given.\n\nThe age of reactive AI may be ending.\n\nFor years, artificial intelligence has waited for us to type the question, give the command, or define the task. But the next generation of AI may behave very differently. Instead of waiting, advanced AI systems may begin observing context, predicting intent, taking initiative, coordinating tools, managing workflows, and acting before humans explicitly ask.\n\nThat raises a much bigger question:\n\nWhat happens when AI stops being a tool we summon and becomes an active participant in everyday life?\n\nIn Issue #83, we explore Sam Altman’s vision for the future of AI, the rise of AI agents, autonomous systems, persistent AI assistants, proactive artificial intelligence, AGI, human-AI collaboration, AI decision-making, AI safety, AI alignment, AI autonomy, and the growing shift from prompt-based interaction toward machines that can plan and act.\n\nWe also ask what this change could mean for work, creativity, relationships, privacy, personal agency, trust, and the balance of control between humans and increasingly capable AI systems.\n\nArtificial intelligence is moving fast.\n\nThe bigger transformation may not be that AI becomes smarter.\n\nIt may be that AI begins to move first.\n\nShadow Network Podcast Issue #83\nSam Altman: What Happens When AI Stops Waiting to Be Asked?\n\n#SamAltman #ArtificialIntelligence #AI #OpenAI #AIAgents #AgenticAI #AGI #AutonomousAI #AISafety #AIAlignment #FutureOfAI #ChatGPT #Technology #MachineIntelligence #ShadowNetworkPodcast\n\nThis isn’t church talk. It isn’t conspiracy comfort-food.\nIt’s Faith-Punk analysis for people who want answers, not vibes — and trilogies that land with conclusions, not cliffhangers.\n\nIf you’re tired of “what if?” podcasts, and ready to hear what’s real —\nSubscribe. Stay sharp. The signal is live.\nInstagram - https://www.facebook.com/search/top/?q=The%20Shadow%20Network%20podcast\n\nfacebook - https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.instagram.com%2Fshadow_network2"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT33M1S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "31",
+            "likeCount": "2",
+            "favoriteCount": "0",
+            "commentCount": "1"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "D8n0mkVnap4": {
         "status": "pending",
@@ -37849,10 +38979,10 @@
       },
       "SLsPBkomYXw": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152148+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311764+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152146+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "73QpcFrZcTqFSYYVm5W2I33ubSc",
@@ -37896,14 +39026,119 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-13T17:12:52Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "0Cw5KHh0v1L8pGF0ZqF6Dai9_VY",
+          "id": "SLsPBkomYXw",
+          "snippet": {
+            "publishedAt": "2026-09-13T17:12:52Z",
+            "channelId": "UCA00QTLGuJ0I0wpEjLGAm9Q",
+            "title": "Elon Musk and Sam Altman Back Dario's AI Proposal",
+            "description": "💎 Nick and Jack talk about Elon Musk and Sam Altman putting their weight behind Dario Amodei's proposal on the pace at which frontier AI is trained, which includes independent embedded evaluators, and Nick shows a neural network trained on email data to respond to him by simulating the brain of a fruit fly.\n🔋 Check out Higgsfield, one of our sponsors: https://bit.ly/4gEW43Z.\n❤️ Inquiries: reach out to media@stackedpod.io.\n\nWho are Nick & Jack, and what is The AI Millionaire Podcast? ⤵️\n1. Jack built a 7-figure AI business after exiting his tech startup as a Top-100 UK entrepreneur.\n2. Nick scaled two agencies to a combined rev of $160K/m & runs the largest AI community by $.\n3. Together, they open up the black book behind AI and share how you can build one yourself!\n\nWhat to watch next 🍿\n1. The one habit that made me outperform everyone: https://www.youtube.com/watch?v=_3wxDsC8uTA\n2. AI isn't the answer—here's what actually makes you rich: https://www.youtube.com/watch?v=jxm8Jb0XWhY\n\nThanks for watching!\n0:00 Introduction; Musk and Altman support frontier pacing proposal\n3:22 Meta and other competitors could catch up if frontier labs slow\n5:00 Running DeepSeek on a home AI lab; costs and hardware\n7:25 Local AI privacy and training data\n8:23 DeepSeek capabilities and the token cost caveat\n9:58 Independent embedded evaluators in AI labs\n11:55 Open source and limits of frontier safety rules\n13:24 Mac mini giveaway winner\n15:11 Audience question about bottlenecks to human progress\n17:30 Nick's simulated fruit fly brain architecture email demo\n20:04 Compute, energy and civilization's future\n23:02 Narrow AI compared with AGI; whether AGI is needed\n24:11 Discussion about connected-device privacy\n26:20 Acceleration, lobbying and the next regulation steps\n28:27 Reaction to a simulated fly playing blackjack\n29:10 Outro",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/SLsPBkomYXw/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/SLsPBkomYXw/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/SLsPBkomYXw/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/SLsPBkomYXw/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/SLsPBkomYXw/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Stacked Podcast",
+            "tags": [
+              "ai automation",
+              "artificial intelligence",
+              "make money online",
+              "ai agency",
+              "automation agency",
+              "nick saraev",
+              "jack roberts",
+              "stacked podcast",
+              "ai business",
+              "n8n",
+              "claude code",
+              "ai agents",
+              "automation tutorial",
+              "ai tools",
+              "online business",
+              "solopreneur",
+              "ai consulting",
+              "no code automation",
+              "workflow automation",
+              "ai side hustle",
+              "maker school",
+              "build with ai",
+              "ai entrepreneur",
+              "chatgpt",
+              "anthropic",
+              "ai agency model",
+              "automation business",
+              "ai for business",
+              "digital marketing",
+              "ai workflows",
+              "tech podcast"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk and Sam Altman Back Dario's AI Proposal",
+              "description": "💎 Nick and Jack talk about Elon Musk and Sam Altman putting their weight behind Dario Amodei's proposal on the pace at which frontier AI is trained, which includes independent embedded evaluators, and Nick shows a neural network trained on email data to respond to him by simulating the brain of a fruit fly.\n🔋 Check out Higgsfield, one of our sponsors: https://bit.ly/4gEW43Z.\n❤️ Inquiries: reach out to media@stackedpod.io.\n\nWho are Nick & Jack, and what is The AI Millionaire Podcast? ⤵️\n1. Jack built a 7-figure AI business after exiting his tech startup as a Top-100 UK entrepreneur.\n2. Nick scaled two agencies to a combined rev of $160K/m & runs the largest AI community by $.\n3. Together, they open up the black book behind AI and share how you can build one yourself!\n\nWhat to watch next 🍿\n1. The one habit that made me outperform everyone: https://www.youtube.com/watch?v=_3wxDsC8uTA\n2. AI isn't the answer—here's what actually makes you rich: https://www.youtube.com/watch?v=jxm8Jb0XWhY\n\nThanks for watching!\n0:00 Introduction; Musk and Altman support frontier pacing proposal\n3:22 Meta and other competitors could catch up if frontier labs slow\n5:00 Running DeepSeek on a home AI lab; costs and hardware\n7:25 Local AI privacy and training data\n8:23 DeepSeek capabilities and the token cost caveat\n9:58 Independent embedded evaluators in AI labs\n11:55 Open source and limits of frontier safety rules\n13:24 Mac mini giveaway winner\n15:11 Audience question about bottlenecks to human progress\n17:30 Nick's simulated fruit fly brain architecture email demo\n20:04 Compute, energy and civilization's future\n23:02 Narrow AI compared with AGI; whether AGI is needed\n24:11 Discussion about connected-device privacy\n26:20 Acceleration, lobbying and the next regulation steps\n28:27 Reaction to a simulated fly playing blackjack\n29:10 Outro"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT29M23S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "9146",
+            "likeCount": "148",
+            "favoriteCount": "0",
+            "commentCount": "259"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "A-PIwmlo2SE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152155+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311774+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152153+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "se3gud4Ff_qE6g5xxqjFUZwzRsM",
@@ -37947,7 +39182,79 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-13T16:15:12Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "byR0BWJPTYc-TapsHp-5u4s09P8",
+          "id": "A-PIwmlo2SE",
+          "snippet": {
+            "publishedAt": "2026-09-13T16:15:12Z",
+            "channelId": "UClmIgvFUmMI1FdscltQ1KVg",
+            "title": "How Sam Altman Keeps Getting Away With It",
+            "description": "They've tried to fire Sam Altman at every company he's run — Loopt, Y Combinator, OpenAI. From his first startup to the courtroom this May, the same pattern.\n\nChapters:\n\n01:27 Loopt\n03:06 Employees ask the board to remove him\n04:36 Y Combinator exit\n06:10 Chairman title that wasn't\n07:35 Under oath about money\n09:37 The Startup Fund\n11:02 Where Altman's money comes from\n12:34 Board as the safeguard\n13:39 Fired — for five days\n14:08 Text to Satya Nadella\n14:52 After the return\n16:59 Report that stayed private\n17:42 Equity ultimatum\n18:43 Employee who didn't sign\n20:57 Signatures\n23:47 Trial\n25:01 Witnesses\n27:27 Senate moment\n\n#SamAltman #OpenAI #ArtificialIntelligence",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/A-PIwmlo2SE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/A-PIwmlo2SE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/A-PIwmlo2SE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/A-PIwmlo2SE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/A-PIwmlo2SE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Sergey Ross",
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "How Sam Altman Keeps Getting Away With It",
+              "description": "They've tried to fire Sam Altman at every company he's run — Loopt, Y Combinator, OpenAI. From his first startup to the courtroom this May, the same pattern.\n\nChapters:\n\n01:27 Loopt\n03:06 Employees ask the board to remove him\n04:36 Y Combinator exit\n06:10 Chairman title that wasn't\n07:35 Under oath about money\n09:37 The Startup Fund\n11:02 Where Altman's money comes from\n12:34 Board as the safeguard\n13:39 Fired — for five days\n14:08 Text to Satya Nadella\n14:52 After the return\n16:59 Report that stayed private\n17:42 Equity ultimatum\n18:43 Employee who didn't sign\n20:57 Signatures\n23:47 Trial\n25:01 Witnesses\n27:27 Senate moment\n\n#SamAltman #OpenAI #ArtificialIntelligence"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT28M11S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "20370",
+            "likeCount": "282",
+            "favoriteCount": "0",
+            "commentCount": "67"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "aOvbvCljEZY": {
         "status": "pending",
@@ -38001,9 +39308,9 @@
         }
       },
       "LDpsCIn3ohY": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152172+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044220+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152171+00:00",
         "attempts": 0,
         "item": {
@@ -38052,9 +39359,9 @@
         }
       },
       "TAox2iFpGE0": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152177+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044229+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152176+00:00",
         "attempts": 0,
         "item": {
@@ -38103,9 +39410,9 @@
         }
       },
       "6hOa0Zi2HHM": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152183+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044239+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152181+00:00",
         "attempts": 0,
         "item": {
@@ -38154,9 +39461,9 @@
         }
       },
       "45nfY_E-ljI": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152188+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044246+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152186+00:00",
         "attempts": 0,
         "item": {
@@ -38726,10 +40033,10 @@
       },
       "N1RRfySsblg": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319815+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311784+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319800+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "ALolCauwBXmT8tWsQbYZ-idZIS4",
@@ -38773,7 +40080,96 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T13:44:02Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "bWxm6pQChOEhCOJwlFcL-Ujs8uM",
+          "id": "N1RRfySsblg",
+          "snippet": {
+            "publishedAt": "2026-09-15T13:44:02Z",
+            "channelId": "UC7uzuZJIYzcxV9JJ1yAtHHg",
+            "title": "AI को Slow क्यों करना चाहते हैं बड़े AI Leaders? | Dario Amodei की Warning",
+            "description": "Should AI development slow down? Prashant Sir and Sanchit Jain discuss Dario Amodei's proposal, AI safety, market control, open models, and India's place in the global AI race.\n\nWhat do you think: stronger safety checks, faster progress, or a balance of both? Share your reason in the comments.\n\nWATCH NEXT\nAI से डरें या फायदा उठाएँ? Jobs, Safety और India का Future\nhttps://youtu.be/lc4Hlm4aXWA\n\nCHAPTERS\n00:00 Preview\n00:30 Why the AI slowdown debate matters\n02:17 Dario Amodei and Anthropic\n05:37 The AI incident and safety concerns\n09:29 Three steps to pace frontier AI\n11:28 Sam Altman and the industry response\n14:00 Regulation, competition and market control\n18:20 Audits, responsibility and open models\n21:27 The global AI race\n22:17 Technology and national power\n26:25 Chips, energy and infrastructure\n29:32 India's opportunity\n32:09 Your view and the next conversation\n\nSOURCE DISCUSSED\nDario Amodei — We Must Pace the Frontier:\nhttps://darioamodei.com/post/we-must-pace-the-frontier\nThe proposal concerns pacing capability advances, rather than stopping all AI development. Views about motives and future outcomes in this conversation are the speakers' analysis, not established findings. Historical clarification: gunpowder originated in China. External audits do not automatically remove a company's legal responsibility.\n\nFeaturing Prashant Sir and Sanchit Jain (KnowledgeGATE).\nIllustrative visuals have been created or enhanced using AI; they are not footage of the events described.\n\nMUSIC\n\"The Descent\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0\nhttp://creativecommons.org/licenses/by/4.0/\nEdited excerpt with fades and dialogue mix.\n\n#AI #AIPodcast #ArtificialIntelligence",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/N1RRfySsblg/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/N1RRfySsblg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/N1RRfySsblg/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/N1RRfySsblg/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/N1RRfySsblg/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Complete Coding by Prashant Sir",
+            "tags": [
+              "AI podcast Hindi",
+              "AI safety",
+              "Dario Amodei",
+              "Sam Altman",
+              "Anthropic",
+              "OpenAI",
+              "AI slowdown",
+              "AI regulation",
+              "India AI",
+              "AI future",
+              "artificial intelligence",
+              "Prashant Sir",
+              "Sanchit Jain",
+              "KnowledgeGate",
+              "Complete Coding"
+            ],
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "AI को Slow क्यों करना चाहते हैं बड़े AI Leaders? | Dario Amodei की Warning",
+              "description": "Should AI development slow down? Prashant Sir and Sanchit Jain discuss Dario Amodei's proposal, AI safety, market control, open models, and India's place in the global AI race.\n\nWhat do you think: stronger safety checks, faster progress, or a balance of both? Share your reason in the comments.\n\nWATCH NEXT\nAI से डरें या फायदा उठाएँ? Jobs, Safety और India का Future\nhttps://youtu.be/lc4Hlm4aXWA\n\nCHAPTERS\n00:00 Preview\n00:30 Why the AI slowdown debate matters\n02:17 Dario Amodei and Anthropic\n05:37 The AI incident and safety concerns\n09:29 Three steps to pace frontier AI\n11:28 Sam Altman and the industry response\n14:00 Regulation, competition and market control\n18:20 Audits, responsibility and open models\n21:27 The global AI race\n22:17 Technology and national power\n26:25 Chips, energy and infrastructure\n29:32 India's opportunity\n32:09 Your view and the next conversation\n\nSOURCE DISCUSSED\nDario Amodei — We Must Pace the Frontier:\nhttps://darioamodei.com/post/we-must-pace-the-frontier\nThe proposal concerns pacing capability advances, rather than stopping all AI development. Views about motives and future outcomes in this conversation are the speakers' analysis, not established findings. Historical clarification: gunpowder originated in China. External audits do not automatically remove a company's legal responsibility.\n\nFeaturing Prashant Sir and Sanchit Jain (KnowledgeGATE).\nIllustrative visuals have been created or enhanced using AI; they are not footage of the events described.\n\nMUSIC\n\"The Descent\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0\nhttp://creativecommons.org/licenses/by/4.0/\nEdited excerpt with fades and dialogue mix.\n\n#AI #AIPodcast #ArtificialIntelligence"
+            },
+            "defaultAudioLanguage": "hi"
+          },
+          "contentDetails": {
+            "duration": "PT32M34S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "5908",
+            "likeCount": "29",
+            "favoriteCount": "0",
+            "commentCount": "8"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "x_T6I5Y34-g": {
         "status": "pending",
@@ -38879,10 +40275,10 @@
       },
       "mU276qlJBGU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319839+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311794+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319838+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "PgGJp3rhqH-wIQ2haOhx-sYJ9wk",
@@ -38926,7 +40322,110 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T08:00:39Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "e7eo-Jt9bKG7nk3rRXswAUl40Uw",
+          "id": "mU276qlJBGU",
+          "snippet": {
+            "publishedAt": "2026-09-15T08:00:39Z",
+            "channelId": "UC4g2Hg-4Qk2sq79dn9JeGeg",
+            "title": "Desempleo, agentes 24/7 y la carta de Dario Amodei | EP 22",
+            "description": "Desempleo sobre el 9% en Chile, agentes trabajando 24/7 y un ensayo de Dario Amodei pidiendo pausar la IA. Tres noticias que parecen contradictorias y que en este capítulo conectamos en una sola conversación.\n\nPartimos por el desempleo: el Banco Central ya habla de automatización y Diego trae los datos de Chile y Estados Unidos, que no se ponen de acuerdo. Rodrigo explica por qué la IA \"reveló grasa corporativa\" en las empresas grandes (los perfiles que solo ejecutaban) mientras los early adopters están trabajando más que nunca.\n\nSeguimos con los agentes 24/7: Cristian publica 175 noticias diarias en Ecosistema Startup sin contratar a nadie, Rodrigo administra Rojo Innova con su agente revisando el correo, y los dos coinciden en que un agente trabajando 24/7 es gente trabajando 24/7. La misma IA que quita empleos es la que te permite levantar tu propio negocio.\n\nY cerramos con la carta de Dario Amodei: \"We Must Pace the Frontier\" pide pausar (no frenar) la carrera de los modelos, y Musk, Altman y Hassabis salieron a apoyarlo. ¿Por qué ahora? OpenAI acaba de poner 10.000 agentes 88 horas para resolver Navier-Stokes, se rumorea que Google alcanzó el RSI y China ya respondió que esto es una nueva guerra fría.\n\nAdemás: Grok Bot Galaxy, Muse de Meta, Hermes Desktop y OpenSpec.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎙️ HOSTS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n→ Rodrigo Rojo: https://www.linkedin.com/in/rodrigorojo/\n→ Cristian Tala: https://www.linkedin.com/in/ctala/\n→ Diego Arias: https://www.linkedin.com/in/diegoarias/\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📚 NUESTRAS COMUNIDADES Y CURSOS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\nComunidad La Patrulla Roja (Rodrigo Rojo)\n→ https://www.skool.com/rojo\n\nComunidad Cágala, Aprende, Repite (Cristian Tala)\n→ https://www.skool.com/cagala-aprende-repite\n\nCurso Claude Desbloqueado\n→ https://tienda.rojo.me/products/claude-desbloqueado\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔗 ENLACES PATROCINADOS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n→ Hostinger con descuento (código de Rodrigo): http://www.hostinger.com/rojo10\n\n→ Hostinger con descuento (código de Cristian): https://www.hostinger.com/es?REFERRALCODE=GBD6IAMGM6NA\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔗 RECURSOS MENCIONADOS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n→ We Must Pace the Frontier, ensayo de Dario Amodei\nhttps://darioamodei.com/post/we-must-pace-the-frontier\n\n→ OpenAI y la solución a Navier-Stokes\nhttps://openai.com/index/navier-stokes-solution/\n\n→ Grok Bot Galaxy (15 al 17 de septiembre, livestream gratis)\nhttps://x.ai/galaxy\n\n→ Muse, el agente personal de Meta (por ahora solo en EE.UU.)\nhttps://ai.meta.com/muse/\n\n→ Hermes Desktop (Nous Research)\nhttps://hermes-agent.nousresearch.com/desktop\n\n→ OpenSpec: Spec-Driven Development para agentes de código\nhttps://github.com/Fission-AI/OpenSpec\n\n→ Benchmark de modelos de Cristian\nhttps://benchmarks.cristiantala.com/\n\n→ Ecosistema Startup (Cristian)\nhttps://ecosistemastartup.com/\n\n→ Empresas Aumentadas (Diego)\nhttps://empresasaumentadas.com/\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📌 TEMAS QUE TOCAMOS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n00:00 Intro: Diego vuelve de vacaciones y Chris anda \"hater nivel Dios\"\n01:37 Ecosistema Startup: 175 noticias al día con n8n y agentes en Python\n05:36 Hermes Desktop: un agente, varias máquinas, un modelo por tarea\n08:04 Linux, Windows y la RTX 5090 que nadie aprovecha\n10:04 Clones virtuales: EchoMimic v3 y por qué ganó HeyGen\n13:15 Grok Bot: publicidad masiva y el plan de 20 que dura un día\n14:45 Grok Bot Galaxy: tres ingenieros, tres días, una empresa\n16:15 Muse de Meta y por qué los bots le ganan al terminal\n18:14 \"Acá no importa la herramienta\": skills y agentes son iguales en todas\n20:24 Un agente 24/7 es gente trabajando 24/7\n23:50 Matemáticos vs OpenAI: 10.000 agentes y 88 horas para Navier-Stokes\n27:31 \"Todo es un remix\": hombros de gigantes y AlphaFold\n31:10 Día del programador: un año sin tocar código, OpenSpec y TDD\n33:24 Nadie conoce mejor tu proceso: contexto y criterio antes que prompts\n37:12 Desempleo en Chile sobre el 9% y datos contradictorios en EE.UU.\n38:42 \"La IA reveló grasa corporativa\": ejecutores vs. los que trabajan más\n42:46 La misma IA que te quita el empleo te permite tener tu negocio\n44:00 Gemini Spark funciona, pero Google no hizo el push\n45:44 Dario Amodei y \"We Must Pace the Frontier\": pausar no es frenar\n48:26 Coordinación global, el rumor del RSI en Google y la guerra fría\n50:06 Cierre: usa /goal en Hermes y aprende antes del 2030\n\n#InteligenciaArtificial #AgentesIA #DarioAmodei",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/mU276qlJBGU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/mU276qlJBGU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/mU276qlJBGU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/mU276qlJBGU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/mU276qlJBGU/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Es la Hora De Aprender",
+            "tags": [
+              "desempleo ia",
+              "ia y empleo",
+              "agentes de ia",
+              "agentes 24/7",
+              "dario amodei",
+              "carta dario amodei",
+              "inteligencia artificial",
+              "gpt-6 astra",
+              "grok bot",
+              "grok bot galaxy",
+              "muse meta",
+              "hermes agent",
+              "hermes desktop",
+              "openclaw",
+              "openspec",
+              "spec driven development",
+              "n8n agentes",
+              "automatizacion con ia",
+              "podcast inteligencia artificial",
+              "podcast ia español",
+              "es la hora de aprender",
+              "rodrigo rojo",
+              "cristian tala",
+              "diego arias",
+              "emprender con ia",
+              "negocio con agentes ia",
+              "futuro del trabajo",
+              "ia chile",
+              "heygen"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "Desempleo, agentes 24/7 y la carta de Dario Amodei | EP 22",
+              "description": "Desempleo sobre el 9% en Chile, agentes trabajando 24/7 y un ensayo de Dario Amodei pidiendo pausar la IA. Tres noticias que parecen contradictorias y que en este capítulo conectamos en una sola conversación.\n\nPartimos por el desempleo: el Banco Central ya habla de automatización y Diego trae los datos de Chile y Estados Unidos, que no se ponen de acuerdo. Rodrigo explica por qué la IA \"reveló grasa corporativa\" en las empresas grandes (los perfiles que solo ejecutaban) mientras los early adopters están trabajando más que nunca.\n\nSeguimos con los agentes 24/7: Cristian publica 175 noticias diarias en Ecosistema Startup sin contratar a nadie, Rodrigo administra Rojo Innova con su agente revisando el correo, y los dos coinciden en que un agente trabajando 24/7 es gente trabajando 24/7. La misma IA que quita empleos es la que te permite levantar tu propio negocio.\n\nY cerramos con la carta de Dario Amodei: \"We Must Pace the Frontier\" pide pausar (no frenar) la carrera de los modelos, y Musk, Altman y Hassabis salieron a apoyarlo. ¿Por qué ahora? OpenAI acaba de poner 10.000 agentes 88 horas para resolver Navier-Stokes, se rumorea que Google alcanzó el RSI y China ya respondió que esto es una nueva guerra fría.\n\nAdemás: Grok Bot Galaxy, Muse de Meta, Hermes Desktop y OpenSpec.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎙️ HOSTS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n→ Rodrigo Rojo: https://www.linkedin.com/in/rodrigorojo/\n→ Cristian Tala: https://www.linkedin.com/in/ctala/\n→ Diego Arias: https://www.linkedin.com/in/diegoarias/\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📚 NUESTRAS COMUNIDADES Y CURSOS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\nComunidad La Patrulla Roja (Rodrigo Rojo)\n→ https://www.skool.com/rojo\n\nComunidad Cágala, Aprende, Repite (Cristian Tala)\n→ https://www.skool.com/cagala-aprende-repite\n\nCurso Claude Desbloqueado\n→ https://tienda.rojo.me/products/claude-desbloqueado\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔗 ENLACES PATROCINADOS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n→ Hostinger con descuento (código de Rodrigo): http://www.hostinger.com/rojo10\n\n→ Hostinger con descuento (código de Cristian): https://www.hostinger.com/es?REFERRALCODE=GBD6IAMGM6NA\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔗 RECURSOS MENCIONADOS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n→ We Must Pace the Frontier, ensayo de Dario Amodei\nhttps://darioamodei.com/post/we-must-pace-the-frontier\n\n→ OpenAI y la solución a Navier-Stokes\nhttps://openai.com/index/navier-stokes-solution/\n\n→ Grok Bot Galaxy (15 al 17 de septiembre, livestream gratis)\nhttps://x.ai/galaxy\n\n→ Muse, el agente personal de Meta (por ahora solo en EE.UU.)\nhttps://ai.meta.com/muse/\n\n→ Hermes Desktop (Nous Research)\nhttps://hermes-agent.nousresearch.com/desktop\n\n→ OpenSpec: Spec-Driven Development para agentes de código\nhttps://github.com/Fission-AI/OpenSpec\n\n→ Benchmark de modelos de Cristian\nhttps://benchmarks.cristiantala.com/\n\n→ Ecosistema Startup (Cristian)\nhttps://ecosistemastartup.com/\n\n→ Empresas Aumentadas (Diego)\nhttps://empresasaumentadas.com/\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📌 TEMAS QUE TOCAMOS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n00:00 Intro: Diego vuelve de vacaciones y Chris anda \"hater nivel Dios\"\n01:37 Ecosistema Startup: 175 noticias al día con n8n y agentes en Python\n05:36 Hermes Desktop: un agente, varias máquinas, un modelo por tarea\n08:04 Linux, Windows y la RTX 5090 que nadie aprovecha\n10:04 Clones virtuales: EchoMimic v3 y por qué ganó HeyGen\n13:15 Grok Bot: publicidad masiva y el plan de 20 que dura un día\n14:45 Grok Bot Galaxy: tres ingenieros, tres días, una empresa\n16:15 Muse de Meta y por qué los bots le ganan al terminal\n18:14 \"Acá no importa la herramienta\": skills y agentes son iguales en todas\n20:24 Un agente 24/7 es gente trabajando 24/7\n23:50 Matemáticos vs OpenAI: 10.000 agentes y 88 horas para Navier-Stokes\n27:31 \"Todo es un remix\": hombros de gigantes y AlphaFold\n31:10 Día del programador: un año sin tocar código, OpenSpec y TDD\n33:24 Nadie conoce mejor tu proceso: contexto y criterio antes que prompts\n37:12 Desempleo en Chile sobre el 9% y datos contradictorios en EE.UU.\n38:42 \"La IA reveló grasa corporativa\": ejecutores vs. los que trabajan más\n42:46 La misma IA que te quita el empleo te permite tener tu negocio\n44:00 Gemini Spark funciona, pero Google no hizo el push\n45:44 Dario Amodei y \"We Must Pace the Frontier\": pausar no es frenar\n48:26 Coordinación global, el rumor del RSI en Google y la guerra fría\n50:06 Cierre: usa /goal en Hermes y aprende antes del 2030\n\n#InteligenciaArtificial #AgentesIA #DarioAmodei"
+            },
+            "defaultAudioLanguage": "es-419"
+          },
+          "contentDetails": {
+            "duration": "PT53M46S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "714",
+            "likeCount": "20",
+            "favoriteCount": "0",
+            "commentCount": "5"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "9pfcohrBrbA": {
         "status": "pending",
@@ -39037,10 +40536,10 @@
       },
       "Z5r2qukhH8c": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319855+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-20T15:23:03.311804+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319854+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "VlPOvSAHkwF4XlmCSVkDOE8CdMw",
@@ -39084,7 +40583,82 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T02:39:17Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-20T15:23:03.043166+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "nDRPPGtw1J9JdaelWseV3VnhXjQ",
+          "id": "Z5r2qukhH8c",
+          "snippet": {
+            "publishedAt": "2026-09-15T02:39:17Z",
+            "channelId": "UCBQL89suEgpXmZqeAMpwrcg",
+            "title": "Interview with Anthropic CEO Dario Amodei | Anderson Cooper 360",
+            "description": "Could artificial intelligence kill us all by the end of the decade? That was the question raised last week by former Anthropic employee Jacob Coxon, who said many at the company believe that it's possible. Then this weekend, the company's CEO Dario Amodei posted an essay in which he acknowledged that people may lose control of AI and called on industry leaders to “slow the pace” at improving the technology to avoid the wrong paths and the possibility of AI harming humanity. Tonight, we have Anderson’s interview with Dario Amodei, and reaction from his former employee Jacob Coxon.\n\nLearn more about your ad choices. Visit podcastchoices.com/adchoices (https://podcastchoices.com/adchoices)\n\nEpisode link: https://play.headliner.app/episode/35264522?utm_source=youtube \n\n(video made with https://www.headliner.app)",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Z5r2qukhH8c/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Z5r2qukhH8c/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Z5r2qukhH8c/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Z5r2qukhH8c/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Z5r2qukhH8c/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Jordan Ene 87th",
+            "tags": [
+              "News"
+            ],
+            "categoryId": "10",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Interview with Anthropic CEO Dario Amodei | Anderson Cooper 360",
+              "description": "Could artificial intelligence kill us all by the end of the decade? That was the question raised last week by former Anthropic employee Jacob Coxon, who said many at the company believe that it's possible. Then this weekend, the company's CEO Dario Amodei posted an essay in which he acknowledged that people may lose control of AI and called on industry leaders to “slow the pace” at improving the technology to avoid the wrong paths and the possibility of AI harming humanity. Tonight, we have Anderson’s interview with Dario Amodei, and reaction from his former employee Jacob Coxon.\n\nLearn more about your ad choices. Visit podcastchoices.com/adchoices (https://podcastchoices.com/adchoices)\n\nEpisode link: https://play.headliner.app/episode/35264522?utm_source=youtube \n\n(video made with https://www.headliner.app)"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT48M14S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "45",
+            "likeCount": "3",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "yGmDCAvdhGo": {
         "status": "pending",
@@ -44303,9 +45877,9 @@
         }
       },
       "P_JBGhXQNQE": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315593+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044711+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315590+00:00",
         "attempts": 0,
         "item": {
@@ -44354,9 +45928,9 @@
         }
       },
       "hQR_VJF6ukk": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315601+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044719+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315598+00:00",
         "attempts": 0,
         "item": {
@@ -44410,9 +45984,9 @@
         }
       },
       "U4hNefIGh_g": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315609+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044726+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315606+00:00",
         "attempts": 0,
         "item": {
@@ -44461,9 +46035,9 @@
         }
       },
       "zKZgdyfqeiY": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315616+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044732+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315614+00:00",
         "attempts": 0,
         "item": {
@@ -44512,9 +46086,9 @@
         }
       },
       "jvYdhFGqOeg": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315625+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044739+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315622+00:00",
         "attempts": 0,
         "item": {
@@ -44563,9 +46137,9 @@
         }
       },
       "6z9trSsYuIc": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:32.315632+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.044745+00:00",
         "first_seen_at": "2026-09-19T15:18:32.315629+00:00",
         "attempts": 0,
         "item": {
@@ -50941,9 +52515,9 @@
         }
       },
       "DP3JovznJFI": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T21:52:05.448369+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-20T15:23:03.045273+00:00",
         "first_seen_at": "2026-09-19T21:52:05.448352+00:00",
         "attempts": 0,
         "item": {
