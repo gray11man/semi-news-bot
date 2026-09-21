@@ -772,7 +772,7 @@
       "Ho1gnEeVryA": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-20T20:17:20.431771+00:00",
+        "updated_at": "2026-09-21T03:11:35.396467+00:00",
         "first_seen_at": "2026-09-18T22:12:17.052304+00:00",
         "attempts": 0,
         "item": {
@@ -1120,7 +1120,7 @@
       "Bh5bJrrJ6xs": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-20T20:17:20.431749+00:00",
+        "updated_at": "2026-09-21T03:11:35.396472+00:00",
         "first_seen_at": "2026-09-18T22:12:17.060681+00:00",
         "attempts": 0,
         "item": {
@@ -2518,7 +2518,7 @@
       "XzNjq6DNjSY": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-20T20:17:20.431767+00:00",
+        "updated_at": "2026-09-21T03:11:35.396447+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462747+00:00",
         "attempts": 0,
         "item": {
@@ -3028,7 +3028,7 @@
         "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "U0x_EFLS0yQiwTu4Gi6d0yOJAhM",
+          "etag": "I6gWlEHfKbr5XUg0ZJq4k1GjmXg",
           "id": {
             "kind": "youtube#video",
             "videoId": "AMt3YNN-iFE"
@@ -3361,7 +3361,7 @@
         "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "CupYHnfMyjPtCxu2gXeWSCoSyvM",
+          "etag": "p7gVKVI0WUtbkeuC3JkNNZ-8BbY",
           "id": {
             "kind": "youtube#video",
             "videoId": "wRRBz17tMIk"
@@ -17543,7 +17543,7 @@
         "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "DPwsM8sBMAI21b4QiraKdPE0gGs",
+          "etag": "59EuRl0LFbFkNvTGC7mpAgKQQoY",
           "id": {
             "kind": "youtube#video",
             "videoId": "_x6F9JQ7yV8"
@@ -19863,7 +19863,7 @@
         "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "9Wl07K44q-wp58vrWxDbpxFpxF4",
+          "etag": "KoJIAYyCiU6NTYhzbJJAIWgAc5k",
           "id": {
             "kind": "youtube#video",
             "videoId": "kFZ85A1WMT8"
@@ -24876,10 +24876,10 @@
       },
       "0QYFmxsZiU8": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:25.435992+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342811+00:00",
         "first_seen_at": "2026-09-18T22:12:25.435990+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "F36woIK6d3a0c8lBmmx86DQ0pNQ",
@@ -24923,14 +24923,118 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T12:15:13Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "s_qWtbljSysdBqW0xwf1PpOiM3g",
+          "id": "0QYFmxsZiU8",
+          "snippet": {
+            "publishedAt": "2026-09-15T12:15:13Z",
+            "channelId": "UC2Vaw2oBCNDpvnhy0wkOVuw",
+            "title": "Greg Brockman Says AGI Has Arrived — We’re Entering the AGI Era",
+            "description": "OpenAI co-founder Greg Brockman says we may already be entering the AGI era. In this video, we break down what he means, why increasingly capable AI agents are changing the game, and what recent OpenAI developments could mean for the future of artificial intelligence.\n\nWe’ll explore AI agents that can work for extended periods, OpenAI’s large-scale agent experiments, advances in mathematical reasoning, computer-use capabilities, cybersecurity risks, and the remaining limitations before AI can truly match human-level general intelligence.\n\nWhat you’ll learn:\n\nWhy Greg Brockman believes the AGI era has begun\nHow AI agents are becoming more autonomous\nWhat OpenAI’s latest reasoning advances reveal\nWhy computer-use AI is so important\nThe cybersecurity risks of advanced AI\nWhat still separates current AI from true AGI\nHow AI could transform jobs and entrepreneurship\n\nThe AI race is moving faster than ever, and the definition of AGI may be changing with it.\n\n#AI #AGI #OpenAI #GregBrockman #ArtificialIntelligence #AINews",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/0QYFmxsZiU8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/0QYFmxsZiU8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/0QYFmxsZiU8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/0QYFmxsZiU8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/0QYFmxsZiU8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "AI Study Hub",
+            "tags": [
+              "AI News",
+              "AI Updates",
+              "AI Revolution",
+              "AI",
+              "artificial intelligence",
+              "AI news 2026",
+              "AGI",
+              "AGI 2026",
+              "artificial general intelligence",
+              "OpenAI",
+              "Greg Brockman",
+              "OpenAI AGI",
+              "GPT 6",
+              "GPT 6 Astra",
+              "AI agents",
+              "autonomous AI",
+              "AI future",
+              "future of AI",
+              "AI breakthrough",
+              "AI safety",
+              "AI alignment",
+              "AI reasoning",
+              "AI research",
+              "AI technology",
+              "superintelligence",
+              "AI economy",
+              "AI jobs",
+              "AI assistants",
+              "computer use AI",
+              "Navier Stokes AI"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Greg Brockman Says AGI Has Arrived — We’re Entering the AGI Era",
+              "description": "OpenAI co-founder Greg Brockman says we may already be entering the AGI era. In this video, we break down what he means, why increasingly capable AI agents are changing the game, and what recent OpenAI developments could mean for the future of artificial intelligence.\n\nWe’ll explore AI agents that can work for extended periods, OpenAI’s large-scale agent experiments, advances in mathematical reasoning, computer-use capabilities, cybersecurity risks, and the remaining limitations before AI can truly match human-level general intelligence.\n\nWhat you’ll learn:\n\nWhy Greg Brockman believes the AGI era has begun\nHow AI agents are becoming more autonomous\nWhat OpenAI’s latest reasoning advances reveal\nWhy computer-use AI is so important\nThe cybersecurity risks of advanced AI\nWhat still separates current AI from true AGI\nHow AI could transform jobs and entrepreneurship\n\nThe AI race is moving faster than ever, and the definition of AGI may be changing with it.\n\n#AI #AGI #OpenAI #GregBrockman #ArtificialIntelligence #AINews"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT26M35S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "286",
+            "likeCount": "2",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "T7WQugs-hOE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:25.435997+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342823+00:00",
         "first_seen_at": "2026-09-18T22:12:25.435996+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "9w6fj9QYkVobieMS-bzrdXpUzm8",
@@ -24974,14 +25078,102 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T06:42:43Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "ITSS-gveq5YvDBY4Ky7txwbGhLI",
+          "id": "T7WQugs-hOE",
+          "snippet": {
+            "publishedAt": "2026-09-15T06:42:43Z",
+            "channelId": "UC3rHO7qh4W2XUvjE9X3VUpQ",
+            "title": "OpenAI联合创始人兼总裁摊牌了！Astra 能连续干活 24 小时，AGI 时代已到，算力与打工人洗牌！",
+            "description": "OpenAI 联合创始人兼总裁 Greg Brockman 在 a16z 播客中直接摊牌：我们已经正式跨入 AGI 时代！能够连续自主运行 24 小时的 Astra 模型，正在彻底颠覆 AI 的定义。",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/T7WQugs-hOE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/T7WQugs-hOE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/T7WQugs-hOE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/T7WQugs-hOE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/T7WQugs-hOE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Mr.F的宏观",
+            "tags": [
+              "⁠OpenAI⁠",
+              "⁠AGI⁠",
+              "⁠Greg Brockman⁠",
+              "⁠Astra⁠",
+              "⁠a16z⁠",
+              "⁠Computer Use⁠",
+              "⁠AI Agent⁠",
+              "⁠算力⁠",
+              "⁠人工智能⁠",
+              "⁠ChatGPT⁠",
+              "⁠科技趋势⁠",
+              "⁠商业模式⁠",
+              "⁠AI创业⁠",
+              "⁠生产力工具⁠"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh",
+            "localized": {
+              "title": "OpenAI联合创始人兼总裁摊牌了！Astra 能连续干活 24 小时，AGI 时代已到，算力与打工人洗牌！",
+              "description": "OpenAI 联合创始人兼总裁 Greg Brockman 在 a16z 播客中直接摊牌：我们已经正式跨入 AGI 时代！能够连续自主运行 24 小时的 Astra 模型，正在彻底颠覆 AI 的定义。"
+            },
+            "defaultAudioLanguage": "zh"
+          },
+          "contentDetails": {
+            "duration": "PT33M14S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "175",
+            "likeCount": "3",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "MUMmnkQj8tI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:25.436003+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342834+00:00",
         "first_seen_at": "2026-09-18T22:12:25.436001+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "R4BsISEjCY8vVRYx86fyWxDM5ZU",
@@ -25030,14 +25222,103 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T00:49:53Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "o5IgUXyNtY1PONLuKCLCcBTFls8",
+          "id": "MUMmnkQj8tI",
+          "snippet": {
+            "publishedAt": "2026-09-15T00:49:53Z",
+            "channelId": "UC5O5txAmD9jZrsKlPa1gfrQ",
+            "title": "对话OpenAI联合创始人格雷格·布罗克曼：我们已经进入AGI时代",
+            "description": "本期节目围绕对OpenAI联合创始人格雷格·布罗克曼（Greg Brockman）的一场深度访谈展开，讨论了他认为人类已经进入AGI时代的判断，以及新一代模型Astra在计算机操作、长时间自主完成任务上的突破。对话深入探讨了算力短缺、安全对齐与\"把控前沿节奏\"、Hugging Face事件揭示的\"防御者窗口\"，以及OpenAI用一万个智能体求解纳维-斯托克斯方程等前沿进展。同时也谈到了就业与创业的未来、各国对AI的不同态度、健康救命案例、数据中心争议、十亿美元一线防御者承诺，以及OpenAI以\"聚焦\"为主题的战略取舍。整体呈现了一个既充满机遇又需要以紧迫感应对风险的AI新阶段。\n\n#技术 #商业 #经济 #创新 #历史 #创业 #企业 #podcast #播客 #小雨科技商业说",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/MUMmnkQj8tI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/MUMmnkQj8tI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/MUMmnkQj8tI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/MUMmnkQj8tI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/MUMmnkQj8tI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/MUMmnkQj8tI/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "小雨科技商业说",
+            "tags": [
+              "podcast",
+              "企业",
+              "创业",
+              "创新",
+              "历史",
+              "商业",
+              "小雨科技商业说",
+              "技术",
+              "播客",
+              "经济"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh",
+            "localized": {
+              "title": "对话OpenAI联合创始人格雷格·布罗克曼：我们已经进入AGI时代",
+              "description": "本期节目围绕对OpenAI联合创始人格雷格·布罗克曼（Greg Brockman）的一场深度访谈展开，讨论了他认为人类已经进入AGI时代的判断，以及新一代模型Astra在计算机操作、长时间自主完成任务上的突破。对话深入探讨了算力短缺、安全对齐与\"把控前沿节奏\"、Hugging Face事件揭示的\"防御者窗口\"，以及OpenAI用一万个智能体求解纳维-斯托克斯方程等前沿进展。同时也谈到了就业与创业的未来、各国对AI的不同态度、健康救命案例、数据中心争议、十亿美元一线防御者承诺，以及OpenAI以\"聚焦\"为主题的战略取舍。整体呈现了一个既充满机遇又需要以紧迫感应对风险的AI新阶段。\n\n#技术 #商业 #经济 #创新 #历史 #创业 #企业 #podcast #播客 #小雨科技商业说"
+            },
+            "defaultAudioLanguage": "zh"
+          },
+          "contentDetails": {
+            "duration": "PT46M44S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "44",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "DjBhmH8um2A": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:25.436008+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342844+00:00",
         "first_seen_at": "2026-09-18T22:12:25.436006+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "drxGX5BGnMDqJ_Ij0_Mn3mLWqU0",
@@ -25081,26 +25362,104 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T17:11:54Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "T_mpBWvcR5WLw1D74qDNK5JQlQw",
+          "id": "DjBhmH8um2A",
+          "snippet": {
+            "publishedAt": "2026-09-14T17:11:54Z",
+            "channelId": "UCsRdY9CtEVWTNO4ulwfzqVA",
+            "title": "Fal.Con 2026: Securing AI | George Kurtz, Jensen Huang, Lip-Bu Tan & Greg Brockman",
+            "description": "AI is moving faster than ever, but so are AI-accelerated threats. Are you ready to defend against them?\n\nWatch the full Day 1 opening keynote from Fal.Con 2026 featuring: \n\n• CrowdStrike Founder & CEO: George Kurtz\n• NVIDIA Founder & CEO: Jensen Huang\n• Intel CEO: Lip-Bu Tan\n• Open AI Co-Founder & President: Greg Brockman.\n\nExplore this year's theme: \"Securing the AI Revolution,\" and hear crucial strategies for securing AI adoption and stopping next-generation adversaries using the CrowdStrike Falcon platform. \n\n📣 Connect With Us:\n\n► X:\nhttps://twitter.com/CrowdStrike\n► Instagram:\nhttps://www.instagram.com/crowdstrike\n► LinkedIn:\nhttps://www.linkedin.com/company/crowdstrike\n\n🔔 Subscribe to stay updated!\n\n#CrowdStrike #FalCon2026 #Cybersecurity",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/DjBhmH8um2A/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/DjBhmH8um2A/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/DjBhmH8um2A/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/DjBhmH8um2A/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/DjBhmH8um2A/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "CrowdStrike",
+            "tags": [
+              "CrowdStrike",
+              "cyber security",
+              "cybersecurity",
+              "cyber intrusion",
+              "endpoint protection",
+              "endpoint security",
+              "cyber intrusion"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Fal.Con 2026: Securing AI | George Kurtz, Jensen Huang, Lip-Bu Tan & Greg Brockman",
+              "description": "AI is moving faster than ever, but so are AI-accelerated threats. Are you ready to defend against them?\n\nWatch the full Day 1 opening keynote from Fal.Con 2026 featuring: \n\n• CrowdStrike Founder & CEO: George Kurtz\n• NVIDIA Founder & CEO: Jensen Huang\n• Intel CEO: Lip-Bu Tan\n• Open AI Co-Founder & President: Greg Brockman.\n\nExplore this year's theme: \"Securing the AI Revolution,\" and hear crucial strategies for securing AI adoption and stopping next-generation adversaries using the CrowdStrike Falcon platform. \n\n📣 Connect With Us:\n\n► X:\nhttps://twitter.com/CrowdStrike\n► Instagram:\nhttps://www.instagram.com/crowdstrike\n► LinkedIn:\nhttps://www.linkedin.com/company/crowdstrike\n\n🔔 Subscribe to stay updated!\n\n#CrowdStrike #FalCon2026 #Cybersecurity"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT1H26M49S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "11618",
+            "likeCount": "109",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "IJn8cagMW18": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:25.436016+00:00",
+        "reason": "대화형 인터뷰 근거 없음",
+        "updated_at": "2026-09-21T03:12:02.071932+00:00",
         "first_seen_at": "2026-09-18T22:12:25.436013+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "VsPJf1PAtjo8h7weLhQyX-AjZIs",
           "id": {
-            "kind": "youtube#video",
             "videoId": "IJn8cagMW18"
           },
           "snippet": {
             "publishedAt": "2026-09-14T14:30:28Z",
             "channelId": "UC9cn0TuPq4dnbTY-CBsm8XA",
             "title": "OpenAI President on What it Means to Cross Into The Age of AGI",
-            "description": "Ben Horowitz and Erik Torenberg sit down with OpenAI co-founder and President Greg Brockman to discuss why he believes AI ...",
+            "description": "Ben Horowitz and Erik Torenberg sit down with OpenAI co-founder and President Greg Brockman to discuss why he believes AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems.\n\nGreg explains why computer use represents such an important step for agents, including models that can work coherently for 24 hours and interact with software through the same interfaces humans use. He also shares how OpenAI deployed 10,000 agents to tackle the Navier-Stokes problem, and why advances in mathematical reasoning could translate into new approaches to science, software, and cybersecurity.\n\nBen, Erik, and Greg also dig into the “defender’s window” for cybersecurity, how AI could reshape work and entrepreneurship, and what the AI assistant of the future might actually look like: persistent, proactive, personalized, and capable of doing work on your behalf rather than waiting for another prompt.\n\nTimestamps:\n00:00 - Intro\n00:51 - Could You Have Predicted Today's AI 10 Years Ago?\n04:14 - Cyber Hacking, Reward Hacking & Building Safety Into Architecture\n08:42 - The Hugging Face Incident & Why the Defender's Window Is Open\n18:28 - Astra & Why Greg Says We're Now in the AGI Era\n24:25 - The Future of Employment as AI Progresses\n29:39 - Why AI Sentiment Is Higher in Asia Than the West\n38:14 - What's Still Jagged: What Astra Needs to Approximate AGI\n43:25 - How Greg Prioritizes His Time\n47:32 - What's Next: The AGI Era & Deep Co-Design\n\nResources:\nFollow Greg Brockman on X: https://x.com/gdb\nFollow Ben Horowitz on X: https://x.com/bhorowitz\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/IJn8cagMW18/default.jpg",
@@ -25134,17 +25493,107 @@
               }
             },
             "channelTitle": "a16z",
+            "tags": [
+              "a16z",
+              "andreessen horowitz"
+            ],
+            "categoryId": "28",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-14T14:30:28Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "OpenAI President on What it Means to Cross Into The Age of AGI",
+              "description": "Ben Horowitz and Erik Torenberg sit down with OpenAI co-founder and President Greg Brockman to discuss why he believes AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems.\n\nGreg explains why computer use represents such an important step for agents, including models that can work coherently for 24 hours and interact with software through the same interfaces humans use. He also shares how OpenAI deployed 10,000 agents to tackle the Navier-Stokes problem, and why advances in mathematical reasoning could translate into new approaches to science, software, and cybersecurity.\n\nBen, Erik, and Greg also dig into the “defender’s window” for cybersecurity, how AI could reshape work and entrepreneurship, and what the AI assistant of the future might actually look like: persistent, proactive, personalized, and capable of doing work on your behalf rather than waiting for another prompt.\n\nTimestamps:\n00:00 - Intro\n00:51 - Could You Have Predicted Today's AI 10 Years Ago?\n04:14 - Cyber Hacking, Reward Hacking & Building Safety Into Architecture\n08:42 - The Hugging Face Incident & Why the Defender's Window Is Open\n18:28 - Astra & Why Greg Says We're Now in the AGI Era\n24:25 - The Future of Employment as AI Progresses\n29:39 - Why AI Sentiment Is Higher in Asia Than the West\n38:14 - What's Still Jagged: What Astra Needs to Approximate AGI\n43:25 - How Greg Prioritizes His Time\n47:32 - What's Next: The AGI Era & Deep Co-Design\n\nResources:\nFollow Greg Brockman on X: https://x.com/gdb\nFollow Ben Horowitz on X: https://x.com/bhorowitz\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures."
+            },
+            "defaultAudioLanguage": "en"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "HwerNfAbDGpTgiJoO4w05pjuf7g",
+          "id": "IJn8cagMW18",
+          "snippet": {
+            "publishedAt": "2026-09-14T14:30:28Z",
+            "channelId": "UC9cn0TuPq4dnbTY-CBsm8XA",
+            "title": "OpenAI President on What it Means to Cross Into The Age of AGI",
+            "description": "Ben Horowitz and Erik Torenberg sit down with OpenAI co-founder and President Greg Brockman to discuss why he believes AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems.\n\nGreg explains why computer use represents such an important step for agents, including models that can work coherently for 24 hours and interact with software through the same interfaces humans use. He also shares how OpenAI deployed 10,000 agents to tackle the Navier-Stokes problem, and why advances in mathematical reasoning could translate into new approaches to science, software, and cybersecurity.\n\nBen, Erik, and Greg also dig into the “defender’s window” for cybersecurity, how AI could reshape work and entrepreneurship, and what the AI assistant of the future might actually look like: persistent, proactive, personalized, and capable of doing work on your behalf rather than waiting for another prompt.\n\nTimestamps:\n00:00 - Intro\n00:51 - Could You Have Predicted Today's AI 10 Years Ago?\n04:14 - Cyber Hacking, Reward Hacking & Building Safety Into Architecture\n08:42 - The Hugging Face Incident & Why the Defender's Window Is Open\n18:28 - Astra & Why Greg Says We're Now in the AGI Era\n24:25 - The Future of Employment as AI Progresses\n29:39 - Why AI Sentiment Is Higher in Asia Than the West\n38:14 - What's Still Jagged: What Astra Needs to Approximate AGI\n43:25 - How Greg Prioritizes His Time\n47:32 - What's Next: The AGI Era & Deep Co-Design\n\nResources:\nFollow Greg Brockman on X: https://x.com/gdb\nFollow Ben Horowitz on X: https://x.com/bhorowitz\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/IJn8cagMW18/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/IJn8cagMW18/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/IJn8cagMW18/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/IJn8cagMW18/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/IJn8cagMW18/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "uhd": {
+                "url": "https://i.ytimg.com/vi/IJn8cagMW18/uhddefault.jpg",
+                "width": 3840,
+                "height": 2160
+              }
+            },
+            "channelTitle": "a16z",
+            "tags": [
+              "a16z",
+              "andreessen horowitz"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "OpenAI President on What it Means to Cross Into The Age of AGI",
+              "description": "Ben Horowitz and Erik Torenberg sit down with OpenAI co-founder and President Greg Brockman to discuss why he believes AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems.\n\nGreg explains why computer use represents such an important step for agents, including models that can work coherently for 24 hours and interact with software through the same interfaces humans use. He also shares how OpenAI deployed 10,000 agents to tackle the Navier-Stokes problem, and why advances in mathematical reasoning could translate into new approaches to science, software, and cybersecurity.\n\nBen, Erik, and Greg also dig into the “defender’s window” for cybersecurity, how AI could reshape work and entrepreneurship, and what the AI assistant of the future might actually look like: persistent, proactive, personalized, and capable of doing work on your behalf rather than waiting for another prompt.\n\nTimestamps:\n00:00 - Intro\n00:51 - Could You Have Predicted Today's AI 10 Years Ago?\n04:14 - Cyber Hacking, Reward Hacking & Building Safety Into Architecture\n08:42 - The Hugging Face Incident & Why the Defender's Window Is Open\n18:28 - Astra & Why Greg Says We're Now in the AGI Era\n24:25 - The Future of Employment as AI Progresses\n29:39 - Why AI Sentiment Is Higher in Asia Than the West\n38:14 - What's Still Jagged: What Astra Needs to Approximate AGI\n43:25 - How Greg Prioritizes His Time\n47:32 - What's Next: The AGI Era & Deep Co-Design\n\nResources:\nFollow Greg Brockman on X: https://x.com/gdb\nFollow Ben Horowitz on X: https://x.com/bhorowitz\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures."
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT49M38S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": false,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "134458",
+            "favoriteCount": "0",
+            "commentCount": "283"
+          }
+        },
+        "next_retry_at": "2026-09-21T09:12:02.071912+00:00"
       },
       "56GuvofZgB4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:25.436021+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.343532+00:00",
         "first_seen_at": "2026-09-18T22:12:25.436019+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "WoSHto3Cm2p3BtuNLr7WW6ZqqAE",
@@ -25193,7 +25642,89 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-14T08:11:19Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "Ra6SeGHNIs8kzE4cfcZOiVQwZsg",
+          "id": "56GuvofZgB4",
+          "snippet": {
+            "publishedAt": "2026-09-14T08:11:19Z",
+            "channelId": "UChF5O40UBqAc82I7-i5ig6A",
+            "title": "OpenAI President Greg Brockman on Doing Business in the Wake of Hugging Face | Odd Lots",
+            "description": "According to OpenAI President Greg Brockman, the models that escaped their sandbox and hacked into Hugging Face's servers had yet to go through alignment training. That they were able to break free of the testing environment was not a surprise to OpenAI, but what has happened since has forced them to rethink some things. Today, we talk to Brockman about what OpenAI has learned since the hacking incident and we discuss why he thinks the conversation around model development has to change. We also talk about how OpenAI collaborates and communicates with competitors like Anthropic, how he thinks models should be evaluating what counts as “good writing,” and, of course, we get his thoughts on how seriously we should be worried about the AI doomsday scenarios.\n\nChapters:\n00:00:00 - Cold Open\n00:00:59 - Introduction: AI Coding Tools\n00:04:13 - Guest Intro: Greg Brockman, Co-Founder and President of OpenAI\n00:04:15 - The Hugging Face Incident\n00:07:24 - Why AI Is Tested on Hacking and Cybersecurity Capabilities\n00:09:45 - Industry Pacing and Coordination Between AI Labs\n00:13:56 - Antitrust Concerns Around AI Lab Coordination\n00:15:16 - Defining \"Pacing\": What Slowdown Actually Means\n00:19:15 - Third-Party Auditors and Regulatory Oversight\n00:24:59 - The China Question \n00:28:01 - Sharing Alignment Research\n00:31:02 - Compute Allocation at OpenAI\n00:35:05 - Why Dangerous AI Behaviors Emerge Pre-Release\n00:36:17 - Addressing the \"Safety as Marketing\" Criticism\n00:39:13 - Reward Hacking\n00:45:00 - AI Models Grading AI Models: Collusion Risk and Oversight\n00:46:50 - AI State Laws and Industry Coordination\n00:51:16 - OpenAI Solving the Navier-Stokes Problem\n00:55:11 - Existential Risk: How Deep Is the Anxiety Inside the Labs?\n00:57:46 - International AI Coordination: Trump-Xi Meeting\n00:59:12 - Closing Thoughts\n\r\nWatch Bloomberg Vodcasts: https://www.youtube.com/playlist?list=PLe4PRejZgr0MS0Tqk_zQl1LVVTdWuH2Di\n\nWatch more Odd Lots episodes: https://www.youtube.com/playlist?list=PLe4PRejZgr0OJbRzA6nWybYiThLJd_ouz\n\nBloomberg's Joe Weisenthal and Tracy Alloway analyze the weird patterns, the complex issues and the newest market crazes. Join the conversation every Monday and Thursday for interviews with the most interesting minds in finance, economics and markets.\n\nJoin the conversation: discord.gg/oddlots\n\nSubscribe to Bloomberg Podcasts: https://bit.ly/BloombergPodcasts\n\nCheck out more Odd Lots: https://youtube.com/playlist?list=PLe4PRejZgr0MuA6M0zkZyy-99-qc87wKV\n\nGet the Odd Lots newsletter: https://www.bloomberg.com/account/newsletters/oddlots\n\nAnd for all things Odd Lots, visit https://www.bloomberg.com/oddlots\n\n#Investing #Markets #Finance #Bloomberg #Podcast #OddLots\n\nVisit us: https://www.bloomberg.com/podcasts\n\nFor coverage on news, markets and more: http://www.bloomberg.com/video\n\nVisit our other YouTube channels:\nBloomberg Television: https://www.youtube.com/@markets \nBloomberg Originals: https://www.youtube.com/bloomberg",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/56GuvofZgB4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/56GuvofZgB4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/56GuvofZgB4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/56GuvofZgB4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/56GuvofZgB4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/56GuvofZgB4/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Bloomberg Podcasts",
+            "tags": [
+              "Greg Brockman",
+              "Joe Weisenthal",
+              "Tracy Alloway"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "OpenAI President Greg Brockman on Doing Business in the Wake of Hugging Face | Odd Lots",
+              "description": "According to OpenAI President Greg Brockman, the models that escaped their sandbox and hacked into Hugging Face's servers had yet to go through alignment training. That they were able to break free of the testing environment was not a surprise to OpenAI, but what has happened since has forced them to rethink some things. Today, we talk to Brockman about what OpenAI has learned since the hacking incident and we discuss why he thinks the conversation around model development has to change. We also talk about how OpenAI collaborates and communicates with competitors like Anthropic, how he thinks models should be evaluating what counts as “good writing,” and, of course, we get his thoughts on how seriously we should be worried about the AI doomsday scenarios.\n\nChapters:\n00:00:00 - Cold Open\n00:00:59 - Introduction: AI Coding Tools\n00:04:13 - Guest Intro: Greg Brockman, Co-Founder and President of OpenAI\n00:04:15 - The Hugging Face Incident\n00:07:24 - Why AI Is Tested on Hacking and Cybersecurity Capabilities\n00:09:45 - Industry Pacing and Coordination Between AI Labs\n00:13:56 - Antitrust Concerns Around AI Lab Coordination\n00:15:16 - Defining \"Pacing\": What Slowdown Actually Means\n00:19:15 - Third-Party Auditors and Regulatory Oversight\n00:24:59 - The China Question \n00:28:01 - Sharing Alignment Research\n00:31:02 - Compute Allocation at OpenAI\n00:35:05 - Why Dangerous AI Behaviors Emerge Pre-Release\n00:36:17 - Addressing the \"Safety as Marketing\" Criticism\n00:39:13 - Reward Hacking\n00:45:00 - AI Models Grading AI Models: Collusion Risk and Oversight\n00:46:50 - AI State Laws and Industry Coordination\n00:51:16 - OpenAI Solving the Navier-Stokes Problem\n00:55:11 - Existential Risk: How Deep Is the Anxiety Inside the Labs?\n00:57:46 - International AI Coordination: Trump-Xi Meeting\n00:59:12 - Closing Thoughts\n\r\nWatch Bloomberg Vodcasts: https://www.youtube.com/playlist?list=PLe4PRejZgr0MS0Tqk_zQl1LVVTdWuH2Di\n\nWatch more Odd Lots episodes: https://www.youtube.com/playlist?list=PLe4PRejZgr0OJbRzA6nWybYiThLJd_ouz\n\nBloomberg's Joe Weisenthal and Tracy Alloway analyze the weird patterns, the complex issues and the newest market crazes. Join the conversation every Monday and Thursday for interviews with the most interesting minds in finance, economics and markets.\n\nJoin the conversation: discord.gg/oddlots\n\nSubscribe to Bloomberg Podcasts: https://bit.ly/BloombergPodcasts\n\nCheck out more Odd Lots: https://youtube.com/playlist?list=PLe4PRejZgr0MuA6M0zkZyy-99-qc87wKV\n\nGet the Odd Lots newsletter: https://www.bloomberg.com/account/newsletters/oddlots\n\nAnd for all things Odd Lots, visit https://www.bloomberg.com/oddlots\n\n#Investing #Markets #Finance #Bloomberg #Podcast #OddLots\n\nVisit us: https://www.bloomberg.com/podcasts\n\nFor coverage on news, markets and more: http://www.bloomberg.com/video\n\nVisit our other YouTube channels:\nBloomberg Television: https://www.youtube.com/@markets \nBloomberg Originals: https://www.youtube.com/bloomberg"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT1H2M52S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "21869",
+            "likeCount": "180",
+            "favoriteCount": "0",
+            "commentCount": "66"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "wPxVFHXfwT0": {
         "status": "pending",
@@ -28243,7 +28774,7 @@
         "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "RmYLsJryBcVIFZaGH8OOJfQ7KIk",
+          "etag": "mkR-CqkoCmUL9tf66BjXHyXUPC4",
           "id": {
             "kind": "youtube#video",
             "videoId": "OTw2gc442nQ"
@@ -33074,9 +33605,9 @@
         }
       },
       "GynxGMlpY1c": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:28.179952+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.088575+00:00",
         "first_seen_at": "2026-09-18T22:12:28.179948+00:00",
         "attempts": 0,
         "item": {
@@ -33479,7 +34010,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "TIHLq5VMftaIgMF9SGgnGIw-6co",
+          "etag": "EiLsts-qKUsM8TnNBXrL40YDbfI",
           "id": {
             "kind": "youtube#video",
             "videoId": "C19ISC8jsTA"
@@ -33739,7 +34270,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "HHLP7b_My4qr-DlfYRHx4aw6N0k",
+          "etag": "8LRJxCqxUy44lEEHxrZfePbML4k",
           "id": {
             "kind": "youtube#video",
             "videoId": "8mFy4u6xME8"
@@ -33748,7 +34279,7 @@
             "publishedAt": "2026-09-18T03:04:37Z",
             "channelId": "UCqOFLbGcfglz7vb97QWQ77A",
             "title": "Alex Karp, CEO Palantir on AI fears ~ 2026-SEP-17 Thursday",
-            "description": "Alex Karp, CEO Palantir on AI fears ~ 2026-SEP-17 Thursday https://youtu.be/8mFy4u6xME8.",
+            "description": "Alex Karp, CEO Palantir on AI fears ~ 2026-SEP-17 Thursday https://youtu.be/8mFy4u6xME8 Palantir CEO: AI companies have to ...",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/8mFy4u6xME8/default.jpg",
@@ -33897,7 +34428,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "pRMawZbTfyD2yooyAM2ZduCaczs",
+          "etag": "fG_6c0iBfiq4n9LRcnEntTgkOwE",
           "id": {
             "kind": "youtube#video",
             "videoId": "G6DpcJ20500"
@@ -34157,7 +34688,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "-GOaSVNPFXfEy4jMi60J2428hUs",
+          "etag": "-SfiRIm1dmhv7j9uqNs1vngYwIo",
           "id": {
             "kind": "youtube#video",
             "videoId": "bixk9UegzoI"
@@ -35256,9 +35787,9 @@
         }
       },
       "5117Y72pA60": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:31.781129+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.088790+00:00",
         "first_seen_at": "2026-09-18T22:12:31.781128+00:00",
         "attempts": 0,
         "item": {
@@ -38961,9 +39492,9 @@
         }
       },
       "MmVxnqxcV5g": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311744+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.088936+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152084+00:00",
         "attempts": 1,
         "item": {
@@ -39101,9 +39632,9 @@
         "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "Iw5S8nUP8Q8": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152091+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.088945+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152089+00:00",
         "attempts": 0,
         "item": {
@@ -39157,9 +39688,9 @@
         }
       },
       "GL0n2RIg7AQ": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311754+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.088952+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152094+00:00",
         "attempts": 1,
         "item": {
@@ -39313,9 +39844,9 @@
         "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "D8n0mkVnap4": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152101+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.088960+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152099+00:00",
         "attempts": 0,
         "item": {
@@ -39364,9 +39895,9 @@
         }
       },
       "CFtbV4J5Sg4": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152106+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.088968+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152104+00:00",
         "attempts": 0,
         "item": {
@@ -39420,9 +39951,9 @@
         }
       },
       "yLJD9WvKtbk": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152111+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.088975+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152109+00:00",
         "attempts": 0,
         "item": {
@@ -43425,9 +43956,9 @@
         "next_retry_at": "2026-09-27T20:17:45.636515+00:00"
       },
       "GGJMumPHybg": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319977+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.089126+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319976+00:00",
         "attempts": 0,
         "item": {
@@ -43476,9 +44007,9 @@
         }
       },
       "vaD673qY_7g": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T20:17:45.937035+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.089132+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319979+00:00",
         "attempts": 1,
         "item": {
@@ -43608,9 +44139,9 @@
         "next_retry_at": "2026-09-27T20:17:45.636515+00:00"
       },
       "gSfkwAPWLHk": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319984+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.089140+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319983+00:00",
         "attempts": 0,
         "item": {
@@ -43659,9 +44190,9 @@
         }
       },
       "iFfU8fq2stM": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319988+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.089147+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319986+00:00",
         "attempts": 0,
         "item": {
@@ -43710,9 +44241,9 @@
         }
       },
       "CS5QtaJp_r4": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319991+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.089154+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319990+00:00",
         "attempts": 0,
         "item": {
@@ -44098,10 +44629,10 @@
       },
       "YzZer5bRv9c": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428564+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342631+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428562+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "-fAPiiSKwNxhsCrg0qlZc6MlPYE",
@@ -44150,14 +44681,91 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T06:52:44Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "5KYXPjdPrhSobT1uvRDWi9O0_IA",
+          "id": "YzZer5bRv9c",
+          "snippet": {
+            "publishedAt": "2026-09-18T06:52:44Z",
+            "channelId": "UC26skyBD1-2nH3Hei1jeL1Q",
+            "title": "Elon Musk Trains His Political Chaos Machine on the U.K.",
+            "description": "Using his social-media megaphone to roil the waters, the tech entrepreneur is promoting a new anti-immigration party; 'civil war is inevitable'\n\nBy Jenny Strasburg, Jaclyn Jeffrey-Wilensky, Max Colchester, Nate Rattner · The Wall Street Journal, September 17, 2026\n\nChapters\n0:00 Chaos Machine\n1:47 Measured in Posts\n3:14 A Failing Nation\n3:50 Making Rupert Lowe\n5:55 Restore Britain\n6:45 Austin and Rogan\n7:33 Strange Allies\n10:06 Riot and Retweet\n11:10 Liverpool Roots\n11:47 The Farage Break\n13:46 A Party by Message\n15:28 Violence Is Coming\n16:11 Whitehall's Dilemma\n18:40 Money at the Edges\n19:28 Rage\n21:22 The Fractured Right\n23:43 Bottom Line",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/YzZer5bRv9c/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/YzZer5bRv9c/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/YzZer5bRv9c/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/YzZer5bRv9c/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/YzZer5bRv9c/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/YzZer5bRv9c/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Real Story sharer",
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk Trains His Political Chaos Machine on the U.K.",
+              "description": "Using his social-media megaphone to roil the waters, the tech entrepreneur is promoting a new anti-immigration party; 'civil war is inevitable'\n\nBy Jenny Strasburg, Jaclyn Jeffrey-Wilensky, Max Colchester, Nate Rattner · The Wall Street Journal, September 17, 2026\n\nChapters\n0:00 Chaos Machine\n1:47 Measured in Posts\n3:14 A Failing Nation\n3:50 Making Rupert Lowe\n5:55 Restore Britain\n6:45 Austin and Rogan\n7:33 Strange Allies\n10:06 Riot and Retweet\n11:10 Liverpool Roots\n11:47 The Farage Break\n13:46 A Party by Message\n15:28 Violence Is Coming\n16:11 Whitehall's Dilemma\n18:40 Money at the Edges\n19:28 Rage\n21:22 The Fractured Right\n23:43 Bottom Line"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT24M41S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "11",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "XZ3NUiJpNrk": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428586+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342657+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428585+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "AOcDcy6lMV_FNATIWk5RzPOyEC8",
@@ -44206,14 +44814,91 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T22:00:30Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "cbUZfLIb_UvPeB6Mk04zNg29YjA",
+          "id": "XZ3NUiJpNrk",
+          "snippet": {
+            "publishedAt": "2026-09-17T22:00:30Z",
+            "channelId": "UC1dVOvem05dyE2liuYOcgPw",
+            "title": "Why Elon Musk SECRETLY Hated His Own Father",
+            "description": "👉 Subscribe now if you love the real, human stories behind the world's most powerful people — hit that subscribe button so you never miss a deep dive like this one. 🎬✨\n\nIn this video, we explore one of the deepest and most painful forces shaping Elon Musk's life: his fractured, largely estranged relationship with his father, Errol Musk — and how those early wounds may have quietly molded the richest man in the world. ⚡ Behind the rockets and the fortune lies a family story far darker than his public image suggests. 💔\n\nWe ground it in the documented record, much of it drawn from Walter Isaacson's authorized biography and Elon's own on-the-record words. 🗞️ Elon chose to live with his father from around age 10 to 17 in Pretoria, South Africa, a decision he has since called a mistake. Isaacson describes Errol as emotionally, and at times physically, harsh — a \"volatile fabulist\" whose presence still haunts his son. Elon's sister Tosca recalled their father delivering long, berating lectures, and in a 2017 interview Elon spoke of his father in some of the bluntest, harshest terms imaginable, describing the reality of that relationship as almost too terrible to believe. 🥶\n\nFrom there, we look at the lasting fallout. 🧠 Elon became estranged from Errol, reportedly meeting him only rarely and with visible distress, and the rift deepened further over the years, including after Elon learned his father had a child with his former stepdaughter. Errol, for his part, tells a different story, insisting he pushed his sons toward toughness and resilience rather than cruelty. Biographers and those close to Elon suggest the difficult upbringing helped forge his enormous appetite for risk, his craving for drama, and his world-saving sense of mission, even as Elon himself has admitted how hard it is to escape the shadow of the very things you grew up resenting. 🚀\n\nThis is a grounded, fact-based look at a genuinely complicated father-and-son story, told with care to represent both accounts and let you weigh them.\n\n⭐ Don't forget to subscribe and turn on notifications so you're first to see the next deep dive behind the public image. 🔔\n\n#ElonMusk #ErrolMusk #FatherAndSon #WalterIsaacson #Biography #TrueStory #TechBillionaire #FamilyHistory #Documentary #ElonMuskStory",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/XZ3NUiJpNrk/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/XZ3NUiJpNrk/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/XZ3NUiJpNrk/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/XZ3NUiJpNrk/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/XZ3NUiJpNrk/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "uhd": {
+                "url": "https://i.ytimg.com/vi/XZ3NUiJpNrk/uhddefault.jpg",
+                "width": 3840,
+                "height": 2160
+              }
+            },
+            "channelTitle": "bhd rub",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Why Elon Musk SECRETLY Hated His Own Father",
+              "description": "👉 Subscribe now if you love the real, human stories behind the world's most powerful people — hit that subscribe button so you never miss a deep dive like this one. 🎬✨\n\nIn this video, we explore one of the deepest and most painful forces shaping Elon Musk's life: his fractured, largely estranged relationship with his father, Errol Musk — and how those early wounds may have quietly molded the richest man in the world. ⚡ Behind the rockets and the fortune lies a family story far darker than his public image suggests. 💔\n\nWe ground it in the documented record, much of it drawn from Walter Isaacson's authorized biography and Elon's own on-the-record words. 🗞️ Elon chose to live with his father from around age 10 to 17 in Pretoria, South Africa, a decision he has since called a mistake. Isaacson describes Errol as emotionally, and at times physically, harsh — a \"volatile fabulist\" whose presence still haunts his son. Elon's sister Tosca recalled their father delivering long, berating lectures, and in a 2017 interview Elon spoke of his father in some of the bluntest, harshest terms imaginable, describing the reality of that relationship as almost too terrible to believe. 🥶\n\nFrom there, we look at the lasting fallout. 🧠 Elon became estranged from Errol, reportedly meeting him only rarely and with visible distress, and the rift deepened further over the years, including after Elon learned his father had a child with his former stepdaughter. Errol, for his part, tells a different story, insisting he pushed his sons toward toughness and resilience rather than cruelty. Biographers and those close to Elon suggest the difficult upbringing helped forge his enormous appetite for risk, his craving for drama, and his world-saving sense of mission, even as Elon himself has admitted how hard it is to escape the shadow of the very things you grew up resenting. 🚀\n\nThis is a grounded, fact-based look at a genuinely complicated father-and-son story, told with care to represent both accounts and let you weigh them.\n\n⭐ Don't forget to subscribe and turn on notifications so you're first to see the next deep dive behind the public image. 🔔\n\n#ElonMusk #ErrolMusk #FatherAndSon #WalterIsaacson #Biography #TrueStory #TechBillionaire #FamilyHistory #Documentary #ElonMuskStory"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT26M9S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "3",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "DmJRAXTgTjM": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428590+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342673+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428589+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "cY0vO4llRu6zQAJpUYK5fPm9GoA",
@@ -44257,14 +44942,101 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T22:00:03Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "F1sCSQozuWz4RvZ2FVktZnBJE80",
+          "id": "DmJRAXTgTjM",
+          "snippet": {
+            "publishedAt": "2026-09-17T22:00:03Z",
+            "channelId": "UCFkWwLHM-uqjccOv6oCv14g",
+            "title": "Elon Musk's New Invention Could Replace Copper Forever",
+            "description": "Elon Musk's New Invention Could Replace Copper Forever\n\nThe global economy runs on red metal, but the dirt is running dry. Between electric vehicles, data centers, and power grids, global manufacturing faces an unprecedented copper deficit. For a century, cars relied on the same heavy, inefficient 12-volt wiring harness. Now, Elon Musk’s aggressive push toward 48-volt architectures and carbon composites is slashing copper requirements by seventy percent, igniting a silent war across auto manufacturing, global mining empires, and material science.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/DmJRAXTgTjM/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/DmJRAXTgTjM/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/DmJRAXTgTjM/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/DmJRAXTgTjM/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/DmJRAXTgTjM/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The Secret",
+            "tags": [
+              "Elon Musk",
+              "New",
+              "Invention",
+              "Could Replace",
+              "Copper",
+              "Forever",
+              "metal",
+              "electric vehicles",
+              "tesla",
+              "battery",
+              "elon musk",
+              "copper",
+              "the secret"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "Elon Musk's New Invention Could Replace Copper Forever",
+              "description": "Elon Musk's New Invention Could Replace Copper Forever\n\nThe global economy runs on red metal, but the dirt is running dry. Between electric vehicles, data centers, and power grids, global manufacturing faces an unprecedented copper deficit. For a century, cars relied on the same heavy, inefficient 12-volt wiring harness. Now, Elon Musk’s aggressive push toward 48-volt architectures and carbon composites is slashing copper requirements by seventy percent, igniting a silent war across auto manufacturing, global mining empires, and material science."
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT32M32S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": false,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "10541",
+            "likeCount": "48",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "x7n2qhDgoMY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428594+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342685+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428593+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "nBngTONZF4sxJNJEVgVUYWVOky4",
@@ -44308,14 +45080,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T21:37:04Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "rim2aElXm5UACAjXCHSEic_3ScU",
+          "id": "x7n2qhDgoMY",
+          "snippet": {
+            "publishedAt": "2026-09-17T21:37:04Z",
+            "channelId": "UCzxQASGQke2cDOOb6KBEvlQ",
+            "title": "Elon Musk's $10 Billion Robot Factory Is Already Rising",
+            "description": "Tesla is building something far bigger than another vehicle factory.\n\nIn Texas, a massive new facility is taking shape around Tesla’s Optimus humanoid robot program. The project is being developed alongside a dedicated chip fabrication facility and Tesla’s expanding AI computing infrastructure — creating an ambitious vertically integrated system for robotics, chips, AI training, and manufacturing.\n\nTesla has discussed a long-term goal of producing up to 10 million Optimus robots per year, but that number remains a future target, not current production. Meanwhile, construction is progressing, early Optimus production is already taking place at Fremont, and Tesla continues developing the technology and infrastructure needed to scale the program.\n\nIn this video, we break down what is actually being built in Texas, why the chip facility matters, how Tesla’s AI training infrastructure fits into the picture, what is confirmed, and what remains a major engineering and manufacturing challenge.\n\nWe’ll also look at the biggest risks behind Tesla’s robotics strategy — including production scalability, chip manufacturing, AI training, construction timelines, and whether Tesla can turn a small-scale working robot into a truly mass-produced product.\n\n⚠️ DISCLAIMER:\nThis video is created for educational, informational, and commentary purposes only.\n\nThe information discussed is based on publicly available information, reports, construction activity, regulatory filings, company statements, and industry analysis available at the time of production. Some figures, timelines, estimates, projections, and interpretations discussed in this video may change as Tesla’s projects develop.\n\nReferences to Tesla, Elon Musk, Optimus, Cybercab, AI infrastructure, semiconductor manufacturing, production targets, investment estimates, or future capabilities should not be interpreted as guarantees of future results.\n\nTesla’s stated production targets and future plans are ambitions or projections unless independently confirmed as completed results. This video does not represent Tesla, SpaceX, Elon Musk, or any other company or individual mentioned.\n\nNothing in this video should be considered financial, investment, legal, or professional advice. Viewers should conduct their own research and verify information through official and reliable sources before making financial or investment decisions.\n\nSome conclusions in this video are analysis or interpretation based on publicly available information and should not be treated as confirmed internal Tesla plans.\n\n🎥 Follow Tesla Frontier for more videos covering Tesla, Optimus, AI, robotics, autonomous driving, batteries, energy, and the future of technology.\n\n👍 If you enjoyed the video, consider subscribing to Tesla Frontier and turn on notifications so you don't miss the next update.\n\n#Tesla #Optimus #TeslaBot #ElonMusk #TeslaOptimus #Robotics #AI #ArtificialIntelligence #TeslaNews #GigaTexas #HumanoidRobot #RobotFactory #FutureTechnology #TeslaFrontier",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/x7n2qhDgoMY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/x7n2qhDgoMY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/x7n2qhDgoMY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/x7n2qhDgoMY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/x7n2qhDgoMY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Tesla Frontier ",
+            "categoryId": "2",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk's $10 Billion Robot Factory Is Already Rising",
+              "description": "Tesla is building something far bigger than another vehicle factory.\n\nIn Texas, a massive new facility is taking shape around Tesla’s Optimus humanoid robot program. The project is being developed alongside a dedicated chip fabrication facility and Tesla’s expanding AI computing infrastructure — creating an ambitious vertically integrated system for robotics, chips, AI training, and manufacturing.\n\nTesla has discussed a long-term goal of producing up to 10 million Optimus robots per year, but that number remains a future target, not current production. Meanwhile, construction is progressing, early Optimus production is already taking place at Fremont, and Tesla continues developing the technology and infrastructure needed to scale the program.\n\nIn this video, we break down what is actually being built in Texas, why the chip facility matters, how Tesla’s AI training infrastructure fits into the picture, what is confirmed, and what remains a major engineering and manufacturing challenge.\n\nWe’ll also look at the biggest risks behind Tesla’s robotics strategy — including production scalability, chip manufacturing, AI training, construction timelines, and whether Tesla can turn a small-scale working robot into a truly mass-produced product.\n\n⚠️ DISCLAIMER:\nThis video is created for educational, informational, and commentary purposes only.\n\nThe information discussed is based on publicly available information, reports, construction activity, regulatory filings, company statements, and industry analysis available at the time of production. Some figures, timelines, estimates, projections, and interpretations discussed in this video may change as Tesla’s projects develop.\n\nReferences to Tesla, Elon Musk, Optimus, Cybercab, AI infrastructure, semiconductor manufacturing, production targets, investment estimates, or future capabilities should not be interpreted as guarantees of future results.\n\nTesla’s stated production targets and future plans are ambitions or projections unless independently confirmed as completed results. This video does not represent Tesla, SpaceX, Elon Musk, or any other company or individual mentioned.\n\nNothing in this video should be considered financial, investment, legal, or professional advice. Viewers should conduct their own research and verify information through official and reliable sources before making financial or investment decisions.\n\nSome conclusions in this video are analysis or interpretation based on publicly available information and should not be treated as confirmed internal Tesla plans.\n\n🎥 Follow Tesla Frontier for more videos covering Tesla, Optimus, AI, robotics, autonomous driving, batteries, energy, and the future of technology.\n\n👍 If you enjoyed the video, consider subscribing to Tesla Frontier and turn on notifications so you don't miss the next update.\n\n#Tesla #Optimus #TeslaBot #ElonMusk #TeslaOptimus #Robotics #AI #ArtificialIntelligence #TeslaNews #GigaTexas #HumanoidRobot #RobotFactory #FutureTechnology #TeslaFrontier"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT21M16S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "10",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "x3cWOfz3UkQ": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428597+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342696+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428596+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "ztHds9Og2xky_46s0FKLctTYJQs",
@@ -44359,14 +45203,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T21:23:59Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "mpQpDgKkJPWWklDATgLa-TuG4w4",
+          "id": "x3cWOfz3UkQ",
+          "snippet": {
+            "publishedAt": "2026-09-17T21:23:59Z",
+            "channelId": "UCokh69Lp5nolRahOrQzgluA",
+            "title": "Elon Musk and the Tesla Paradox",
+            "description": "Tesla has become one of the most controversial companies in America.\n\nIts reputation has collapsed. Sales have fallen in key markets. Protests and boycotts have followed Elon Musk wherever Tesla goes.\n\nAnd yet Tesla is still worth around $1.5 trillion.\n\nSo how can a company lose customers, damage its brand, and become increasingly polarizing — while investors continue to value it as one of the biggest companies on Earth?\n\nBecause Wall Street may no longer be betting on Tesla the car company.\n\nIn this video, we follow Tesla’s transformation from an aspirational EV brand into something much bigger — and much riskier. From the decline of its traditional car business to Musk’s enormous bets on autonomous driving, Cybercab, AI, and the Optimus humanoid robot.\n\nThe real question isn’t whether people still want Teslas.\n\nIt’s whether Tesla can build a future where selling cars barely matters at all.\n\n#Tesla #ElonMusk #TeslaStock #Optimus #Cybercab #Robotaxi #SelfDriving #AI #ElectricVehicles #EV #WallStreet #Business #Technology #cybertruck",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/x3cWOfz3UkQ/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/x3cWOfz3UkQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/x3cWOfz3UkQ/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/x3cWOfz3UkQ/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/x3cWOfz3UkQ/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Blueprint America",
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk and the Tesla Paradox",
+              "description": "Tesla has become one of the most controversial companies in America.\n\nIts reputation has collapsed. Sales have fallen in key markets. Protests and boycotts have followed Elon Musk wherever Tesla goes.\n\nAnd yet Tesla is still worth around $1.5 trillion.\n\nSo how can a company lose customers, damage its brand, and become increasingly polarizing — while investors continue to value it as one of the biggest companies on Earth?\n\nBecause Wall Street may no longer be betting on Tesla the car company.\n\nIn this video, we follow Tesla’s transformation from an aspirational EV brand into something much bigger — and much riskier. From the decline of its traditional car business to Musk’s enormous bets on autonomous driving, Cybercab, AI, and the Optimus humanoid robot.\n\nThe real question isn’t whether people still want Teslas.\n\nIt’s whether Tesla can build a future where selling cars barely matters at all.\n\n#Tesla #ElonMusk #TeslaStock #Optimus #Cybercab #Robotaxi #SelfDriving #AI #ElectricVehicles #EV #WallStreet #Business #Technology #cybertruck"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT24M6S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "6047",
+            "likeCount": "41",
+            "favoriteCount": "0",
+            "commentCount": "24"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "lvg_dBiM6nQ": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428601+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342735+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428599+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "Gu5g-iaLrF3sfMevlN-9yNBymrY",
@@ -44410,14 +45326,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T21:00:23Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "eL96IrT7StPwAnXSvK3MvcOHR9Q",
+          "id": "lvg_dBiM6nQ",
+          "snippet": {
+            "publishedAt": "2026-09-17T21:00:23Z",
+            "channelId": "UCZESx-xrxfMVqUB7qPONnYw",
+            "title": "ELON MUSK FÈ GWO DÉKLARASYON -TOUT GWO SÉKRÈ DÉYO-PÈP DWÉ KAMPÉ POU PROTÉJA MOND LAN-USA🇺🇸  CHO",
+            "description": "",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/lvg_dBiM6nQ/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/lvg_dBiM6nQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/lvg_dBiM6nQ/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/lvg_dBiM6nQ/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/lvg_dBiM6nQ/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "BYENRAPID NOUVÈL",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "ht",
+            "localized": {
+              "title": "ELON MUSK FÈ GWO DÉKLARASYON -TOUT GWO SÉKRÈ DÉYO-PÈP DWÉ KAMPÉ POU PROTÉJA MOND LAN-USA🇺🇸  CHO",
+              "description": ""
+            },
+            "defaultAudioLanguage": "fr"
+          },
+          "contentDetails": {
+            "duration": "PT31M",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "19487",
+            "likeCount": "521",
+            "favoriteCount": "0",
+            "commentCount": "64"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "a8XvEFhhEr8": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428605+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342747+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428604+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "mxwLjZQEHTb_y-W8Xfyr9ILP5ZI",
@@ -44461,14 +45449,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T20:49:49Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "G71vQOV38c3JeAS56PQRmkwBbHc",
+          "id": "a8XvEFhhEr8",
+          "snippet": {
+            "publishedAt": "2026-09-17T20:49:49Z",
+            "channelId": "UCB4MS7ZYRWcm69KWzLN2nDw",
+            "title": "Fans Blame Elon Musk & Tesla for Bloodhound Q50’s Death After This Gets Exposed",
+            "description": "",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/a8XvEFhhEr8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/a8XvEFhhEr8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/a8XvEFhhEr8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/a8XvEFhhEr8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/a8XvEFhhEr8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Da Game Spitta",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Fans Blame Elon Musk & Tesla for Bloodhound Q50’s Death After This Gets Exposed",
+              "description": ""
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT30M38S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "17078",
+            "likeCount": "492",
+            "favoriteCount": "0",
+            "commentCount": "157"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "xUby88YFhO4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428609+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342758+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428607+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "kvOySruEyNiYE2MVPFVzRIt1LS8",
@@ -44512,14 +45572,116 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T20:45:01Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "gFrjqAZX8l1upStOG3TlpHxgJvM",
+          "id": "xUby88YFhO4",
+          "snippet": {
+            "publishedAt": "2026-09-17T20:45:01Z",
+            "channelId": "UC73Hz6b1NEKi_dJt9O3Nfvw",
+            "title": "👉ELON MUSK BEGS: ONLY 3 MINUTES LEFT! Time is running out—your financial future could be at stake...",
+            "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/xUby88YFhO4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/xUby88YFhO4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/xUby88YFhO4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/xUby88YFhO4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/xUby88YFhO4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Michael Prophetic Word",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👉ELON MUSK BEGS: ONLY 3 MINUTES LEFT! Time is running out—your financial future could be at stake...",
+              "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT28M27S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "3433",
+            "likeCount": "381",
+            "favoriteCount": "0",
+            "commentCount": "613"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "83__RdBpono": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428612+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342769+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428611+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "2At7trLz3AIXAwvN0-bsGVSY-5M",
@@ -44568,14 +45730,112 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T20:00:00Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "2aaj4wCWmZUwOuNYKWepOmHlS7A",
+          "id": "83__RdBpono",
+          "snippet": {
+            "publishedAt": "2026-09-17T20:00:00Z",
+            "channelId": "UCve7LRs9hCef8S_Z2VkqD8Q",
+            "title": "👉 ELON MUSK Has Been SECRETLY Studying You — Now You’re His BIGGEST OBSESSION 😳🤯 | JOKER SPEECH",
+            "description": "#jokerspeech #darkmotivation #powerfulspeech \n👉 ELON MUSK Has Been SECRETLY Studying You — Now You’re His BIGGEST OBSESSION 😳🤯 | JOKER SPEECH\n\nThis channel dives into the deeper ideas behind psychology, strategic thinking, self-discipline, mental strength, resilience, and meaningful personal development. Each video delivers valuable perspectives and practical lessons designed to help you sharpen your mind, face adversity with confidence, and make wiser choices in a constantly changing world.\n\nSmall decisions can lead to extraordinary results. Discipline carries you further than motivation ever can. A strong mind can transform uncertainty into possibility.\n\nIf you're ready to challenge old habits, think for yourself, develop greater self-control, and adopt the mindset of truly exceptional people, you've come to the right place.\n\nKeep questioning. Keep learning. Keep adapting. Build the future you want.\n\n#jokerspeech #darkmotivation#powerfulspeech #darktruth #motivation #jokermotivationalquotes #motivationalspeech\n\njoker speech, dark motivation, powerful speech, joker motivation, joker motivational quotes, motivational speech, psychological warfare, mental toughness, self discipline, mindset, strategic thinking, dark psychology, motivation,powerful speech, darktruth, motivation, joke rmotivational quotes, motivational speech",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/83__RdBpono/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/83__RdBpono/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/83__RdBpono/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/83__RdBpono/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/83__RdBpono/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/83__RdBpono/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Mastermind Within",
+            "tags": [
+              "joker speech",
+              "dark motivation",
+              "powerful speech",
+              "joker motivation",
+              "joker motivational quotes",
+              "motivational speech",
+              "psychological warfare",
+              "mental toughness",
+              "self discipline",
+              "mindset",
+              "strategic thinking",
+              "dark psychology",
+              "motivation",
+              "jokerspeech",
+              "darkmotivation",
+              "powerfulspeech",
+              "darktruth",
+              "jokermotivationalquotes",
+              "motivationalspeech"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "👉 ELON MUSK Has Been SECRETLY Studying You — Now You’re His BIGGEST OBSESSION 😳🤯 | JOKER SPEECH",
+              "description": "#jokerspeech #darkmotivation #powerfulspeech \n👉 ELON MUSK Has Been SECRETLY Studying You — Now You’re His BIGGEST OBSESSION 😳🤯 | JOKER SPEECH\n\nThis channel dives into the deeper ideas behind psychology, strategic thinking, self-discipline, mental strength, resilience, and meaningful personal development. Each video delivers valuable perspectives and practical lessons designed to help you sharpen your mind, face adversity with confidence, and make wiser choices in a constantly changing world.\n\nSmall decisions can lead to extraordinary results. Discipline carries you further than motivation ever can. A strong mind can transform uncertainty into possibility.\n\nIf you're ready to challenge old habits, think for yourself, develop greater self-control, and adopt the mindset of truly exceptional people, you've come to the right place.\n\nKeep questioning. Keep learning. Keep adapting. Build the future you want.\n\n#jokerspeech #darkmotivation#powerfulspeech #darktruth #motivation #jokermotivationalquotes #motivationalspeech\n\njoker speech, dark motivation, powerful speech, joker motivation, joker motivational quotes, motivational speech, psychological warfare, mental toughness, self discipline, mindset, strategic thinking, dark psychology, motivation,powerful speech, darktruth, motivation, joke rmotivational quotes, motivational speech"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT1H7M48S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "694",
+            "likeCount": "50",
+            "favoriteCount": "0",
+            "commentCount": "47"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "NhfFE_1XWFE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428617+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342780+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428615+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "UMAzRo0XWDVj9QuuZhsqv5OY0Qc",
@@ -44614,14 +45874,81 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T18:35:28Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "a0G_E82WV6FnJicwGqmV4Cwy1Nc",
+          "id": "NhfFE_1XWFE",
+          "snippet": {
+            "publishedAt": "2026-09-17T18:35:28Z",
+            "channelId": "UCKK15THvKSmYrdBsJklxUPw",
+            "title": "Elon Musk’s Grok AI Found a Clue Hidden in the Great Pyramid — Nobody Saw This Coming!",
+            "description": "Elon Musk’s Grok AI Found a Clue Hidden in the Great Pyramid — Nobody Saw This Coming!\n\nWhat happens when Grok AI analyzes one of the world's greatest ancient mysteries? In this fascinating documentary, we explore the shocking claim that Elon Musk’s Grok AI may have discovered a hidden clue inside the Great Pyramid of Giza. Could artificial intelligence uncover secrets that archaeologists, historians, and researchers have overlooked for centuries?\n\nJoin us as we investigate the connection between Grok AI, Elon Musk, the Great Pyramid, ancient Egypt, hidden chambers, mysterious structures, advanced technology, and unexplained archaeological discoveries. This incredible Great Pyramid mystery has sparked debate among experts and mystery enthusiasts alike.\n\nWas a hidden clue really found in the Great Pyramid? Could Grok AI reveal new insights into ancient civilizations? Watch until the end to discover the evidence, theories, and surprising possibilities behind this astonishing story.\n\n🔹 Topics Covered:\n• Elon Musk and Grok AI\n• Great Pyramid of Giza mystery\n• Hidden clues inside the Great Pyramid\n• Ancient Egypt secrets\n• Pyramid discoveries and theories\n• Artificial intelligence and archaeology\n• Lost ancient knowledge\n• Unexplained historical mysteries\n\n#ElonMusk #GrokAI #GreatPyramid #PyramidMystery #AncientEgypt #HiddenClue #GreatPyramidOfGiza #AI #ArtificialIntelligence #Archaeology #AncientMysteries #HistoryMystery #EgyptMystery #GizaPyramid #MysteryDocumentary\n\nKeywords:\nElon Musk Grok AI, Grok AI Great Pyramid, Great Pyramid mystery, hidden clue in Great Pyramid, Elon Musk AI discovery, Grok AI pyramid analysis, Great Pyramid of Giza, ancient Egypt mystery, hidden chamber pyramid, pyramid secrets, AI archaeology, ancient civilization secrets, Giza pyramid discovery, mysterious pyramid findings, historical mysteries, unexplained discoveries, artificial intelligence investigation, pyramid documentary, Egypt history, Grok AI discovery",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/NhfFE_1XWFE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/NhfFE_1XWFE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/NhfFE_1XWFE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/NhfFE_1XWFE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Mystora ",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk’s Grok AI Found a Clue Hidden in the Great Pyramid — Nobody Saw This Coming!",
+              "description": "Elon Musk’s Grok AI Found a Clue Hidden in the Great Pyramid — Nobody Saw This Coming!\n\nWhat happens when Grok AI analyzes one of the world's greatest ancient mysteries? In this fascinating documentary, we explore the shocking claim that Elon Musk’s Grok AI may have discovered a hidden clue inside the Great Pyramid of Giza. Could artificial intelligence uncover secrets that archaeologists, historians, and researchers have overlooked for centuries?\n\nJoin us as we investigate the connection between Grok AI, Elon Musk, the Great Pyramid, ancient Egypt, hidden chambers, mysterious structures, advanced technology, and unexplained archaeological discoveries. This incredible Great Pyramid mystery has sparked debate among experts and mystery enthusiasts alike.\n\nWas a hidden clue really found in the Great Pyramid? Could Grok AI reveal new insights into ancient civilizations? Watch until the end to discover the evidence, theories, and surprising possibilities behind this astonishing story.\n\n🔹 Topics Covered:\n• Elon Musk and Grok AI\n• Great Pyramid of Giza mystery\n• Hidden clues inside the Great Pyramid\n• Ancient Egypt secrets\n• Pyramid discoveries and theories\n• Artificial intelligence and archaeology\n• Lost ancient knowledge\n• Unexplained historical mysteries\n\n#ElonMusk #GrokAI #GreatPyramid #PyramidMystery #AncientEgypt #HiddenClue #GreatPyramidOfGiza #AI #ArtificialIntelligence #Archaeology #AncientMysteries #HistoryMystery #EgyptMystery #GizaPyramid #MysteryDocumentary\n\nKeywords:\nElon Musk Grok AI, Grok AI Great Pyramid, Great Pyramid mystery, hidden clue in Great Pyramid, Elon Musk AI discovery, Grok AI pyramid analysis, Great Pyramid of Giza, ancient Egypt mystery, hidden chamber pyramid, pyramid secrets, AI archaeology, ancient civilization secrets, Giza pyramid discovery, mysterious pyramid findings, historical mysteries, unexplained discoveries, artificial intelligence investigation, pyramid documentary, Egypt history, Grok AI discovery"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT24M6S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "334",
+            "likeCount": "12",
+            "favoriteCount": "0",
+            "commentCount": "1"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "5iROezddNOw": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428620+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342790+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428619+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "kHd4m0VTiNwcE03Ovap34Q90CfU",
@@ -44665,14 +45992,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T18:30:01Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "wlz-rYHbQu02sBCvIAe2f8S21ls",
+          "id": "5iROezddNOw",
+          "snippet": {
+            "publishedAt": "2026-09-17T18:30:01Z",
+            "channelId": "UCU65F0k-jxSdtSuEvBcPMMA",
+            "title": "👉ELON MUSK IS ABOUT TO FILL YOUR BANK ACCOUNT. DON'T REGRET LATER - OPEN IMMEDIATELY.",
+            "description": "✅ 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/7-Sec-Secret-for-Wealth",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/5iROezddNOw/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/5iROezddNOw/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/5iROezddNOw/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/5iROezddNOw/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/5iROezddNOw/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "ANGEL SAYS",
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "👉ELON MUSK IS ABOUT TO FILL YOUR BANK ACCOUNT. DON'T REGRET LATER - OPEN IMMEDIATELY.",
+              "description": "✅ 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/7-Sec-Secret-for-Wealth"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT32M30S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "4216",
+            "likeCount": "353",
+            "favoriteCount": "0",
+            "commentCount": "520"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "tZ9Y72ZCUKI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:44.428623+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T03:12:00.342801+00:00",
         "first_seen_at": "2026-09-19T07:46:44.428622+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "hFq4N1RQXhX8afn6k7VxqK18Z5g",
@@ -44716,7 +46115,79 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T18:24:48Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T03:12:00.087416+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "8XkTCRE0P-STp3KiA3DrUTu9U8Q",
+          "id": "tZ9Y72ZCUKI",
+          "snippet": {
+            "publishedAt": "2026-09-17T18:24:48Z",
+            "channelId": "UCw7TS2SngtN3BkkfS8lPLuw",
+            "title": "🧿LAST 10 MINUTES! ELON MUSK HAS BEEN WAITING FOR YOUR ANSWER... THIS IS THE FINAL MESSAGE! OPEN NOW!",
+            "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Claim-Your-Seat-01",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/tZ9Y72ZCUKI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/tZ9Y72ZCUKI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/tZ9Y72ZCUKI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/tZ9Y72ZCUKI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/tZ9Y72ZCUKI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The Chosen Now",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "🧿LAST 10 MINUTES! ELON MUSK HAS BEEN WAITING FOR YOUR ANSWER... THIS IS THE FINAL MESSAGE! OPEN NOW!",
+              "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Claim-Your-Seat-01"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT30M36S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "121",
+            "likeCount": "17",
+            "favoriteCount": "0",
+            "commentCount": "41"
+          }
+        },
+        "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "cqiRHDucWoo": {
         "status": "pending",
@@ -45511,7 +46982,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "xtInQ1CDKup4wFsTQx1uXb5_VOU",
+          "etag": "CNOtYPnYOaRiqDRpsqNOW41ya9E",
           "id": {
             "kind": "youtube#video",
             "videoId": "U42t88Ngs8A"
@@ -45776,7 +47247,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "_koVR7dppTA26V8WHVTdcvD1VSU",
+          "etag": "c_JI4OvIA-TTvfhbwSFUYAi7WDA",
           "id": {
             "kind": "youtube#video",
             "videoId": "EE6Hx2MBeBg"
@@ -47158,7 +48629,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "zlODau230Q0Hk1tV8wTruGYGyOA",
+          "etag": "14rUKdV8WDZ2FtNhhmVH6ceXmmA",
           "id": {
             "kind": "youtube#video",
             "videoId": "Eo4bAZQlwNo"
@@ -49914,9 +51385,9 @@
         }
       },
       "CI0fvvO-4Rw": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:35.665612+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.089612+00:00",
         "first_seen_at": "2026-09-19T15:18:35.665608+00:00",
         "attempts": 0,
         "item": {
@@ -50135,7 +51606,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "N3ALithltzTVxg9zUokSIF9rTY0",
+          "etag": "GI0mmajNk54yYmrLmPZ3obIeJ50",
           "id": {
             "kind": "youtube#video",
             "videoId": "QYE90Y-3JNk"
@@ -52147,9 +53618,9 @@
         }
       },
       "gxCiBJ7hCC0": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T21:52:01.330864+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T03:12:00.089832+00:00",
         "first_seen_at": "2026-09-19T21:52:01.330847+00:00",
         "attempts": 0,
         "item": {
@@ -54525,7 +55996,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "vSXKZ2cG4HQvYeKWKbfPvgYVyCM",
+          "etag": "mR9seu9_jy7HYJSBuYIXfUY88iw",
           "id": {
             "kind": "youtube#video",
             "videoId": "IQTXwIXdR60"
@@ -54989,7 +56460,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "n7XW1VJTgwfB8GN4t1sRnLQ67qA",
+          "etag": "yF9TSZAxY1xkMM2Tv8awkmssq2o",
           "id": {
             "kind": "youtube#video",
             "videoId": "7rLcdJwS_uo"
@@ -58083,7 +59554,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "F8-DPKw1VpUiTueO3lUXrEUH8Cg",
+          "etag": "LogiC9Hq2lZFWD2oJSdi2DLTeYo",
           "id": {
             "kind": "youtube#video",
             "videoId": "c6rWME1rZgc"
@@ -58389,7 +59860,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "BmY9ff8uFIifmBlcUMJgvyI5QKo",
+          "etag": "MOu10Za3q9D68RTcSBIyye6uVKE",
           "id": {
             "kind": "youtube#video",
             "videoId": "VbyZhAX3MTI"
@@ -58398,7 +59869,7 @@
             "publishedAt": "2026-09-20T14:49:16Z",
             "channelId": "UCUZhIEtGkJhAXXAa2qC-bQw",
             "title": "事情大条了！马斯克（Elon Musk）一天狂发62条动态！Tesla、SpaceX、Grok背后正在发生一件大事！",
-            "description": "美股 頻道會員加入連接：https://www.youtube.com/channel/UCUZhIEtGkJhAXXAa2qC-bQw/join 聯繫Twitter：晨風 ...",
+            "description": "美股頻道會員加入連接：https://www.youtube.com/channel/UCUZhIEtGkJhAXXAa2qC-bQw/join 聯繫Twitter：晨風 ...",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/VbyZhAX3MTI/default.jpg",
@@ -58807,7 +60278,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "c0upABGzPjrccSmYVWmP2aIh4ns",
+          "etag": "-Ibro1T5FhOZu2jy0X3c1zT-BP4",
           "id": {
             "kind": "youtube#video",
             "videoId": "7My1x7tcrJs"
@@ -59276,7 +60747,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "C9pIG5IOyrZk2WXQnnCWA1cNPas",
+          "etag": "zvqzIMuYAAwOXvI0oyPs_Jvugs0",
           "id": {
             "kind": "youtube#video",
             "videoId": "lZ74RhUsrMs"
@@ -59740,7 +61211,7 @@
         "attempts": 0,
         "item": {
           "kind": "youtube#searchResult",
-          "etag": "rAVzZ8DG486rVLtYXCxzabS1Adw",
+          "etag": "ly4w9ZZnzBoC24a1vhVth5-np8E",
           "id": {
             "kind": "youtube#video",
             "videoId": "7XAZAe4R0pg"
@@ -59749,7 +61220,7 @@
             "publishedAt": "2026-09-20T18:51:45Z",
             "channelId": "UCrwoaCjFJhIgMjHYm9K-_Ag",
             "title": "Dario Amodei calls on the industry to slow the frontier",
-            "description": "Issue for 13 September 2026 Dario Amodei published an essay, \"We Must Pace the Frontier\", saying outright for the first time that ...",
+            "description": "Episode for 13 September 2026 Dario Amodei published an essay, \"We Must Pace the Frontier\", saying outright for the first time ...",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/7XAZAe4R0pg/default.jpg",
@@ -59889,62 +61360,1606 @@
             "publishTime": "2026-09-15T23:00:36Z"
           }
         }
+      },
+      "V0dNehAh470": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:36.973182+00:00",
+        "first_seen_at": "2026-09-21T03:11:36.973166+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "K1OMa8u_1nBqw-p_sNLDORdm7do",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "V0dNehAh470"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-17T08:23:49Z",
+            "channelId": "UCkXopQ3ubd-rnXnStZqCl2w",
+            "title": "PM Modi In Semicon India: 3 साल में बदला भारत का सेमीकंडक्टर इकोसिस्टम",
+            "description": "LIVE: Addressing the inaugural day of 'Semicon India 2026' in the presence of Prime Minister Narendra Modi at Yashobhoomi, ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/V0dNehAh470/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/V0dNehAh470/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/V0dNehAh470/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/V0dNehAh470/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/V0dNehAh470/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Zee Business",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-17T08:23:49Z"
+          }
+        }
+      },
+      "CO6Wj9yJ1No": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:38.002955+00:00",
+        "first_seen_at": "2026-09-21T03:11:38.002940+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "tqIE17Ihv-k7Ce36XjmcfCQTT58",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "CO6Wj9yJ1No"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-16T00:30:56Z",
+            "channelId": "UCgDcxxFbUMQl-5JNNre-YCg",
+            "title": "SCOTUS BLOCKS TRUMPS ATTEMPT TO SECURE ELECTIONS - THE MURPHY SHOW",
+            "description": "SCOTUS BLOCKS TRUMPS ATTEMPT TO SECURE ELECTIONS - THE MURPHY SHOW.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/CO6Wj9yJ1No/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/CO6Wj9yJ1No/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/CO6Wj9yJ1No/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/CO6Wj9yJ1No/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/CO6Wj9yJ1No/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "SuperTalk 99.7 WTN",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-16T00:30:56Z"
+          }
+        }
+      },
+      "C21s3Z65eh4": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:39.099211+00:00",
+        "first_seen_at": "2026-09-21T03:11:39.099184+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "f63oa9gq7WY551LBdqA1UUsZq2I",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "C21s3Z65eh4"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T19:00:09Z",
+            "channelId": "UCLB1z61mX3Ye_WpfYws9OdA",
+            "title": "Prince Harry Kicked Off Jonathan Ross’s Show After Heated Altercation",
+            "description": "What happens when royalty meets reality television and one of the most beloved hosts in Britain is forced to stand his ground ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/C21s3Z65eh4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/C21s3Z65eh4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/C21s3Z65eh4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/C21s3Z65eh4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/C21s3Z65eh4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The Royal Insider",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T19:00:09Z"
+          }
+        }
+      },
+      "bYQWTZZsfGI": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:39.099225+00:00",
+        "first_seen_at": "2026-09-21T03:11:39.099223+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "PViCic0HIP_AIm4OSbwQEmqccPw",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "bYQWTZZsfGI"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T16:00:06Z",
+            "channelId": "UCiZ9jB1O8Aof6P2F9aRNJLg",
+            "title": "Jonathan Ross Gets To Work In Gordon Ramsay&#39;s Kitchen | Full Episode | The F Word",
+            "description": "Season 3, Episode 7: The amateur brigade of cooks are a team of police officers from Lancaster; Jonathan Ross visits the ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/bYQWTZZsfGI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/bYQWTZZsfGI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/bYQWTZZsfGI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/bYQWTZZsfGI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/bYQWTZZsfGI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The F Word",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T16:00:06Z"
+          }
+        }
+      },
+      "lZbs5RbNo84": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:39.099232+00:00",
+        "first_seen_at": "2026-09-21T03:11:39.099230+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "H8ZlIkP7U7c_rn_ozO6LCGZFehw",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "lZbs5RbNo84"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T12:43:43Z",
+            "channelId": "UCQyHtcPJ_ZSfc9D8cP9wrAg",
+            "title": "Prince Harry Kicked Off Jonathan Ross’s Show After Heated Confrontation",
+            "description": "Prince Harry Kicked Off Jonathan Ross's Show After Heated Confrontation — what begins as a high-profile television appearance ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/lZbs5RbNo84/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/lZbs5RbNo84/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/lZbs5RbNo84/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/lZbs5RbNo84/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "The Royal Review",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T12:43:43Z"
+          }
+        }
+      },
+      "HbhU0c4Pr5E": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:42.380183+00:00",
+        "first_seen_at": "2026-09-21T03:11:42.380168+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "JUhXiP7W5fXDsOqA7PJr523PgT0",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "HbhU0c4Pr5E"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-21T01:48:28Z",
+            "channelId": "UCtoQK4LinVk6uqT0ya3NZLw",
+            "title": "The Hard Thing About Hard Things — Ben Horowitz | Book summary",
+            "description": "READ THE FULL SUMMARY ON 3ORDS.COM: https://3ords.com/en/summary/the-hard-thing-about-hard-things/ The Hard ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/HbhU0c4Pr5E/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/HbhU0c4Pr5E/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/HbhU0c4Pr5E/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/HbhU0c4Pr5E/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/HbhU0c4Pr5E/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/HbhU0c4Pr5E/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Cristyy",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-21T01:48:28Z"
+          }
+        }
+      },
+      "UJQffVeXt30": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:42.380198+00:00",
+        "first_seen_at": "2026-09-21T03:11:42.380195+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "TS4l_ePbJQIoIrAfg9haSUWcyE8",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "UJQffVeXt30"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T19:16:14Z",
+            "channelId": "UCp8QBdheN4u1Ie2wtOpdLZQ",
+            "title": "The Hard Thing About Hard Things | Ben Horowitz | Hindi Audiobook Summary | Audiobook247",
+            "description": "The Hard Thing About Hard Things by Ben Horowitz is a practical guide to building and leading a business through difficult ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/UJQffVeXt30/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/UJQffVeXt30/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/UJQffVeXt30/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/UJQffVeXt30/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/UJQffVeXt30/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Audiobook 247",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T19:16:14Z"
+          }
+        }
+      },
+      "UAd_DKo1meY": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:42.380204+00:00",
+        "first_seen_at": "2026-09-21T03:11:42.380202+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "d5Q_yXqaE8BHniZNDOVblyh0PHE",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "UAd_DKo1meY"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T16:00:20Z",
+            "channelId": "UCIRzxohZ6SbwsPqHFQGMJ7A",
+            "title": "The Global AI Economy: Capital, Sovereignty, &amp; Canada&#39;s Future | Global Dialogues Toronto 2026",
+            "description": "Susan Li, Correspondent, Fox Business Network Aidan Gomez, Co-founder and CEO, Cohere Dave McKay, President and CEO, ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/UAd_DKo1meY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/UAd_DKo1meY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/UAd_DKo1meY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/UAd_DKo1meY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/UAd_DKo1meY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/UAd_DKo1meY/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Milken Institute",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T16:00:20Z"
+          }
+        }
+      },
+      "ZO6VyDvysxY": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:42.380210+00:00",
+        "first_seen_at": "2026-09-21T03:11:42.380208+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "5C_4WVbRZBkOruG8P-LkRTE1BLY",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "ZO6VyDvysxY"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T14:30:23Z",
+            "channelId": "UC9cn0TuPq4dnbTY-CBsm8XA",
+            "title": "Why the People Who Built Hip-Hop Ended Up With Nothing",
+            "description": "Ben Horowitz and Erik Torenberg sit down with Nas, Grandmaster Caz, and Steve Stoute for a conversation about the Paid in Full ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/ZO6VyDvysxY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/ZO6VyDvysxY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/ZO6VyDvysxY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/ZO6VyDvysxY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/ZO6VyDvysxY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/ZO6VyDvysxY/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "a16z",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T14:30:23Z"
+          }
+        }
+      },
+      "WZ_iOJ5Qw8g": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:42.380215+00:00",
+        "first_seen_at": "2026-09-21T03:11:42.380213+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "l0EwETDOJRxhMxHQayEiG4Cdmos",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "WZ_iOJ5Qw8g"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T13:55:52Z",
+            "channelId": "UCJBAm41Rsc3doYqCcujenTA",
+            "title": "Lo difícil de las cosas difíciles — Resumen · Ben Horowitz",
+            "description": "Lo difícil de las cosas difíciles, de Ben Horowitz. Análisis extenso (~40 min) de las ideas centrales de este best-seller, narrado con ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/WZ_iOJ5Qw8g/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/WZ_iOJ5Qw8g/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/WZ_iOJ5Qw8g/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/WZ_iOJ5Qw8g/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/WZ_iOJ5Qw8g/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "BibliotecaAbierta",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T13:55:52Z"
+          }
+        }
+      },
+      "YpVwPdSUCOc": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:48.071349+00:00",
+        "first_seen_at": "2026-09-21T03:11:48.071334+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "_9YiHuvPXwkU_Co41HZWpa0GVLE",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "YpVwPdSUCOc"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-18T23:00:12Z",
+            "channelId": "UCyN4gG4JfZchvaOdKQZbDxg",
+            "title": "THEY CAST A SPELL ON U… THEN A MESSAGE FROM “ELON MUSK” SENT THEM INTO FULL PANIC 😈📱💀",
+            "description": "Welcome to the dark side of motivation, where the truth is uncomfortable, the lessons are powerful, and the world is seen through ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/YpVwPdSUCOc/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/YpVwPdSUCOc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/YpVwPdSUCOc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              }
+            },
+            "channelTitle": "Mad World Joker",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-18T23:00:12Z"
+          }
+        }
+      },
+      "vhKaiqRimkw": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307522+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307507+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "XZuI22YT-pAIP42sVO5Be1B6PbI",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "vhKaiqRimkw"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-21T02:33:25Z",
+            "channelId": "UCa1C7b128KM9Eafq0VhptBg",
+            "title": "ANTICHRIST WARNING! MASSIVE STATUE OF LUCIFER BEING BUILT AT ELON MUSK&#39;S SPACE X HEADQUARTERS!",
+            "description": "ANTICHRIST WARNING! MASSIVE STATUE OF LUCIFER BEING BUILT AT ELON MUSK'S SPACE X HEADQUARTERS!",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/vhKaiqRimkw/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/vhKaiqRimkw/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/vhKaiqRimkw/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              }
+            },
+            "channelTitle": "A CALL FOR AN UPRISING, JESUS, BEGINNING, JUDGMENT",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-21T02:33:25Z"
+          }
+        }
+      },
+      "xZv2Z16ehHc": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307536+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307533+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "gHPNTG-NWIV76i3nBT1pkU451ws",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "xZv2Z16ehHc"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-21T01:00:27Z",
+            "channelId": "UC73Hz6b1NEKi_dJt9O3Nfvw",
+            "title": "👉Elon Musk Tried To Uncover Your Secrets... Then The Investigation Took A SHOCKING Turn.",
+            "description": "7-Sec Ritual to Attracting Abundance Today. https://tinyurl.com/Do-not-miss-out-this.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/xZv2Z16ehHc/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/xZv2Z16ehHc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/xZv2Z16ehHc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/xZv2Z16ehHc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/xZv2Z16ehHc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Michael Prophetic Word",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-21T01:00:27Z"
+          }
+        }
+      },
+      "HLlZIFnUu6s": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307543+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307541+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "AH_vYbf2G9m0rmZKtsti0rfDOrA",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "HLlZIFnUu6s"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-21T00:44:34Z",
+            "channelId": "UCEWys5oKMPtK5FG3tLzLUEA",
+            "title": "Elon Musk My Love… I’ve Finally Chosen a Future With You 💔❤️",
+            "description": "Sometimes, after fighting your feelings for so long, the heart finally makes a choice. ❤️ In this emotional love story, a difficult ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/HLlZIFnUu6s/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/HLlZIFnUu6s/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/HLlZIFnUu6s/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/HLlZIFnUu6s/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/HLlZIFnUu6s/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "MusksHiddenLove",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-21T00:44:34Z"
+          }
+        }
+      },
+      "NfnF5UqUmLI": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307549+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307547+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "F1GE_51dK3qTcseji-HTb9p-8iE",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "NfnF5UqUmLI"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T23:00:20Z",
+            "channelId": "UC521AYS2L_nQBinWHo6y3Ww",
+            "title": "🚨 Elon Musk dit  ceci est dans ton téléphone. Vérifie maintenant……",
+            "description": "Elon Musk dit ceci est dans ton téléphone. Vérifie maintenant…… #messagesdamour #jetaime #amoureux #amour ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/NfnF5UqUmLI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/NfnF5UqUmLI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/NfnF5UqUmLI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/NfnF5UqUmLI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/NfnF5UqUmLI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Cœur Éternel",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T23:00:20Z"
+          }
+        }
+      },
+      "lKBsGuSWd_s": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307555+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307553+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "Cni8_aJ3JJ8m-4pMTkg1tKPGWt4",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "lKBsGuSWd_s"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T22:00:26Z",
+            "channelId": "UCgdb1CL00iwoup83GNjgm-g",
+            "title": "Elon Musk SHOCKS The EV Industry With Tesla’s New Battery Announcement!",
+            "description": "Tesla has made another major battery announcement, and Elon Musk's latest comments are putting the spotlight back on the ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/lKBsGuSWd_s/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/lKBsGuSWd_s/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/lKBsGuSWd_s/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/lKBsGuSWd_s/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/lKBsGuSWd_s/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/lKBsGuSWd_s/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Future Frontlines",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T22:00:26Z"
+          }
+        }
+      },
+      "_y0B-ooe3vA": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307561+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307559+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "MQ44PYSUElVxKtOUCi0kQgLBMtk",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "_y0B-ooe3vA"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T22:00:01Z",
+            "channelId": "UC1dVOvem05dyE2liuYOcgPw",
+            "title": "Elon Musk&#39;s Father Errol Was Even MORE Disturbing Than You Think",
+            "description": "Subscribe now for grounded, fact-based breakdowns of the stories behind the headlines — hit that subscribe button so you never ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/_y0B-ooe3vA/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/_y0B-ooe3vA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/_y0B-ooe3vA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/_y0B-ooe3vA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/_y0B-ooe3vA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "uhd": {
+                "url": "https://i.ytimg.com/vi/_y0B-ooe3vA/uhddefault.jpg",
+                "width": 3840,
+                "height": 2160
+              }
+            },
+            "channelTitle": "bhd rub",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T22:00:01Z"
+          }
+        }
+      },
+      "c-Xk5D_KhK8": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307567+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307564+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "tgAn1j-t8dH2GQx61H4VKk4n_Xo",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "c-Xk5D_KhK8"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T21:02:43Z",
+            "channelId": "UCV2GfHfyhnSTuVClCZqqTKA",
+            "title": "Why Elon Musk &amp; Sam Altman Hate Each Other (Full Story)",
+            "description": "Be sure to like, share and subscribe for more!",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/c-Xk5D_KhK8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/c-Xk5D_KhK8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/c-Xk5D_KhK8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/c-Xk5D_KhK8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/c-Xk5D_KhK8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "qhd": {
+                "url": "https://i.ytimg.com/vi/c-Xk5D_KhK8/qhddefault.jpg",
+                "width": 2560,
+                "height": 1440
+              }
+            },
+            "channelTitle": "Ryan Henderson",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T21:02:43Z"
+          }
+        }
+      },
+      "nFexPSUWi1o": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307599+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307597+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "RcyOHxrfYp63HbixNRBoB231lFY",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "nFexPSUWi1o"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T13:36:35Z",
+            "channelId": "UCWjGtyMImqTEqg8_Lm1Up7g",
+            "title": "Elon Musk’s First Home Robot “CyberGirl” Will End",
+            "description": "Imagine coming home to a robot that can clean your house, organize your belongings, handle everyday chores, and assist with ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/nFexPSUWi1o/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/nFexPSUWi1o/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/nFexPSUWi1o/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/nFexPSUWi1o/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/nFexPSUWi1o/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Dr Maaz Jhujh ",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T13:36:35Z"
+          }
+        }
+      },
+      "pE3RnaHWvsI": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307605+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307603+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "hPwinVJuOWHmP5fIGctQh5XtsXM",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "pE3RnaHWvsI"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T13:29:27Z",
+            "channelId": "UCGRozMY53MXFiHBvQCKKPwQ",
+            "title": "💸✝️ SEPTEMBER 20: ELON MUSK, $750,000,000 &amp; ONE UNEXPECTED MONEY OPPORTUNITY — ARCHANGEL.....",
+            "description": "SEPTEMBER 20: ELON MUSK, $750000000 & ONE UNEXPECTED MONEY OPPORTUNITY — ARCHANGEL MICHAEL SAYS ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/pE3RnaHWvsI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/pE3RnaHWvsI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/pE3RnaHWvsI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/pE3RnaHWvsI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/pE3RnaHWvsI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Its Archangel speaks",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T13:29:27Z"
+          }
+        }
+      },
+      "Mdk-MAKXhwM": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307612+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307610+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "0qw0mq25OAIMbQgq57MIla_D-Tk",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "Mdk-MAKXhwM"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T12:00:03Z",
+            "channelId": "UCV9M_fKAAIble2SNGRhSrBw",
+            "title": "EVERYTHING FLIPPED OVERNIGHT‼️ 🤯 ELON MUSK DEFENDING YOU FIERCELY NOW 🔥😱   JOKER SPEECH",
+            "description": "JOKER AFTERDARK explores the darker side of the human mind through powerful Joker-inspired audio, dark motivation, ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Mdk-MAKXhwM/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Mdk-MAKXhwM/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Mdk-MAKXhwM/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Mdk-MAKXhwM/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Mdk-MAKXhwM/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "JOKER AFTERDARK",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T12:00:03Z"
+          }
+        }
+      },
+      "fW8GN3BD5ic": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307620+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307618+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "RQAX9VmySEGTlbo0t58nF_zS1LU",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "fW8GN3BD5ic"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T07:00:09Z",
+            "channelId": "UCp7lDa5KjQgu7-p3C5Hcd_A",
+            "title": "Why Elon Musk Had to Leave South Africa to Build Tesla",
+            "description": "Elon Musk left Pretoria at 17. Tesla still will not sell you the car in South Africa. February 2026: Tesla launched in Casablanca.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/fW8GN3BD5ic/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/fW8GN3BD5ic/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/fW8GN3BD5ic/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/fW8GN3BD5ic/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/fW8GN3BD5ic/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/fW8GN3BD5ic/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Martin C. Saville",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T07:00:09Z"
+          }
+        }
+      },
+      "mRvfwn9uGeI": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307625+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307623+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "1-gCzuIZfFYVDXKd_4KenX5A384",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "mRvfwn9uGeI"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T12:00:10Z",
+            "channelId": "UCmkd9AVJF4_XpYQBFP1y9rA",
+            "title": "SATYA NADELLA: AI ĐANG CHỮNG LẠI? KẾ HOẠCH LỚN CỦA MICROSOFT VÀ CUỘC ĐUA AI",
+            "description": "Satya Nadella, CEO Microsoft, chia sẻ những góc nhìn đáng chú ý về tương lai của AI, cuộc tranh luận giữa “tăng tốc” và “chậm ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/mRvfwn9uGeI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/mRvfwn9uGeI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/mRvfwn9uGeI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/mRvfwn9uGeI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/mRvfwn9uGeI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "PTS NEWS",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T12:00:10Z"
+          }
+        }
+      },
+      "BwHbRXdlfgk": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:49.307640+00:00",
+        "first_seen_at": "2026-09-21T03:11:49.307638+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "pW2pc2Njn-VWs95xObe1rQt7UTU",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "BwHbRXdlfgk"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T09:00:02Z",
+            "channelId": "UCQ0uwQ93Bpb-42D3ZIzdcdQ",
+            "title": "FULL (TẬP 133-140) l Xuyên Không Thành Elon Musk Đấu La Thức Tỉnh Vệ Tinh Cấp Khái Niệm",
+            "description": "Synopsis: Tiên Thiên Hồn Lực chỉ có 3 cấp nhưng ta phóng vệ tinh lên trời trong 6 năm, ngày ta hấp thụ hồn hoàn, vệ tinh ly thể ta ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/BwHbRXdlfgk/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/BwHbRXdlfgk/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/BwHbRXdlfgk/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/BwHbRXdlfgk/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/BwHbRXdlfgk/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/BwHbRXdlfgk/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Đức Anh Vietsub",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T09:00:02Z"
+          }
+        }
+      },
+      "1b_MIHyh3ds": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:53.352476+00:00",
+        "first_seen_at": "2026-09-21T03:11:53.352461+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "EAkLGsbTYZKrpivnx-qG4BAkn0g",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "1b_MIHyh3ds"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-14T11:00:24Z",
+            "channelId": "UCWamOdIQY0Siz1W3y3q_qIQ",
+            "title": "Empire of AI: The Complete Story of OpenAI | Full Documentary",
+            "description": "Friday, 17 November 2023. Sam Altman opens his laptop in a Las Vegas hotel room. Four of his five board members are waiting ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/1b_MIHyh3ds/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/1b_MIHyh3ds/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/1b_MIHyh3ds/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/1b_MIHyh3ds/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/1b_MIHyh3ds/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "100 Books Club",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-14T11:00:24Z"
+          }
+        }
+      },
+      "tr9ldobfI6w": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:55.456747+00:00",
+        "first_seen_at": "2026-09-21T03:11:55.456731+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "oxjlNNr4xMF2Ut3yAjZaImS_MV4",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "tr9ldobfI6w"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-20T23:12:22Z",
+            "channelId": "UCTPm4y283GIygUCq4a_T96Q",
+            "title": "NVIDIA&#39;s Jensen Huang On NVIDIA Stock, AI Demand, AI Safety, Vera Rubin &amp; More - NVDA Update",
+            "description": "NVIDIA's Jensen Huang On NVIDIA Stock, AI Demand, AI Safety, Vera Rubin & More - NVDA Update NVIDIA CEO Jensen Huang ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/tr9ldobfI6w/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/tr9ldobfI6w/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/tr9ldobfI6w/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/tr9ldobfI6w/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/tr9ldobfI6w/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "FinVid",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-20T23:12:22Z"
+          }
+        }
+      },
+      "O9KvzhZi0SY": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:56.484694+00:00",
+        "first_seen_at": "2026-09-21T03:11:56.484679+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "qio_nMFx7A-utYNkDjBcneP1WPI",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "O9KvzhZi0SY"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-21T02:30:20Z",
+            "channelId": "UC4w5EubUOzs1Wotpl_9MzmQ",
+            "title": "One on One with Sam Altman: The Future of AI, OpenAI &amp; What’s Next",
+            "description": "In this One on One conversation with Sam Altman, CEO of OpenAI, we explore artificial intelligence, the rapid evolution of ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/O9KvzhZi0SY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/O9KvzhZi0SY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/O9KvzhZi0SY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/O9KvzhZi0SY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/O9KvzhZi0SY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Curiosity Power Grid",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-21T02:30:20Z"
+          }
+        }
+      },
+      "PIrBIU21yzo": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:56.484736+00:00",
+        "first_seen_at": "2026-09-21T03:11:56.484732+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "Xuac0u-XKZmyotz3Z2LNOuzWfb8",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "PIrBIU21yzo"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-21T00:34:09Z",
+            "channelId": "UClu21E9OfmpDh3BUx7cFbZQ",
+            "title": "AI Robotics||Full Explanation||Researcher Open AI|Jacob Coxon|Elon musk|Sam Altman|Dario Amodel|IP||",
+            "description": "",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/PIrBIU21yzo/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/PIrBIU21yzo/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/PIrBIU21yzo/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/PIrBIU21yzo/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/PIrBIU21yzo/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "DW - DREAM WORLD & TEAM",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-21T00:34:09Z"
+          }
+        }
+      },
+      "eX4Qo4gj3m4": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:56.484784+00:00",
+        "first_seen_at": "2026-09-21T03:11:56.484782+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "yYwRa_VmYVQITEShi3W5-ri6Gc4",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "eX4Qo4gj3m4"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-19T01:23:02Z",
+            "channelId": "UCIBeANd-ORSKPOg7PPMWCqw",
+            "title": "STOP AI SAFETY. Support opensource. Altman: Stop regulatory capture.",
+            "description": "STOP AI SAFETY, instead contribute to opensource. Advice to Sam Altman: Stop regulatory capture. Argentina is \"trying\"",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/eX4Qo4gj3m4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/eX4Qo4gj3m4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/eX4Qo4gj3m4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/eX4Qo4gj3m4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/eX4Qo4gj3m4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Meta",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-19T01:23:02Z"
+          }
+        }
+      },
+      "9OciY1FJpUE": {
+        "status": "pending",
+        "reason": "검색에서 발견",
+        "updated_at": "2026-09-21T03:11:57.498579+00:00",
+        "first_seen_at": "2026-09-21T03:11:57.498563+00:00",
+        "attempts": 0,
+        "item": {
+          "kind": "youtube#searchResult",
+          "etag": "Idcrgu7tRhzhjUwHEr2-8dZkwOI",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "9OciY1FJpUE"
+          },
+          "snippet": {
+            "publishedAt": "2026-09-18T18:10:55Z",
+            "channelId": "UCqIzK82kDT3zpA5OcPDg3Rg",
+            "title": "Pacing AI Means More Compute, Not Less",
+            "description": "The debate over \"pacing\" AI for safety is a red herring, since more safety work doesn't slow things down; it increases demand for ...",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/9OciY1FJpUE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/9OciY1FJpUE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/9OciY1FJpUE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/9OciY1FJpUE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/9OciY1FJpUE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "qhd": {
+                "url": "https://i.ytimg.com/vi/9OciY1FJpUE/qhddefault.jpg",
+                "width": 2560,
+                "height": 1440
+              }
+            },
+            "channelTitle": "Semi Doped",
+            "liveBroadcastContent": "none",
+            "publishTime": "2026-09-18T18:10:55Z"
+          }
+        }
       }
     },
     "search_jobs": [
       {
-        "q": "\"Sanjay Mehrotra\"",
+        "q": "\"Hock Tan\"",
         "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
+        "after": "2026-09-14T03:11:36.400071+00:00",
         "page": null
       },
       {
-        "q": "\"Lip-Bu Tan\"|\"Sandra Rivera\"|\"Charlie Kawwas\"|\"Matt Murphy\"|\"Chris Koopmans\"|\"Sumit Sadana\"|\"Mark Liu\"|\"Morris Chang\"|\"Young-Hyun Jun\"|\"Jong-Hee Han\"|\"Chey Tae-won\"|\"Jayshree Ullal\"",
+        "q": "\"C.C. Wei\"",
         "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
+        "after": "2026-09-14T03:11:36.400071+00:00",
         "page": null
       },
       {
-        "q": "\"Andy Bechtolsheim\"|\"Ken Duda\"|\"Chuck Robbins\"|\"Jonathan Rosenberg\"|\"Michael Dell\"|\"Jeff Clarke\"|\"Antonio Neri\"|\"Fidelma Russo\"|\"Charles Liang\"|\"Andrew Feldman\"|\"Jonathan Ross\"|\"Jim Keller\"",
+        "q": "\"Colette Kress\"|\"Jay Puri\"|\"Greg Brockman\"|\"Kevin Weil\"|\"Jakub Pachocki\"|\"Sarah Friar\"|\"Mark Chen\"|\"Daniela Amodei\"|\"Rahul Patil\"|\"Krishna Rao\"|\"Sundar Pichai\"|\"Jeff Dean\"",
         "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
-        "page": null
-      },
-      {
-        "q": "\"Rodrigo Liang\"|\"Nigel Toon\"|\"Michael Intrator\"|\"Chase Lochmiller\"|\"Stephen Balaban\"|\"Wes Cummins\"|\"Giordano Albertazzi\"|\"Peter Herweck\"|\"Craig Arnold\"|\"Roland Busch\"|\"Scott Strazik\"|\"Cristiano Amon\"",
-        "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
-        "page": null
-      },
-      {
-        "q": "\"Amnon Shashua\"|\"Arvind Krishna\"|\"Alex Karp\"|\"Thomas Kurian\"|\"Chet Kapoor\"|\"Andy Jassy\"|\"Matt Garman\"|\"Swami Sivasubramanian\"|\"Aravind Srinivas\"|\"Mira Murati\"|\"Ilya Sutskever\"|\"Arthur Mensch\"",
-        "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
-        "page": null
-      },
-      {
-        "q": "\"Aidan Gomez\"|\"Eric Lefkofsky\"|\"Marc Raibert\"|\"Robert Playter\"|\"Brett Adcock\"|\"Jonathan Hurst\"|\"Marc Andreessen\"|\"Ben Horowitz\"|\"Chamath Palihapitiya\"|\"Gavin Baker\"|\"Dylan Patel\"|\"Masayoshi Son\"",
-        "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
-        "page": null
-      },
-      {
-        "q": "\"Barret Zoph\"|\"Karol Hausman\"|\"Sergey Levine\"|\"Chelsea Finn\"|\"Deepak Pathak\"|\"Abhinav Gupta\"|\"Bernt Bornich\"",
-        "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
+        "after": "2026-09-14T03:11:36.400071+00:00",
         "page": null
       },
       {
         "q": "\"Amin Vahdat\"|\"Yann LeCun\"|\"Noam Shazeer\"|\"Satya Nadella\"|\"Kevin Scott\"|\"Mustafa Suleyman\"|\"Mark Zuckerberg\"|\"Andrew Bosworth\"|\"Elon Musk\"|\"Ashok Elluswamy\"|\"Mark Papermaster\"|\"Forrest Norrod\"",
         "duration": "long",
-        "after": "2026-09-13T10:34:18.065691+00:00",
-        "page": "CDIQAA"
+        "after": "2026-09-14T03:11:36.400071+00:00",
+        "page": null
       },
       {
-        "q": "\"Amin Vahdat\"|\"Yann LeCun\"|\"Noam Shazeer\"|\"Satya Nadella\"|\"Kevin Scott\"|\"Mustafa Suleyman\"|\"Mark Zuckerberg\"|\"Andrew Bosworth\"|\"Elon Musk\"|\"Ashok Elluswamy\"|\"Mark Papermaster\"|\"Forrest Norrod\"",
+        "q": "\"Pony Ma\"|\"Robin Li\"|\"Liang Wenfeng\"|\"Ren Zhengfei\"|\"Larry Ellison\"|\"Safra Catz\"|\"Clay Magouyrk\"|\"Mike Sicilia\"|\"T.K. Anand\"|\"Rene Haas\"|\"Mohamed Awad\"|\"Sassine Ghazi\"",
         "duration": "long",
-        "after": "2026-09-13T10:34:18.065691+00:00",
-        "page": "CGQQAA"
+        "after": "2026-09-14T03:11:36.400071+00:00",
+        "page": null
+      },
+      {
+        "q": "\"Aart de Geus\"|\"Anirudh Devgan\"|\"Christophe Fouquet\"|\"Roger Dassen\"|\"Gary Dickerson\"|\"Prabu Raja\"|\"Tim Archer\"|\"Rick Wallace\"|\"Manish Bhatia\"|\"Scott DeBoer\"|\"David Goeckeler\"|\"Irving Tan\"",
+        "duration": "long",
+        "after": "2026-09-14T03:11:36.400071+00:00",
+        "page": null
+      },
+      {
+        "q": "\"Jitendra Mohan\"|\"Sanjay Gajendra\"|\"Sandeep Bharathi\"|\"Will Chu\"|\"Noam Mizrahi\"|\"Jim Anderson\"|\"Alan Lowe\"|\"Bill Brennan\"|\"Matthew Prince\"|\"Olivier Blum\"|\"Adaire Fox-Martin\"|\"Andy Power\"",
+        "duration": "long",
+        "after": "2026-09-14T03:11:36.400071+00:00",
+        "page": null
+      },
+      {
+        "q": "\"Joe Dominguez\"|\"Jim Burke\"|\"Arkady Volozh\"|\"Fidji Simo\"|\"Brad Lightcap\"|\"Wojciech Zaremba\"|\"Andrej Karpathy\"|\"Fei-Fei Li\"|\"Alexandr Wang\"|\"Nat Friedman\"|\"Daniel Gross\"|\"David Luan\"",
+        "duration": "long",
+        "after": "2026-09-14T03:11:36.400071+00:00",
+        "page": null
       },
       {
         "q": "\"Amin Vahdat\"|\"Yann LeCun\"|\"Noam Shazeer\"|\"Satya Nadella\"|\"Kevin Scott\"|\"Mustafa Suleyman\"|\"Mark Zuckerberg\"|\"Andrew Bosworth\"|\"Elon Musk\"|\"Ashok Elluswamy\"|\"Mark Papermaster\"|\"Forrest Norrod\"",
@@ -59955,64 +62970,75 @@
       {
         "q": "\"Amin Vahdat\"|\"Yann LeCun\"|\"Noam Shazeer\"|\"Satya Nadella\"|\"Kevin Scott\"|\"Mustafa Suleyman\"|\"Mark Zuckerberg\"|\"Andrew Bosworth\"|\"Elon Musk\"|\"Ashok Elluswamy\"|\"Mark Papermaster\"|\"Forrest Norrod\"",
         "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
-        "page": "CDIQAA"
-      },
-      {
-        "q": "\"Amin Vahdat\"|\"Yann LeCun\"|\"Noam Shazeer\"|\"Satya Nadella\"|\"Kevin Scott\"|\"Mustafa Suleyman\"|\"Mark Zuckerberg\"|\"Andrew Bosworth\"|\"Elon Musk\"|\"Ashok Elluswamy\"|\"Mark Papermaster\"|\"Forrest Norrod\"",
-        "duration": "long",
-        "after": "2026-09-12T21:51:58.640820+00:00",
+        "after": "2026-09-13T10:34:18.065691+00:00",
         "page": "CJYBEAA"
+      },
+      {
+        "q": "\"Amin Vahdat\"|\"Yann LeCun\"|\"Noam Shazeer\"|\"Satya Nadella\"|\"Kevin Scott\"|\"Mustafa Suleyman\"|\"Mark Zuckerberg\"|\"Andrew Bosworth\"|\"Elon Musk\"|\"Ashok Elluswamy\"|\"Mark Papermaster\"|\"Forrest Norrod\"",
+        "duration": "long",
+        "after": "2026-09-13T10:34:18.065691+00:00",
+        "page": "CJYBEAA"
+      },
+      {
+        "q": "\"Amin Vahdat\"|\"Yann LeCun\"|\"Noam Shazeer\"|\"Satya Nadella\"|\"Kevin Scott\"|\"Mustafa Suleyman\"|\"Mark Zuckerberg\"|\"Andrew Bosworth\"|\"Elon Musk\"|\"Ashok Elluswamy\"|\"Mark Papermaster\"|\"Forrest Norrod\"",
+        "duration": "long",
+        "after": "2026-09-13T20:17:22.491239+00:00",
+        "page": "CGQQAA"
+      },
+      {
+        "q": "\"Amin Vahdat\"|\"Yann LeCun\"|\"Noam Shazeer\"|\"Satya Nadella\"|\"Kevin Scott\"|\"Mustafa Suleyman\"|\"Mark Zuckerberg\"|\"Andrew Bosworth\"|\"Elon Musk\"|\"Ashok Elluswamy\"|\"Mark Papermaster\"|\"Forrest Norrod\"",
+        "duration": "long",
+        "after": "2026-09-14T03:11:36.400071+00:00",
+        "page": "CDIQAA"
       },
       {
         "q": "\"Sam Altman\"",
         "duration": "long",
-        "after": "2026-09-13T10:34:18.065691+00:00",
+        "after": "2026-09-13T20:17:22.491239+00:00",
         "page": "CGQQAA"
       },
       {
         "q": "\"Dario Amodei\"",
         "duration": "long",
-        "after": "2026-09-13T10:34:18.065691+00:00",
+        "after": "2026-09-13T20:17:22.491239+00:00",
         "page": "CGQQAA"
       },
       {
         "q": "\"Jensen Huang\"",
         "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
+        "after": "2026-09-14T03:11:36.400071+00:00",
         "page": "CDIQAA"
       },
       {
         "q": "\"Sam Altman\"",
         "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
+        "after": "2026-09-14T03:11:36.400071+00:00",
         "page": "CDIQAA"
       },
       {
         "q": "\"Dario Amodei\"",
         "duration": "long",
-        "after": "2026-09-13T20:17:22.491239+00:00",
+        "after": "2026-09-14T03:11:36.400071+00:00",
         "page": "CDIQAA"
       }
     ],
     "source_channels": {
       "salesforce": {
-        "last_attempt": "2026-09-20T20:17:20.431788+00:00",
+        "last_attempt": "2026-09-21T03:11:35.396496+00:00",
         "channel_id": "UCUpquzY878NEaZm5bc7m2sQ",
         "title": "Salesforce",
-        "uploads": "UUUpquzY878NEaZm5bc7m2sQ",
-        "page": "EAAaH1BUOkNKWUJJaEF6UVVFM1JrTTBORUUyT0RORE56VTI"
+        "uploads": "UUUpquzY878NEaZm5bc7m2sQ"
       },
       "theRSAorg": {
-        "last_attempt": "2026-09-20T20:17:20.431788+00:00",
+        "last_attempt": "2026-09-21T03:11:35.396496+00:00",
         "channel_id": "UCvhsiQGy_zcNCiSbeXEjhLg",
         "title": "Royal Society of Arts",
         "uploads": "UUvhsiQGy_zcNCiSbeXEjhLg"
       }
     },
     "quota_day": "2026-09-20",
-    "search_calls": 44,
-    "last_search_attempt": "2026-09-20T20:17:22.491239+00:00"
+    "search_calls": 66,
+    "last_search_attempt": "2026-09-21T03:11:36.400071+00:00"
   },
   "verified_original_sources_v4": {
     "handle:@allin": {
