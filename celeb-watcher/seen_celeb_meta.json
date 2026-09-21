@@ -772,7 +772,7 @@
       "Ho1gnEeVryA": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-21T11:55:27.091437+00:00",
+        "updated_at": "2026-09-21T17:51:18.030903+00:00",
         "first_seen_at": "2026-09-18T22:12:17.052304+00:00",
         "attempts": 0,
         "item": {
@@ -1120,7 +1120,7 @@
       "Bh5bJrrJ6xs": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-21T11:55:27.091441+00:00",
+        "updated_at": "2026-09-21T17:51:18.030923+00:00",
         "first_seen_at": "2026-09-18T22:12:17.060681+00:00",
         "attempts": 0,
         "item": {
@@ -2518,7 +2518,7 @@
       "XzNjq6DNjSY": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-21T11:55:27.091416+00:00",
+        "updated_at": "2026-09-21T17:51:18.030928+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462747+00:00",
         "attempts": 0,
         "item": {
@@ -25314,9 +25314,9 @@
         "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "DjBhmH8um2A": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-21T03:12:00.342844+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.031491+00:00",
         "first_seen_at": "2026-09-18T22:12:25.436006+00:00",
         "attempts": 1,
         "item": {
@@ -25446,9 +25446,9 @@
         "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "IJn8cagMW18": {
-        "status": "pending",
-        "reason": "대화형 인터뷰 근거 없음",
-        "updated_at": "2026-09-21T03:12:02.071932+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.031504+00:00",
         "first_seen_at": "2026-09-18T22:12:25.436013+00:00",
         "attempts": 1,
         "item": {
@@ -32923,10 +32923,10 @@
       },
       "kDCN2y6zgP0": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:26.436892+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278160+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436888+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "A0VhX7GLwkPW6Y5kz2QWj88ANEw",
@@ -32970,14 +32970,127 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T22:27:11Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "F6Z_QB3sTGnJxQjXAzTosheToFU",
+          "id": "kDCN2y6zgP0",
+          "snippet": {
+            "publishedAt": "2026-09-17T22:27:11Z",
+            "channelId": "UC5PoXpwCMBfuq1HbsnSWjmA",
+            "title": "למה אילן מאסק עבר לגור בקרוואן ?",
+            "description": "לנס יש בית — קחו את מקומכם במורשת שלו\n\nhttps://BHYK.org\n\nעבדנו על זה במשך שנים, וסוף סוף הגיע הרגע לשתף אתכם: הקמפיין השאפתני ביותר שלנו עלה לאוויר, ואנחנו מחכים לכם שתצטרפו אלינו שוב כשותפים לדרך.\n\nבמשך שנים התפללתם איתנו, תרמתם איתנו, וחלמתם איתנו. בשנה שעברה סיפרנו לכם שאנחנו פועלים להקים מטה מרכזי בארה״ב — בית כנסת, כולל, אולפנים, ובית למהפכת התורה שבניתם יחד איתנו.\n\nהשנה, בעזרת ה׳, הקב״ה נענה לתפילות. המטה החדש של BH כאן!\n\nועכשיו אנחנו צריכים את העזרה שלכם כדי למלא אותו בתורה, בעשייה ובאור.\n\nהצטרפו אלינו כדי שיחד נוכל לספק מזון למאות משפחות לקראת החג, וב\"ה תזכו להיכתב ולהחתם לשנה טובה ומבורכת!\n\n\n\nתרום ותמוך בכתובת https://www.BeEzratHaShem.org\n\nAI RABBI מאת ארגון בעזרת השם.\n\n https://www.AIRabbi.org\n\nתשובות לשאלות על החיים היהודיים ב-30 שפות.\n\nגלה את חכמת היהדות בהישג ידך, האפליקציה של הרב ירון ראובן- תשובת הרב בבינה מלאכותית, מציעה חכמה והכוונה בשפות רבות, תוך שימוש במקורות מהימנים ואמינים.\n\n#תורה #יהדות #הרבירוןראובן #אלוקים #קירוב  #חזרהבתשובה #יראתשמיים #חיזוק #הרבאפריםכחלון #ארגוןבעזרתהשם #חסד",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/kDCN2y6zgP0/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/kDCN2y6zgP0/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/kDCN2y6zgP0/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/kDCN2y6zgP0/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/kDCN2y6zgP0/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "הרב אפרים כחלון",
+            "tags": [
+              "גמילות חסדים",
+              "לימוד תורה",
+              "אברכים",
+              "יראת שמיים",
+              "יום הדין",
+              "מעשר",
+              "גאון",
+              "הרב אפרים כחלון",
+              "הרב ירון ראובן",
+              "יהדות",
+              "פרקי אבות",
+              "Efraim Kachlon",
+              "משיח",
+              "מצוות",
+              "חגים",
+              "גמרא",
+              "תורה",
+              "יהודים משיחיים",
+              "אקטואליה",
+              "שלום בית",
+              "חינוך ילדים",
+              "מוסר",
+              "אהבה",
+              "חגי ישראל",
+              "רבנים",
+              "חזל",
+              "פרשת השבוע",
+              "עם ישראל",
+              "חסד",
+              "בורא עולם",
+              "חזרה בתשובה",
+              "קירוב",
+              "תורה שבעל פה",
+              "שיעור",
+              "השקפה",
+              "הלכה",
+              "דעת תורה",
+              "זיכוי הרבים",
+              "סיפורים"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "iw",
+            "localized": {
+              "title": "למה אילן מאסק עבר לגור בקרוואן ?",
+              "description": "לנס יש בית — קחו את מקומכם במורשת שלו\n\nhttps://BHYK.org\n\nעבדנו על זה במשך שנים, וסוף סוף הגיע הרגע לשתף אתכם: הקמפיין השאפתני ביותר שלנו עלה לאוויר, ואנחנו מחכים לכם שתצטרפו אלינו שוב כשותפים לדרך.\n\nבמשך שנים התפללתם איתנו, תרמתם איתנו, וחלמתם איתנו. בשנה שעברה סיפרנו לכם שאנחנו פועלים להקים מטה מרכזי בארה״ב — בית כנסת, כולל, אולפנים, ובית למהפכת התורה שבניתם יחד איתנו.\n\nהשנה, בעזרת ה׳, הקב״ה נענה לתפילות. המטה החדש של BH כאן!\n\nועכשיו אנחנו צריכים את העזרה שלכם כדי למלא אותו בתורה, בעשייה ובאור.\n\nהצטרפו אלינו כדי שיחד נוכל לספק מזון למאות משפחות לקראת החג, וב\"ה תזכו להיכתב ולהחתם לשנה טובה ומבורכת!\n\n\n\nתרום ותמוך בכתובת https://www.BeEzratHaShem.org\n\nAI RABBI מאת ארגון בעזרת השם.\n\n https://www.AIRabbi.org\n\nתשובות לשאלות על החיים היהודיים ב-30 שפות.\n\nגלה את חכמת היהדות בהישג ידך, האפליקציה של הרב ירון ראובן- תשובת הרב בבינה מלאכותית, מציעה חכמה והכוונה בשפות רבות, תוך שימוש במקורות מהימנים ואמינים.\n\n#תורה #יהדות #הרבירוןראובן #אלוקים #קירוב  #חזרהבתשובה #יראתשמיים #חיזוק #הרבאפריםכחלון #ארגוןבעזרתהשם #חסד"
+            },
+            "defaultAudioLanguage": "iw"
+          },
+          "contentDetails": {
+            "duration": "PT1H19M57S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "187",
+            "likeCount": "6",
+            "favoriteCount": "0",
+            "commentCount": "5"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "PYNu41ac04U": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:27.295868+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278171+00:00",
         "first_seen_at": "2026-09-18T22:12:27.295853+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "VEdpoX1Bf-enN2xsQLt0jQKhink",
@@ -33021,14 +33134,98 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T18:02:21Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "NgBmsrKqfBflSyqi7oAXYcj6pMs",
+          "id": "PYNu41ac04U",
+          "snippet": {
+            "publishedAt": "2026-09-18T18:02:21Z",
+            "channelId": "UCkH1uDkyuO9sVjSqdqBygOg",
+            "title": "Behind The Desk: Live with Mark Liu",
+            "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for air in real time. We’re pulling back the curtain on The Desk and bringing you inside the newsroom.\n\nText The Desk: 818-221-2222\n\nLos Angeles live news | behind the scenes | Mark Liu | newsroom stream\n\n\n\nSubscribe Here: youtube.com/@CBSLA\nOfficial Site: cbsla.com\nTwitter:  twitter.com/cbslosangeles\nFacebook: facebook.com/cbsla\nInstagram: instagram.com/cbsla",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/PYNu41ac04U/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/PYNu41ac04U/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/PYNu41ac04U/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/PYNu41ac04U/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/PYNu41ac04U/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "CBS LA",
+            "tags": [
+              "Los Angeles",
+              "CBS Los Angeles",
+              "CBS Local",
+              "CBSLA",
+              "cbs news",
+              "local news",
+              "socal",
+              "california",
+              "southern california",
+              "breaking news"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Behind The Desk: Live with Mark Liu",
+              "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for air in real time. We’re pulling back the curtain on The Desk and bringing you inside the newsroom.\n\nText The Desk: 818-221-2222\n\nLos Angeles live news | behind the scenes | Mark Liu | newsroom stream\n\n\n\nSubscribe Here: youtube.com/@CBSLA\nOfficial Site: cbsla.com\nTwitter:  twitter.com/cbslosangeles\nFacebook: facebook.com/cbsla\nInstagram: instagram.com/cbsla"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT1H21S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1482",
+            "likeCount": "14",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "-Dcm2ChP6c8": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:27.295882+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278181+00:00",
         "first_seen_at": "2026-09-18T22:12:27.295879+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "pzhBU6kgubD90TKEzG0IJ0qoXLE",
@@ -33072,7 +33269,83 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T16:00:05Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "N4SOZreCUhnDmRRIzdKhW1Mpy6U",
+          "id": "-Dcm2ChP6c8",
+          "snippet": {
+            "publishedAt": "2026-09-18T16:00:05Z",
+            "channelId": "UCZbyCfypZoUbx70dUg32i7A",
+            "title": "Clancy Trial’s Impact on Jury System and Courtroom Observations of Holdout Juror, with Brian Entin",
+            "description": "In The Well hosts Mark Geragos and Matt Murphy join the show to discuss Turtleboy News founder Aidan Kearney doxxing the Lindsay Clancy holdout juror’s identity, why it’s unlikely defense attorney Kevin Reddington was involved in the doxxing, why doxxing is a form of jury intimidation, the lasting effects of the holdout juror’s doxxing on the jury system, NewsNation Senior National Correspondent Brian Entin joins Mark and Matt to discuss his experience on the ground at the Lindsay Clancy trial, Brian’s observations of the holdout juror in the courtroom, why it’s possible Gayle King knew the identification of the holdout juror before she asked fellow juror Paula Devlin about his physical characteristics, why the prosecution and defense may have selected the holdout juror because of his criminal record, the clash of supporters outside the trial, Brian reveals the moment he witnessed the turning point in the public perception of the Lindsay Clancy trial, and more.\n \nMark Geragos: https://geragos.com\n \nMatt Murphy: https://www.mattmurphylaw.com\n \nBrian Entin: https://www.youtube.com/@BrianEntinInvestigates\n \nFollow MK True Crime on all social platforms:\nYouTube - https://www.youtube.com/@MKTrueCrime\nX - https://x.com/mktruecrime\nInstagram - https://www.instagram.com/mktruecrime\nTikTok - https://www.tiktok.com/@mktruecrime",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/-Dcm2ChP6c8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/-Dcm2ChP6c8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/-Dcm2ChP6c8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/-Dcm2ChP6c8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/-Dcm2ChP6c8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "MK True Crime",
+            "tags": [
+              "megyn kelly",
+              "megyn kelly true crime"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Clancy Trial’s Impact on Jury System and Courtroom Observations of Holdout Juror, with Brian Entin",
+              "description": "In The Well hosts Mark Geragos and Matt Murphy join the show to discuss Turtleboy News founder Aidan Kearney doxxing the Lindsay Clancy holdout juror’s identity, why it’s unlikely defense attorney Kevin Reddington was involved in the doxxing, why doxxing is a form of jury intimidation, the lasting effects of the holdout juror’s doxxing on the jury system, NewsNation Senior National Correspondent Brian Entin joins Mark and Matt to discuss his experience on the ground at the Lindsay Clancy trial, Brian’s observations of the holdout juror in the courtroom, why it’s possible Gayle King knew the identification of the holdout juror before she asked fellow juror Paula Devlin about his physical characteristics, why the prosecution and defense may have selected the holdout juror because of his criminal record, the clash of supporters outside the trial, Brian reveals the moment he witnessed the turning point in the public perception of the Lindsay Clancy trial, and more.\n \nMark Geragos: https://geragos.com\n \nMatt Murphy: https://www.mattmurphylaw.com\n \nBrian Entin: https://www.youtube.com/@BrianEntinInvestigates\n \nFollow MK True Crime on all social platforms:\nYouTube - https://www.youtube.com/@MKTrueCrime\nX - https://x.com/mktruecrime\nInstagram - https://www.instagram.com/mktruecrime\nTikTok - https://www.tiktok.com/@mktruecrime"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT42M38S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "33030",
+            "likeCount": "1106",
+            "favoriteCount": "0",
+            "commentCount": "203"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "ajtI_wnPARw": {
         "status": "pending",
@@ -33220,10 +33493,10 @@
       },
       "S4igM0EG5II": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:27.295894+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278191+00:00",
         "first_seen_at": "2026-09-18T22:12:27.295892+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "wq-8MD6mhVnnkpRmmMx50UvTJjU",
@@ -33267,14 +33540,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T23:00:06Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "zlWhKG_bnIs47XgduGrz2fZMCGA",
+          "id": "S4igM0EG5II",
+          "snippet": {
+            "publishedAt": "2026-09-16T23:00:06Z",
+            "channelId": "UC7Ub1YkAZP_bCkDCGe3pN7Q",
+            "title": "SANDRA RIVERA: LA MUJER DETRÁS DE LOS PREMIOS CRISTO REY | UNA HISTORIA DE TALENTO Y PROPÓSITO",
+            "description": "En este episodio de EN CONFIANZA CON TITO VARELA conversamos con Sandra Rivera, creadora de los Premios Cristo Rey, una iniciativa que nació en medio de la pandemia con un propósito muy especial: visibilizar, reconocer y exaltar el talento de nuestra región.\n\nLo que comenzó como una idea en un momento de incertidumbre terminó convirtiéndose en una iniciativa que ha ganado espacio y reconocimiento en la ciudad, conectando a personas, artistas, emprendedores, profesionales y diferentes talentos que merecen ser vistos y reconocidos.\n\nSandra nos cuenta cómo nació esta idea, qué la motivó a crear los Premios Cristo Rey y cuáles fueron los retos de sacar adelante un proyecto que buscaba darle protagonismo al talento local.\n\nEn una conversación cercana y amena con Tito Varela, conoceremos también a la mujer que está detrás de esta iniciativa: sus motivaciones, sus aprendizajes y la importancia de creer en las capacidades de quienes construyen región desde diferentes escenarios.\n\nUna historia sobre visión, perseverancia, reconocimiento y amor por el talento de nuestra tierra.\n\nPorque muchas veces el talento está ahí… solo necesita que alguien decida ponerlo en el lugar donde merece estar.\n\n🎙️ EN CONFIANZA CON TITO VARELA\n\nHistorias reales, conversaciones auténticas y personajes que tienen algo que contar.\n\n#EnConfianzaConTitoVarela #SandraRivera #PremiosCristoRey #TitoVarela #TalentoVallecaucano #Cali #HistoriasQueInspiran #TalentoLocal #Podcast #ValleDelCauca #CristoRey",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/S4igM0EG5II/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/S4igM0EG5II/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/S4igM0EG5II/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/S4igM0EG5II/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/S4igM0EG5II/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "TITO VARELA COMUNICA",
+            "categoryId": "20",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "SANDRA RIVERA: LA MUJER DETRÁS DE LOS PREMIOS CRISTO REY | UNA HISTORIA DE TALENTO Y PROPÓSITO",
+              "description": "En este episodio de EN CONFIANZA CON TITO VARELA conversamos con Sandra Rivera, creadora de los Premios Cristo Rey, una iniciativa que nació en medio de la pandemia con un propósito muy especial: visibilizar, reconocer y exaltar el talento de nuestra región.\n\nLo que comenzó como una idea en un momento de incertidumbre terminó convirtiéndose en una iniciativa que ha ganado espacio y reconocimiento en la ciudad, conectando a personas, artistas, emprendedores, profesionales y diferentes talentos que merecen ser vistos y reconocidos.\n\nSandra nos cuenta cómo nació esta idea, qué la motivó a crear los Premios Cristo Rey y cuáles fueron los retos de sacar adelante un proyecto que buscaba darle protagonismo al talento local.\n\nEn una conversación cercana y amena con Tito Varela, conoceremos también a la mujer que está detrás de esta iniciativa: sus motivaciones, sus aprendizajes y la importancia de creer en las capacidades de quienes construyen región desde diferentes escenarios.\n\nUna historia sobre visión, perseverancia, reconocimiento y amor por el talento de nuestra tierra.\n\nPorque muchas veces el talento está ahí… solo necesita que alguien decida ponerlo en el lugar donde merece estar.\n\n🎙️ EN CONFIANZA CON TITO VARELA\n\nHistorias reales, conversaciones auténticas y personajes que tienen algo que contar.\n\n#EnConfianzaConTitoVarela #SandraRivera #PremiosCristoRey #TitoVarela #TalentoVallecaucano #Cali #HistoriasQueInspiran #TalentoLocal #Podcast #ValleDelCauca #CristoRey"
+            },
+            "defaultAudioLanguage": "es"
+          },
+          "contentDetails": {
+            "duration": "PT42M10S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "88",
+            "likeCount": "6",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "bAbIbJkqV_I": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:27.295901+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278202+00:00",
         "first_seen_at": "2026-09-18T22:12:27.295897+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "PCtk9rbjz0YOHA_rCAHy7pFyNbw",
@@ -33323,14 +33668,109 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T19:18:58Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "nEbRjZ46ywtKvm29wFpbPGTpFkY",
+          "id": "bAbIbJkqV_I",
+          "snippet": {
+            "publishedAt": "2026-09-16T19:18:58Z",
+            "channelId": "UC9G8DcGtPfHsVEfUTM_TjEw",
+            "title": "The AI Opportunity: Silicon to Systems | Intel Business",
+            "description": "For nearly 60 years, Intel has transformed silicon into solutions.​\n\nAt AI Infra Summit 2026, Intel CEO Lip-Bu Tan joined Ed Nelson, Strategy Director and Co-Founder of AI Infra Summit, for a fireside chat on Intel’s transformation and the future of AI infrastructure.​\n\nThey discuss responsible AI adoption, the growing importance of CPUs, accelerators, software and systems, Intel’s approach to partnership and competition, and the manufacturing and advanced-packaging investments needed to help customers scale AI.​\n\nSubscribe now to Intel Business on YouTube: https://intel.ly/43XZh6J \n\nAbout Intel Business:\nGet all the IT info you need, right here. From data centers to devices, the Intel® Business Center has the resources, guidance, and expert insights you need to get your IT projects done right.\n\nConnect with Intel Business:\nVisit Intel Business WEBSITE: http://intel.ly/itcenter \nFollow Intel Business on X: https://twitter.com/IntelBusiness \nFollow Intel Business on LINKEDIN: https://linkedin.com/showcase/intel-business                         \nFollow Intel Business on FACEBOOK: https://facebook.com/IntelBusiness \n\nThe AI Opportunity: Silicon to Systems | Intel Business\nhttps://www.youtube.com/intelbusiness",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/bAbIbJkqV_I/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/bAbIbJkqV_I/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/bAbIbJkqV_I/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/bAbIbJkqV_I/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/bAbIbJkqV_I/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "uhd": {
+                "url": "https://i.ytimg.com/vi/bAbIbJkqV_I/uhddefault.jpg",
+                "width": 3840,
+                "height": 2160
+              }
+            },
+            "channelTitle": "Intel Business",
+            "tags": [
+              "intel",
+              "intel business",
+              "intel computer",
+              "computers for business",
+              "computer technology",
+              "big data",
+              "pc computer",
+              "pc",
+              "pc intel",
+              "computer processor",
+              "cloud computing",
+              "future of business",
+              "technology",
+              "tech",
+              "ai",
+              "artificial intelligence"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "The AI Opportunity: Silicon to Systems | Intel Business",
+              "description": "For nearly 60 years, Intel has transformed silicon into solutions.​\n\nAt AI Infra Summit 2026, Intel CEO Lip-Bu Tan joined Ed Nelson, Strategy Director and Co-Founder of AI Infra Summit, for a fireside chat on Intel’s transformation and the future of AI infrastructure.​\n\nThey discuss responsible AI adoption, the growing importance of CPUs, accelerators, software and systems, Intel’s approach to partnership and competition, and the manufacturing and advanced-packaging investments needed to help customers scale AI.​\n\nSubscribe now to Intel Business on YouTube: https://intel.ly/43XZh6J \n\nAbout Intel Business:\nGet all the IT info you need, right here. From data centers to devices, the Intel® Business Center has the resources, guidance, and expert insights you need to get your IT projects done right.\n\nConnect with Intel Business:\nVisit Intel Business WEBSITE: http://intel.ly/itcenter \nFollow Intel Business on X: https://twitter.com/IntelBusiness \nFollow Intel Business on LINKEDIN: https://linkedin.com/showcase/intel-business                         \nFollow Intel Business on FACEBOOK: https://facebook.com/IntelBusiness \n\nThe AI Opportunity: Silicon to Systems | Intel Business\nhttps://www.youtube.com/intelbusiness"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT21M58S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": false,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "8489",
+            "likeCount": "85",
+            "favoriteCount": "0",
+            "commentCount": "2"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "ohf9RJ3buJU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:27.295906+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278212+00:00",
         "first_seen_at": "2026-09-18T22:12:27.295904+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "5Zk51tWBRhZkEyaOQVpKFeUsqro",
@@ -33374,7 +33814,91 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T18:23:11Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "XKoFNOUrGiltxzSzXrg4PUZ-CtQ",
+          "id": "ohf9RJ3buJU",
+          "snippet": {
+            "publishedAt": "2026-09-16T18:23:11Z",
+            "channelId": "UCkH1uDkyuO9sVjSqdqBygOg",
+            "title": "Behind The Desk: Live with Mark Liu",
+            "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for air in real time. We’re pulling back the curtain on The Desk and bringing you inside the newsroom.\n\nText The Desk: 818-221-2222\n\nLos Angeles live news | behind the scenes | Mark Liu | newsroom stream\n\n\n\nSubscribe Here: youtube.com/@CBSLA\nOfficial Site: cbsla.com\nTwitter:  twitter.com/cbslosangeles\nFacebook: facebook.com/cbsla\nInstagram: instagram.com/cbsla",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/ohf9RJ3buJU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/ohf9RJ3buJU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/ohf9RJ3buJU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/ohf9RJ3buJU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/ohf9RJ3buJU/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "CBS LA",
+            "tags": [
+              "Los Angeles",
+              "CBS Los Angeles",
+              "CBS Local",
+              "CBSLA",
+              "cbs news",
+              "local news",
+              "socal",
+              "california",
+              "southern california",
+              "breaking news"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Behind The Desk: Live with Mark Liu",
+              "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for air in real time. We’re pulling back the curtain on The Desk and bringing you inside the newsroom.\n\nText The Desk: 818-221-2222\n\nLos Angeles live news | behind the scenes | Mark Liu | newsroom stream\n\n\n\nSubscribe Here: youtube.com/@CBSLA\nOfficial Site: cbsla.com\nTwitter:  twitter.com/cbslosangeles\nFacebook: facebook.com/cbsla\nInstagram: instagram.com/cbsla"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT59M11S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "2225",
+            "likeCount": "29",
+            "favoriteCount": "0",
+            "commentCount": "1"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "zM58JGgD3eE": {
         "status": "pending",
@@ -33714,9 +34238,9 @@
         }
       },
       "sOM56-_kuzU": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:27.295943+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.031749+00:00",
         "first_seen_at": "2026-09-18T22:12:27.295941+00:00",
         "attempts": 0,
         "item": {
@@ -35570,9 +36094,9 @@
         }
       },
       "iYF1UXjLzDQ": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:30.850711+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.031974+00:00",
         "first_seen_at": "2026-09-18T22:12:30.850709+00:00",
         "attempts": 0,
         "item": {
@@ -36987,9 +37511,9 @@
         }
       },
       "5L7F04eKNeI": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:34.580763+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032123+00:00",
         "first_seen_at": "2026-09-18T22:12:34.580760+00:00",
         "attempts": 0,
         "item": {
@@ -38232,9 +38756,9 @@
         "next_retry_at": "2026-09-27T10:34:39.502610+00:00"
       },
       "JG__sioj_ZY": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.151984+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032176+00:00",
         "first_seen_at": "2026-09-18T22:12:37.151982+00:00",
         "attempts": 0,
         "item": {
@@ -38283,9 +38807,9 @@
         }
       },
       "ipGVm1E7Uzc": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T10:34:39.742475+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032187+00:00",
         "first_seen_at": "2026-09-18T22:12:37.151990+00:00",
         "attempts": 1,
         "item": {
@@ -38441,9 +38965,9 @@
         "next_retry_at": "2026-09-27T10:34:39.502610+00:00"
       },
       "Sma2vjno_bg": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T10:34:39.742484+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032197+00:00",
         "first_seen_at": "2026-09-18T22:12:37.151996+00:00",
         "attempts": 1,
         "item": {
@@ -38564,9 +39088,9 @@
         "next_retry_at": "2026-09-27T10:34:39.502610+00:00"
       },
       "UUwSmudXl-c": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152006+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032208+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152004+00:00",
         "attempts": 0,
         "item": {
@@ -38615,9 +39139,9 @@
         }
       },
       "aEKgSrRguA0": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152012+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032221+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152010+00:00",
         "attempts": 0,
         "item": {
@@ -38671,9 +39195,9 @@
         }
       },
       "dLQzVLtvdv8": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152017+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032235+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152015+00:00",
         "attempts": 0,
         "item": {
@@ -38727,9 +39251,9 @@
         }
       },
       "XFwCg9BaHDM": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152022+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032242+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152020+00:00",
         "attempts": 0,
         "item": {
@@ -38783,9 +39307,9 @@
         }
       },
       "4I89CpTUOCI": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T10:34:39.742492+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032248+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152026+00:00",
         "attempts": 1,
         "item": {
@@ -38938,9 +39462,9 @@
         "next_retry_at": "2026-09-27T10:34:39.502610+00:00"
       },
       "JCHROMnvpwU": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T10:34:39.742501+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032254+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152032+00:00",
         "attempts": 1,
         "item": {
@@ -39094,9 +39618,9 @@
         "next_retry_at": "2026-09-27T10:34:39.502610+00:00"
       },
       "eO9OJRyRnpA": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152040+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032260+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152038+00:00",
         "attempts": 0,
         "item": {
@@ -39145,9 +39669,9 @@
         }
       },
       "bHwHFBlVZHY": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311674+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032266+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152043+00:00",
         "attempts": 1,
         "item": {
@@ -39267,9 +39791,9 @@
         "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "XIt87tJHm-g": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311696+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032272+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152048+00:00",
         "attempts": 1,
         "item": {
@@ -39419,9 +39943,9 @@
         "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "n3ONOiHYN8s": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:37.152055+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032279+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152053+00:00",
         "attempts": 0,
         "item": {
@@ -39475,9 +39999,9 @@
         }
       },
       "zPJsX12AdLI": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311710+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032285+00:00",
         "first_seen_at": "2026-09-18T22:12:37.152058+00:00",
         "attempts": 1,
         "item": {
@@ -43249,9 +43773,9 @@
         }
       },
       "3GBD6PGskW8": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319906+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032371+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319904+00:00",
         "attempts": 0,
         "item": {
@@ -43305,9 +43829,9 @@
         }
       },
       "nJrYWyicGrE": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319915+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032378+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319913+00:00",
         "attempts": 0,
         "item": {
@@ -43356,9 +43880,9 @@
         }
       },
       "krRoiqru9B8": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319919+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032384+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319918+00:00",
         "attempts": 0,
         "item": {
@@ -43407,9 +43931,9 @@
         }
       },
       "PLK_5Uvi9hA": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319925+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032391+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319923+00:00",
         "attempts": 0,
         "item": {
@@ -43458,9 +43982,9 @@
         }
       },
       "vmzKqn5GOaw": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319932+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032398+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319930+00:00",
         "attempts": 0,
         "item": {
@@ -43509,9 +44033,9 @@
         }
       },
       "uZrdJofGUvA": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T20:17:45.936966+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.032403+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319934+00:00",
         "attempts": 1,
         "item": {
@@ -48829,10 +49353,10 @@
       },
       "1XqRoyY-mwY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337839+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.277997+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337821+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "JEvJ6UoXdSbIdYFr2ziDiVwE3IA",
@@ -48876,14 +49400,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T06:46:11Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "JbrU5wvxWac_JiYJbRTFULEVmB4",
+          "id": "1XqRoyY-mwY",
+          "snippet": {
+            "publishedAt": "2026-09-19T06:46:11Z",
+            "channelId": "UCEUsOpcirWIac-sEGFv4ccQ",
+            "title": "O novo motor de Elon Musk acaba de revolucionar o mundo dos veículos elétricos!",
+            "description": "",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/1XqRoyY-mwY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/1XqRoyY-mwY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/1XqRoyY-mwY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/1XqRoyY-mwY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/1XqRoyY-mwY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "AutoVisão",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "pt-PT",
+            "localized": {
+              "title": "O novo motor de Elon Musk acaba de revolucionar o mundo dos veículos elétricos!",
+              "description": ""
+            },
+            "defaultAudioLanguage": "pt-PT"
+          },
+          "contentDetails": {
+            "duration": "PT20M16S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "574",
+            "likeCount": "13",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "EE6Hx2MBeBg": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337853+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278021+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337851+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "tjCky44uxFbljZoEmJGg0ub5Ius",
@@ -48927,14 +49523,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T05:01:45Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "YqL-zK4hxrjIusfWAFbS0hDRR7Q",
+          "id": "EE6Hx2MBeBg",
+          "snippet": {
+            "publishedAt": "2026-09-19T05:01:45Z",
+            "channelId": "UCK4i7le8YgNuikUtZBg0gSA",
+            "title": "Elon Musk BRUTALLY Honest Interview LEAVES Audience Speechless (Must Watch)",
+            "description": "",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/EE6Hx2MBeBg/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/EE6Hx2MBeBg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/EE6Hx2MBeBg/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/EE6Hx2MBeBg/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/EE6Hx2MBeBg/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The Money Investing",
+            "categoryId": "10",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk BRUTALLY Honest Interview LEAVES Audience Speechless (Must Watch)",
+              "description": ""
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT47M31S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "14932",
+            "likeCount": "119",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "IgLBsvYBLaU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337858+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278036+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337856+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "py70oMY8YqFV6H4CKHjkwfrl8rI",
@@ -48973,14 +49641,81 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T04:06:32Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "Dh0EcSmhEiYmya3MV5gzC-6fHH8",
+          "id": "IgLBsvYBLaU",
+          "snippet": {
+            "publishedAt": "2026-09-19T04:06:32Z",
+            "channelId": "UCZ3vPnc3z4F7fpVZ9yQJXFg",
+            "title": "👉ELON MUSK SAYS.. GOD HAS WAITED HOURS FOR YOU TO OPEN THIS...",
+            "description": "#Archangel #Faith\n #Gratitude\n\n\n👉ELON MUSK SAYS.. GOD HAS WAITED HOURS FOR YOU TO OPEN THIS...\n\n\n#Archangel #Faith\n #Gratitude #SpiritualJourney\n#Jesus\n#Godmessage \n#godmessage\n#jesus\n#jesusmessage \n#godmessages\n#lawofattraction\n#manifesting\n#godsaystoday\n#godmessagetoday\n#godwords\n#lordmessagei\n#godmessagesforme \n#jesusewords\n#godsmessages\n#godsmessageforme",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/IgLBsvYBLaU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/IgLBsvYBLaU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/IgLBsvYBLaU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/IgLBsvYBLaU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Archangel Michael Says",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "👉ELON MUSK SAYS.. GOD HAS WAITED HOURS FOR YOU TO OPEN THIS...",
+              "description": "#Archangel #Faith\n #Gratitude\n\n\n👉ELON MUSK SAYS.. GOD HAS WAITED HOURS FOR YOU TO OPEN THIS...\n\n\n#Archangel #Faith\n #Gratitude #SpiritualJourney\n#Jesus\n#Godmessage \n#godmessage\n#jesus\n#jesusmessage \n#godmessages\n#lawofattraction\n#manifesting\n#godsaystoday\n#godmessagetoday\n#godwords\n#lordmessagei\n#godmessagesforme \n#jesusewords\n#godsmessages\n#godsmessageforme"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT59M19S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1136",
+            "likeCount": "242",
+            "favoriteCount": "0",
+            "commentCount": "726"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "Rf7NALzpLQ4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337863+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278049+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337861+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "NkWXhA3hY8e7slU93KrdseT_wEE",
@@ -49024,14 +49759,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T03:00:10Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "WbhKOupSodnQyXlWi17dVzI3_rA",
+          "id": "Rf7NALzpLQ4",
+          "snippet": {
+            "publishedAt": "2026-09-19T03:00:10Z",
+            "channelId": "UCuE8q53f2KQxUJ0EuWcgXXg",
+            "title": "Elon Musk AI Warning, Pentagon Weapons Crisis: LIVE 5:30pm PST",
+            "description": "FEROCIOUS FRIDAYS ARE BACK!! Tonight's show will cover leadership case study with Elon Musk and his AI warning, the interceptor munition and weapons shortage in the pentagon, and Thomas Massie's renewed Epstein push.  \n\nPlus our satire segment The Leadership Lessons of South Park is back!!\n\nARE YOU READY TO GET UNSTUCK AND MAKE YOUR BREAKTHROUGH IN YOUR BUSINESS AND IN YOUR LIFE?\n\n🔥 THE FEROCIOUS OPTIMIST — Coaching Membership & Community\nGet unstuck. Find your spark. Feel on fire again. Come back to the version of yourself that had fire in his chest — and stand alongside leaders who refuse to settle for a life that looks good on paper.\n→ https://ben-pappas-leadership-life-coaching.mykajabi.com/ben-pappas-ferocious-optimist-coaching-membership-community-3dcbd613-62d7-4cf1-af3f-cd275e8fab25\n\n🔥🔥 THE INNER CIRCLE — Weekly Mastermind\nGet coached by me every week in a room built for transformation — with ambitious, rising leaders: entrepreneurs, executives, founders, and owners. The weekly rhythm and real accountability turn a year of stuck into a month of breakthrough.\n→ https://ben-pappas-leadership-life-coaching.mykajabi.com/offers/goXfHShr/checkout\n\n🔥🔥🔥 STRATEGIC ADVISORY — 1:1 With Ben\nThe deep end. Private, direct, and built entirely around you — the inner game and the outer game, until you're the leader your business and your life have been waiting on. By application only. I take very few.\n→ Book your no-fee Discovery Strategy Session → https://calendly.com/benpappas1/60-minute-life-coaching-call\n\nI’m Ben Pappas — retired Marine LtCol, Force Recon and MARSOC, Strategist and Executive Leadership and Life Coach. I teach the 7 Forces of Ferocious Optimism, helping executives, founders, and business owners get unstuck, break through, and become the best leaders they can be — in their businesses and in their lives.\n\nThe difference between where you are and where you want to be is the skills you haven't learned yet. I’m giving you the skills. You just have to show up.\n\nThis isn’t motivation. It’s execution. Surround yourself with people who refuse average. Join the Ferocious Optimist coaching community. Link in bio. \n\n#elonmusk #ai #artificialintelligence #trump #leadership #leadershipdevelopment  #strategy #breakingnews #benpappas #ferociousoptimism  #ceo\n\n🎙️ New to streaming or looking to level up? Check out StreamYard and get $10 discount! 😍 https://streamyard.com/pal/d/5647869564485632",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Rf7NALzpLQ4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Rf7NALzpLQ4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Rf7NALzpLQ4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Rf7NALzpLQ4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Rf7NALzpLQ4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Ben Pappas ",
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk AI Warning, Pentagon Weapons Crisis: LIVE 5:30pm PST",
+              "description": "FEROCIOUS FRIDAYS ARE BACK!! Tonight's show will cover leadership case study with Elon Musk and his AI warning, the interceptor munition and weapons shortage in the pentagon, and Thomas Massie's renewed Epstein push.  \n\nPlus our satire segment The Leadership Lessons of South Park is back!!\n\nARE YOU READY TO GET UNSTUCK AND MAKE YOUR BREAKTHROUGH IN YOUR BUSINESS AND IN YOUR LIFE?\n\n🔥 THE FEROCIOUS OPTIMIST — Coaching Membership & Community\nGet unstuck. Find your spark. Feel on fire again. Come back to the version of yourself that had fire in his chest — and stand alongside leaders who refuse to settle for a life that looks good on paper.\n→ https://ben-pappas-leadership-life-coaching.mykajabi.com/ben-pappas-ferocious-optimist-coaching-membership-community-3dcbd613-62d7-4cf1-af3f-cd275e8fab25\n\n🔥🔥 THE INNER CIRCLE — Weekly Mastermind\nGet coached by me every week in a room built for transformation — with ambitious, rising leaders: entrepreneurs, executives, founders, and owners. The weekly rhythm and real accountability turn a year of stuck into a month of breakthrough.\n→ https://ben-pappas-leadership-life-coaching.mykajabi.com/offers/goXfHShr/checkout\n\n🔥🔥🔥 STRATEGIC ADVISORY — 1:1 With Ben\nThe deep end. Private, direct, and built entirely around you — the inner game and the outer game, until you're the leader your business and your life have been waiting on. By application only. I take very few.\n→ Book your no-fee Discovery Strategy Session → https://calendly.com/benpappas1/60-minute-life-coaching-call\n\nI’m Ben Pappas — retired Marine LtCol, Force Recon and MARSOC, Strategist and Executive Leadership and Life Coach. I teach the 7 Forces of Ferocious Optimism, helping executives, founders, and business owners get unstuck, break through, and become the best leaders they can be — in their businesses and in their lives.\n\nThe difference between where you are and where you want to be is the skills you haven't learned yet. I’m giving you the skills. You just have to show up.\n\nThis isn’t motivation. It’s execution. Surround yourself with people who refuse average. Join the Ferocious Optimist coaching community. Link in bio. \n\n#elonmusk #ai #artificialintelligence #trump #leadership #leadershipdevelopment  #strategy #breakingnews #benpappas #ferociousoptimism  #ceo\n\n🎙️ New to streaming or looking to level up? Check out StreamYard and get $10 discount! 😍 https://streamyard.com/pal/d/5647869564485632"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT2H10M21S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "5620",
+            "likeCount": "167",
+            "favoriteCount": "0",
+            "commentCount": "32"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "p1PcuRcyubA": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337866+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278061+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337865+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "RheHEP-JQ-4VlD9fyDRdSN8RJV0",
@@ -49075,14 +49882,103 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T01:00:30Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "o2MwIaxWUJtOLrGV-i-2dz_CV3s",
+          "id": "p1PcuRcyubA",
+          "snippet": {
+            "publishedAt": "2026-09-19T01:00:30Z",
+            "channelId": "UCD7X474y40mAYCMa0XXd_Iw",
+            "title": "Daniel Lopez revela o que ninguém te contou sobre Elon Musk",
+            "description": "Elon Musk é um dos nomes mais comentados do mundo da tecnologia, mas há detalhes sobre sua trajetória que poucos conhecem. Neste corte, Daniel Lopez comenta um ponto pouco discutido sobre o empresário, trazendo uma análise sobre comportamento, poder e os bastidores do mundo da inovação.\n\n⭐ Créditos | Assista ao Episódio Original: https://www.youtube.com/watch?v=22Up6ittPek\n🔔 Inscreva-se no canal e ative o sininho para não perder os próximos cortes.\n🎬 Podcast: Inteligência Ltda.\n\n#DanielLopez #ElonMusk #Tecnologia #CortesShaolin",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/p1PcuRcyubA/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/p1PcuRcyubA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/p1PcuRcyubA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/p1PcuRcyubA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/p1PcuRcyubA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Cortes Shaolin",
+            "tags": [
+              "daniel lopez",
+              "elon musk",
+              "cortes daniel lopez",
+              "tecnologia",
+              "bastidores elon musk",
+              "inteligência ltda",
+              "cortes shaolin",
+              "empreendedorismo",
+              "inovação",
+              "x corp",
+              "tesla",
+              "spacex",
+              "curiosidades",
+              "podcast",
+              "cortes de podcast"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "pt-BR",
+            "localized": {
+              "title": "Daniel Lopez revela o que ninguém te contou sobre Elon Musk",
+              "description": "Elon Musk é um dos nomes mais comentados do mundo da tecnologia, mas há detalhes sobre sua trajetória que poucos conhecem. Neste corte, Daniel Lopez comenta um ponto pouco discutido sobre o empresário, trazendo uma análise sobre comportamento, poder e os bastidores do mundo da inovação.\n\n⭐ Créditos | Assista ao Episódio Original: https://www.youtube.com/watch?v=22Up6ittPek\n🔔 Inscreva-se no canal e ative o sininho para não perder os próximos cortes.\n🎬 Podcast: Inteligência Ltda.\n\n#DanielLopez #ElonMusk #Tecnologia #CortesShaolin"
+            },
+            "defaultAudioLanguage": "pt-BR"
+          },
+          "contentDetails": {
+            "duration": "PT23M9S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "34907",
+            "likeCount": "360",
+            "favoriteCount": "0",
+            "commentCount": "16"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "4i611hA9EcU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337870+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278072+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337869+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "S6vKv8PlG1ex7NXX4fOjfQZ8P04",
@@ -49126,14 +50022,116 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T01:00:11Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "mPBZ19VATZ8x7V99BKFQ1nF3FMg",
+          "id": "4i611hA9EcU",
+          "snippet": {
+            "publishedAt": "2026-09-19T01:00:11Z",
+            "channelId": "UC73Hz6b1NEKi_dJt9O3Nfvw",
+            "title": "👉DON’T IGNORE THIS: $3.5 TRILLION ELON MUSK– REWARD EVENT — JUST 4 MINUTES REMAIN!",
+            "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/4i611hA9EcU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/4i611hA9EcU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/4i611hA9EcU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/4i611hA9EcU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/4i611hA9EcU/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Michael Prophetic Word",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👉DON’T IGNORE THIS: $3.5 TRILLION ELON MUSK– REWARD EVENT — JUST 4 MINUTES REMAIN!",
+              "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT31M42S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "4117",
+            "likeCount": "430",
+            "favoriteCount": "0",
+            "commentCount": "768"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "MID9GyHmReE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337874+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278083+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337873+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "LO9fSTB82GprT3G5Zv-wz2M1gXE",
@@ -49177,14 +50175,110 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T00:26:18Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "5wj5XLQjBsjE4NUkQo9bQHlpBlc",
+          "id": "MID9GyHmReE",
+          "snippet": {
+            "publishedAt": "2026-09-19T00:26:18Z",
+            "channelId": "UCHkFuBOTGi9TjDNwoWsUoyg",
+            "title": "TRUMP & KENNEDY CENTER CRISIS | Putin, Elon Musk & JD Vance | The Psychic Reporter | Sept 18",
+            "description": "TRUMP & KENNEDY CENTER CRISIS | Putin, Elon Musk & JD Vance | The Psychic Reporter | Sept 18\n\nWelcome to tonight's edition of The Psychic Reporter with Annette Dion! In this Friday, September 18th, 2026 update, we tune into the pressing national events, political turmoil, and intuitive tarot insights regarding the current state of democracy in America.\n\nAnnette dives deep into the White House press ban, the growing crisis and civilian protest surrounding the JFK Performance Center, and intuitive readings on key figures including Vladimir Putin, Jack Smith, JD Vance, Elon Musk, and the tech industry's push with AI. Using the tarot, pendulum, and goddess guidance, we look at the cards to see what lies ahead, where international support comes into play, and how we can hold the light during dark times.\n\n🔮 BECOME A MEMBER & JOIN OUR UPCOMING EVENTS:\n\nJoin the Channel: Click the JOIN button above to gain access to exclusive spiritual classes, member-only live streams, and private community events!\n\nFall Equinox Psychic Party: Members are invited to our Fall Equinox Psychic Party on Saturday, September 19th! Don't miss out!\n\nShow Your Support: Please give this video a Thumbs Up 👍, leave a comment below (even a simple heart ❤️), and subscribe to help spread awareness!\n\n\n❤️ CONNECT WITH ANNETTE DION:\n\nBook a Reading (Text Only): 978-884-5399\n\nFacebook: https://www.facebook.com/annettedionpsychic\n\nChurch of Spirituality: Join our live spiritual broadcasts every Sunday at 1:00 PM Eastern!\n\nRemember: \"Experience woven together with knowledge creates a beautiful thing.\" Stand in your truth, stay connected with your community, and express your wisdom. Namaste. 🙏✨\n\n#ThePsychicReporter #AnnetteDion #PsychicTarot #Trump #Putin #ElonMusk #JDVance #KennedyCenter #TarotReading #PoliticalPsychic #Democracy #FallEquinox",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/MID9GyHmReE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/MID9GyHmReE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/MID9GyHmReE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/MID9GyHmReE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/MID9GyHmReE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Annette Dion",
+            "tags": [
+              "TRUMP & KENNEDY CENTER CRISIS | Putin",
+              "Elon Musk & JD Vance | The Psychic Reporter | Sept 18",
+              "The Psychic Reporter",
+              "Annette Dion",
+              "Trump predictions",
+              "Trump tarot reading",
+              "Trump Kennedy Center",
+              "Kennedy Center protests",
+              "Putin predictions",
+              "Vladimir Putin",
+              "Elon Musk",
+              "Elon Musk predictions",
+              "JD Vance",
+              "JD Vance predictions",
+              "Jack Smith",
+              "political tarot",
+              "political tarot reading",
+              "psychic predictions",
+              "tarot predictions 2026",
+              "Trump political future",
+              "Trump next move",
+              "elon musk lifestyle"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "TRUMP & KENNEDY CENTER CRISIS | Putin, Elon Musk & JD Vance | The Psychic Reporter | Sept 18",
+              "description": "TRUMP & KENNEDY CENTER CRISIS | Putin, Elon Musk & JD Vance | The Psychic Reporter | Sept 18\n\nWelcome to tonight's edition of The Psychic Reporter with Annette Dion! In this Friday, September 18th, 2026 update, we tune into the pressing national events, political turmoil, and intuitive tarot insights regarding the current state of democracy in America.\n\nAnnette dives deep into the White House press ban, the growing crisis and civilian protest surrounding the JFK Performance Center, and intuitive readings on key figures including Vladimir Putin, Jack Smith, JD Vance, Elon Musk, and the tech industry's push with AI. Using the tarot, pendulum, and goddess guidance, we look at the cards to see what lies ahead, where international support comes into play, and how we can hold the light during dark times.\n\n🔮 BECOME A MEMBER & JOIN OUR UPCOMING EVENTS:\n\nJoin the Channel: Click the JOIN button above to gain access to exclusive spiritual classes, member-only live streams, and private community events!\n\nFall Equinox Psychic Party: Members are invited to our Fall Equinox Psychic Party on Saturday, September 19th! Don't miss out!\n\nShow Your Support: Please give this video a Thumbs Up 👍, leave a comment below (even a simple heart ❤️), and subscribe to help spread awareness!\n\n\n❤️ CONNECT WITH ANNETTE DION:\n\nBook a Reading (Text Only): 978-884-5399\n\nFacebook: https://www.facebook.com/annettedionpsychic\n\nChurch of Spirituality: Join our live spiritual broadcasts every Sunday at 1:00 PM Eastern!\n\nRemember: \"Experience woven together with knowledge creates a beautiful thing.\" Stand in your truth, stay connected with your community, and express your wisdom. Namaste. 🙏✨\n\n#ThePsychicReporter #AnnetteDion #PsychicTarot #Trump #Putin #ElonMusk #JDVance #KennedyCenter #TarotReading #PoliticalPsychic #Democracy #FallEquinox"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT48M3S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "2514",
+            "likeCount": "289",
+            "favoriteCount": "0",
+            "commentCount": "69"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "hCXIaoxKr5A": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337878+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278094+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337877+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "Dv1c3OAVt8LX1SL6upVodByKv4w",
@@ -49233,14 +50327,104 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T00:00:27Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "nwfZF4d6Mp1Lczv1twWQkcR5Mls",
+          "id": "hCXIaoxKr5A",
+          "snippet": {
+            "publishedAt": "2026-09-19T00:00:27Z",
+            "channelId": "UCfqW_UyPUE-ojtOfGKKbY8g",
+            "title": "Elon Musk’s $119B Terafab: The Update That Broke The Industry!",
+            "description": "Elon Musk's $119B Terafab in Texas is 50 times the size of the Pentagon and aims to change semiconductor manufacturing forever. Discover the secrets behind the most expensive building on Earth and how it powers the future of AI, Optimus, and Starlink.\n\nThe Terafab is more than just a factory; it is a self-governing industrial city with its own 2-gigawatt private power grid and a mysterious circular particle accelerator. We break down the cutting-edge physics of Free Electron Lasers (FEL) and how Musk plans to bypass the global ASML monopoly to produce millions of wafers per month on American soil.\n\nIs this the rebirth of American industry or a high-stakes gamble that creates a dangerous single point of failure? We analyze the engineering hurdles, the partnership with Intel, and the 99% Syndrome that keeps chip executives awake at night.\n=====\nDisclaimer: This video is for informational and analytical purposes only; any discussion of Tesla’s future products, pricing, or features is based on publicly available information and informed analysis, not official confirmation, and viewers should verify important details through Tesla’s official channels before making any financial or purchasing decisions.\n#ElonMusk #Terafab #FutureTech #Semiconductors #Texas",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/hCXIaoxKr5A/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/hCXIaoxKr5A/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/hCXIaoxKr5A/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/hCXIaoxKr5A/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/hCXIaoxKr5A/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/hCXIaoxKr5A/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Tesla Insider News",
+            "tags": [
+              "tesla insider news",
+              "teslainsidernews",
+              "tesla",
+              "elon musk",
+              "tesla news",
+              "tesla 2026",
+              "tesla analysis",
+              "elon musk tesla",
+              "tesla rumors",
+              "tesla inside",
+              "tesla car"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "Elon Musk’s $119B Terafab: The Update That Broke The Industry!",
+              "description": "Elon Musk's $119B Terafab in Texas is 50 times the size of the Pentagon and aims to change semiconductor manufacturing forever. Discover the secrets behind the most expensive building on Earth and how it powers the future of AI, Optimus, and Starlink.\n\nThe Terafab is more than just a factory; it is a self-governing industrial city with its own 2-gigawatt private power grid and a mysterious circular particle accelerator. We break down the cutting-edge physics of Free Electron Lasers (FEL) and how Musk plans to bypass the global ASML monopoly to produce millions of wafers per month on American soil.\n\nIs this the rebirth of American industry or a high-stakes gamble that creates a dangerous single point of failure? We analyze the engineering hurdles, the partnership with Intel, and the 99% Syndrome that keeps chip executives awake at night.\n=====\nDisclaimer: This video is for informational and analytical purposes only; any discussion of Tesla’s future products, pricing, or features is based on publicly available information and informed analysis, not official confirmation, and viewers should verify important details through Tesla’s official channels before making any financial or purchasing decisions.\n#ElonMusk #Terafab #FutureTech #Semiconductors #Texas"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT22M34S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "10946",
+            "likeCount": "167",
+            "favoriteCount": "0",
+            "commentCount": "16"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "tMq2YSWAlrs": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337882+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278104+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337880+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "WnMYTHN7BmpwVy99r1VEwOAecrU",
@@ -49284,14 +50468,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T23:00:38Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "Mgo520Mk3ljOHIywjf3NUwDso34",
+          "id": "tMq2YSWAlrs",
+          "snippet": {
+            "publishedAt": "2026-09-18T23:00:38Z",
+            "channelId": "UCe_HuQyI2_vluXeXuUzMfxg",
+            "title": "Elon Musk posted 59 times on X today (09/18/26)",
+            "description": "Join this channel to get early-access:\nhttps://www.youtube.com/channel/UCe_HuQyI2_vluXeXuUzMfxg/join\n\nLISTEN to the 'Book of Elon' Audiobook on Audible: https://amzn.to/4ulgkg9\n\nStart your investing journey:\nhttps://www.interactivebrokers.ca/mkt/?src=jacobhY&url=%2Fen%2Fwhyib%2Foverview.php\n\nCalifornia High Speed Rail:\nhttps://x.com/nickshirleyy/status/2099997871370293613\n\nTimestamps:\n0:00 Introduction\n0:10 Tesla (7)\n3:29 X (2)\n4:03 SpaceX (3)\n4:47 Starlink (6)\n6:57 Neuralink (2)\n7:35 Grok (2)\n9:35 Grok Bot (6)\n10:36 OpenAI (2)\n10:54 AI (4)\n12:32 US Politics (4)\n15:41 Violence (1)\n15:51 Wokeness (5)\n16:53 Racism (2)\n17:16 Socialism (1)\n17:43 Misc (4)\n18:59 About Elon (5)\n20:09 Video Games (3)",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/tMq2YSWAlrs/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/tMq2YSWAlrs/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/tMq2YSWAlrs/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/tMq2YSWAlrs/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/tMq2YSWAlrs/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Jacob & Isaac",
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk posted 59 times on X today (09/18/26)",
+              "description": "Join this channel to get early-access:\nhttps://www.youtube.com/channel/UCe_HuQyI2_vluXeXuUzMfxg/join\n\nLISTEN to the 'Book of Elon' Audiobook on Audible: https://amzn.to/4ulgkg9\n\nStart your investing journey:\nhttps://www.interactivebrokers.ca/mkt/?src=jacobhY&url=%2Fen%2Fwhyib%2Foverview.php\n\nCalifornia High Speed Rail:\nhttps://x.com/nickshirleyy/status/2099997871370293613\n\nTimestamps:\n0:00 Introduction\n0:10 Tesla (7)\n3:29 X (2)\n4:03 SpaceX (3)\n4:47 Starlink (6)\n6:57 Neuralink (2)\n7:35 Grok (2)\n9:35 Grok Bot (6)\n10:36 OpenAI (2)\n10:54 AI (4)\n12:32 US Politics (4)\n15:41 Violence (1)\n15:51 Wokeness (5)\n16:53 Racism (2)\n17:16 Socialism (1)\n17:43 Misc (4)\n18:59 About Elon (5)\n20:09 Video Games (3)"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT21M9S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "34682",
+            "likeCount": "885",
+            "favoriteCount": "0",
+            "commentCount": "91"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "Riu7P3NVKPA": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337885+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278115+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337884+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "OZAf8NiWLIxujjw_UFFjkriBgqM",
@@ -49335,14 +50591,104 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T22:15:16Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "gNBiQDrxLiD6ptg58trxxbekoLs",
+          "id": "Riu7P3NVKPA",
+          "snippet": {
+            "publishedAt": "2026-09-18T22:15:16Z",
+            "channelId": "UCQFFultLoDaR3JzT1ETGz1Q",
+            "title": "ELON MUSK: MY QUEEN (ROMANTIC PARODY)",
+            "description": "⚠️ IMPORTANT DISCLAIMER\n\nI AM NOT ELON MUSK. THIS CHANNEL DOES NOT REPRESENT ELON MUSK AND IS NOT AFFILIATED WITH, SPONSORED BY, OR ENDORSED BY HIM.\n\nThe image and representation of Elon Musk are used exclusively for artistic and parody purposes, portraying a fictional, romantic, and narrative version of the character within stories and songs created for entertainment.\n\nThe songs, stories, situations, and representations shown on this channel are fictional. Elon Musk is not presented as the real singer, songwriter, producer, performer, or participant in these songs. I AM NOT ELON MUSK. THIS CHANNEL DOES NOT REPRESENT ELON MUSK AND IS NOT AFFILIATED WITH, SPONSORED BY, OR ENDORSED BY HIM.\n\nThe image and representation of Elon Musk are used exclusively for artistic and parody purposes, portraying a fictional, romantic, and narrative version of the character within stories and songs created for entertainment.\n\nThe songs, stories, situations, and representations shown on this channel are fictional. Elon Musk is not presented as the real singer, songwriter, producer, performer, or participant in these songs.\n\nSome people enter our lives as a single moment… and somehow become the chapter we never want to close.\n\n\nThere are moments when one person becomes so extraordinary in your eyes that no title, success, or place in the world matters as much as the feeling they awaken in your heart. ❤️\n\n**“ELON MUSK: MY QUEEN”** is a romantic love song centered on admiration, devotion, and the powerful feeling of seeing someone as the most precious woman in your world. Presented as an emotional romantic duet, the song brings together a man’s voice and a woman’s voice to create an intimate exchange between two people discovering what it means to be deeply valued and cherished.\n\nAt the heart of the song is the idea of **“my queen”**—not as a crown or a position, but as a symbol of the woman who commands your attention, inspires your affection, and makes your heart feel completely devoted. It is a story about admiration expressed through tenderness: seeing beauty in her presence, strength in her character, and something unforgettable in the connection between two hearts.\n\nThe duet allows that emotion to unfold from both perspectives. One voice expresses the awe of finding a woman who feels incomparable, while the other responds from the perspective of someone who wants to be loved not for perfection, but for who she truly is. Their voices create a romantic conversation filled with warmth, attraction, respect, and emotional closeness.\n\nIf there is a woman who makes you see love differently, someone whose presence makes an ordinary moment feel extraordinary, **“ELON MUSK: MY QUEEN”** is a song to dedicate with feeling. Let it accompany a romantic evening, share it with someone who holds a special place in your heart, or simply listen when you want a love song built around admiration and devotion. 💕🎶\n\nThe phrase **“my queen”** can mean something deeply personal: the woman you choose to honor, protect, appreciate, and love through the changing chapters of life. This romantic ballad celebrates that feeling without needing grand promises—only the certainty that someone has become extraordinarily important to your heart.\n\nIf this song speaks to the woman you would call your queen, leave a ❤️, share it with her, and subscribe for more romantic duets, emotional love songs, and heartfelt ballads.\n\nAnd tell us: **What quality in the woman you love makes her truly unforgettable to you?**\n\nIf there is someone who holds that special place in your heart, write **“SHE IS MY QUEEN”** in the comments. ❤️\n\nBecause sometimes the greatest compliment is not telling someone that she is perfect—it is telling her that, in your eyes, she is irreplaceable.\n\n\n#elonmuskmyqueen #myqueen #romanticduet #romanticlovesong #emotionalballad #loveballad #cancionesdeamor #baladasromanticas #cancionesromanticas #cancionesparadedicar #musicaparaparejas #musicaromantica #queenofmyheart\n\n\nelon musk my queen, my queen love song, elon musk romantic song, my queen duet, romantic love song duet, emotional love ballad, romantic duet, queen of my heart song, song for my queen, romantic song to dedicate, love song for couples, romantic ballad, emotional love song, heartfelt love duet, songs for lovers, music for couples",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Riu7P3NVKPA/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Riu7P3NVKPA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Riu7P3NVKPA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Riu7P3NVKPA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Riu7P3NVKPA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "ELON FAN PARODY ",
+            "tags": [
+              "elon musk my queen",
+              "my queen love song",
+              "elon musk romantic song",
+              "my queen duet",
+              "romantic love song duet",
+              "emotional love ballad",
+              "romantic duet",
+              "queen of my heart song",
+              "song for my queen",
+              "romantic song to dedicate",
+              "love song for couples",
+              "romantic ballad",
+              "emotional love song",
+              "heartfelt love duet",
+              "songs for lovers",
+              "music for couples"
+            ],
+            "categoryId": "10",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "ELON MUSK: MY QUEEN (ROMANTIC PARODY)",
+              "description": "⚠️ IMPORTANT DISCLAIMER\n\nI AM NOT ELON MUSK. THIS CHANNEL DOES NOT REPRESENT ELON MUSK AND IS NOT AFFILIATED WITH, SPONSORED BY, OR ENDORSED BY HIM.\n\nThe image and representation of Elon Musk are used exclusively for artistic and parody purposes, portraying a fictional, romantic, and narrative version of the character within stories and songs created for entertainment.\n\nThe songs, stories, situations, and representations shown on this channel are fictional. Elon Musk is not presented as the real singer, songwriter, producer, performer, or participant in these songs. I AM NOT ELON MUSK. THIS CHANNEL DOES NOT REPRESENT ELON MUSK AND IS NOT AFFILIATED WITH, SPONSORED BY, OR ENDORSED BY HIM.\n\nThe image and representation of Elon Musk are used exclusively for artistic and parody purposes, portraying a fictional, romantic, and narrative version of the character within stories and songs created for entertainment.\n\nThe songs, stories, situations, and representations shown on this channel are fictional. Elon Musk is not presented as the real singer, songwriter, producer, performer, or participant in these songs.\n\nSome people enter our lives as a single moment… and somehow become the chapter we never want to close.\n\n\nThere are moments when one person becomes so extraordinary in your eyes that no title, success, or place in the world matters as much as the feeling they awaken in your heart. ❤️\n\n**“ELON MUSK: MY QUEEN”** is a romantic love song centered on admiration, devotion, and the powerful feeling of seeing someone as the most precious woman in your world. Presented as an emotional romantic duet, the song brings together a man’s voice and a woman’s voice to create an intimate exchange between two people discovering what it means to be deeply valued and cherished.\n\nAt the heart of the song is the idea of **“my queen”**—not as a crown or a position, but as a symbol of the woman who commands your attention, inspires your affection, and makes your heart feel completely devoted. It is a story about admiration expressed through tenderness: seeing beauty in her presence, strength in her character, and something unforgettable in the connection between two hearts.\n\nThe duet allows that emotion to unfold from both perspectives. One voice expresses the awe of finding a woman who feels incomparable, while the other responds from the perspective of someone who wants to be loved not for perfection, but for who she truly is. Their voices create a romantic conversation filled with warmth, attraction, respect, and emotional closeness.\n\nIf there is a woman who makes you see love differently, someone whose presence makes an ordinary moment feel extraordinary, **“ELON MUSK: MY QUEEN”** is a song to dedicate with feeling. Let it accompany a romantic evening, share it with someone who holds a special place in your heart, or simply listen when you want a love song built around admiration and devotion. 💕🎶\n\nThe phrase **“my queen”** can mean something deeply personal: the woman you choose to honor, protect, appreciate, and love through the changing chapters of life. This romantic ballad celebrates that feeling without needing grand promises—only the certainty that someone has become extraordinarily important to your heart.\n\nIf this song speaks to the woman you would call your queen, leave a ❤️, share it with her, and subscribe for more romantic duets, emotional love songs, and heartfelt ballads.\n\nAnd tell us: **What quality in the woman you love makes her truly unforgettable to you?**\n\nIf there is someone who holds that special place in your heart, write **“SHE IS MY QUEEN”** in the comments. ❤️\n\nBecause sometimes the greatest compliment is not telling someone that she is perfect—it is telling her that, in your eyes, she is irreplaceable.\n\n\n#elonmuskmyqueen #myqueen #romanticduet #romanticlovesong #emotionalballad #loveballad #cancionesdeamor #baladasromanticas #cancionesromanticas #cancionesparadedicar #musicaparaparejas #musicaromantica #queenofmyheart\n\n\nelon musk my queen, my queen love song, elon musk romantic song, my queen duet, romantic love song duet, emotional love ballad, romantic duet, queen of my heart song, song for my queen, romantic song to dedicate, love song for couples, romantic ballad, emotional love song, heartfelt love duet, songs for lovers, music for couples"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT38M57S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "548",
+            "likeCount": "75",
+            "favoriteCount": "0",
+            "commentCount": "78"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "WoPz3uTlugs": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337889+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278138+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337888+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "hemqhMjAmXXzOChsV4iyF94ObVA",
@@ -49391,14 +50737,91 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T22:00:18Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "WmzjPuBdHxrJ51UwM57yRY4oWVo",
+          "id": "WoPz3uTlugs",
+          "snippet": {
+            "publishedAt": "2026-09-18T22:00:18Z",
+            "channelId": "UC1dVOvem05dyE2liuYOcgPw",
+            "title": "Elon Musk Was Even MORE Disturbing Than You Think",
+            "description": "👉 Subscribe now for clear, balanced breakdowns of the world's most powerful and polarizing figures — hit that subscribe button so you never miss a deep dive like this one. ⚖️✨\n\nIn this video, we take a hard, honest look at the controversies swirling around Elon Musk — the richest man in the world — and the reported behavior that his critics find deeply troubling, while giving his side and his defenders a fair hearing too. 🌍 The real picture is more complicated, and more contested, than any single headline.\n\nWe ground it in the documented reporting. 🗞️ In May 2025, The New York Times published a heavily sourced investigation, drawing on private messages, legal documents, and interviews with more than a dozen people, alleging that Musk's drug use \"went well beyond occasional use\" during the 2024 campaign, including ketamine, ecstasy, and psychedelic mushrooms. Musk pushed back hard, attacking the paper's credibility and telling a reporter to \"move on,\" and he has previously said he was prescribed ketamine for depression and doesn't like illegal drugs. We also cover the reporting on his erratic public conduct, including a widely condemned arm gesture at a rally that even a former friend criticized, his tangled family life and custody disputes, and the concerns some of his own business associates reportedly voiced.\n\nBut we keep the whole picture in view. 🚀 To his supporters, Musk is an eccentric genius whose relentless, high-risk drive built Tesla and SpaceX and reshaped entire industries, and they credit his government cost-cutting work with saving taxpayer money. His allies dismiss much of the critical coverage as biased, and Musk himself disputes many of the claims. We walk through what's documented, what's alleged, and what's genuinely contested, letting you weigh the evidence rather than handing you a verdict.\n\nThis is a grounded, balanced look at a genuinely divisive public figure, told with an even hand and an eye on what the record actually shows. 📜\n\n⭐ Don't forget to subscribe and turn on notifications so you're first to see the next deep dive behind the headlines. 🔔",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/WoPz3uTlugs/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/WoPz3uTlugs/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/WoPz3uTlugs/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/WoPz3uTlugs/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/WoPz3uTlugs/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "uhd": {
+                "url": "https://i.ytimg.com/vi/WoPz3uTlugs/uhddefault.jpg",
+                "width": 3840,
+                "height": 2160
+              }
+            },
+            "channelTitle": "bhd rub",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk Was Even MORE Disturbing Than You Think",
+              "description": "👉 Subscribe now for clear, balanced breakdowns of the world's most powerful and polarizing figures — hit that subscribe button so you never miss a deep dive like this one. ⚖️✨\n\nIn this video, we take a hard, honest look at the controversies swirling around Elon Musk — the richest man in the world — and the reported behavior that his critics find deeply troubling, while giving his side and his defenders a fair hearing too. 🌍 The real picture is more complicated, and more contested, than any single headline.\n\nWe ground it in the documented reporting. 🗞️ In May 2025, The New York Times published a heavily sourced investigation, drawing on private messages, legal documents, and interviews with more than a dozen people, alleging that Musk's drug use \"went well beyond occasional use\" during the 2024 campaign, including ketamine, ecstasy, and psychedelic mushrooms. Musk pushed back hard, attacking the paper's credibility and telling a reporter to \"move on,\" and he has previously said he was prescribed ketamine for depression and doesn't like illegal drugs. We also cover the reporting on his erratic public conduct, including a widely condemned arm gesture at a rally that even a former friend criticized, his tangled family life and custody disputes, and the concerns some of his own business associates reportedly voiced.\n\nBut we keep the whole picture in view. 🚀 To his supporters, Musk is an eccentric genius whose relentless, high-risk drive built Tesla and SpaceX and reshaped entire industries, and they credit his government cost-cutting work with saving taxpayer money. His allies dismiss much of the critical coverage as biased, and Musk himself disputes many of the claims. We walk through what's documented, what's alleged, and what's genuinely contested, letting you weigh the evidence rather than handing you a verdict.\n\nThis is a grounded, balanced look at a genuinely divisive public figure, told with an even hand and an eye on what the record actually shows. 📜\n\n⭐ Don't forget to subscribe and turn on notifications so you're first to see the next deep dive behind the headlines. 🔔"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT25M22S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "0",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "28HZz-JFv2M": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337893+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-21T17:51:18.278149+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337892+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "w9KezxXORSQHoIRhNu5qqBy2ahU",
@@ -49442,7 +50865,107 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T11:00:06Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-21T17:51:18.030966+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "rKg7d_e3H7iCsYCaK37xYFmTRLQ",
+          "id": "28HZz-JFv2M",
+          "snippet": {
+            "publishedAt": "2026-09-19T11:00:06Z",
+            "channelId": "UCG1U8m5Gae9sns1ASLVkZBw",
+            "title": "How Tesla Uses the 48 Laws of Power to Win | Elon Musk’s Secret Business Playbook",
+            "description": "Tesla’s Secret Playbook: How Elon Musk Uses the 48 Laws of Power\nHow Tesla Uses Power, Psychology & Strategy to Dominate\n10 Laws of Power Behind Tesla’s Rise\nElon Musk’s Tesla Strategy Explained Through the 48 Laws of Power\n\nHow did Tesla become one of the most talked-about and influential companies in the world?\n\nIn this documentary-style video, we explore how Tesla’s strategy reflects 10 powerful principles from Robert Greene’s The 48 Laws of Power — including attention, focus, timing, boldness, community, premium positioning, adaptability, and long-term planning.\n\nFrom the Cybertruck and Tesla’s global brand strategy to its charging network, software ecosystem, AI ambitions, robotics, and Elon Musk’s ability to command attention, this video breaks down the business psychology behind Tesla’s rise.\n\nYou’ll discover how Tesla appears to apply:\n\nLaw 6 – Court Attention at All Costs\nHow Tesla turns launches, products, and announcements into global conversations.\n\nLaw 13 – Appeal to Self-Interest\nWhy Tesla sells outcomes, convenience, status, innovation, and a vision of the future.\n\nLaw 23 – Concentrate Your Forces\nHow focus helped Tesla establish a powerful position in electric vehicles.\n\nLaw 43 – Work on Hearts and Minds\nHow Tesla created a passionate community of customers, followers, and advocates.\n\nLaw 28 – Enter Action With Boldness\nWhy Tesla repeatedly makes ambitious bets that traditional companies may avoid.\n\nLaw 29 – Plan All the Way to the End\nHow Tesla built an ecosystem around cars, software, charging, energy, AI, and technology.\n\nLaw 25 – Re-Create Yourself\nHow Tesla continues expanding beyond cars into energy, artificial intelligence, robotics, and advanced manufacturing.\n\nLaw 35 – Master the Art of Timing\nWhy Tesla’s rise came at a powerful moment for electric vehicles, batteries, technology, and environmental awareness.\n\nLaw 34 – Be Royal in Your Own Fashion\nHow premium positioning, branding, design, and perception helped Tesla stand apart.\n\nLaw 48 – Assume Formlessness\nWhy constant adaptation may be one of Tesla’s greatest strategic advantages.\n\nThis is not a claim that Tesla or Elon Musk literally follows Robert Greene’s book. Instead, we use the 48 Laws of Power as a framework to analyse Tesla’s business strategy, branding, innovation, marketing psychology, and competitive positioning.\n\nIf you’re interested in Tesla, Elon Musk, business strategy, entrepreneurship, branding, marketing, leadership, innovation, AI, psychology, startups, or the 48 Laws of Power, this documentary is for you.\n\nQuestion for you:\nWhich of these 10 Laws of Power do you think Tesla uses most effectively — attention, boldness, timing, focus, or adaptability?\n\nSubscribe for more documentary-style breakdowns of the strategies behind the world’s most powerful companies and entrepreneurs.\n\n#Tesla #ElonMusk #48LawsOfPower #BusinessStrategy",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/28HZz-JFv2M/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/28HZz-JFv2M/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/28HZz-JFv2M/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/28HZz-JFv2M/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/28HZz-JFv2M/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Toyin Popoola",
+            "tags": [
+              "Tesla",
+              "Elon Musk",
+              "48 Laws of Power",
+              "Tesla strategy",
+              "Elon Musk strategy",
+              "Tesla business strategy",
+              "Tesla documentary",
+              "Tesla success",
+              "Tesla marketing strategy",
+              "Tesla business model",
+              "Robert Greene",
+              "48 laws of power explained",
+              "business strategy",
+              "business psychology",
+              "power psychology",
+              "entrepreneurship",
+              "entrepreneur mindset",
+              "business lessons",
+              "Tesla secrets",
+              "Tesla analysis",
+              "Tesla branding",
+              "Tesla Cybertruck",
+              "Tesla Optimus",
+              "electric vehicles",
+              "EV industry",
+              "Tesla Supercharger"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-GB",
+            "localized": {
+              "title": "How Tesla Uses the 48 Laws of Power to Win | Elon Musk’s Secret Business Playbook",
+              "description": "Tesla’s Secret Playbook: How Elon Musk Uses the 48 Laws of Power\nHow Tesla Uses Power, Psychology & Strategy to Dominate\n10 Laws of Power Behind Tesla’s Rise\nElon Musk’s Tesla Strategy Explained Through the 48 Laws of Power\n\nHow did Tesla become one of the most talked-about and influential companies in the world?\n\nIn this documentary-style video, we explore how Tesla’s strategy reflects 10 powerful principles from Robert Greene’s The 48 Laws of Power — including attention, focus, timing, boldness, community, premium positioning, adaptability, and long-term planning.\n\nFrom the Cybertruck and Tesla’s global brand strategy to its charging network, software ecosystem, AI ambitions, robotics, and Elon Musk’s ability to command attention, this video breaks down the business psychology behind Tesla’s rise.\n\nYou’ll discover how Tesla appears to apply:\n\nLaw 6 – Court Attention at All Costs\nHow Tesla turns launches, products, and announcements into global conversations.\n\nLaw 13 – Appeal to Self-Interest\nWhy Tesla sells outcomes, convenience, status, innovation, and a vision of the future.\n\nLaw 23 – Concentrate Your Forces\nHow focus helped Tesla establish a powerful position in electric vehicles.\n\nLaw 43 – Work on Hearts and Minds\nHow Tesla created a passionate community of customers, followers, and advocates.\n\nLaw 28 – Enter Action With Boldness\nWhy Tesla repeatedly makes ambitious bets that traditional companies may avoid.\n\nLaw 29 – Plan All the Way to the End\nHow Tesla built an ecosystem around cars, software, charging, energy, AI, and technology.\n\nLaw 25 – Re-Create Yourself\nHow Tesla continues expanding beyond cars into energy, artificial intelligence, robotics, and advanced manufacturing.\n\nLaw 35 – Master the Art of Timing\nWhy Tesla’s rise came at a powerful moment for electric vehicles, batteries, technology, and environmental awareness.\n\nLaw 34 – Be Royal in Your Own Fashion\nHow premium positioning, branding, design, and perception helped Tesla stand apart.\n\nLaw 48 – Assume Formlessness\nWhy constant adaptation may be one of Tesla’s greatest strategic advantages.\n\nThis is not a claim that Tesla or Elon Musk literally follows Robert Greene’s book. Instead, we use the 48 Laws of Power as a framework to analyse Tesla’s business strategy, branding, innovation, marketing psychology, and competitive positioning.\n\nIf you’re interested in Tesla, Elon Musk, business strategy, entrepreneurship, branding, marketing, leadership, innovation, AI, psychology, startups, or the 48 Laws of Power, this documentary is for you.\n\nQuestion for you:\nWhich of these 10 Laws of Power do you think Tesla uses most effectively — attention, boldness, timing, focus, or adaptability?\n\nSubscribe for more documentary-style breakdowns of the strategies behind the world’s most powerful companies and entrepreneurs.\n\n#Tesla #ElonMusk #48LawsOfPower #BusinessStrategy"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT23M12S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "119",
+            "likeCount": "8",
+            "favoriteCount": "0",
+            "commentCount": "8"
+          }
+        },
+        "next_retry_at": "2026-09-28T17:51:18.030966+00:00"
       },
       "iTIIQzr-X7k": {
         "status": "pending",
@@ -60166,9 +61689,9 @@
         }
       },
       "WENMVm-ii14": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-20T10:34:30.517992+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.033424+00:00",
         "first_seen_at": "2026-09-20T10:34:30.517974+00:00",
         "attempts": 0,
         "item": {
@@ -62328,9 +63851,9 @@
         }
       },
       "p3sOT7OREfE": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-20T20:17:38.031920+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-21T17:51:18.033622+00:00",
         "first_seen_at": "2026-09-20T20:17:38.031905+00:00",
         "attempts": 0,
         "item": {
