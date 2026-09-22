@@ -308,6 +308,55 @@
       "title_key": "엔비디아 칩 판매 2배로 늘린다고 안 그래도 잘 나가는데 내년 매출 전망이 무려 여러분이 직접 뽑은 이슈 풀어드립니다 이슈딥다이브 임순재 윤여민 ai boj",
       "duration_sec": 1366,
       "sent_at": "2026-09-22T20:42:49.495873+00:00"
+    },
+    {
+      "person": "Dario Amodei",
+      "video_id": "undVs_Eczo4",
+      "title_key": "sam altman dario amodei e elon musk pedem pra desacelerar a ia confia",
+      "duration_sec": 1525,
+      "sent_at": "2026-09-22T20:51:16.484738+00:00"
+    },
+    {
+      "person": "Sam Altman",
+      "video_id": "rxs2NGa8YJ0",
+      "title_key": "sam altman is melting graphics cards",
+      "duration_sec": 1276,
+      "sent_at": "2026-09-22T20:51:17.372022+00:00"
+    },
+    {
+      "person": "Sam Altman",
+      "video_id": "hfL5T2D-Zdk",
+      "title_key": "ai sam altman elon musk ai aiob ep22",
+      "duration_sec": 2517,
+      "sent_at": "2026-09-22T20:51:19.587788+00:00"
+    },
+    {
+      "person": "Sam Altman",
+      "video_id": "LVZDZokELD0",
+      "title_key": "sam altman live world is right to be afraid of ai power dreamforce 2026",
+      "duration_sec": 7514,
+      "sent_at": "2026-09-22T20:51:23.769846+00:00"
+    },
+    {
+      "person": "Dario Amodei",
+      "video_id": "a5Y-UGoJf1A",
+      "title_key": "dario amodei and other ai leaders want to pace the frontier but how equity",
+      "duration_sec": 2063,
+      "sent_at": "2026-09-22T20:51:24.667788+00:00"
+    },
+    {
+      "person": "Jensen Huang",
+      "video_id": "Dn82v1ahq5o",
+      "title_key": "ai call in nvidia all in summit",
+      "duration_sec": 2754,
+      "sent_at": "2026-09-22T20:51:29.201404+00:00"
+    },
+    {
+      "person": "Chamath Palihapitiya",
+      "video_id": "3Gp6UwKrL4o",
+      "title_key": "silicon valley s 8 reasons ai needs no rules",
+      "duration_sec": 1220,
+      "sent_at": "2026-09-22T20:51:30.119598+00:00"
     }
   ],
   "watch_v2": {
@@ -805,7 +854,7 @@
       "Ho1gnEeVryA": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-22T20:42:10.310433+00:00",
+        "updated_at": "2026-09-22T20:51:11.043118+00:00",
         "first_seen_at": "2026-09-18T22:12:17.052304+00:00",
         "attempts": 0,
         "item": {
@@ -1153,7 +1202,7 @@
       "Bh5bJrrJ6xs": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-22T20:42:10.310431+00:00",
+        "updated_at": "2026-09-22T20:51:11.043093+00:00",
         "first_seen_at": "2026-09-18T22:12:17.060681+00:00",
         "attempts": 0,
         "item": {
@@ -2572,7 +2621,7 @@
       "XzNjq6DNjSY": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-22T20:42:10.310415+00:00",
+        "updated_at": "2026-09-22T20:51:11.043113+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462747+00:00",
         "attempts": 0,
         "item": {
@@ -4081,10 +4130,10 @@
       },
       "ZSETL91BaQY": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310503+00:00",
+        "reason": "The video is a narration of an article discussing AI safety, political responses, and industry figures like Jensen Huang and Dario Amodei. While the topic is relevant, Wojciech Zaremba is not directly participating in an interview, and the content is a summary of an article rather than a direct interview with the guest.",
+        "updated_at": "2026-09-22T20:51:28.399376+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462804+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
           "id": {
             "videoId": "ZSETL91BaQY"
@@ -4221,7 +4270,9 @@
             "favoriteCount": "0",
             "commentCount": "15"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:28.399354+00:00",
+        "next_retry_at": "2026-09-23T02:51:28.399368+00:00"
       },
       "zhI2is_exp8": {
         "status": "sent",
@@ -5036,10 +5087,10 @@
       },
       "yxkB3eM_Elc": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310507+00:00",
+        "reason": "This video is an audio conversion of an article discussing Jensen Huang's statements on AI existential risk. Jensen Huang is mentioned as a subject, but the video is a narration of an article, not a direct interview with him. The content is relevant to AI and semiconductors, but the guest's direct participation is not evidenced.",
+        "updated_at": "2026-09-22T20:51:28.399509+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462835+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "id": {
             "videoId": "yxkB3eM_Elc"
@@ -5196,7 +5247,9 @@
             "favoriteCount": "0",
             "commentCount": "3"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:28.399501+00:00",
+        "next_retry_at": "2026-09-23T02:51:28.399504+00:00"
       },
       "bYFFLTVvY1w": {
         "status": "pending",
@@ -5508,9 +5561,9 @@
         }
       },
       "Dn82v1ahq5o": {
-        "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310513+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-22T20:51:29.201093+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462849+00:00",
         "attempts": 1,
         "item": {
@@ -5638,7 +5691,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "5yA4wCDmzqB5MWtreqFHf33He7w",
+          "etag": "uRkC3LyYL4DF3bWt2278P5M2DDo",
           "id": "Dn82v1ahq5o",
           "snippet": {
             "publishedAt": "2026-09-16T10:30:37Z",
@@ -5776,11 +5829,27 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "872070",
-            "likeCount": "3959",
+            "viewCount": "872283",
+            "likeCount": "3960",
             "favoriteCount": "0",
             "commentCount": "247"
           }
+        },
+        "last_attempt_at": "2026-09-22T20:51:11.043160+00:00",
+        "approved_judge": {
+          "video_id": "Dn82v1ahq5o",
+          "policy_version": 5,
+          "decision": "accept",
+          "confidence": 9,
+          "relevance_score": 9,
+          "content_type": "fireside_interview",
+          "direct_guest": true,
+          "industry_focus": true,
+          "guest_name": "Jensen Huang",
+          "appearance_quote": "Nvidia 執行長 Jensen Huang 登上 All-In Summit 2026",
+          "topic_quote": "痛批「文明滅絕 10%」等預測毫無科學根據，是不負責任的 Doomer 騙局；並宣稱狹義超級智慧已在自駕、蛋白質合成等領域實現。",
+          "rejection_quote": null,
+          "reason_kr": "Jensen Huang discusses AI safety, existential risk, and the development of AI, including specific applications like self-driving and protein synthesis. The interview also touches on Nvidia's strategy and competition with China, all highly relevant to AI and semiconductor investors."
         }
       },
       "wc7GU-4SRTw": {
@@ -6005,9 +6074,9 @@
         }
       },
       "3Gp6UwKrL4o": {
-        "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310517+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-22T20:51:30.119347+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462860+00:00",
         "attempts": 1,
         "item": {
@@ -6078,7 +6147,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "QR3KcSFcxeP2mFb8D6aJLfU3n80",
+          "etag": "NFk2k67-kUlXi2FyO8C2RbHYE4U",
           "id": "3Gp6UwKrL4o",
           "snippet": {
             "publishedAt": "2026-09-16T09:30:06Z",
@@ -6159,11 +6228,27 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "2461",
+            "viewCount": "2455",
             "likeCount": "38",
             "favoriteCount": "0",
             "commentCount": "2"
           }
+        },
+        "last_attempt_at": "2026-09-22T20:51:11.043160+00:00",
+        "approved_judge": {
+          "video_id": "3Gp6UwKrL4o",
+          "policy_version": 5,
+          "decision": "accept",
+          "confidence": 8,
+          "relevance_score": 8,
+          "content_type": "fireside_interview",
+          "direct_guest": true,
+          "industry_focus": true,
+          "guest_name": "Chamath Palihapitiya",
+          "appearance_quote": "The All-In hosts — David Sacks, Chamath Palihapitiya, Jason Calacanis and David Friedberg — have spent years building the intellectual case against AI regulation",
+          "topic_quote": "Nvidia's CEO was mid-interview on stage at the All-In Summit in Los Angeles when his phone rang, and Jensen Huang put President Trump on speakerphone for a room of thousands. Trump used the open mic to call AI safety fears a hoax, said the robots are not taking over the world, and blamed the slowdown campaign on political actors and China. The All-In hosts — David Sacks, Chamath Palihapitiya, Jason Calacanis and David Friedberg — have spent years building the intellectual case against AI regulation, and a few of you asked us to give that side airtime. So we went through all eight of their arguments for why AI should not be regulated.",
+          "rejection_quote": null,
+          "reason_kr": "Chamath Palihapitiya is a host of the All-In Summit where Jensen Huang discusses AI safety fears and regulation. The discussion covers arguments against AI regulation, which is relevant for investors in the AI and semiconductor industries."
         }
       },
       "oCOALahDGqA": {
@@ -6342,10 +6427,10 @@
       },
       "T52ZKrU2gEw": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310523+00:00",
+        "reason": "The video discusses AI, semiconductors, and datacenters, but Wojciech Zaremba is not mentioned as a participant in the interview. The appearance quote refers to Amit Vohra, not Zaremba.",
+        "updated_at": "2026-09-22T20:51:32.627462+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462873+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
           "id": {
             "videoId": "T52ZKrU2gEw"
@@ -6554,7 +6639,9 @@
             "favoriteCount": "0",
             "commentCount": "0"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:32.627438+00:00",
+        "next_retry_at": "2026-09-23T02:51:32.627454+00:00"
       },
       "Ov8H6v0ROo4": {
         "status": "pending",
@@ -6702,10 +6789,10 @@
       },
       "7pHlEUjqGJ4": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310529+00:00",
+        "reason": "The video discusses AI safety and mentions Nvidia CEO Jensen Huang and Donald Trump, but Wojciech Zaremba is not indicated as a participant. The appearance quote refers to Donald Trump, not Zaremba.",
+        "updated_at": "2026-09-22T20:51:32.627555+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462883+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
           "id": {
             "videoId": "7pHlEUjqGJ4"
@@ -6854,7 +6941,9 @@
             "favoriteCount": "0",
             "commentCount": "0"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:32.627548+00:00",
+        "next_retry_at": "2026-09-23T02:51:32.627551+00:00"
       },
       "0Kv6jhEhHRo": {
         "status": "sent",
@@ -7869,7 +7958,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "izmV_qA1D7l2iMT_zcSJZVFjcXs",
+          "etag": "WctVmVw-XsKpMw5NnJlpQ1AXhbI",
           "id": "qoOjVOpTXdQ",
           "snippet": {
             "publishedAt": "2026-09-15T23:00:40Z",
@@ -8001,7 +8090,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "76466",
+            "viewCount": "76468",
             "likeCount": "2550",
             "favoriteCount": "0",
             "commentCount": "266"
@@ -10880,7 +10969,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "BkIRqppH76WlR2XCty-ipKxBqps",
+          "etag": "sSs8oD9eTJA_1JPTOafx5n78jyc",
           "id": "Xl24Obx3aDc",
           "snippet": {
             "publishedAt": "2026-09-18T21:14:32Z",
@@ -10942,7 +11031,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "274",
+            "viewCount": "273",
             "likeCount": "1",
             "favoriteCount": "0",
             "commentCount": "2"
@@ -11348,7 +11437,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "7YuI58SRMfNjYwM_5IbuZrhA9Zc",
+          "etag": "WGH1T_8WxC4vRewaEUKjupb7hjM",
           "id": "-7uSdNdMsEw",
           "snippet": {
             "publishedAt": "2026-09-18T16:30:32Z",
@@ -11410,7 +11499,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "3775",
+            "viewCount": "3778",
             "likeCount": "36",
             "favoriteCount": "0",
             "commentCount": "6"
@@ -11840,7 +11929,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "UrAC1f43E216lojuYKdP_q4b2Wc",
+          "etag": "oIEZsqygCzhn26IjmeiWaO5B-9o",
           "id": "RWQ9cd11sWE",
           "snippet": {
             "publishedAt": "2026-09-18T10:45:19Z",
@@ -11944,7 +12033,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "73819",
+            "viewCount": "73873",
             "likeCount": "803",
             "favoriteCount": "0",
             "commentCount": "92"
@@ -12200,7 +12289,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "7aC70qmeQc3PZIK6IawCzazKpqg",
+          "etag": "m2F3ULtzLrNjjP73_mayd2IewYY",
           "id": "IqrnKwxPlBM",
           "snippet": {
             "publishedAt": "2026-09-17T23:48:41Z",
@@ -12278,7 +12367,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "8027",
+            "viewCount": "8029",
             "likeCount": "98",
             "favoriteCount": "0",
             "commentCount": "36"
@@ -12287,10 +12376,10 @@
       },
       "Icm-l3B-AnQ": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310584+00:00",
+        "reason": "판정 응답 없음/형식 오류 — 재시도",
+        "updated_at": "2026-09-22T20:51:15.702450+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448412+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "id": {
             "videoId": "Icm-l3B-AnQ"
@@ -12451,12 +12540,14 @@
             "favoriteCount": "0",
             "commentCount": "1"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:15.702428+00:00",
+        "next_retry_at": "2026-09-23T02:51:15.702442+00:00"
       },
       "undVs_Eczo4": {
-        "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310587+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-22T20:51:16.484499+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448417+00:00",
         "attempts": 0,
         "item": {
@@ -12526,7 +12617,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "QIbYuDsN6xEj8RqX25LbiT1rcro",
+          "etag": "89lCHjxusKwo8KVdWXPEpieaMRA",
           "id": "undVs_Eczo4",
           "snippet": {
             "publishedAt": "2026-09-17T22:00:00Z",
@@ -12606,11 +12697,27 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "379",
+            "viewCount": "372",
             "likeCount": "3",
             "favoriteCount": "0",
             "commentCount": "2"
           }
+        },
+        "last_attempt_at": "2026-09-22T20:51:11.043160+00:00",
+        "approved_judge": {
+          "video_id": "undVs_Eczo4",
+          "policy_version": 5,
+          "decision": "accept",
+          "confidence": 9,
+          "relevance_score": 9,
+          "content_type": "podcast_interview",
+          "direct_guest": true,
+          "industry_focus": true,
+          "guest_name": "Dario Amodei",
+          "appearance_quote": "Rener Menezes (CTO e cofundador do FitBank, doutorando em IA aplicada à detecção de fraudes na Unifor) e Evener trazem um episódio especial, fora da sequência normal da série, por causa de uma notícia que saiu essa semana: os maiores nomes construindo IA hoje — Sam Altman (OpenAI), Dario Amodei (Anthropic), Elon Musk, um executivo do Google e até o assessor de inteligência artificial e ética do Papa — pediram publicamente pra desacelerar o ritmo de desenvolvimento da IA.",
+          "topic_quote": "Sam Altman, Dario Amodei e Elon Musk pediram pra desacelerar o desenvolvimento de IA. É preocupação genuína, ou tem outra coisa por trás? Rener Menezes (CTO e cofundador do FitBank, doutorando em IA aplicada à detecção de fraudes na Unifor) e Evener trazem um episódio especial, fora da sequência normal da série, por causa de uma notícia que saiu essa semana: os maiores nomes construindo IA hoje — Sam Altman (OpenAI), Dario Amodei (Anthropic), Elon Musk, um executivo do Google e até o assessor de inteligência artificial e ética do Papa — pediram publicamente pra desacelerar o ritmo de desenvolvimento da IA. Não é parar de usar, nem descontinuar — é sobre o ritmo. Rener traz uma leitura cética: esses executivos têm IPO pendente, investimento bilionário, agenda comercial — então vale filtrar o que está por trás do discurso de \"preocupação com a humanidade\". A entrada de Donald Trump no debate, defendendo o oposto (acelerar, com medo de perder a corrida tecnológica pra China), reforça que isso também é disputa geopolítica, não só ética. O ponto prático pra quem trabalha em empresa: o que importa não é o que esses nomes falam pra mídia — é se a sua empresa está usando IA de forma consciente (com governança, política, medição de resultado) ou só correndo atrás de pressão e hype. O episódio cita casos reais de empresas, incluindo a Amazon, que aceleraram demissões em cima da IA e agora estão revertendo, recontratando gente, porque cortaram antes de ter processo definido. A frase que resume o episódio: a governança não é o muro — é o que ajuda a enxergar o muro antes de bater nele. Fecha com uma pergunta direta: freio ou acelerador — o que é mais importante num carro? Deixa sua resposta nos comentários.",
+          "rejection_quote": null,
+          "reason_kr": "Dario Amodei discusses the call to slow down AI development, its implications for genuine concern versus commercial interests, and the geopolitical aspects of the AI race. The episode also touches on corporate AI adoption strategies and governance."
         }
       },
       "il9Tao2fZSs": {
@@ -12791,9 +12898,9 @@
         "next_retry_at": "2026-09-23T02:42:35.082557+00:00"
       },
       "rxs2NGa8YJ0": {
-        "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310602+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-22T20:51:17.371952+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448431+00:00",
         "attempts": 0,
         "item": {
@@ -12888,7 +12995,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "S1xfMb185ew-8v3AwgqnEllh1N4",
+          "etag": "mAVSxTtTUuot72OBkk6LoLEcv5M",
           "id": "rxs2NGa8YJ0",
           "snippet": {
             "publishedAt": "2026-09-17T20:05:33Z",
@@ -12993,19 +13100,35 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "108797",
+            "viewCount": "108808",
             "likeCount": "2141",
             "favoriteCount": "0",
             "commentCount": "628"
           }
+        },
+        "last_attempt_at": "2026-09-22T20:51:11.043160+00:00",
+        "approved_judge": {
+          "video_id": "rxs2NGa8YJ0",
+          "policy_version": 5,
+          "decision": "accept",
+          "confidence": 8,
+          "relevance_score": 8,
+          "content_type": "podcast_interview",
+          "direct_guest": true,
+          "industry_focus": true,
+          "guest_name": "Sam Altman",
+          "appearance_quote": "Sam Altman says OpenAI will melt every GPU it owns if AI crosses the line.",
+          "topic_quote": "Sam Altman says OpenAI will melt every GPU it owns if AI crosses the line. Meanwhile AI companies are buying 5090s by the pallet, RAM is sold out through 2031, and I sell PCs for a living. So what actually happens to your next build if the AI bubble pops?",
+          "rejection_quote": null,
+          "reason_kr": "Sam Altman discusses OpenAI's GPU strategy and the potential impact of an AI bubble on PC hardware, including GPU and RAM supply."
         }
       },
       "owErI-n_LaA": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310605+00:00",
+        "reason": "출연/주제 인용이 실제 제목·설명에 없음",
+        "updated_at": "2026-09-22T20:51:17.484084+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448437+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "id": {
             "videoId": "owErI-n_LaA"
@@ -13164,14 +13287,16 @@
             "favoriteCount": "0",
             "commentCount": "0"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:17.484061+00:00",
+        "next_retry_at": "2026-09-23T02:51:17.484075+00:00"
       },
       "WJeaUoeh27o": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310609+00:00",
+        "reason": "판정 응답 없음/형식 오류 — 재시도",
+        "updated_at": "2026-09-22T20:51:18.806254+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448442+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
           "id": {
             "videoId": "WJeaUoeh27o"
@@ -13336,7 +13461,9 @@
             "favoriteCount": "0",
             "commentCount": "2"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:18.806230+00:00",
+        "next_retry_at": "2026-09-23T02:51:18.806245+00:00"
       },
       "cstic1FJgZI": {
         "status": "pending",
@@ -13491,9 +13618,9 @@
         }
       },
       "hfL5T2D-Zdk": {
-        "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310614+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-22T20:51:19.587540+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448452+00:00",
         "attempts": 1,
         "item": {
@@ -13632,6 +13759,22 @@
             "favoriteCount": "0",
             "commentCount": "0"
           }
+        },
+        "last_attempt_at": "2026-09-22T20:51:11.043160+00:00",
+        "approved_judge": {
+          "video_id": "hfL5T2D-Zdk",
+          "policy_version": 5,
+          "decision": "accept",
+          "confidence": 9,
+          "relevance_score": 9,
+          "content_type": "podcast_interview",
+          "direct_guest": true,
+          "industry_focus": true,
+          "guest_name": "Sam Altman",
+          "appearance_quote": "Sam Altman、Elon Musk 齊聲要求監管",
+          "topic_quote": "AI 末日論，究竟係真實警告，定係科技巨頭的「出口術」？ 今集 AIOB，我哋由特朗普在 All-In Summit 的一通電話講起：當黃仁勳接到電話，並向現場嘉賓及科技界代表喊話，強調美國不會停下科技與 AI 發展的腳步，繼續維持全球領導地位，這場 AI 競賽其實已經不再只是科技問題。 另一方面，Sam Altman、Elon Musk 及 Dario Amodei 等 AI 界重量級人物，都曾提出 AI 需要放慢發展、加強安全措施及接受更多監管。",
+          "rejection_quote": "",
+          "reason_kr": "The interview discusses AI safety, regulation, and the geopolitical implications of AI development, featuring Sam Altman and other key figures in the AI industry. It touches upon the balance between accelerating AI progress and implementing necessary safeguards, which is highly relevant for investors in the AI and semiconductor sectors."
         }
       },
       "Ng17bM1Bkow": {
@@ -13698,7 +13841,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "XlcbqFUeMJzewD1GbAe38DlzrdU",
+          "etag": "NUVbZyJTzKbXXnqL6KhT9JbVdYA",
           "id": "Ng17bM1Bkow",
           "snippet": {
             "publishedAt": "2026-09-17T13:00:30Z",
@@ -13769,7 +13912,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "23986",
+            "viewCount": "23992",
             "likeCount": "1357",
             "favoriteCount": "0",
             "commentCount": "106"
@@ -13836,7 +13979,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "TjF7RVxBm3Qr6Y9tLVeEkfeqaMk",
+          "etag": "SKVootmSqqhBOGHFtD90YgSSh0k",
           "id": "JOln0rmyrQE",
           "snippet": {
             "publishedAt": "2026-09-17T10:20:03Z",
@@ -13903,7 +14046,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "1995",
+            "viewCount": "1996",
             "likeCount": "17",
             "favoriteCount": "0",
             "commentCount": "2"
@@ -13912,10 +14055,10 @@
       },
       "DrxP-Z5Qyyo": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310624+00:00",
+        "reason": "판정 응답 없음/형식 오류 — 재시도",
+        "updated_at": "2026-09-22T20:51:19.699333+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448468+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
           "id": {
             "videoId": "DrxP-Z5Qyyo"
@@ -13991,7 +14134,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "jpabS_UG2syg7taEtSu3eYcowQ4",
+          "etag": "S5o4LhSJM4OcNz22UsDxHWpeIRI",
           "id": "DrxP-Z5Qyyo",
           "snippet": {
             "publishedAt": "2026-09-17T10:00:04Z",
@@ -14079,12 +14222,14 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "5",
+            "viewCount": "7",
             "likeCount": "0",
             "favoriteCount": "0",
             "commentCount": "0"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:19.699307+00:00",
+        "next_retry_at": "2026-09-23T02:51:19.699322+00:00"
       },
       "YWz-pPGMX0Y": {
         "status": "sent",
@@ -14235,10 +14380,10 @@
       },
       "7HDcvf_znSU": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310627+00:00",
+        "reason": "판정 응답 없음/형식 오류 — 재시도",
+        "updated_at": "2026-09-22T20:51:19.699353+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448478+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
           "id": {
             "videoId": "7HDcvf_znSU"
@@ -14401,12 +14546,14 @@
             "favoriteCount": "0",
             "commentCount": "3"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:19.699345+00:00",
+        "next_retry_at": "2026-09-23T02:51:19.699348+00:00"
       },
       "LVZDZokELD0": {
-        "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310630+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-22T20:51:23.769609+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448491+00:00",
         "attempts": 1,
         "item": {
@@ -14589,14 +14736,30 @@
             "favoriteCount": "0",
             "commentCount": "0"
           }
+        },
+        "last_attempt_at": "2026-09-22T20:51:11.043160+00:00",
+        "approved_judge": {
+          "video_id": "LVZDZokELD0",
+          "policy_version": 5,
+          "decision": "accept",
+          "confidence": 10,
+          "relevance_score": 9,
+          "content_type": "fireside_interview",
+          "direct_guest": true,
+          "industry_focus": true,
+          "guest_name": "Sam Altman",
+          "appearance_quote": "Sam Altman LIVE: “World Is Right to Be Afraid” of AI Power | Dreamforce 2026",
+          "topic_quote": "OpenAI CEO Sam Altman said public concern about AI companies gaining too much power is justified, warning of undue influence over the economy and society. At Dreamforce, he also called for stronger security, safety and monitoring as AI capabilities advance.",
+          "rejection_quote": "",
+          "reason_kr": "Sam Altman discusses AI dangers, power, security, and safety at Dreamforce, relevant to AI investor interests."
         }
       },
       "w05PlJaCyho": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310633+00:00",
+        "reason": "Dario Amodei is mentioned in the title and description, discussing AI dangers, development speed, and Anthropic's role in preventing misuse, which is relevant to AI investors. However, it's unclear if he is personally participating in a substantial interview or if this is a compilation/report.",
+        "updated_at": "2026-09-22T20:51:23.880479+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448496+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
           "id": {
             "videoId": "w05PlJaCyho"
@@ -14711,12 +14874,14 @@
             "favoriteCount": "0",
             "commentCount": "0"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:23.880454+00:00",
+        "next_retry_at": "2026-09-23T02:51:23.880468+00:00"
       },
       "R8PcuHbwFIs": {
-        "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310635+00:00",
+        "status": "rejected",
+        "reason": "This is a biographical audio narration about Sam Altman's past work, not a direct interview or discussion of current industry topics.",
+        "updated_at": "2026-09-22T20:51:23.880654+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448504+00:00",
         "attempts": 1,
         "item": {
@@ -14887,6 +15052,22 @@
             "favoriteCount": "0",
             "commentCount": "0"
           }
+        },
+        "last_attempt_at": "2026-09-22T20:51:11.043160+00:00",
+        "judge": {
+          "video_id": "R8PcuHbwFIs",
+          "policy_version": 5,
+          "decision": "reject",
+          "confidence": 2,
+          "relevance_score": 7,
+          "content_type": "other",
+          "direct_guest": false,
+          "industry_focus": true,
+          "guest_name": "Sam Altman",
+          "appearance_quote": "",
+          "topic_quote": "Chapter 7 takes you behind the scenes of the supercomputing scale, the validation of the scaling hypothesis, and the intense operational scrambles that accompanied the launch of GPT-3, DALL-E, and ChatGPT.",
+          "rejection_quote": "Chapter 7: Sam Altman and the Era of Generative Breakthroughs (2019–2022)",
+          "reason_kr": "This is a biographical audio narration about Sam Altman's past work, not a direct interview or discussion of current industry topics."
         }
       },
       "grpOhkFvj7s": {
@@ -18382,7 +18563,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "kK2I9uqouiyCwiWSguN8ZYDD_AU",
+          "etag": "CtDwOQWllFaYdUPuBYHVx65OGp0",
           "id": "sIrO_1Rf8mM",
           "snippet": {
             "publishedAt": "2026-09-18T17:56:19Z",
@@ -18477,7 +18658,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "1761",
+            "viewCount": "1762",
             "likeCount": "46",
             "favoriteCount": "0",
             "commentCount": "11"
@@ -18485,9 +18666,9 @@
         }
       },
       "a5Y-UGoJf1A": {
-        "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310656+00:00",
+        "status": "sent",
+        "reason": "텔레그램 전송 성공",
+        "updated_at": "2026-09-22T20:51:24.667705+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355563+00:00",
         "attempts": 1,
         "item": {
@@ -18616,6 +18797,22 @@
             "favoriteCount": "0",
             "commentCount": "1"
           }
+        },
+        "last_attempt_at": "2026-09-22T20:51:11.043160+00:00",
+        "approved_judge": {
+          "video_id": "a5Y-UGoJf1A",
+          "policy_version": 5,
+          "decision": "accept",
+          "confidence": 10,
+          "relevance_score": 9,
+          "content_type": "podcast_interview",
+          "direct_guest": true,
+          "industry_focus": true,
+          "guest_name": "Dario Amodei",
+          "appearance_quote": "Dario Amodei and other AI leaders want to 'Pace the Frontier' but…how? | Equity Podcast",
+          "topic_quote": "A week after an Anthropic researcher's doomsday warning rattled the AI world, the company's CEO Dario Amodei has outlined his plan to “pace the frontier” of AI development. The proposal leans on independent safety evaluators and coordination between AI labs in democratic countries, and it's already picked up some industry support, along with some pointed pushback from Nvidia's Jensen Huang.",
+          "rejection_quote": "",
+          "reason_kr": "Dario Amodei discusses his plan to 'pace the frontier' of AI development, involving safety evaluators and coordination between AI labs, which is highly relevant for AI investors."
         }
       },
       "Gb81WLyZzZU": {
@@ -19427,7 +19624,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "eGr0zECAfjjDjPghdmXwjBZlivc",
+          "etag": "seUZuqoqLLHPmyBb3wCghyC5AAo",
           "id": "QcJwwI8th-Y",
           "snippet": {
             "publishedAt": "2026-09-17T05:43:37Z",
@@ -19489,7 +19686,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "1370",
+            "viewCount": "1374",
             "likeCount": "53",
             "favoriteCount": "0",
             "commentCount": "7"
@@ -21857,7 +22054,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "lvbNJgM60EDgPOXjoZnmhxIeX3M",
+          "etag": "mySqE2JwwgQuaZdDYRRnbqO8nK4",
           "id": "Czb5koUix0Y",
           "snippet": {
             "publishedAt": "2026-09-15T22:00:31Z",
@@ -21960,10 +22157,10 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "38337",
+            "viewCount": "38352",
             "likeCount": "946",
             "favoriteCount": "0",
-            "commentCount": "133"
+            "commentCount": "134"
           }
         }
       },
@@ -26815,7 +27012,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "QwWCPZbjGOGy6UMeLPreWdn-VsQ",
+          "etag": "c2DW0_Y7uz5HdLm0EYG1NNPPvks",
           "id": "htja4chdhas",
           "snippet": {
             "publishedAt": "2026-09-18T21:16:25Z",
@@ -26886,7 +27083,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "24921",
+            "viewCount": "24934",
             "likeCount": "795",
             "favoriteCount": "0",
             "commentCount": "103"
@@ -27256,7 +27453,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "MHfDp3W4ViKtMV-HmW9lQbJOyFQ",
+          "etag": "WvPPCy_ydrUP8sciYns1Bb8_g3I",
           "id": "1IyWairBWdc",
           "snippet": {
             "publishedAt": "2026-09-18T20:39:55Z",
@@ -27318,7 +27515,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "16543",
+            "viewCount": "16544",
             "likeCount": "481",
             "favoriteCount": "0",
             "commentCount": "37"
@@ -27561,7 +27758,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "-mTjQ4JuFhFJwYA9Ot3OLvUZzsY",
+          "etag": "mXN7GZLlyXKm9SsARZoVQga0Lpc",
           "id": "cMyHVtj-cS0",
           "snippet": {
             "publishedAt": "2026-09-18T19:45:11Z",
@@ -27628,7 +27825,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "11691",
+            "viewCount": "11697",
             "likeCount": "205",
             "favoriteCount": "0",
             "commentCount": "41"
@@ -27857,7 +28054,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "oYbrppXNyH_FEys6db5PYpR8vcQ",
+          "etag": "kyfJNITyrqFnvyepLSOtlpMBQaI",
           "id": "v8qIH0rCPLc",
           "snippet": {
             "publishedAt": "2026-09-18T18:45:19Z",
@@ -27949,8 +28146,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "1692",
-            "likeCount": "215",
+            "viewCount": "1689",
+            "likeCount": "216",
             "favoriteCount": "0",
             "commentCount": "582"
           }
@@ -28721,7 +28918,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "D37YbJ_EJFL7jpnT3biB7mAnjL4",
+          "etag": "PNj-cVaIQ1-fMiof3uQOFs7KKLg",
           "id": "1K7Cw5mVmTM",
           "snippet": {
             "publishedAt": "2026-09-18T14:23:14Z",
@@ -28783,7 +28980,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "124",
+            "viewCount": "128",
             "likeCount": "1",
             "favoriteCount": "0",
             "commentCount": "1"
@@ -29035,7 +29232,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "wGGtE7wDPsDf59IFCLeOMr38T3U",
+          "etag": "02zoe9ktNT0m-a8ysY4tznDPsUY",
           "id": "YJKaydpvQeA",
           "snippet": {
             "publishedAt": "2026-09-18T12:13:39Z",
@@ -29111,7 +29308,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "10936",
+            "viewCount": "10939",
             "likeCount": "158",
             "favoriteCount": "0",
             "commentCount": "24"
@@ -29743,7 +29940,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "5gqoVU1z1SMCGpHx3XSu-i9vtzc",
+          "etag": "t39nVkswfur02CX37xsEHKnTtQM",
           "id": "a5MZNtp94tg",
           "snippet": {
             "publishedAt": "2026-09-18T11:30:34Z",
@@ -29805,10 +30002,10 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "4845",
-            "likeCount": "421",
+            "viewCount": "4852",
+            "likeCount": "422",
             "favoriteCount": "0",
-            "commentCount": "728"
+            "commentCount": "729"
           }
         }
       },
@@ -30596,7 +30793,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "o88JW7CUOyTeGOTUCRa5d9nEUUA",
+          "etag": "DbeZSgRiOhYnGtWcElYeR4BVMxI",
           "id": "Q-lkZqiyQ7s",
           "snippet": {
             "publishedAt": "2026-09-17T16:10:07Z",
@@ -30697,7 +30894,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "6140",
+            "viewCount": "6149",
             "likeCount": "271",
             "favoriteCount": "0",
             "commentCount": "44"
@@ -30787,7 +30984,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "I18PSOAcINqLdIvQFowwV0AxaFI",
+          "etag": "2xHERKhTdV754EiTuxR3-toEW3g",
           "id": "rV5UJD5e7Hc",
           "snippet": {
             "publishedAt": "2026-09-17T13:00:10Z",
@@ -30877,8 +31074,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "10900",
-            "likeCount": "115",
+            "viewCount": "10910",
+            "likeCount": "116",
             "favoriteCount": "0",
             "commentCount": "32"
           }
@@ -30946,7 +31143,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "iZnaau8BKsGEPGbkbCGg9YGFOyU",
+          "etag": "290oFhOkjWJ92KeZKS8L8aDq2no",
           "id": "lbJcCYVwXJQ",
           "snippet": {
             "publishedAt": "2026-09-17T09:30:19Z",
@@ -31015,7 +31212,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "182482",
+            "viewCount": "182507",
             "likeCount": "1266",
             "favoriteCount": "0",
             "commentCount": "582"
@@ -31211,7 +31408,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "B-Bgc2MxUyw3I8y_7NuujqHXfd4",
+          "etag": "9Dlc6CmM-DnjcYIBZmthb-K00YI",
           "id": "0J-oyjjSSoU",
           "snippet": {
             "publishedAt": "2026-09-18T10:30:26Z",
@@ -31283,7 +31480,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "29910",
+            "viewCount": "29920",
             "likeCount": "291",
             "favoriteCount": "0",
             "commentCount": "135"
@@ -31558,7 +31755,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "JLn6KVuAmV-Xapv-_w_BGxfYtm8",
+          "etag": "KjFv4W6ApiAo_ZjaL2_yOpegFxg",
           "id": "74k0wl9l9xw",
           "snippet": {
             "publishedAt": "2026-09-18T09:00:16Z",
@@ -31625,7 +31822,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "1422",
+            "viewCount": "1421",
             "likeCount": "311",
             "favoriteCount": "0",
             "commentCount": "801"
@@ -32716,7 +32913,7 @@
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "9Ni3PuEUZlCdqoTkzLdnUHDcrXY",
+          "etag": "6zq_LcImpYJvXE-XLBqHzqR2LUc",
           "id": "KCXtJ6RdjH8",
           "snippet": {
             "publishedAt": "2026-09-18T01:45:20Z",
@@ -32808,7 +33005,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "60",
+            "viewCount": "61",
             "likeCount": "9",
             "favoriteCount": "0",
             "commentCount": "29"
@@ -33426,17 +33623,14 @@
         "first_seen_at": "2026-09-18T22:12:26.436859+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "GKlEDESZzfXaWSxs5rO9cPtu65Y",
           "id": {
-            "kind": "youtube#video",
             "videoId": "b7EtaEQA19s"
           },
           "snippet": {
             "publishedAt": "2026-09-18T00:28:22Z",
             "channelId": "UCsARWC_d1HIZ6j25qQHJNAQ",
             "title": "More Macklemore. Universal Studios may shelve Elon Musk Doc from Academy Award Director, but why?",
-            "description": "Check out my book Too Real: A Hollywood Memoir for a fun and salacious trip back to 90s Hollywood before Titanic ruined ...",
+            "description": "Check out my book Too Real: A Hollywood Memoir for a fun and salacious trip back to 90s Hollywood before Titanic ruined everything. You'll laugh, you'll cry, you'll throw it against the wall and shout, \"noooo!\" at least once. You can order a copy from your local bookstore, read it for free on Kindle Unlimited (free trial available), pick up the ebook on Amazon  or grab a paperback at most online retailers like Barnes & Noble.  For a signed copy visit  www.TooRealBook.com and save 20% with the code tooreal20 at checkout.\n\n#freedonsplum #popculture #podcast #hollywood #entertainment",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/b7EtaEQA19s/default.jpg",
@@ -33465,13 +33659,19 @@
               }
             },
             "channelTitle": "Dale Wheatley",
+            "categoryId": "24",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T00:28:22Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "More Macklemore. Universal Studios may shelve Elon Musk Doc from Academy Award Director, but why?",
+              "description": "Check out my book Too Real: A Hollywood Memoir for a fun and salacious trip back to 90s Hollywood before Titanic ruined everything. You'll laugh, you'll cry, you'll throw it against the wall and shout, \"noooo!\" at least once. You can order a copy from your local bookstore, read it for free on Kindle Unlimited (free trial available), pick up the ebook on Amazon  or grab a paperback at most online retailers like Barnes & Noble.  For a signed copy visit  www.TooRealBook.com and save 20% with the code tooreal20 at checkout.\n\n#freedonsplum #popculture #podcast #hollywood #entertainment"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "lpDvZXn62cYY2x2LVaY0fOpVyT0",
+          "etag": "XezplpayNvAZb95ffE5FUsWGw4k",
           "id": "b7EtaEQA19s",
           "snippet": {
             "publishedAt": "2026-09-18T00:28:22Z",
@@ -33533,7 +33733,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "212",
+            "viewCount": "220",
             "likeCount": "6",
             "favoriteCount": "0",
             "commentCount": "0"
@@ -33547,17 +33747,14 @@
         "first_seen_at": "2026-09-18T22:12:26.436864+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "W4TPduTdGNZTqyGAc8Njo92IWsA",
           "id": {
-            "kind": "youtube#video",
             "videoId": "B0TPJ3mVWns"
           },
           "snippet": {
             "publishedAt": "2026-09-18T00:21:15Z",
             "channelId": "UCZ5OtEhM7Y5C1X7Ddv3E7Cg",
             "title": "Elon Musk Engaged to a Terrorist Who Got Plastic Surgery To Impersonate Hannah Wu",
-            "description": "Even though I walk through the shadow of the valley of death I feel no evil - 43 U.S president George Walker Bush I don't know ...",
+            "description": "Even though I walk through the shadow of the valley of death I feel no evil  - 43 U.S president George Walker Bush\n\nI don’t know how much longer I can survive, but if I die please file lawsuit for me.\n\nI’m under 24/7 illegal monitor, be trafficked, be impersonated,be assassinated daily since Jan 2026.\n\nTwo of Elon Musk's Chinese employees at Neuralink (male) and X (female) have turned Neuralink into a serial killing / terrorist 'nuclear' weapon that can massacre humans on Earth REMOTELY by invading their neuron brain and body remotely. \n\nThe Chinese male's Dad came to the US and Canada around July this year and came to Vancouver recently, his name is Wang Jun. The Chinese female that works at X got an engagement ring from Elon Musk. All of them have been working with Epstein to traffick and serial kill humans, assisted by Shivon Zillis (Neuralink), and Wang Yi (SpaceX, Elon Musk's Ex-wife) . There might be some other people who are in his company that are also involved in this. \n\nThey have turned Neuralink into a REMOTE SERIAL KILLing terrorists weapon & they are planning a massacre on Earth, maybe within the next 3 years: \n\nIt’s REMOTE killing: a combination of mind manipulation + neuron Brain attack + neuron body attack + bioweapon attack + 巫术 (witchcraft) from China instilled into Neuralink:\n\n1. Force illegally connecting human brains REMOTELY to manipulate humans’ minds.\n\n2. Conduct neuron brain attack REMOTELY. For example, they can pass the neuron that fires a bullet to someone’s brain live to the living human REMOTELY. They can also temporarily block someone’s temporary memory on the fly. \n\n3. To steal someone’s private information such as financial information, banking passwords, and passport numbers. \n\n4. Conduct Remote human physical body attack, ie.pass the energy of needling someone’s body parts, that has the possibility to take over someone’s life REMOTELY. \n\n5. Conduct bio-weapon attack Remotely. For example, they can force injecting air like bio toxins to the victim's location like NAZI. NAZI locks victims in factories and kills them, but they can inject those toxins anywhere and kill them, but they can inject those toxins anywhere and start KILLING REMOTELY. \n\n6. They also instilled 巫术 ( from China: translation maybe witchcraft) to control living humans facial expression, eyes iris movement, mouth,teeth, and tongue movement. Here is a link of the video of them trying to manipulate my facial expression live. Some videos are very DISTURBING.\n\n7. They also threaten to start a massacre on Earth without a trace since this technology can REMOTE manipulate living humans’ minds + conduct neuron brain attack + neuron body attack + inject toxin air like NAZI + use 巫术 (witchcraft from China) to control humans’ body such as facial expression and the way of talking.\n\nTheir purpose is to Serial Kill more humans on earth without a trace since everything is REMOTE and they can just hide behind computer screens to massacre targeted humans. \n\nHuman lives are precious. Please work out a solution together with our current governments, medical, tech and legal systems so humans on earth won’t be serial killed by this type of technology without a trace. If something like this unfortunate is happening to you, please hold on to it for a bit longer, we will find a solution soon and we will all survive and thrive.\n\nI read an article online I think it would be helpful to understand similar technology: (not exactly the same, the criminals has turned this into a REMOTE terrorism “nuclear” weapon):\n\nhttps://news.mit.edu/2...\n\n\nMy emails are:\nHannahkagomewu@gmail.com\nKacykagomewu@icloud.com\n\n911 Instagram, YouTube, X: HannahwurldSOS",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/B0TPJ3mVWns/default.jpg",
@@ -33586,13 +33783,19 @@
               }
             },
             "channelTitle": "Hannah Wu",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T00:21:15Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk Engaged to a Terrorist Who Got Plastic Surgery To Impersonate Hannah Wu",
+              "description": "Even though I walk through the shadow of the valley of death I feel no evil  - 43 U.S president George Walker Bush\n\nI don’t know how much longer I can survive, but if I die please file lawsuit for me.\n\nI’m under 24/7 illegal monitor, be trafficked, be impersonated,be assassinated daily since Jan 2026.\n\nTwo of Elon Musk's Chinese employees at Neuralink (male) and X (female) have turned Neuralink into a serial killing / terrorist 'nuclear' weapon that can massacre humans on Earth REMOTELY by invading their neuron brain and body remotely. \n\nThe Chinese male's Dad came to the US and Canada around July this year and came to Vancouver recently, his name is Wang Jun. The Chinese female that works at X got an engagement ring from Elon Musk. All of them have been working with Epstein to traffick and serial kill humans, assisted by Shivon Zillis (Neuralink), and Wang Yi (SpaceX, Elon Musk's Ex-wife) . There might be some other people who are in his company that are also involved in this. \n\nThey have turned Neuralink into a REMOTE SERIAL KILLing terrorists weapon & they are planning a massacre on Earth, maybe within the next 3 years: \n\nIt’s REMOTE killing: a combination of mind manipulation + neuron Brain attack + neuron body attack + bioweapon attack + 巫术 (witchcraft) from China instilled into Neuralink:\n\n1. Force illegally connecting human brains REMOTELY to manipulate humans’ minds.\n\n2. Conduct neuron brain attack REMOTELY. For example, they can pass the neuron that fires a bullet to someone’s brain live to the living human REMOTELY. They can also temporarily block someone’s temporary memory on the fly. \n\n3. To steal someone’s private information such as financial information, banking passwords, and passport numbers. \n\n4. Conduct Remote human physical body attack, ie.pass the energy of needling someone’s body parts, that has the possibility to take over someone’s life REMOTELY. \n\n5. Conduct bio-weapon attack Remotely. For example, they can force injecting air like bio toxins to the victim's location like NAZI. NAZI locks victims in factories and kills them, but they can inject those toxins anywhere and kill them, but they can inject those toxins anywhere and start KILLING REMOTELY. \n\n6. They also instilled 巫术 ( from China: translation maybe witchcraft) to control living humans facial expression, eyes iris movement, mouth,teeth, and tongue movement. Here is a link of the video of them trying to manipulate my facial expression live. Some videos are very DISTURBING.\n\n7. They also threaten to start a massacre on Earth without a trace since this technology can REMOTE manipulate living humans’ minds + conduct neuron brain attack + neuron body attack + inject toxin air like NAZI + use 巫术 (witchcraft from China) to control humans’ body such as facial expression and the way of talking.\n\nTheir purpose is to Serial Kill more humans on earth without a trace since everything is REMOTE and they can just hide behind computer screens to massacre targeted humans. \n\nHuman lives are precious. Please work out a solution together with our current governments, medical, tech and legal systems so humans on earth won’t be serial killed by this type of technology without a trace. If something like this unfortunate is happening to you, please hold on to it for a bit longer, we will find a solution soon and we will all survive and thrive.\n\nI read an article online I think it would be helpful to understand similar technology: (not exactly the same, the criminals has turned this into a REMOTE terrorism “nuclear” weapon):\n\nhttps://news.mit.edu/2...\n\n\nMy emails are:\nHannahkagomewu@gmail.com\nKacykagomewu@icloud.com\n\n911 Instagram, YouTube, X: HannahwurldSOS"
+            },
+            "defaultAudioLanguage": "en-US"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "uohgwcYXKKeQyLDg9Ld9A80VaHM",
+          "etag": "aVUaW1geS8rgKh-ZOPfuByPjyJs",
           "id": "B0TPJ3mVWns",
           "snippet": {
             "publishedAt": "2026-09-18T00:21:15Z",
@@ -33654,10 +33857,10 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "1765",
-            "likeCount": "22",
+            "viewCount": "2070",
+            "likeCount": "24",
             "favoriteCount": "0",
-            "commentCount": "17"
+            "commentCount": "16"
           }
         }
       },
@@ -33668,17 +33871,14 @@
         "first_seen_at": "2026-09-18T22:12:26.436869+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "kKrzvgSSNSo1ZT5igC21JQTPXKM",
           "id": {
-            "kind": "youtube#video",
             "videoId": "xYa7wAPpzwA"
           },
           "snippet": {
             "publishedAt": "2026-09-17T23:00:04Z",
             "channelId": "UC4a6zeCnsOVmnjuMNBOHPBQ",
             "title": "1👉Elon Musk Beg for 5 Minutes   You Made a Serious Mistake  Something Incredible Is About to Happen",
-            "description": "godmessage #jesus #jesusmessage #godmessages #lawofattraction #manifesting #godsaystoday #godmessagetoday ...",
+            "description": "#godmessage #jesus #jesusmessage #godmessages #lawofattraction #manifesting #godsaystoday #godmessagetoday #godwords #godmsg #lordmessage #godmessagesforme #jesusewords #godsmessages #angelsmessage",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/xYa7wAPpzwA/default.jpg",
@@ -33707,8 +33907,14 @@
               }
             },
             "channelTitle": "Michael Prophetic Word",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T23:00:04Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "1👉Elon Musk Beg for 5 Minutes   You Made a Serious Mistake  Something Incredible Is About to Happen",
+              "description": "#godmessage #jesus #jesusmessage #godmessages #lawofattraction #manifesting #godsaystoday #godmessagetoday #godwords #godmsg #lordmessage #godmessagesforme #jesusewords #godsmessages #angelsmessage"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
@@ -33789,17 +33995,14 @@
         "first_seen_at": "2026-09-18T22:12:26.436874+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "EDbZj5e2bsY9eIFb4CsIniHioE4",
           "id": {
-            "kind": "youtube#video",
             "videoId": "nLInqZfwFvY"
           },
           "snippet": {
             "publishedAt": "2026-09-17T23:00:25Z",
             "channelId": "UCa3rahAQjfeRzzhRW1Am2yA",
             "title": "Elon Musk te envió 998 mil millones de dólares   ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús",
-            "description": "Elon Musk te envió 998 mil millones de dólares ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús.",
+            "description": "Elon Musk te envió 998 mil millones de dólares   ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/nLInqZfwFvY/default.jpg",
@@ -33828,13 +34031,26 @@
               }
             },
             "channelTitle": "El Ángel Habla",
+            "tags": [
+              "#DiosTeHabla",
+              "#Arrepentimiento",
+              "#ProtecciónCelestial",
+              "#RevelaciónUrgente",
+              "#PalabraProfética"
+            ],
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T23:00:25Z"
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "Elon Musk te envió 998 mil millones de dólares   ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús",
+              "description": "Elon Musk te envió 998 mil millones de dólares   ✝️ MENSAJE DE DIOS🕊️ DIOS DICE #Jesús"
+            },
+            "defaultAudioLanguage": "es"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "Nb8f-_VBkponzMja04_5STpvu68",
+          "etag": "hkN6QPmKe77FKWj9HinvtUGi7uo",
           "id": "nLInqZfwFvY",
           "snippet": {
             "publishedAt": "2026-09-17T23:00:25Z",
@@ -33903,10 +34119,10 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "69",
+            "viewCount": "68",
             "likeCount": "16",
             "favoriteCount": "0",
-            "commentCount": "20"
+            "commentCount": "21"
           }
         }
       },
@@ -33917,17 +34133,14 @@
         "first_seen_at": "2026-09-18T22:12:26.436878+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "L1bylFL1Ed4uWOu8etiy0ePfDls",
           "id": {
-            "kind": "youtube#video",
             "videoId": "LN54tSmmG3k"
           },
           "snippet": {
             "publishedAt": "2026-09-17T23:00:00Z",
             "channelId": "UCpyQGyOD3NO9J72r3Xl5fyQ",
             "title": "DO YOU EVEN KNOW YOURSELF 🤯🔥 YOUR ENERGY SHOCKS ELON MUSK ⚡👑Joker ApexRiot",
-            "description": "Welcome to Dark Creed. Without a strong internal code, you will always be governed by someone else's agenda. Through a sharp ...",
+            "description": "🎭 Welcome to Dark Creed.\n\nWithout a strong internal code, you will always be governed by someone else's agenda. Through a sharp, cynical lens, we dissect dark psychology, covert influence, and social pressures to help you construct an unshakeable psychological frame. No polite validation here; just a cold, clinical breakdown of sovereign mental discipline.\n\n--------------------------------------------------\n📌 Subscribe to Dark Creed to disarm manipulation and fortify your internal law.\n🔔 Turn on notifications so you never miss a deep psychological breakdown.\n\n#DarkCreed #DarkPsychology #CynicalWisdom #TheMindDissected #jokermindset \n\n📖 This fictional Joker ApexRiot story uses Elon Musk as a fictional character inside a dramatic scenario. It does not claim that Elon Musk has actually evaluated anyone's energy or reacted to their personality. “Energy” is symbolic language for presence, ambition, creativity, and unusual confidence.\n\n🟠 Your presence becomes stronger when you understand yourself ❤️\n🟠 Confidence grows from clarity, not performance ✨\n🟠 Know your strengths before seeking recognition 🔥\n\nInside a fictional technology summit, Elon Musk appears as a character reviewing experimental projects and unconventional ideas. One presentation immediately stands out because of the confidence and originality behind it. The discussion shifts from the project itself to the person whose mindset created it.\n\n🎧 Watch until the end for a fictional Joker ApexRiot story about self-awareness, ambition, unconventional thinking, Elon Musk as a fictional character, and the presence that makes people look twice.\n\n#JokerApexRiot #ElonMusk #SelfAwareness #DarkPsychology #Innovation",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/LN54tSmmG3k/default.jpg",
@@ -33956,13 +34169,26 @@
               }
             },
             "channelTitle": "Dark Creed",
+            "tags": [
+              "#DarkCreed",
+              "#DarkPsychology",
+              "#CynicalWisdom",
+              "#TheMindDissected",
+              "#JokerMindset"
+            ],
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T23:00:00Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "DO YOU EVEN KNOW YOURSELF 🤯🔥 YOUR ENERGY SHOCKS ELON MUSK ⚡👑Joker ApexRiot",
+              "description": "🎭 Welcome to Dark Creed.\n\nWithout a strong internal code, you will always be governed by someone else's agenda. Through a sharp, cynical lens, we dissect dark psychology, covert influence, and social pressures to help you construct an unshakeable psychological frame. No polite validation here; just a cold, clinical breakdown of sovereign mental discipline.\n\n--------------------------------------------------\n📌 Subscribe to Dark Creed to disarm manipulation and fortify your internal law.\n🔔 Turn on notifications so you never miss a deep psychological breakdown.\n\n#DarkCreed #DarkPsychology #CynicalWisdom #TheMindDissected #jokermindset \n\n📖 This fictional Joker ApexRiot story uses Elon Musk as a fictional character inside a dramatic scenario. It does not claim that Elon Musk has actually evaluated anyone's energy or reacted to their personality. “Energy” is symbolic language for presence, ambition, creativity, and unusual confidence.\n\n🟠 Your presence becomes stronger when you understand yourself ❤️\n🟠 Confidence grows from clarity, not performance ✨\n🟠 Know your strengths before seeking recognition 🔥\n\nInside a fictional technology summit, Elon Musk appears as a character reviewing experimental projects and unconventional ideas. One presentation immediately stands out because of the confidence and originality behind it. The discussion shifts from the project itself to the person whose mindset created it.\n\n🎧 Watch until the end for a fictional Joker ApexRiot story about self-awareness, ambition, unconventional thinking, Elon Musk as a fictional character, and the presence that makes people look twice.\n\n#JokerApexRiot #ElonMusk #SelfAwareness #DarkPsychology #Innovation"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "yUovTObbV_X74_nGPvWnDo5FqJQ",
+          "etag": "DqA9iURe-psgHXBWtoCUy_illt0",
           "id": "LN54tSmmG3k",
           "snippet": {
             "publishedAt": "2026-09-17T23:00:00Z",
@@ -34031,8 +34257,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "8",
-            "likeCount": "1",
+            "viewCount": "20",
+            "likeCount": "5",
             "favoriteCount": "0",
             "commentCount": "0"
           }
@@ -34045,17 +34271,14 @@
         "first_seen_at": "2026-09-18T22:12:26.436883+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "_aZocFIanOgXdMKvYY-gaRpASwo",
           "id": {
-            "kind": "youtube#video",
             "videoId": "Vk9S8LlJVok"
           },
           "snippet": {
             "publishedAt": "2026-09-17T22:30:55Z",
             "channelId": "UCZN1shOJ_D_seUeab7mQSDw",
             "title": "Elon Musk Gives A CHILLING W*RNING To All America (This Is NOT GOOD)",
-            "description": "themacs #colby #podcast #talk #prepping #prepare #opinion #personal #podcaster #reaction Want Gold Or Silver? Check with ...",
+            "description": "#themacs #colby #podcast #talk #prepping #prepare #opinion #personal #podcaster #reaction\nWant Gold Or Silver? Check with the company I trust\nGo to https://macslovesgold.com or text Mac to 35052 to get Augusta's free information guide on how Gold IRAs work.\n\n\nWant More In-Depth Information For Colby Mac and The Mac's?? Subscribe To His Weekly Newsletter where he goes into alot of personal views and thoughts\nhttps://themacs.substack.com/subscribe\n\nIf You Want To Contact Me, either text of phone call, please check out my link\nhttps://app.minnect.com/expert/ColbyMac\n\nWant Survival Prescriptions Antibiotics To Place In Your PREPPING Supply? Don't be Caught OFF GUARD. Get Your antibiotics TODAY\nJase Medical: http://jasemedical.com/themacs\n\nWant Personalize Official T Shirts and MERCH of THE MAC'S Check out these Freedom LOVING Shirt designs\nhttps://www.bonfire.com/store/the-macs/\n\nPRESERVE FOOD For 25-30 year SHELF LIFE: \nHarvest Right Freeze Dryers:\nhttps://affiliates.harvestright.com/1682.html\n\nHere is a link to our Amazon store (NO EXTRA COST TO YOU!!) of some of the items we use around the farm:\nhttp://www.amazon.com/shop/themacs\n\nDont Know what Seeds you NEED or want to start a garden?? NO WORRIES! Check out our Survival Seeds Heirloom Kits! This is a GAMECHANGER!\nhttps://survivalgardenseeds.com/?ref=THEMACS10\n\nShop Azure Standard: https://www.azurestandard.com/?a_aid=7af267da7c\n\nMusic Licensure  Provided by Epidemic Sound\n\nWe hope you enjoy our YouTube channel, please like, subscribe and share!   \n\nEmail: themacshappyhomestead@gmail.com  \n~happy homesteading y’all~",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/Vk9S8LlJVok/default.jpg",
@@ -34084,13 +34307,28 @@
               }
             },
             "channelTitle": "The Mac’s",
+            "tags": [
+              "breaking",
+              "news",
+              "prepping",
+              "prepper",
+              "themacs",
+              "the macs",
+              "the mac's"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T22:30:55Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk Gives A CHILLING W*RNING To All America (This Is NOT GOOD)",
+              "description": "#themacs #colby #podcast #talk #prepping #prepare #opinion #personal #podcaster #reaction\nWant Gold Or Silver? Check with the company I trust\nGo to https://macslovesgold.com or text Mac to 35052 to get Augusta's free information guide on how Gold IRAs work.\n\n\nWant More In-Depth Information For Colby Mac and The Mac's?? Subscribe To His Weekly Newsletter where he goes into alot of personal views and thoughts\nhttps://themacs.substack.com/subscribe\n\nIf You Want To Contact Me, either text of phone call, please check out my link\nhttps://app.minnect.com/expert/ColbyMac\n\nWant Survival Prescriptions Antibiotics To Place In Your PREPPING Supply? Don't be Caught OFF GUARD. Get Your antibiotics TODAY\nJase Medical: http://jasemedical.com/themacs\n\nWant Personalize Official T Shirts and MERCH of THE MAC'S Check out these Freedom LOVING Shirt designs\nhttps://www.bonfire.com/store/the-macs/\n\nPRESERVE FOOD For 25-30 year SHELF LIFE: \nHarvest Right Freeze Dryers:\nhttps://affiliates.harvestright.com/1682.html\n\nHere is a link to our Amazon store (NO EXTRA COST TO YOU!!) of some of the items we use around the farm:\nhttp://www.amazon.com/shop/themacs\n\nDont Know what Seeds you NEED or want to start a garden?? NO WORRIES! Check out our Survival Seeds Heirloom Kits! This is a GAMECHANGER!\nhttps://survivalgardenseeds.com/?ref=THEMACS10\n\nShop Azure Standard: https://www.azurestandard.com/?a_aid=7af267da7c\n\nMusic Licensure  Provided by Epidemic Sound\n\nWe hope you enjoy our YouTube channel, please like, subscribe and share!   \n\nEmail: themacshappyhomestead@gmail.com  \n~happy homesteading y’all~"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "0c8MT8cIQcBFSj-nOVI0hH_7p8I",
+          "etag": "L1Vo_ncKGc6kyI2vmGouwW-GOp4",
           "id": "Vk9S8LlJVok",
           "snippet": {
             "publishedAt": "2026-09-17T22:30:55Z",
@@ -34161,31 +34399,28 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "59151",
-            "likeCount": "2120",
+            "viewCount": "80745",
+            "likeCount": "2385",
             "favoriteCount": "0",
-            "commentCount": "402"
+            "commentCount": "496"
           }
         }
       },
       "kDCN2y6zgP0": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310917+00:00",
+        "reason": "등록 인물 확인 불가 — 설명 갱신 후 재검토",
+        "updated_at": "2026-09-22T20:51:12.001653+00:00",
         "first_seen_at": "2026-09-18T22:12:26.436888+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "A0VhX7GLwkPW6Y5kz2QWj88ANEw",
           "id": {
-            "kind": "youtube#video",
             "videoId": "kDCN2y6zgP0"
           },
           "snippet": {
             "publishedAt": "2026-09-17T22:27:11Z",
             "channelId": "UC5PoXpwCMBfuq1HbsnSWjmA",
             "title": "למה אילן מאסק עבר לגור בקרוואן ?",
-            "description": "לנס יש בית — קחו את מקומכם במורשת שלו https://BHYK.org עבדנו על זה במשך שנים, וסוף סוף הגיע הרגע לשתף אתכם: הקמפיין השאפתני ביותר ...",
+            "description": "לנס יש בית — קחו את מקומכם במורשת שלו\n\nhttps://BHYK.org\n\nעבדנו על זה במשך שנים, וסוף סוף הגיע הרגע לשתף אתכם: הקמפיין השאפתני ביותר שלנו עלה לאוויר, ואנחנו מחכים לכם שתצטרפו אלינו שוב כשותפים לדרך.\n\nבמשך שנים התפללתם איתנו, תרמתם איתנו, וחלמתם איתנו. בשנה שעברה סיפרנו לכם שאנחנו פועלים להקים מטה מרכזי בארה״ב — בית כנסת, כולל, אולפנים, ובית למהפכת התורה שבניתם יחד איתנו.\n\nהשנה, בעזרת ה׳, הקב״ה נענה לתפילות. המטה החדש של BH כאן!\n\nועכשיו אנחנו צריכים את העזרה שלכם כדי למלא אותו בתורה, בעשייה ובאור.\n\nהצטרפו אלינו כדי שיחד נוכל לספק מזון למאות משפחות לקראת החג, וב\"ה תזכו להיכתב ולהחתם לשנה טובה ומבורכת!\n\n\n\nתרום ותמוך בכתובת https://www.BeEzratHaShem.org\n\nAI RABBI מאת ארגון בעזרת השם.\n\n https://www.AIRabbi.org\n\nתשובות לשאלות על החיים היהודיים ב-30 שפות.\n\nגלה את חכמת היהדות בהישג ידך, האפליקציה של הרב ירון ראובן- תשובת הרב בבינה מלאכותית, מציעה חכמה והכוונה בשפות רבות, תוך שימוש במקורות מהימנים ואמינים.\n\n#תורה #יהדות #הרבירוןראובן #אלוקים #קירוב  #חזרהבתשובה #יראתשמיים #חיזוק #הרבאפריםכחלון #ארגוןבעזרתהשם #חסד",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/kDCN2y6zgP0/default.jpg",
@@ -34214,13 +34449,60 @@
               }
             },
             "channelTitle": "הרב אפרים כחלון",
+            "tags": [
+              "גמילות חסדים",
+              "לימוד תורה",
+              "אברכים",
+              "יראת שמיים",
+              "יום הדין",
+              "מעשר",
+              "גאון",
+              "הרב אפרים כחלון",
+              "הרב ירון ראובן",
+              "יהדות",
+              "פרקי אבות",
+              "Efraim Kachlon",
+              "משיח",
+              "מצוות",
+              "חגים",
+              "גמרא",
+              "תורה",
+              "יהודים משיחיים",
+              "אקטואליה",
+              "שלום בית",
+              "חינוך ילדים",
+              "מוסר",
+              "אהבה",
+              "חגי ישראל",
+              "רבנים",
+              "חזל",
+              "פרשת השבוע",
+              "עם ישראל",
+              "חסד",
+              "בורא עולם",
+              "חזרה בתשובה",
+              "קירוב",
+              "תורה שבעל פה",
+              "שיעור",
+              "השקפה",
+              "הלכה",
+              "דעת תורה",
+              "זיכוי הרבים",
+              "סיפורים"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T22:27:11Z"
+            "defaultLanguage": "iw",
+            "localized": {
+              "title": "למה אילן מאסק עבר לגור בקרוואן ?",
+              "description": "לנס יש בית — קחו את מקומכם במורשת שלו\n\nhttps://BHYK.org\n\nעבדנו על זה במשך שנים, וסוף סוף הגיע הרגע לשתף אתכם: הקמפיין השאפתני ביותר שלנו עלה לאוויר, ואנחנו מחכים לכם שתצטרפו אלינו שוב כשותפים לדרך.\n\nבמשך שנים התפללתם איתנו, תרמתם איתנו, וחלמתם איתנו. בשנה שעברה סיפרנו לכם שאנחנו פועלים להקים מטה מרכזי בארה״ב — בית כנסת, כולל, אולפנים, ובית למהפכת התורה שבניתם יחד איתנו.\n\nהשנה, בעזרת ה׳, הקב״ה נענה לתפילות. המטה החדש של BH כאן!\n\nועכשיו אנחנו צריכים את העזרה שלכם כדי למלא אותו בתורה, בעשייה ובאור.\n\nהצטרפו אלינו כדי שיחד נוכל לספק מזון למאות משפחות לקראת החג, וב\"ה תזכו להיכתב ולהחתם לשנה טובה ומבורכת!\n\n\n\nתרום ותמוך בכתובת https://www.BeEzratHaShem.org\n\nAI RABBI מאת ארגון בעזרת השם.\n\n https://www.AIRabbi.org\n\nתשובות לשאלות על החיים היהודיים ב-30 שפות.\n\nגלה את חכמת היהדות בהישג ידך, האפליקציה של הרב ירון ראובן- תשובת הרב בבינה מלאכותית, מציעה חכמה והכוונה בשפות רבות, תוך שימוש במקורות מהימנים ואמינים.\n\n#תורה #יהדות #הרבירוןראובן #אלוקים #קירוב  #חזרהבתשובה #יראתשמיים #חיזוק #הרבאפריםכחלון #ארגוןבעזרתהשם #חסד"
+            },
+            "defaultAudioLanguage": "iw"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "F6Z_QB3sTGnJxQjXAzTosheToFU",
+          "etag": "4KAfc_Dd6vqmrszcg1zGwnyDw5Q",
           "id": "kDCN2y6zgP0",
           "snippet": {
             "publishedAt": "2026-09-17T22:27:11Z",
@@ -34323,12 +34605,14 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "187",
-            "likeCount": "6",
+            "viewCount": "206",
+            "likeCount": "8",
             "favoriteCount": "0",
             "commentCount": "5"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:12.001631+00:00",
+        "next_retry_at": "2026-09-23T02:51:12.001645+00:00"
       },
       "PYNu41ac04U": {
         "status": "pending",
@@ -34337,17 +34621,14 @@
         "first_seen_at": "2026-09-18T22:12:27.295853+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "VEdpoX1Bf-enN2xsQLt0jQKhink",
           "id": {
-            "kind": "youtube#video",
             "videoId": "PYNu41ac04U"
           },
           "snippet": {
             "publishedAt": "2026-09-18T18:02:21Z",
             "channelId": "UCkH1uDkyuO9sVjSqdqBygOg",
             "title": "Behind The Desk: Live with Mark Liu",
-            "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for ...",
+            "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for air in real time. We’re pulling back the curtain on The Desk and bringing you inside the newsroom.\n\nText The Desk: 818-221-2222\n\nLos Angeles live news | behind the scenes | Mark Liu | newsroom stream\n\n\n\nSubscribe Here: youtube.com/@CBSLA\nOfficial Site: cbsla.com\nTwitter:  twitter.com/cbslosangeles\nFacebook: facebook.com/cbsla\nInstagram: instagram.com/cbsla",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/PYNu41ac04U/default.jpg",
@@ -34376,13 +34657,31 @@
               }
             },
             "channelTitle": "CBS LA",
+            "tags": [
+              "Los Angeles",
+              "CBS Los Angeles",
+              "CBS Local",
+              "CBSLA",
+              "cbs news",
+              "local news",
+              "socal",
+              "california",
+              "southern california",
+              "breaking news"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T18:02:21Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Behind The Desk: Live with Mark Liu",
+              "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for air in real time. We’re pulling back the curtain on The Desk and bringing you inside the newsroom.\n\nText The Desk: 818-221-2222\n\nLos Angeles live news | behind the scenes | Mark Liu | newsroom stream\n\n\n\nSubscribe Here: youtube.com/@CBSLA\nOfficial Site: cbsla.com\nTwitter:  twitter.com/cbslosangeles\nFacebook: facebook.com/cbsla\nInstagram: instagram.com/cbsla"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "NgBmsrKqfBflSyqi7oAXYcj6pMs",
+          "etag": "H9GMBudqAc_1-lPHlN_dXl9HQuY",
           "id": "PYNu41ac04U",
           "snippet": {
             "publishedAt": "2026-09-18T18:02:21Z",
@@ -34456,7 +34755,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "1482",
+            "viewCount": "1488",
             "likeCount": "14",
             "favoriteCount": "0",
             "commentCount": "0"
@@ -34470,17 +34769,14 @@
         "first_seen_at": "2026-09-18T22:12:27.295879+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "pzhBU6kgubD90TKEzG0IJ0qoXLE",
           "id": {
-            "kind": "youtube#video",
             "videoId": "-Dcm2ChP6c8"
           },
           "snippet": {
             "publishedAt": "2026-09-18T16:00:05Z",
             "channelId": "UCZbyCfypZoUbx70dUg32i7A",
             "title": "Clancy Trial’s Impact on Jury System and Courtroom Observations of Holdout Juror, with Brian Entin",
-            "description": "In The Well hosts Mark Geragos and Matt Murphy join the show to discuss Turtleboy News founder Aidan Kearney doxxing the ...",
+            "description": "In The Well hosts Mark Geragos and Matt Murphy join the show to discuss Turtleboy News founder Aidan Kearney doxxing the Lindsay Clancy holdout juror’s identity, why it’s unlikely defense attorney Kevin Reddington was involved in the doxxing, why doxxing is a form of jury intimidation, the lasting effects of the holdout juror’s doxxing on the jury system, NewsNation Senior National Correspondent Brian Entin joins Mark and Matt to discuss his experience on the ground at the Lindsay Clancy trial, Brian’s observations of the holdout juror in the courtroom, why it’s possible Gayle King knew the identification of the holdout juror before she asked fellow juror Paula Devlin about his physical characteristics, why the prosecution and defense may have selected the holdout juror because of his criminal record, the clash of supporters outside the trial, Brian reveals the moment he witnessed the turning point in the public perception of the Lindsay Clancy trial, and more.\n \nMark Geragos: https://geragos.com\n \nMatt Murphy: https://www.mattmurphylaw.com\n \nBrian Entin: https://www.youtube.com/@BrianEntinInvestigates\n \nFollow MK True Crime on all social platforms:\nYouTube - https://www.youtube.com/@MKTrueCrime\nX - https://x.com/mktruecrime\nInstagram - https://www.instagram.com/mktruecrime\nTikTok - https://www.tiktok.com/@mktruecrime",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/-Dcm2ChP6c8/default.jpg",
@@ -34509,13 +34805,23 @@
               }
             },
             "channelTitle": "MK True Crime",
+            "tags": [
+              "megyn kelly",
+              "megyn kelly true crime"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T16:00:05Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Clancy Trial’s Impact on Jury System and Courtroom Observations of Holdout Juror, with Brian Entin",
+              "description": "In The Well hosts Mark Geragos and Matt Murphy join the show to discuss Turtleboy News founder Aidan Kearney doxxing the Lindsay Clancy holdout juror’s identity, why it’s unlikely defense attorney Kevin Reddington was involved in the doxxing, why doxxing is a form of jury intimidation, the lasting effects of the holdout juror’s doxxing on the jury system, NewsNation Senior National Correspondent Brian Entin joins Mark and Matt to discuss his experience on the ground at the Lindsay Clancy trial, Brian’s observations of the holdout juror in the courtroom, why it’s possible Gayle King knew the identification of the holdout juror before she asked fellow juror Paula Devlin about his physical characteristics, why the prosecution and defense may have selected the holdout juror because of his criminal record, the clash of supporters outside the trial, Brian reveals the moment he witnessed the turning point in the public perception of the Lindsay Clancy trial, and more.\n \nMark Geragos: https://geragos.com\n \nMatt Murphy: https://www.mattmurphylaw.com\n \nBrian Entin: https://www.youtube.com/@BrianEntinInvestigates\n \nFollow MK True Crime on all social platforms:\nYouTube - https://www.youtube.com/@MKTrueCrime\nX - https://x.com/mktruecrime\nInstagram - https://www.instagram.com/mktruecrime\nTikTok - https://www.tiktok.com/@mktruecrime"
+            },
+            "defaultAudioLanguage": "en-US"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "N4SOZreCUhnDmRRIzdKhW1Mpy6U",
+          "etag": "GhmyYfb0j1F5ujUzWgOttFfM_9U",
           "id": "-Dcm2ChP6c8",
           "snippet": {
             "publishedAt": "2026-09-18T16:00:05Z",
@@ -34581,10 +34887,10 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "33030",
-            "likeCount": "1106",
+            "viewCount": "35231",
+            "likeCount": "1147",
             "favoriteCount": "0",
-            "commentCount": "203"
+            "commentCount": "204"
           }
         }
       },
@@ -34595,17 +34901,14 @@
         "first_seen_at": "2026-09-18T22:12:27.295886+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "by17nXcmA02bdTVmVZr7yhTKXeA",
           "id": {
-            "kind": "youtube#video",
             "videoId": "ajtI_wnPARw"
           },
           "snippet": {
             "publishedAt": "2026-09-17T20:03:46Z",
             "channelId": "UCHcHLYWoW522j8nNNLUz-7A",
             "title": "ABC Legal Analyst and Former Prosecutor Matt Murphy on the Trial of Caleb Flynn",
-            "description": "00:00 Matt Murphy Joins Billy — Caleb Flynn Trial 00:33 Caleb Flynn's 911 Call 01:51 Matt Murphy Reacts to Flynn's 911 Call ...",
+            "description": "00:00 Matt Murphy Joins Billy — Caleb Flynn Trial\n00:33 Caleb Flynn’s 911 Call\n01:51 Matt Murphy Reacts to Flynn’s 911 Call\n03:50 Bodycam Footage: Police Arrive at the Flynn Home\n05:00 Murphy Breaks Down Flynn’s Behavior\n06:59 Flynn’s Daughters & Witness Intimidation Charges\n09:45 The Digital Evidence That Could Define the Case\n11:23 Why Google Searches Can Reveal a Motive\n15:07 What Murphy Expects From the Flynn Prosecution\n15:26 Hayden Panettiere & the Fentanyl Investigation\n19:11 Nick Reiner: Why Prosecutors Won’t Seek Death\n21:16 Mental Illness, Insanity & Criminal Responsibility\n23:06 Alan Jackson and the Nick Reiner Defense\n25:20 Matt Murphy Rescues a Shark\n26:33 More Living, Less Grinding\n\nThe Caleb Flynn murder trial is underway — and former prosecutor Matt Murphy joins Billy Bush to break down a case that could become one of the next major true-crime trials. \n\nFormer American Idol contestant and youth music pastor Caleb Flynn is facing 11 charges in connection with the death of his wife, Ashley, including murder, felonious assault, staging a crime scene, evidence tampering and witness intimidation. With jury selection underway, Billy is joined by veteran prosecutor and ABC News Legal Analyst, Matt Murphy to examine the evidence — including Flynn’s dramatic 911 call, bodycam footage, allegations involving his two daughters, and the digital evidence that could become critical at trial. Flynn is presumed innocent unless and until proven guilty. \n\nPlus, Matt weighs in on the investigation surrounding Hayden Panettiere and Matt's AMAZING shark rescue story! \n\n#CalebFlynn #LindsayClancy #MattMurphy #AmyGriffin #TheTell #BillyBush #HotMics #TrueCrime #AmericanIdol #CourtroomNews #podcast \n\n\nSubscribe: https://www.youtube.com/@HotMicswithBillyBush?sub_confirmation=1\n\nYou can listen live exclusively on TuneIn Monday through Thursday 9am PT / 12pm ET. Ask your Alexa or Google device to \"Play Hot Mics with Billy Bush on TuneIn\" to listen.",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/ajtI_wnPARw/default.jpg",
@@ -34639,13 +34942,30 @@
               }
             },
             "channelTitle": "Hot Mics with Billy Bush",
+            "tags": [
+              "Billy Bush",
+              "Hot Mics",
+              "breaking news",
+              "current events",
+              "daily news",
+              "trending now",
+              "world news",
+              "news alert",
+              "viral video"
+            ],
+            "categoryId": "24",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T20:03:46Z"
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "ABC Legal Analyst and Former Prosecutor Matt Murphy on the Trial of Caleb Flynn",
+              "description": "00:00 Matt Murphy Joins Billy — Caleb Flynn Trial\n00:33 Caleb Flynn’s 911 Call\n01:51 Matt Murphy Reacts to Flynn’s 911 Call\n03:50 Bodycam Footage: Police Arrive at the Flynn Home\n05:00 Murphy Breaks Down Flynn’s Behavior\n06:59 Flynn’s Daughters & Witness Intimidation Charges\n09:45 The Digital Evidence That Could Define the Case\n11:23 Why Google Searches Can Reveal a Motive\n15:07 What Murphy Expects From the Flynn Prosecution\n15:26 Hayden Panettiere & the Fentanyl Investigation\n19:11 Nick Reiner: Why Prosecutors Won’t Seek Death\n21:16 Mental Illness, Insanity & Criminal Responsibility\n23:06 Alan Jackson and the Nick Reiner Defense\n25:20 Matt Murphy Rescues a Shark\n26:33 More Living, Less Grinding\n\nThe Caleb Flynn murder trial is underway — and former prosecutor Matt Murphy joins Billy Bush to break down a case that could become one of the next major true-crime trials. \n\nFormer American Idol contestant and youth music pastor Caleb Flynn is facing 11 charges in connection with the death of his wife, Ashley, including murder, felonious assault, staging a crime scene, evidence tampering and witness intimidation. With jury selection underway, Billy is joined by veteran prosecutor and ABC News Legal Analyst, Matt Murphy to examine the evidence — including Flynn’s dramatic 911 call, bodycam footage, allegations involving his two daughters, and the digital evidence that could become critical at trial. Flynn is presumed innocent unless and until proven guilty. \n\nPlus, Matt weighs in on the investigation surrounding Hayden Panettiere and Matt's AMAZING shark rescue story! \n\n#CalebFlynn #LindsayClancy #MattMurphy #AmyGriffin #TheTell #BillyBush #HotMics #TrueCrime #AmericanIdol #CourtroomNews #podcast \n\n\nSubscribe: https://www.youtube.com/@HotMicswithBillyBush?sub_confirmation=1\n\nYou can listen live exclusively on TuneIn Monday through Thursday 9am PT / 12pm ET. Ask your Alexa or Google device to \"Play Hot Mics with Billy Bush on TuneIn\" to listen."
+            },
+            "defaultAudioLanguage": "en-US"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "FvovKjm1LsRrsszRAcpFUTPnH3A",
+          "etag": "Ag_isl0FTk0xH-u7wfQ7NE14FGU",
           "id": "ajtI_wnPARw",
           "snippet": {
             "publishedAt": "2026-09-17T20:03:46Z",
@@ -34723,10 +35043,10 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "53058",
-            "likeCount": "1100",
+            "viewCount": "71347",
+            "likeCount": "1400",
             "favoriteCount": "0",
-            "commentCount": "159"
+            "commentCount": "193"
           }
         }
       },
@@ -34737,17 +35057,14 @@
         "first_seen_at": "2026-09-18T22:12:27.295892+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "wq-8MD6mhVnnkpRmmMx50UvTJjU",
           "id": {
-            "kind": "youtube#video",
             "videoId": "S4igM0EG5II"
           },
           "snippet": {
             "publishedAt": "2026-09-16T23:00:06Z",
             "channelId": "UC7Ub1YkAZP_bCkDCGe3pN7Q",
             "title": "SANDRA RIVERA: LA MUJER DETRÁS DE LOS PREMIOS CRISTO REY | UNA HISTORIA DE TALENTO Y PROPÓSITO",
-            "description": "En este episodio de EN CONFIANZA CON TITO VARELA conversamos con Sandra Rivera, creadora de los Premios Cristo Rey, ...",
+            "description": "En este episodio de EN CONFIANZA CON TITO VARELA conversamos con Sandra Rivera, creadora de los Premios Cristo Rey, una iniciativa que nació en medio de la pandemia con un propósito muy especial: visibilizar, reconocer y exaltar el talento de nuestra región.\n\nLo que comenzó como una idea en un momento de incertidumbre terminó convirtiéndose en una iniciativa que ha ganado espacio y reconocimiento en la ciudad, conectando a personas, artistas, emprendedores, profesionales y diferentes talentos que merecen ser vistos y reconocidos.\n\nSandra nos cuenta cómo nació esta idea, qué la motivó a crear los Premios Cristo Rey y cuáles fueron los retos de sacar adelante un proyecto que buscaba darle protagonismo al talento local.\n\nEn una conversación cercana y amena con Tito Varela, conoceremos también a la mujer que está detrás de esta iniciativa: sus motivaciones, sus aprendizajes y la importancia de creer en las capacidades de quienes construyen región desde diferentes escenarios.\n\nUna historia sobre visión, perseverancia, reconocimiento y amor por el talento de nuestra tierra.\n\nPorque muchas veces el talento está ahí… solo necesita que alguien decida ponerlo en el lugar donde merece estar.\n\n🎙️ EN CONFIANZA CON TITO VARELA\n\nHistorias reales, conversaciones auténticas y personajes que tienen algo que contar.\n\n#EnConfianzaConTitoVarela #SandraRivera #PremiosCristoRey #TitoVarela #TalentoVallecaucano #Cali #HistoriasQueInspiran #TalentoLocal #Podcast #ValleDelCauca #CristoRey",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/S4igM0EG5II/default.jpg",
@@ -34776,13 +35093,19 @@
               }
             },
             "channelTitle": "TITO VARELA COMUNICA",
+            "categoryId": "20",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-16T23:00:06Z"
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "SANDRA RIVERA: LA MUJER DETRÁS DE LOS PREMIOS CRISTO REY | UNA HISTORIA DE TALENTO Y PROPÓSITO",
+              "description": "En este episodio de EN CONFIANZA CON TITO VARELA conversamos con Sandra Rivera, creadora de los Premios Cristo Rey, una iniciativa que nació en medio de la pandemia con un propósito muy especial: visibilizar, reconocer y exaltar el talento de nuestra región.\n\nLo que comenzó como una idea en un momento de incertidumbre terminó convirtiéndose en una iniciativa que ha ganado espacio y reconocimiento en la ciudad, conectando a personas, artistas, emprendedores, profesionales y diferentes talentos que merecen ser vistos y reconocidos.\n\nSandra nos cuenta cómo nació esta idea, qué la motivó a crear los Premios Cristo Rey y cuáles fueron los retos de sacar adelante un proyecto que buscaba darle protagonismo al talento local.\n\nEn una conversación cercana y amena con Tito Varela, conoceremos también a la mujer que está detrás de esta iniciativa: sus motivaciones, sus aprendizajes y la importancia de creer en las capacidades de quienes construyen región desde diferentes escenarios.\n\nUna historia sobre visión, perseverancia, reconocimiento y amor por el talento de nuestra tierra.\n\nPorque muchas veces el talento está ahí… solo necesita que alguien decida ponerlo en el lugar donde merece estar.\n\n🎙️ EN CONFIANZA CON TITO VARELA\n\nHistorias reales, conversaciones auténticas y personajes que tienen algo que contar.\n\n#EnConfianzaConTitoVarela #SandraRivera #PremiosCristoRey #TitoVarela #TalentoVallecaucano #Cali #HistoriasQueInspiran #TalentoLocal #Podcast #ValleDelCauca #CristoRey"
+            },
+            "defaultAudioLanguage": "es"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "zlWhKG_bnIs47XgduGrz2fZMCGA",
+          "etag": "9PJFFNrJOYdZdL7GRtO2XDAfAxI",
           "id": "S4igM0EG5II",
           "snippet": {
             "publishedAt": "2026-09-16T23:00:06Z",
@@ -34844,8 +35167,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "88",
-            "likeCount": "6",
+            "viewCount": "95",
+            "likeCount": "8",
             "favoriteCount": "0",
             "commentCount": "0"
           }
@@ -34858,17 +35181,14 @@
         "first_seen_at": "2026-09-18T22:12:27.295897+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "PCtk9rbjz0YOHA_rCAHy7pFyNbw",
           "id": {
-            "kind": "youtube#video",
             "videoId": "bAbIbJkqV_I"
           },
           "snippet": {
             "publishedAt": "2026-09-16T19:18:58Z",
             "channelId": "UC9G8DcGtPfHsVEfUTM_TjEw",
             "title": "The AI Opportunity: Silicon to Systems | Intel Business",
-            "description": "For nearly 60 years, Intel has transformed silicon into solutions.​ At AI Infra Summit 2026, Intel CEO Lip-Bu Tan joined Ed Nelson, ...",
+            "description": "For nearly 60 years, Intel has transformed silicon into solutions.​\n\nAt AI Infra Summit 2026, Intel CEO Lip-Bu Tan joined Ed Nelson, Strategy Director and Co-Founder of AI Infra Summit, for a fireside chat on Intel’s transformation and the future of AI infrastructure.​\n\nThey discuss responsible AI adoption, the growing importance of CPUs, accelerators, software and systems, Intel’s approach to partnership and competition, and the manufacturing and advanced-packaging investments needed to help customers scale AI.​\n\nSubscribe now to Intel Business on YouTube: https://intel.ly/43XZh6J \n\nAbout Intel Business:\nGet all the IT info you need, right here. From data centers to devices, the Intel® Business Center has the resources, guidance, and expert insights you need to get your IT projects done right.\n\nConnect with Intel Business:\nVisit Intel Business WEBSITE: http://intel.ly/itcenter \nFollow Intel Business on X: https://twitter.com/IntelBusiness \nFollow Intel Business on LINKEDIN: https://linkedin.com/showcase/intel-business                         \nFollow Intel Business on FACEBOOK: https://facebook.com/IntelBusiness \n\nThe AI Opportunity: Silicon to Systems | Intel Business\nhttps://www.youtube.com/intelbusiness",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/bAbIbJkqV_I/default.jpg",
@@ -34902,13 +35222,37 @@
               }
             },
             "channelTitle": "Intel Business",
+            "tags": [
+              "intel",
+              "intel business",
+              "intel computer",
+              "computers for business",
+              "computer technology",
+              "big data",
+              "pc computer",
+              "pc",
+              "pc intel",
+              "computer processor",
+              "cloud computing",
+              "future of business",
+              "technology",
+              "tech",
+              "ai",
+              "artificial intelligence"
+            ],
+            "categoryId": "28",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-16T19:18:58Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "The AI Opportunity: Silicon to Systems | Intel Business",
+              "description": "For nearly 60 years, Intel has transformed silicon into solutions.​\n\nAt AI Infra Summit 2026, Intel CEO Lip-Bu Tan joined Ed Nelson, Strategy Director and Co-Founder of AI Infra Summit, for a fireside chat on Intel’s transformation and the future of AI infrastructure.​\n\nThey discuss responsible AI adoption, the growing importance of CPUs, accelerators, software and systems, Intel’s approach to partnership and competition, and the manufacturing and advanced-packaging investments needed to help customers scale AI.​\n\nSubscribe now to Intel Business on YouTube: https://intel.ly/43XZh6J \n\nAbout Intel Business:\nGet all the IT info you need, right here. From data centers to devices, the Intel® Business Center has the resources, guidance, and expert insights you need to get your IT projects done right.\n\nConnect with Intel Business:\nVisit Intel Business WEBSITE: http://intel.ly/itcenter \nFollow Intel Business on X: https://twitter.com/IntelBusiness \nFollow Intel Business on LINKEDIN: https://linkedin.com/showcase/intel-business                         \nFollow Intel Business on FACEBOOK: https://facebook.com/IntelBusiness \n\nThe AI Opportunity: Silicon to Systems | Intel Business\nhttps://www.youtube.com/intelbusiness"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "nEbRjZ46ywtKvm29wFpbPGTpFkY",
+          "etag": "Vm8GZ2oXO9Iau_3fXGdLykkM3gc",
           "id": "bAbIbJkqV_I",
           "snippet": {
             "publishedAt": "2026-09-16T19:18:58Z",
@@ -34993,8 +35337,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "8489",
-            "likeCount": "85",
+            "viewCount": "8830",
+            "likeCount": "87",
             "favoriteCount": "0",
             "commentCount": "2"
           }
@@ -35007,17 +35351,14 @@
         "first_seen_at": "2026-09-18T22:12:27.295904+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "5Zk51tWBRhZkEyaOQVpKFeUsqro",
           "id": {
-            "kind": "youtube#video",
             "videoId": "ohf9RJ3buJU"
           },
           "snippet": {
             "publishedAt": "2026-09-16T18:23:11Z",
             "channelId": "UCkH1uDkyuO9sVjSqdqBygOg",
             "title": "Behind The Desk: Live with Mark Liu",
-            "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for ...",
+            "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for air in real time. We’re pulling back the curtain on The Desk and bringing you inside the newsroom.\n\nText The Desk: 818-221-2222\n\nLos Angeles live news | behind the scenes | Mark Liu | newsroom stream\n\n\n\nSubscribe Here: youtube.com/@CBSLA\nOfficial Site: cbsla.com\nTwitter:  twitter.com/cbslosangeles\nFacebook: facebook.com/cbsla\nInstagram: instagram.com/cbsla",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/ohf9RJ3buJU/default.jpg",
@@ -35046,13 +35387,31 @@
               }
             },
             "channelTitle": "CBS LA",
+            "tags": [
+              "Los Angeles",
+              "CBS Los Angeles",
+              "CBS Local",
+              "CBSLA",
+              "cbs news",
+              "local news",
+              "socal",
+              "california",
+              "southern california",
+              "breaking news"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-16T18:23:11Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Behind The Desk: Live with Mark Liu",
+              "description": "Stream Mark Liu at The Desk live weekdays from 10am to 11am as he makes calls, researches breaking stories, and prepares for air in real time. We’re pulling back the curtain on The Desk and bringing you inside the newsroom.\n\nText The Desk: 818-221-2222\n\nLos Angeles live news | behind the scenes | Mark Liu | newsroom stream\n\n\n\nSubscribe Here: youtube.com/@CBSLA\nOfficial Site: cbsla.com\nTwitter:  twitter.com/cbslosangeles\nFacebook: facebook.com/cbsla\nInstagram: instagram.com/cbsla"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "XKoFNOUrGiltxzSzXrg4PUZ-CtQ",
+          "etag": "H3RziOD273V9pL85_ANuqwLrutE",
           "id": "ohf9RJ3buJU",
           "snippet": {
             "publishedAt": "2026-09-16T18:23:11Z",
@@ -35126,7 +35485,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "2225",
+            "viewCount": "2228",
             "likeCount": "29",
             "favoriteCount": "0",
             "commentCount": "1"
@@ -35781,17 +36140,14 @@
         "first_seen_at": "2026-09-18T22:12:28.179896+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "dpteZbw3pAJCCzJwQh3yOI6MxlY",
           "id": {
-            "kind": "youtube#video",
             "videoId": "nD_eMBpqkW8"
           },
           "snippet": {
             "publishedAt": "2026-09-18T13:31:30Z",
             "channelId": "UCJy_zPw7vM2ITQW-Fi5C9aQ",
             "title": "Prince Harry’s Tense TV Moment: Jonathan Ross Interview Takes an Unexpected Turn",
-            "description": "A highly discussed Prince Harry and Jonathan Ross interview takes an unexpected turn as the conversation becomes ...",
+            "description": "A highly discussed Prince Harry and Jonathan Ross interview takes an unexpected turn as the conversation becomes increasingly tense. What was meant to be a lighthearted late-night appearance suddenly feels awkward, leaving viewers wondering what happened behind the scenes. Watch this dramatic breakdown of the moment, the questions that changed the mood, and the reactions surrounding the interview.\n\n#PrinceHarry #JonathanRoss #PrinceHarryInterview #JonathanRossShow #RoyalNews #RoyalFamily #CelebrityNews #TVInterview #EntertainmentNews #ViralMoment #LateNightShow #Trending",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/nD_eMBpqkW8/default.jpg",
@@ -35820,13 +36176,22 @@
               }
             },
             "channelTitle": "Royal Talk Podcast",
+            "tags": [
+              "Prince Harry, Jonathan Ross, Prince Harry Jonathan Ross, Jonathan Ross Show, Prince Harry interview, Prince Harry TV interview, Jonathan Ross interview, royal family, royal news, Prince Harry news, celebrity interview, celebrity"
+            ],
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T13:31:30Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Prince Harry’s Tense TV Moment: Jonathan Ross Interview Takes an Unexpected Turn",
+              "description": "A highly discussed Prince Harry and Jonathan Ross interview takes an unexpected turn as the conversation becomes increasingly tense. What was meant to be a lighthearted late-night appearance suddenly feels awkward, leaving viewers wondering what happened behind the scenes. Watch this dramatic breakdown of the moment, the questions that changed the mood, and the reactions surrounding the interview.\n\n#PrinceHarry #JonathanRoss #PrinceHarryInterview #JonathanRossShow #RoyalNews #RoyalFamily #CelebrityNews #TVInterview #EntertainmentNews #ViralMoment #LateNightShow #Trending"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "U_irqA0zsq3x6QYqKZJF0kGnlXg",
+          "etag": "803qqjhWNlzzDsb73AzNqGOasGk",
           "id": "nD_eMBpqkW8",
           "snippet": {
             "publishedAt": "2026-09-18T13:31:30Z",
@@ -35878,7 +36243,7 @@
             "dimension": "2d",
             "definition": "hd",
             "caption": "false",
-            "licensedContent": false,
+            "licensedContent": true,
             "contentRating": {},
             "projection": "rectangular"
           },
@@ -35891,7 +36256,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "215",
+            "viewCount": "226",
             "likeCount": "3",
             "favoriteCount": "0",
             "commentCount": "2"
@@ -35900,22 +36265,19 @@
       },
       "xKYkczxuGpU": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310948+00:00",
+        "reason": "등록 인물 확인 불가 — 설명 갱신 후 재검토",
+        "updated_at": "2026-09-22T20:51:12.005104+00:00",
         "first_seen_at": "2026-09-18T22:12:28.179921+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "nmZ7sM52mUcM28P9Rmo-EyKrDxU",
           "id": {
-            "kind": "youtube#video",
             "videoId": "xKYkczxuGpU"
           },
           "snippet": {
             "publishedAt": "2026-09-18T09:00:15Z",
             "channelId": "UCY9KXoezyo6cp-YwguOOCcg",
             "title": "【王者NVIDIA・・・終了か？】AI半導体戦争・・・新章開幕！！！！",
-            "description": "【提供:Tenstorrent】 ・HP https://tenstorrent.com/ja ・人材育成プログラムADIPについて https://adip.jp/ 【スポンサー:株式会社 ...",
+            "description": "【提供:Tenstorrent】\n・HP　 \nhttps://tenstorrent.com/ja\n・人材育成プログラムADIPについて　\nhttps://adip.jp/\n\n【スポンサー:株式会社平山ホールディングス】\n・ホームページ\nhttps://www.hirayamastaff.co.jp/hirayama/\n・進化型アウトソーシングのご紹介\nhttps://hirayamastaff.co.jp/mlp/outsourcing/\n\n《目次》\n00:00 本日のテーマ\n01:47 生ける伝説！Mr.半導体ジム・ケラーとは？\n04:04 王者NVIDIAを打ち負かす、ジム・ケラーの構想\n09:13 AIの未来は、特化型ではなく汎用型\n14:01 RapidusやRISC-Vとの連携\n17:58 限界を定義せず、新しいCPUを生み出す \n19:10 日本のエンジニアに対する、ジム・ケラーの期待\n21:07 大学に進学した理由は、好きな子を追って？ \n22:16  CUDA経済圏をどうする？Blackholeチップで勝つ！\n33:29  ADIPでTenstorrentに派遣された学生さんにインタビュー①\n40:23  ADIPでTenstorrentに派遣された学生さんにインタビュー②\n50:36 最先端デジタルSoC設計人材育成「ADIP」\n53:36 2026年PR動画募集のお知らせ\n56:25 次回予告\n\n■ものづくり太郎へのお問い合わせ■\nhttps://boostbytechnology.com/contact\nスポンサー・PR依頼、工場診断、PLMのグランドデザイン等\nご希望の方もお気軽にご連絡ください！\n\n【スタッフ募集についてはコチラから】\n・問い合わせフォームからのご応募\nhttps://boostbytechnology.com/contact\n・メールでのご応募↓↓\nmonozukuritarou@moriagetai.jp\n※求人の条件等は上記からお問い合わせください。\n\n【メンバーシップのご登録はこちらから】\nメンバー限定の動画を毎週お届けいたします！\nレポートの提供やものづくり太郎と会える特典も…！？\n特典内容の詳細はこちらから↓↓\nhttps://www.youtube.com/channel/UCY9KXoezyo6cp-YwguOOCcg/join\n\n【ものづくり太郎が、ラジオをはじめました！！】\n平日、朝8時に配信中！\nものづくり太郎が普段考えているビジネスに関することや\n普段の動画では配信できない裏話を自由に話していきます！\n・YouTube\n他配信サイトより早く配信する他にも、YouTubeメンバーシップ限定ラジオも配信中！\n・voicy\nhttps://r.voicy.jp/GQVQqYo6VkW\n・stand.fm\nhttps://stand.fm/channels/68634ec1ead4839325573733\n・Spotify\nhttps://open.spotify.com/show/4A18e2s3YDZoLNberZ0gTz\n\n【メルマガ会員限定の特別資料を随時配信中！】\nものづくり太郎や対談ゲストの特別資料をメルマガ会員限定で配信しております。\nものづくり太郎チャンネルの最新動画情報も毎週お知らせ！\nメルマガ登録はこちらから↓↓\nhttps://boostbytechnology.com/salon\n\n【海外でキャッチアップした情報をレポートでフィードバック！】\n■ドイツ訪問レポート2026■\nhttps://note.com/moriagetai/n/n531a8b1196e5?sub_rt=share_sb\n■欧州視察レポート詳細はこちら↓↓■ｰ2024年11月​​​​​​​\nhttps://note.com/moriagetai/n/n36a1103f1119?sub_rt=share_sb\n■米国視察レポート詳細はこちら↓↓■ｰ2024年10月\nhttps://note.com/moriagetai/n/n93e2c686ab62?sub_rt=share_sb\n■台湾視察レポート詳細はこちら↓↓■ｰ2024年7月\nhttps://note.com/moriagetai/n/n41040bfb568b?sub_rt=share_sb\n\n【ものづくり太郎の初書籍！Amazonにて発売開始！】\n・https://www.amazon.co.jp/dp/4046067217/\n欧米・中国に取り残されるか? 最高の転換期をつくりだすか?\nあなたの現場、そのままで大丈夫ですか?\n大注目、YouTube登録者27万人突破!\n文系理系の壁を越えてものづくり産業を語る第一人者、待望の書き下ろし!\n\n■ものづくり太郎チャンネル　ものづくり太郎のプロフィール\nYouTube 活動のためミスミを退社。日本では製造業に関わる人口が非常に多いが、\nYouTube の投稿に製造業関連の動画が少ないことに着目し、「これでは日本が誇る製\n造業が浮かばれないと」自身で製造業(ものづくり)に関わる様々な情報を提供しよ\nうと決心し、活動を展開。ものづくり系 YouTuber として様々な企業とコラボレーシ\nョンを行っている。業界に関する講演や、PR 動画制作等多数。\n\n【参考・出展資料】\n・Tenstorrent\nhttps://tenstorrent.com/hardware/cloud\nhttps://tenstorrent.com/vision\nhttps://riscv.or.jp/wp-content/uploads/RISCV-Day-Nakano-Dec-2025.pdf\nhttps://tenstorrent.com/newsroom/community-highlight-tenstorrent-wormhole-series-part-1-physicalities\nhttps://tenstorrent.com/newsroom/high-performance-risc-v-processor-for-\ncomputation-acceleration-and-server-w-wei-han-lien?utm_source=chatgpt.com\n・ADIP\nhttps://adip.jp/\nhttps://adip.jp/architect/?utm_source=chatgpt.com\n・NETWORLD\nhttps://www.networld.co.jp/product/tenstorrent/\n・Rapidus\nhttps://www.rapidus.inc/business/\nhttps://www.rapidus.inc/news_topics/news-info/rapidus-and-tenstorrent-agree-to-joint-ip-development-jp/\n・SpaceX\nhttps://www.youtube.com/watch?v=bvim4rsNHkQ\n・一般社団法人RISE-A\nhttps://www.rise-a.jp/event/detail/20260130.html\n・RISK-V\nhttps://www.aps-web.jp/academy/mcu-mpu/risc-v/590/\n・RISC-V協会\nhttps://riscv.or.jp/risc-v-day-tokyo-2026-spring-j/\nhttps://riscv.or.jp/wp-content/uploads/fc93189b5c6f2bf4e66b48d0ff460b4b.pdf\n・NVIDIA\nhttps://x.gd/cqzPx\nhttps://blogs.nvidia.co.jp/blog/first-gpu-gaming-ai/\nhttps://www.nvidia.com/ja-jp/data-center/nvlink/\nhttps://developer.nvidia.com/blog/cuda-refresher-the-gpu-computing-ecosystem/\n・AMD\nhttps://www.amd.com/ja/products/embedded.html\nhttps://www.amd.com/ja/newsroom/press-releases/2023-10-19-amd-pc-amd-radeon.html\n・GLM\nhttps://z.ai/chat\n・KIMI\nhttps://www.kimi.com/ja/ai-models/kimi-k2-5\n・Google Cloud\nhttps://www.youtube.com/watch?v=3Qw_CZkiQQg\n・日経ビジネス\nhttps://business.nikkei.com/atcl/gen/19/00155/042400284/\nhttps://business.nikkei.com/atcl/gen/19/00081/070100845/\n・Reuters\nhttps://jp.reuters.com/markets/world-indices/H4SPPIWXVRJAROHGFRS7ZMQQDQ-2026-04-30/\n・PC Watch\nhttps://pc.watch.impress.co.jp/img/pcw/docs/1359/413/html/1_o.jpg.html\n・EETimes Japan\nhttps://eetimes.itmedia.co.jp/ee/articles/2507/23/news047.html\n・Wikipedia\nhttps://ja.wikipedia.org/wiki/Apple_A4\nhttps://ja.wikipedia.org/wiki/Apple_A5\n・Amazon\nhttps://amzn.asia/d/0fHOrgMA\n\n#Tenstorrent #平山 #Rapidus #半導体  #AI #NVIDIA #製造業 #ものづくり太郎",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/xKYkczxuGpU/default.jpg",
@@ -35949,13 +36311,100 @@
               }
             },
             "channelTitle": "ものづくり太郎チャンネル",
+            "tags": [
+              "NVIDIA",
+              "Tenstorrent",
+              "テンストレント",
+              "Jim Keller",
+              "半導体",
+              "AI半導体",
+              "半導体戦争",
+              "RISC-V",
+              "リスクファイブ",
+              "CUDA",
+              "Rapidus",
+              "AI",
+              "人工知能",
+              "CPU",
+              "GPU",
+              "ブラックホール",
+              "Blackhole",
+              "アスカロン",
+              "Ascalon",
+              "設計",
+              "エンジニア",
+              "人材育成",
+              "シリコンバレー",
+              "テスラ",
+              "Tesla",
+              "Apple",
+              "アップル",
+              "AMD",
+              "Intel",
+              "インテル",
+              "HBM",
+              "SRAM",
+              "GDDR6",
+              "低コスト",
+              "高性能",
+              "次世代半導体",
+              "SOC",
+              "RTL設計",
+              "ADIP",
+              "サーバー",
+              "データセンター",
+              "自動運転",
+              "ロボット",
+              "日本",
+              "製造業",
+              "技術革新",
+              "半導体設計",
+              "最先端技術",
+              "IT",
+              "テクノロジー",
+              "デジタル",
+              "ハードウェア",
+              "ソフトウェア",
+              "エコシステム",
+              "オープンソース",
+              "MIMD",
+              "SIMD",
+              "命令セット",
+              "マイクロアーキテクチャ",
+              "アウトオブオーダー",
+              "インオーダー",
+              "キャッシュ",
+              "メモリボトルネック",
+              "演算",
+              "プロセッサ",
+              "アクセラレーター",
+              "トレーニング",
+              "推論",
+              "LLM",
+              "大規模言語モデル",
+              "クラウド",
+              "アンソロピック",
+              "Anthropic",
+              "エンジニア採用",
+              "キャリア",
+              "インターン",
+              "製造装置",
+              "アドバンテスト",
+              "ものづくり太郎"
+            ],
+            "categoryId": "27",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T09:00:15Z"
+            "defaultLanguage": "ja",
+            "localized": {
+              "title": "【王者NVIDIA・・・終了か？】AI半導体戦争・・・新章開幕！！！！",
+              "description": "【提供:Tenstorrent】\n・HP　 \nhttps://tenstorrent.com/ja\n・人材育成プログラムADIPについて　\nhttps://adip.jp/\n\n【スポンサー:株式会社平山ホールディングス】\n・ホームページ\nhttps://www.hirayamastaff.co.jp/hirayama/\n・進化型アウトソーシングのご紹介\nhttps://hirayamastaff.co.jp/mlp/outsourcing/\n\n《目次》\n00:00 本日のテーマ\n01:47 生ける伝説！Mr.半導体ジム・ケラーとは？\n04:04 王者NVIDIAを打ち負かす、ジム・ケラーの構想\n09:13 AIの未来は、特化型ではなく汎用型\n14:01 RapidusやRISC-Vとの連携\n17:58 限界を定義せず、新しいCPUを生み出す \n19:10 日本のエンジニアに対する、ジム・ケラーの期待\n21:07 大学に進学した理由は、好きな子を追って？ \n22:16  CUDA経済圏をどうする？Blackholeチップで勝つ！\n33:29  ADIPでTenstorrentに派遣された学生さんにインタビュー①\n40:23  ADIPでTenstorrentに派遣された学生さんにインタビュー②\n50:36 最先端デジタルSoC設計人材育成「ADIP」\n53:36 2026年PR動画募集のお知らせ\n56:25 次回予告\n\n■ものづくり太郎へのお問い合わせ■\nhttps://boostbytechnology.com/contact\nスポンサー・PR依頼、工場診断、PLMのグランドデザイン等\nご希望の方もお気軽にご連絡ください！\n\n【スタッフ募集についてはコチラから】\n・問い合わせフォームからのご応募\nhttps://boostbytechnology.com/contact\n・メールでのご応募↓↓\nmonozukuritarou@moriagetai.jp\n※求人の条件等は上記からお問い合わせください。\n\n【メンバーシップのご登録はこちらから】\nメンバー限定の動画を毎週お届けいたします！\nレポートの提供やものづくり太郎と会える特典も…！？\n特典内容の詳細はこちらから↓↓\nhttps://www.youtube.com/channel/UCY9KXoezyo6cp-YwguOOCcg/join\n\n【ものづくり太郎が、ラジオをはじめました！！】\n平日、朝8時に配信中！\nものづくり太郎が普段考えているビジネスに関することや\n普段の動画では配信できない裏話を自由に話していきます！\n・YouTube\n他配信サイトより早く配信する他にも、YouTubeメンバーシップ限定ラジオも配信中！\n・voicy\nhttps://r.voicy.jp/GQVQqYo6VkW\n・stand.fm\nhttps://stand.fm/channels/68634ec1ead4839325573733\n・Spotify\nhttps://open.spotify.com/show/4A18e2s3YDZoLNberZ0gTz\n\n【メルマガ会員限定の特別資料を随時配信中！】\nものづくり太郎や対談ゲストの特別資料をメルマガ会員限定で配信しております。\nものづくり太郎チャンネルの最新動画情報も毎週お知らせ！\nメルマガ登録はこちらから↓↓\nhttps://boostbytechnology.com/salon\n\n【海外でキャッチアップした情報をレポートでフィードバック！】\n■ドイツ訪問レポート2026■\nhttps://note.com/moriagetai/n/n531a8b1196e5?sub_rt=share_sb\n■欧州視察レポート詳細はこちら↓↓■ｰ2024年11月​​​​​​​\nhttps://note.com/moriagetai/n/n36a1103f1119?sub_rt=share_sb\n■米国視察レポート詳細はこちら↓↓■ｰ2024年10月\nhttps://note.com/moriagetai/n/n93e2c686ab62?sub_rt=share_sb\n■台湾視察レポート詳細はこちら↓↓■ｰ2024年7月\nhttps://note.com/moriagetai/n/n41040bfb568b?sub_rt=share_sb\n\n【ものづくり太郎の初書籍！Amazonにて発売開始！】\n・https://www.amazon.co.jp/dp/4046067217/\n欧米・中国に取り残されるか? 最高の転換期をつくりだすか?\nあなたの現場、そのままで大丈夫ですか?\n大注目、YouTube登録者27万人突破!\n文系理系の壁を越えてものづくり産業を語る第一人者、待望の書き下ろし!\n\n■ものづくり太郎チャンネル　ものづくり太郎のプロフィール\nYouTube 活動のためミスミを退社。日本では製造業に関わる人口が非常に多いが、\nYouTube の投稿に製造業関連の動画が少ないことに着目し、「これでは日本が誇る製\n造業が浮かばれないと」自身で製造業(ものづくり)に関わる様々な情報を提供しよ\nうと決心し、活動を展開。ものづくり系 YouTuber として様々な企業とコラボレーシ\nョンを行っている。業界に関する講演や、PR 動画制作等多数。\n\n【参考・出展資料】\n・Tenstorrent\nhttps://tenstorrent.com/hardware/cloud\nhttps://tenstorrent.com/vision\nhttps://riscv.or.jp/wp-content/uploads/RISCV-Day-Nakano-Dec-2025.pdf\nhttps://tenstorrent.com/newsroom/community-highlight-tenstorrent-wormhole-series-part-1-physicalities\nhttps://tenstorrent.com/newsroom/high-performance-risc-v-processor-for-\ncomputation-acceleration-and-server-w-wei-han-lien?utm_source=chatgpt.com\n・ADIP\nhttps://adip.jp/\nhttps://adip.jp/architect/?utm_source=chatgpt.com\n・NETWORLD\nhttps://www.networld.co.jp/product/tenstorrent/\n・Rapidus\nhttps://www.rapidus.inc/business/\nhttps://www.rapidus.inc/news_topics/news-info/rapidus-and-tenstorrent-agree-to-joint-ip-development-jp/\n・SpaceX\nhttps://www.youtube.com/watch?v=bvim4rsNHkQ\n・一般社団法人RISE-A\nhttps://www.rise-a.jp/event/detail/20260130.html\n・RISK-V\nhttps://www.aps-web.jp/academy/mcu-mpu/risc-v/590/\n・RISC-V協会\nhttps://riscv.or.jp/risc-v-day-tokyo-2026-spring-j/\nhttps://riscv.or.jp/wp-content/uploads/fc93189b5c6f2bf4e66b48d0ff460b4b.pdf\n・NVIDIA\nhttps://x.gd/cqzPx\nhttps://blogs.nvidia.co.jp/blog/first-gpu-gaming-ai/\nhttps://www.nvidia.com/ja-jp/data-center/nvlink/\nhttps://developer.nvidia.com/blog/cuda-refresher-the-gpu-computing-ecosystem/\n・AMD\nhttps://www.amd.com/ja/products/embedded.html\nhttps://www.amd.com/ja/newsroom/press-releases/2023-10-19-amd-pc-amd-radeon.html\n・GLM\nhttps://z.ai/chat\n・KIMI\nhttps://www.kimi.com/ja/ai-models/kimi-k2-5\n・Google Cloud\nhttps://www.youtube.com/watch?v=3Qw_CZkiQQg\n・日経ビジネス\nhttps://business.nikkei.com/atcl/gen/19/00155/042400284/\nhttps://business.nikkei.com/atcl/gen/19/00081/070100845/\n・Reuters\nhttps://jp.reuters.com/markets/world-indices/H4SPPIWXVRJAROHGFRS7ZMQQDQ-2026-04-30/\n・PC Watch\nhttps://pc.watch.impress.co.jp/img/pcw/docs/1359/413/html/1_o.jpg.html\n・EETimes Japan\nhttps://eetimes.itmedia.co.jp/ee/articles/2507/23/news047.html\n・Wikipedia\nhttps://ja.wikipedia.org/wiki/Apple_A4\nhttps://ja.wikipedia.org/wiki/Apple_A5\n・Amazon\nhttps://amzn.asia/d/0fHOrgMA\n\n#Tenstorrent #平山 #Rapidus #半導体  #AI #NVIDIA #製造業 #ものづくり太郎"
+            },
+            "defaultAudioLanguage": "ja"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "Y7y4_vvM_ATiz9u75lnRDQUJPXw",
+          "etag": "n-4f7ehVIEnxsyunI5ANaxIdaMs",
           "id": "xKYkczxuGpU",
           "snippet": {
             "publishedAt": "2026-09-18T09:00:15Z",
@@ -36103,12 +36552,14 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "143166",
-            "likeCount": "1657",
+            "viewCount": "161627",
+            "likeCount": "1796",
             "favoriteCount": "0",
-            "commentCount": "79"
+            "commentCount": "89"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:12.005092+00:00",
+        "next_retry_at": "2026-09-23T02:51:12.005098+00:00"
       },
       "loOp05n81gY": {
         "status": "pending",
@@ -36117,17 +36568,14 @@
         "first_seen_at": "2026-09-18T22:12:28.179931+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "nAG8fn8Ip1_NQyZn4BKY3tdZdto",
           "id": {
-            "kind": "youtube#video",
             "videoId": "loOp05n81gY"
           },
           "snippet": {
             "publishedAt": "2026-09-17T14:00:02Z",
             "channelId": "UC5CDSuCDiiGt5LXGIaI2Hig",
-            "title": "&quot;Meghan Markle&#39;s Interview Ends in Total Chaos on British TV&quot;",
-            "description": "What happens when Hollywood royalty collides with British television in the most spectacular meltdown ever caught on camera?",
+            "title": "\"Meghan Markle's Interview Ends in Total Chaos on British TV\"",
+            "description": "What happens when Hollywood royalty collides with British television in the most spectacular meltdown ever caught on camera?\n\nIn just thirty nine seconds, one comment would shatter the illusion and turn a friendly chat into an absolute disaster that nobody saw coming. This Meghan Markle Jonathan Ross clash quickly became one of the most talked-about celebrity interviews gone wrong on British TV.\n\nWas Jonathan Ross out of line, or did Meghan Markle's own reaction cause the meltdown? Watch until the end to see the exact moment the interview completely fell apart.\n\n👍 Drop a comment below: who do you think was in the wrong here? Don't forget to LIKE and SUBSCRIBE for more deep dives into celebrity and royal family drama!\n\n#MeghanMarkle #JonathanRoss #RoyalFamily #CelebrityDrama #BritishTV #PopCulture",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/loOp05n81gY/default.jpg",
@@ -36151,13 +36599,22 @@
               }
             },
             "channelTitle": "Royal Family Podcast ",
+            "tags": [
+              "meghan markle, jonathan ross, meghan markle jonathan ross, jonathan ross show, meghan markle interview, meghan markle clash, royal family drama, meghan markle news, celebrity interview gone wrong, meghan markle reaction, british television drama, meghan markle latest, viral celebrity moments, royal news today"
+            ],
+            "categoryId": "24",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T14:00:02Z"
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "\"Meghan Markle's Interview Ends in Total Chaos on British TV\"",
+              "description": "What happens when Hollywood royalty collides with British television in the most spectacular meltdown ever caught on camera?\n\nIn just thirty nine seconds, one comment would shatter the illusion and turn a friendly chat into an absolute disaster that nobody saw coming. This Meghan Markle Jonathan Ross clash quickly became one of the most talked-about celebrity interviews gone wrong on British TV.\n\nWas Jonathan Ross out of line, or did Meghan Markle's own reaction cause the meltdown? Watch until the end to see the exact moment the interview completely fell apart.\n\n👍 Drop a comment below: who do you think was in the wrong here? Don't forget to LIKE and SUBSCRIBE for more deep dives into celebrity and royal family drama!\n\n#MeghanMarkle #JonathanRoss #RoyalFamily #CelebrityDrama #BritishTV #PopCulture"
+            },
+            "defaultAudioLanguage": "en-US"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "St5un-2h65Lo2dB6sr48bqAHSHM",
+          "etag": "_UymvyL0Zq59IijhMXvRjqcNTZ0",
           "id": "loOp05n81gY",
           "snippet": {
             "publishedAt": "2026-09-17T14:00:02Z",
@@ -36217,7 +36674,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "21396",
+            "viewCount": "21498",
             "likeCount": "87",
             "favoriteCount": "0",
             "commentCount": "22"
@@ -36706,17 +37163,14 @@
         "first_seen_at": "2026-09-18T22:12:29.117378+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "64KWNq_KqaGU0e95X6uhZamn6zo",
           "id": {
-            "kind": "youtube#video",
             "videoId": "3HCBoxE3z3M"
           },
           "snippet": {
             "publishedAt": "2026-09-18T19:27:07Z",
             "channelId": "UCSDUK72BCFyZ1uPGFHrZgvQ",
             "title": "Stephen Balaban on 14 Years of Lambda and the Future of AI",
-            "description": "Stephen Balaban is co-founder and, as of a recent leadership change, CTO of Lambda, the AI cloud infrastructure company he ...",
+            "description": "Stephen Balaban is co-founder and, as of a recent leadership change, CTO of Lambda, the AI cloud infrastructure company he and his twin brother started in 2012. It took five pivots — augmented reality, a facial-recognition contact book, a camera embedded in a baseball cap, the AI image app Dreamscope, then finally workstations and servers — before Lambda found a business that made money in 2017. Along the way, Stephen kept the company alive by consulting on the side, including projects with Airbus and the creators of South Park.\n\nWhat you'll learn:\n\n- Why it took five pivots and 14 years for Lambda to find product-market fit\n- How side consulting work — for Airbus and even South Park's creators — funded the company through its leanest years\n- Why mainline Silicon Valley VCs kept passing on Lambda even while it was profitable, and why that didn't change after ChatGPT\n- How a Series D round pulled largely from Taiwanese manufacturers and family offices instead of traditional venture capital\n- What pushed Stephen to step down as CEO and bring in Michel Combes, a former CEO of Sprint and SoftBank International\n- Why Stephen thinks the disinformation around data centers — noise, water use — doesn't hold up\n\nWhere to find us:\nApple Podcasts: https://podcasts.apple.com/us/podcast/founders-in-arms/id1679703534\nSpotify: https://open.spotify.com/show/4FHXFiOtyO3QfUi3Y1kwYF\nSubstack: [link]\nTribe: [link]\n\nChapters:\n\n(01:10) Meet Stephen Balaban, co-founder and CTO of Lambda\n\n(02:40) Palo Alto in 2012 and Lambda's earliest days\n\n(03:42) Building Heads Up, a facial-recognition contact book for iOS\n\n(05:06) The ImageNet moment and training neural nets on NVIDIA GPUs\n\n(06:14) Five pivots: from augmented reality to Dreamscope\n\n(08:55) Funding the company through consulting, including work with Airbus and South Park's creators\n\n(12:13) Writing down the goal to IPO back in a 2012 notebook\n\n(14:28) Raising a first $600K, including Austin Russell's $20K check at a $400K valuation\n\n(24:29) Lambda's climb from $3M in revenue to a $1B run rate\n\n(26:57) Why Silicon Valley VCs kept saying no — even after ChatGPT\n\n(34:04) A Series D built largely on Taiwanese manufacturers and family offices\n\n(37:13) Immad on Mercury Books, Mercury's new bookkeeping product\n\n(44:12) Stepping down from CEO to CTO and bringing in Michel Combes\n\n(52:34) Debunking data center disinformation, from water use to noise\n\n\n\n--------------------------------------------------------------------------------------------------------------------\nSubscribe on Spotify: https://open.spotify.com/show/4FHXFiOtyO3QfUi3Y1kwYF?si=1dc9acc8409f448c\nSubscribe on Apple Podcasts: https://podcasts.apple.com/us/podcast/founders-in-arms/id1679703534 \nSubscribe to Founders in Arms Substack:  https://substack.com/@foundersinarms \nJoin the conversation on Tribe: https://join.tribechat.com/sR-wYn8zUH \nFollow Founders in Arms on LinkedIn: https://www.linkedin.com/company/founders-in-arms/\nFollow Immad on X: https://x.com/immad\nFollow Raj on X: https://x.com/rajatsuri\nFollow Immad on LinkedIn: https://www.linkedin.com/in/iakhund/\nFollow Raj on LinkedIn:  https://www.linkedin.com/in/rajatsuri/",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/3HCBoxE3z3M/default.jpg",
@@ -36745,13 +37199,19 @@
               }
             },
             "channelTitle": "Founders in Arms Podcast",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T19:27:07Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Stephen Balaban on 14 Years of Lambda and the Future of AI",
+              "description": "Stephen Balaban is co-founder and, as of a recent leadership change, CTO of Lambda, the AI cloud infrastructure company he and his twin brother started in 2012. It took five pivots — augmented reality, a facial-recognition contact book, a camera embedded in a baseball cap, the AI image app Dreamscope, then finally workstations and servers — before Lambda found a business that made money in 2017. Along the way, Stephen kept the company alive by consulting on the side, including projects with Airbus and the creators of South Park.\n\nWhat you'll learn:\n\n- Why it took five pivots and 14 years for Lambda to find product-market fit\n- How side consulting work — for Airbus and even South Park's creators — funded the company through its leanest years\n- Why mainline Silicon Valley VCs kept passing on Lambda even while it was profitable, and why that didn't change after ChatGPT\n- How a Series D round pulled largely from Taiwanese manufacturers and family offices instead of traditional venture capital\n- What pushed Stephen to step down as CEO and bring in Michel Combes, a former CEO of Sprint and SoftBank International\n- Why Stephen thinks the disinformation around data centers — noise, water use — doesn't hold up\n\nWhere to find us:\nApple Podcasts: https://podcasts.apple.com/us/podcast/founders-in-arms/id1679703534\nSpotify: https://open.spotify.com/show/4FHXFiOtyO3QfUi3Y1kwYF\nSubstack: [link]\nTribe: [link]\n\nChapters:\n\n(01:10) Meet Stephen Balaban, co-founder and CTO of Lambda\n\n(02:40) Palo Alto in 2012 and Lambda's earliest days\n\n(03:42) Building Heads Up, a facial-recognition contact book for iOS\n\n(05:06) The ImageNet moment and training neural nets on NVIDIA GPUs\n\n(06:14) Five pivots: from augmented reality to Dreamscope\n\n(08:55) Funding the company through consulting, including work with Airbus and South Park's creators\n\n(12:13) Writing down the goal to IPO back in a 2012 notebook\n\n(14:28) Raising a first $600K, including Austin Russell's $20K check at a $400K valuation\n\n(24:29) Lambda's climb from $3M in revenue to a $1B run rate\n\n(26:57) Why Silicon Valley VCs kept saying no — even after ChatGPT\n\n(34:04) A Series D built largely on Taiwanese manufacturers and family offices\n\n(37:13) Immad on Mercury Books, Mercury's new bookkeeping product\n\n(44:12) Stepping down from CEO to CTO and bringing in Michel Combes\n\n(52:34) Debunking data center disinformation, from water use to noise\n\n\n\n--------------------------------------------------------------------------------------------------------------------\nSubscribe on Spotify: https://open.spotify.com/show/4FHXFiOtyO3QfUi3Y1kwYF?si=1dc9acc8409f448c\nSubscribe on Apple Podcasts: https://podcasts.apple.com/us/podcast/founders-in-arms/id1679703534 \nSubscribe to Founders in Arms Substack:  https://substack.com/@foundersinarms \nJoin the conversation on Tribe: https://join.tribechat.com/sR-wYn8zUH \nFollow Founders in Arms on LinkedIn: https://www.linkedin.com/company/founders-in-arms/\nFollow Immad on X: https://x.com/immad\nFollow Raj on X: https://x.com/rajatsuri\nFollow Immad on LinkedIn: https://www.linkedin.com/in/iakhund/\nFollow Raj on LinkedIn:  https://www.linkedin.com/in/rajatsuri/"
+            },
+            "defaultAudioLanguage": "en-US"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "iG-Z7WYEWqgSAPZdnU8uNrEczXI",
+          "etag": "lbZOFtuAKuTh8B-uT-oWwXw8zvU",
           "id": "3HCBoxE3z3M",
           "snippet": {
             "publishedAt": "2026-09-18T19:27:07Z",
@@ -36813,8 +37273,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "864",
-            "likeCount": "0",
+            "viewCount": "3715",
+            "likeCount": "1",
             "favoriteCount": "0",
             "commentCount": "0"
           }
@@ -36827,17 +37287,14 @@
         "first_seen_at": "2026-09-18T22:12:29.117405+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "pvdkhnnhwZ16hEky_vaHzeNXyy8",
           "id": {
-            "kind": "youtube#video",
             "videoId": "q11yD5GBrlg"
           },
           "snippet": {
             "publishedAt": "2026-09-17T21:42:43Z",
             "channelId": "UC-DRzaGnL_vtBUpCFH5M0tg",
             "title": "Paramount Bounces, Snap Specs, AI Affirmations, Chase Lochmiller Joins, Joe Weisenthal IRL",
-            "description": "00:02:34:25 Snap officially launches Specs 00:27:18:12 Paramount scouts offices in Nashville 00:30:25:01 Reacting to new clip ...",
+            "description": "00:02:34:25 Snap officially launches Specs\n00:27:18:12 Paramount scouts offices in Nashville\n00:30:25:01 Reacting to new clip from 'The Social Reckoning'\n00:41:00:03 Japan’s monks turn to investing\n00:55:51:23 Aaref Hilaly discusses Bain Capital Ventures’ post-AGI investment strategy, arguing that abundant intelligence will unlock transformative opportunities in robotics, drug discovery, simulation, and AI applications. A partner at Bain Capital Ventures, he also explains the firm’s $1.6 billion fund, its early-stage focus, and its approach of backing ambitious founders while connecting them with Bain Capital’s broader network of real-world businesses.\n01:08:30:14 David Gross, managing partner at Bain Capital, discusses his career in Japan and the firm’s evolution across private equity, venture capital, and life sciences. He highlights Bain’s focus on operational transformation, investor alignment, AI-enabled value creation, and macroeconomic analysis.\n01:26:49:07 Max Junestrand discusses how Legora helps legal teams integrate AI deeply into their workflows by routing tasks across multiple models, reducing costs, and consolidating legal capabilities into one platform. The Legora co-founder also highlights the company’s Salesforce partnership, rapid growth, acquisition strategy, and the transformative impact of AI on legal work, billing models, and litigation.\n01:38:54:28 Chase Lochmiller, co-founder and CEO of Crusoe, discusses the company’s growth from small, energy-efficient Bitcoin mining operations to gigawatt-scale AI infrastructure. He highlights Crusoe’s expanding Texas campus, modular Spark data centers, renewable and nuclear energy projects, and newly announced Series F funding.\n01:49:11:27 Jesse Zhang discusses Decagon’s international expansion, including its new São Paulo office, and how customer demand guides market selection. He also explains the challenges of deploying AI customer-service agents and optimizing models for cost, performance, and especially low latency.\n01:58:03:03 Nilam Ganenthiran, founder and CEO of Beacon, and Leonard Tang, VP of AI Research, discuss the company’s strategy of acquiring established technology businesses and transforming them with AI. They explain how Beacon is accelerating AI adoption across real-economy industries by providing trusted tools that improve operations, growth, staffing, pricing, and resource allocation.\nJoe Weisenthal discusses his work as a Bloomberg journalist and *Odd Lots* podcast host, including a live show exploring Los Angeles’s economy. He offers an optimistic view of LA while examining AI risks, data centers, regulation, employment, interest rates, economic data, and how AI is changing communication and everyday life.\n\nTBPN is made possible by:\nRamp - https://ramp.com\nPublic - https://public.com\nCisco - https://www.cisco.com\nConsole - https://www.console.com\nCrowdStrike - https://www.crowdstrike.com\nFigma - https://www.figma.com\nMongoDB - https://www.mongodb.com\nNYSE - https://www.nyse.com\nRailway - https://railway.com\nShopify - https://www.shopify.com/\nCodex - http://openAI.com/codex\n\nFollow TBPN: \nhttps://TBPN.com\nhttps://x.com/tbpn\nhttps://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00?si=674252d53acf4231\nhttps://podcasts.apple.com/us/podcast/tbpn/id1772360235\nhttps://www.youtube.com/@TBPNLive",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/q11yD5GBrlg/default.jpg",
@@ -36866,13 +37323,19 @@
               }
             },
             "channelTitle": "TBPN",
+            "categoryId": "24",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T21:42:43Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Paramount Bounces, Snap Specs, AI Affirmations, Chase Lochmiller Joins, Joe Weisenthal IRL",
+              "description": "00:02:34:25 Snap officially launches Specs\n00:27:18:12 Paramount scouts offices in Nashville\n00:30:25:01 Reacting to new clip from 'The Social Reckoning'\n00:41:00:03 Japan’s monks turn to investing\n00:55:51:23 Aaref Hilaly discusses Bain Capital Ventures’ post-AGI investment strategy, arguing that abundant intelligence will unlock transformative opportunities in robotics, drug discovery, simulation, and AI applications. A partner at Bain Capital Ventures, he also explains the firm’s $1.6 billion fund, its early-stage focus, and its approach of backing ambitious founders while connecting them with Bain Capital’s broader network of real-world businesses.\n01:08:30:14 David Gross, managing partner at Bain Capital, discusses his career in Japan and the firm’s evolution across private equity, venture capital, and life sciences. He highlights Bain’s focus on operational transformation, investor alignment, AI-enabled value creation, and macroeconomic analysis.\n01:26:49:07 Max Junestrand discusses how Legora helps legal teams integrate AI deeply into their workflows by routing tasks across multiple models, reducing costs, and consolidating legal capabilities into one platform. The Legora co-founder also highlights the company’s Salesforce partnership, rapid growth, acquisition strategy, and the transformative impact of AI on legal work, billing models, and litigation.\n01:38:54:28 Chase Lochmiller, co-founder and CEO of Crusoe, discusses the company’s growth from small, energy-efficient Bitcoin mining operations to gigawatt-scale AI infrastructure. He highlights Crusoe’s expanding Texas campus, modular Spark data centers, renewable and nuclear energy projects, and newly announced Series F funding.\n01:49:11:27 Jesse Zhang discusses Decagon’s international expansion, including its new São Paulo office, and how customer demand guides market selection. He also explains the challenges of deploying AI customer-service agents and optimizing models for cost, performance, and especially low latency.\n01:58:03:03 Nilam Ganenthiran, founder and CEO of Beacon, and Leonard Tang, VP of AI Research, discuss the company’s strategy of acquiring established technology businesses and transforming them with AI. They explain how Beacon is accelerating AI adoption across real-economy industries by providing trusted tools that improve operations, growth, staffing, pricing, and resource allocation.\nJoe Weisenthal discusses his work as a Bloomberg journalist and *Odd Lots* podcast host, including a live show exploring Los Angeles’s economy. He offers an optimistic view of LA while examining AI risks, data centers, regulation, employment, interest rates, economic data, and how AI is changing communication and everyday life.\n\nTBPN is made possible by:\nRamp - https://ramp.com\nPublic - https://public.com\nCisco - https://www.cisco.com\nConsole - https://www.console.com\nCrowdStrike - https://www.crowdstrike.com\nFigma - https://www.figma.com\nMongoDB - https://www.mongodb.com\nNYSE - https://www.nyse.com\nRailway - https://railway.com\nShopify - https://www.shopify.com/\nCodex - http://openAI.com/codex\n\nFollow TBPN: \nhttps://TBPN.com\nhttps://x.com/tbpn\nhttps://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00?si=674252d53acf4231\nhttps://podcasts.apple.com/us/podcast/tbpn/id1772360235\nhttps://www.youtube.com/@TBPNLive"
+            },
+            "defaultAudioLanguage": "en-US"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "zQxuix4mb8npaXddH-s4_ODaXQI",
+          "etag": "FGunDJtRVJ68UwuZYVdIcfr9xJA",
           "id": "q11yD5GBrlg",
           "snippet": {
             "publishedAt": "2026-09-17T21:42:43Z",
@@ -36934,7 +37397,7 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "10821",
+            "viewCount": "11005",
             "likeCount": "89",
             "favoriteCount": "0",
             "commentCount": "3"
@@ -36948,17 +37411,14 @@
         "first_seen_at": "2026-09-18T22:12:29.117415+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "EiLsts-qKUsM8TnNBXrL40YDbfI",
           "id": {
-            "kind": "youtube#video",
             "videoId": "C19ISC8jsTA"
           },
           "snippet": {
             "publishedAt": "2026-09-17T21:17:55Z",
             "channelId": "UC3_BakzLfadvFrsnClMFWmQ",
             "title": "Paramount Bounces, Snap Specs, AI Affirmations, Chase Lochmiller Joins, Joe Weisenthal IRL",
-            "description": "TBPN is made possible by: Ramp - https://ramp.com Public - https://public.com Cisco - https://www.cisco.com Console ...",
+            "description": "TBPN is made possible by:\nRamp - https://ramp.com\nPublic - https://public.com\nCisco - https://www.cisco.com\nConsole - https://www.console.com\nCrowdStrike - https://www.crowdstrike.com\nFigma - https://www.figma.com\nMongoDB - https://www.mongodb.com\nNYSE - https://www.nyse.com\nRailway - https://railway.com\nShopify - https://www.shopify.com/\nCodex - http://openAI.com/codex\n\nFollow TBPN: \nhttps://TBPN.com\nhttps://x.com/tbpn\nhttps://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00?si=674252d53acf4231\nhttps://podcasts.apple.com/us/podcast/tbpn/id1772360235\nhttps://www.youtube.com/@TBPNLive",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/C19ISC8jsTA/default.jpg",
@@ -36987,13 +37447,19 @@
               }
             },
             "channelTitle": "John Coogan",
+            "categoryId": "24",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T21:17:55Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Paramount Bounces, Snap Specs, AI Affirmations, Chase Lochmiller Joins, Joe Weisenthal IRL",
+              "description": "TBPN is made possible by:\nRamp - https://ramp.com\nPublic - https://public.com\nCisco - https://www.cisco.com\nConsole - https://www.console.com\nCrowdStrike - https://www.crowdstrike.com\nFigma - https://www.figma.com\nMongoDB - https://www.mongodb.com\nNYSE - https://www.nyse.com\nRailway - https://railway.com\nShopify - https://www.shopify.com/\nCodex - http://openAI.com/codex\n\nFollow TBPN: \nhttps://TBPN.com\nhttps://x.com/tbpn\nhttps://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00?si=674252d53acf4231\nhttps://podcasts.apple.com/us/podcast/tbpn/id1772360235\nhttps://www.youtube.com/@TBPNLive"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "t24pws6iZXt9hC_MYF0IhYd17Ps",
+          "etag": "zkiYOc5s5Z6HL_xmkrH9aiaqSjU",
           "id": "C19ISC8jsTA",
           "snippet": {
             "publishedAt": "2026-09-17T21:17:55Z",
@@ -37055,8 +37521,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "3275",
-            "likeCount": "10",
+            "viewCount": "3326",
+            "likeCount": "11",
             "favoriteCount": "0",
             "commentCount": "0"
           }
@@ -37064,10 +37530,10 @@
       },
       "GjG9aLa4T6I": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310978+00:00",
+        "reason": "영상 상세정보 미확보/비공개 가능 — 재시도",
+        "updated_at": "2026-09-22T20:51:12.006499+00:00",
         "first_seen_at": "2026-09-18T22:12:29.117420+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "-f5sC6PM4msHL3MQgzNQA_rSXbo",
@@ -37111,7 +37577,9 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T13:14:48Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:12.006489+00:00",
+        "next_retry_at": "2026-09-23T02:51:12.006494+00:00"
       },
       "WUKxYxvZAS4": {
         "status": "pending",
@@ -37120,17 +37588,14 @@
         "first_seen_at": "2026-09-18T22:12:29.953264+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "h2jL-xk7Vvkucbtmyycu9P7i5T4",
           "id": {
-            "kind": "youtube#video",
             "videoId": "WUKxYxvZAS4"
           },
           "snippet": {
             "publishedAt": "2026-09-18T18:48:03Z",
             "channelId": "UCGMUeZy80tQ4LbrfJdwkgUA",
             "title": "COMME LE DIT ZEMMOUR, LE BOSS DE MISTRAL AI CONFIRME LE ROLE DE LA FRANCE.",
-            "description": "N'hésitez pas à rejoindre la chaine : https://www.youtube.com/channel/UCGMUeZy80tQ4LbrfJdwkgUA/join soutenez-nous sur ...",
+            "description": "N’hésitez pas à rejoindre la chaine : https://www.youtube.com/channel/UCGMUeZy80tQ4LbrfJdwkgUA/join\nsoutenez-nous sur Tipee : https://fr.tipeee.com/la-r-horizon-2027-ne-vous-taisez-plus/\nSuivez-moi sur X : https://x.com/2027NVTP\n\nRejoignez-nous sur Discord : discord.gg/8DZbrQ6f62 \nDans cette vidéo, je reviens sur l’audition d’Arthur Mensch, patron de Mistral AI, devant l’Assemblée nationale.\nEt certains de ses constats font directement écho à ce qu’Éric Zemmour expliquait quelques jours plus tôt à Port-Marly : dans la course mondiale à l’intelligence artificielle, il ne suffit pas d’avoir de bons ingénieurs. Il faut aussi disposer des infrastructures, de la puissance de calcul et surtout de l’énergie nécessaires pour les faire fonctionner.\nLa France possède sur ce terrain un atout considérable avec son parc nucléaire. Mais encore faut-il être capable d’en tirer parti, d’attirer les investissements et de conserver sur notre territoire une véritable industrie de l’intelligence artificielle.\nAlors, Zemmour avait-il correctement identifié l’un des grands enjeux économiques et stratégiques des prochaines années ? Je mets ses déclarations en parallèle avec celles d’Arthur Mensch et je vous laisse vous faire votre propre avis.\n👉 Pensez à vous abonner, à commenter et à partager la vidéo.\n#NVTP #ArthurMensch #MistralAI #EricZemmour #IntelligenceArtificielle #IA #Mistral #Nucléaire #Energie #SouverainetéNumérique #France #Technologie #DataCenter #AssembléeNationale\nsoutenez-nous sur Tipee : https://fr.tipeee.com/la-r-horizon-2027-ne-vous-taisez-plus/",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/WUKxYxvZAS4/default.jpg",
@@ -37159,13 +37624,30 @@
               }
             },
             "channelTitle": "Chez Papa - NE VOUS TAISEZ PLUS",
+            "tags": [
+              "public sénat",
+              "éric zemmour",
+              "les républicains",
+              "psyhodelik",
+              "kbgstream",
+              "fdenews",
+              "victorferry",
+              "jungo",
+              "teddyboyrsa"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T18:48:03Z"
+            "defaultLanguage": "fr",
+            "localized": {
+              "title": "COMME LE DIT ZEMMOUR, LE BOSS DE MISTRAL AI CONFIRME LE ROLE DE LA FRANCE.",
+              "description": "N’hésitez pas à rejoindre la chaine : https://www.youtube.com/channel/UCGMUeZy80tQ4LbrfJdwkgUA/join\nsoutenez-nous sur Tipee : https://fr.tipeee.com/la-r-horizon-2027-ne-vous-taisez-plus/\nSuivez-moi sur X : https://x.com/2027NVTP\n\nRejoignez-nous sur Discord : discord.gg/8DZbrQ6f62 \nDans cette vidéo, je reviens sur l’audition d’Arthur Mensch, patron de Mistral AI, devant l’Assemblée nationale.\nEt certains de ses constats font directement écho à ce qu’Éric Zemmour expliquait quelques jours plus tôt à Port-Marly : dans la course mondiale à l’intelligence artificielle, il ne suffit pas d’avoir de bons ingénieurs. Il faut aussi disposer des infrastructures, de la puissance de calcul et surtout de l’énergie nécessaires pour les faire fonctionner.\nLa France possède sur ce terrain un atout considérable avec son parc nucléaire. Mais encore faut-il être capable d’en tirer parti, d’attirer les investissements et de conserver sur notre territoire une véritable industrie de l’intelligence artificielle.\nAlors, Zemmour avait-il correctement identifié l’un des grands enjeux économiques et stratégiques des prochaines années ? Je mets ses déclarations en parallèle avec celles d’Arthur Mensch et je vous laisse vous faire votre propre avis.\n👉 Pensez à vous abonner, à commenter et à partager la vidéo.\n#NVTP #ArthurMensch #MistralAI #EricZemmour #IntelligenceArtificielle #IA #Mistral #Nucléaire #Energie #SouverainetéNumérique #France #Technologie #DataCenter #AssembléeNationale\nsoutenez-nous sur Tipee : https://fr.tipeee.com/la-r-horizon-2027-ne-vous-taisez-plus/"
+            },
+            "defaultAudioLanguage": "fr"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "mwuglZIF_m5CjkNJLNTMq1wRnpk",
+          "etag": "7iEFy9oK6iK74gypHp_hrFmGX9w",
           "id": "WUKxYxvZAS4",
           "snippet": {
             "publishedAt": "2026-09-18T18:48:03Z",
@@ -37238,31 +37720,28 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "17318",
-            "likeCount": "453",
+            "viewCount": "18310",
+            "likeCount": "477",
             "favoriteCount": "0",
-            "commentCount": "74"
+            "commentCount": "83"
           }
         }
       },
       "fW2g_H3pHFk": {
         "status": "pending",
-        "reason": "v5 기준으로 최근 영상 재검토",
-        "updated_at": "2026-09-22T20:42:10.310983+00:00",
+        "reason": "등록 인물 확인 불가 — 설명 갱신 후 재검토",
+        "updated_at": "2026-09-22T20:51:12.007532+00:00",
         "first_seen_at": "2026-09-18T22:12:29.953292+00:00",
-        "attempts": 1,
+        "attempts": 2,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "VRbi-j4ku4kwYWnGgcdYfqaYH64",
           "id": {
-            "kind": "youtube#video",
             "videoId": "fW2g_H3pHFk"
           },
           "snippet": {
             "publishedAt": "2026-09-18T14:00:35Z",
             "channelId": "UC2ex3YhcKmnfvFsaWrj5nmg",
-            "title": "18/09/26 CNBC 알렉스 카프 &quot;엔트로픽의 목적은 국유화&quot; 폭탄 발언 풀버전 번역 영상",
-            "description": "오늘 CNBC 에 특별 게스트로 출현한 알렉스 카프가 또 한번 엄청난 발언은 했습니다. 최근 AI 안전과 개발 속도 감속론에 대해서 팔란 ...",
+            "title": "18/09/26 CNBC 알렉스 카프 \"엔트로픽의 목적은 국유화\" 폭탄 발언 풀버전 번역 영상",
+            "description": "오늘 CNBC 에 특별 게스트로 출현한 알렉스 카프가 또 한번 엄청난 발언은 했습니다.\n최근 AI 안전과 개발 속도 감속론에 대해서 팔란티어 진영측은 반대한다는 입장을 지속적으로 보여왔는데, 알렉스 카프는 이번에 엔트로픽이 왜 그런 안전장치를 원하는지, 그 이유에 대해서 핵폭탄 발언을 남겼습니다..ㄷㄷ\nCNBC 나올때마다 강력한 메시지를 던지네요 ㅋㅋ",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/fW2g_H3pHFk/default.jpg",
@@ -37296,13 +37775,19 @@
               }
             },
             "channelTitle": "RocketMen 로켓맨",
+            "categoryId": "22",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T14:00:35Z"
+            "defaultLanguage": "ko",
+            "localized": {
+              "title": "18/09/26 CNBC 알렉스 카프 \"엔트로픽의 목적은 국유화\" 폭탄 발언 풀버전 번역 영상",
+              "description": "오늘 CNBC 에 특별 게스트로 출현한 알렉스 카프가 또 한번 엄청난 발언은 했습니다.\n최근 AI 안전과 개발 속도 감속론에 대해서 팔란티어 진영측은 반대한다는 입장을 지속적으로 보여왔는데, 알렉스 카프는 이번에 엔트로픽이 왜 그런 안전장치를 원하는지, 그 이유에 대해서 핵폭탄 발언을 남겼습니다..ㄷㄷ\nCNBC 나올때마다 강력한 메시지를 던지네요 ㅋㅋ"
+            },
+            "defaultAudioLanguage": "ko"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "prh03h5td8wWNfvs-G_L7yK7bPY",
+          "etag": "hJnggXVlZhf10NMFJOSsbgCCzoc",
           "id": "fW2g_H3pHFk",
           "snippet": {
             "publishedAt": "2026-09-18T14:00:35Z",
@@ -37369,12 +37854,14 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "5208",
-            "likeCount": "67",
+            "viewCount": "5646",
+            "likeCount": "72",
             "favoriteCount": "0",
-            "commentCount": "7"
+            "commentCount": "8"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T20:51:12.007522+00:00",
+        "next_retry_at": "2026-09-23T02:51:12.007527+00:00"
       },
       "yEgDfjP8MdA": {
         "status": "pending",
@@ -37383,17 +37870,14 @@
         "first_seen_at": "2026-09-18T22:12:29.953301+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "X-UXGMLbpZvM3qBu82Ziivq9HOo",
           "id": {
-            "kind": "youtube#video",
             "videoId": "yEgDfjP8MdA"
           },
           "snippet": {
             "publishedAt": "2026-09-18T11:14:21Z",
             "channelId": "UCYp-onWoQk6R9kCTij5KkkQ",
-            "title": "Palantir CEO Says OpenAI and Anthropic&#39;s Goal is to be Nationalized",
-            "description": "Palantir CEO Alex Karp made waves yesterday when he claimed in an interview that the AI safety narrative is being used to hide ...",
+            "title": "Palantir CEO Says OpenAI and Anthropic's Goal is to be Nationalized",
+            "description": "Palantir CEO Alex Karp made waves yesterday when he claimed in an interview that the AI safety narrative is being used to hide the real goal of OpenAI and Anthropic which is to get nationalized in order to shield themselves from liability.\n\nSupport the Channel on Patreon:  https://www.patreon.com/NobodySpecialFinance\nSupport the Channel by Buying Me a Coffee\nhttps://www.buymeacoffee.com/nobodyspecial\nSupport the Channel with Melon Merch by TeeSpring:\nhttps://nobody-special-finance.creator-spring.com/\n\nJoin My Discord for More Discussion, Q&A, and News: https://discord.gg/njvf3DPPrF \n\nAffiliate Links:\n\nUse this link to get $10 in free Bitcoin with Swan:  https://www.swanbitcoin.com/NobodySpecial/\n\nRecommended reading (Amazon Affiliate links):\nRich Dad Poor Dad by Robert Kiyosaki:  https://amzn.to/3rJvA7Y\nAtomic Habits by James Clear:  https://amzn.to/423Odoy\nWhen Genius Failed by Roger Lowenstein: https://amzn.to/3zYpcBK\nThe Great Taking, by David Rogers Webb (Free PDF): https://thegreattaking.com/\nWhy We Need The Fed (blank gag book) by Joe Brown:  https://amzn.to/403amBS\n\nFollow Nobody Special on Twitter: https://twitter.com/JG_Nuke\nFollow Nobody Special on Spotify: https://open.spotify.com/show/4kUs0ODP5BBjn6sD8hIvET\n\n#aibubble",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/yEgDfjP8MdA/default.jpg",
@@ -37422,13 +37906,58 @@
               }
             },
             "channelTitle": "Nobody Special",
+            "tags": [
+              "melonhead",
+              "ai bubble",
+              "ai mania",
+              "alex karp",
+              "nationalized",
+              "nationalization",
+              "openai",
+              "anthropic",
+              "terminator",
+              "steve eisman",
+              "south carolina insurance regulator",
+              "oaktree",
+              "a-cap",
+              "advantage capital",
+              "777 partners",
+              "fraud",
+              "mark walter",
+              "guggenheim",
+              "BOJ",
+              "bank of japan",
+              "dovish hike",
+              "interest rates",
+              "yen",
+              "usdjpy",
+              "airlines cut flights",
+              "southwest",
+              "american",
+              "united",
+              "GM making patriot missiles",
+              "US selling F35 to saudi arabia",
+              "VTB bank",
+              "sanctions",
+              "pizza hutt",
+              "whole business securitization",
+              "gold",
+              "silver",
+              "jack gamble"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T11:14:21Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Palantir CEO Says OpenAI and Anthropic's Goal is to be Nationalized",
+              "description": "Palantir CEO Alex Karp made waves yesterday when he claimed in an interview that the AI safety narrative is being used to hide the real goal of OpenAI and Anthropic which is to get nationalized in order to shield themselves from liability.\n\nSupport the Channel on Patreon:  https://www.patreon.com/NobodySpecialFinance\nSupport the Channel by Buying Me a Coffee\nhttps://www.buymeacoffee.com/nobodyspecial\nSupport the Channel with Melon Merch by TeeSpring:\nhttps://nobody-special-finance.creator-spring.com/\n\nJoin My Discord for More Discussion, Q&A, and News: https://discord.gg/njvf3DPPrF \n\nAffiliate Links:\n\nUse this link to get $10 in free Bitcoin with Swan:  https://www.swanbitcoin.com/NobodySpecial/\n\nRecommended reading (Amazon Affiliate links):\nRich Dad Poor Dad by Robert Kiyosaki:  https://amzn.to/3rJvA7Y\nAtomic Habits by James Clear:  https://amzn.to/423Odoy\nWhen Genius Failed by Roger Lowenstein: https://amzn.to/3zYpcBK\nThe Great Taking, by David Rogers Webb (Free PDF): https://thegreattaking.com/\nWhy We Need The Fed (blank gag book) by Joe Brown:  https://amzn.to/403amBS\n\nFollow Nobody Special on Twitter: https://twitter.com/JG_Nuke\nFollow Nobody Special on Spotify: https://open.spotify.com/show/4kUs0ODP5BBjn6sD8hIvET\n\n#aibubble"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "yOLqhtp80D5DZHPCyXldU7Zt8NE",
+          "etag": "AcQ0bEdYr0jqFXBwkafkETq-J6k",
           "id": "yEgDfjP8MdA",
           "snippet": {
             "publishedAt": "2026-09-18T11:14:21Z",
@@ -37529,8 +38058,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "16217",
-            "likeCount": "1244",
+            "viewCount": "16288",
+            "likeCount": "1246",
             "favoriteCount": "0",
             "commentCount": "312"
           }
@@ -37543,17 +38072,14 @@
         "first_seen_at": "2026-09-18T22:12:29.953306+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "8LRJxCqxUy44lEEHxrZfePbML4k",
           "id": {
-            "kind": "youtube#video",
             "videoId": "8mFy4u6xME8"
           },
           "snippet": {
             "publishedAt": "2026-09-18T03:04:37Z",
             "channelId": "UCqOFLbGcfglz7vb97QWQ77A",
             "title": "Alex Karp, CEO Palantir on AI fears ~ 2026-SEP-17 Thursday",
-            "description": "Alex Karp, CEO Palantir on AI fears ~ 2026-SEP-17 Thursday https://youtu.be/8mFy4u6xME8 Palantir CEO: AI companies have to ...",
+            "description": "Alex Karp, CEO Palantir on AI fears ~ 2026-SEP-17 Thursday\nhttps://youtu.be/8mFy4u6xME8\n\nPalantir CEO: AI companies have to be nationalized to cap their liability\nhttps://www.youtube.com/watch?v=FU8PTvIxgJA",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/8mFy4u6xME8/default.jpg",
@@ -37582,8 +38108,14 @@
               }
             },
             "channelTitle": "TorontoWealthGroup",
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-18T03:04:37Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Alex Karp, CEO Palantir on AI fears ~ 2026-SEP-17 Thursday",
+              "description": "Alex Karp, CEO Palantir on AI fears ~ 2026-SEP-17 Thursday\nhttps://youtu.be/8mFy4u6xME8\n\nPalantir CEO: AI companies have to be nationalized to cap their liability\nhttps://www.youtube.com/watch?v=FU8PTvIxgJA"
+            },
+            "defaultAudioLanguage": "en-US"
           }
         },
         "detail": {
@@ -37664,17 +38196,14 @@
         "first_seen_at": "2026-09-18T22:12:29.953312+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "H4zmOv19onQV00OQZjborxbb4rs",
           "id": {
-            "kind": "youtube#video",
             "videoId": "hU0dYTwVKQ4"
           },
           "snippet": {
             "publishedAt": "2026-09-17T23:22:58Z",
             "channelId": "UChwwoeOZ3EJPobW83dgQfAg",
             "title": "Billionaire CEO Just CONFIRMED…",
-            "description": "Subscribe to the 2nd channel - https://www.youtube.com/@LukeRudkowski76 Get Vitamin D3+K2 in the Sun Force Bundle ...",
+            "description": "Subscribe to the 2nd channel - https://www.youtube.com/@LukeRudkowski76\n\nGet Vitamin D3+K2 in the Sun Force Bundle - https://wearechange.shop/product/sun-force-d3-k2/\n\ncheck out the podcast here - https://www.youtube.com/playlist?list=PLagHa1QjXUIgTW8lbzG6lOKAig0yKUDD1\n\nPalantir's Alex Karp reveals a general once demanded they build an \"alien anti-gravity machine,\" as Trump talks about tech that can \"manipulate time and space\" and David Icke claims the government has had anti-gravity propulsion for decades… is this real disclosure, or a cover story for something else entirely?",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/hU0dYTwVKQ4/default.jpg",
@@ -37703,13 +38232,30 @@
               }
             },
             "channelTitle": "WeAreChange",
+            "tags": [
+              "Alex Karp",
+              "Donald Trump",
+              "Hillary Clinton",
+              "David Icke",
+              "Bernie Sanders",
+              "Elizabeth Warren",
+              "Trump",
+              "Tim Pool",
+              "Timcast"
+            ],
+            "categoryId": "25",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T23:22:58Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Billionaire CEO Just CONFIRMED…",
+              "description": "Subscribe to the 2nd channel - https://www.youtube.com/@LukeRudkowski76\n\nGet Vitamin D3+K2 in the Sun Force Bundle - https://wearechange.shop/product/sun-force-d3-k2/\n\ncheck out the podcast here - https://www.youtube.com/playlist?list=PLagHa1QjXUIgTW8lbzG6lOKAig0yKUDD1\n\nPalantir's Alex Karp reveals a general once demanded they build an \"alien anti-gravity machine,\" as Trump talks about tech that can \"manipulate time and space\" and David Icke claims the government has had anti-gravity propulsion for decades… is this real disclosure, or a cover story for something else entirely?"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "Mh5-mZePko60glKGei6sl-xYvd8",
+          "etag": "-anbZOBS1ux8xv2KsUIyyrfYpYs",
           "id": "hU0dYTwVKQ4",
           "snippet": {
             "publishedAt": "2026-09-17T23:22:58Z",
@@ -37782,8 +38328,8 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "14518",
-            "likeCount": "412",
+            "viewCount": "14564",
+            "likeCount": "413",
             "favoriteCount": "0",
             "commentCount": "77"
           }
@@ -37796,17 +38342,14 @@
         "first_seen_at": "2026-09-18T22:12:29.953335+00:00",
         "attempts": 1,
         "item": {
-          "kind": "youtube#searchResult",
-          "etag": "31K5r84OivhfNF9MDa2275EDGYs",
           "id": {
-            "kind": "youtube#video",
             "videoId": "2YVCdwvG548"
           },
           "snippet": {
             "publishedAt": "2026-09-17T20:42:17Z",
             "channelId": "UCY2r4ax23Qm8ovgpuVKoEdg",
-            "title": "Alex Karp: AI Models Are Stealing Your Data &amp; The AI Safety Truth | CNBC Full Interview",
-            "description": "Palantir CEO Alex Karp delivers a critical breakdown on CNBC regarding the hidden dangers of modern artificial intelligence, ...",
+            "title": "Alex Karp: AI Models Are Stealing Your Data & The AI Safety Truth | CNBC Full Interview",
+            "description": "Palantir CEO Alex Karp delivers a critical breakdown on CNBC regarding the hidden dangers of modern artificial intelligence, exposing how enterprise companies are risking their most valuable intellectual property. Many commercial organizations using closed artificial intelligence models are unknowingly surrendering their proprietary data and strategic market alpha. This exclusive interview highlights why major institutions are growing angry over model providers absorbing unique corporate trade secrets, driving a massive industry shift toward sovereign artificial intelligence infrastructure and open weight options.\n\nBeyond corporate privacy risks, the rapid acceleration of artificial intelligence raises intense questions regarding civil liability, government nationalization, and global security. Frontier model developers face unprecedented financial risks if systems cause widespread societal harm, pushing experts to predict eventual government intervention or nationalization. At the same time, real world applications across defense operations and battlefield military strategy highlight the urgent technical race between the United States and global competitors for complete technological dominance.\n\nUnderstanding the distinct difference between raw foundational models and the underlying application layer is essential for any modern organization. By maintaining complete data control and deploying specialized software architectures, businesses can leverage cutting edge artificial intelligence without sacrificing their security or autonomy. As regulatory pressures intensify and market dynamics evolve, navigating this rapidly expanding digital landscape requires a clear grasp of data ownership, risk management, and strategic innovation.\n\nWhat are your thoughts on Alex Karp views regarding corporate data privacy and the future of artificial intelligence? Leave a comment below to join the discussion.\n\nTimestamps:\n0:00 - Introduction and the AI Sovereignty Warning\n0:30 - Enterprise Concerns Over AI IP Theft\n1:45 - The Push for Sovereign AI and Open Models\n2:40 - AI Safety Debate and Corporate Nationalization Risks\n5:49 - AI Wealth Concentration and Economic Impacts\n7:09 - US vs China in the Global AI Race\n7:47 - The Reality of AI Regulation and Liability\n9:02 - Why AI Frontier Labs May Face Nationalization\n13:15 - Palantir's Application Layer and Data Security\n14:02 - Battlefield AI and Human in the Loop\n16:20 - Geopolitical Choices and US Tech Dominance\n17:29 - AI Performance in Modern Warfare\n19:01 - Corporate Liability Concerns in Enterprise AI\n21:23 - Palantir's Rapid Growth and Capacity Limits\n24:19 - Future of Frontier AI Models and Competition\n25:08 - Political Backlash Against AI and Tech Wealth\n26:30 - Alex Karp on Progressive Values and Closing\n\n#AlexKarp #PLTR #AI\n\nALEX KARP PLAYLIST:\nhttps://www.youtube.com/playlist?list=PL9kWc18VnvpkfEblUJcvjS4aw2JLepifq\n\nThank you for watching! If you are enjoying this content like the video and please consider subscribing to Vampyre Drakul today, don't forget to ding that bell! Your support is greatly appreciated!\n\nSUBSCRIBE:\nyoutube.com/VampyreDrakul?sub_confirmation=1\n\nSOCIALS:\ntwitch.tv/VampyreDrakul\nyoutube.com/VampyreDrakul​​​\nX.com/VampyreDrakul\n\nWEBSITES:\nVampyreDrakul.com\ntwitch.VampyreDrakul.com\nyoutube.VampyreDrakul.com\n\nCONTRIBUTE COFFEE:\nhttps://www.youtube.com/channel/UCY2r4ax23Qm8ovgpuVKoEdg/join\n\nCONTRIBUTE CASH:\nstreamelements.com/vampyredrakul/tip\n\nCONTRIBUTE BTC:\n1Q5AUg7Y2GU8as3NX7isFApt6XbrSbs5PE\n\nCONTRIBUTE ETH / ERC20 Tokens:\n0xeA2042f722E0e5288Ae3F88B0f004F866eaa928f\n\nDISCLAIMER:\nThis content is for informational, educational and entertainment purposes only. This is not financial advice or any other kind of advice. Clips are used under fair use (17 U.S.C. § 107) for purposes including commentary, criticism, education, news reporting and transformative curation. This channel creates a new, curated, enhanced viewing experience through editing, detailed timestamps, chapters, titles, descriptions and curation to highlight key insights. All source footage © their respective owners. No copyright infringement intended. If you are the rights holder and have concerns, please contact us. The producers of this channel may include affiliate links and/or advertisements, which may result in a commission if you purchase a related product or service. This supports the channel and helps us continue creating content. Thank you for your support!",
             "thumbnails": {
               "default": {
                 "url": "https://i.ytimg.com/vi/2YVCdwvG548/default.jpg",
@@ -37840,13 +38383,19 @@
               }
             },
             "channelTitle": "Vampyre Drakul",
+            "categoryId": "27",
             "liveBroadcastContent": "none",
-            "publishTime": "2026-09-17T20:42:17Z"
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Alex Karp: AI Models Are Stealing Your Data & The AI Safety Truth | CNBC Full Interview",
+              "description": "Palantir CEO Alex Karp delivers a critical breakdown on CNBC regarding the hidden dangers of modern artificial intelligence, exposing how enterprise companies are risking their most valuable intellectual property. Many commercial organizations using closed artificial intelligence models are unknowingly surrendering their proprietary data and strategic market alpha. This exclusive interview highlights why major institutions are growing angry over model providers absorbing unique corporate trade secrets, driving a massive industry shift toward sovereign artificial intelligence infrastructure and open weight options.\n\nBeyond corporate privacy risks, the rapid acceleration of artificial intelligence raises intense questions regarding civil liability, government nationalization, and global security. Frontier model developers face unprecedented financial risks if systems cause widespread societal harm, pushing experts to predict eventual government intervention or nationalization. At the same time, real world applications across defense operations and battlefield military strategy highlight the urgent technical race between the United States and global competitors for complete technological dominance.\n\nUnderstanding the distinct difference between raw foundational models and the underlying application layer is essential for any modern organization. By maintaining complete data control and deploying specialized software architectures, businesses can leverage cutting edge artificial intelligence without sacrificing their security or autonomy. As regulatory pressures intensify and market dynamics evolve, navigating this rapidly expanding digital landscape requires a clear grasp of data ownership, risk management, and strategic innovation.\n\nWhat are your thoughts on Alex Karp views regarding corporate data privacy and the future of artificial intelligence? Leave a comment below to join the discussion.\n\nTimestamps:\n0:00 - Introduction and the AI Sovereignty Warning\n0:30 - Enterprise Concerns Over AI IP Theft\n1:45 - The Push for Sovereign AI and Open Models\n2:40 - AI Safety Debate and Corporate Nationalization Risks\n5:49 - AI Wealth Concentration and Economic Impacts\n7:09 - US vs China in the Global AI Race\n7:47 - The Reality of AI Regulation and Liability\n9:02 - Why AI Frontier Labs May Face Nationalization\n13:15 - Palantir's Application Layer and Data Security\n14:02 - Battlefield AI and Human in the Loop\n16:20 - Geopolitical Choices and US Tech Dominance\n17:29 - AI Performance in Modern Warfare\n19:01 - Corporate Liability Concerns in Enterprise AI\n21:23 - Palantir's Rapid Growth and Capacity Limits\n24:19 - Future of Frontier AI Models and Competition\n25:08 - Political Backlash Against AI and Tech Wealth\n26:30 - Alex Karp on Progressive Values and Closing\n\n#AlexKarp #PLTR #AI\n\nALEX KARP PLAYLIST:\nhttps://www.youtube.com/playlist?list=PL9kWc18VnvpkfEblUJcvjS4aw2JLepifq\n\nThank you for watching! If you are enjoying this content like the video and please consider subscribing to Vampyre Drakul today, don't forget to ding that bell! Your support is greatly appreciated!\n\nSUBSCRIBE:\nyoutube.com/VampyreDrakul?sub_confirmation=1\n\nSOCIALS:\ntwitch.tv/VampyreDrakul\nyoutube.com/VampyreDrakul​​​\nX.com/VampyreDrakul\n\nWEBSITES:\nVampyreDrakul.com\ntwitch.VampyreDrakul.com\nyoutube.VampyreDrakul.com\n\nCONTRIBUTE COFFEE:\nhttps://www.youtube.com/channel/UCY2r4ax23Qm8ovgpuVKoEdg/join\n\nCONTRIBUTE CASH:\nstreamelements.com/vampyredrakul/tip\n\nCONTRIBUTE BTC:\n1Q5AUg7Y2GU8as3NX7isFApt6XbrSbs5PE\n\nCONTRIBUTE ETH / ERC20 Tokens:\n0xeA2042f722E0e5288Ae3F88B0f004F866eaa928f\n\nDISCLAIMER:\nThis content is for informational, educational and entertainment purposes only. This is not financial advice or any other kind of advice. Clips are used under fair use (17 U.S.C. § 107) for purposes including commentary, criticism, education, news reporting and transformative curation. This channel creates a new, curated, enhanced viewing experience through editing, detailed timestamps, chapters, titles, descriptions and curation to highlight key insights. All source footage © their respective owners. No copyright infringement intended. If you are the rights holder and have concerns, please contact us. The producers of this channel may include affiliate links and/or advertisements, which may result in a commission if you purchase a related product or service. This supports the channel and helps us continue creating content. Thank you for your support!"
+            },
+            "defaultAudioLanguage": "en"
           }
         },
         "detail": {
           "kind": "youtube#video",
-          "etag": "wKf_k9IEm5tQ5aOV0S9UEWitlhQ",
+          "etag": "AvGFS_PZbBdN2u-WhSYsQrbh4-k",
           "id": "2YVCdwvG548",
           "snippet": {
             "publishedAt": "2026-09-17T20:42:17Z",
@@ -37913,10 +38462,10 @@
             "madeForKids": false
           },
           "statistics": {
-            "viewCount": "141740",
-            "likeCount": "1697",
+            "viewCount": "148705",
+            "likeCount": "1758",
             "favoriteCount": "0",
-            "commentCount": "434"
+            "commentCount": "449"
           }
         }
       },
