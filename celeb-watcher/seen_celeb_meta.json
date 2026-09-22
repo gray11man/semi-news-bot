@@ -772,7 +772,7 @@
       "Ho1gnEeVryA": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-22T10:55:16.938291+00:00",
+        "updated_at": "2026-09-22T16:13:29.697854+00:00",
         "first_seen_at": "2026-09-18T22:12:17.052304+00:00",
         "attempts": 0,
         "item": {
@@ -1120,7 +1120,7 @@
       "Bh5bJrrJ6xs": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-22T10:55:16.938309+00:00",
+        "updated_at": "2026-09-22T16:13:29.697832+00:00",
         "first_seen_at": "2026-09-18T22:12:17.060681+00:00",
         "attempts": 0,
         "item": {
@@ -2518,7 +2518,7 @@
       "XzNjq6DNjSY": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-22T10:55:16.938314+00:00",
+        "updated_at": "2026-09-22T16:13:29.697850+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462747+00:00",
         "attempts": 0,
         "item": {
@@ -8702,9 +8702,9 @@
         }
       },
       "8YljtnqAScQ": {
-        "status": "pending",
-        "reason": "등록 인물 확인 불가 — 설명 갱신 후 재검토",
-        "updated_at": "2026-09-19T07:47:03.901475+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698136+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462951+00:00",
         "attempts": 1,
         "item": {
@@ -9093,9 +9093,9 @@
         }
       },
       "fRYj9IP1LTc": {
-        "status": "pending",
-        "reason": "판정 확신도 부족",
-        "updated_at": "2026-09-18T22:22:24.297864+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698149+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462962+00:00",
         "attempts": 1,
         "item": {
@@ -9216,9 +9216,9 @@
         "next_retry_at": "2026-09-19T04:22:24.297830+00:00"
       },
       "iQ8uhXAwQKE": {
-        "status": "pending",
-        "reason": "판정 확신도 부족",
-        "updated_at": "2026-09-18T22:22:26.767241+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698158+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462967+00:00",
         "attempts": 1,
         "item": {
@@ -16418,9 +16418,9 @@
         }
       },
       "7-ZBIP0CZzM": {
-        "status": "pending",
-        "reason": "판정 확신도 부족",
-        "updated_at": "2026-09-19T07:47:14.256667+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698250+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448579+00:00",
         "attempts": 1,
         "item": {
@@ -16541,9 +16541,9 @@
         "next_retry_at": "2026-09-19T13:47:14.256643+00:00"
       },
       "s-GQEEmgzdU": {
-        "status": "pending",
-        "reason": "판정 확신도 부족",
-        "updated_at": "2026-09-19T20:00:08.762869+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698259+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448584+00:00",
         "attempts": 1,
         "item": {
@@ -22328,9 +22328,9 @@
         "next_retry_at": "2026-09-19T21:18:56.153503+00:00"
       },
       "BdxgTtVilG0": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311815+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698365+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355761+00:00",
         "attempts": 1,
         "item": {
@@ -22464,9 +22464,9 @@
         "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "_6PR25pkHKI": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311825+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698375+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355766+00:00",
         "attempts": 1,
         "item": {
@@ -22604,9 +22604,9 @@
         "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "K_WPwXf4sf0": {
-        "status": "pending",
-        "reason": "구체적인 산업 정보 근거 부족 — 알림 보류",
-        "updated_at": "2026-09-19T15:18:56.153781+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698382+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355771+00:00",
         "attempts": 1,
         "item": {
@@ -22763,9 +22763,9 @@
         "next_retry_at": "2026-09-19T21:18:56.153776+00:00"
       },
       "H4tUrYKQS8c": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311836+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698388+00:00",
         "first_seen_at": "2026-09-18T22:12:20.355797+00:00",
         "attempts": 1,
         "item": {
@@ -24875,9 +24875,9 @@
         "next_retry_at": "2026-09-27T20:17:45.636515+00:00"
       },
       "0QYFmxsZiU8": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-21T03:12:00.342811+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698421+00:00",
         "first_seen_at": "2026-09-18T22:12:25.435990+00:00",
         "attempts": 1,
         "item": {
@@ -34998,9 +34998,9 @@
         "next_retry_at": "2026-09-28T21:41:19.007879+00:00"
       },
       "HFOhG1jH2tk": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-21T21:41:19.225183+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698604+00:00",
         "first_seen_at": "2026-09-18T22:12:28.179937+00:00",
         "attempts": 1,
         "item": {
@@ -37003,10 +37003,10 @@
       },
       "340ifbSXMRY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.953353+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016577+00:00",
         "first_seen_at": "2026-09-18T22:12:29.953351+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "beVFkFQQnJpIkboIIOMlJaRKCA0",
@@ -37050,14 +37050,99 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T16:01:25Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "2aGNnH7nJ-EdNUOs4a8MpwPIrNg",
+          "id": "340ifbSXMRY",
+          "snippet": {
+            "publishedAt": "2026-09-17T16:01:25Z",
+            "channelId": "UCaK4D0-NmC2N6fX7l7tseuA",
+            "title": "Palantir’s NHS Takeover - A Disaster in Waiting",
+            "description": "Palantir data collection and government surveillance explained\nOver £330 million in NHS contracts and 300 million civilian profiles across the US by 2026.\nAlex Karp and Peter Thiel built Gotham to track insurgencies before expanding Palantir into UK healthcare and US immigration by 2024. As London hospitals migrate patient records into Foundry in 2026, many wonder what does Palantir actually want with your data? From ICE deportations to a £330M NHS database, this investigation reveals how public records become private defense assets.\n\nIn 2011, US Navy SEALs raided Osama bin Laden's compound using a secretive software called Gotham. Built by Peter Thiel and Alex Karp, Palantir has quietly transitioned from a counter-terrorism tool to the operating system of the modern state. From predictive policing in Los Angeles to a massive NHS contract in the UK and automated battlefield targeting in Ukraine, we uncover the rise of the world's most secretive surveillance empire and what they actually want with your data in 2026.\n\nBUILT & BROKEN — one empire built, one broken, every week.\n\n#Palantir #PeterThiel #AlexKarp #Gotham #AIP\n\n▶ Subscribe to Built & Broken for a new documentary: https://www.youtube.com/@BuiltBrokenDocs?sub_confirmation=1\n\nArchive footage and stills: Wikimedia Commons, archive.org, NASA and Pexels (public domain / Creative Commons), 8 sources.\n\nNarration is AI-generated. Documents and scenes are dramatised recreations; the events are drawn from public records and contemporaneous reporting.\nFor education only — nothing here is financial advice. Trading can lose you money.\n\n#Palantir #PeterThiel #AlexKarp",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/340ifbSXMRY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/340ifbSXMRY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/340ifbSXMRY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/340ifbSXMRY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/340ifbSXMRY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Built & Broken",
+            "tags": [
+              "AIP",
+              "Alex Karp",
+              "Big Data",
+              "Built and Broken",
+              "CIA",
+              "Gotham",
+              "Military AI",
+              "NHS",
+              "Palantir",
+              "Peter Thiel",
+              "Project Maven",
+              "Surveillance State"
+            ],
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Palantir’s NHS Takeover - A Disaster in Waiting",
+              "description": "Palantir data collection and government surveillance explained\nOver £330 million in NHS contracts and 300 million civilian profiles across the US by 2026.\nAlex Karp and Peter Thiel built Gotham to track insurgencies before expanding Palantir into UK healthcare and US immigration by 2024. As London hospitals migrate patient records into Foundry in 2026, many wonder what does Palantir actually want with your data? From ICE deportations to a £330M NHS database, this investigation reveals how public records become private defense assets.\n\nIn 2011, US Navy SEALs raided Osama bin Laden's compound using a secretive software called Gotham. Built by Peter Thiel and Alex Karp, Palantir has quietly transitioned from a counter-terrorism tool to the operating system of the modern state. From predictive policing in Los Angeles to a massive NHS contract in the UK and automated battlefield targeting in Ukraine, we uncover the rise of the world's most secretive surveillance empire and what they actually want with your data in 2026.\n\nBUILT & BROKEN — one empire built, one broken, every week.\n\n#Palantir #PeterThiel #AlexKarp #Gotham #AIP\n\n▶ Subscribe to Built & Broken for a new documentary: https://www.youtube.com/@BuiltBrokenDocs?sub_confirmation=1\n\nArchive footage and stills: Wikimedia Commons, archive.org, NASA and Pexels (public domain / Creative Commons), 8 sources.\n\nNarration is AI-generated. Documents and scenes are dramatised recreations; the events are drawn from public records and contemporaneous reporting.\nFor education only — nothing here is financial advice. Trading can lose you money.\n\n#Palantir #PeterThiel #AlexKarp"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT21M13S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "26",
+            "likeCount": "1",
+            "favoriteCount": "0",
+            "commentCount": "1"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "gm6aNXdV2ns": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.953358+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016588+00:00",
         "first_seen_at": "2026-09-18T22:12:29.953356+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "y9ENCT5ZEfMk5S5rHv2RdaknQcw",
@@ -37101,12 +37186,83 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-15T23:21:53Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "Lg_JA3R0QI0QxfKkecZCeInXxOE",
+          "id": "gm6aNXdV2ns",
+          "snippet": {
+            "publishedAt": "2026-09-15T23:21:53Z",
+            "channelId": "UCjZfDs-KMLM9148_g_g9wSw",
+            "title": "EP3. 哲學家掌舵的監控帝國：揭開Palantir 的「真知晶球」與道德邊界",
+            "description": "你能想像一家市值高達四千億美元的 AI 與軍工大廠，其掌舵者是一位哲學家嗎？這集《人類行為觀察家》將帶你深入探討全球最具神秘色彩、也最具爭議的數據分析巨頭：Palantir。 \n \n從五角大廈的阿富汗撤軍行動、空中巴士的全球供應鏈，到 COVID-19 疫情期間全美的疫苗分配與非洲的糧食救援，Palantir 展現了堅若磐石的數據整合能力。然而，水能載舟、亦能覆舟當一家私人企業擁有了能看透一切的「真知晶球」時，我們是否正在步入喬治·歐威爾筆下的監控社會？ \n \n這一集，我們會討論到： \n  \n\n  1. 史丹佛大學的奇妙友誼： 社會主義哲學家（Alex Karp）與極端資本家（Peter Thiel）的火花，如何催生出千億數據帝國？ \n  2. 化解數據碎片的危機： 從PayPal的反詐欺系統，到成為Palantir的核心：「動態本體論」。 \n  3. 貢獻於世界： Palantir如何協助阿富汗撤軍，並協助世界糧食計畫署拿下諾貝爾和平獎？ \n  4. 危機浮現：洛杉磯警局的「預測犯罪」種族偏見爭議，以及引發全美抗議的ICE非法移民大搜捕事件。 \n \n力量與誘惑往往是一體兩面。聽完這集，我們想邀請你一起思考：為了追求絕對的安全，你願意交出多少個人的自由與隱私？ \n \n \n(2:10) 奇妙的友誼，以及數據整合失敗所帶來的危機 \n(10:15) 募資不順，以及CIA的資金 \n(16:30) 結構化數據 vs. 非結構化數據，以及本體論 \n(21:00) Palantir的產品 \n(29:05) 貢獻世界 \n(40:35) 水能載舟，亦能覆舟 \n(47:35) 力量與誘惑 \n \n \n如有問題或業務合作機會，歡迎洽詢業務e-mail：infrabehav@gmail.com  \n歡迎追蹤「人類行為觀察家」的Thread:  \nhttps://www.threads.com/@infrabehav (https://www.threads.com/@infrabehav)  \n  \n以及Substack，不定期更新有趣的資料分析： \nhttps://substack.com/@infrabehav (https://substack.com/@infrabehav)  \n  \n \n資料來源： \n  \n  •  專書：\n  \n  •  Steinberger, M. (2026). 矽谷最危險的公司．Palantir：一家AI國防巨獸，改變世界權力分布與科技走向（謝明珊 譯）。商周出版。（原著出版於2025）\n  \n  •  期刊論文：\n  \n  •  Brayne, S. (2017). Big data surveillance: The case of policing. American Sociological Review, 82(5), 977–1008. https://doi.org/10.1177/0003122417725865\n  \n  •  研究報告：\n  \n  •  Amnesty International. (2020, September 20). Failing to do right: The urgent need for Palantir to respect human rights. https://www.amnestyusa.org/wp-content/uploads/2020/09/Amnest-International-Palantir-Briefing-Report-092520_Final.pdf\n  \n  •  新聞與專題報導\n  \n  •  Bort, J. (2018, April 20). A security guy at JPMorgan spied on employees emails and phone calls using the secretive software tool Palantir. Business Insider. https://finance.yahoo.com/news/security-guy-jpmorgan-spied-employees-195048331.html \n  •  Chavez, A. (2019, October 4). Breaking: Palantir’s technology used in Mississippi raids where 680 were arrested. Mijente. https://mijente.net/blog/palantirpowersraids/ \n  •  CNBC Television. (2025, November 4). Alex Karp on 'Big Short' investor Michael Burry: 'Bats--- crazy' for bets against Palantir, Nvidia [Video]. YouTube. https://youtu.be/mqa1yEd891o \n  •  Ongweso, E., Jr. (2020, January 24). Palantir’s CEO finally admits to helping ICE deport undocumented immigrants. Vice. https://www.vice.com/en/article/palantirs-ceo-finally-admits-to-helping-ice-deport-undocumented-immigrants/ \n  •  Waldman, P., Chapman, L., & Robertson, J. (2018, April 19). Palantir knows everything about you. Bloomberg. https://www.bloomberg.com/features/2018-palantir-peter-thiel/ \n--\nHosting provided by SoundOn (https://www.soundon.fm/)",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/gm6aNXdV2ns/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/gm6aNXdV2ns/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/gm6aNXdV2ns/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/gm6aNXdV2ns/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/gm6aNXdV2ns/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "人類行為觀察家",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh-Hant",
+            "localized": {
+              "title": "EP3. 哲學家掌舵的監控帝國：揭開Palantir 的「真知晶球」與道德邊界",
+              "description": "你能想像一家市值高達四千億美元的 AI 與軍工大廠，其掌舵者是一位哲學家嗎？這集《人類行為觀察家》將帶你深入探討全球最具神秘色彩、也最具爭議的數據分析巨頭：Palantir。 \n \n從五角大廈的阿富汗撤軍行動、空中巴士的全球供應鏈，到 COVID-19 疫情期間全美的疫苗分配與非洲的糧食救援，Palantir 展現了堅若磐石的數據整合能力。然而，水能載舟、亦能覆舟當一家私人企業擁有了能看透一切的「真知晶球」時，我們是否正在步入喬治·歐威爾筆下的監控社會？ \n \n這一集，我們會討論到： \n  \n\n  1. 史丹佛大學的奇妙友誼： 社會主義哲學家（Alex Karp）與極端資本家（Peter Thiel）的火花，如何催生出千億數據帝國？ \n  2. 化解數據碎片的危機： 從PayPal的反詐欺系統，到成為Palantir的核心：「動態本體論」。 \n  3. 貢獻於世界： Palantir如何協助阿富汗撤軍，並協助世界糧食計畫署拿下諾貝爾和平獎？ \n  4. 危機浮現：洛杉磯警局的「預測犯罪」種族偏見爭議，以及引發全美抗議的ICE非法移民大搜捕事件。 \n \n力量與誘惑往往是一體兩面。聽完這集，我們想邀請你一起思考：為了追求絕對的安全，你願意交出多少個人的自由與隱私？ \n \n \n(2:10) 奇妙的友誼，以及數據整合失敗所帶來的危機 \n(10:15) 募資不順，以及CIA的資金 \n(16:30) 結構化數據 vs. 非結構化數據，以及本體論 \n(21:00) Palantir的產品 \n(29:05) 貢獻世界 \n(40:35) 水能載舟，亦能覆舟 \n(47:35) 力量與誘惑 \n \n \n如有問題或業務合作機會，歡迎洽詢業務e-mail：infrabehav@gmail.com  \n歡迎追蹤「人類行為觀察家」的Thread:  \nhttps://www.threads.com/@infrabehav (https://www.threads.com/@infrabehav)  \n  \n以及Substack，不定期更新有趣的資料分析： \nhttps://substack.com/@infrabehav (https://substack.com/@infrabehav)  \n  \n \n資料來源： \n  \n  •  專書：\n  \n  •  Steinberger, M. (2026). 矽谷最危險的公司．Palantir：一家AI國防巨獸，改變世界權力分布與科技走向（謝明珊 譯）。商周出版。（原著出版於2025）\n  \n  •  期刊論文：\n  \n  •  Brayne, S. (2017). Big data surveillance: The case of policing. American Sociological Review, 82(5), 977–1008. https://doi.org/10.1177/0003122417725865\n  \n  •  研究報告：\n  \n  •  Amnesty International. (2020, September 20). Failing to do right: The urgent need for Palantir to respect human rights. https://www.amnestyusa.org/wp-content/uploads/2020/09/Amnest-International-Palantir-Briefing-Report-092520_Final.pdf\n  \n  •  新聞與專題報導\n  \n  •  Bort, J. (2018, April 20). A security guy at JPMorgan spied on employees emails and phone calls using the secretive software tool Palantir. Business Insider. https://finance.yahoo.com/news/security-guy-jpmorgan-spied-employees-195048331.html \n  •  Chavez, A. (2019, October 4). Breaking: Palantir’s technology used in Mississippi raids where 680 were arrested. Mijente. https://mijente.net/blog/palantirpowersraids/ \n  •  CNBC Television. (2025, November 4). Alex Karp on 'Big Short' investor Michael Burry: 'Bats--- crazy' for bets against Palantir, Nvidia [Video]. YouTube. https://youtu.be/mqa1yEd891o \n  •  Ongweso, E., Jr. (2020, January 24). Palantir’s CEO finally admits to helping ICE deport undocumented immigrants. Vice. https://www.vice.com/en/article/palantirs-ceo-finally-admits-to-helping-ice-deport-undocumented-immigrants/ \n  •  Waldman, P., Chapman, L., & Robertson, J. (2018, April 19). Palantir knows everything about you. Bloomberg. https://www.bloomberg.com/features/2018-palantir-peter-thiel/ \n--\nHosting provided by SoundOn (https://www.soundon.fm/)"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT49M45S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "xtbgu7P4pXY": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.953364+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698666+00:00",
         "first_seen_at": "2026-09-18T22:12:29.953362+00:00",
         "attempts": 0,
         "item": {
@@ -37258,10 +37414,10 @@
       },
       "q2GQcDi02m0": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:30.850656+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016599+00:00",
         "first_seen_at": "2026-09-18T22:12:30.850640+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "mC2geN-u-iwSnHVDr6nxI0hmflc",
@@ -37305,14 +37461,103 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T18:21:31Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "SK-AtCSfYjQGExUceYHBE3lTcIM",
+          "id": "q2GQcDi02m0",
+          "snippet": {
+            "publishedAt": "2026-09-16T18:21:31Z",
+            "channelId": "UCv7uAK0j6Am4fPJ8QAdouYQ",
+            "title": "The Hard Thing About Hard Things by Ben Horowitz | Powerful Lessons on Business, Leadership,&success",
+            "description": "📝 Description\n\nThe Hard Thing About Hard Things by Ben Horowitz is a powerful and practical book about what it really takes to build and run a successful business when there are **no easy answers.\n\nUnlike many business books that focus only on success stories and simple formulas, this book talks about the difficult decisions, failures, uncertainty, pressure, and challenges that entrepreneurs and leaders face in the real world.\n\nIn this video, we explore the most important lessons and ideas from **The Hard Thing About Hard Things** and how they can help you become a better entrepreneur, leader, decision-maker, and problem solver.\n\n🔥 Key Lessons From The Book\n\n**1. There Are No Easy Answers**\nBuilding a business is rarely simple. Leaders often have to make difficult decisions without having perfect information or guaranteed results.\n\n**2. Embrace the Struggle**\nEvery entrepreneur faces moments when things go wrong. Instead of running away from difficult situations, successful leaders learn how to deal with them and keep moving forward.\n\n**3. Make Difficult Decisions**\nLeadership means making tough choices—even when every option has disadvantages. Good leaders take responsibility and make decisions when they are needed.\n\n**4. Learn From Failure**\nFailure is not always the end. It can reveal weaknesses, teach valuable lessons, and help you build a stronger business.\n\n**5. Build a Strong Team**\nA successful company depends on the people behind it. Hiring the right people, developing talent, creating trust, and building a strong culture are essential.\n\n**6. Don't Ignore Real Problems**\nSuccessful entrepreneurs face problems directly instead of pretending they don't exist. Identifying problems early can prevent much bigger failures later.\n\n**7. Lead During Difficult Times**\nAnyone can lead when everything is going well. True leadership is revealed when a company faces crisis, uncertainty, or major setbacks.\n\n**8. Focus on Long-Term Success**\nBuilding something meaningful takes time. Consistency, patience, learning, and continuous improvement are essential for long-term growth.\n\n### 💡 Why This Book Is Different\n\n*The Hard Thing About Hard Things* gives a realistic look at entrepreneurship. It reminds us that there is no perfect formula for success and that sometimes the hardest part of business is simply **figuring out what to do next**.\n\nWhether you are an **entrepreneur, startup founder, business owner, manager, student, employee, or someone interested in personal growth**, the lessons from this book can help you develop a stronger mindset and better decision-making skills.\n\n📚 **Book:** The Hard Thing About Hard Things\n✍️ **Author:** Ben Horowitz\n💼 **Main Topics:** Entrepreneurship, Business, Leadership, Startups, Decision Making, Failure, Management, Success & Personal Growth\n\nThe biggest lesson is simple:\n\n**Building something great is hard—but learning how to handle the hard things is what makes great leaders different.**\n\nWatch the complete video to discover the most important lessons from **The Hard Thing About Hard Things** and learn how to handle challenges, make difficult decisions, build strong teams, and keep moving forward when there are **no easy answers**.\n\nIf you enjoy **business books, book summaries, entrepreneurship, leadership lessons, motivational content, self-improvement, and success principles**, make sure to **Like, Share & Subscribe** for more powerful book-based videos.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/q2GQcDi02m0/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/q2GQcDi02m0/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/q2GQcDi02m0/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/q2GQcDi02m0/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/q2GQcDi02m0/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "book summary ",
+            "tags": [
+              "as facts",
+              "amazing",
+              "new",
+              "tranding",
+              "video",
+              "tech",
+              "technical",
+              "technology",
+              "educational",
+              "knowledge",
+              "facts",
+              "yt shorts",
+              "short",
+              "tech Gyan",
+              "gyan video"
+            ],
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "The Hard Thing About Hard Things by Ben Horowitz | Powerful Lessons on Business, Leadership,&success",
+              "description": "📝 Description\n\nThe Hard Thing About Hard Things by Ben Horowitz is a powerful and practical book about what it really takes to build and run a successful business when there are **no easy answers.\n\nUnlike many business books that focus only on success stories and simple formulas, this book talks about the difficult decisions, failures, uncertainty, pressure, and challenges that entrepreneurs and leaders face in the real world.\n\nIn this video, we explore the most important lessons and ideas from **The Hard Thing About Hard Things** and how they can help you become a better entrepreneur, leader, decision-maker, and problem solver.\n\n🔥 Key Lessons From The Book\n\n**1. There Are No Easy Answers**\nBuilding a business is rarely simple. Leaders often have to make difficult decisions without having perfect information or guaranteed results.\n\n**2. Embrace the Struggle**\nEvery entrepreneur faces moments when things go wrong. Instead of running away from difficult situations, successful leaders learn how to deal with them and keep moving forward.\n\n**3. Make Difficult Decisions**\nLeadership means making tough choices—even when every option has disadvantages. Good leaders take responsibility and make decisions when they are needed.\n\n**4. Learn From Failure**\nFailure is not always the end. It can reveal weaknesses, teach valuable lessons, and help you build a stronger business.\n\n**5. Build a Strong Team**\nA successful company depends on the people behind it. Hiring the right people, developing talent, creating trust, and building a strong culture are essential.\n\n**6. Don't Ignore Real Problems**\nSuccessful entrepreneurs face problems directly instead of pretending they don't exist. Identifying problems early can prevent much bigger failures later.\n\n**7. Lead During Difficult Times**\nAnyone can lead when everything is going well. True leadership is revealed when a company faces crisis, uncertainty, or major setbacks.\n\n**8. Focus on Long-Term Success**\nBuilding something meaningful takes time. Consistency, patience, learning, and continuous improvement are essential for long-term growth.\n\n### 💡 Why This Book Is Different\n\n*The Hard Thing About Hard Things* gives a realistic look at entrepreneurship. It reminds us that there is no perfect formula for success and that sometimes the hardest part of business is simply **figuring out what to do next**.\n\nWhether you are an **entrepreneur, startup founder, business owner, manager, student, employee, or someone interested in personal growth**, the lessons from this book can help you develop a stronger mindset and better decision-making skills.\n\n📚 **Book:** The Hard Thing About Hard Things\n✍️ **Author:** Ben Horowitz\n💼 **Main Topics:** Entrepreneurship, Business, Leadership, Startups, Decision Making, Failure, Management, Success & Personal Growth\n\nThe biggest lesson is simple:\n\n**Building something great is hard—but learning how to handle the hard things is what makes great leaders different.**\n\nWatch the complete video to discover the most important lessons from **The Hard Thing About Hard Things** and learn how to handle challenges, make difficult decisions, build strong teams, and keep moving forward when there are **no easy answers**.\n\nIf you enjoy **business books, book summaries, entrepreneurship, leadership lessons, motivational content, self-improvement, and success principles**, make sure to **Like, Share & Subscribe** for more powerful book-based videos."
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT52M",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "11",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "CN6lAc6vqx4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:30.850671+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016610+00:00",
         "first_seen_at": "2026-09-18T22:12:30.850668+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "33NxD3SgKvUWFDDQlsp6AAJ_anA",
@@ -37361,12 +37606,118 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T00:00:15Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "mUDIwCgJI8WmL_qAUyyUFZBYflc",
+          "id": "CN6lAc6vqx4",
+          "snippet": {
+            "publishedAt": "2026-09-16T00:00:15Z",
+            "channelId": "UC1mieRyBtE4U3rkpQS8Fing",
+            "title": "Joe Rogan Experience - Marc Andreessen | Is a 4 AM AI doctor better than humans?",
+            "description": "The medical experience of the future has arrived sooner than you think! 🤖💊\n\nIn this episode, tech investor Marc Andreessen shares an unbelievable story with Joe Rogan about the incredible power of Artificial Intelligence. After getting food poisoning and waking up in pain at 4 AM during a vacation, instead of panicking, Marc turned to \"Dr. GPT\".  \n\nArmed with the entire corpus of human medical knowledge, the AI continuously monitored his situation, providing updates and guidance every 20 minutes. Marc described the AI as the greatest doctor in history: incredibly patient, never getting frustrated, and ready to \"hold your hand\" through an illness at the crack of dawn.  \n\n👉 Will Artificial Intelligence completely reshape the medical field, or is it just a support tool? Are you ready to let an AI diagnose you? Drop your thoughts in the comments below! 👇\n\n🔔 Hit LIKE and SUBSCRIBE to keep exploring the most mind-bending conversations!\n\n#JoeRogan #MarcAndreessen #JRE #ArtificialIntelligence #ChatGPT #AIDoctor #FutureTech #HealthTech #PodcastClips #TechNews",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/CN6lAc6vqx4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/CN6lAc6vqx4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/CN6lAc6vqx4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/CN6lAc6vqx4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/CN6lAc6vqx4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "uhd": {
+                "url": "https://i.ytimg.com/vi/CN6lAc6vqx4/uhddefault.jpg",
+                "width": 3840,
+                "height": 2160
+              }
+            },
+            "channelTitle": "JRE Central",
+            "tags": [
+              "Joe Rogan",
+              "JRE",
+              "The Joe Rogan Experience",
+              "PowerfulJRE",
+              "Joe Rogan podcast",
+              "JRE clips",
+              "podcast clips",
+              "Joe Rogan highlights",
+              "Joe Rogan interviews",
+              "best of JRE",
+              "top JRE moments",
+              "Joe Rogan comedy",
+              "Joe Rogan MMA",
+              "UFC",
+              "long form podcast",
+              "JRE best guests",
+              "Joe Rogan shorts",
+              "JRE viral",
+              "trending podcast",
+              "Joe Rogan best moments",
+              "best podcast on youtube",
+              "Joe Rogan universe",
+              "JRE full clips",
+              "podcast highlights",
+              "Joe Rogan conversations",
+              "JRE short form",
+              "Joe Rogan news",
+              "JRE throwback"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Joe Rogan Experience - Marc Andreessen | Is a 4 AM AI doctor better than humans?",
+              "description": "The medical experience of the future has arrived sooner than you think! 🤖💊\n\nIn this episode, tech investor Marc Andreessen shares an unbelievable story with Joe Rogan about the incredible power of Artificial Intelligence. After getting food poisoning and waking up in pain at 4 AM during a vacation, instead of panicking, Marc turned to \"Dr. GPT\".  \n\nArmed with the entire corpus of human medical knowledge, the AI continuously monitored his situation, providing updates and guidance every 20 minutes. Marc described the AI as the greatest doctor in history: incredibly patient, never getting frustrated, and ready to \"hold your hand\" through an illness at the crack of dawn.  \n\n👉 Will Artificial Intelligence completely reshape the medical field, or is it just a support tool? Are you ready to let an AI diagnose you? Drop your thoughts in the comments below! 👇\n\n🔔 Hit LIKE and SUBSCRIBE to keep exploring the most mind-bending conversations!\n\n#JoeRogan #MarcAndreessen #JRE #ArtificialIntelligence #ChatGPT #AIDoctor #FutureTech #HealthTech #PodcastClips #TechNews"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT20M56S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "10",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "LMPZQy7XoGY": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:30.850678+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698684+00:00",
         "first_seen_at": "2026-09-18T22:12:30.850676+00:00",
         "attempts": 0,
         "item": {
@@ -37574,10 +37925,10 @@
       },
       "MFDkm-t8-rY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:31.781044+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016620+00:00",
         "first_seen_at": "2026-09-18T22:12:31.781028+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "SB6l-rr64ELPrJneYpPSIjI69Bc",
@@ -37621,14 +37972,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T21:03:39Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "qFZpIa8Qp5K-hOTnbb0TfXGqk-8",
+          "id": "MFDkm-t8-rY",
+          "snippet": {
+            "publishedAt": "2026-09-18T21:03:39Z",
+            "channelId": "UCKGybbqzul5J7rtYf8fL0MQ",
+            "title": "Live Reaction: let's watch Bloomberg's latest Larry Ellison puff piece",
+            "description": "This will be a short one today - but I haven't watched Bloomberg's new Larry Ellison mini doc yet and didn't want to have to witness it alone. If it's anything like the last ~bloomberg original~, then hopefully we get multiple shots of Larry dressed as a samurai.\n\n It also looks like part of a bigger and very confusing Ellison PR push, so let's watch it together and figure out what they're selling.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/MFDkm-t8-rY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/MFDkm-t8-rY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/MFDkm-t8-rY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/MFDkm-t8-rY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/MFDkm-t8-rY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The Drey Dossier",
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Live Reaction: let's watch Bloomberg's latest Larry Ellison puff piece",
+              "description": "This will be a short one today - but I haven't watched Bloomberg's new Larry Ellison mini doc yet and didn't want to have to witness it alone. If it's anything like the last ~bloomberg original~, then hopefully we get multiple shots of Larry dressed as a samurai.\n\n It also looks like part of a bigger and very confusing Ellison PR push, so let's watch it together and figure out what they're selling."
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT49M58S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "24240",
+            "likeCount": "840",
+            "favoriteCount": "0",
+            "commentCount": "125"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "R3c2bosj-iQ": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:31.781059+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016649+00:00",
         "first_seen_at": "2026-09-18T22:12:31.781056+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "HfnPVcJivvJZ8h_I3sBA3df-eb4",
@@ -37672,7 +38095,79 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T09:00:17Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "-KDXtGnJUILJOx4-vKKhGd7MXMQ",
+          "id": "R3c2bosj-iQ",
+          "snippet": {
+            "publishedAt": "2026-09-18T09:00:17Z",
+            "channelId": "UCCKdJQfcldhnd5LUlasJusw",
+            "title": "川習會前夕 華為案開審 任正非全家傳失聯外逃？誰在放話、誰在逼宮？解析敵情與背後權鬥",
+            "description": "00:00 精華開場\n00:26 節目開場：任正非外逃傳聞與華為風波\n03:08 明居正解析：如何用敵情分析看待未證實消息？\n08:23 消息來源交叉比對：海路出逃傳言有哪些漏洞？\n12:20 手機熱賣為何傳跑路？華為財務狀況與掏空疑雲\n16:34 政治風暴還是國庫缺錢？中共高層整肅與搶錢手段\n18:52 誰能通風報信？具備高層背景與政治實力的推論\n22:50 敏感時間點分析：出境管制、華為案與美中博弈\n25:50 跑路還是陷阱？是打擊對手還是「忠誠測試」？\n29:30 若真出逃能跑去哪？海路風險與尋求美方保護之利弊\n34:05 體制下的不安全感：中國企業大佬與高官的高危命運\n38:21 主持人結語與總結\n39:08 會後私房話：權力鬥爭下人人自危的政治現實\n\n主持人: 張國城\n議題: 華為任正非一家出逃？拆解政治風險\n華為創辦人外逃疑雲  跑了還是被放話？\n任正非出逃傳聞可信嗎？誰敢洩密？誰有能力幫他跑？\n\n任正非根本沒跑？假消息關乎商業與政治打擊\n華為創辦人掌握多少秘密？任正非可能牽動國際安全\n中國十大首富如FBI通緝榜  中共體制下 人人高危\n\n來賓:\n台灣大學政治系名譽教授 明居正\n\n#政經最前線#明居正#明居正教授韜略天下#任正非#華為\n#任正非跑路#川習會#華為案#習近平#中共權鬥#走海路\n#政經解讀#敵情分析#孟晚舟#出境禁令#忠誠測試#外逃疑雲#中國經濟#中南海權鬥#梁建章#跑路風波#中美博弈\n#政治清洗#大鵬半島#鹿嘴#深圳華為#武警封鎖#討薪風波#姚安娜#梁華#搶錢風暴#邊控#馬雲模式#紐約開審#二十大權鬥#海外資產#富豪跑路#政治審查#黑箱政治#獨家爆料#敵情研判#華為暴雷#財政危機\n\n每星期三 . 五 . 晚間五點、週六早上十點更新\n週四晚間八點直播 \n敬請支持 按讚.分享加訂閱!!!",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/R3c2bosj-iQ/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/R3c2bosj-iQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/R3c2bosj-iQ/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/R3c2bosj-iQ/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/R3c2bosj-iQ/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "政經最前線",
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh-Hant",
+            "localized": {
+              "title": "川習會前夕 華為案開審 任正非全家傳失聯外逃？誰在放話、誰在逼宮？解析敵情與背後權鬥",
+              "description": "00:00 精華開場\n00:26 節目開場：任正非外逃傳聞與華為風波\n03:08 明居正解析：如何用敵情分析看待未證實消息？\n08:23 消息來源交叉比對：海路出逃傳言有哪些漏洞？\n12:20 手機熱賣為何傳跑路？華為財務狀況與掏空疑雲\n16:34 政治風暴還是國庫缺錢？中共高層整肅與搶錢手段\n18:52 誰能通風報信？具備高層背景與政治實力的推論\n22:50 敏感時間點分析：出境管制、華為案與美中博弈\n25:50 跑路還是陷阱？是打擊對手還是「忠誠測試」？\n29:30 若真出逃能跑去哪？海路風險與尋求美方保護之利弊\n34:05 體制下的不安全感：中國企業大佬與高官的高危命運\n38:21 主持人結語與總結\n39:08 會後私房話：權力鬥爭下人人自危的政治現實\n\n主持人: 張國城\n議題: 華為任正非一家出逃？拆解政治風險\n華為創辦人外逃疑雲  跑了還是被放話？\n任正非出逃傳聞可信嗎？誰敢洩密？誰有能力幫他跑？\n\n任正非根本沒跑？假消息關乎商業與政治打擊\n華為創辦人掌握多少秘密？任正非可能牽動國際安全\n中國十大首富如FBI通緝榜  中共體制下 人人高危\n\n來賓:\n台灣大學政治系名譽教授 明居正\n\n#政經最前線#明居正#明居正教授韜略天下#任正非#華為\n#任正非跑路#川習會#華為案#習近平#中共權鬥#走海路\n#政經解讀#敵情分析#孟晚舟#出境禁令#忠誠測試#外逃疑雲#中國經濟#中南海權鬥#梁建章#跑路風波#中美博弈\n#政治清洗#大鵬半島#鹿嘴#深圳華為#武警封鎖#討薪風波#姚安娜#梁華#搶錢風暴#邊控#馬雲模式#紐約開審#二十大權鬥#海外資產#富豪跑路#政治審查#黑箱政治#獨家爆料#敵情研判#華為暴雷#財政危機\n\n每星期三 . 五 . 晚間五點、週六早上十點更新\n週四晚間八點直播 \n敬請支持 按讚.分享加訂閱!!!"
+            },
+            "defaultAudioLanguage": "zh-TW"
+          },
+          "contentDetails": {
+            "duration": "PT41M34S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "293483",
+            "likeCount": "3056",
+            "favoriteCount": "0",
+            "commentCount": "213"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "nA_2LoFNQJ0": {
         "status": "pending",
@@ -39092,9 +39587,9 @@
         }
       },
       "h2E5jDR5OsY": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:35.433100+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698835+00:00",
         "first_seen_at": "2026-09-18T22:12:35.433085+00:00",
         "attempts": 0,
         "item": {
@@ -43780,9 +44275,9 @@
         }
       },
       "N1RRfySsblg": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311784+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698859+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319800+00:00",
         "attempts": 1,
         "item": {
@@ -43920,9 +44415,9 @@
         "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "x_T6I5Y34-g": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319829+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698871+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319826+00:00",
         "attempts": 0,
         "item": {
@@ -43971,9 +44466,9 @@
         }
       },
       "WPto-dLIzdU": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319834+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.698882+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319833+00:00",
         "attempts": 0,
         "item": {
@@ -58294,10 +58789,10 @@
       },
       "2l9fbrar8zE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653731+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016426+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653728+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "RDPHK-xQXpdV3qOrgL1_t_OjWx8",
@@ -58346,7 +58841,91 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T09:00:08Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "ariJ2f9eoGLLgtHfwhkCr8CIFuM",
+          "id": "2l9fbrar8zE",
+          "snippet": {
+            "publishedAt": "2026-09-17T09:00:08Z",
+            "channelId": "UCQ0uwQ93Bpb-42D3ZIzdcdQ",
+            "title": "FULL (TẬP 60-119) l Xuyên Không Thành Elon Musk Đấu La Thức Tỉnh Vệ Tinh Cấp Khái Niệm",
+            "description": "📖Synopsis:\nTiên Thiên Hồn Lực chỉ có 3 cấp nhưng ta phóng vệ tinh lên trời trong 6 năm, ngày ta hấp thụ hồn hoàn, vệ tinh ly thể ta chỉ cần thở trực tiếp đề thăng 10 cấp\n---\n📚 Danh Sách Phát Của Bộ Xuyên Không Thành Elon Musk Đấu La Thức Tỉnh Vệ Tinh Cấp Khái Niệm 'https://www.youtube.com/watch?v=X9DQUaZQHEc&list=PLHiMP2Rr9XT8&index=1'\n---\n🕒Mốc Thời Gian Tập Trước: (Chỉ Áp Dụng Cho Bản Tổng Hợp)\n---\n[📚] Tổng Hợp Các Bộ Chủ Đề Jujutsu Kaisen ⚔️🔥👁️🌀 'https://www.youtube.com/watch?v=8oPMcaVdcJQ&list=PLXTxBmHWNuqHccd1DFQbShyW8Oh4GuJI3&index=5'\n---\n[📚] Tổng Hợp Các Bộ Chủ Đề Jojo Bizareaventrue Xuyên Không 🗿🗿🗿🗿  'https://www.youtube.com/watch?v=58KjKg3TzgM&list=PLXTxBmHWNuqHxOj6aABuhQwoWtRqQ70BE&index=1'\n---\n[📚]Tổng Hợp Các Bộ Xuyên Không Anime One Piece ☠️🏴‍☠️🍖👒 ' https://www.youtube.com/watch?v=IY7j54AgsfU&list=PLXTxBmHWNuqFPcaluEVf5qC3D6_oY5jGj&index=5'\n---\n[📚] Tổng Hợp Các Bộ Chủ Đề Ultraman 👾🔥💥🌟 'https://www.youtube.com/watch?v=sXMil4t1Gos&list=PLXTxBmHWNuqEHfFMd8UVBaieZbS6r9AAY'\n---\n[📚] Tổng Hợp Các Bộ Xuyên Không Demon Slayer ⚔️☀️🌑😈  'https://www.youtube.com/watch?v=x8aAHE7D_Wk&list=PLXTxBmHWNuqHDHenjqfCYC-ljtH2wI7Ej&index=1'\n---\n[📚] Tổng Hợp Các Bộ Xuyên Không Dragon Ball 🟠🐉🌍✨ 'https://www.youtube.com/watch?v=pVcbVYEjOMk&list=PLXTxBmHWNuqGWoVOLHR81Jta4S6NcA6Qq'\n\n\n---\n\n\n✨ Chào mừng đến với kênh Đức Anh Vietsub! ✨\nMình chuyên dịch và chia sẻ những bộ phim hoạt hình Trung Quốc hấp dẫn sang tiếng Việt, với mong muốn mang đến cho mọi người những phút giây thư giãn, đầy cảm xúc và nhẹ nhàng giữa cuộc sống hối hả.\nNếu bạn yêu thích những câu chuyện anime,huyền huyễn, hài hước, cảm động hay đầy kịch tính, thì đây chính là nơi dành cho bạn!\n🎬 Đừng quên đăng ký kênh để không bỏ lỡ những tập phim mới nhất nhé!\n\n---\n\n👑 Lời nhắn từ Đức Anh Vietsub :\nNếu bạn thấy phim hay, sub mượt và muốn \"nạp linh thạch\" để mình có thêm động lực tiếp tục cày sub xuyên kiếp, thì có thể ủng hộ nhẹ tại đây nè:\n💸Ngân Hàng MB Bank – STK: 0965770726\n💸Ủng hộ thì yêu – không ủng hộ… cũng yêu,\nChỉ là mình hơi yếu, sub hơi run tay chút thui~ 😌\n\nCảm ơn bạn nhiều lắm vì đã ghé kênh, xem phim, và đồng hành cùng mình trong hành trình này! 🥰\nChúc bạn luôn vui vẻ, xem phim vui và mỗi ngày đều là một ngày chill chill nha~ 🌸🎬\n\n---\n\n© Copyright by Đức Anh Vietsub - Do not reup!\n© Tất cả âm thanh, hình ảnh, và video thuộc bản quyền của tác giả gốc và nhà sản xuất.\n© Tuyên bố từ chối trách nhiệm theo Điều 107 Theo Luật Bản Quyền Hoa Kỳ 1976,cho phép ''sử dụng trích đoạn'', hình ảnh, âm thanh với mục đích như, phê bình, bình luận, giáo dục, nghiên cứu phi lợi nhuận.\n\n---\n\n#hoathinhvietsub #hoathinhgau #hoathinhtrungquoc #anime #hoathinh3d #xuhuong #taisinh #xuyenkhong #phamnhantutien #hoathinhtrungquoc2d #recommended #ducanhvietsub #vietsub #dauladailuc #xuyenkhongthanhelonmuskdaulathuctinhvetinhcapkhainiem",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/2l9fbrar8zE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/2l9fbrar8zE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/2l9fbrar8zE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/2l9fbrar8zE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/2l9fbrar8zE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/2l9fbrar8zE/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "Đức Anh Vietsub",
+            "tags": [
+              "hoathinhtrungquoc",
+              "xuyenkhong",
+              "dauladailuc",
+              "xuyenkhongthanhelonmuskdaulathuctinhvetinhcapkhainiem",
+              "demonslayer"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "vi",
+            "localized": {
+              "title": "FULL (TẬP 60-119) l Xuyên Không Thành Elon Musk Đấu La Thức Tỉnh Vệ Tinh Cấp Khái Niệm",
+              "description": "📖Synopsis:\nTiên Thiên Hồn Lực chỉ có 3 cấp nhưng ta phóng vệ tinh lên trời trong 6 năm, ngày ta hấp thụ hồn hoàn, vệ tinh ly thể ta chỉ cần thở trực tiếp đề thăng 10 cấp\n---\n📚 Danh Sách Phát Của Bộ Xuyên Không Thành Elon Musk Đấu La Thức Tỉnh Vệ Tinh Cấp Khái Niệm 'https://www.youtube.com/watch?v=X9DQUaZQHEc&list=PLHiMP2Rr9XT8&index=1'\n---\n🕒Mốc Thời Gian Tập Trước: (Chỉ Áp Dụng Cho Bản Tổng Hợp)\n---\n[📚] Tổng Hợp Các Bộ Chủ Đề Jujutsu Kaisen ⚔️🔥👁️🌀 'https://www.youtube.com/watch?v=8oPMcaVdcJQ&list=PLXTxBmHWNuqHccd1DFQbShyW8Oh4GuJI3&index=5'\n---\n[📚] Tổng Hợp Các Bộ Chủ Đề Jojo Bizareaventrue Xuyên Không 🗿🗿🗿🗿  'https://www.youtube.com/watch?v=58KjKg3TzgM&list=PLXTxBmHWNuqHxOj6aABuhQwoWtRqQ70BE&index=1'\n---\n[📚]Tổng Hợp Các Bộ Xuyên Không Anime One Piece ☠️🏴‍☠️🍖👒 ' https://www.youtube.com/watch?v=IY7j54AgsfU&list=PLXTxBmHWNuqFPcaluEVf5qC3D6_oY5jGj&index=5'\n---\n[📚] Tổng Hợp Các Bộ Chủ Đề Ultraman 👾🔥💥🌟 'https://www.youtube.com/watch?v=sXMil4t1Gos&list=PLXTxBmHWNuqEHfFMd8UVBaieZbS6r9AAY'\n---\n[📚] Tổng Hợp Các Bộ Xuyên Không Demon Slayer ⚔️☀️🌑😈  'https://www.youtube.com/watch?v=x8aAHE7D_Wk&list=PLXTxBmHWNuqHDHenjqfCYC-ljtH2wI7Ej&index=1'\n---\n[📚] Tổng Hợp Các Bộ Xuyên Không Dragon Ball 🟠🐉🌍✨ 'https://www.youtube.com/watch?v=pVcbVYEjOMk&list=PLXTxBmHWNuqGWoVOLHR81Jta4S6NcA6Qq'\n\n\n---\n\n\n✨ Chào mừng đến với kênh Đức Anh Vietsub! ✨\nMình chuyên dịch và chia sẻ những bộ phim hoạt hình Trung Quốc hấp dẫn sang tiếng Việt, với mong muốn mang đến cho mọi người những phút giây thư giãn, đầy cảm xúc và nhẹ nhàng giữa cuộc sống hối hả.\nNếu bạn yêu thích những câu chuyện anime,huyền huyễn, hài hước, cảm động hay đầy kịch tính, thì đây chính là nơi dành cho bạn!\n🎬 Đừng quên đăng ký kênh để không bỏ lỡ những tập phim mới nhất nhé!\n\n---\n\n👑 Lời nhắn từ Đức Anh Vietsub :\nNếu bạn thấy phim hay, sub mượt và muốn \"nạp linh thạch\" để mình có thêm động lực tiếp tục cày sub xuyên kiếp, thì có thể ủng hộ nhẹ tại đây nè:\n💸Ngân Hàng MB Bank – STK: 0965770726\n💸Ủng hộ thì yêu – không ủng hộ… cũng yêu,\nChỉ là mình hơi yếu, sub hơi run tay chút thui~ 😌\n\nCảm ơn bạn nhiều lắm vì đã ghé kênh, xem phim, và đồng hành cùng mình trong hành trình này! 🥰\nChúc bạn luôn vui vẻ, xem phim vui và mỗi ngày đều là một ngày chill chill nha~ 🌸🎬\n\n---\n\n© Copyright by Đức Anh Vietsub - Do not reup!\n© Tất cả âm thanh, hình ảnh, và video thuộc bản quyền của tác giả gốc và nhà sản xuất.\n© Tuyên bố từ chối trách nhiệm theo Điều 107 Theo Luật Bản Quyền Hoa Kỳ 1976,cho phép ''sử dụng trích đoạn'', hình ảnh, âm thanh với mục đích như, phê bình, bình luận, giáo dục, nghiên cứu phi lợi nhuận.\n\n---\n\n#hoathinhvietsub #hoathinhgau #hoathinhtrungquoc #anime #hoathinh3d #xuhuong #taisinh #xuyenkhong #phamnhantutien #hoathinhtrungquoc2d #recommended #ducanhvietsub #vietsub #dauladailuc #xuyenkhongthanhelonmuskdaulathuctinhvetinhcapkhainiem"
+            },
+            "defaultAudioLanguage": "vi"
+          },
+          "contentDetails": {
+            "duration": "PT2H32M41S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "15764",
+            "likeCount": "402",
+            "favoriteCount": "0",
+            "commentCount": "19"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "Y4s8NadbZfU": {
         "status": "pending",
@@ -58406,10 +58985,10 @@
       },
       "Sd1s5HeQMkY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653742+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016450+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653740+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "5ir_L6NFsr-KytnxsepTPoNds9w",
@@ -58458,14 +59037,91 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T05:06:01Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "dP3A3Uy91zJZ9xw_M9lCgAOH4ZA",
+          "id": "Sd1s5HeQMkY",
+          "snippet": {
+            "publishedAt": "2026-09-17T05:06:01Z",
+            "channelId": "UCUZhIEtGkJhAXXAa2qC-bQw",
+            "title": "事情大条了！特斯拉CEO马斯克（Elon Musk）：刚刚突然的声明震惊了全世界！一天狂发40条动态，Tesla、SpaceX、Grok同时爆出大消息！",
+            "description": "#美股 \n頻道會員加入連接：https://www.youtube.com/channel/UCUZhIEtGkJhAXXAa2qC-bQw/join\n聯繫Twitter：晨風加糖@morningandsugar\n電報帳號：https://t.me/morningwindandsugar\n期權學習：https://youtu.be/fdDi37KQtpk\nGMMA教學視頻：https://youtu.be/VVtVN2qWCK8\n我是在歐易OKEX交易所買柴犬幣的：https://www.ouyi.fit/join/7991150\n我是在幣安買的狗幣，註冊連接：https://accounts.binancezh.top/zh-CN/register?ref=GMW8Y4UN\n我的電報投資群採用邀請制，想進入的，請在視頻下面留言。\n視頻中的觀點僅為我的個人觀點，股市有風險，投資須謹慎，我不負任何責任。",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Sd1s5HeQMkY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Sd1s5HeQMkY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Sd1s5HeQMkY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Sd1s5HeQMkY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Sd1s5HeQMkY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/Sd1s5HeQMkY/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "晨风加糖",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh-Hant",
+            "localized": {
+              "title": "事情大条了！特斯拉CEO马斯克（Elon Musk）：刚刚突然的声明震惊了全世界！一天狂发40条动态，Tesla、SpaceX、Grok同时爆出大消息！",
+              "description": "#美股 \n頻道會員加入連接：https://www.youtube.com/channel/UCUZhIEtGkJhAXXAa2qC-bQw/join\n聯繫Twitter：晨風加糖@morningandsugar\n電報帳號：https://t.me/morningwindandsugar\n期權學習：https://youtu.be/fdDi37KQtpk\nGMMA教學視頻：https://youtu.be/VVtVN2qWCK8\n我是在歐易OKEX交易所買柴犬幣的：https://www.ouyi.fit/join/7991150\n我是在幣安買的狗幣，註冊連接：https://accounts.binancezh.top/zh-CN/register?ref=GMW8Y4UN\n我的電報投資群採用邀請制，想進入的，請在視頻下面留言。\n視頻中的觀點僅為我的個人觀點，股市有風險，投資須謹慎，我不負任何責任。"
+            },
+            "defaultAudioLanguage": "zh-Hans"
+          },
+          "contentDetails": {
+            "duration": "PT22M25S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "12942",
+            "likeCount": "188",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "TaIMzYK3ihE": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653749+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016465+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653746+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "eS-BnLnafqPm3-eBa8_KJmkp3uE",
@@ -58514,14 +59170,101 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T00:30:28Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "1Km1N2bG170osAgtgY5n70p4luw",
+          "id": "TaIMzYK3ihE",
+          "snippet": {
+            "publishedAt": "2026-09-17T00:30:28Z",
+            "channelId": "UCUGLhcs3-3y_yhZZsgRzrzw",
+            "title": "Elon Musk的无稀土电机，借稀土管制卡住了谁的脖子？",
+            "description": "付费频道订阅：https://www.youtube.com/channel/UCUGLhcs3-3y_yhZZsgRzrzw/join\n\n文字版地址：https://lukefan.com/2026/09/17/cybercab-rare-earth-free-motor-business-model/\n\nTesla Cybercab零稀土电机为何只能用于Robotaxi？\nElon Musk的无稀土电机，借稀土管制卡住了谁的脖子？\nTesla Cybercab的零稀土电机破解了中国稀土卡脖子了吗？\n\nCybercab零稀土电机并非简单的技术突破，而是一套围绕Robotaxi运营成本设计的商业方案。本文拆解零稀土电机原理，说明铁氧体如何借助Halbach阵列、发卡扁线和高转速弥补磁力不足，并比较EPA与CLTC续航标准，解释这种电机为何适合Cybercab，却难以用于Model 3和Model Y。文章还通过中国电动车与共享单车的案例，分析Robotaxi运营成本如何改变配置逻辑，以及中国稀土管制为何可能扩大Cybercab相对传统乘用车企业的供应链优势。\n\n00:00:00 零稀土电机争议开场\n00:01:36 铁氧体电机如何补足磁力\n00:03:41 为何只装在Cybercab\n00:04:27 EPA与CLTC两把尺子\n00:05:38 体积重量与成本账\n00:07:30 私家车与出租车需求差异\n00:09:07 Cybercab对比中国电动车\n00:11:48 Robotaxi为何只看运营成本\n00:12:49 共享单车改写买单逻辑\n00:15:25 汽车通勤市场可能重演\n00:15:57 中国稀土管制现状\n00:17:17 马斯克的两手供应链策略\n00:18:58 Optimus中国供应链与传闻\n00:20:59 四十五辆背后的规模押注\n00:23:06 零稀土生意账最终结论\n\n欢迎加入Discord讨论服务器：\nhttps://discord.gg/ppKsNkttTv",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/TaIMzYK3ihE/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/TaIMzYK3ihE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/TaIMzYK3ihE/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/TaIMzYK3ihE/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/TaIMzYK3ihE/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "uhd": {
+                "url": "https://i.ytimg.com/vi/TaIMzYK3ihE/uhddefault.jpg",
+                "width": 3840,
+                "height": 2160
+              }
+            },
+            "channelTitle": "老范讲故事",
+            "tags": [
+              "Cybercab零稀土电机",
+              "Robotaxi商业模式",
+              "特斯拉无稀土电机",
+              "铁氧体电机",
+              "Cybercab运营成本",
+              "EPA与CLTC续航对比",
+              "特斯拉",
+              "磁阻辅助永磁电机"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "zh",
+            "localized": {
+              "title": "Elon Musk的无稀土电机，借稀土管制卡住了谁的脖子？",
+              "description": "付费频道订阅：https://www.youtube.com/channel/UCUGLhcs3-3y_yhZZsgRzrzw/join\n\n文字版地址：https://lukefan.com/2026/09/17/cybercab-rare-earth-free-motor-business-model/\n\nTesla Cybercab零稀土电机为何只能用于Robotaxi？\nElon Musk的无稀土电机，借稀土管制卡住了谁的脖子？\nTesla Cybercab的零稀土电机破解了中国稀土卡脖子了吗？\n\nCybercab零稀土电机并非简单的技术突破，而是一套围绕Robotaxi运营成本设计的商业方案。本文拆解零稀土电机原理，说明铁氧体如何借助Halbach阵列、发卡扁线和高转速弥补磁力不足，并比较EPA与CLTC续航标准，解释这种电机为何适合Cybercab，却难以用于Model 3和Model Y。文章还通过中国电动车与共享单车的案例，分析Robotaxi运营成本如何改变配置逻辑，以及中国稀土管制为何可能扩大Cybercab相对传统乘用车企业的供应链优势。\n\n00:00:00 零稀土电机争议开场\n00:01:36 铁氧体电机如何补足磁力\n00:03:41 为何只装在Cybercab\n00:04:27 EPA与CLTC两把尺子\n00:05:38 体积重量与成本账\n00:07:30 私家车与出租车需求差异\n00:09:07 Cybercab对比中国电动车\n00:11:48 Robotaxi为何只看运营成本\n00:12:49 共享单车改写买单逻辑\n00:15:25 汽车通勤市场可能重演\n00:15:57 中国稀土管制现状\n00:17:17 马斯克的两手供应链策略\n00:18:58 Optimus中国供应链与传闻\n00:20:59 四十五辆背后的规模押注\n00:23:06 零稀土生意账最终结论\n\n欢迎加入Discord讨论服务器：\nhttps://discord.gg/ppKsNkttTv"
+            },
+            "defaultAudioLanguage": "zh"
+          },
+          "contentDetails": {
+            "duration": "PT24M1S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "true",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "13312",
+            "likeCount": "220",
+            "favoriteCount": "0",
+            "commentCount": "69"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "kEbGpczf3JI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653755+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016477+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653752+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "k42UtCr_fKW2lPnGY-JKgtCbHK8",
@@ -58565,14 +59308,99 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T00:08:53Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "lJS9NxRu0kITVveVYKDsEjMmycw",
+          "id": "kEbGpczf3JI",
+          "snippet": {
+            "publishedAt": "2026-09-17T00:08:53Z",
+            "channelId": "UCwA0pC8cvaIBY7poVTKHquA",
+            "title": "Elon Musk und die Rechten",
+            "description": "Ist Elon Musk der Paladin der Rechten? Oder ist doch alles Mittel zum Zweck?\nWie kann man den Technologiemilliardären einordnen? Hat er endgültig zum rechten Lager gewechselt oder vertritt er eine eigene Ideologie oder – besser gesagt – Weltanschauung?\n\n© dbullcutter, 2026\n\nQuellen:\n\nMusk über seinen Sohn und das Woke-Mind-Virus\nhttps://www.focus.de/gesundheit/news/kind-liess-geschlecht-angleichen-elon-musk-sagt-mein-sohn-ist-tot-was-deutsche-experten-zu-pubertaetsblockern-sagen_id_260162204.html\n\nMusk über Religion und Woke-Ideologie\nhttps://www.reddit.com/r/Christianity/comments/1ea4rd0/elon_musk_coins_a_new_term_cultural_christian_and/\nhttps://www.facebook.com/PeanutGalleryMedia/posts/elon-musk-the-worlds-most-unconventional-billionaire-has-once-again-stirred-the-/122122168502392503/\n\n\n#ElonMusk #AfD #AliceWeidel #GiorgiaMeloni #FratellidItalia #DonaldTrump #MAGA #Republikaner #SiliconValley #SocialMedia #KünstlicheIntelligenz",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/kEbGpczf3JI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/kEbGpczf3JI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/kEbGpczf3JI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/kEbGpczf3JI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/kEbGpczf3JI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "dbullcutter",
+            "tags": [
+              "Elon Musk",
+              "AfD",
+              "Alice Weidel",
+              "Fratelli d'Italia",
+              "Giorgia Meloni",
+              "Donald Trump",
+              "MAGA",
+              "Republikaner",
+              "Silicon Valley",
+              "Social Media",
+              "Künstliche Intelligenz"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "de",
+            "localized": {
+              "title": "Elon Musk und die Rechten",
+              "description": "Ist Elon Musk der Paladin der Rechten? Oder ist doch alles Mittel zum Zweck?\nWie kann man den Technologiemilliardären einordnen? Hat er endgültig zum rechten Lager gewechselt oder vertritt er eine eigene Ideologie oder – besser gesagt – Weltanschauung?\n\n© dbullcutter, 2026\n\nQuellen:\n\nMusk über seinen Sohn und das Woke-Mind-Virus\nhttps://www.focus.de/gesundheit/news/kind-liess-geschlecht-angleichen-elon-musk-sagt-mein-sohn-ist-tot-was-deutsche-experten-zu-pubertaetsblockern-sagen_id_260162204.html\n\nMusk über Religion und Woke-Ideologie\nhttps://www.reddit.com/r/Christianity/comments/1ea4rd0/elon_musk_coins_a_new_term_cultural_christian_and/\nhttps://www.facebook.com/PeanutGalleryMedia/posts/elon-musk-the-worlds-most-unconventional-billionaire-has-once-again-stirred-the-/122122168502392503/\n\n\n#ElonMusk #AfD #AliceWeidel #GiorgiaMeloni #FratellidItalia #DonaldTrump #MAGA #Republikaner #SiliconValley #SocialMedia #KünstlicheIntelligenz"
+            },
+            "defaultAudioLanguage": "de"
+          },
+          "contentDetails": {
+            "duration": "PT26M39S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "345",
+            "likeCount": "13",
+            "favoriteCount": "0",
+            "commentCount": "9"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "xhArTNmSIcw": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653760+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016488+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653758+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "yghd_lUblPz9Oa3hIn6iysAudqo",
@@ -58621,14 +59449,113 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T23:40:47Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "vlRPUr_YEE09ErwKhhIVhKAjTjM",
+          "id": "xhArTNmSIcw",
+          "snippet": {
+            "publishedAt": "2026-09-16T23:40:47Z",
+            "channelId": "UC4gD0czpXVv_LpADTSU624g",
+            "title": "Kotaku ATTACKS Female Japanese Game Dev Over Elon Musk?!",
+            "description": "Kotaku is angry that female Japanese game dev Ikumi Nakamura invited Elon Musk to play her game Kemuri at the Tokyo Game Show. And now they're going so far as to basically call her a n*zi sympathizer. So Kotaku is harassing women in games. Oh, the irony...\n\nWatch the podcast episodes on YouTube and all major podcast hosts including Spotify.\n\nCLOWNFISH TV is an independent, opinionated news and commentary podcast that covers Entertainment and Tech from a consumer’s point of view. We talk about Gaming, Comics, Anime, TV, Movies, Animation and more. Hosted by Kneon and Geeky Sparkles.\n\nGet more news, views and reviews on Clownfish TV News - https://more.clownfishtv.com/\n\nOn YouTube - https://www.youtube.com/c/ClownfishTV\nOn Spotify - https://open.spotify.com/show/4Tu83D1NcCmh7K1zHIedvg\nOn Apple Podcasts - https://podcasts.apple.com/us/podcast/clownfish-tv-audio-edition/id1726838629\n\n🐠 MORE CLOWNFISH TV -\nOfficial Merch Store: http://ClownfishMinus.com\nFacebook - https://facebook.com/ClownfishTV\nX - https://x.com/ClownfishTVcom\nClownfish TV subreddit: https://www.reddit.com/r/ClownfishTVOfficial/\n\nDisclaimer:\nThis series is produced by Clownfish Studios and WebReef Media, and is part of ClownfishTV.com. Opinions expressed by our contributors do not necessarily reflect the views of our guests, affiliates, sponsors, or advertisers. ClownfishTV.com is an unofficial news source and has no connection to any company that we may cover. This channel and website and the content made available through this site are for educational, entertainment and informational purposes only. These so-called “fair uses” are permitted even if the use of the work would otherwise be infringing.\n\n#Podcast #Commentary #News #Reaction #Gaming #Comedy #Entertainment #Hollywood #PopCulture #Tech #Anime #FYP",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/xhArTNmSIcw/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/xhArTNmSIcw/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/xhArTNmSIcw/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/xhArTNmSIcw/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/xhArTNmSIcw/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "qhd": {
+                "url": "https://i.ytimg.com/vi/xhArTNmSIcw/qhddefault.jpg",
+                "width": 2560,
+                "height": 1440
+              }
+            },
+            "channelTitle": "Clownfish TV",
+            "tags": [
+              "Clownfish TV",
+              "Entertainment",
+              "Pop Culture News",
+              "Animation",
+              "Tech News",
+              "Reaction",
+              "Commentary",
+              "News",
+              "Comedy",
+              "Trending",
+              "Movies",
+              "news commentary",
+              "Podcast",
+              "Anime",
+              "reaction video",
+              "commentary niche",
+              "commentary channels",
+              "video games",
+              "kotaku",
+              "elon musk"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Kotaku ATTACKS Female Japanese Game Dev Over Elon Musk?!",
+              "description": "Kotaku is angry that female Japanese game dev Ikumi Nakamura invited Elon Musk to play her game Kemuri at the Tokyo Game Show. And now they're going so far as to basically call her a n*zi sympathizer. So Kotaku is harassing women in games. Oh, the irony...\n\nWatch the podcast episodes on YouTube and all major podcast hosts including Spotify.\n\nCLOWNFISH TV is an independent, opinionated news and commentary podcast that covers Entertainment and Tech from a consumer’s point of view. We talk about Gaming, Comics, Anime, TV, Movies, Animation and more. Hosted by Kneon and Geeky Sparkles.\n\nGet more news, views and reviews on Clownfish TV News - https://more.clownfishtv.com/\n\nOn YouTube - https://www.youtube.com/c/ClownfishTV\nOn Spotify - https://open.spotify.com/show/4Tu83D1NcCmh7K1zHIedvg\nOn Apple Podcasts - https://podcasts.apple.com/us/podcast/clownfish-tv-audio-edition/id1726838629\n\n🐠 MORE CLOWNFISH TV -\nOfficial Merch Store: http://ClownfishMinus.com\nFacebook - https://facebook.com/ClownfishTV\nX - https://x.com/ClownfishTVcom\nClownfish TV subreddit: https://www.reddit.com/r/ClownfishTVOfficial/\n\nDisclaimer:\nThis series is produced by Clownfish Studios and WebReef Media, and is part of ClownfishTV.com. Opinions expressed by our contributors do not necessarily reflect the views of our guests, affiliates, sponsors, or advertisers. ClownfishTV.com is an unofficial news source and has no connection to any company that we may cover. This channel and website and the content made available through this site are for educational, entertainment and informational purposes only. These so-called “fair uses” are permitted even if the use of the work would otherwise be infringing.\n\n#Podcast #Commentary #News #Reaction #Gaming #Comedy #Entertainment #Hollywood #PopCulture #Tech #Anime #FYP"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT26M30S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "47017",
+            "likeCount": "1588",
+            "favoriteCount": "0",
+            "commentCount": "132"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "Qtq7Ifj6PpU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653766+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016500+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653764+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "_QH5M_85yvVt_Qojl6_WkJrQHxw",
@@ -58672,14 +59599,103 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T23:15:26Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "83QoEge6qcC8dWRMekvm1w9gnwg",
+          "id": "Qtq7Ifj6PpU",
+          "snippet": {
+            "publishedAt": "2026-09-16T23:15:26Z",
+            "channelId": "UCdJo8OPlmtnDNoOAVy1ao9A",
+            "title": "4 YOU JUST TRIGGERED THE SAME PROTOCOL THEY USED ON ELON MUSK AND OTHER ELITE FIGURES 👑Joker ApexRi",
+            "description": "Joker IronMind — where pressure builds discipline, chaos creates control, and weakness is reforged into strength.\nDark motivation, ruthless mindset, and silent transformation for those who refuse to break.\n\nEndure the pressure. Master yourself. Become unshakable.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Qtq7Ifj6PpU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Qtq7Ifj6PpU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Qtq7Ifj6PpU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Qtq7Ifj6PpU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Qtq7Ifj6PpU/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Joker IronMind",
+            "tags": [
+              "JokerApexRiot",
+              "Joker",
+              "JokerMindset",
+              "DarkMotivation",
+              "DarkMindset",
+              "MentalStrength",
+              "Discipline",
+              "SelfMastery",
+              "InnerStrength",
+              "Mindset",
+              "Motivation",
+              "NoExcuses",
+              "StayStrong",
+              "RiseAbove",
+              "SilentPower"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "4 YOU JUST TRIGGERED THE SAME PROTOCOL THEY USED ON ELON MUSK AND OTHER ELITE FIGURES 👑Joker ApexRi",
+              "description": "Joker IronMind — where pressure builds discipline, chaos creates control, and weakness is reforged into strength.\nDark motivation, ruthless mindset, and silent transformation for those who refuse to break.\n\nEndure the pressure. Master yourself. Become unshakable."
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT34M45S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "0",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "PsrSRz1EYq8": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653772+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016511+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653769+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "RlsrnN9R8Nxy86Pi5fWSSHNDS2Q",
@@ -58728,14 +59744,107 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T23:00:00Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "ucajFqGUH2BuKgCIbPdXirM0N98",
+          "id": "PsrSRz1EYq8",
+          "snippet": {
+            "publishedAt": "2026-09-16T23:00:00Z",
+            "channelId": "UCzHqJDk-3UacB8t504jWeHg",
+            "title": "Elon Musk Esta Construindo Um Império e Ninguém Pode Parar!",
+            "description": "A SpaceX está avançando em várias áreas ao mesmo tempo, e a empresa de Elon Musk está deixando de ser conhecida apenas pelos foguetes. Realizei Uma Intensa Pesquisa sobre os principais projetos que podem definir o futuro da empresa, incluindo Starship, motores Raptor, Starlink, inteligência artificial, chips, computação espacial e novas tecnologias para a exploração da Lua e de Marte.\n\nNosso Ultimo Vídeo 👇\nhttps://youtu.be/o1iplNKGSd4\n\nPlay List Atualização Starship👇\nhttps://www.youtube.com/playlist?list=PLjLQxZLtPXqBRB_YU8hKH7XuqAyeymjLy\n\nContribua Com Um PIX:\nindorumoamarte@gmail.com\n\nContato (contact me)\ndanieldiasdr300@hotmail.com\n\nDiscord: https://discord.gg/f3m9ZCXaG9\n\nLink Mercado Livre👇\nhttps://www.mercadolivre.com.br/social/danidr \n\nAmazon👇\nhttps://amzn.to/4nVwgDX\n\nShopee👇\nhttps://s.shopee.com.br/20rfdkMxCm\n\nMusicas que Uso Esta No EpidemicSound👇\nhttps://share.epidemicsound.com/dsysta\n\nCredit: 📸📽️\n⭐SpaceX on YouTube: @spacex\n⭐NASA on YouTube: @nasa\n⭐RGV Aerial Photography on YouTube: @RGV Aerial Photography\n\n\nProfile on:✖️📸\n\nWe use images and content in accordance with the YouTube Fair Use copyright\n\nO Canal Rumo a Marte é dedicada à exploração do espaço, e à Imaginação dos seres humanos em explorar o universo. Fornecemos notícias e atualizações de tudo o que se relaciona com o espaço, incluindo as missões da SpaceX, NASA, ESA, Japão, India e China. Nosso Maior foco é em notícias e atualizações da SpaceX, NASA, Starlink, Blue Origin, e os programas espaciasi da India e China  e muito mais. Se você se interessa por exploração espacial, colonização de Marte e tudo relacionado a viagens espaciais e à Nova corrida espacial... você está no canal certo! Amamos o espaço e esperamos inspirar outros a aprenderem mais!",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/PsrSRz1EYq8/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/PsrSRz1EYq8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/PsrSRz1EYq8/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/PsrSRz1EYq8/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/PsrSRz1EYq8/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/PsrSRz1EYq8/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "RUMO A MARTE",
+            "tags": [
+              "espaço",
+              "spacex",
+              "starbase",
+              "foguete",
+              "nasa",
+              "blueorigin",
+              "corridaespacial",
+              "tecnologia",
+              "ciencia",
+              "falcon9",
+              "satarship",
+              "starshiplançamento",
+              "cosmo",
+              "#atualização"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "pt-PT",
+            "localized": {
+              "title": "Elon Musk Esta Construindo Um Império e Ninguém Pode Parar!",
+              "description": "A SpaceX está avançando em várias áreas ao mesmo tempo, e a empresa de Elon Musk está deixando de ser conhecida apenas pelos foguetes. Realizei Uma Intensa Pesquisa sobre os principais projetos que podem definir o futuro da empresa, incluindo Starship, motores Raptor, Starlink, inteligência artificial, chips, computação espacial e novas tecnologias para a exploração da Lua e de Marte.\n\nNosso Ultimo Vídeo 👇\nhttps://youtu.be/o1iplNKGSd4\n\nPlay List Atualização Starship👇\nhttps://www.youtube.com/playlist?list=PLjLQxZLtPXqBRB_YU8hKH7XuqAyeymjLy\n\nContribua Com Um PIX:\nindorumoamarte@gmail.com\n\nContato (contact me)\ndanieldiasdr300@hotmail.com\n\nDiscord: https://discord.gg/f3m9ZCXaG9\n\nLink Mercado Livre👇\nhttps://www.mercadolivre.com.br/social/danidr \n\nAmazon👇\nhttps://amzn.to/4nVwgDX\n\nShopee👇\nhttps://s.shopee.com.br/20rfdkMxCm\n\nMusicas que Uso Esta No EpidemicSound👇\nhttps://share.epidemicsound.com/dsysta\n\nCredit: 📸📽️\n⭐SpaceX on YouTube: @spacex\n⭐NASA on YouTube: @nasa\n⭐RGV Aerial Photography on YouTube: @RGV Aerial Photography\n\n\nProfile on:✖️📸\n\nWe use images and content in accordance with the YouTube Fair Use copyright\n\nO Canal Rumo a Marte é dedicada à exploração do espaço, e à Imaginação dos seres humanos em explorar o universo. Fornecemos notícias e atualizações de tudo o que se relaciona com o espaço, incluindo as missões da SpaceX, NASA, ESA, Japão, India e China. Nosso Maior foco é em notícias e atualizações da SpaceX, NASA, Starlink, Blue Origin, e os programas espaciasi da India e China  e muito mais. Se você se interessa por exploração espacial, colonização de Marte e tudo relacionado a viagens espaciais e à Nova corrida espacial... você está no canal certo! Amamos o espaço e esperamos inspirar outros a aprenderem mais!"
+            },
+            "defaultAudioLanguage": "pt-BR"
+          },
+          "contentDetails": {
+            "duration": "PT21M37S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "30076",
+            "likeCount": "1836",
+            "favoriteCount": "0",
+            "commentCount": "103"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "WdXP1CnU1Oo": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653777+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016522+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653775+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "6PETd30_py4D2XBjOU2AHhWg52o",
@@ -58779,7 +59888,79 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-16T23:00:26Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "Kpl5CXiBvbX-Sg5yccGqFX-zH2g",
+          "id": "WdXP1CnU1Oo",
+          "snippet": {
+            "publishedAt": "2026-09-16T23:00:26Z",
+            "channelId": "UCe_HuQyI2_vluXeXuUzMfxg",
+            "title": "Elon Musk posted 51 times on X today (09/16/26)",
+            "description": "Join this channel to get early-access:\nhttps://www.youtube.com/channel/UCe_HuQyI2_vluXeXuUzMfxg/join\n\nLISTEN to the 'Book of Elon' Audiobook on Audible: https://amzn.to/4ulgkg9\n\nStart your investing journey:\nhttps://www.interactivebrokers.ca/mkt/?src=jacobhY&url=%2Fen%2Fwhyib%2Foverview.php\n\nGrok Bot livestream:\nhttps://x.com/bot/status/2099890276315848743\n\nBanger post:\nhttps://x.com/elonmusk/status/2099932206429016118\n\nTimestamps:\n0:00 Introduction\n0:10 Tesla (5)\n1:50 SpaceX (10)\n6:30 Starlink (4)\n7:24 X (2)\n7:50 Boring Co. (1)\n8:01 Grok (1)\n8:12 Grok Build (1)\n8:38 Grok Bot (7)\n12:57 AI (6)\n15:32 Energy (2)\n15:59 US Politics (5)\n17:56 Media (1)\n18:37 LGBTQ (1)\n18:49 Misc (2)\n19:11 Video Games (3)",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/WdXP1CnU1Oo/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/WdXP1CnU1Oo/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/WdXP1CnU1Oo/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/WdXP1CnU1Oo/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/WdXP1CnU1Oo/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Jacob & Isaac",
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk posted 51 times on X today (09/16/26)",
+              "description": "Join this channel to get early-access:\nhttps://www.youtube.com/channel/UCe_HuQyI2_vluXeXuUzMfxg/join\n\nLISTEN to the 'Book of Elon' Audiobook on Audible: https://amzn.to/4ulgkg9\n\nStart your investing journey:\nhttps://www.interactivebrokers.ca/mkt/?src=jacobhY&url=%2Fen%2Fwhyib%2Foverview.php\n\nGrok Bot livestream:\nhttps://x.com/bot/status/2099890276315848743\n\nBanger post:\nhttps://x.com/elonmusk/status/2099932206429016118\n\nTimestamps:\n0:00 Introduction\n0:10 Tesla (5)\n1:50 SpaceX (10)\n6:30 Starlink (4)\n7:24 X (2)\n7:50 Boring Co. (1)\n8:01 Grok (1)\n8:12 Grok Build (1)\n8:38 Grok Bot (7)\n12:57 AI (6)\n15:32 Energy (2)\n15:59 US Politics (5)\n17:56 Media (1)\n18:37 LGBTQ (1)\n18:49 Misc (2)\n19:11 Video Games (3)"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT20M27S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "18986",
+            "likeCount": "717",
+            "favoriteCount": "0",
+            "commentCount": "79"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "nTY0ejp9Tz8": {
         "status": "expired",
@@ -58950,9 +60131,9 @@
         }
       },
       "8u6LnQ5ffKE": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:36.614986+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.699416+00:00",
         "first_seen_at": "2026-09-19T15:18:36.614975+00:00",
         "attempts": 0,
         "item": {
@@ -59058,10 +60239,10 @@
       },
       "7rVamqGYWAI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:37.806185+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016532+00:00",
         "first_seen_at": "2026-09-19T15:18:37.806169+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "4IjBIfwvlBTOXxrMfV3U_p7JbOU",
@@ -59105,7 +60286,109 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T12:00:11Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "pRruNzbTiqiXTR6I3S9HEThikvY",
+          "id": "7rVamqGYWAI",
+          "snippet": {
+            "publishedAt": "2026-09-18T12:00:11Z",
+            "channelId": "UCJUMS9NuAuz2XKmizdu5K4g",
+            "title": "👉 Elon Musk Beg for Last 2 Minutes  your time is running out   I know you’re busy, but please give",
+            "description": "👉 Elon Musk Beg for Last 2 Minutes  your time is running out   I know you’re busy, but please give... GOD SAYS: YOUR TIME IS RUNNING OUT. This urgent message from God, powerful Christian prayer, God's timing prayer, divine direction and breakthrough prayer may be exactly what you need today.\n\nIf you have been overwhelmed, worried about the future, waiting for an answer from God, struggling with financial pressure, facing an important decision, or feeling like time is moving while your life remains stuck, stay until the end of this powerful prayer.\n\nGod knows you are busy. He sees the responsibilities you carry, the bills you need to pay, the decisions you have to make, the family concerns you rarely talk about, and the private battles that return when everything becomes quiet.\n\nBut this message carries an important reminder: not everything that feels urgent deserves control over your heart.\n\nThis powerful message from God and Christian prayer is about surrendering anxiety, trusting God's timing, receiving divine wisdom, finding peace in uncertainty, making better decisions, restoring your faith, and learning to stop postponing what truly matters.\n👉 Elon Musk Beg for Last 2 Minutes  your time is running out   I know you’re busy, but please give\nIf you have been asking God:\n\n“Lord, what should I do next?”\n\n“Why is my answer taking so long?”\n\n“Is this door meant for me?”\n\n“How do I stop worrying about tomorrow?”\n\n“Can God restore the time I lost?”\n\nPray this prayer with faith.\n\nWe will pray for:\n\nGod's guidance and divine direction\nPeace over anxiety and fear\nWisdom for important decisions\nFinancial wisdom and provision\nOpen doors and new opportunities\nFamily protection and restoration\nStrength during seasons of waiting\nFreedom from regret and worry\nRenewed faith and spiritual strength\nGod's perfect timing over your life\n\nThe Bible reminds us in Proverbs chapter three, verses five and six to trust in the Lord with all our heart and acknowledge Him in every path.\n\nPsalm ninety, verse twelve asks God to teach us to number our days so that we may gain wisdom.\n\nAnd Philippians chapter four, verses six and seven reminds us to bring our requests to God through prayer and allow His peace to guard our hearts and minds.\n\nDo not let fear control the time God has given you.\n\nDo not let anxiety steal another day.\n\nDo not allow regret over yesterday to destroy the opportunities still waiting for you today.\n\nGod can give you wisdom for the next step even when you cannot see the entire road.\n\nStay with this prayer until the end and make it personal. Pray every word with faith and write your declaration in the comments.\n\nType in the comments:\n\n“God, I give You this moment.”\n\n“Lord, direct my steps.”\n\n“My hope is in God.”\n\n“God, renew my wisdom.”\n\n“God, visit my family today.”\n\n“Today I begin with God.”\n\n“Lord, light my path.”\n👉 Elon Musk Beg for Last 2 Minutes  your time is running out   I know you’re busy, but please give\nIf this prayer spoke to your heart, do not leave without posting your declaration of faith in the comments. Your participation is also a way to strengthen other people who are searching for hope.\n\nShare this video with 7 people who need to receive a message of faith and renewal. This is a chain of goodness, and the more you share this prayer, the faster your blessing will arrive. The number 7 represents perfection and completion, and by sharing this prayer, you may bring a word of hope to someone who needs to hear exactly this at this very moment.\n\nGod is asking you to subscribe to @GodTellsYouNow  right now so you can continue receiving prayers and messages of faith and strengthen your moments of connection with God.\n\nSubscribe and turn on notifications so you do not miss the next powerful prayer, urgent message from God, morning prayer, breakthrough prayer, financial prayer, or message of divine direction.\n\n#GodSays #MessageFromGod #PowerfulPrayer #ChristianPrayer #PrayerToday #GodsTiming #UrgentMessageFromGod #PrayerForBreakthrough #GodsMessageToday #PrayerForGuidance #DivineDirection #TrustGod #FaithInGod #PrayerForMiracle #JesusPrayer",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/7rVamqGYWAI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/7rVamqGYWAI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/7rVamqGYWAI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/7rVamqGYWAI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/7rVamqGYWAI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "God Tells You Now",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "👉 Elon Musk Beg for Last 2 Minutes  your time is running out   I know you’re busy, but please give",
+              "description": "👉 Elon Musk Beg for Last 2 Minutes  your time is running out   I know you’re busy, but please give... GOD SAYS: YOUR TIME IS RUNNING OUT. This urgent message from God, powerful Christian prayer, God's timing prayer, divine direction and breakthrough prayer may be exactly what you need today.\n\nIf you have been overwhelmed, worried about the future, waiting for an answer from God, struggling with financial pressure, facing an important decision, or feeling like time is moving while your life remains stuck, stay until the end of this powerful prayer.\n\nGod knows you are busy. He sees the responsibilities you carry, the bills you need to pay, the decisions you have to make, the family concerns you rarely talk about, and the private battles that return when everything becomes quiet.\n\nBut this message carries an important reminder: not everything that feels urgent deserves control over your heart.\n\nThis powerful message from God and Christian prayer is about surrendering anxiety, trusting God's timing, receiving divine wisdom, finding peace in uncertainty, making better decisions, restoring your faith, and learning to stop postponing what truly matters.\n👉 Elon Musk Beg for Last 2 Minutes  your time is running out   I know you’re busy, but please give\nIf you have been asking God:\n\n“Lord, what should I do next?”\n\n“Why is my answer taking so long?”\n\n“Is this door meant for me?”\n\n“How do I stop worrying about tomorrow?”\n\n“Can God restore the time I lost?”\n\nPray this prayer with faith.\n\nWe will pray for:\n\nGod's guidance and divine direction\nPeace over anxiety and fear\nWisdom for important decisions\nFinancial wisdom and provision\nOpen doors and new opportunities\nFamily protection and restoration\nStrength during seasons of waiting\nFreedom from regret and worry\nRenewed faith and spiritual strength\nGod's perfect timing over your life\n\nThe Bible reminds us in Proverbs chapter three, verses five and six to trust in the Lord with all our heart and acknowledge Him in every path.\n\nPsalm ninety, verse twelve asks God to teach us to number our days so that we may gain wisdom.\n\nAnd Philippians chapter four, verses six and seven reminds us to bring our requests to God through prayer and allow His peace to guard our hearts and minds.\n\nDo not let fear control the time God has given you.\n\nDo not let anxiety steal another day.\n\nDo not allow regret over yesterday to destroy the opportunities still waiting for you today.\n\nGod can give you wisdom for the next step even when you cannot see the entire road.\n\nStay with this prayer until the end and make it personal. Pray every word with faith and write your declaration in the comments.\n\nType in the comments:\n\n“God, I give You this moment.”\n\n“Lord, direct my steps.”\n\n“My hope is in God.”\n\n“God, renew my wisdom.”\n\n“God, visit my family today.”\n\n“Today I begin with God.”\n\n“Lord, light my path.”\n👉 Elon Musk Beg for Last 2 Minutes  your time is running out   I know you’re busy, but please give\nIf this prayer spoke to your heart, do not leave without posting your declaration of faith in the comments. Your participation is also a way to strengthen other people who are searching for hope.\n\nShare this video with 7 people who need to receive a message of faith and renewal. This is a chain of goodness, and the more you share this prayer, the faster your blessing will arrive. The number 7 represents perfection and completion, and by sharing this prayer, you may bring a word of hope to someone who needs to hear exactly this at this very moment.\n\nGod is asking you to subscribe to @GodTellsYouNow  right now so you can continue receiving prayers and messages of faith and strengthen your moments of connection with God.\n\nSubscribe and turn on notifications so you do not miss the next powerful prayer, urgent message from God, morning prayer, breakthrough prayer, financial prayer, or message of divine direction.\n\n#GodSays #MessageFromGod #PowerfulPrayer #ChristianPrayer #PrayerToday #GodsTiming #UrgentMessageFromGod #PrayerForBreakthrough #GodsMessageToday #PrayerForGuidance #DivineDirection #TrustGod #FaithInGod #PrayerForMiracle #JesusPrayer"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT33M3S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "49",
+            "likeCount": "4",
+            "favoriteCount": "0",
+            "commentCount": "2"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "QYE90Y-3JNk": {
         "status": "pending",
@@ -59272,10 +60555,10 @@
       },
       "a7zwLbOeKjU": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:39.740888+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016543+00:00",
         "first_seen_at": "2026-09-19T15:18:39.740872+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "CJC2mrqkXj0QhgBRB9nTmB7_ZvQ",
@@ -59319,14 +60602,126 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T13:00:12Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "36qEPVk8a7n446fr8F95SLGMIIQ",
+          "id": "a7zwLbOeKjU",
+          "snippet": {
+            "publishedAt": "2026-09-19T13:00:12Z",
+            "channelId": "UCq41LOyktVBW_CaVi2WKKXw",
+            "title": "SAM ALTMAN: THE AI BUBBLE WILL BLOW UP THE ECONOMY",
+            "description": "MACRO MARKET ANALYSIS VIDEOS EVERYDAY SINCE 2018\n\nI don't sell anything. I don't have any programs for you to join. I will not message you on any platform. I'm not shilling anything. I post videos with my analysis of the global crypto and finance markets. Not financial advice.\n\nNO accounts on any other platform. If you see one, it is not me!\n\n*************\n* SUPPORT THE CRYPTOVISER *\nBECOME A CHANNEL MEMBER HERE ON YOUTUBE\nCLICK JOIN TO LEARN MORE: www.youtube.com/channel/UCq41LOyktVBW_CaVi2WKKXw/join\n\n------------------------------------------------------------------------------------\nThis video, views and opinions expressed on The Cryptoviser Channel is NOT financial advice. DO YOUR OWN RESEARCH before investing your money. Making any investment is risky. This video is for entertainment purposes only. Videos may be uploaded on a delay and may not contain the most up to date information.\nAt the time this video was created, The Cryptoviser Channel is not affiliated with and not paid by any company discussed in the videos. If The Cryptoviser Channel does receive payment for advertising within a video, this description section and the video content will note that.\n------------------------------------------------------------------------------------\n\n#crypto #bitcoin #investing",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/a7zwLbOeKjU/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/a7zwLbOeKjU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/a7zwLbOeKjU/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/a7zwLbOeKjU/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/a7zwLbOeKjU/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "The Cryptoviser",
+            "tags": [
+              "cryptocurrency",
+              "crypto",
+              "blockchain",
+              "investing",
+              "bitcoin",
+              "btc",
+              "ethereum",
+              "eth",
+              "stocks",
+              "trading",
+              "money",
+              "crypto trading",
+              "bitcoin news today",
+              "finance",
+              "finance channel",
+              "crypto news today",
+              "crypto beginners",
+              "investment",
+              "listenable",
+              "investment beginner",
+              "crypto prices",
+              "bitcoin price",
+              "crypto investing",
+              "altcoin investing",
+              "crypto prices today",
+              "investing today",
+              "crypto today",
+              "stocks today",
+              "iren",
+              "terwaulf",
+              "keel",
+              "keel infrastructure",
+              "ai stocks",
+              "ai bubble",
+              "open ai",
+              "anthropic",
+              "sam altman",
+              "artificial intelligence"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "SAM ALTMAN: THE AI BUBBLE WILL BLOW UP THE ECONOMY",
+              "description": "MACRO MARKET ANALYSIS VIDEOS EVERYDAY SINCE 2018\n\nI don't sell anything. I don't have any programs for you to join. I will not message you on any platform. I'm not shilling anything. I post videos with my analysis of the global crypto and finance markets. Not financial advice.\n\nNO accounts on any other platform. If you see one, it is not me!\n\n*************\n* SUPPORT THE CRYPTOVISER *\nBECOME A CHANNEL MEMBER HERE ON YOUTUBE\nCLICK JOIN TO LEARN MORE: www.youtube.com/channel/UCq41LOyktVBW_CaVi2WKKXw/join\n\n------------------------------------------------------------------------------------\nThis video, views and opinions expressed on The Cryptoviser Channel is NOT financial advice. DO YOUR OWN RESEARCH before investing your money. Making any investment is risky. This video is for entertainment purposes only. Videos may be uploaded on a delay and may not contain the most up to date information.\nAt the time this video was created, The Cryptoviser Channel is not affiliated with and not paid by any company discussed in the videos. If The Cryptoviser Channel does receive payment for advertising within a video, this description section and the video content will note that.\n------------------------------------------------------------------------------------\n\n#crypto #bitcoin #investing"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT27M38S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": false,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1553",
+            "likeCount": "42",
+            "favoriteCount": "0",
+            "commentCount": "2"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "lcTZUxnd6Zg": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:39.740908+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016554+00:00",
         "first_seen_at": "2026-09-19T15:18:39.740905+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "tzOlTWnM-8Qw8jf_h_UWqjeM0Vo",
@@ -59370,12 +60765,110 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T10:00:35Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "zEDSBH_KTjYsCeuy9xXPb0_hDN8",
+          "id": "lcTZUxnd6Zg",
+          "snippet": {
+            "publishedAt": "2026-09-19T10:00:35Z",
+            "channelId": "UCS8EJaPBU6qYeaJCfp4GWgg",
+            "title": "Chapter 10: Sam Altman’s Legal Showdowns and the Sovereign AI Era (2025–2026)",
+            "description": "🎁 FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free subscription to our special offers newsletter!) 👉 https://payhip.com/b/lSjLs\n\n✉️ Direct Newsletter Subscription: Prefer to just join the newsletter directly without downloading the book? 👉 https://www.bedtime-biographies.com/\n\n📖 Browse the Biography Vault (Book, Audio, Bundles & More): 👉 https://payhip.com/BedtimeBiographies\n\n🎧 Audiobook Stream: https://www.curios.com/c/02R2A1⁠⁠\n\n📱 Ebook & Premium Bundles: https://payhip.com/BedtimeBiographies\n\n📘 Physical Paperback: (Coming Soon!)\n\nSubscribe for weekly deep-dives into the lives of history’s most influential figures.\n\nWelcome to the final chapter of Sam Altman: The Intelligence Architect. This complete biography spans 10 chapters and over 21 hours of immersive audio narration.\n\nAs OpenAI targets an unprecedented $500 billion valuation milestone, its leader faces a complex matrix of historic legal battles, regulatory restructurings, and deep personal controversies. The final chapter documents the highly sensitive 2025 federal civil lawsuit filed by sister Annie Altman, the massive Oakland federal trial against former co-founder Elon Musk, and the ultimate transformation of OpenAI into a Public Benefit Corporation.\n\nWhat You Will Hear in Chapter 10:\nThe January 2025 Civil Lawsuit: Documenting the sensitive allegations filed by sister Annie Altman in St. Louis federal court regarding historical childhood abuse at the family home.\n\nThe CSA Statute Legal Mechanics: Navigating the legal architecture under Missouri’s Child Sexual Abuse statute, allowing an amended complaint after common-law claims expired.\n\nThe Strategic Family Denial: Analyzing the joint public statement released by the family vehemently denying the allegations and addressing Annie's mental health struggles.\n\nThe Counterclaim & Extortion Defense: Asserting formal court filings that characterize the lawsuit as an attempt at financial extortion following rejected financial demands.\n\nThe $1 Defamation Demurrer: Filing a nominal $1 defamation counterclaim to legally challenge the public statements without imposing a financial burden on his sister.\n\nThe Elon Musk Confrontation: Confronting a massive lawsuit alleging that OpenAI violated its charter by abandoning its non-profit mission to operate as a closed subsidiary of Microsoft.\n\nOakland Federal Trial: Reconstructing the intense legal preparations for the landmark April 2026 courtroom clash defending corporate structure and intellectual property.\n\nPublic Benefit Restructuring: Converting the for-profit arm into a Delaware Public Benefit Corporation (OpenAI Group PBC) to balance social mission with shareholder returns.\n\nThe $500 Billion Valuation Horizon: Analyzing record-breaking growth, with recurring revenues crossing $10 billion and ChatGPT processing over 2 billion prompts daily for 800 million weekly active users.\n\nThe Sovereign AI Matrix: A final, comprehensive synthesis of a life dedicated to bending reality, positioned at the center of global computational and geopolitical forces.\n\n📚 Explore the Full Historical Catalog\nYou have reached the conclusion of this massive, 10-part biographical audio experience. If you missed any previous chapters or want to download the entire unabridged 21-hour audiobook for your personal collection, we have you covered.\n\n👉 Check our main channel profile page for direct storefront links to download the complete audiobook or browse our full historical biography catalog!\n\nThis audiobook was created with the assistance of AI, ensuring cutting-edge research and synthesis, though a human collaborator was always in the loop to guide, refine, and polish the final narrative.",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/lcTZUxnd6Zg/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/lcTZUxnd6Zg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/lcTZUxnd6Zg/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/lcTZUxnd6Zg/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/lcTZUxnd6Zg/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Bedtime Biographies: Sleep Stories",
+            "tags": [
+              "Bedtime Biographies",
+              "Sleep Biographies",
+              "Bedtime Stories for Adults",
+              "Deep Sleep Stories",
+              "Historical Biographies",
+              "History to Sleep To",
+              "Relaxing Biographies",
+              "Famous Lives",
+              "Biography Documentary",
+              "Sleep Aid History",
+              "Calm Stories",
+              "Educational Sleep",
+              "Audio Biographies",
+              "Storytelling Podcast",
+              "Elon Musk",
+              "Donald Trump",
+              "Taylor Swift",
+              "Abraham Lincoln",
+              "Queen Elizabeth",
+              "Steve Jobs",
+              "Albert Einstein",
+              "Julius Caesar",
+              "Leonardo da Vinci",
+              "Sam Altman"
+            ],
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Chapter 10: Sam Altman’s Legal Showdowns and the Sovereign AI Era (2025–2026)",
+              "description": "🎁 FREE GIFT: Get \"The Life of Elon Musk\" ebook for 100% off using code FREEMUSKBOOK at checkout (includes a free subscription to our special offers newsletter!) 👉 https://payhip.com/b/lSjLs\n\n✉️ Direct Newsletter Subscription: Prefer to just join the newsletter directly without downloading the book? 👉 https://www.bedtime-biographies.com/\n\n📖 Browse the Biography Vault (Book, Audio, Bundles & More): 👉 https://payhip.com/BedtimeBiographies\n\n🎧 Audiobook Stream: https://www.curios.com/c/02R2A1⁠⁠\n\n📱 Ebook & Premium Bundles: https://payhip.com/BedtimeBiographies\n\n📘 Physical Paperback: (Coming Soon!)\n\nSubscribe for weekly deep-dives into the lives of history’s most influential figures.\n\nWelcome to the final chapter of Sam Altman: The Intelligence Architect. This complete biography spans 10 chapters and over 21 hours of immersive audio narration.\n\nAs OpenAI targets an unprecedented $500 billion valuation milestone, its leader faces a complex matrix of historic legal battles, regulatory restructurings, and deep personal controversies. The final chapter documents the highly sensitive 2025 federal civil lawsuit filed by sister Annie Altman, the massive Oakland federal trial against former co-founder Elon Musk, and the ultimate transformation of OpenAI into a Public Benefit Corporation.\n\nWhat You Will Hear in Chapter 10:\nThe January 2025 Civil Lawsuit: Documenting the sensitive allegations filed by sister Annie Altman in St. Louis federal court regarding historical childhood abuse at the family home.\n\nThe CSA Statute Legal Mechanics: Navigating the legal architecture under Missouri’s Child Sexual Abuse statute, allowing an amended complaint after common-law claims expired.\n\nThe Strategic Family Denial: Analyzing the joint public statement released by the family vehemently denying the allegations and addressing Annie's mental health struggles.\n\nThe Counterclaim & Extortion Defense: Asserting formal court filings that characterize the lawsuit as an attempt at financial extortion following rejected financial demands.\n\nThe $1 Defamation Demurrer: Filing a nominal $1 defamation counterclaim to legally challenge the public statements without imposing a financial burden on his sister.\n\nThe Elon Musk Confrontation: Confronting a massive lawsuit alleging that OpenAI violated its charter by abandoning its non-profit mission to operate as a closed subsidiary of Microsoft.\n\nOakland Federal Trial: Reconstructing the intense legal preparations for the landmark April 2026 courtroom clash defending corporate structure and intellectual property.\n\nPublic Benefit Restructuring: Converting the for-profit arm into a Delaware Public Benefit Corporation (OpenAI Group PBC) to balance social mission with shareholder returns.\n\nThe $500 Billion Valuation Horizon: Analyzing record-breaking growth, with recurring revenues crossing $10 billion and ChatGPT processing over 2 billion prompts daily for 800 million weekly active users.\n\nThe Sovereign AI Matrix: A final, comprehensive synthesis of a life dedicated to bending reality, positioned at the center of global computational and geopolitical forces.\n\n📚 Explore the Full Historical Catalog\nYou have reached the conclusion of this massive, 10-part biographical audio experience. If you missed any previous chapters or want to download the entire unabridged 21-hour audiobook for your personal collection, we have you covered.\n\n👉 Check our main channel profile page for direct storefront links to download the complete audiobook or browse our full historical biography catalog!\n\nThis audiobook was created with the assistance of AI, ensuring cutting-edge research and synthesis, though a human collaborator was always in the loop to guide, refine, and polish the final narrative."
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT1H54M13S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "1",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "4ylc9yeR5Uo": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:39.741000+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.699453+00:00",
         "first_seen_at": "2026-09-19T15:18:39.740997+00:00",
         "attempts": 0,
         "item": {
@@ -59741,10 +61234,10 @@
       },
       "Jr6JUeP98lY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:47.805332+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T16:13:30.016565+00:00",
         "first_seen_at": "2026-09-19T15:18:47.805316+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "G8iGW8Et_i6yPJ49sP4EFt2i3ks",
@@ -59788,7 +61281,111 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T14:08:30Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T16:13:29.697891+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "U12_9JzWCSnK1OZefXFdDtZrhSc",
+          "id": "Jr6JUeP98lY",
+          "snippet": {
+            "publishedAt": "2026-09-19T14:08:30Z",
+            "channelId": "UCTbF3lzebWSgeiCP5Joqwgw",
+            "title": "💰 How Elon Musk Built a Trillion-Dollar Empire#ElonMusk #SpaceX #Tesla #BusinessBreakdown #business",
+            "description": "How did Elon Musk go from making his first $500 to building a business empire connected to SpaceX, Tesla, Starlink, AI, and X? 🚀\n\nIn this documentary-style business breakdown, we explore the journey behind Elon Musk’s wealth, the companies he built, the business models that helped them scale, and the role of ownership, valuation, technology, capital, and risk.\n\n📌 In this video, we cover:\n\n💻 Elon Musk’s first $500\n🌐 Zip2 and the early internet\n💳 PayPal and his first major exit\n🚀 SpaceX and the rocket gamble\n🛰️ Starlink and recurring revenue\n⚡ Tesla and the EV business\n🤖 AI and X\n📈 How ownership and company valuation create wealth\n💰 The difference between wealth and cash\n⚠️ Business risks, competition, capital requirements & valuation\n\n📊 Money & Markets breaks down money, business, economics, companies, markets, and the strategies behind some of the world's biggest businesses.\n\n🔔 Subscribe for more business documentaries and financial explainers.\n\n⚠️ Disclaimer\n\nThis video is created for educational and informational purposes only and is intended for a U.S. audience. It is not financial, investment, tax, legal, or professional advice. Nothing in this video should be considered a recommendation to buy, sell, or hold any stock, cryptocurrency, or other financial asset. Always do your own research and consider consulting a qualified financial professional before making financial decisions.\n\nSome figures, valuations, historical events, and business information are simplified for educational and storytelling purposes and may change over time.\n\n💡 Money. Business. Economics. Explained.\n\n#ElonMusk #SpaceX #Tesla #Starlink #ElonMuskDocumentary #BusinessDocumentary #Finance #Investing #Economics #Entrepreneurship #AI #X #MoneyAndMarkets #BusinessExplained #StockMarket #Wealth #FinancialEducation",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Jr6JUeP98lY/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Jr6JUeP98lY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Jr6JUeP98lY/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Jr6JUeP98lY/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Jr6JUeP98lY/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "qhd": {
+                "url": "https://i.ytimg.com/vi/Jr6JUeP98lY/qhddefault.jpg",
+                "width": 2560,
+                "height": 1440
+              }
+            },
+            "channelTitle": "Money & Markets",
+            "tags": [
+              "money and markets",
+              "business explained",
+              "finance explained",
+              "economics explained",
+              "financial education",
+              "business education",
+              "money explained",
+              "how companies make money",
+              "business models",
+              "company analysis",
+              "company breakdown",
+              "corporate strategy",
+              "entrepreneurship",
+              "startup business",
+              "startups explained",
+              "stock market explained",
+              "markets explained",
+              "US economy",
+              "American economy",
+              "US business",
+              "American business",
+              "Wall Street",
+              "financial markets",
+              "business documentary",
+              "SpaceX business"
+            ],
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "💰 How Elon Musk Built a Trillion-Dollar Empire#ElonMusk #SpaceX #Tesla #BusinessBreakdown #business",
+              "description": "How did Elon Musk go from making his first $500 to building a business empire connected to SpaceX, Tesla, Starlink, AI, and X? 🚀\n\nIn this documentary-style business breakdown, we explore the journey behind Elon Musk’s wealth, the companies he built, the business models that helped them scale, and the role of ownership, valuation, technology, capital, and risk.\n\n📌 In this video, we cover:\n\n💻 Elon Musk’s first $500\n🌐 Zip2 and the early internet\n💳 PayPal and his first major exit\n🚀 SpaceX and the rocket gamble\n🛰️ Starlink and recurring revenue\n⚡ Tesla and the EV business\n🤖 AI and X\n📈 How ownership and company valuation create wealth\n💰 The difference between wealth and cash\n⚠️ Business risks, competition, capital requirements & valuation\n\n📊 Money & Markets breaks down money, business, economics, companies, markets, and the strategies behind some of the world's biggest businesses.\n\n🔔 Subscribe for more business documentaries and financial explainers.\n\n⚠️ Disclaimer\n\nThis video is created for educational and informational purposes only and is intended for a U.S. audience. It is not financial, investment, tax, legal, or professional advice. Nothing in this video should be considered a recommendation to buy, sell, or hold any stock, cryptocurrency, or other financial asset. Always do your own research and consider consulting a qualified financial professional before making financial decisions.\n\nSome figures, valuations, historical events, and business information are simplified for educational and storytelling purposes and may change over time.\n\n💡 Money. Business. Economics. Explained.\n\n#ElonMusk #SpaceX #Tesla #Starlink #ElonMuskDocumentary #BusinessDocumentary #Finance #Investing #Economics #Entrepreneurship #AI #X #MoneyAndMarkets #BusinessExplained #StockMarket #Wealth #FinancialEducation"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT24M5S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "23",
+            "likeCount": "3",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T16:13:29.697891+00:00"
       },
       "M6dFK4AcllA": {
         "status": "pending",
@@ -75505,9 +77102,9 @@
         }
       },
       "4rygnAWWYaw": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-22T10:55:22.418189+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T16:13:29.700844+00:00",
         "first_seen_at": "2026-09-22T10:55:22.418187+00:00",
         "attempts": 0,
         "item": {
