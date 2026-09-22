@@ -772,7 +772,7 @@
       "Ho1gnEeVryA": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-21T21:40:55.721034+00:00",
+        "updated_at": "2026-09-22T03:11:17.674581+00:00",
         "first_seen_at": "2026-09-18T22:12:17.052304+00:00",
         "attempts": 0,
         "item": {
@@ -1120,7 +1120,7 @@
       "Bh5bJrrJ6xs": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-21T21:40:55.721049+00:00",
+        "updated_at": "2026-09-22T03:11:17.674561+00:00",
         "first_seen_at": "2026-09-18T22:12:17.060681+00:00",
         "attempts": 0,
         "item": {
@@ -2518,7 +2518,7 @@
       "XzNjq6DNjSY": {
         "status": "sent",
         "reason": "사용자가 실제 수신을 확인한 영상 — 재전송 금지",
-        "updated_at": "2026-09-21T21:40:55.721047+00:00",
+        "updated_at": "2026-09-22T03:11:17.674586+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462747+00:00",
         "attempts": 0,
         "item": {
@@ -10104,9 +10104,9 @@
         }
       },
       "9stas58wrcE": {
-        "status": "pending",
-        "reason": "판정 확신도 부족",
-        "updated_at": "2026-09-18T22:22:29.166579+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.674931+00:00",
         "first_seen_at": "2026-09-18T22:12:18.462998+00:00",
         "attempts": 1,
         "item": {
@@ -17001,9 +17001,9 @@
         "next_retry_at": "2026-09-20T02:00:08.762890+00:00"
       },
       "YewiAp_aSnE": {
-        "status": "pending",
-        "reason": "판정 확신도 부족",
-        "updated_at": "2026-09-19T20:00:08.762899+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675047+00:00",
         "first_seen_at": "2026-09-18T22:12:19.448598+00:00",
         "attempts": 1,
         "item": {
@@ -25169,9 +25169,9 @@
         "next_retry_at": "2026-09-28T03:12:00.087416+00:00"
       },
       "MUMmnkQj8tI": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-21T03:12:00.342834+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675260+00:00",
         "first_seen_at": "2026-09-18T22:12:25.436001+00:00",
         "attempts": 1,
         "item": {
@@ -34036,9 +34036,9 @@
         "next_retry_at": "2026-09-28T21:41:19.007879+00:00"
       },
       "239nRQM5tcA": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-21T21:41:19.225153+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675569+00:00",
         "first_seen_at": "2026-09-18T22:12:27.295914+00:00",
         "attempts": 1,
         "item": {
@@ -35474,10 +35474,10 @@
       },
       "3HCBoxE3z3M": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.117394+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911980+00:00",
         "first_seen_at": "2026-09-18T22:12:29.117378+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "lSfXkWPJq4XvIe6aNSkaBx24v5c",
@@ -35521,14 +35521,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T19:27:07Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "iG-Z7WYEWqgSAPZdnU8uNrEczXI",
+          "id": "3HCBoxE3z3M",
+          "snippet": {
+            "publishedAt": "2026-09-18T19:27:07Z",
+            "channelId": "UCSDUK72BCFyZ1uPGFHrZgvQ",
+            "title": "Stephen Balaban on 14 Years of Lambda and the Future of AI",
+            "description": "Stephen Balaban is co-founder and, as of a recent leadership change, CTO of Lambda, the AI cloud infrastructure company he and his twin brother started in 2012. It took five pivots — augmented reality, a facial-recognition contact book, a camera embedded in a baseball cap, the AI image app Dreamscope, then finally workstations and servers — before Lambda found a business that made money in 2017. Along the way, Stephen kept the company alive by consulting on the side, including projects with Airbus and the creators of South Park.\n\nWhat you'll learn:\n\n- Why it took five pivots and 14 years for Lambda to find product-market fit\n- How side consulting work — for Airbus and even South Park's creators — funded the company through its leanest years\n- Why mainline Silicon Valley VCs kept passing on Lambda even while it was profitable, and why that didn't change after ChatGPT\n- How a Series D round pulled largely from Taiwanese manufacturers and family offices instead of traditional venture capital\n- What pushed Stephen to step down as CEO and bring in Michel Combes, a former CEO of Sprint and SoftBank International\n- Why Stephen thinks the disinformation around data centers — noise, water use — doesn't hold up\n\nWhere to find us:\nApple Podcasts: https://podcasts.apple.com/us/podcast/founders-in-arms/id1679703534\nSpotify: https://open.spotify.com/show/4FHXFiOtyO3QfUi3Y1kwYF\nSubstack: [link]\nTribe: [link]\n\nChapters:\n\n(01:10) Meet Stephen Balaban, co-founder and CTO of Lambda\n\n(02:40) Palo Alto in 2012 and Lambda's earliest days\n\n(03:42) Building Heads Up, a facial-recognition contact book for iOS\n\n(05:06) The ImageNet moment and training neural nets on NVIDIA GPUs\n\n(06:14) Five pivots: from augmented reality to Dreamscope\n\n(08:55) Funding the company through consulting, including work with Airbus and South Park's creators\n\n(12:13) Writing down the goal to IPO back in a 2012 notebook\n\n(14:28) Raising a first $600K, including Austin Russell's $20K check at a $400K valuation\n\n(24:29) Lambda's climb from $3M in revenue to a $1B run rate\n\n(26:57) Why Silicon Valley VCs kept saying no — even after ChatGPT\n\n(34:04) A Series D built largely on Taiwanese manufacturers and family offices\n\n(37:13) Immad on Mercury Books, Mercury's new bookkeeping product\n\n(44:12) Stepping down from CEO to CTO and bringing in Michel Combes\n\n(52:34) Debunking data center disinformation, from water use to noise\n\n\n\n--------------------------------------------------------------------------------------------------------------------\nSubscribe on Spotify: https://open.spotify.com/show/4FHXFiOtyO3QfUi3Y1kwYF?si=1dc9acc8409f448c\nSubscribe on Apple Podcasts: https://podcasts.apple.com/us/podcast/founders-in-arms/id1679703534 \nSubscribe to Founders in Arms Substack:  https://substack.com/@foundersinarms \nJoin the conversation on Tribe: https://join.tribechat.com/sR-wYn8zUH \nFollow Founders in Arms on LinkedIn: https://www.linkedin.com/company/founders-in-arms/\nFollow Immad on X: https://x.com/immad\nFollow Raj on X: https://x.com/rajatsuri\nFollow Immad on LinkedIn: https://www.linkedin.com/in/iakhund/\nFollow Raj on LinkedIn:  https://www.linkedin.com/in/rajatsuri/",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/3HCBoxE3z3M/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/3HCBoxE3z3M/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/3HCBoxE3z3M/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/3HCBoxE3z3M/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/3HCBoxE3z3M/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Founders in Arms Podcast",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Stephen Balaban on 14 Years of Lambda and the Future of AI",
+              "description": "Stephen Balaban is co-founder and, as of a recent leadership change, CTO of Lambda, the AI cloud infrastructure company he and his twin brother started in 2012. It took five pivots — augmented reality, a facial-recognition contact book, a camera embedded in a baseball cap, the AI image app Dreamscope, then finally workstations and servers — before Lambda found a business that made money in 2017. Along the way, Stephen kept the company alive by consulting on the side, including projects with Airbus and the creators of South Park.\n\nWhat you'll learn:\n\n- Why it took five pivots and 14 years for Lambda to find product-market fit\n- How side consulting work — for Airbus and even South Park's creators — funded the company through its leanest years\n- Why mainline Silicon Valley VCs kept passing on Lambda even while it was profitable, and why that didn't change after ChatGPT\n- How a Series D round pulled largely from Taiwanese manufacturers and family offices instead of traditional venture capital\n- What pushed Stephen to step down as CEO and bring in Michel Combes, a former CEO of Sprint and SoftBank International\n- Why Stephen thinks the disinformation around data centers — noise, water use — doesn't hold up\n\nWhere to find us:\nApple Podcasts: https://podcasts.apple.com/us/podcast/founders-in-arms/id1679703534\nSpotify: https://open.spotify.com/show/4FHXFiOtyO3QfUi3Y1kwYF\nSubstack: [link]\nTribe: [link]\n\nChapters:\n\n(01:10) Meet Stephen Balaban, co-founder and CTO of Lambda\n\n(02:40) Palo Alto in 2012 and Lambda's earliest days\n\n(03:42) Building Heads Up, a facial-recognition contact book for iOS\n\n(05:06) The ImageNet moment and training neural nets on NVIDIA GPUs\n\n(06:14) Five pivots: from augmented reality to Dreamscope\n\n(08:55) Funding the company through consulting, including work with Airbus and South Park's creators\n\n(12:13) Writing down the goal to IPO back in a 2012 notebook\n\n(14:28) Raising a first $600K, including Austin Russell's $20K check at a $400K valuation\n\n(24:29) Lambda's climb from $3M in revenue to a $1B run rate\n\n(26:57) Why Silicon Valley VCs kept saying no — even after ChatGPT\n\n(34:04) A Series D built largely on Taiwanese manufacturers and family offices\n\n(37:13) Immad on Mercury Books, Mercury's new bookkeeping product\n\n(44:12) Stepping down from CEO to CTO and bringing in Michel Combes\n\n(52:34) Debunking data center disinformation, from water use to noise\n\n\n\n--------------------------------------------------------------------------------------------------------------------\nSubscribe on Spotify: https://open.spotify.com/show/4FHXFiOtyO3QfUi3Y1kwYF?si=1dc9acc8409f448c\nSubscribe on Apple Podcasts: https://podcasts.apple.com/us/podcast/founders-in-arms/id1679703534 \nSubscribe to Founders in Arms Substack:  https://substack.com/@foundersinarms \nJoin the conversation on Tribe: https://join.tribechat.com/sR-wYn8zUH \nFollow Founders in Arms on LinkedIn: https://www.linkedin.com/company/founders-in-arms/\nFollow Immad on X: https://x.com/immad\nFollow Raj on X: https://x.com/rajatsuri\nFollow Immad on LinkedIn: https://www.linkedin.com/in/iakhund/\nFollow Raj on LinkedIn:  https://www.linkedin.com/in/rajatsuri/"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT1H2M16S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "864",
+            "likeCount": "0",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "q11yD5GBrlg": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.117408+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911990+00:00",
         "first_seen_at": "2026-09-18T22:12:29.117405+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "pvdkhnnhwZ16hEky_vaHzeNXyy8",
@@ -35572,14 +35644,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T21:42:43Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "zQxuix4mb8npaXddH-s4_ODaXQI",
+          "id": "q11yD5GBrlg",
+          "snippet": {
+            "publishedAt": "2026-09-17T21:42:43Z",
+            "channelId": "UC-DRzaGnL_vtBUpCFH5M0tg",
+            "title": "Paramount Bounces, Snap Specs, AI Affirmations, Chase Lochmiller Joins, Joe Weisenthal IRL",
+            "description": "00:02:34:25 Snap officially launches Specs\n00:27:18:12 Paramount scouts offices in Nashville\n00:30:25:01 Reacting to new clip from 'The Social Reckoning'\n00:41:00:03 Japan’s monks turn to investing\n00:55:51:23 Aaref Hilaly discusses Bain Capital Ventures’ post-AGI investment strategy, arguing that abundant intelligence will unlock transformative opportunities in robotics, drug discovery, simulation, and AI applications. A partner at Bain Capital Ventures, he also explains the firm’s $1.6 billion fund, its early-stage focus, and its approach of backing ambitious founders while connecting them with Bain Capital’s broader network of real-world businesses.\n01:08:30:14 David Gross, managing partner at Bain Capital, discusses his career in Japan and the firm’s evolution across private equity, venture capital, and life sciences. He highlights Bain’s focus on operational transformation, investor alignment, AI-enabled value creation, and macroeconomic analysis.\n01:26:49:07 Max Junestrand discusses how Legora helps legal teams integrate AI deeply into their workflows by routing tasks across multiple models, reducing costs, and consolidating legal capabilities into one platform. The Legora co-founder also highlights the company’s Salesforce partnership, rapid growth, acquisition strategy, and the transformative impact of AI on legal work, billing models, and litigation.\n01:38:54:28 Chase Lochmiller, co-founder and CEO of Crusoe, discusses the company’s growth from small, energy-efficient Bitcoin mining operations to gigawatt-scale AI infrastructure. He highlights Crusoe’s expanding Texas campus, modular Spark data centers, renewable and nuclear energy projects, and newly announced Series F funding.\n01:49:11:27 Jesse Zhang discusses Decagon’s international expansion, including its new São Paulo office, and how customer demand guides market selection. He also explains the challenges of deploying AI customer-service agents and optimizing models for cost, performance, and especially low latency.\n01:58:03:03 Nilam Ganenthiran, founder and CEO of Beacon, and Leonard Tang, VP of AI Research, discuss the company’s strategy of acquiring established technology businesses and transforming them with AI. They explain how Beacon is accelerating AI adoption across real-economy industries by providing trusted tools that improve operations, growth, staffing, pricing, and resource allocation.\nJoe Weisenthal discusses his work as a Bloomberg journalist and *Odd Lots* podcast host, including a live show exploring Los Angeles’s economy. He offers an optimistic view of LA while examining AI risks, data centers, regulation, employment, interest rates, economic data, and how AI is changing communication and everyday life.\n\nTBPN is made possible by:\nRamp - https://ramp.com\nPublic - https://public.com\nCisco - https://www.cisco.com\nConsole - https://www.console.com\nCrowdStrike - https://www.crowdstrike.com\nFigma - https://www.figma.com\nMongoDB - https://www.mongodb.com\nNYSE - https://www.nyse.com\nRailway - https://railway.com\nShopify - https://www.shopify.com/\nCodex - http://openAI.com/codex\n\nFollow TBPN: \nhttps://TBPN.com\nhttps://x.com/tbpn\nhttps://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00?si=674252d53acf4231\nhttps://podcasts.apple.com/us/podcast/tbpn/id1772360235\nhttps://www.youtube.com/@TBPNLive",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/q11yD5GBrlg/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/q11yD5GBrlg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/q11yD5GBrlg/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/q11yD5GBrlg/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/q11yD5GBrlg/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "TBPN",
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Paramount Bounces, Snap Specs, AI Affirmations, Chase Lochmiller Joins, Joe Weisenthal IRL",
+              "description": "00:02:34:25 Snap officially launches Specs\n00:27:18:12 Paramount scouts offices in Nashville\n00:30:25:01 Reacting to new clip from 'The Social Reckoning'\n00:41:00:03 Japan’s monks turn to investing\n00:55:51:23 Aaref Hilaly discusses Bain Capital Ventures’ post-AGI investment strategy, arguing that abundant intelligence will unlock transformative opportunities in robotics, drug discovery, simulation, and AI applications. A partner at Bain Capital Ventures, he also explains the firm’s $1.6 billion fund, its early-stage focus, and its approach of backing ambitious founders while connecting them with Bain Capital’s broader network of real-world businesses.\n01:08:30:14 David Gross, managing partner at Bain Capital, discusses his career in Japan and the firm’s evolution across private equity, venture capital, and life sciences. He highlights Bain’s focus on operational transformation, investor alignment, AI-enabled value creation, and macroeconomic analysis.\n01:26:49:07 Max Junestrand discusses how Legora helps legal teams integrate AI deeply into their workflows by routing tasks across multiple models, reducing costs, and consolidating legal capabilities into one platform. The Legora co-founder also highlights the company’s Salesforce partnership, rapid growth, acquisition strategy, and the transformative impact of AI on legal work, billing models, and litigation.\n01:38:54:28 Chase Lochmiller, co-founder and CEO of Crusoe, discusses the company’s growth from small, energy-efficient Bitcoin mining operations to gigawatt-scale AI infrastructure. He highlights Crusoe’s expanding Texas campus, modular Spark data centers, renewable and nuclear energy projects, and newly announced Series F funding.\n01:49:11:27 Jesse Zhang discusses Decagon’s international expansion, including its new São Paulo office, and how customer demand guides market selection. He also explains the challenges of deploying AI customer-service agents and optimizing models for cost, performance, and especially low latency.\n01:58:03:03 Nilam Ganenthiran, founder and CEO of Beacon, and Leonard Tang, VP of AI Research, discuss the company’s strategy of acquiring established technology businesses and transforming them with AI. They explain how Beacon is accelerating AI adoption across real-economy industries by providing trusted tools that improve operations, growth, staffing, pricing, and resource allocation.\nJoe Weisenthal discusses his work as a Bloomberg journalist and *Odd Lots* podcast host, including a live show exploring Los Angeles’s economy. He offers an optimistic view of LA while examining AI risks, data centers, regulation, employment, interest rates, economic data, and how AI is changing communication and everyday life.\n\nTBPN is made possible by:\nRamp - https://ramp.com\nPublic - https://public.com\nCisco - https://www.cisco.com\nConsole - https://www.console.com\nCrowdStrike - https://www.crowdstrike.com\nFigma - https://www.figma.com\nMongoDB - https://www.mongodb.com\nNYSE - https://www.nyse.com\nRailway - https://railway.com\nShopify - https://www.shopify.com/\nCodex - http://openAI.com/codex\n\nFollow TBPN: \nhttps://TBPN.com\nhttps://x.com/tbpn\nhttps://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00?si=674252d53acf4231\nhttps://podcasts.apple.com/us/podcast/tbpn/id1772360235\nhttps://www.youtube.com/@TBPNLive"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT3H1M29S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "10821",
+            "likeCount": "89",
+            "favoriteCount": "0",
+            "commentCount": "3"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "C19ISC8jsTA": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.117417+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.912000+00:00",
         "first_seen_at": "2026-09-18T22:12:29.117415+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "EiLsts-qKUsM8TnNBXrL40YDbfI",
@@ -35623,14 +35767,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T21:17:55Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "t24pws6iZXt9hC_MYF0IhYd17Ps",
+          "id": "C19ISC8jsTA",
+          "snippet": {
+            "publishedAt": "2026-09-17T21:17:55Z",
+            "channelId": "UC3_BakzLfadvFrsnClMFWmQ",
+            "title": "Paramount Bounces, Snap Specs, AI Affirmations, Chase Lochmiller Joins, Joe Weisenthal IRL",
+            "description": "TBPN is made possible by:\nRamp - https://ramp.com\nPublic - https://public.com\nCisco - https://www.cisco.com\nConsole - https://www.console.com\nCrowdStrike - https://www.crowdstrike.com\nFigma - https://www.figma.com\nMongoDB - https://www.mongodb.com\nNYSE - https://www.nyse.com\nRailway - https://railway.com\nShopify - https://www.shopify.com/\nCodex - http://openAI.com/codex\n\nFollow TBPN: \nhttps://TBPN.com\nhttps://x.com/tbpn\nhttps://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00?si=674252d53acf4231\nhttps://podcasts.apple.com/us/podcast/tbpn/id1772360235\nhttps://www.youtube.com/@TBPNLive",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/C19ISC8jsTA/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/C19ISC8jsTA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/C19ISC8jsTA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/C19ISC8jsTA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/C19ISC8jsTA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "John Coogan",
+            "categoryId": "24",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Paramount Bounces, Snap Specs, AI Affirmations, Chase Lochmiller Joins, Joe Weisenthal IRL",
+              "description": "TBPN is made possible by:\nRamp - https://ramp.com\nPublic - https://public.com\nCisco - https://www.cisco.com\nConsole - https://www.console.com\nCrowdStrike - https://www.crowdstrike.com\nFigma - https://www.figma.com\nMongoDB - https://www.mongodb.com\nNYSE - https://www.nyse.com\nRailway - https://railway.com\nShopify - https://www.shopify.com/\nCodex - http://openAI.com/codex\n\nFollow TBPN: \nhttps://TBPN.com\nhttps://x.com/tbpn\nhttps://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00?si=674252d53acf4231\nhttps://podcasts.apple.com/us/podcast/tbpn/id1772360235\nhttps://www.youtube.com/@TBPNLive"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT3H4M20S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "3275",
+            "likeCount": "10",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "GjG9aLa4T6I": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.117423+00:00",
+        "reason": "영상 상세정보 미확보/비공개 가능 — 재시도",
+        "updated_at": "2026-09-22T03:11:17.912010+00:00",
         "first_seen_at": "2026-09-18T22:12:29.117420+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "-f5sC6PM4msHL3MQgzNQA_rSXbo",
@@ -35674,14 +35890,16 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T13:14:48Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "next_retry_at": "2026-09-22T09:11:17.912007+00:00"
       },
       "WUKxYxvZAS4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.953279+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.912018+00:00",
         "first_seen_at": "2026-09-18T22:12:29.953264+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "h2jL-xk7Vvkucbtmyycu9P7i5T4",
@@ -35725,14 +35943,97 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T18:48:03Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "mwuglZIF_m5CjkNJLNTMq1wRnpk",
+          "id": "WUKxYxvZAS4",
+          "snippet": {
+            "publishedAt": "2026-09-18T18:48:03Z",
+            "channelId": "UCGMUeZy80tQ4LbrfJdwkgUA",
+            "title": "COMME LE DIT ZEMMOUR, LE BOSS DE MISTRAL AI CONFIRME LE ROLE DE LA FRANCE.",
+            "description": "N’hésitez pas à rejoindre la chaine : https://www.youtube.com/channel/UCGMUeZy80tQ4LbrfJdwkgUA/join\nsoutenez-nous sur Tipee : https://fr.tipeee.com/la-r-horizon-2027-ne-vous-taisez-plus/\nSuivez-moi sur X : https://x.com/2027NVTP\n\nRejoignez-nous sur Discord : discord.gg/8DZbrQ6f62 \nDans cette vidéo, je reviens sur l’audition d’Arthur Mensch, patron de Mistral AI, devant l’Assemblée nationale.\nEt certains de ses constats font directement écho à ce qu’Éric Zemmour expliquait quelques jours plus tôt à Port-Marly : dans la course mondiale à l’intelligence artificielle, il ne suffit pas d’avoir de bons ingénieurs. Il faut aussi disposer des infrastructures, de la puissance de calcul et surtout de l’énergie nécessaires pour les faire fonctionner.\nLa France possède sur ce terrain un atout considérable avec son parc nucléaire. Mais encore faut-il être capable d’en tirer parti, d’attirer les investissements et de conserver sur notre territoire une véritable industrie de l’intelligence artificielle.\nAlors, Zemmour avait-il correctement identifié l’un des grands enjeux économiques et stratégiques des prochaines années ? Je mets ses déclarations en parallèle avec celles d’Arthur Mensch et je vous laisse vous faire votre propre avis.\n👉 Pensez à vous abonner, à commenter et à partager la vidéo.\n#NVTP #ArthurMensch #MistralAI #EricZemmour #IntelligenceArtificielle #IA #Mistral #Nucléaire #Energie #SouverainetéNumérique #France #Technologie #DataCenter #AssembléeNationale\nsoutenez-nous sur Tipee : https://fr.tipeee.com/la-r-horizon-2027-ne-vous-taisez-plus/",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/WUKxYxvZAS4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/WUKxYxvZAS4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/WUKxYxvZAS4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/WUKxYxvZAS4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/WUKxYxvZAS4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Chez Papa - NE VOUS TAISEZ PLUS",
+            "tags": [
+              "public sénat",
+              "éric zemmour",
+              "les républicains",
+              "psyhodelik",
+              "kbgstream",
+              "fdenews",
+              "victorferry",
+              "jungo",
+              "teddyboyrsa"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "fr",
+            "localized": {
+              "title": "COMME LE DIT ZEMMOUR, LE BOSS DE MISTRAL AI CONFIRME LE ROLE DE LA FRANCE.",
+              "description": "N’hésitez pas à rejoindre la chaine : https://www.youtube.com/channel/UCGMUeZy80tQ4LbrfJdwkgUA/join\nsoutenez-nous sur Tipee : https://fr.tipeee.com/la-r-horizon-2027-ne-vous-taisez-plus/\nSuivez-moi sur X : https://x.com/2027NVTP\n\nRejoignez-nous sur Discord : discord.gg/8DZbrQ6f62 \nDans cette vidéo, je reviens sur l’audition d’Arthur Mensch, patron de Mistral AI, devant l’Assemblée nationale.\nEt certains de ses constats font directement écho à ce qu’Éric Zemmour expliquait quelques jours plus tôt à Port-Marly : dans la course mondiale à l’intelligence artificielle, il ne suffit pas d’avoir de bons ingénieurs. Il faut aussi disposer des infrastructures, de la puissance de calcul et surtout de l’énergie nécessaires pour les faire fonctionner.\nLa France possède sur ce terrain un atout considérable avec son parc nucléaire. Mais encore faut-il être capable d’en tirer parti, d’attirer les investissements et de conserver sur notre territoire une véritable industrie de l’intelligence artificielle.\nAlors, Zemmour avait-il correctement identifié l’un des grands enjeux économiques et stratégiques des prochaines années ? Je mets ses déclarations en parallèle avec celles d’Arthur Mensch et je vous laisse vous faire votre propre avis.\n👉 Pensez à vous abonner, à commenter et à partager la vidéo.\n#NVTP #ArthurMensch #MistralAI #EricZemmour #IntelligenceArtificielle #IA #Mistral #Nucléaire #Energie #SouverainetéNumérique #France #Technologie #DataCenter #AssembléeNationale\nsoutenez-nous sur Tipee : https://fr.tipeee.com/la-r-horizon-2027-ne-vous-taisez-plus/"
+            },
+            "defaultAudioLanguage": "fr"
+          },
+          "contentDetails": {
+            "duration": "PT22M57S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "17318",
+            "likeCount": "453",
+            "favoriteCount": "0",
+            "commentCount": "74"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "fW2g_H3pHFk": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:29.953296+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.912028+00:00",
         "first_seen_at": "2026-09-18T22:12:29.953292+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "VRbi-j4ku4kwYWnGgcdYfqaYH64",
@@ -35781,7 +36082,84 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T14:00:35Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "prh03h5td8wWNfvs-G_L7yK7bPY",
+          "id": "fW2g_H3pHFk",
+          "snippet": {
+            "publishedAt": "2026-09-18T14:00:35Z",
+            "channelId": "UC2ex3YhcKmnfvFsaWrj5nmg",
+            "title": "18/09/26 CNBC 알렉스 카프 \"엔트로픽의 목적은 국유화\" 폭탄 발언 풀버전 번역 영상",
+            "description": "오늘 CNBC 에 특별 게스트로 출현한 알렉스 카프가 또 한번 엄청난 발언은 했습니다.\n최근 AI 안전과 개발 속도 감속론에 대해서 팔란티어 진영측은 반대한다는 입장을 지속적으로 보여왔는데, 알렉스 카프는 이번에 엔트로픽이 왜 그런 안전장치를 원하는지, 그 이유에 대해서 핵폭탄 발언을 남겼습니다..ㄷㄷ\nCNBC 나올때마다 강력한 메시지를 던지네요 ㅋㅋ",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/fW2g_H3pHFk/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/fW2g_H3pHFk/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/fW2g_H3pHFk/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/fW2g_H3pHFk/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/fW2g_H3pHFk/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/fW2g_H3pHFk/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "RocketMen 로켓맨",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "ko",
+            "localized": {
+              "title": "18/09/26 CNBC 알렉스 카프 \"엔트로픽의 목적은 국유화\" 폭탄 발언 풀버전 번역 영상",
+              "description": "오늘 CNBC 에 특별 게스트로 출현한 알렉스 카프가 또 한번 엄청난 발언은 했습니다.\n최근 AI 안전과 개발 속도 감속론에 대해서 팔란티어 진영측은 반대한다는 입장을 지속적으로 보여왔는데, 알렉스 카프는 이번에 엔트로픽이 왜 그런 안전장치를 원하는지, 그 이유에 대해서 핵폭탄 발언을 남겼습니다..ㄷㄷ\nCNBC 나올때마다 강력한 메시지를 던지네요 ㅋㅋ"
+            },
+            "defaultAudioLanguage": "ko"
+          },
+          "contentDetails": {
+            "duration": "PT26M57S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "5208",
+            "likeCount": "67",
+            "favoriteCount": "0",
+            "commentCount": "7"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "yEgDfjP8MdA": {
         "status": "pending",
@@ -36513,9 +36891,9 @@
         }
       },
       "BJTymBv-4AM": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:30.850683+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675766+00:00",
         "first_seen_at": "2026-09-18T22:12:30.850681+00:00",
         "attempts": 0,
         "item": {
@@ -36569,9 +36947,9 @@
         }
       },
       "8y63gUXuLGQ": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:30.850688+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675782+00:00",
         "first_seen_at": "2026-09-18T22:12:30.850686+00:00",
         "attempts": 0,
         "item": {
@@ -37308,9 +37686,9 @@
         }
       },
       "a5SZrxgbLRo": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-18T22:12:31.781125+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675848+00:00",
         "first_seen_at": "2026-09-18T22:12:31.781123+00:00",
         "attempts": 0,
         "item": {
@@ -43325,9 +43703,9 @@
         }
       },
       "yGrcSNb47Vg": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319852+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675917+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319850+00:00",
         "attempts": 0,
         "item": {
@@ -43381,9 +43759,9 @@
         }
       },
       "Z5r2qukhH8c": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T15:23:03.311804+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675923+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319854+00:00",
         "attempts": 1,
         "item": {
@@ -43507,9 +43885,9 @@
         "next_retry_at": "2026-09-27T15:23:03.043166+00:00"
       },
       "yGmDCAvdhGo": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319859+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675931+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319858+00:00",
         "attempts": 0,
         "item": {
@@ -43553,9 +43931,9 @@
         }
       },
       "imDuGLUjDTw": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T20:17:45.936867+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675937+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319862+00:00",
         "attempts": 1,
         "item": {
@@ -43709,9 +44087,9 @@
         "next_retry_at": "2026-09-27T20:17:45.636515+00:00"
       },
       "8ox3tcrUpAc": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319867+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675944+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319865+00:00",
         "attempts": 0,
         "item": {
@@ -43760,9 +44138,9 @@
         }
       },
       "ZE1Cr7BGbbg": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T20:17:45.936891+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675950+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319869+00:00",
         "attempts": 1,
         "item": {
@@ -43906,9 +44284,9 @@
         "next_retry_at": "2026-09-27T20:17:45.636515+00:00"
       },
       "fJu0Yctv2mw": {
-        "status": "pending",
-        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
-        "updated_at": "2026-09-20T20:17:45.936904+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675956+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319872+00:00",
         "attempts": 1,
         "item": {
@@ -44039,9 +44417,9 @@
         "next_retry_at": "2026-09-27T20:17:45.636515+00:00"
       },
       "J2y-bY6UwR0": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:43.319878+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.675963+00:00",
         "first_seen_at": "2026-09-19T07:46:43.319877+00:00",
         "attempts": 0,
         "item": {
@@ -53084,10 +53462,10 @@
       },
       "hfteiFdCzSI": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337972+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911836+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337971+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "Z3WX7fDE5g599gTe_nSYb8GL-no",
@@ -53131,14 +53509,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T14:36:51Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "hGHZ8XnRTWk54fhcrp2H_NlPhWY",
+          "id": "hfteiFdCzSI",
+          "snippet": {
+            "publishedAt": "2026-09-18T14:36:51Z",
+            "channelId": "UCo2swJ_sp2bBXAGF0ix3-6A",
+            "title": "Tesla Model 2: Elon Musk Announces an INSANE Price Under $11,795 — It’s Finally Here!",
+            "description": "Tesla Model 2: Elon Musk Announces an INSANE Price Under $11,795 — It’s Finally Here!\n\nTesla Model 2 could become one of Tesla’s most affordable electric vehicles. In this video, we look at the reported possibility of a price under $11,795, along with Tesla’s cost-cutting strategies, battery technology, manufacturing changes, and what a lower-cost Tesla could mean for the EV market. We separate reported information from speculation and discuss what is currently known about the Model 2.\n\n#Tesla #TeslaModel2 #ElonMusk #TeslaNews #TeslaModel2Price #ElectricCar #EV #ElectricVehicle #TeslaEV #AffordableEV #Tesla2026 #Tesla2027 #TeslaFuture",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/hfteiFdCzSI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/hfteiFdCzSI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/hfteiFdCzSI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/hfteiFdCzSI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/hfteiFdCzSI/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Alpha Discovery",
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "Tesla Model 2: Elon Musk Announces an INSANE Price Under $11,795 — It’s Finally Here!",
+              "description": "Tesla Model 2: Elon Musk Announces an INSANE Price Under $11,795 — It’s Finally Here!\n\nTesla Model 2 could become one of Tesla’s most affordable electric vehicles. In this video, we look at the reported possibility of a price under $11,795, along with Tesla’s cost-cutting strategies, battery technology, manufacturing changes, and what a lower-cost Tesla could mean for the EV market. We separate reported information from speculation and discuss what is currently known about the Model 2.\n\n#Tesla #TeslaModel2 #ElonMusk #TeslaNews #TeslaModel2Price #ElectricCar #EV #ElectricVehicle #TeslaEV #AffordableEV #Tesla2026 #Tesla2027 #TeslaFuture"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT20M59S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "2019",
+            "likeCount": "14",
+            "favoriteCount": "0",
+            "commentCount": "4"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "ubtQrI7aPs4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337978+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911861+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337976+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "hZ3u4TgA0FuQe3dOHsa4c_lQbsY",
@@ -53187,14 +53637,115 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T14:05:31Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "V0VT9OBdlolfPWGWLh0P-t0efIE",
+          "id": "ubtQrI7aPs4",
+          "snippet": {
+            "publishedAt": "2026-09-18T14:05:31Z",
+            "channelId": "UCh4WAmqn6qudirTMfIcfw0g",
+            "title": "Suresh Kochattil About Elon musk Warning With AI | AI hacking | Will the world end by 2030?| iDream",
+            "description": "#SureshKochattil #AIThreat #ElonMuskAI #AIHacking #ArtificialIntelligence #FutureOfAI \nSuresh Kochattil About Elon musk Warning With AI | AI hacking | Will the world end by 2030?| iDream \n\niDream Media Network is your top source for reliable, Unbiased news updates from Telugu States and across the globe. Operating Out of Hyderabad, iDream Media covers 24/7 LIVE Updates, Political Leaders Exclusive Interviews and Political Analysis, Special Debates, Breaking News, Latest updates, entertainment news, and press meets News from every corner of Telugu States. We at iDream Media Network favour high-quality programming and News, rather than sensational infotainment. \n\nThe Popular interview series includes Candid Conversation with Swapna Talking Politics With iDream, Crime Confessions With Muralidhar, Crime Victims With Muralidhar, Crime Diaries With Muralidhar. The inside world of the most famous political leaders, Biographies of these leaders trace their life history, works & achievements in these interview series.\n\nTo stay connected with iDream Telangana,\n\nDownload:https://www.youtube.com/@idreamtelangana\n\nhttps://www.facebook.com/Idreamtelangana\n\nFollow:https://x.com/idtelugunews?lang=en\n\nFollow: https://www.instagram.com/idtelugunews\n\nVisit: https://www.idreampost.com\n\n\n#TelanganaNews  \n#BreakingNewsTelugu  \n#RevanthReddy  \n#KCR  \n#KTR  \n#TelanganaPolitics  \n#TeluguNewsLive  \n#IdreamNews  \n#HyderabadNews  \n#PoliticalNewsTelugu",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/ubtQrI7aPs4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/ubtQrI7aPs4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/ubtQrI7aPs4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/ubtQrI7aPs4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/ubtQrI7aPs4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "fhd": {
+                "url": "https://i.ytimg.com/vi/ubtQrI7aPs4/fhddefault.jpg",
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "channelTitle": "iDream Telangana",
+            "tags": [
+              "Suresh Kochattil about AI",
+              "Suresh Kochattil interview",
+              "Suresh Kochattil iDream news",
+              "Elon Musk AI warning",
+              "AI hacking incidents",
+              "Hugging Face AI hack",
+              "will the world end by 2030",
+              "AI extinction threat",
+              "artificial intelligence dangers",
+              "autonomous AI agents",
+              "AI military warfare",
+              "nuclear war AI threat",
+              "future of AI technology",
+              "iDream Telangana",
+              "telangana politics",
+              "latest telugu news",
+              "telugu breaking news",
+              "news live",
+              "telugu news live",
+              "big breaking news",
+              "latest news",
+              "live"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Suresh Kochattil About Elon musk Warning With AI | AI hacking | Will the world end by 2030?| iDream",
+              "description": "#SureshKochattil #AIThreat #ElonMuskAI #AIHacking #ArtificialIntelligence #FutureOfAI \nSuresh Kochattil About Elon musk Warning With AI | AI hacking | Will the world end by 2030?| iDream \n\niDream Media Network is your top source for reliable, Unbiased news updates from Telugu States and across the globe. Operating Out of Hyderabad, iDream Media covers 24/7 LIVE Updates, Political Leaders Exclusive Interviews and Political Analysis, Special Debates, Breaking News, Latest updates, entertainment news, and press meets News from every corner of Telugu States. We at iDream Media Network favour high-quality programming and News, rather than sensational infotainment. \n\nThe Popular interview series includes Candid Conversation with Swapna Talking Politics With iDream, Crime Confessions With Muralidhar, Crime Victims With Muralidhar, Crime Diaries With Muralidhar. The inside world of the most famous political leaders, Biographies of these leaders trace their life history, works & achievements in these interview series.\n\nTo stay connected with iDream Telangana,\n\nDownload:https://www.youtube.com/@idreamtelangana\n\nhttps://www.facebook.com/Idreamtelangana\n\nFollow:https://x.com/idtelugunews?lang=en\n\nFollow: https://www.instagram.com/idtelugunews\n\nVisit: https://www.idreampost.com\n\n\n#TelanganaNews  \n#BreakingNewsTelugu  \n#RevanthReddy  \n#KCR  \n#KTR  \n#TelanganaPolitics  \n#TeluguNewsLive  \n#IdreamNews  \n#HyderabadNews  \n#PoliticalNewsTelugu"
+            },
+            "defaultAudioLanguage": "te"
+          },
+          "contentDetails": {
+            "duration": "PT34M54S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "3222",
+            "likeCount": "6",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "MMCclb1Brbw": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337982+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911875+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337980+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "Yyq2vKgj_e1IgAuBigl5EZfJqUw",
@@ -53238,14 +53789,86 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-19T11:00:06Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "e7fl1eoLR68ieQh8-CcWZICtId0",
+          "id": "MMCclb1Brbw",
+          "snippet": {
+            "publishedAt": "2026-09-19T11:00:06Z",
+            "channelId": "UCCzO2UNITKdE1D5E7qXknzQ",
+            "title": "ELON MUSK: THE ANTICHRIST? AI, BABIES & THE WORLD OF 2030 — COINCIDENCE OR PROPHECY?",
+            "description": "ELON MUSK: THE ANTICHRIST? AI, BABIES & THE WORLD OF 2030 — COINCIDENCE OR PROPHECY?\n\nWhat happens when Artificial Intelligence, humanoid robots, brain-computer interfaces, reproduction technology, and the future of humanity begin moving toward the same horizon?\n\nAnd why is 2030 repeatedly appearing in conversations about the future of AI and advanced technology?\n\nIn this investigative Christian video, we take a closer look at Elon Musk, Artificial Intelligence, Neuralink, humanoid robots, AI safety, reproduction technology, and biblical prophecy — and ask a difficult question:\n\nCould the technology being developed today eventually help create a world that resembles some of the conditions described in Bible prophecy?\n\nThis video is not claiming that Elon Musk is the Antichrist. The Bible does not identify Elon Musk, any modern technology billionaire, or AI as the Antichrist. Instead, we examine the facts, the technology, the warnings coming from AI leaders, and what Scripture actually says.\n\nRecently, Anthropic CEO Dario Amodei called for a slower pace of frontier AI development, receiving support from OpenAI CEO Sam Altman and Elon Musk. The discussion comes amid growing concerns about increasingly capable AI systems and their potential risks. (Reuters)\n\nWe will also look at:\n\n• Elon Musk and the future of Artificial Intelligence\n• AI and 2030\n• Humanoid robots and automation\n• Neuralink and brain-computer interfaces\n• AI safety and warnings from major technology leaders\n• AI and the future of humanity\n• Technology and reproduction\n• IVF, surrogacy and the modern fertility industry\n• The growing influence of technology billionaires\n• 1 John 2 and the Antichrist\n• 2 Thessalonians 2 and the man of lawlessness\n• Revelation 13 and the mark of the beast\n• Digital identity, buying and selling, and emerging technology\n• Whether today's technology should be viewed as prophecy, preparation, coincidence — or simply technological progress\n\nBut there is an even deeper question:\n\nAre we becoming so fascinated with the future that we are forgetting the One who holds the future?\n\nTechnology may transform the world.\n\nAI may become more powerful.\n\nRobots may become more capable.\n\nBrain-computer interfaces may advance.\n\nBut AI cannot save your soul. Technology cannot replace God. And no human being can take the place of Jesus Christ.\n\nWatch until the end and decide for yourself:\n\nCOINCIDENCE OR PROPHECY?\n\nELON MUSK • AI • BABIES • 2030\n\nSubscribe to LoveandLifeTV for Christian discussions, Bible prophecy, technology, faith, and stories about the world we are living in.\n\n#ElonMusk #ArtificialIntelligence #AI #BibleProphecy #Antichrist #2030 #Neuralink #AIFuture #AIWarning #Prophecy #Revelation13 #MarkOfTheBeast #ChristianYouTube #EndTimes #JesusChrist\n\nYou don't need dozens of hashtags. These are enough.\n\n🏷️ YouTube Tags\n\nCopy and paste these into your Tags section:\n\nElon Musk Elon Musk Antichrist Elon Musk AI Elon Musk 2030 Elon Musk prophecy Elon Musk Bible prophecy Elon Musk Neuralink Elon Musk AI warning Elon Musk artificial intelligence Elon Musk future Elon Musk robots Elon Musk children Elon Musk babies Elon Musk reproduction Elon Musk surrogacy Artificial Intelligence AI AI 2030 AI future AI warning AI safety AI development AI slowdown AI risks AI dangers AI and Christianity AI and Bible prophecy AI prophecy Artificial Intelligence prophecy future of AI future of humanity humanoid robots AI robots Neuralink brain chip brain computer interface brain implants technology and prophecy technology Bible prophecy technology end times Bible prophecy end times prophecy end times Antichrist who is the Antichrist Antichrist prophecy man of lawlessness Revelation 13 Revelation 13 prophecy mark of the beast 666 mark of the beast technology digital identity digital currency digital payments AI and the mark of the beast AI and end times Christian prophecy Christian documentary Christian investigation Bible and technology Jesus Christ coming of Jesus rapture end times signs 2030 prophecy world in 2030 future technology COINCIDENCE OR PROPHECY LoveandLifeTV",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/MMCclb1Brbw/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/MMCclb1Brbw/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/MMCclb1Brbw/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/MMCclb1Brbw/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/MMCclb1Brbw/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Love & Life TV | Kingdom Stories",
+            "categoryId": "27",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "ELON MUSK: THE ANTICHRIST? AI, BABIES & THE WORLD OF 2030 — COINCIDENCE OR PROPHECY?",
+              "description": "ELON MUSK: THE ANTICHRIST? AI, BABIES & THE WORLD OF 2030 — COINCIDENCE OR PROPHECY?\n\nWhat happens when Artificial Intelligence, humanoid robots, brain-computer interfaces, reproduction technology, and the future of humanity begin moving toward the same horizon?\n\nAnd why is 2030 repeatedly appearing in conversations about the future of AI and advanced technology?\n\nIn this investigative Christian video, we take a closer look at Elon Musk, Artificial Intelligence, Neuralink, humanoid robots, AI safety, reproduction technology, and biblical prophecy — and ask a difficult question:\n\nCould the technology being developed today eventually help create a world that resembles some of the conditions described in Bible prophecy?\n\nThis video is not claiming that Elon Musk is the Antichrist. The Bible does not identify Elon Musk, any modern technology billionaire, or AI as the Antichrist. Instead, we examine the facts, the technology, the warnings coming from AI leaders, and what Scripture actually says.\n\nRecently, Anthropic CEO Dario Amodei called for a slower pace of frontier AI development, receiving support from OpenAI CEO Sam Altman and Elon Musk. The discussion comes amid growing concerns about increasingly capable AI systems and their potential risks. (Reuters)\n\nWe will also look at:\n\n• Elon Musk and the future of Artificial Intelligence\n• AI and 2030\n• Humanoid robots and automation\n• Neuralink and brain-computer interfaces\n• AI safety and warnings from major technology leaders\n• AI and the future of humanity\n• Technology and reproduction\n• IVF, surrogacy and the modern fertility industry\n• The growing influence of technology billionaires\n• 1 John 2 and the Antichrist\n• 2 Thessalonians 2 and the man of lawlessness\n• Revelation 13 and the mark of the beast\n• Digital identity, buying and selling, and emerging technology\n• Whether today's technology should be viewed as prophecy, preparation, coincidence — or simply technological progress\n\nBut there is an even deeper question:\n\nAre we becoming so fascinated with the future that we are forgetting the One who holds the future?\n\nTechnology may transform the world.\n\nAI may become more powerful.\n\nRobots may become more capable.\n\nBrain-computer interfaces may advance.\n\nBut AI cannot save your soul. Technology cannot replace God. And no human being can take the place of Jesus Christ.\n\nWatch until the end and decide for yourself:\n\nCOINCIDENCE OR PROPHECY?\n\nELON MUSK • AI • BABIES • 2030\n\nSubscribe to LoveandLifeTV for Christian discussions, Bible prophecy, technology, faith, and stories about the world we are living in.\n\n#ElonMusk #ArtificialIntelligence #AI #BibleProphecy #Antichrist #2030 #Neuralink #AIFuture #AIWarning #Prophecy #Revelation13 #MarkOfTheBeast #ChristianYouTube #EndTimes #JesusChrist\n\nYou don't need dozens of hashtags. These are enough.\n\n🏷️ YouTube Tags\n\nCopy and paste these into your Tags section:\n\nElon Musk Elon Musk Antichrist Elon Musk AI Elon Musk 2030 Elon Musk prophecy Elon Musk Bible prophecy Elon Musk Neuralink Elon Musk AI warning Elon Musk artificial intelligence Elon Musk future Elon Musk robots Elon Musk children Elon Musk babies Elon Musk reproduction Elon Musk surrogacy Artificial Intelligence AI AI 2030 AI future AI warning AI safety AI development AI slowdown AI risks AI dangers AI and Christianity AI and Bible prophecy AI prophecy Artificial Intelligence prophecy future of AI future of humanity humanoid robots AI robots Neuralink brain chip brain computer interface brain implants technology and prophecy technology Bible prophecy technology end times Bible prophecy end times prophecy end times Antichrist who is the Antichrist Antichrist prophecy man of lawlessness Revelation 13 Revelation 13 prophecy mark of the beast 666 mark of the beast technology digital identity digital currency digital payments AI and the mark of the beast AI and end times Christian prophecy Christian documentary Christian investigation Bible and technology Jesus Christ coming of Jesus rapture end times signs 2030 prophecy world in 2030 future technology COINCIDENCE OR PROPHECY LoveandLifeTV"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT31M52S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "44",
+            "likeCount": "8",
+            "favoriteCount": "0",
+            "commentCount": "3"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "1FKDdO-daVY": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337985+00:00",
+        "reason": "영상 상세정보 미확보/비공개 가능 — 재시도",
+        "updated_at": "2026-09-22T03:11:17.911886+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337984+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "BCxtUIR6w0D8GF2o06CRhb1duJo",
@@ -53289,14 +53912,16 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T13:45:57Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "next_retry_at": "2026-09-22T09:11:17.911883+00:00"
       },
       "Eo4bAZQlwNo": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337989+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911896+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337987+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "14rUKdV8WDZ2FtNhhmVH6ceXmmA",
@@ -53340,14 +53965,111 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T13:12:20Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "NopkgER5cxsG-9fmAuBtCfy9wI0",
+          "id": "Eo4bAZQlwNo",
+          "snippet": {
+            "publishedAt": "2026-09-18T13:12:20Z",
+            "channelId": "UC9KU6LOOWlCBzFI5eSwB9jg",
+            "title": "Toàn Cảnh VinFast: ĐỐI ĐẦU Elon Musk & Người Cũ – Cuộc Đua Xe Điện BẤT NGỜ “NÓNG” Hơn Bao Giờ Hết",
+            "description": "Chào mừng quý vị và các bạn đã đến với TIN TỨC 24H - Kênh thông tin chính thức, cập nhật những tin tức nóng hổi và đáng tin cậy nhất từ Việt Nam và thế giới \n------------------------------------------------------------\nToàn cảnh cục diện cạnh tranh mới trên thị trường xe điện Việt Nam trước sự gia nhập của các doanh nghiệp trong và ngoài nước. Trong tiêu điểm Toàn cảnh hôm nay, chúng ta sẽ cùng phân tích vị thế của VinFast, chiến lược thâm nhập thị trường của Tesla và tiềm năng phát triển mảng xe máy điện từ startup AVES.\n\nBản tin Toàn cảnh công nghiệp - thị trường xe điện năm 2026 phản ánh những chuyển động đáng chú ý trong ngành giao thông xanh Việt Nam. Phóng sự mổ xẻ việc Tesla thành lập pháp nhân tại Việt Nam nhằm mở rộng phân khúc ô tô điện, cùng sự xuất hiện của startup AVES do cựu CEO Green SM Nguyễn Văn Thanh sáng lập tập trung vào dòng xe máy điện. Bản tin phân tích lợi thế cạnh tranh về hạ tầng trạm sạc, quy mô nhà máy và mạng lưới phân phối của VinFast, đồng thời đưa ra các dự báo chuyên môn về kịch bản thay đổi thị phần xe điện trong thời gian tới. Hãy cùng theo dõi chi tiết ngay sau đây.\n\n#Toàncảnh #ThịTrườngXeĐiện #VinFast #TeslaViệtNam #StartupAVES #ÔTôĐiện #XeMáyĐiện #GiaoThôngXanh #NgânHàngTrungƯơng #ThượngTônPhápLuật #TINTUC #VTC\n \nToàn Cảnh VinFast: ĐỐI ĐẦU Elon Musk & Người Cũ – Cuộc Đua Xe Điện BẤT NGỜ “NÓNG” Hơn Bao Giờ Hết \n------------------------------------------------------------\nChúng tôi mang đến những góc nhìn đa chiều, những phân tích chuyên sâu về các vấn đề thời sự, chính trị, kinh tế, xã hội và văn hóa. Với đội ngũ biên tập viên chuyên nghiệp \nvà mạng lưới phóng viên rộng khắp, TIN TỨC 24H cam kết cung cấp thông tin nhanh chóng, chính xác và khách quan.\n\nHãy nhấn Đăng ký  và biểu tượng chuông để không bỏ lỡ bất kỳ tin tức quan trọng nào.\n\n\n📍Kênh được thực hiện và phát triển bới LOTUS MEDIA\n📌Bản quyền hình ảnh - VTC News",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Eo4bAZQlwNo/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Eo4bAZQlwNo/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Eo4bAZQlwNo/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Eo4bAZQlwNo/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/Eo4bAZQlwNo/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "LUẬN BÀN 24H",
+            "tags": [
+              "Toàn cảnh",
+              "Toàn cảnh thị trường xe điện",
+              "Toàn cảnh vinfast",
+              "Toàn cảnh tesla việt nam",
+              "Toàn cảnh startup aves",
+              "Toàn cảnh ô tô điện",
+              "Toàn cảnh xe máy điện",
+              "Toàn cảnh giao thông xanh",
+              "Toàn cảnh hạ tầng trạm sạc",
+              "Toàn cảnh cạnh tranh công nghiệp",
+              "thị trường xe điện",
+              "vinfast",
+              "startup aves",
+              "ô tô điện",
+              "xe máy điện",
+              "giao thông xanh",
+              "hạ tầng trạm sạc",
+              "cạnh tranh công nghiệp",
+              "elon musk",
+              "nguyễn văn thanh",
+              "green sm",
+              "xe điện việt nam",
+              "trạm sạc vinfast"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "vi",
+            "localized": {
+              "title": "Toàn Cảnh VinFast: ĐỐI ĐẦU Elon Musk & Người Cũ – Cuộc Đua Xe Điện BẤT NGỜ “NÓNG” Hơn Bao Giờ Hết",
+              "description": "Chào mừng quý vị và các bạn đã đến với TIN TỨC 24H - Kênh thông tin chính thức, cập nhật những tin tức nóng hổi và đáng tin cậy nhất từ Việt Nam và thế giới \n------------------------------------------------------------\nToàn cảnh cục diện cạnh tranh mới trên thị trường xe điện Việt Nam trước sự gia nhập của các doanh nghiệp trong và ngoài nước. Trong tiêu điểm Toàn cảnh hôm nay, chúng ta sẽ cùng phân tích vị thế của VinFast, chiến lược thâm nhập thị trường của Tesla và tiềm năng phát triển mảng xe máy điện từ startup AVES.\n\nBản tin Toàn cảnh công nghiệp - thị trường xe điện năm 2026 phản ánh những chuyển động đáng chú ý trong ngành giao thông xanh Việt Nam. Phóng sự mổ xẻ việc Tesla thành lập pháp nhân tại Việt Nam nhằm mở rộng phân khúc ô tô điện, cùng sự xuất hiện của startup AVES do cựu CEO Green SM Nguyễn Văn Thanh sáng lập tập trung vào dòng xe máy điện. Bản tin phân tích lợi thế cạnh tranh về hạ tầng trạm sạc, quy mô nhà máy và mạng lưới phân phối của VinFast, đồng thời đưa ra các dự báo chuyên môn về kịch bản thay đổi thị phần xe điện trong thời gian tới. Hãy cùng theo dõi chi tiết ngay sau đây.\n\n#Toàncảnh #ThịTrườngXeĐiện #VinFast #TeslaViệtNam #StartupAVES #ÔTôĐiện #XeMáyĐiện #GiaoThôngXanh #NgânHàngTrungƯơng #ThượngTônPhápLuật #TINTUC #VTC\n \nToàn Cảnh VinFast: ĐỐI ĐẦU Elon Musk & Người Cũ – Cuộc Đua Xe Điện BẤT NGỜ “NÓNG” Hơn Bao Giờ Hết \n------------------------------------------------------------\nChúng tôi mang đến những góc nhìn đa chiều, những phân tích chuyên sâu về các vấn đề thời sự, chính trị, kinh tế, xã hội và văn hóa. Với đội ngũ biên tập viên chuyên nghiệp \nvà mạng lưới phóng viên rộng khắp, TIN TỨC 24H cam kết cung cấp thông tin nhanh chóng, chính xác và khách quan.\n\nHãy nhấn Đăng ký  và biểu tượng chuông để không bỏ lỡ bất kỳ tin tức quan trọng nào.\n\n\n📍Kênh được thực hiện và phát triển bới LOTUS MEDIA\n📌Bản quyền hình ảnh - VTC News"
+            },
+            "defaultAudioLanguage": "vi"
+          },
+          "contentDetails": {
+            "duration": "PT52M28S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "19091",
+            "likeCount": "68",
+            "favoriteCount": "0",
+            "commentCount": "5"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "zpzXvbSRo74": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337992+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911907+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337991+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "TgEK0eDRTPtxMha5JalI4T7OQGw",
@@ -53391,14 +54113,93 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T13:00:30Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "D36u4Tu3pw898tMIMLLTnPhDAx8",
+          "id": "zpzXvbSRo74",
+          "snippet": {
+            "publishedAt": "2026-09-18T13:00:30Z",
+            "channelId": "UCa3rahAQjfeRzzhRW1Am2yA",
+            "title": "Él quiere que escuches esto   ELON MUSK  'Abre la puerta  Ya voy   ' ✝️ MENSAJE DE DIOS🕊️ DIOS",
+            "description": "Él quiere que escuches esto   ELON MUSK  'Abre la puerta  Ya voy   ' ✝️ MENSAJE DE DIOS🕊️ DIOS",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/zpzXvbSRo74/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/zpzXvbSRo74/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/zpzXvbSRo74/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/zpzXvbSRo74/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/zpzXvbSRo74/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "El Ángel Habla",
+            "tags": [
+              "#DiosTeHabla",
+              "#Arrepentimiento",
+              "#ProtecciónCelestial",
+              "#RevelaciónUrgente",
+              "#PalabraProfética"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "Él quiere que escuches esto   ELON MUSK  'Abre la puerta  Ya voy   ' ✝️ MENSAJE DE DIOS🕊️ DIOS",
+              "description": "Él quiere que escuches esto   ELON MUSK  'Abre la puerta  Ya voy   ' ✝️ MENSAJE DE DIOS🕊️ DIOS"
+            },
+            "defaultAudioLanguage": "es"
+          },
+          "contentDetails": {
+            "duration": "PT24M49S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "23",
+            "likeCount": "4",
+            "favoriteCount": "0",
+            "commentCount": "4"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "y-Wi3fYlDBo": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T07:46:54.337997+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911917+00:00",
         "first_seen_at": "2026-09-19T07:46:54.337996+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "4DT56818RI2l8R-jJwIW0DNf4Cc",
@@ -53442,7 +54243,109 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-18T12:00:21Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "c5yie1YccCbGzQaCYbm07m2QPm8",
+          "id": "y-Wi3fYlDBo",
+          "snippet": {
+            "publishedAt": "2026-09-18T12:00:21Z",
+            "channelId": "UCwcpWb1MwJ-91NeR7N3ILzA",
+            "title": "👁️3 HOURS AGO! ELON MUSK CHOSE YOU FOR SOMETHING SPECIAL... DON’T IGNORE THIS!",
+            "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/y-Wi3fYlDBo/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/y-Wi3fYlDBo/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/y-Wi3fYlDBo/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/y-Wi3fYlDBo/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/y-Wi3fYlDBo/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Archangel Michael Says",
+            "tags": [
+              "god message",
+              "god messages",
+              "god message now",
+              "god message today",
+              "daily god message",
+              "today god message",
+              "god message for me",
+              "god's message",
+              "god message for you",
+              "message from god",
+              "god's message now",
+              "god’s message now",
+              "god message today for you",
+              "god's message today",
+              "god blessings message",
+              "god's message for you",
+              "Jesus saves",
+              "Jesus heals",
+              "Trust Jesus",
+              "Jesus loves you",
+              "He is calling you",
+              "God has a plan",
+              "God sees your pain",
+              "jesus",
+              "save jesus",
+              "help jesus",
+              "jesus movie",
+              "jesus words"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en-US",
+            "localized": {
+              "title": "👁️3 HOURS AGO! ELON MUSK CHOSE YOU FOR SOMETHING SPECIAL... DON’T IGNORE THIS!",
+              "description": "🔴 7-Sec Ritual to Attracting Abundance Today.\n👉 https://tinyurl.com/Do-not-miss-out-this"
+            },
+            "defaultAudioLanguage": "en-US"
+          },
+          "contentDetails": {
+            "duration": "PT36M23S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "91",
+            "likeCount": "12",
+            "favoriteCount": "0",
+            "commentCount": "26"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "fkNA7Xk7Brw": {
         "status": "pending",
@@ -54486,10 +55389,10 @@
       },
       "wiPhAZPszg0": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653603+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911927+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653590+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "2uF2LEiIOdGR05Y2CQcGJsHOaSA",
@@ -54538,14 +55441,127 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T16:13:53Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "TVjK60usu8K4p0zuwG8qhVtvDdE",
+          "id": "wiPhAZPszg0",
+          "snippet": {
+            "publishedAt": "2026-09-17T16:13:53Z",
+            "channelId": "UCJdKr0Bgd_5saZYqLCa9mng",
+            "title": "AI CEO Humiliated as Mark Zuckerberg Responds to His Threat",
+            "description": "Dave Rubin of “The Rubin Report” talks about Meta CEO Mark Zuckerberg’s scathing reaction to Anthropic CEO Dario Amodei’s push to regulate AI using the government as well as dubious third-party groups like METR that originated from the effective altruism movement; Bernie Sanders joining with Steve Bannon at the Pro Human Assembly to use scare tactics to push for AI regulation to prevent an AI apocalypse; Zohran Mamdani officially hiring Throne Labs to install 17 app-based public toilets while being unaware of the disaster of a similar program in San Francisco where the public toilets became magnets for drug use and prostitution; Spencer Pratt’s viral attack on Gavin Newsom and Rob Bonta for blocking the Paramount merger with Warner Bros. to attack Donald Trump fan David Ellison who has responded by threatening to move Paramount out of Hollywood to either Tennessee or Georgia; Donald Trump lashing out at Federal Reserve Chair Kevin Warsh over his plan to raise interest rates to combat inflation; CNN’s Harry Enten sharing new polling data that should make voters a little less trusting of betting against Donald Trump in the upcoming midterm elections; and much more. Dave also does a special “ask me anything” question-and-answer session on a wide range of topics, answering questions from the Rubin Report Locals community.\n\nWATCH the MEMBER-EXCLUSIVE segment of the show here: https://rubinreport.locals.com/\n\nCheck out the NEW RUBIN REPORT MERCH here:\nhttps://daverubin.store/\n\n04:02 Zuckerberg on A.I. self-regulation\n09:26 Woke A.I. wizards revealed\n12:28 Elizabeth Warren's predictable take\n14:54 Ro Khanna vs. Mike Johnson\n16:43 Bernie & Bannon bromance on A.I.\n20:19 Lonsdale goes after Hawley\n25:14 David Sacks on globalist threat\n38:19 Paramount leaving LA\n40:53 Spencer Pratt exposes Rob Bonta\n44:03 Homeless aid fraud in L.A. bust\n47:28 Harry Enten says polls underestimating GOP\n50:21 Community Q&A\n\n----------\n\nToday’s Sponsors:\nKalshi - Download the Kalshi app and use code RUBINREPORT to get $25 when you trade $25 or go to https://kalshi.com/r/RUBINREPORT\nDISCLAIMER: 18+ only. Restrictions and eligibility requirements apply. Event contract trading involves risk and may not be suitable for all investors. Prices, values, and available markets may differ from those mentioned. For more information see kalshi.com/regulatory.\n\nChapter - Optimize the one piece of your health most people never audit: the Medicare coverage that pays for all of it. For free and unbiased Medicare help: \nDial (332) 867-0207 or \nGo to: https://askchapter.org/rubin \nChapter and its affiliates are not connected with or endorsed by any government entity or the federal Medicare program. Chapter Advisory, LLC represents Medicare Advantage HMO, PPO, and PFFS organizations and stand alone prescription drug plans that have a Medicare contract. Enrollment depends on the plan’s contract renewal. While we have a database of every Medicare plan nationwide and can help you to search among all plans, we have contracts with many but not all plans. As a result, we do not offer every plan available in your area. Currently we represent 50 organizations which offer 18,160 products nationwide. We search and recommend all plans, even those we don’t directly offer. You can contact a licensed Chapter agent to find out the number of products available in your specific area. Please contact Medicare.gov, 1-800-Medicare, or your local State Health Insurance Program (SHIP) to get information on all of your options.\n\nEthos - Protect your family with life insurance from Ethos. Get up to $3 million in coverage in as little as 10 minutes. Application times may vary. Rates may vary. Trustpilot rating as of 6/1/2025.\nGet your free quote now at: https://ethos.com/rubin\n\n----------\n\n#rubinreport #MarkZuckerberg #darioamodei #Anthropic #Meta #airisk #aidangers #daverubin \n\nThe Direct Message directly addresses political news, cultural news, and current events of the day. It’s only by having rational conversations about these topics that we can help end political polarization. To hear what Dave has to say on these and a variety of other topics, watch this playlist: https://shorturl.at/LqDGj\n\nTo make sure you never miss a single Rubin Report video, click here to subscribe:\nhttps://shorturl.at/Z6B5u\n\n******\nStay informed with The Rubin Report Blog — uncensored opinions, free-speech commentary, and thought-provoking takes on politics & culture available here: https://www.daverubin.com/read\n\nBuy Copal tequila here: https://drinkcopal.com/\nStay up to date on our Instagram: @drinkcopal\n\nJoin Dave's Locals community: https://rubinreport.locals.com/\n\nSubscribe to Dave’s Newsletter The Rubin Recap: https://rubinrecap.beehiiv.com/?utm_source=youtube&utm_medium=social&utm_campaign=rubinreport\n\nAll art on the set are original works by Caylin Rose Janet.\nGet a print here: https://www.caylinrosejanet.com/rubinreportart.html\n\nFor advertising inquiries please email: sponsorships@rumble.com",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/wiPhAZPszg0/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/wiPhAZPszg0/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/wiPhAZPszg0/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/wiPhAZPszg0/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/wiPhAZPszg0/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              },
+              "qhd": {
+                "url": "https://i.ytimg.com/vi/wiPhAZPszg0/qhddefault.jpg",
+                "width": 2560,
+                "height": 1440
+              }
+            },
+            "channelTitle": "The Rubin Report",
+            "tags": [
+              "rubin report",
+              "dave rubin",
+              "idw",
+              "current events",
+              "free speech",
+              "intellectual dark web",
+              "critical thinking",
+              "rubin",
+              "the rubin report",
+              "david rubin",
+              "politics",
+              "political news",
+              "political science",
+              "political",
+              "political party",
+              "direct message",
+              "Mark Zuckerberg",
+              "Anthropic CEO",
+              "Dario Amodei",
+              "ai regulation",
+              "ai risk",
+              "ai",
+              "artificial intelligence",
+              "ai debate",
+              "regulate ai",
+              "ai safety",
+              "Bernie Sanders",
+              "Zohran Mamdani",
+              "Spencer Pratt",
+              "Gavin Newsom",
+              "Paramount",
+              "warner bros",
+              "interest rates",
+              "Harry Enten"
+            ],
+            "categoryId": "25",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "AI CEO Humiliated as Mark Zuckerberg Responds to His Threat",
+              "description": "Dave Rubin of “The Rubin Report” talks about Meta CEO Mark Zuckerberg’s scathing reaction to Anthropic CEO Dario Amodei’s push to regulate AI using the government as well as dubious third-party groups like METR that originated from the effective altruism movement; Bernie Sanders joining with Steve Bannon at the Pro Human Assembly to use scare tactics to push for AI regulation to prevent an AI apocalypse; Zohran Mamdani officially hiring Throne Labs to install 17 app-based public toilets while being unaware of the disaster of a similar program in San Francisco where the public toilets became magnets for drug use and prostitution; Spencer Pratt’s viral attack on Gavin Newsom and Rob Bonta for blocking the Paramount merger with Warner Bros. to attack Donald Trump fan David Ellison who has responded by threatening to move Paramount out of Hollywood to either Tennessee or Georgia; Donald Trump lashing out at Federal Reserve Chair Kevin Warsh over his plan to raise interest rates to combat inflation; CNN’s Harry Enten sharing new polling data that should make voters a little less trusting of betting against Donald Trump in the upcoming midterm elections; and much more. Dave also does a special “ask me anything” question-and-answer session on a wide range of topics, answering questions from the Rubin Report Locals community.\n\nWATCH the MEMBER-EXCLUSIVE segment of the show here: https://rubinreport.locals.com/\n\nCheck out the NEW RUBIN REPORT MERCH here:\nhttps://daverubin.store/\n\n04:02 Zuckerberg on A.I. self-regulation\n09:26 Woke A.I. wizards revealed\n12:28 Elizabeth Warren's predictable take\n14:54 Ro Khanna vs. Mike Johnson\n16:43 Bernie & Bannon bromance on A.I.\n20:19 Lonsdale goes after Hawley\n25:14 David Sacks on globalist threat\n38:19 Paramount leaving LA\n40:53 Spencer Pratt exposes Rob Bonta\n44:03 Homeless aid fraud in L.A. bust\n47:28 Harry Enten says polls underestimating GOP\n50:21 Community Q&A\n\n----------\n\nToday’s Sponsors:\nKalshi - Download the Kalshi app and use code RUBINREPORT to get $25 when you trade $25 or go to https://kalshi.com/r/RUBINREPORT\nDISCLAIMER: 18+ only. Restrictions and eligibility requirements apply. Event contract trading involves risk and may not be suitable for all investors. Prices, values, and available markets may differ from those mentioned. For more information see kalshi.com/regulatory.\n\nChapter - Optimize the one piece of your health most people never audit: the Medicare coverage that pays for all of it. For free and unbiased Medicare help: \nDial (332) 867-0207 or \nGo to: https://askchapter.org/rubin \nChapter and its affiliates are not connected with or endorsed by any government entity or the federal Medicare program. Chapter Advisory, LLC represents Medicare Advantage HMO, PPO, and PFFS organizations and stand alone prescription drug plans that have a Medicare contract. Enrollment depends on the plan’s contract renewal. While we have a database of every Medicare plan nationwide and can help you to search among all plans, we have contracts with many but not all plans. As a result, we do not offer every plan available in your area. Currently we represent 50 organizations which offer 18,160 products nationwide. We search and recommend all plans, even those we don’t directly offer. You can contact a licensed Chapter agent to find out the number of products available in your specific area. Please contact Medicare.gov, 1-800-Medicare, or your local State Health Insurance Program (SHIP) to get information on all of your options.\n\nEthos - Protect your family with life insurance from Ethos. Get up to $3 million in coverage in as little as 10 minutes. Application times may vary. Rates may vary. Trustpilot rating as of 6/1/2025.\nGet your free quote now at: https://ethos.com/rubin\n\n----------\n\n#rubinreport #MarkZuckerberg #darioamodei #Anthropic #Meta #airisk #aidangers #daverubin \n\nThe Direct Message directly addresses political news, cultural news, and current events of the day. It’s only by having rational conversations about these topics that we can help end political polarization. To hear what Dave has to say on these and a variety of other topics, watch this playlist: https://shorturl.at/LqDGj\n\nTo make sure you never miss a single Rubin Report video, click here to subscribe:\nhttps://shorturl.at/Z6B5u\n\n******\nStay informed with The Rubin Report Blog — uncensored opinions, free-speech commentary, and thought-provoking takes on politics & culture available here: https://www.daverubin.com/read\n\nBuy Copal tequila here: https://drinkcopal.com/\nStay up to date on our Instagram: @drinkcopal\n\nJoin Dave's Locals community: https://rubinreport.locals.com/\n\nSubscribe to Dave’s Newsletter The Rubin Recap: https://rubinrecap.beehiiv.com/?utm_source=youtube&utm_medium=social&utm_campaign=rubinreport\n\nAll art on the set are original works by Caylin Rose Janet.\nGet a print here: https://www.caylinrosejanet.com/rubinreportart.html\n\nFor advertising inquiries please email: sponsorships@rumble.com"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT1H7M40S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "111019",
+            "likeCount": "2613",
+            "favoriteCount": "0",
+            "commentCount": "330"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "i98wcmRpGR4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653616+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911938+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653613+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "7eNHcuks_tH1x1xeN9jGFL-78qY",
@@ -54584,14 +55600,104 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T16:07:39Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "2yGTgWgINdcO86eGXw9lA3TCHz0",
+          "id": "i98wcmRpGR4",
+          "snippet": {
+            "publishedAt": "2026-09-17T16:07:39Z",
+            "channelId": "UC02_pveImZnDnczTsNST0ew",
+            "title": "Elon Musk's Grok AI Was Asked to Find Contradictions in the Bible—But What It Said Silenced Every",
+            "description": "What happens when artificial intelligence is asked to examine some of the Bible’s most debated passages?\n\nElon Musk’s Grok AI was asked to search for possible contradictions across biblical accounts and scriptures.\nIn this video, we explore the passages, questions, and historical context behind its intriguing response.\n\nFrom differences between biblical narratives to ancient manuscripts and translation variations, the investigation goes deeper.\nCould some apparent contradictions have explanations rooted in language, context, or ancient history?\n\nWe examine Grok’s response alongside fascinating questions surrounding biblical texts and their interpretation.\nThe discussion explores AI, ancient scripture, biblical history, archaeology, and the mysteries hidden within ancient manuscripts.\n\nWatch until the end to discover what Grok said when it was asked to find contradictions in the Bible.\n\n#GrokAI #ElonMusk #Bible #BibleMystery #BibleContradictions #BiblicalHistory #AncientManuscripts #DeadSeaScrolls #BiblicalArchaeology #AncientChronics",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/i98wcmRpGR4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/i98wcmRpGR4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/i98wcmRpGR4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/i98wcmRpGR4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Ancient Chronics",
+            "tags": [
+              "Elon Musk Grok",
+              "Grok AI Bible",
+              "Grok Bible analysis",
+              "Bible contradictions",
+              "contradictions in the Bible",
+              "Bible inconsistencies",
+              "biblical contradictions",
+              "Bible verses contradictions",
+              "Bible mystery",
+              "Bible analysis AI",
+              "AI Bible analysis",
+              "ancient Bible manuscripts",
+              "biblical history",
+              "biblical archaeology",
+              "Dead Sea Scrolls",
+              "ancient scripture",
+              "Christian history",
+              "Bible mysteries explained",
+              "Grok AI answer",
+              "ancient texts",
+              "Ancient Chronics"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Elon Musk's Grok AI Was Asked to Find Contradictions in the Bible—But What It Said Silenced Every",
+              "description": "What happens when artificial intelligence is asked to examine some of the Bible’s most debated passages?\n\nElon Musk’s Grok AI was asked to search for possible contradictions across biblical accounts and scriptures.\nIn this video, we explore the passages, questions, and historical context behind its intriguing response.\n\nFrom differences between biblical narratives to ancient manuscripts and translation variations, the investigation goes deeper.\nCould some apparent contradictions have explanations rooted in language, context, or ancient history?\n\nWe examine Grok’s response alongside fascinating questions surrounding biblical texts and their interpretation.\nThe discussion explores AI, ancient scripture, biblical history, archaeology, and the mysteries hidden within ancient manuscripts.\n\nWatch until the end to discover what Grok said when it was asked to find contradictions in the Bible.\n\n#GrokAI #ElonMusk #Bible #BibleMystery #BibleContradictions #BiblicalHistory #AncientManuscripts #DeadSeaScrolls #BiblicalArchaeology #AncientChronics"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT25M10S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "509",
+            "likeCount": "1",
+            "favoriteCount": "0",
+            "commentCount": "0"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "56kuT3M5aJ4": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653623+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911949+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653621+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "VKba_t6VqmVur6f-VK_8qodZvUU",
@@ -54630,14 +55736,81 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T15:39:14Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "e2gXt_vajWjo9NlPjl9ogu4McDY",
+          "id": "56kuT3M5aJ4",
+          "snippet": {
+            "publishedAt": "2026-09-17T15:39:14Z",
+            "channelId": "UCZ3vPnc3z4F7fpVZ9yQJXFg",
+            "title": "👉ELON MUSK SAYS ONLY 10 MINUTES YOUR SOULMATE OPEN NOW..",
+            "description": "#Archangel #Faith\n #Gratitude\n\n\n\n\n👉ELON MUSK SAYS ONLY 10 MINUTES YOUR SOULMATE OPEN NOW..\n\n\n\n#Archangel #Faith\n #Gratitude #SpiritualJourney\n#Jesus\n#Godmessage \n#godmessage\n#jesus\n#jesusmessage \n#godmessages\n#lawofattraction\n#manifesting\n#godsaystoday\n#godmessagetoday\n#godwords\n#lordmessagei\n#godmessagesforme \n#jesusewords\n#godsmessages\n#godsmessageforme",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/56kuT3M5aJ4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/56kuT3M5aJ4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/56kuT3M5aJ4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/56kuT3M5aJ4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Archangel Michael Says",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "👉ELON MUSK SAYS ONLY 10 MINUTES YOUR SOULMATE OPEN NOW..",
+              "description": "#Archangel #Faith\n #Gratitude\n\n\n\n\n👉ELON MUSK SAYS ONLY 10 MINUTES YOUR SOULMATE OPEN NOW..\n\n\n\n#Archangel #Faith\n #Gratitude #SpiritualJourney\n#Jesus\n#Godmessage \n#godmessage\n#jesus\n#jesusmessage \n#godmessages\n#lawofattraction\n#manifesting\n#godsaystoday\n#godmessagetoday\n#godwords\n#lordmessagei\n#godmessagesforme \n#jesusewords\n#godsmessages\n#godsmessageforme"
+            },
+            "defaultAudioLanguage": "en"
+          },
+          "contentDetails": {
+            "duration": "PT52M6S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "581",
+            "likeCount": "111",
+            "favoriteCount": "0",
+            "commentCount": "293"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "kOVbTDgeDqQ": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653630+00:00",
+        "reason": "확인된 원본 발행 채널 아님 — 전송 보류",
+        "updated_at": "2026-09-22T03:11:17.911960+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653627+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "9H-VqS7xl5p3ulMiHnIJKbKfyQs",
@@ -54681,14 +55854,112 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T15:15:35Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "detail": {
+          "kind": "youtube#video",
+          "etag": "IAm4EqdCu4jsOhHY3NIGZrnL7Kw",
+          "id": "kOVbTDgeDqQ",
+          "snippet": {
+            "publishedAt": "2026-09-17T15:15:35Z",
+            "channelId": "UCqz25kSeq7fw3E4r8wZkKsQ",
+            "title": "ELON MUSK’IN ŞOK EDEN GELECEK ÖNGÖRÜLERİ",
+            "description": "Elon Musk gelecekle ilgili oldukça çarpıcı öngörülerde bulunuyor. Yapay zekâ, robotlar, para, çalışma hayatı ve Avrupa’nın geleceği hakkında söyledikleri gerçekten düşündürücü.\n\nMusk’a göre önümüzdeki 10 yıl içinde yapay zekâ insan zekâsını aşabilir, robotlar hayatımızın neredeyse her alanına girebilir ve çalışma kavramı tamamen değişebilir. Hatta para bile bugünkü anlamını kaybedebilir.\n\nAncak en tartışmalı açıklamaları Avrupa ve İngiltere hakkında. Mevcut eğilimlerin devam etmesi hâlinde yaklaşık 20 yıl içinde İngiltere’de bir iç savaş çıkabileceğini öne sürüyor.\n\nPeki Musk’ın öngörüleri gerçekten geleceğin habercisi mi, yoksa fazla karamsar bir gelecek senaryosu mu?\n\nVideoyu sonuna kadar izleyin ve siz ne düşünüyorsunuz, yorumlarda bizimle paylaşın.\n\nYasaklı Dosyalar’a abone olmayı ve videoyu beğenmeyi unutmayın.\n\n\n\n#ElonMusk #YapayZeka #Robotlar #Gelecek #Avrupa #İngiltere #İçSavaş #YapayZekaGeleceği #Teknoloji #Para #GeleceğinDünyası #YasaklıDosyalar",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/kOVbTDgeDqQ/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/kOVbTDgeDqQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/kOVbTDgeDqQ/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/kOVbTDgeDqQ/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/kOVbTDgeDqQ/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Yasaklı dosyalar",
+            "tags": [
+              "Elon Musk",
+              "Elon Musk röportaj",
+              "Elon Musk gelecek tahminleri",
+              "Elon Musk 2026",
+              "Elon Musk yapay zeka",
+              "yapay zeka",
+              "yapay zeka geleceği",
+              "yapay zeka insan zekasını aşacak",
+              "robotlar",
+              "insansı robotlar",
+              "yapay zeka ve robotlar",
+              "10 yıl sonra dünya",
+              "teknolojinin geleceği",
+              "yapay zeka tekilliği",
+              "İngiltere iç savaş",
+              "Avrupa iç savaş",
+              "Avrupa'nın geleceği",
+              "Elon Musk Avrupa",
+              "Elon Musk Müslümanlar",
+              "Elon Musk göç",
+              "göçmenler",
+              "The Economist Elon Musk",
+              "Elon Musk röportajı",
+              "Yasaklı Dosyalar"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "tr",
+            "localized": {
+              "title": "ELON MUSK’IN ŞOK EDEN GELECEK ÖNGÖRÜLERİ",
+              "description": "Elon Musk gelecekle ilgili oldukça çarpıcı öngörülerde bulunuyor. Yapay zekâ, robotlar, para, çalışma hayatı ve Avrupa’nın geleceği hakkında söyledikleri gerçekten düşündürücü.\n\nMusk’a göre önümüzdeki 10 yıl içinde yapay zekâ insan zekâsını aşabilir, robotlar hayatımızın neredeyse her alanına girebilir ve çalışma kavramı tamamen değişebilir. Hatta para bile bugünkü anlamını kaybedebilir.\n\nAncak en tartışmalı açıklamaları Avrupa ve İngiltere hakkında. Mevcut eğilimlerin devam etmesi hâlinde yaklaşık 20 yıl içinde İngiltere’de bir iç savaş çıkabileceğini öne sürüyor.\n\nPeki Musk’ın öngörüleri gerçekten geleceğin habercisi mi, yoksa fazla karamsar bir gelecek senaryosu mu?\n\nVideoyu sonuna kadar izleyin ve siz ne düşünüyorsunuz, yorumlarda bizimle paylaşın.\n\nYasaklı Dosyalar’a abone olmayı ve videoyu beğenmeyi unutmayın.\n\n\n\n#ElonMusk #YapayZeka #Robotlar #Gelecek #Avrupa #İngiltere #İçSavaş #YapayZekaGeleceği #Teknoloji #Para #GeleceğinDünyası #YasaklıDosyalar"
+            },
+            "defaultAudioLanguage": "tr"
+          },
+          "contentDetails": {
+            "duration": "PT22M33S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": true,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          },
+          "statistics": {
+            "viewCount": "30619",
+            "likeCount": "307",
+            "favoriteCount": "0",
+            "commentCount": "72"
+          }
+        },
+        "next_retry_at": "2026-09-29T03:11:17.674629+00:00"
       },
       "u10JLkctcwc": {
         "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-19T15:18:33.653636+00:00",
+        "reason": "영상 상세정보 미확보/비공개 가능 — 재시도",
+        "updated_at": "2026-09-22T03:11:17.911970+00:00",
         "first_seen_at": "2026-09-19T15:18:33.653634+00:00",
-        "attempts": 0,
+        "attempts": 1,
         "item": {
           "kind": "youtube#searchResult",
           "etag": "_SQreYyLApeUJ7O2QP0fPfEsT0M",
@@ -54732,7 +56003,9 @@
             "liveBroadcastContent": "none",
             "publishTime": "2026-09-17T15:00:16Z"
           }
-        }
+        },
+        "last_attempt_at": "2026-09-22T03:11:17.674629+00:00",
+        "next_retry_at": "2026-09-22T09:11:17.911967+00:00"
       },
       "3Z_d-qjt_-w": {
         "status": "pending",
@@ -69127,9 +70400,9 @@
         }
       },
       "E0XHhlIo66w": {
-        "status": "pending",
-        "reason": "검색에서 발견",
-        "updated_at": "2026-09-21T11:55:46.063485+00:00",
+        "status": "expired",
+        "reason": "최근 7일 범위 만료",
+        "updated_at": "2026-09-22T03:11:17.677514+00:00",
         "first_seen_at": "2026-09-21T11:55:46.063468+00:00",
         "attempts": 0,
         "item": {
