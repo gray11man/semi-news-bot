@@ -66,7 +66,7 @@ GEMINI_MODELS = [
 BASE_GEMINI_CALLS = 10
 MAX_GEMINI_CALLS = 15  # 최핵심 인터뷰가 남아 있을 때만 자동 확장
 BATCH_SIZE = 12
-NOTIFY_WHEN_EMPTY = False
+NOTIFY_WHEN_EMPTY = True  # 실행 종료 보고에 유튜브/블로그 무알림을 각각 표시
 
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -75,6 +75,44 @@ UA = (
 )
 
 _gm = {"n": 0, "dead": False, "notified": False, "tokens": 0}
+_run_status = {
+    'youtube': {'sent': 0, 'issues': [], 'pending': 0},
+    'blog': {'sent': 0, 'issues': []},
+}
+
+
+def _status_issue(section, message):
+    issues = _run_status[section]['issues']
+    if message not in issues:
+        issues.append(message)
+
+
+def _send_run_report():
+    lines = ['📋 <b>이번 실행 결과</b>']
+    for key, label, icon in [('youtube', '유튜브', '📺'), ('blog', '블로그', '📝')]:
+        row = _run_status[key]
+        if row['sent']:
+            lines.append(f"{icon} {label} 알림 {row['sent']}건 전송")
+        elif row['issues']:
+            lines.append(f'{icon} {label} 알림 전송 0건 — 확인/전송 오류 있음')
+        else:
+            lines.append(f'{icon} {label} 알림 없음')
+        if row['issues']:
+            lines.extend('  ⚠️ ' + html.escape(x) for x in row['issues'][:4])
+        if row.get('pending'):
+            lines.append(f"  판정·재검토 대기 {row['pending']}건 (대기 중인 영상이 있습니다)")
+    if _gm.get('limit_hits'):
+        lines.append('⚠️ AI 호출 한도 도달 — 남은 판정은 다음 실행으로 보류했습니다.')
+    if _gm.get('failure_reason'):
+        lines.append('⚠️ ' + html.escape(_gm['failure_reason']))
+    if not _gm['n']:
+        lines.append('🤖 AI 호출 없음 · 토큰 사용 없음')
+    elif _gm['tokens']:
+        lines.append(f"🤖 AI 호출 {_gm['n']}회 · API가 보고한 사용 토큰 {_gm['tokens']:,}개")
+    else:
+        lines.append(f"🤖 AI 호출 시도 {_gm['n']}회 · 사용 토큰 확인 불가")
+    return send_tg('\n'.join(lines))
+
 
 
 # User-confirmed deliveries. Keep these even if runtime JSON history is lost.
@@ -83,7 +121,7 @@ CONFIRMED_DELIVERED_VIDEO_IDS = frozenset({
     "XzNjq6DNjSY",  # Jensen Huang
     "Ho1gnEeVryA",  # Roland Busch / Dreamforce
 })
-BOT_VERSION = "v7.1-wide-executive-ai"
+BOT_VERSION = "v7.2-status-report"
 
 
 def send_tg(msg):
@@ -146,17 +184,9 @@ def send_tg(msg):
 
 
 def _notify_gemini_dead(reason):
-    if _gm["notified"]:
-        return
-
-    _gm["notified"] = True
-
-    send_tg(
-        "⚠️ <b>Gemini 판정 중단</b>\n\n"
-        f"사유: {html.escape(str(reason))}\n"
-        f"이번 사이클 호출 {_gm['n']}회 / 상한 {MAX_GEMINI_CALLS}\n\n"
-        "※ 미판정 항목은 다음 사이클에 자동 재시도됩니다."
-    )
+    # Report once with the end-of-run status, without spending AI tokens.
+    _gm['notified'] = True
+    _gm['failure_reason'] = str(reason)
 
 
 def strip_html(s):
@@ -186,11 +216,13 @@ def gemini_call(prompt, max_retry=2, allow_extended=False):
     if _gm["dead"]:
         return None
 
+    failure_kinds = set()
     call_cap = MAX_GEMINI_CALLS if allow_extended else BASE_GEMINI_CALLS
 
     for model in GEMINI_MODELS:
         for attempt in range(max_retry):
             if _gm["n"] >= call_cap:
+                _gm["limit_hits"] = True
                 # 일반 후보는 기본 10회에서 멈추되, 최핵심 인터뷰만 15회까지 확장한다.
                 print(f"[Gemini] 이번 사이클 비용상한 {call_cap}회 도달 → 남은 일반 후보는 다음 실행으로 보류")
                 if not allow_extended:
@@ -221,6 +253,7 @@ def gemini_call(prompt, max_retry=2, allow_extended=False):
                     body = r.text[:500].replace("\\n", " ")
                     print(f"[429] {model} attempt{attempt + 1} | {body}")
 
+                    failure_kinds.add("quota" if "PerDay" in r.text or "per_day" in r.text.lower() else "rate")
                     if "PerDay" in body:
                         print("[Gemini] 일일 쿼터 소진")
                         break
@@ -230,6 +263,7 @@ def gemini_call(prompt, max_retry=2, allow_extended=False):
                     continue
 
                 if r.status_code == 404:
+                    failure_kinds.add("model")
                     print(f"[404] 모델 없음: {model}")
                     break
 
@@ -245,6 +279,10 @@ def gemini_call(prompt, max_retry=2, allow_extended=False):
                     print(f"[Gemini] {model} 응답에 candidates 없음")
                     continue
 
+                if candidates[0].get("finishReason") == "MAX_TOKENS":
+                    failure_kinds.add("output_limit")
+                    print("[Gemini] 응답 토큰 한도 초과 — 재시도")
+                    continue
                 parts = candidates[0].get("content", {}).get("parts", [])
                 txt = "".join(
                     p.get("text", "")
@@ -266,7 +304,16 @@ def gemini_call(prompt, max_retry=2, allow_extended=False):
 
     print("[Gemini] 전 모델 실패")
     _gm["dead"] = True
-    _notify_gemini_dead("전 모델 응답 실패")
+    reasons = []
+    if 'quota' in failure_kinds:
+        reasons.append('AI 일일 할당량 소진 응답이 발생했습니다')
+    if 'rate' in failure_kinds:
+        reasons.append('AI 요청 속도/할당량 제한(429)이 발생했습니다')
+    if 'output_limit' in failure_kinds:
+        reasons.append('AI 응답 토큰 한도 초과가 발생했습니다')
+    if 'model' in failure_kinds:
+        reasons.append('AI 모델을 찾지 못했습니다')
+    _notify_gemini_dead('AI 판정 중단 — ' + ('; '.join(reasons) if reasons else 'API 응답 실패') + ' · 남은 항목 재시도 예정')
     return None
 
 
@@ -2242,6 +2289,7 @@ def _celeb_search(meta, state):
                                     params=params, timeout=30)
             if response.status_code in (403, 429):
                 # Do not expose raw API response URLs/keys in logs.
+                _status_issue('youtube', f'YouTube 검색 제한 HTTP {response.status_code} — 검색 미완료')
                 print(f'[셀럽] 검색 제한 HTTP {response.status_code}; 검색 작업 보존')
                 save_celeb_meta(meta)
                 break
@@ -2262,6 +2310,7 @@ def _celeb_search(meta, state):
                 jobs.append(dict(job, page=page))
             save_celeb_meta(meta)
         except Exception as exc:
+            _status_issue('youtube', 'YouTube 검색 실패: ' + type(exc).__name__)
             print(f'[셀럽] 검색 실패 {type(exc).__name__}; 다음 실행에서 재시도')
             jobs.append(jobs.pop(0))
             save_celeb_meta(meta)
@@ -2341,6 +2390,7 @@ def _celeb_channels(meta, state):
                 row['page'] = next_page
                 save_celeb_meta(meta)
         except Exception as exc:
+            _status_issue('youtube', '채널 수집 일부 실패: ' + username)
             print(f'[셀럽 채널] {username}: {type(exc).__name__}; 다음 실행 재시도')
             save_celeb_meta(meta)
 
@@ -2675,10 +2725,12 @@ def _celeb_deliver(meta, state, candidate, judge):
         print(f'[셀럽 미리보기] 전송·수신기록 저장 안 함 | {person} | {vid} | {item["snippet"].get("title", "")}')
         return False
     if not send_tg(message):
+        _status_issue('youtube', '텔레그램 전송 실패 — 다음 실행 재시도')
         _celeb_retry(state, vid, '텔레그램 전송 실패 — 승인 결과 보관')
         return False
     # Persist every successful send immediately, not just at end of run.
     _celeb_record(state, vid, 'sent', '텔레그램 전송 성공')
+    _run_status['youtube']['sent'] += 1
     mark_celeb_sent(meta, person, item, detail, vid)
     save_celeb_meta(meta)
     return True
@@ -2749,12 +2801,14 @@ def run_celeb_watch():
     active = protected + remaining[:CELEB_SCAN_LIMIT-len(protected)]
     print(f'[셀럽 진단] 대기 {len(protected)+len(remaining)}건 / 상세조회 {len(active)}건')
     if not active:
+        _run_status['youtube']['pending'] = sum(r.get('status') == 'pending' for r in state['records'].values())
         save_celeb_meta(meta)
         print('[셀럽] 이번 실행에서 처리할 후보 없음')
         return
     try:
         details = get_video_details([vid for vid, _ in active])
     except Exception as exc:
+        _status_issue('youtube', '영상 상세조회 실패: ' + type(exc).__name__)
         for vid, _ in active:
             _celeb_retry(state, vid, f'상세조회 실패 {type(exc).__name__}')
         save_celeb_meta(meta)
@@ -2831,6 +2885,7 @@ def run_celeb_watch():
             del state['records'][vid]
     save_celeb_meta(meta)
     pending = sum(r.get('status') == 'pending' for r in state['records'].values())
+    _run_status['youtube']['pending'] = pending
     print(f'[셀럽] 전송 {sent}건 / 재검토 대기 {pending}건 / 다음 검색 작업 {len(state["search_jobs"])}개')
     from collections import Counter
     reasons = Counter(r.get('reason', '사유 없음') for r in state['records'].values() if r.get('status') == 'pending')
@@ -2953,6 +3008,7 @@ def fetch_blog_posts(blog_id):
         )
 
         if resp.status_code != 200:
+            _status_issue('blog', f'{blog_id}: RSS 조회 실패 HTTP {resp.status_code}')
             print(
                 f"[블로그 오류] {blog_id}: "
                 f"HTTP {resp.status_code}"
@@ -2962,12 +3018,14 @@ def fetch_blog_posts(blog_id):
         feed = feedparser.parse(resp.content)
 
         if getattr(feed, "bozo", False):
+            _status_issue('blog', f'{blog_id}: RSS 해석 경고')
             print(
                 f"[블로그 경고] {blog_id}: RSS 파싱 경고 "
                 f"{str(getattr(feed, 'bozo_exception', ''))[:120]}"
             )
 
     except Exception as e:
+        _status_issue('blog', f'{blog_id}: RSS 조회 실패 {type(e).__name__}')
         print(f"[블로그 오류] {blog_id}: {e}")
         return []
 
@@ -3125,11 +3183,13 @@ def run_blog_watch():
                     seen_map[blog_id] = history[:200]
                     save_blog_state(state)
                     total += 1
+                    _run_status['blog']['sent'] += 1
                     print(
                         f"✅ [블로그] {blog_id} | "
                         f"{p['title'][:60]}"
                     )
                 else:
+                    _status_issue('blog', f'{blog_id}: 텔레그램 전송 실패')
                     print(
                         f"⚠ [블로그] 전송실패 → seen 미처리/다음사이클 재시도 | "
                         f"{blog_id} | {p['title'][:55]}"
@@ -3163,6 +3223,7 @@ def run_blog_watch():
         )
 
     except Exception as e:
+        _status_issue('blog', '블로그 처리 실패: ' + type(e).__name__)
         print(
             f"[블로그 감시 실패] {str(e)[:200]}"
         )
@@ -3960,6 +4021,7 @@ def main():
     try:
         run_celeb_watch()
     except Exception as e:
+        _status_issue('youtube', '처리 실패: ' + type(e).__name__)
         print(
             f"[셀럽 감시 실패] "
             f"{str(e)[:250]}"
@@ -3972,6 +4034,7 @@ def main():
     try:
         run_blog_watch()
     except Exception as e:
+        _status_issue('blog', '처리 실패: ' + type(e).__name__)
         print(
             f"[블로그 감시 실패] "
             f"{str(e)[:250]}"
@@ -3984,6 +4047,9 @@ def main():
             f"[크레딧 감시 실패] "
             f"{str(e)[:250]}"
         )
+
+    if not _send_run_report():
+        print("[실행 보고] 텔레그램 상태 알림 전송 실패")
 
     print(
         f"=== Gemini 총 호출 "
