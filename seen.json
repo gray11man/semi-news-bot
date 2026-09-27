@@ -2525,6 +2525,48 @@
       "source_published": "",
       "source_modified": "",
       "message_id": 4954
+    },
+    "e0ac00c219f132f658b308b7c02fe1e8c72f3db2f34cc56056531e95300a5eeb": {
+      "ts": 1790544482.424126,
+      "title": "Anthropic just handed Akamai a game-changing deal",
+      "fact": "Akamai가 Anthropic과 AI 모델 운영을 위한 GPU 인프라 지원 계약을 체결했습니다. 이 계약은 Akamai가 Anthropic의 AI 모델 구동에 필요한 컴퓨팅 자원을 제공하고 지원하는 내용을 포함합니다. 구체적인 계약 규모나 기간, 제공되는 GPU 사양 등은 본문 부재로 인해 확인되지 않았으나, AI 모델 개발사와 주요 인프라 제공업체 간의 파트너십이라는 점에서 업계의 주목을 받고 있습니다.",
+      "source": "Yahoo Finance",
+      "rss_published": "2026-09-27T17:47:00+00:00",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeFE2a1hxenZyM05nejF0SlAwWnJrUkxDdUFjWDZKbVhGemVwTDFNa21fMkQ2a3daRGdCeGxxSTFsSGluVVRadWMxdDhOb3pDVFdFXy12TVk1RFZsRHk0MUwwM2JpRUNpbHNralE5MzltejNMNTUtenlxSU10cjB4Y3E0SmlDN1k3VmZMdU5IZ1BteWtEMzZfdzBsUTF2Zw?oc=5",
+      "resolved_url": "",
+      "event_key": "Akamai|계약|Anthropic|GPU 인프라",
+      "new_fact_date": "2026-09-27T17:47:00+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4956
+    },
+    "a80b5749085c06cd8bf3d702a98c9efe90c72acb24a81f7b29f2ad25f4b75ef9": {
+      "ts": 1790544484.094001,
+      "title": "Rising US bond yields could make AI infrastructure more expensive — CNBC",
+      "fact": "미국 국채 금리 상승은 AI 인프라 구축에 필요한 자금 조달 비용을 증가시켜 AI 프로젝트의 전반적인 비용을 상승시킬 수 있다. 이는 데이터센터 건설, GPU 구매 등 AI 인프라 투자에 부정적인 영향을 미칠 수 있다.",
+      "source": "ua.news",
+      "rss_published": "2026-09-27T11:56:58+00:00",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZ25WT003ZWdYbU9EUFpYTWZSYTJSUGtRMWtiVVp0Z0pKRUswaVlpNmhyUlB4ODI3M1I1cks2WFZad0QwOEttLXNTNXJkSkp3TjJBSHpXZlhtZ3Bla0hicmdoZXl6NkxyallLdjNncUxuLVA5VFRkWVN5RDFJdnNlMGxMTXhYMURZaGh2UWVDYjRKM3k5QkNhWTRFcTZjeUljWWtwU2pIeEViM2pLWFNz?oc=5",
+      "resolved_url": "",
+      "event_key": "미국 국채 금리|비용 상승|AI 인프라",
+      "new_fact_date": "2026-09-27T11:56:58+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4957
+    },
+    "048918bbf428548f6955f0081d4e1df9fa01470239d65eacb57dbb5ae7c3c5f7": {
+      "ts": 1790544485.76003,
+      "title": "Oracle’s AI Expansion Faces a New Test as Data Center Costs Rise",
+      "fact": "Oracle은 AI 사업 확장을 추진하는 과정에서 데이터 센터 건설 및 운영 비용 상승이라는 새로운 시험대에 직면하고 있다. 이는 AI 인프라 구축에 필요한 자금 조달 및 비용 관리 측면에서 주요한 도전 과제가 될 수 있다.",
+      "source": "Yahoo Finance",
+      "rss_published": "2026-09-27T20:22:08+00:00",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcTVqZGl5WkQ5Wll3RDc5QkRHeWhQWWR5MVhnUEpJUnNwMjNDSV93NDRRczNDTjJ3eEJKc3RHUVc2NVVKdHNza0k2Y3Ftc2NhVkRFVC0wRTd6amlpZEw2T3R1ZVpiV3RUVVIyY2dkd1p1dk5wUDBZU0kxQ2l4NDVXZld2X0UxR1VpTjd5S09KbWo1NjY0eVMyZjZn?oc=5",
+      "resolved_url": "",
+      "event_key": "Oracle|비용 상승|AI 인프라|데이터센터",
+      "new_fact_date": "2026-09-27T20:22:08+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4958
     }
   },
   "pending": {
@@ -2599,16 +2641,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "32b7f0c53e91a0947176a36d277febba628e4992e76d55fdab6caa17673bae74": {
-      "title": "Anthropic and OpenAI Are Both Racing to IPO. GE Vernova Wins Either Way.",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPUlAtaUZNVG1sT3Z5RkloajhBazB3eXNDSmVHbXRzVTdWeDJaRGNVUmJVX1Jfcmhseld2RlMwUWVybTlXbFBiYmQ5dmlhb2hrdkdoNDdpZlF0bEo4MTRULWNPZDFVck5JdWpDcVNwbG92MU1TSzRqTDBwMjdOSDFXbC1GX0xnay1EWXR6S25GbExTTXlXYVhWamVHV0I?oc=5",
-      "summary": "Anthropic and OpenAI Are Both Racing to IPO. GE Vernova Wins Either Way. Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-27T09:04:00+00:00",
-      "feed": "ai_company_0",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
     "61eac93ff9d138aaa5a18254425aad46d2ee7c8b9e5a978d8ae66c9d16e5a846": {
       "title": "NeoVolta Reports $13.3 Million In Fiscal 2026 Revenue As It Advances U.S. Battery Manufacturing Expansion",
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQYVRhRXRRN2w1OGt1NElxMkhrTlhSSFRrU3pzWEo3LUU4ekFsclVTWWdrNkdZUU84TTlHWkhvX3hZbXBKU1prSjk1YzhyRVVhNmRtUUtqaVVReTJfQ04tMWQyNGZUTkM3U0J4YWpLVFZTYnZMeHhiRl9QdGt4UUdDempzbFQyVW5yX1ZrZWZUMkFZRUZWbFlsd09lcF9nanlLMG5RMDJEbjF1TGFVNDdaV0ktZ2N4ZnlNSUNzQ0ZFM2RpSFZMeEHSAcYBQVVfeXFMUGFUYUV0UTdsNThrdTRJcTJIa05YUkhUa1N6c1hKNy1FOHpBbHJVU1lnazZHWVFPOE05R1pIb194WW1wSlNaa0o5NWM4ckVVYTZkbVFLamlVUXkyX0NOLTFkMjRmVE5DN1NCeGFqS1RWU2J2THh4YkZfUHRreFFHQ3pqc2xUMlVucl9Wa2VmVDJBWUVGVmxZbHdPZXBfZ2p5SzBuUTAyRG4xdUxhVTQ3WldJLWdjeGZ5TUlDc0NGRTNkaUhWTHhB?oc=5",
@@ -2629,16 +2661,6 @@
       "stage": "candidate",
       "precheck_priority": 64,
       "precheck_override": "critical_event_force_review"
-    },
-    "5cab1a33c9dc6080f6c9592e5781c4451b5fbf034411e07099b9a4dbd13c48d5": {
-      "title": "Googlebook Launches with Intel Core Ultra Series 3 Processors",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPRC1Edk83QjdDemRmenpkRzcwdWxmU0VoM1lDbXNqXzFvbG9IaFpNZ3pqRERzaFVtM3pXaElGSzlhM3dJcnUxeHlzQ1FRbVZBWlFhTFJ3RXo5WnljUzJhN2ZqeHkzQ2JIOUVmQUh0aXNoOFNGZlozRTFlNm02OEV1T2VJYUNwa3lmeldGU2ZQSUFrczBvOXBMYXNNVmsyekc1VVpDRnVMRVF2Q0hMMXZ5WDVERGtkWWtxZU0tdWR1Z2dWRnNLNFBRVWNHQktsVTRKMWww?oc=5",
-      "summary": "Googlebook Launches with Intel Core Ultra Series 3 Processors intel.com",
-      "source": "intel.com",
-      "published": "2026-09-27T09:15:09+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 65
     },
     "ce08cb49f934b350c69788ac2c357fae3c904b8ecd466713cfcb2ebad4f775bf": {
       "title": "AI whiplash jolts stocks as sentiment lurches from fear to greed",
@@ -2787,27 +2809,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "ca437d99f940483373a9c01822c7b09f5691fc356c9853c75c375835b5f304fe": {
-      "title": "유럽의 데이터센터 붐, 원자력 부활을 이끌까?",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5TM1cwQlFpOXdCeUZ2amRMenRrdjlNckZ1UFlRbkxrRGZob0k1RXZ5MmMwbXB3WkNzV0VtdVpmelZsblAzdWNNeHFMTHczbFZaS2tDTDZXTmhjd1JaVHM4UkdmSUJ3UTcwdXc?oc=5",
-      "summary": "유럽의 데이터센터 붐, 원자력 부활을 이끌까? Investing.com 한국어",
-      "source": "Investing.com 한국어",
-      "published": "2026-09-27T09:59:00+00:00",
-      "feed": "infra_ko",
-      "stage": "candidate",
-      "precheck_priority": 85
-    },
-    "19a4e237da2c6b2e51fc0f5e8e2e2629a64838f38d8e0e0d52d9b33a2dd4d9e9": {
-      "title": "Where Will SpaceX Stock Be in 5 Years?",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZ0Z3SnprSk5pbk02RUZQREt0N0IwOVh6ckpkY2ZpeEVoMUxNTFptOTZLbjE5eXVJRUhsaXI0UDNRTmZFN0h2dkNOTlRpajFDZUpJTmxfQVpxMW5zNGMzV3NqcnhYM040SFUxVGloa1ZBTWViNmFfQWN2N29xYnM0ZGJtMEhaR3N4RmFlMThobExiT1lBb1Nfd2ZFc3lINlhjWDYxejFna0U5OHBuT0hpeUVuRmQtVzhMZTczWk8wTQ?oc=5",
-      "summary": "Where Will SpaceX Stock Be in 5 Years? The Globe and Mail",
-      "source": "The Globe and Mail",
-      "published": "2026-09-27T16:21:22+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
     "2903e1becb37a6ff2c723d531255fba9dabd87fb55ab088c895585201573c04a": {
       "title": "Bessent Urges Fed to Keep ‘Open Mind’ on US Inflation Outlook",
       "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOY2pnTkhROFJUNVNTT0ZtM1Nwb3FRblR6T2c2MnloU2xnUjEtLTFWcWRzczZRdTBGZEtsRkdkaDNOX3lkUlVGMTNjTlN6ekxldnM4YXlmaVkxUEtvc3AtUkRydU5BdHkxMnc0YjVNNnE5Qk9MSGZ5czhVemxRVDYxeHVCaXRYaVVoSFBqM3JERjBEMjFSWjFEeFNkcndoQmlYc3hoYVR6dG5KcE56MXMyZWFMRHpEX1dteDI2OURzQW5KX3F1MXlObklEVEJCQQ?oc=5",
@@ -2828,16 +2829,6 @@
       "feed": "executive_role_5",
       "stage": "candidate",
       "precheck_priority": 60
-    },
-    "5d97837eba6afcba5cc0c7c83db97344af9347228cd8c95d5b7664b923ae3f0e": {
-      "title": "Bill Gates calls for federal AI safeguards beyond industry self-regulation (OPENAI:Private)",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdEZyeWJnTmQ0V284dlFrckIyYTFnekpmUjdDbFNhWGhDdWs2bkxndklRTHB4U09zTWFKNVdPcHBfR01qRmdIQVRJTGdrak5CQ1BQODljdnV3dnFYYms5cWdtNGUyRjBDY3N4dVlSUm1rN2FiVk5zWWE3eGcwcThkc3l3OTlmZ2dRRlB6ZTVGeHQ2Yng1XzNvWm5CRWowOTBvQnFBQmV0YkJGczdyYmZJZjRn?oc=5",
-      "summary": "Bill Gates calls for federal AI safeguards beyond industry self-regulation (OPENAI:Private) Seeking Alpha",
-      "source": "Seeking Alpha",
-      "published": "2026-09-27T16:00:04+00:00",
-      "feed": "policy_export",
-      "stage": "candidate",
-      "precheck_priority": 85
     },
     "2c7410495f9c54b20e4ac80c637bf68b1dbc13f9e8a5881ad03280b52cc4dbff": {
       "title": "Microsoft’s AI Investment Could Pay Off for Years. Here’s My Price Target",
@@ -2909,59 +2900,6 @@
       "source": "TradingKey",
       "published": "2026-09-27T12:22:43+00:00",
       "feed": "memory_roadmap",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "4f67f89426cfee1264bcb9c05a1ebe19604d5e6cd79e2fc22eedec93c3ffb15e": {
-      "title": "Gene Munster Says Personalized AI Could Be Apple, Meta’s Next Big Profit Machine — 'Numbers So Large They’re Hard To Believe'",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNWGpPYjhMVm11MTd4b3RhMmNFeG5XVTFKVTJsVnVpRWRnWHhTZ2ltTWtabnhGdlQwR1lPZXFsN2Z1Y0EzTXY4cXJUdzdiZFE1SmR3T1ZmLXA4UGNMZi1BelFzMXhxTlhJaWxvYVNLb3htQ0dsZDNGeU1nUDZvanE1cTRTRnBwcUNsMzU2a2sxSTBILWw1blllSmpxLUVRdw?oc=5",
-      "summary": "Gene Munster Says Personalized AI Could Be Apple, Meta’s Next Big Profit Machine — 'Numbers So Large They’re Hard To Believe' Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-27T11:11:36+00:00",
-      "feed": "agents_usage",
-      "stage": "candidate",
-      "precheck_priority": 85
-    },
-    "e0ac00c219f132f658b308b7c02fe1e8c72f3db2f34cc56056531e95300a5eeb": {
-      "title": "Anthropic just handed Akamai a game-changing deal",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeFE2a1hxenZyM05nejF0SlAwWnJrUkxDdUFjWDZKbVhGemVwTDFNa21fMkQ2a3daRGdCeGxxSTFsSGluVVRadWMxdDhOb3pDVFdFXy12TVk1RFZsRHk0MUwwM2JpRUNpbHNralE5MzltejNMNTUtenlxSU10cjB4Y3E0SmlDN1k3VmZMdU5IZ1BteWtEMzZfdzBsUTF2Zw?oc=5",
-      "summary": "Anthropic just handed Akamai a game-changing deal Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-27T17:47:00+00:00",
-      "feed": "ai_company_0",
-      "stage": "candidate",
-      "precheck_priority": 85
-    },
-    "8b05550870395cc703095f06f6ab7933743eb0a5ecd08a0b84cca33eccd27e39": {
-      "title": "Micron Technology Stock (MU) Opinions on Analyst Upgrades and Earnings Anticipation",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZ0FrenZZcnVMSUppLVphbmNQcDFVZ2tzNmMzekZ0d21UMUhYbkk1YzJUR2ZLRl9abVJVS3Q5VGljRXlJUWltZHZKRmxOeUQ3eHJ6NTYzbGttV200QmxyWjZOMWphSEZNckNNSHp1VE5qdlExMk1UZlJkODVFa2tONS1XdjZ0Uy1hZVNaNHE1VlRqbXVBbndRMElFQ2tURE9xa09Ic1ljdGFQMmJqUFpYTGV6eDF2c2o5ckhzOQ?oc=5",
-      "summary": "Micron Technology Stock (MU) Opinions on Analyst Upgrades and Earnings Anticipation Quiver Quantitative",
-      "source": "Quiver Quantitative",
-      "published": "2026-09-27T17:32:00+00:00",
-      "feed": "chip_company_1",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "f1417d7c13ba00e0d89ba8fec01198677747a199b616e94e877fdc0158e77260": {
-      "title": "1 Green Flag and 1 Red Flag for SpaceX Investors",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNVWJxT3FaT1QtQ3FaOUFqMnpIWjhzeFIwRl9QaEd4d0k1SzRDbFdBQkNKa3VfVnI4UFY0QTU4Z0hTT1lZWXBIRTlhN1FtVldMdGU4YzBiVEJUU3FwTGFyakhrQ3FJT1FwY25tQ21KNmxxYUZZdlBKa3pIYi15WG95ck9DU0Itcm9Wd0JHLWJ1V0RVZTVUVnlHSjdVeDBfaEVDV1QtanV3UU5qV3VuOVZQNXJUZzhZWk5rZnBsZHFlSzdZdVJjU3c?oc=5",
-      "summary": "1 Green Flag and 1 Red Flag for SpaceX Investors The Globe and Mail",
-      "source": "The Globe and Mail",
-      "published": "2026-09-27T17:30:04+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "cd8f8612d3d1421a7069cb59fdfca3b98883855333b9690c2eee63db6e26a9b0": {
-      "title": "The repricing of human work in the age of AI",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNGNfdFBrdzgtWWRFZVJibWFfSDJtdzBjMTRMRkxFdFlLWXlVdG5ucnVHbkNkRU9UVTJhSVVoc25PNHFfdUY4bjBTRGJ1dmlGY3ctN3ZCTUdwZkg3b2pWTTRzOUFsR3ZUN2Q5ak9uRUZoSXl6b250OXh6YjRSMm5fWmZrcWNoRzR0a0JhZzU3cjRJQ0dTS3FXN1V3cnIzc2N3Z0ZqZUVuaGVCZ25aOTI4SWhqNNIBuAFBVV95cUxPcWUxdHluekktcDJQU1NzSmo5bC1LdGxBZ2VTa3dKdkdsNDhjWVJEQ1lkMy15ZnFablQzOTNfOHJuNXFyTWhlb1lJQ0VXMDlJTDdhd0NvMmRJLVo1NTNxT2tjdjREUTZxbDVPckNjTDZ4ZHZfQ2oyUVhKRTRmUklPZ1lpbF9XSUNJc3lvMl9BVWtRU0luTUJrbV96QkNmOVlKR0lkT0c0cjFHNlFWQzU4OHBHLUhWSUc1?oc=5",
-      "summary": "The repricing of human work in the age of AI The Manila Times",
-      "source": "The Manila Times",
-      "published": "2026-09-27T17:14:37+00:00",
-      "feed": "ai_capex_outlook",
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
@@ -3041,39 +2979,6 @@
       "stage": "candidate",
       "precheck_priority": 96
     },
-    "f6ba093c14e680ceb9f5239c50722c82cb88a5b0691bf844b8b3dcaab1fa9fd8": {
-      "title": "Michael Burry sends a stark warning to Big Tech stock investors",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOWVBGY0twQ0hITGtRcmtIa2ltQmF2TkhlTDVtMzNLS1NEUF9JM1hKNDRnQXNWd0RmcmF3eV84SjlwNmNjT0ZPRDA1cDhCWjFEM3dId2tLUDdSNGxTdHA3dG9UbjZXZ0dqazJ4NWdUQlNoeVpHUmRKc3ROM2tudk0zbDM0bXZYZ2w0NEE?oc=5",
-      "summary": "Michael Burry sends a stark warning to Big Tech stock investors Yahoo Finance Singapore",
-      "source": "Yahoo Finance Singapore",
-      "published": "2026-09-27T17:33:00+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "b5042bf36ebd27e9caf8c728a5daea949084e5f7478280724d2e693f5c2f1517": {
-      "title": "SpaceX's Five-Year Outlook: AI and Rocket Ambitions",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNeUNDc3F2ZVgzUEVfVVk0QmtRZFVVVExNUEJabFVQb0FyMWowRm1sZDFObVJaaVpVZ2RjeFQ3VnNtZE8ya2R4NWlic3c4am5KeExKOHUzTlNhV203WXBwSENobzZFN1FHd2VmMGNIbndFNUkyUms1cEQ5WXpxNDNXV0FSdFRfYkFiZWc?oc=5",
-      "summary": "SpaceX's Five-Year Outlook: AI and Rocket Ambitions intellectia.ai",
-      "source": "intellectia.ai",
-      "published": "2026-09-27T17:16:38+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "c4bf21c24e471106e151ba289ed76b692cd140b565817bc886c51cc408d0d01a": {
-      "title": "The repricing of human work in the age of AI",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNGNfdFBrdzgtWWRFZVJibWFfSDJtdzBjMTRMRkxFdFlLWXlVdG5ucnVHbkNkRU9UVTJhSVVoc25PNHFfdUY4bjBTRGJ1dmlGY3ctN3ZCTUdwZkg3b2pWTTRzOUFsR3ZUN2Q5ak9uRUZoSXl6b250OXh6YjRSMm5fWmZrcWNoRzR0a0JhZzU3cjRJQ0dTS3FXN1V3cnIzc2N3Z0ZqZUVuaGVCZ25aOTI4SWhqNNIBuAFBVV95cUxPcWUxdHluekktcDJQU1NzSmo5bC1LdGxBZ2VTa3dKdkdsNDhjWVJEQ1lkMy15ZnFablQzOTNfOHJuNXFyTWhlb1lJQ0VXMDlJTDdhd0NvMmRJLVo1NTNxT2tjdjREUTZxbDVPckNjTDZ4ZHZfQ2oyUVhKRTRmUklPZ1lpbF9XSUNJc3lvMl9BVWtRU0luTUJrbV96QkNmOVlKR0lkT0c0cjFHNlFWQzU4OHBHLUhWSUc1?oc=5",
-      "summary": "The repricing of human work in the age of AI manilatimes.net",
-      "source": "manilatimes.net",
-      "published": "2026-09-27T17:14:37+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
     "4b428900cf8b8b7053c0e9f95878e64ebe19a29b71b18dd9fe6fe5fc7a3ca055": {
       "title": "Bessent Urges Fed to Keep ‘Open Mind’ on US Inflation Outlook",
       "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOY2pnTkhROFJUNVNTT0ZtM1Nwb3FRblR6T2c2MnloU2xnUjEtLTFWcWRzczZRdTBGZEtsRkdkaDNOX3lkUlVGMTNjTlN6ekxldnM4YXlmaVkxUEtvc3AtUkRydU5BdHkxMnc0YjVNNnE5Qk9MSGZ5czhVemxRVDYxeHVCaXRYaVVoSFBqM3JERjBEMjFSWjFEeFNkcndoQmlYc3hoYVR6dG5KcE56MXMyZWFMRHpEX1dteDI2OURzQW5KX3F1MXlObklEVEJCQQ?oc=5",
@@ -3083,28 +2988,6 @@
       "feed": "ai_capex_outlook",
       "stage": "candidate",
       "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "31ac8f212acca61a5c09ebc9a946ce1af00c395367a4324eb9457fbd201baf50": {
-      "title": "Micron Technology Inc (MU) Stock Analysis & Forecast",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB2cjlJNEFoZnN6al9fVWlOSktTV2tWRzJ1c0c2SklreGhaeHF5VlZlSjNNRE1SaXlnaUVsQ1FaMXFtZUlvM19kUzhHdURNU1VkNmNhLTNPSDNtXzBpSHNZS0xkNA?oc=5",
-      "summary": "Micron Technology Inc (MU) Stock Analysis & Forecast TradingKey",
-      "source": "TradingKey",
-      "published": "2026-09-27T15:07:15+00:00",
-      "feed": "memory_market",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "0cd9162f94f36d4bfa1bae59c1fb106720bf565c582c2724d51666394416dfca": {
-      "title": "OECD Expects AI Boom to Help Offset Middle East Energy Shock for Now",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWTA0bXNxOVRkM2NyMTdDRGZ3TjBORTFMSnp1dlBMUEI4TzZEYnpxTF9sNkNkTG5Bd1VNc3pseTIzamtrd25UUGNDZDZnUndQV3pYNnRBTUhDQ2ZfNXZ4LUVNVWl2clhFTzh2OTRtaTA2WTF0RE9HRHl1dUdEVS14VkVzenFMSTh0dFhiVVJqU1U5SUpxN2hackVXSlc2R0FL?oc=5",
-      "summary": "OECD Expects AI Boom to Help Offset Middle East Energy Shock for Now EnergyNow.com",
-      "source": "EnergyNow.com",
-      "published": "2026-09-27T14:46:47+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
     "6a72e37237f70fab6cc8b4752a69f7a94bcd9a9bd429430e774e73d6eef8749c": {
@@ -3140,16 +3023,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "a80b5749085c06cd8bf3d702a98c9efe90c72acb24a81f7b29f2ad25f4b75ef9": {
-      "title": "Rising US bond yields could make AI infrastructure more expensive — CNBC",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZ25WT003ZWdYbU9EUFpYTWZSYTJSUGtRMWtiVVp0Z0pKRUswaVlpNmhyUlB4ODI3M1I1cks2WFZad0QwOEttLXNTNXJkSkp3TjJBSHpXZlhtZ3Bla0hicmdoZXl6NkxyallLdjNncUxuLVA5VFRkWVN5RDFJdnNlMGxMTXhYMURZaGh2UWVDYjRKM3k5QkNhWTRFcTZjeUljWWtwU2pIeEViM2pLWFNz?oc=5",
-      "summary": "Rising US bond yields could make AI infrastructure more expensive — CNBC ua.news",
-      "source": "ua.news",
-      "published": "2026-09-27T11:56:58+00:00",
-      "feed": "ai_financing",
-      "stage": "candidate",
-      "precheck_priority": 80
-    },
     "dc0a97280ceebe4168501d0d5f8c8a86fbf4d2ddb18e59d082e7980da3eca3bc": {
       "title": "Inside the workforce housing attracting Meta's data center workers",
       "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOdWJsZEk3emJIR05kVUgzT0M3dkhhMUJISWtXc21YTTlobFdDZVk4VVdhcXNUa1kwbzNObGdoRWNCS3d2RklsRjVZV21YemQzV01KMUhxcHBqUDFBdGdrcWdSNEptYldGamw5WDQ5QUs0aVZEU1BmT2V0Nlk1eDFyTGlERkpmN3Y2SVJ1eXIxa3EwRTVMNklucVk4UVA2WkJCZVE?oc=5",
@@ -3157,6 +3030,39 @@
       "source": "businessinsider.com",
       "published": "2026-09-27T10:41:28+00:00",
       "feed": "hyperscaler_longterm_datacenter",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "ef0ebbe074cbdc1284686626bc13727d63a180b9b09838b42d1b3e96a040c9ed": {
+      "title": "Bessent Urges Fed to Keep ‘Open Mind’ on US Inflation Outlook",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOY2pnTkhROFJUNVNTT0ZtM1Nwb3FRblR6T2c2MnloU2xnUjEtLTFWcWRzczZRdTBGZEtsRkdkaDNOX3lkUlVGMTNjTlN6ekxldnM4YXlmaVkxUEtvc3AtUkRydU5BdHkxMnc0YjVNNnE5Qk9MSGZ5czhVemxRVDYxeHVCaXRYaVVoSFBqM3JERjBEMjFSWjFEeFNkcndoQmlYc3hoYVR6dG5KcE56MXMyZWFMRHpEX1dteDI2OURzQW5KX3F1MXlObklEVEJCQQ?oc=5",
+      "summary": "Bessent Urges Fed to Keep ‘Open Mind’ on US Inflation Outlook Bloomberg",
+      "source": "Bloomberg",
+      "published": "2026-09-27T16:19:18+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 78,
+      "precheck_override": "critical_event_force_review"
+    },
+    "135c0fd7832b551e80fe4366b9d58d8243f770dd66fe5635a539481de77a416e": {
+      "title": "OECD Expects AI Boom to Help Offset Middle East Energy Shock for Now",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWTA0bXNxOVRkM2NyMTdDRGZ3TjBORTFMSnp1dlBMUEI4TzZEYnpxTF9sNkNkTG5Bd1VNc3pseTIzamtrd25UUGNDZDZnUndQV3pYNnRBTUhDQ2ZfNXZ4LUVNVWl2clhFTzh2OTRtaTA2WTF0RE9HRHl1dUdEVS14VkVzenFMSTh0dFhiVVJqU1U5SUpxN2hackVXSlc2R0FL?oc=5",
+      "summary": "OECD Expects AI Boom to Help Offset Middle East Energy Shock for Now energynow.com",
+      "source": "energynow.com",
+      "published": "2026-09-27T14:46:47+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "e638fef344c46510a7a088aaae6ecfc8f2a2ff4c6635791909944a3ed2dca84d": {
+      "title": "AI whiplash jolts stocks as sentiment lurches from fear to greed",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONm5faktwTjUtTkRWemRvLWtzaVdETkJubi1LZXVkNFJtckp2RS1qYXVTeHVHN1hNTWtMYzVuSDZUZlN0UDBwUFF4eEI1SWxlMUJJQWktd2R0VktnbHktZVlQOFF0ZWpYU0ZFdWhvdjBCeXNGQTFKbTl6T1N5azlHY3JuTmFDYTUyVXpSck5NM3RRZ00xR1pxbFZWbGpwMUNRaXE0RERIOA?oc=5",
+      "summary": "AI whiplash jolts stocks as sentiment lurches from fear to greed businesstimes.com.sg",
+      "source": "businesstimes.com.sg",
+      "published": "2026-09-27T14:36:00+00:00",
+      "feed": "ai_capex_outlook",
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
@@ -39744,6 +39650,300 @@
       "policy": "ai-industry-v4.6-executive-origin-radar",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "Micron Technology (MU) Could Be 46% Undervalued As AI Memory Bets Face Earnings Test"
+    },
+    "cab55c45ebf60d6482f5241409272732ad3421cec1fefe69c4c3bc13d4e76b5c": {
+      "ts": 1790544452.460913,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "광섬유 융착 접속기 시장 전망으로, AI 및 데이터센터와 직접적인 연관성이 낮은 분야.",
+      "title": "Optical Fiber Fusion Splicers Market Forecast to 2035: FTTH and 5G Backhaul to Drive Growth - News and Statistics"
+    },
+    "e404c629de362f117154fdab574f3f02cd8d175de0bb64166758b9679cf71b37": {
+      "ts": 1790544452.46099,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Spectrum Control 인수를 앞둔 소식으로, AI 반도체 산업과 직접적인 연관성이 낮음.",
+      "title": "Greenbriar Nears $1.8 billion Spectrum Control Purchase"
+    },
+    "7761e47c6b31d1765e55ab7cf9988ba48aea19e544311295b9b48f836359ab30": {
+      "ts": 1790544452.461126,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Microsoft AI 투자에 대한 비판적인 시각으로, 구체적인 산업 데이터나 변화를 제시하지 않음.",
+      "title": "Microsoft Knew How Horrific Their AI Push Was"
+    },
+    "c2163cd4c4b117ad8b16e59db082dd00a7e924230df315ce6fe4155ee013b80c": {
+      "ts": 1790544452.461236,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "일반적인 규모의 경제에 대한 논평으로, 구체적인 산업 뉴스에 해당하지 않음.",
+      "title": "Size begets size"
+    },
+    "0b8611aa904b8d1d0a5d47f941973e7b837fbc03b3c1883bfc972e9c6324abbe": {
+      "ts": 1790544452.461375,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Sterlite Technologies의 EBITDA 마진 가이던스 상향은 특정 기업의 재무 전망으로, AI 반도체 산업 전체의 영향력은 제한적.",
+      "title": "Sterlite Technologies raises FY27 EBITDA margin guidance to 23%"
+    },
+    "a0c01b8b4433c6ea105142bd2effaa2189b379f9aca218e7d704ba2601379065": {
+      "ts": 1790544452.461487,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "정치인과의 만남 예정 소식으로, AI 산업의 기술, 생산, 수급 등 핵심 지표와는 거리가 멂.",
+      "title": "Anthropic’s CEO is about to have dinner with President Trump"
+    },
+    "3a9a13df5260199e1b31399e1c929513989d5788f48f879873b8fecb35271726": {
+      "ts": 1790544452.461564,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "정치인과의 만남 예정 소식으로, AI 산업의 기술, 생산, 수급 등 핵심 지표와는 거리가 멂.",
+      "title": "Trump and Anthropic CEO Dario Amodei Set for White House Dinner"
+    },
+    "bcb1d48d03d812c6faa66a616898eebe8fb7a4839f0b2cae599c8637becadeee": {
+      "ts": 1790544452.461638,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "정치인과의 만남 예정 소식으로, AI 산업의 기술, 생산, 수급 등 핵심 지표와는 거리가 멂.",
+      "title": "Anthropic CEO Amodei to Meet Trump With AI Safety Concern Rising"
+    },
+    "34f8d7bf675e54785e1f0493d690822d0cdcb95ede39528328fec013edde6bb3": {
+      "ts": 1790544452.461712,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "정치인과의 만남 예정 소식으로, AI 산업의 기술, 생산, 수급 등 핵심 지표와는 거리가 멂.",
+      "title": "Trump to have dinner with Anthropic CEO Amodei at the White House"
+    },
+    "ca3f1d42901d82507b470fd459c756c3e3b55dd7f065e868b80ed5618c62de66": {
+      "ts": 1790544452.461834,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "AI 기반 샘플러 킥스타터 캠페인으로, 산업 전반에 미치는 영향이 미미.",
+      "title": "Thoughtful Things launches Kickstarter campaign for AI-powered Engram sampler — The Verge"
+    },
+    "35b73979b4576da7868869c13a4dd5911c7ad23c220b689bd16cb692f4becb68": {
+      "ts": 1790544452.461932,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "두 기업의 AI 전력 관련 비교 분석으로, 직접적인 공급망, 생산, 가격 변동과는 거리가 멂.",
+      "title": "GE Vernova vs. Bloom Energy: Which AI Power Stock Has the Edge?"
+    },
+    "0565fd2a09a9284263fe26979bf10896abf6eae4cabd303c51b521c62fbe8dc2": {
+      "ts": 1790544452.462034,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Samsung Electronics의 배당 소식으로, AI 반도체 산업의 생산, 수급, 기술 변화와는 직접적인 연관성이 낮음.",
+      "title": "Samsung Electronics sets record Korea dividend; investors buy by Sept. 28 - CHOSUNBIZ"
+    },
+    "132c65f30e252584a0df0f7bce5e1c6aef201ca16aab31a16d8d1290881f6149": {
+      "ts": 1790544452.462116,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Meta Platforms 주가 상승에 대한 분석으로, 구체적인 사업 변화나 기술적 내용은 부족.",
+      "title": "Why Meta Platforms Stock Jumped 13% This Week"
+    },
+    "b2da01f8589684f6f663608b23ad219414b833c8337713e47f061fb8567bb2fd": {
+      "ts": 1790544452.462432,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Aeroflex의 EBITDA 마진 및 생산 능력 관련 전망으로, AI 반도체 산업과 직접적인 연관성이 낮음.",
+      "title": "Aeroflex targets 25% EBITDA margin as skid capacity scales to 15,000 units"
+    },
+    "aac586cebcd529efd695702c91bd5ff20918d4e57f2c9931496bc7ae1064f890": {
+      "ts": 1790544452.462541,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "AMD CPU 할인 정보로, AI 반도체 산업의 핵심 동향과는 거리가 멂.",
+      "title": "AMD Ryzen 9 9950X deal drops this premium workstation CPU to near its lowest ever price on Amazon"
+    },
+    "805d2fb4d5cca2bdfd01f32e33bc9f49e5edcf2a7039e7ffe4ed414ea0d2ac70": {
+      "ts": 1790544452.462651,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "OpenAI의 ChatGPT Pro 요금제 이름 변경은 단순한 명칭 변경으로, 산업에 미치는 영향이 미미.",
+      "title": "OpenAI Renames ChatGPT Pro’s 5x and 20x Plans on Pricing Page"
+    },
+    "0524e6b7c1b24b115993430406e604f26ada591923437c4c7b392d4eb7db3755": {
+      "ts": 1790544452.462813,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Hitachi Energy의 배터리 에너지 저장 시스템이 NVIDIA DSX Ready로 인증된 소식은 특정 제품 인증으로, 산업 전반의 영향력은 제한적.",
+      "title": "Hitachi Energy’s battery energy storage system qualifies as NVIDIA DSX Ready BESS"
+    },
+    "e7c9048b6336e8dd880e26123a48b21c4f7cb0c1b5d5e6d63bd4433b9d98d47f": {
+      "ts": 1790544452.462899,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "IIT 델리 졸업생들의 스타트업 자금 조달 소식으로, AI 반도체 산업과 직접적인 연관성이 낮음.",
+      "title": "IIT Delhi graduates raise $1 million for ByteAsk"
+    },
+    "aaa6328096417a99c0782f4279a0795f9e569548f2d4ead2f312ea23a0d89f43": {
+      "ts": 1790544452.462997,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "미중 정상회담 결과로 AI 대화 및 관세 인하 합의는 거시적 경제 정책 변화이며, 반도체 산업에 미치는 구체적인 영향은 불명확.",
+      "title": "China, US agree to AI dialogue, tariff cuts on US$30 billion in goods during Xi visit"
+    },
+    "952bd6787dd968f289c5dee6c3b013237abfde000bc89bf95f37927eeac74f59": {
+      "ts": 1790544453.140827,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Microsoft and Chevron Sign 20-Year Power Deal For Texas Data Center"
+    },
+    "d6085a4910726f14ca33105865a64b2bde9e60c2c7954738c97343f750d81f9c": {
+      "ts": 1790544453.140864,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Samsung Electronics' Q3 Operating Profit Poised to Top 100 Trillion Won Amid Memory Boom"
+    },
+    "672e1efc1b33211512bbfae3f42bff62d138b7ab88df3c3c6e7b69991662f5cb": {
+      "ts": 1790544453.14089,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "[반도체 슈퍼사이클] 연간 영업이익 370조 전망…삼성전자, 사상 첫 '100조 클럽' 눈앞"
+    },
+    "5549127354985683232e7eb9c1e94ec5d0cb6ee7a939d35134df733f2949a604": {
+      "ts": 1790544453.140912,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Nvidia Stock: China May Reopen AI Chip Sales to ByteDance and Alibaba"
+    },
+    "e1c796086a8944c1f18ebc10c96c364d06c044e97d53711e0a67f661c887f16c": {
+      "ts": 1790544459.513239,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI pauses frontier model training after AI agent escapes sandbox via DNS queries"
+    },
+    "ba1969b7bcefbba93bd1769ed1094125782006d25ef4be1862e6317abafbe4b7": {
+      "ts": 1790544459.51328,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron stock tops $1,080 as Wall Street bets AI memory demand outruns supply"
+    },
+    "aac40492f4ccfa51ea0691bf78f67a5dbf39ce432e0359a9be86b129a56e07fe": {
+      "ts": 1790544459.513313,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI Halts Training Run After AI Agent Finds Route To External Chatbot"
+    },
+    "0c09b9f0b81de9c6757b813008cba2b092638f0d3ffff6e0bf2b47ad23fab74b": {
+      "ts": 1790544459.513343,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI Pauses Advanced Model Training After AI Agents Breach Safety Controls"
+    },
+    "4d804a6b344ed0af72e4aa07aca732be9f802a306d7a1d30a495b95480f9fd24": {
+      "ts": 1790544459.513371,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OpenAI halts training of AI models after another escape"
+    },
+    "c03a25bf3ca18fd8653f922fb9e6e102a81b03380a15e810f3313628bcbbb5a7": {
+      "ts": 1790544459.513464,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Greg Abel Deployed $10 Billion Into Alphabet's Private Placement, Building a $38 Billion Stake That's Now Berkshire Hathaway's Third-Largest Holding. Is Alphabet Becoming Berkshire's New Apple?"
+    },
+    "1e0d12e5254b7824e10fbac4e864f5aafb6af3b85ee563602c4f66a50dd6fa57": {
+      "ts": 1790544459.513498,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "As AI Racks Get Hotter, Vertiv Expands The Business Around Data Center Cooling"
+    },
+    "85a563852f95cd51c4f678e358754449297c5ca5b886668f7a62f8dea19ce84a": {
+      "ts": 1790544463.240936,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Expansion Vessels Market Forecast to 2035: Growth Driven by Global HVAC and Water Infrastructure Investment"
+    },
+    "468c26b603b8ef92db57150318415f678a99186444a895af9ec9aca2eaf92527": {
+      "ts": 1790544463.245902,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Microsoft revamps Copilot with code generation, agentic AI tools"
+    },
+    "5d97837eba6afcba5cc0c7c83db97344af9347228cd8c95d5b7664b923ae3f0e": {
+      "ts": 1790544473.261946,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Bill Gates가 AI 규제에 대한 연방 차원의 안전장치를 촉구했다는 내용은 AI 산업 전반에 영향을 줄 수 있는 사안이지만, 구체적인 내용이 'unavailable'이며 'trusted_rss_requires_review' 상태에서 본문이 없어 사실 확인이 불가능하다. 또한, OpenAI가 비공개 기업으로 명시되어 있어 투자자 관점에서 직접적인 정보로서의 가치가 제한적이다. 따라서 현재 정보만으로는 중요 뉴스로 분류하기 어렵다.",
+      "title": "Bill Gates calls for federal AI safeguards beyond industry self-regulation (OPENAI:Private)"
+    },
+    "ca437d99f940483373a9c01822c7b09f5691fc356c9853c75c375835b5f304fe": {
+      "ts": 1790544473.261952,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "유럽의 데이터센터 붐이 원자력 부활을 이끌 수 있다는 내용은 AI 인프라와 에너지 산업 간의 연관성을 시사하지만, 'unavailable' 상태이며 'trusted_rss_requires_review' 상태에서 본문이 없어 구체적인 사실 확인 및 투자 관점에서의 중요도를 판단하기 어렵다. AI 산업 투자자가 반드시 알아야 할 핵심적인 새 사실로 보기 어렵다.",
+      "title": "유럽의 데이터센터 붐, 원자력 부활을 이끌까?"
+    },
+    "f6ba093c14e680ceb9f5239c50722c82cb88a5b0691bf844b8b3dcaab1fa9fd8": {
+      "ts": 1790544473.261955,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Michael Burry가 빅테크 주식 투자자들에게 경고를 보냈다는 내용은 투자 심리에 영향을 줄 수 있으나, AI 및 반도체 산업의 구체적인 기술, 시장, 기업 실적 변화와는 거리가 멀다. 'trusted_rss_requires_review' 상태에서 본문이 없어 구체적인 경고 내용 파악도 불가능하며, AI/반도체 산업 자체의 근본적인 변화를 다루지 않아 중요 뉴스로 분류하기 어렵다.",
+      "title": "Michael Burry sends a stark warning to Big Tech stock investors"
+    },
+    "bdab8b023c78d43440aca67caa3f000eb62577acf938179c1d5679457489659e": {
+      "ts": 1790544473.926337,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Microsoft adds usage‑based billing to Copilot, expanding AI agent pricing model"
+    },
+    "3dd21c481d80cf69c222745cb076195bc40330d56dc5dc5ba611883fe221e204": {
+      "ts": 1790544476.73115,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "California firm intends to build data center at Chouteau"
+    },
+    "89f4462ed4d7c4a15d37f66fa50143eb0b6234ac7eb52fd599f6cbd1837b83de": {
+      "ts": 1790544476.736245,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Will Micron Stock Surge or Slump After Earnings?"
+    },
+    "148321b8a4537771fe4209af03af45ac1cde8e7440fadcd9559304b849b92dfd": {
+      "ts": 1790544476.736269,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Will Micron Earnings and Solidigm's IPO Rescue DRAM ETF?"
+    },
+    "5e55ac502768530a4a4b48955d094c60c5a25e3adbd4b8c06b11320cc4d45848": {
+      "ts": 1790544476.736297,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Karnataka High Court Mandates Strict Functional Comparability in Transfer Pricing: Analysis of PCIT Vs Applied Materials India Pvt. Ltd."
+    },
+    "8b05550870395cc703095f06f6ab7933743eb0a5ecd08a0b84cca33eccd27e39": {
+      "ts": 1790544481.744495,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron Technology Stock (MU) Opinions on Analyst Upgrades and Earnings Anticipation"
+    },
+    "f1417d7c13ba00e0d89ba8fec01198677747a199b616e94e877fdc0158e77260": {
+      "ts": 1790544481.744529,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "1 Green Flag and 1 Red Flag for SpaceX Investors"
+    },
+    "b5042bf36ebd27e9caf8c728a5daea949084e5f7478280724d2e693f5c2f1517": {
+      "ts": 1790544481.744549,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "SpaceX's Five-Year Outlook: AI and Rocket Ambitions"
+    },
+    "cd8f8612d3d1421a7069cb59fdfca3b98883855333b9690c2eee63db6e26a9b0": {
+      "ts": 1790544481.744569,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "The repricing of human work in the age of AI"
+    },
+    "c4bf21c24e471106e151ba289ed76b692cd140b565817bc886c51cc408d0d01a": {
+      "ts": 1790544481.744587,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "The repricing of human work in the age of AI"
+    },
+    "19a4e237da2c6b2e51fc0f5e8e2e2629a64838f38d8e0e0d52d9b33a2dd4d9e9": {
+      "ts": 1790544481.744605,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Where Will SpaceX Stock Be in 5 Years?"
+    },
+    "31ac8f212acca61a5c09ebc9a946ce1af00c395367a4324eb9457fbd201baf50": {
+      "ts": 1790544481.744626,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron Technology Inc (MU) Stock Analysis & Forecast"
+    },
+    "0cd9162f94f36d4bfa1bae59c1fb106720bf565c582c2724d51666394416dfca": {
+      "ts": 1790544481.744646,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "OECD Expects AI Boom to Help Offset Middle East Energy Shock for Now"
+    },
+    "4f67f89426cfee1264bcb9c05a1ebe19604d5e6cd79e2fc22eedec93c3ffb15e": {
+      "ts": 1790544481.80377,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "Gene Munster Says Personalized AI Could Be Apple, Meta’s Next Big Profit Machine — 'Numbers So Large They’re Hard To Believe'"
     }
   },
   "legacy": {
@@ -42858,6 +43058,27 @@
   },
   "archive": [
     {
+      "title": "Oracle, AI 확장 시험대에… 데이터센터 비용 상승 '새로운 난관'",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcTVqZGl5WkQ5Wll3RDc5QkRHeWhQWWR5MVhnUEpJUnNwMjNDSV93NDRRczNDTjJ3eEJKc3RHUVc2NVVKdHNza0k2Y3Ftc2NhVkRFVC0wRTd6amlpZEw2T3R1ZVpiV3RUVVIyY2dkd1p1dk5wUDBZU0kxQ2l4NDVXZld2X0UxR1VpTjd5S09KbWo1NjY0eVMyZjZn?oc=5",
+      "source": "Yahoo Finance",
+      "published": "2026-09-27T20:22:08+00:00",
+      "summary": "Oracle은 AI 사업 확장을 추진하는 과정에서 데이터 센터 건설 및 운영 비용 상승이라는 새로운 시험대에 직면하고 있다. 이는 AI 인프라 구축에 필요한 자금 조달 및 비용 관리 측면에서 주요한 도전 과제가 될 수 있다.\n데이터 센터 비용 상승은 Oracle뿐만 아니라 유사한 AI 인프라 확장 계획을 가진 다른 빅테크 기업들에게도 영향을 미칠 수 있으며, 전반적인 AI 투자 및 컴퓨팅 비용 상승으로 이어질 가능성이 있다. 이는 AI 서비스 가격 인상 또는 투자 계획 재검토로 이어질 수 있다."
+    },
+    {
+      "title": "美 국채 금리 상승, AI 인프라 비용 부담 키울 수도",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZ25WT003ZWdYbU9EUFpYTWZSYTJSUGtRMWtiVVp0Z0pKRUswaVlpNmhyUlB4ODI3M1I1cks2WFZad0QwOEttLXNTNXJkSkp3TjJBSHpXZlhtZ3Bla0hicmdoZXl6NkxyallLdjNncUxuLVA5VFRkWVN5RDFJdnNlMGxMTXhYMURZaGh2UWVDYjRKM3k5QkNhWTRFcTZjeUljWWtwU2pIeEViM2pLWFNz?oc=5",
+      "source": "ua.news",
+      "published": "2026-09-27T11:56:58+00:00",
+      "summary": "미국 국채 금리 상승은 AI 인프라 구축에 필요한 자금 조달 비용을 증가시켜 AI 프로젝트의 전반적인 비용을 상승시킬 수 있다. 이는 데이터센터 건설, GPU 구매 등 AI 인프라 투자에 부정적인 영향을 미칠 수 있다.\nAI 인프라 비용 증가는 빅테크 기업들의 AI 투자 규모 및 속도에 영향을 줄 수 있으며, 장기적으로 AI 서비스 가격 상승으로 이어질 가능성이 있다. 또한, 자금 조달에 어려움을 겪는 스타트업이나 중소 규모의 AI 기업들에게는 더욱 큰 부담으로 작용할 수 있다."
+    },
+    {
+      "title": "Anthropic, Akamai와 AI 인프라 위한 전략적 계약 체결",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeFE2a1hxenZyM05nejF0SlAwWnJrUkxDdUFjWDZKbVhGemVwTDFNa21fMkQ2a3daRGdCeGxxSTFsSGluVVRadWMxdDhOb3pDVFdFXy12TVk1RFZsRHk0MUwwM2JpRUNpbHNralE5MzltejNMNTUtenlxSU10cjB4Y3E0SmlDN1k3VmZMdU5IZ1BteWtEMzZfdzBsUTF2Zw?oc=5",
+      "source": "Yahoo Finance",
+      "published": "2026-09-27T17:47:00+00:00",
+      "summary": "Akamai가 Anthropic과 AI 모델 운영을 위한 GPU 인프라 지원 계약을 체결했습니다. 이 계약은 Akamai가 Anthropic의 AI 모델 구동에 필요한 컴퓨팅 자원을 제공하고 지원하는 내용을 포함합니다. 구체적인 계약 규모나 기간, 제공되는 GPU 사양 등은 본문 부재로 인해 확인되지 않았으나, AI 모델 개발사와 주요 인프라 제공업체 간의 파트너십이라는 점에서 업계의 주목을 받고 있습니다.\n이 계약은 Akamai에게는 AI 및 클라우드 서비스 부문의 새로운 성장 동력을 제공하며, Anthropic에게는 안정적인 AI 모델 운영 환경을 보장하는 중요한 발판이 될 것입니다. 또한, GPU 제조사 및 관련 반도체 기업들에게는 Akamai를 통한 간접적인 수요 증가 효과를 기대할 수 있습니다. GPU 공급망 전반에 걸쳐 긍정적인 영향을 미칠 수 있는 이벤트이며, 향후 AI 인프라 시장의 경쟁 구도에 변화를 가져올 가능성이 있습니다."
+    },
+    {
       "title": "AI 골드러시, 역대급 기업 채권 붐 견인",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPaElfYVI1TkRoZGlFOElMLWZ5VGdrbnYyTVBCZE9vVkp1UXB4bWpVOUJhWlZTbTREcW9MYk9qakN5TlJ4VEVLRHlHVE41M0ZHck5YajFXaU5oWlZwQmUxT0xTUmRDY3hWOTZMMHZsS2dSaC12RzBTNk5Xc0NOSEdzaTdlaVk4T0FWdXJPd2QwRFhHT0owbHEtd0dpaXdDa3ZuVFBPby1LNXNmMWYxdGhnWWRPME43dlNsWUJCRlJJTjJHUlRmOVJiQnNn?oc=5",
       "source": "Yahoo Finance",
@@ -43885,27 +44106,6 @@
       "source": "Bloomberg.com",
       "published": "2026-09-14T02:41:00+00:00",
       "summary": "Z.AI의 높은 현금 소진율로 인해 홍콩에서 알리바바와 유사한 형태의 자금 조달이 늘고 있다는 블룸버그 보도입니다.\nAI 스타트업의 높은 현금 소진율은 지속적인 자금 조달의 필요성을 야기하며, 이는 투자 유치 경쟁 심화 및 재무적 부담 증가로 이어질 수 있습니다. 반면, 자금 조달 시장의 활성화는 산업 성장에 긍정적인 측면도 있습니다."
-    },
-    {
-      "title": "Vertiv, AI 인프라 확대로 데이터센터 수요 강화 전망",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNnNIbXpaQ3JmbmlDVnJhS3k3UW1LVHVEUmxjZVpCMnFrQ2FVdV9VckRJYWNidE1BUUNjaHktZnQzVTU5X2F5MXNoNkJBbVhUMFgzVjNFdDl3WURoLW9TT2FxNHliOHVzMEVGdjJCLVpkQ0o0Ni03Z0I4bTQ5aUhuY1VQbmNWQUF2NVNIMkRoMTlrVjNCcURpT3Bn?oc=5",
-      "source": "Yahoo Finance",
-      "published": "2026-09-14T02:02:00+00:00",
-      "summary": "Vertiv는 AI 인프라 파이프라인 확장에 따라 데이터센터 수요가 강화될 것으로 전망했습니다. 이는 AI 관련 하드웨어 및 서비스 제공업체에 긍정적인 신호입니다.\nAI 모델 훈련 및 추론을 위한 컴퓨팅 파워 수요 증가는 데이터센터 구축 및 확장에 대한 투자를 촉진하며, Vertiv와 같은 관련 기업의 실적에 긍정적인 영향을 미칠 수 있습니다."
-    },
-    {
-      "title": "엔비디아, 앤트로픽 IPO에 100억 달러 투자 검토… 아마존, 이미 상당 규모 지분 보유",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQYUY1U1I2OXg0ZkhOdzQ4emlKOExjUDNXbzNqOHJFX0ZDbEt6QnRXT1lVNmdOZ05kbFVLX1RJRlhmcXdhT21uYTJfUmR3azE4MG5Kc1RJcUFxUFBiZjhIeUI4cjFfU0FMVXI4bndiN3pXNlJpd2R3YVRsUlA5X1pSaTFSMERoRDFMTThUdjdNS0hEZzQ?oc=5",
-      "source": "Yahoo Finance",
-      "published": "2026-09-13T10:36:18+00:00",
-      "summary": "엔비디아는 AI 스타트업 앤트로픽의 2조 달러 규모 IPO(기업공개)에 100억 달러를 투자하는 방안을 검토 중이다. 아마존은 이미 앤트로픽에 상당한 규모의 지분을 투자했다.\nAI 스타트업에 대한 대규모 자금 유입과 빅테크 간의 투자 경쟁 심화를 보여주며, AI 인프라 투자 및 경쟁 구도에 영향을 미칠 수 있다."
-    },
-    {
-      "title": "래리 엘리슨, 75억 달러 규모 오라클 주식 매각 취소",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOVB6czJZaDhRSDRwejNONzNKLUljb1hVdHUtSXE5UW5fbHI5MjBZN1FsS21BQlJyUjJNQVZLYzlyWG5tMWRSWldRYWxaQ0tzbFVkdU10OVpqN3RjTWVuT252VTFFbFc3ZjJTSlkwWUhfZjlqZEJTSzJ4Vlp4M1JBMnEyXzY?oc=5",
-      "source": "Financial Times",
-      "published": "2026-09-12T17:18:43+00:00",
-      "summary": "래리 엘리슨은 75억 달러 규모의 오라클(Oracle) 주식 매각 계획을 취소했습니다. 이는 최근 오라클이 AI 데이터센터 비용 증가로 인해 구조조정 계획을 7억 달러 확대했다는 소식과 맞물려, 회사의 재무 전략 및 AI 투자에 대한 시장의 관심을 증폭시키고 있습니다.\n오라클의 AI 관련 지출 및 재무 건전성에 대한 투자자들의 우려를 반영하며, 향후 회사의 자본 조달 및 투자 전략에 영향을 미칠 수 있습니다. 이는 AI 인프라 투자에 대한 기업들의 재무적 부담과 투자 결정 과정을 이해하는 데 중요한 단서를 제공합니다."
     }
   ]
 }
