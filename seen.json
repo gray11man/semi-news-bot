@@ -2665,6 +2665,48 @@
       "source_published": "",
       "source_modified": "",
       "message_id": 4971
+    },
+    "a812d2c79a0fee306d640ff8aebb82aa5d87612afe5226de982e8ce30c3e36e8": {
+      "ts": 1790630279.598731,
+      "title": "Volato Group’s Alignment Engine Subsidiary Signs $1.2 Billion in AI Infrastructure Orders with Large AI Customer",
+      "fact": "Volato Group의 자회사인 Alignment Engine이 대형 AI 고객으로부터 12억 달러 규모의 AI 인프라 주문을 확보했다.",
+      "source": "Yahoo Finance UK",
+      "rss_published": "2026-09-28T12:05:00+00:00",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPaXQ4RVV4NXBwVEtUOS1jc0kyYl9NQ0lwSjItLS1wd2p3N3NGNmpKYlV2Wm0weTEwNklCcUxXRG9fRFhTUC1vYVNFV2JEa1gzeENhSWYzLWhNODQwSzVMX3o2RjBiWWRZN3VOUkxyRlR2a0s0dnEya3pBZTdLTmpCekQ2WFhvNmpYUDZ1aEdvY3VsZ1k?oc=5",
+      "resolved_url": "",
+      "event_key": "Alignment Engine|계약|AI 인프라|12억 달러",
+      "new_fact_date": "2026-09-28T12:05:00+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4973
+    },
+    "c2f1b59c7071f1f0ce1a44728bb7bb1b0c8a0c96cf8cfd72b0ce0b1726c508af": {
+      "ts": 1790630281.264329,
+      "title": "Synopsys debuts Autopilot platform for developing chips autonomously using AI — New AgentEngineer platform is poised for 'general availability' by the end of 2026",
+      "fact": "Synopsys가 AI를 활용해 칩 설계를 자동화하는 Autopilot 플랫폼을 공개했으며, AgentEngineer 플랫폼은 2026년 말까지 일반 출시될 예정이다.",
+      "source": "Tom's Hardware",
+      "rss_published": "2026-09-28T16:35:00+00:00",
+      "link": "https://news.google.com/rss/articles/CBMivAJBVV95cUxPZ0RXeVhTZUt4THYyNGZva0Y0RlJub1BGdkoxcERqSHVCOG1HZW5QN3c4TDlnZUtZd0NCWWlieEo4Q3dLUlBRY0NXSE5SMVRYQ19BbnBZNXhtc2tZZ0QzSWV5NTNhZm02Vkc0ZmFCZW53a1BVVkx0RlUzYTg0NVBpVDdpd2pTd2s1REgyQzlrOHN1d0Z3Q1k4WXh2SjVNYjJ1WmpHR3N2emItVlVVbWZqX0sxZnEyeVczQlB3TUg2SHpMUWxrNks4WmxIY3JYT2szLXZ3SW9nX2t4ZC1HUDdRVXFlRUw1Y3QwaXlZQkVFYlY1M3NWbEZ6dVd4VVJUYVRmc0xTampIMGk1UFZTY3JpZ1BfQVZDc1RhVnliODVhZF8tblYwTlFndDRRcmo3MGltNTdpOFpQQ2l4SkU2?oc=5",
+      "resolved_url": "",
+      "event_key": "Synopsys|AI 설계 자동화|Autopilot/AgentEngineer",
+      "new_fact_date": "2026-09-28T16:35:00+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4974
+    },
+    "893ff775cd8e5a24ecf0c71e38d0dc275627bef0ae650e80e532de3fb0d44b75": {
+      "ts": 1790630282.943455,
+      "title": "AI Agent Startup Instinct Raises $1 Billion at $10 Billion Value",
+      "fact": "AI 에이전트 스타트업 Instinct가 100억 달러의 기업 가치로 10억 달러의 투자를 유치했다.",
+      "source": "Bloomberg",
+      "rss_published": "2026-09-28T14:28:38+00:00",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPazRMTDQ4OVJ0TF9KT1ZYaEkyLTFSNENZdmVTb1J4NElnZkFQTjd1T05Gb2p3ZGF4ckZObVFVanFzQU1OVkp4MXdFMUhwR3pacFhjVlFtM2QxV3V1UWFwbk9rTzQ3dzVCazhzTTJ1c0tXMlhhM2J1bU9YeU91anVvUzJYTnVGWWY3dk02SGJmeWMwUi1STHFibkdGNm9NVkotZWJKZjJfMDliaFdEdkMtMS14NA?oc=5",
+      "resolved_url": "",
+      "event_key": "Instinct|자금조달|AI 에이전트|10억 달러",
+      "new_fact_date": "2026-09-28T14:28:38+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4975
     }
   },
   "pending": {
@@ -2937,86 +2979,6 @@
       "feed": "semicap_earnings",
       "stage": "candidate",
       "precheck_priority": 75
-    },
-    "0129dc456b865d306a2a0c32818df7427a5db01227b2d8c46b4246519f454832": {
-      "title": "CoreWeave stock initiated with buy rating at Jones Trading on backlog growth",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPazlQM3FuUDR0bm9kcjNyc2lkcHVyQW1BM1pzUjVKWUczUzhRUTdsTF9DR2VpeE1XbTlGTVpta0F2bHUzV1dQbUNKM3dCeWR1dFhmWlV1dkhnZlFBQ3JMU3RJYXdnTmFVR0JlbDdFeXJHeWZ1SHNiRkhfYmFTSnRFT1p4LVNQR1puS3JWRjBsTjlESl9iRE1BWms4Q1o0QmlJQVlTVXc2VlhqM3VfTlo1ZzFXOXJEOG9sZnk2MHdZd2F3aVhrNWJQd2FWMUdVR1FWMXc?oc=5",
-      "summary": "CoreWeave stock initiated with buy rating at Jones Trading on backlog growth Investing.com",
-      "source": "Investing.com",
-      "published": "2026-09-28T09:16:28+00:00",
-      "feed": "neocloud",
-      "stage": "candidate",
-      "precheck_priority": 78
-    },
-    "1584ac084d7201b7d3330395c867d715d88cf9edbe28881dc3ddd0421f9ae03e": {
-      "title": "Midea To Unveil Industry-First Power-Cooling Hyperconvergence Architecture at Data Center World Asia 2026",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAtTWZSWXQyR2Rkekd5b2Z2cmJ5U2Q1dGhJcEptdE1TNG5YSFMyZE5seHhWdm9wUF9GaGN3TmRCNjc4UlNXdkFwakpQSWNLT2s3bGl1eWtHU2RpUQ?oc=5",
-      "summary": "Midea To Unveil Industry-First Power-Cooling Hyperconvergence Architecture at Data Center World Asia 2026 Japan Wire by Kyodo News",
-      "source": "Japan Wire by Kyodo News",
-      "published": "2026-09-28T09:12:00+00:00",
-      "feed": "cooling",
-      "stage": "candidate",
-      "precheck_priority": 80
-    },
-    "46c4645e7f66b20d5fb6e8590fd0396c0f8eb24012d2a42f50a4df6ef14bc6cf": {
-      "title": "Nadav Balila buys land for data center at Alon Tavor",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1GcmpWR1hZT0xPMHNvWURFZlhtZHdFLVZEbmk1MXhQRUUwS0xwTzh4T1F5WWtSR05LazQwVlpPVDdQSExQWlk3NzNCUVJLYXNHMnk2RkUxeFBpSWJTdzVGaGlNdWdKRmRnYVE?oc=5",
-      "summary": "Nadav Balila buys land for data center at Alon Tavor Globes - Israel Business News",
-      "source": "Globes - Israel Business News",
-      "published": "2026-09-28T09:09:16+00:00",
-      "feed": "ai_financing",
-      "stage": "candidate",
-      "precheck_priority": 65
-    },
-    "be765e7c670dfbd65980818805ce2b7d2cfb1b88233f3091c3f0d22b4efc059b": {
-      "title": "Thales and Google Cloud expand security controls for AI agents",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSFRadkE2Tm5na1hIcTc2TUU4b1RINHluaDQ5aFgya0RHc0FVSHEtekwzV1BIRlRxblZmQVQ0V1NHYUk3MkNzLVJpb3d1azBIWGFSbnhZanYxT1ljZXhsRU9pa091M3FOTjhxVkllQXlZVU5NcjhGS05EUUZHNGl4Qy11NjlXd2NCWlFZalk2dUtyeEJBc0VRbUJvV3FrcEgzWEpqOWhNaw?oc=5",
-      "summary": "Thales and Google Cloud expand security controls for AI agents IOT Insider",
-      "source": "IOT Insider",
-      "published": "2026-09-28T09:08:50+00:00",
-      "feed": "ai_enterprise_demand",
-      "stage": "candidate",
-      "precheck_priority": 70
-    },
-    "f37e012a470c340ba08352034488e1a34b9ae84c9ba1e266bc00f04cfe3fc69c": {
-      "title": "Arm and NVIDIA: Building the trusted compute foundation for the agentic AI era",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5pV0JJei1LYVVPaEFCVHJBQnpNdm5UX3V5MUNoZXBPUzE4S3o4NjZLb29DUnlHZ2F3M3VyTnBCeGtqUDVjQV9JcHE0VVNlZHJTOTRKQ3RZSVhNZXpHZzdyZEI5RWFiWTA3czU4RFBFVW51bjE0SHc?oc=5",
-      "summary": "Arm and NVIDIA: Building the trusted compute foundation for the agentic AI era newsroom.arm.com",
-      "source": "newsroom.arm.com",
-      "published": "2026-09-28T09:05:33+00:00",
-      "feed": "chip_company_1",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
-    "3e004b803bfcf2c24a93d993099f018da2b476788a35b355798203694b890554": {
-      "title": "Ecolab brings on Edelman to support data center messaging",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNYURlTUF6VDlxb3RqNno0a3huQkZJU3V1VnBHYUZoaE5RWlJzZk5LdGI5OU5CTnJVUFRyUzB4bDNSWWlFdXI2b0JBYUViOVdoVXRVS0pWcEhPbkxuY21nTGVJaTBMVGhORzZkQk9fREU5QWtXUVlHLV9BQ21jcGo3dElMY2VqQmRiZVNDN0NPYkRYWUVP?oc=5",
-      "summary": "Ecolab brings on Edelman to support data center messaging PRWeek",
-      "source": "PRWeek",
-      "published": "2026-09-28T09:01:54+00:00",
-      "feed": "ai_mergers",
-      "stage": "candidate",
-      "precheck_priority": 64
-    },
-    "d8be67ab60c0cfc5cef9ce6d596dc0090d940a25b36396ec42f674f1340513d0": {
-      "title": "Banking’s AI red flag: From 0 rollbacks to deploying agents you can trust",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZlRyMVhYVTI5dEpoVEktVEZoUjdGdU5lcV9QTzE0VmN6TVZQRWdNeXdTakJGeGNrcGxNZ1RTeWxaXzgyTkU0QzgxdzBTRFg0cVR3UFJuYXZDMVNkbjFCOTk4RDJRYk8xMHJWVndhRENBbHR3Z3RmWHA5LUhlNzdjWXhtam1NdGxkZDVQMzBhdkc2LXlFdkI1cUF6N0M2aXA4bVdueUk1SWctRVlqdVA3U2VuWQ?oc=5",
-      "summary": "Banking’s AI red flag: From 0 rollbacks to deploying agents you can trust Banking Dive",
-      "source": "Banking Dive",
-      "published": "2026-09-28T09:01:50+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66
-    },
-    "db626937820c527756547365d2f13c03a5fc403db2bc527c6e0faa35d1f0742d": {
-      "title": "ASML's Buyback Machine Keeps Running as Europe Stays on the Sidelines",
-      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPYTJaYVJUTEFXRHpfQXlZZ0VCSW5jcU54eWZiMVVFTkZESGwzRFdYOTBlYl9FOVpsVm1RV1N1VWdYWGppUEVQbXNLUlhlSlFuZlRNTHI5Um4tSVpSc1VkOWlCb1FOZ3AzNURZenowVy05U1NVVWFmZXgzMWVDM1d0QVQyRVQ0UUg2VWs5Y1JVT2RzeUItc0JzZGpNR1RxY21tN2c2ZW52NVBSMmtJZ0VLbEcyUHdQM3NBUGh5NXQtQ1J2SVg3dEdndjNQaEkxdU9Oamx3eFk4TFA?oc=5",
-      "summary": "ASML's Buyback Machine Keeps Running as Europe Stays on the Sidelines AD HOC NEWS",
-      "source": "AD HOC NEWS",
-      "published": "2026-09-28T09:01:42+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 70
     },
     "8682653dcdda09638dab193a117c7b7f490beb847ee66d548f04044652623396": {
       "title": "AI Cost Optimization and Governance",
@@ -3350,16 +3312,6 @@
       "stage": "candidate",
       "precheck_priority": 60
     },
-    "a812d2c79a0fee306d640ff8aebb82aa5d87612afe5226de982e8ce30c3e36e8": {
-      "title": "Volato Group’s Alignment Engine Subsidiary Signs $1.2 Billion in AI Infrastructure Orders with Large AI Customer",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPaXQ4RVV4NXBwVEtUOS1jc0kyYl9NQ0lwSjItLS1wd2p3N3NGNmpKYlV2Wm0weTEwNklCcUxXRG9fRFhTUC1vYVNFV2JEa1gzeENhSWYzLWhNODQwSzVMX3o2RjBiWWRZN3VOUkxyRlR2a0s0dnEya3pBZTdLTmpCekQ2WFhvNmpYUDZ1aEdvY3VsZ1k?oc=5",
-      "summary": "Volato Group’s Alignment Engine Subsidiary Signs $1.2 Billion in AI Infrastructure Orders with Large AI Customer Yahoo Finance UK",
-      "source": "Yahoo Finance UK",
-      "published": "2026-09-28T12:05:00+00:00",
-      "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 90
-    },
     "7aa2ac755075aa529f771521ae0ddd3e897439536ba0c14a9c9e52f39dd2934a": {
       "title": "Meta, Google, Amazon, Microsoft draw Sen. Warren questions about AI tax subsidies",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbXpsNWh1cDF0aEVHajNxNTBUU1V5TWp1cFFCZmJYVGQ5bEJxT241cXd5Tmk4SGFYckpMdTU3cFZ3U1A4REtYcWtWc0M1RTlFeGc0d0VpR0dtOEVWd1c4QlZNdC1SbE0yV1RRUUlYWGNjbnhJalE0cEFlb25wa21EeXdFU3JYMk5PRW5adXBMLXg3TlRSUS1v0gGcAUFVX3lxTFBaTndFYldrdnVTaTU0dEFiZERuVEhBc3ZrOE5faHBDV0Q0WFZQdU56TlpOdlVyYzkwWEZUaTZBMzN0UVRlN3JGMnRFa2RiNE42MEEtVHR2VTkxWnJNdEYtQjFRczFBSExaSWtMMmZQMWplRnk1TEhzel80NXdxS0ZJODQyTG13QjdFWFpQbW1KejJ2bG1uM2VLVER4Xw?oc=5",
@@ -3546,16 +3498,6 @@
       "feed": "ai_models_ko",
       "stage": "candidate",
       "precheck_priority": 75
-    },
-    "a6f5a33e628259e04406d12f0fbf4dcbe5f1a99984a534d079f56024e8b032fc": {
-      "title": "Data Center Liquid Cooling Fluids Market to Hit USD 4.05 Billion by 2035 at 30.0% CAGR | SNS Insider",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOYVc0X3pjVE55SlZmUXlhZkxYbXNOcDFTcmFCMVhvcVR6Q1JYZVNLbHZFUDc1aGJuTzRDdGhNaG9pcjA1ajFXa19rSzdDZG9TRnlFb2h3UHpZcUJlNWhwaEZCSTFOV2l5REJiNXZGcDlxNjhRSVhaUVMySUVRX1VCU0l4a0JRdmhfT3Bfc05mekdPRURUY01pZGZPVk0tRndXcW50dGJhNUxhNDZZdERtTWFVSUxQTmItQ0xQYWJ4ajl0WDVzTlk4em5Lc0hEUGktSGc?oc=5",
-      "summary": "Data Center Liquid Cooling Fluids Market to Hit USD 4.05 Billion by 2035 at 30.0% CAGR | SNS Insider Business Upturn",
-      "source": "Business Upturn",
-      "published": "2026-09-28T09:13:41+00:00",
-      "feed": "cooling",
-      "stage": "candidate",
-      "precheck_priority": 80
     },
     "0bc9c1280578b879701b54c8870ef61c6781b1e5651aee90070a88b4d4962741": {
       "title": "Kodiak Sciences soars after pivotal DAYBREAK Phase 3 wet AMD results clear key endpoints",
@@ -3788,16 +3730,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "01d094c4a4c15b6838a692081fbd14718ffc24ac47197dd65a0a64aa76804b19": {
-      "title": "Arm and NVIDIA: Building the trusted compute foundation for the agentic AI era",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5pV0JJei1LYVVPaEFCVHJBQnpNdm5UX3V5MUNoZXBPUzE4S3o4NjZLb29DUnlHZ2F3M3VyTnBCeGtqUDVjQV9JcHE0VVNlZHJTOTRKQ3RZSVhNZXpHZzdyZEI5RWFiWTA3czU4RFBFVW51bjE0SHc?oc=5",
-      "summary": "Arm and NVIDIA: Building the trusted compute foundation for the agentic AI era Arm Newsroom",
-      "source": "Arm Newsroom",
-      "published": "2026-09-28T09:05:33+00:00",
-      "feed": "chip_company_1",
-      "stage": "candidate",
-      "precheck_priority": 80
-    },
     "69df5cdece28324efd37ff78d0d805cc0ceca042b1aec554ab04a75d76b9dfe9": {
       "title": "Optics Stocks Slide Despite Citi's $11B Switching Forecast: Coherent and Applied Optoelectronics Drop 5%, Corning Falls 3%",
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQT0hQMG53eUVNalFIVWNDNUZ3aUJ0LUNCV1N3cS1LZV9fYWo5dlVMZzNFQVlOaXg4WFRiS2V6STZDc1hoeHVhXzB5bENucXFmUExmenM0YVRJYUZCNUNWcEEzR012aWVNU2xfWnNPX3RFbm85czNmc3pzNlNzOVZGYlU2N3BodEJOQTVhZHp3TW1VTEs5TGVya2ZvWUlwZXBBYW9Qc21YT2lGRUlDZ3V1Tm5LX0FsX2hJUE91N3UxMkhDLWx2dTBBaWNzRGhqcXZERGZKdGhPdW1reklUSnQ5Q2ZVWXpEZ1VoZ1JFcUVjS2xEUQ?oc=5",
@@ -3872,16 +3804,6 @@
       "stage": "candidate",
       "precheck_priority": 90
     },
-    "c2f1b59c7071f1f0ce1a44728bb7bb1b0c8a0c96cf8cfd72b0ce0b1726c508af": {
-      "title": "Synopsys debuts Autopilot platform for developing chips autonomously using AI — New AgentEngineer platform is poised for 'general availability' by the end of 2026",
-      "link": "https://news.google.com/rss/articles/CBMivAJBVV95cUxPZ0RXeVhTZUt4THYyNGZva0Y0RlJub1BGdkoxcERqSHVCOG1HZW5QN3c4TDlnZUtZd0NCWWlieEo4Q3dLUlBRY0NXSE5SMVRYQ19BbnBZNXhtc2tZZ0QzSWV5NTNhZm02Vkc0ZmFCZW53a1BVVkx0RlUzYTg0NVBpVDdpd2pTd2s1REgyQzlrOHN1d0Z3Q1k4WXh2SjVNYjJ1WmpHR3N2emItVlVVbWZqX0sxZnEyeVczQlB3TUg2SHpMUWxrNks4WmxIY3JYT2szLXZ3SW9nX2t4ZC1HUDdRVXFlRUw1Y3QwaXlZQkVFYlY1M3NWbEZ6dVd4VVJUYVRmc0xTampIMGk1UFZTY3JpZ1BfQVZDc1RhVnliODVhZF8tblYwTlFndDRRcmo3MGltNTdpOFpQQ2l4SkU2?oc=5",
-      "summary": "Synopsys debuts Autopilot platform for developing chips autonomously using AI — New AgentEngineer platform is poised for 'general availability' by the end of 2026 Tom's Hardware",
-      "source": "Tom's Hardware",
-      "published": "2026-09-28T16:35:00+00:00",
-      "feed": "chip_company_5",
-      "stage": "candidate",
-      "precheck_priority": 90
-    },
     "0dbf7876b5445fb84e255e8ef51a1eecd5e21399121b86e13008c4e614c1d1f9": {
       "title": "Micron’s Post-Earnings Estimate Hikes May Lag Previous Quarters, Flags Morgan Stanley",
       "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOS1VTcEk5RmJLMlZMTXJJWTVYM0RDSjA0Um1oN2RRUE1sbzV3X0tQT3hWSjB6M05Yc18yenpFcEptU3Itc1lwc1lMS0lvYXJHcGpld3FtN3FvRXZLbjNXM1lIM2xIQ21qQzFRTUNPMVpUNG5iZE9xV3NfOE4xSW9uT0pJRWE0M0dmUXpoUFA0OGZFbmMyNVlhVUxnNkxUM3NjU0FCcmxTMjZwTnhmMHRJSFVDZElSaEFHcDRaMkd1V2FDXzdEOXVCQ2xObXp1S1Q0MzQweHBVNzNuQXczeVFFanlB?oc=5",
@@ -3936,16 +3858,6 @@
       "stage": "candidate",
       "precheck_priority": 82,
       "precheck_override": "critical_event_force_review"
-    },
-    "bd882606ceed5a3b26e4dc43d6d6448761ba6f6db20e580199a4818c3ddca438": {
-      "title": "HBM堆上20層 ASM、ASMPT及KLA揭先進封裝量測與良率硬仗",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTlpQSG1GZWFyVEZMT0tUalFRYTFycXRBRGhTZW1BS2xxRDhqSGZZTXg4N0wxakVUYi1YREVkUTRhYm9DWnNzS1owY1JoS2RfNWhmOFg0c0hzYXpCam1OZHFORFZwZ3hjMmJMQ0pHVUEzN2hEZ2VvLTBxeEdLbkN2OXBZNjVtS2ppMTJtSmFyMnBjUXRyYkcwWjJuVm1udjRLODBvOGpMQlF5b2JlMnV0V3JqWThYQm5lSDdjci1qcXREVms?oc=5",
-      "summary": "HBM堆上20層 ASM、ASMPT及KLA揭先進封裝量測與良率硬仗 DIGITIMES",
-      "source": "DIGITIMES",
-      "published": "2026-09-28T16:02:53+00:00",
-      "feed": "taiwan",
-      "stage": "candidate",
-      "precheck_priority": 90
     },
     "adac9402c9567480f507e7a4e60059cf9dae2f318bd535b5d62f710b04b9120b": {
       "title": "Micron 'super bull' reiterates $2,000 target ahead of earnings",
@@ -4320,16 +4232,6 @@
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
-    },
-    "9dd4fbe2b8cb62bec6e9ad5985ca118f7de38eaea8890108f943ef72965c8f73": {
-      "title": "KT Cloud to Build Gunsan AI Data Center With Full Liquid Cooling by 2028",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYW5QTUhsdnRDUS1qQm01aU13UVIwMG1La2pTNjR0UVNNSW4yWTRTdmdBTXVQYi1JaWZybm11WTBibGR6akZvUHJsWmc3RGRqbUpNb1dqZUFpQ244TF9jZVpKWms3akc4ek5xY21Fd0xLbi1RU1dDVDg3eGpYZFBjUk03azhWUW54QjRvXzY4dzNGZjVJMXUwNE40dGwwVGg4cW1J?oc=5",
-      "summary": "KT Cloud to Build Gunsan AI Data Center With Full Liquid Cooling by 2028 en.sedaily.com",
-      "source": "en.sedaily.com",
-      "published": "2026-09-28T09:03:44+00:00",
-      "feed": "cooling",
-      "stage": "candidate",
-      "precheck_priority": 80
     },
     "78fd7b4a2862e6f7561c9f63f847ae5d356d710819e30d60f63ab787397688c9": {
       "title": "Trane Technologies unveils AI data center cooling designs By Investing.com",
@@ -4848,16 +4750,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "893ff775cd8e5a24ecf0c71e38d0dc275627bef0ae650e80e532de3fb0d44b75": {
-      "title": "AI Agent Startup Instinct Raises $1 Billion at $10 Billion Value",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPazRMTDQ4OVJ0TF9KT1ZYaEkyLTFSNENZdmVTb1J4NElnZkFQTjd1T05Gb2p3ZGF4ckZObVFVanFzQU1OVkp4MXdFMUhwR3pacFhjVlFtM2QxV3V1UWFwbk9rTzQ3dzVCazhzTTJ1c0tXMlhhM2J1bU9YeU91anVvUzJYTnVGWWY3dk02SGJmeWMwUi1STHFibkdGNm9NVkotZWJKZjJfMDliaFdEdkMtMS14NA?oc=5",
-      "summary": "AI Agent Startup Instinct Raises $1 Billion at $10 Billion Value Bloomberg",
-      "source": "Bloomberg",
-      "published": "2026-09-28T14:28:38+00:00",
-      "feed": "ai_mergers",
-      "stage": "candidate",
-      "precheck_priority": 90
-    },
     "239a84adc6ce0af6b24c172cabc8eb795eb96dcba77b214ef535bffa5701e458": {
       "title": "ASML Has a China Warning for Trump: Too Much Pressure Could Create a Competitor",
       "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQS1J0N2dXbGFHQzhQWmt5aFRaM3M1ZXB0bDMzaGZFZ01WVi1tc25aT01sQkJHQjh5M0NITWZlSk9KUjc0aHBaNUlJTHh1WmpLVXkyZ3BfN1c5TklTbml5STctMkc3TnNsM1VvdHhkZ2JCN0lXWFotUHFUUnh5eF81SDljY2dkRlk0X1ZLUmJ6U0lOUUk3cnJ1RVFxbl9iZlZwSjRaTHZjTC13T29rMVk0YmpLSjVxM0E2QUF4ZU5Jc0Z0OEJwbWI3akEyYm03RzdwTjRz?oc=5",
@@ -4963,12 +4855,197 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "55f754bc706785b9caa4763f73adb8f2d8ccb16e297192584b4b519e29814975": {
-      "title": "ASML's Buyback Machine Keeps Running as Europe Stays on the Sidelines",
-      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPYTJaYVJUTEFXRHpfQXlZZ0VCSW5jcU54eWZiMVVFTkZESGwzRFdYOTBlYl9FOVpsVm1RV1N1VWdYWGppUEVQbXNLUlhlSlFuZlRNTHI5Um4tSVpSc1VkOWlCb1FOZ3AzNURZenowVy05U1NVVWFmZXgzMWVDM1d0QVQyRVQ0UUg2VWs5Y1JVT2RzeUItc0JzZGpNR1RxY21tN2c2ZW52NVBSMmtJZ0VLbEcyUHdQM3NBUGh5NXQtQ1J2SVg3dEdndjNQaEkxdU9Oamx3eFk4TFA?oc=5",
-      "summary": "ASML's Buyback Machine Keeps Running as Europe Stays on the Sidelines ad-hoc-news.de",
-      "source": "ad-hoc-news.de",
-      "published": "2026-09-28T09:01:42+00:00",
+    "e3d9c74fb0ce9e5596ebe718f28d99cfec06098dd2a760d6b81327dd114f2a7d": {
+      "title": "Stockdale backs real estate AI startup Zinq with strategic investment",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWDVBNG1qcm0yM1Jrc3ZHd0Z0RWdQY3FBOVE5ZlZ1U2hGWWdfR2hkTlJFUTc2TVV3eFpIazh6OW1ZVjhVd25mcEVXU0xpOUE3cmZob1RFanRUa3NjNVBLRDZPT2psQUJhak5HV2JpRU5GaElfZWE1TURUNUpyU28xYm5SZ0RaMWV5UndnT0FUQ0RmT2pQTzV2elpNZ2FhQ1Z0LU52Skp3?oc=5",
+      "summary": "Stockdale backs real estate AI startup Zinq with strategic investment Dealroom.co",
+      "source": "Dealroom.co",
+      "published": "2026-09-28T21:02:48+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 66
+    },
+    "252d861e2788046219a909adeca129de1f45c10642a972218adca5f140c99526": {
+      "title": "Faraday Future Announces Strategic Upgrade into Robotaxi and EAI Cabin Technology Operator and Physical AI Investment Holding Company; To Combine Its Robotics Business at Approx. $200 Million Valuation with AIxC (soon FFR) for a Standalone Listin",
+      "link": "https://news.google.com/rss/articles/CBMisANBVV95cUxOWThWVGpLTUExT2JTTUhPSWt0T3N4ZGxsZEJ0bFdmSDg2UDJReS1mNGF1MW12MVpmcXZCUU5nN0Z6d1h4T0l2MDA5NFhNREdtQ1I0S3RYZDFjeWwya2VmaWhYY2FWUEdTU3U4TVVZOHJqLV94cFQtXzc3cVQ4WGNwNm9aN2FKOXctaFBaLWx1R0N3Q2VUS2pCQ2ZBWmotMUtPYUtaR0YxTHRENHFDaUZjT2pWRlEteHFBWlJnMTZMRFhvMkJfU003WGE5bVlNR1hOa3RCdHliMXYwWXl5V25lVGpsOU1yYndVZ0RCOFR6V3ZoakJpdEIyd0RZNzZOU2pPakJocWtRMWlqM0VzbUV3cjNpTE1HUXVTQ0J1VDVsU0FnYmdGREdIUzhVM0V6S3ZkMUxyRkMweG0tWDdUTVlHbWRBY2FkY2UyWmtvRU9NSFUwMnM5OVVneG5RcnZ6U0M0MThPV3NCNmNid3Ztam5EQXVZQ2xHcUR5eFBfWE9aNk5fQTd0cGxyMlh5bzFZNXBDaTBZdDZ5SWFqNnl4YlBkR2J5bmJ3bkJ5Z3kzYzBSTGc?oc=5",
+      "summary": "Faraday Future Announces Strategic Upgrade into Robotaxi and EAI Cabin Technology Operator and Physical AI Investment Holding Company; To Combine Its Robotics Business at Approx. $200 Million Valuation with AIxC (soon FFR) for a Standalone Listin Business Wire",
+      "source": "Business Wire",
+      "published": "2026-09-28T21:00:00+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 78,
+      "precheck_override": "critical_event_force_review"
+    },
+    "40da8704d5f647bbf4ec8b0872a3da70c2027bfbf8465ae68d1784b63e3fc9d0": {
+      "title": "AMD will acquire Fei-Fei Li’s World Labs for $8.2 billion",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNS0tBZXRaWkdrX3ptaHVnM1c3V29xbkVmdVRvRGNmUXl1RWNldGR3RS1IbGMtUzY1T3FRYXJwU3czbXBDS1FCSF9CQWN3X2p6akRGVzkyOFgzLWpGOWhGWHhMOXBqanM0a2FhOEUwU1QwbTZFNjV0REN1TDdaMWlYSmxLVGVXanpZV1RDa1lZMUtYbzRE?oc=5",
+      "summary": "AMD will acquire Fei-Fei Li’s World Labs for $8.2 billion TechCrunch",
+      "source": "TechCrunch",
+      "published": "2026-09-28T20:39:33+00:00",
+      "feed": "ai_mergers",
+      "stage": "candidate",
+      "precheck_priority": 95
+    },
+    "636bde733c3720e9f783438ae68701e5c642a8c89a4284ae5286ac5a758d6970": {
+      "title": "AMD acquires World Labs in $8.2 billion deal to bolster AI systems strategy",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUEpLOGExLXd6b0dKeXJadmdubW9zdWZzTDB6eVhLb0RSN3RSQTYyenBJdTVRdmR6Vm5jRnp4VHVQQ1NEbGFQb1J0V08xcThIRUs1aG5NQ0piLXhEQTRhcXZQNEZkMUVuaHVyLTRNVjhjbDEtZmxuTGpuR2d1ZDU2b1pGdkxqS1o2TUNDcUMyaFUzRVdmUUpPQndkdEZMZw?oc=5",
+      "summary": "AMD acquires World Labs in $8.2 billion deal to bolster AI systems strategy Reuters",
+      "source": "Reuters",
+      "published": "2026-09-28T20:39:16+00:00",
+      "feed": "ai_commitments",
+      "stage": "candidate",
+      "precheck_priority": 95
+    },
+    "72e95367dcd2ca645fb13b2f034595f36adcddc3355609dd0fa93c688b50891a": {
+      "title": "AMD to acquire AI research firm World Labs for $8.2 billion",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPblNxOHFWUXpleGxuQnFtWS1ha05obmJsNmVoM2lxY3E1TTBqM2lpTllJaTlXMERTbllVd1J4cW5QSGFxaTN2UXAwUkY5eFJla25icnF1azZKSnlwVUxMT3FpWXVqNDU3TTdpZUNxSFpxdUNvQnBBc0RmR29jM3VxbTNWa3VEbUNiYnBMQjQ2R1FnODVycks4NGdzZElRZFRHb3NTWFY3ZE9iMDE2c09nRjRpS2NTOHBzN0E?oc=5",
+      "summary": "AMD to acquire AI research firm World Labs for $8.2 billion Investing.com Canada",
+      "source": "Investing.com Canada",
+      "published": "2026-09-28T20:31:49+00:00",
+      "feed": "ai_mergers",
+      "stage": "candidate",
+      "precheck_priority": 95
+    },
+    "9e8bd2a46da6b25097b2ed46b3071bdbef1419ddd5c7337cfd9d51b953469689": {
+      "title": "Trane Technologies Expands System Architecture with Two New AI Factory Reference Designs Based on NVIDIA DSX AI Factory Platform",
+      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNXzh4c2pRVUNfMjlLTzV0WFJ1T0ZBQjBKaDB0Q0pFblk0UGRnRlNsRHBYYTBhTzljVU9yRWJGVHNlbkdqczZGR1NYMHUtS3lEeHVQZTBvdDZRcy1TN3BmajY2Z01ZRHc4NmN4RzdONVBCWVVLTkVSVkxOZVY1RUMzM2RaU3VKYW1XQVBvYmV4UzRGQVBqdXE5QWdkeGFRTXVTeGE4VFk1bndXY0xIM2RVZDRwRUpZTnRGZUNGSS12NWxIT1pjb3FJS05oM3BBRzA0ZF9XOWtqc3hHU0NVYjFuYmJiSmpGY2tXOGFqNzU3OWhPalRteHJqbXVPTDUxY1lJeGs1aVROd1NUYlZpc2VRRzVlOA?oc=5",
+      "summary": "Trane Technologies Expands System Architecture with Two New AI Factory Reference Designs Based on NVIDIA DSX AI Factory Platform Business Wire",
+      "source": "Business Wire",
+      "published": "2026-09-28T20:30:00+00:00",
+      "feed": "cooling",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "4ca4d676f1aa466364cbe388983ec8693d08ac46c01505e378ab59936118b259": {
+      "title": "AMD to Buy Fei-Fei Li’s World Labs AI Startup for $8.2 Billion",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZW1PMmt1Q2c4TzNIaDNIbEs2TWQ3V0xQc1F6QXpzdHdHalpEWlk5ZlhoYnVHVXlsUGdmRm1Fd05aek1UdGFWT2dTZmFBUk9HZDAtRE85NFEwWXhnaHFqdWdSNzkzbWFMUWRxaDQ1VU4tblBrSFhRYkR3VEltUnhtMlI3dmhkcDE5OEx5T2l3RjZ6amdzVFhyeXE1Z2ZTQ0liUVFlREVzZU52THFDM29XSXpB?oc=5",
+      "summary": "AMD to Buy Fei-Fei Li’s World Labs AI Startup for $8.2 Billion Bloomberg.com",
+      "source": "Bloomberg.com",
+      "published": "2026-09-28T20:05:00+00:00",
+      "feed": "ai_mergers",
+      "stage": "candidate",
+      "precheck_priority": 95
+    },
+    "e80abd831c6f3a983b772399759255e453bc7e0383118cd16f31e68fab122983": {
+      "title": "New group targets Pennsylvania, 6 other states as data center battle heats up",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxObkgxNVBySmFReExneFdvaGhlWWI0Y3FPZm9mbU9jMGNpVmt0NV9XYVRXUkJJNTloRTR1dzdZZDBHZVlIUmMxcC1kMzlaVllPNV9MV2lNRDFtZVMwODVHU3kxZGJVNHZfb1gxZENiQUxFWlVCMFl4V09KVTdjaWVWUlJzakhvRkxpR0dhVXlrWUp1YXQxWDJV?oc=5",
+      "summary": "New group targets Pennsylvania, 6 other states as data center battle heats up The Business Journals",
+      "source": "The Business Journals",
+      "published": "2026-09-28T19:47:00+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 84
+    },
+    "59520041cff6173a0744ee5bea88314ff8dbd9a0b5bbbb075d2ab9f37faa48f9": {
+      "title": "Meta Platform Takes Aim at Salesforce, ServiceNow With AI Push",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWnFZRl9kSFR2LTZuN20xVF84TmcybGdhT3dfYTVMUFJwN0Y4ZUdjUmJHT1NjdDc3X1dHMzdYSXY3enJ0QU1iYTY1WVdWY05vWFA3RGZGNERMQml4ZTB6TW93YjRnTlJGQ2duWEZUWDEtRlRzWHRrc0RrMElOanVVUFg3UWl3Ry02YzZWdGxndDZxVXhtSFF2OThzUnRTbTFSLXRaNC1Hc2dXODBpOXB2aEVFTTNRQlFCSjFJWWhR?oc=5",
+      "summary": "Meta Platform Takes Aim at Salesforce, ServiceNow With AI Push TradingView",
+      "source": "TradingView",
+      "published": "2026-09-28T19:41:11+00:00",
+      "feed": "agents_usage",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "38fa1df0517ab284645abb9ffb04b3719b13cc4353068e38f5fb5e5622c23040": {
+      "title": "Market Strategist Kristina Hooper Sees Risk Building Around AI Capex Over Surging Treasury Yields",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZGppTV9oRjFOMHk4YklkUTcxc09sOFBnZVhuc0V3VXItTVB1UVJlR0dHYi1jV2dabVdOSDdjXzdJVzZlTExxbjM0dkhzLVB1QmhoOHFabzFGbUtWS245M1NFQkF4R3JISjYyRnk4ZVZNbFJpUEU3aFFZYjdtLUhseVZ3UHlBb3I0WGtTYl9xQzk2STgtd3FRZzdQVVFFaGl5cmlYWg?oc=5",
+      "summary": "Market Strategist Kristina Hooper Sees Risk Building Around AI Capex Over Surging Treasury Yields Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": "2026-09-28T18:21:49+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 100,
+      "precheck_override": "critical_event_force_review"
+    },
+    "d045b6e7ed638ca252f6df85d6fb32f37f00b5307b8adcd86172714c87556553": {
+      "title": "How AI is reshaping the foundation of front-office investment workflows",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQS1pNMDRLTmdQZGpsazYzSWYzdVRPT2xaZklaZ1NTV2JJTmhwWmpLeDJIU3hQb3BhNXlOa2xQZC1xQmRfRVR0ZzdoRE5hWUtfR2FacFNVNklmeUhKYXhNNm0tY2c3VGR1X1k1b0M5azAzZXlIYmp5RWstcG94cURVcC1HRVlsSllYeUFLNXREWVlJZ0RMbHlBcDladjk1WnZsNXVYa25IeW9uQ1p0UThibUZwNWpYZFpTLXBMaHM3ZXNEUlIyeFNTal9ZMmpoaTNKeWx0NXc4TmxVaThr?oc=5",
+      "summary": "How AI is reshaping the foundation of front-office investment workflows Bloomberg.com",
+      "source": "Bloomberg.com",
+      "published": "2026-09-28T18:02:53+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 78,
+      "precheck_override": "critical_event_force_review"
+    },
+    "df3f962a93fca5868d7d91c63232c5efbc5fa5cb81a89d43e3117c4f150ad31e": {
+      "title": "Weight of Evidence Points Higher for US Stocks, Led by AI",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOQmdFTDFyeWVPZXRhMDZFR2VDM3ZZVVhzVUh4YWEzbWFkS1QwZkkwNlg5M1RrLURjdHRwNXRCU1FrU1lOSTNrQ1oycFVQQnIxT2pvcVBxRzZiMUJCSmNnWEpnRXFNamk4NGlySDh0UDBacmlXY05ucVpIdXRnM3FObkdtMTJjLVNfbmhjblJaS3ZzU3ZXMzNJM09VYWdLQQ?oc=5",
+      "summary": "Weight of Evidence Points Higher for US Stocks, Led by AI Zacks Investment Research",
+      "source": "Zacks Investment Research",
+      "published": "2026-09-28T18:01:01+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "2497f90982f4d9aab8a1e11f6af7e33a05a67ef63c65f62514112a5a48cb32fa": {
+      "title": "The Human Cost Of Data Center Pollution",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWlRJeHh5NE55ZDJVTXRnWEd3cmZMZkZ4eDlOUlVsd2VpcC1wUEtyZm5OdXZ5VHlab09uZkNTVmFOaGVUOE51WC11aHVzSnRUOXBkXy1iTWpPZUY4UEJoSGxjNG1ZazE3alByWHVQMDRhOWpLcENZSGNwZ1JTaHJpZUc4dw?oc=5",
+      "summary": "The Human Cost Of Data Center Pollution CleanTechnica",
+      "source": "CleanTechnica",
+      "published": "2026-09-28T17:39:18+00:00",
+      "feed": "ai_financing",
+      "stage": "candidate",
+      "precheck_priority": 65
+    },
+    "c2bdb0039696a5fa53ac68f380acfdd8abaf4b5826fa122ea1dfb4a7e0a97963": {
+      "title": "ASML Holding begins construction of new Eindhoven campus",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNMm4ySzFMOXRNZDBXZHBuazc0Y2NlWFlDcmFMaTZaNjR6TDZOZHJFLVlsb21RX21BaGJURW1YcXpvWkhtQy1VWmpFdmlDcUpoa01rbHBmRnVMb2xjWTRBbFMzYkw4ZkZkY243cGxFX1UtZnhRTmRNVXNUdl9QejN0c045NG9GQy13MHdLdTJpUDdnQW1DNFUzN0o1MDJkTU90d2VrNmNWTEszaEx6ME5JRTlvVjhvQQ?oc=5",
+      "summary": "ASML Holding begins construction of new Eindhoven campus AD HOC NEWS",
+      "source": "AD HOC NEWS",
+      "published": "2026-09-28T17:01:22+00:00",
+      "feed": "equipment",
+      "stage": "candidate",
+      "precheck_priority": 85
+    },
+    "65ac05022ad01cef2fd4d102e818484ed2731addf965d611c5c670554e2fd038": {
+      "title": "Micron has a chance to set the record straight with its earnings report",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQnMwYVFqWUV4dmlQOWs0cnRCWm92MFlCR3BqV0x3NzNnZEtQc0h3S1JTLTN2SUU5em9uRGxLNXE3TG1SaEJLMHJKUlIwWUVYZDVLMVFIdW00R3NGeUp3UmxKSW1fYVdieW5aeWlzUEhfTTd2VUtTNl9UVlZNalZLQjJlMXpYVXdNc0p6Z2M0TEpNbVVuYlQzWjQyOE1iWDNMc1RGQ01ZUTJkTzk1dFNvSmE2Q0M?oc=5",
+      "summary": "Micron has a chance to set the record straight with its earnings report marketwatch.com",
+      "source": "marketwatch.com",
+      "published": "2026-09-28T16:58:00+00:00",
+      "feed": "ai_infra_earnings",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "f2b00b06e505ac06993691e4602255f98cc4634ccc42a5d00375e2a8f674de6b": {
+      "title": "Kodiak Sciences soars after pivotal DAYBREAK Phase 3 wet AMD results clear key endpoints",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQVZaM2FsLXNLSTdpY1N0Tno0X2V5eWlzWS13TWRWbW1RbkdhQ0J3MEQ5ZGVhYWF1SUkweDQwTXVnYlVRazVYVmdZWTllLWlsWl9vMVU0aUVCYldLMVc2SGFsa08zbTktRlJzQW50U3R6NUgzam5OeGhVQlNuRE15THhYbzZSZ0RsT29KSGE1NUd2eW1nWDhnUERQMC0zNkRWWFZSbTRNSG1JTE9ZRHhYUTBXM2Jnb0NBZmtRRUx3?oc=5",
+      "summary": "Kodiak Sciences soars after pivotal DAYBREAK Phase 3 wet AMD results clear key endpoints quiverquant.com",
+      "source": "quiverquant.com",
+      "published": "2026-09-28T14:50:00+00:00",
+      "feed": "chip_company_0",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "997f1c96664dfdbdae6fa101418d46a3e01e349a8946f99811e6fee23a577441": {
+      "title": "Midea To Unveil Industry-First Power-Cooling Hyperconvergence Architecture at Data Center World Asia 2026",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9yQ3JQa1FKQXh4YmVfZXlPZmpQQVN2QkxDU0RrR1JWcG8yaVNDUVF0dmRWMTYtak8wVnNEdzVfTlJjN21Mb01taENFN1c0WGJ2aVZyRVlna1pqdnhFdkdaZ0pEazFUazRlTjBKS9IBbEFVX3lxTE9yQ3JQa1FKQXh4YmVfZXlPZmpQQVN2QkxDU0RrR1JWcG8yaVNDUVF0dmRWMTYtak8wVnNEdzVfTlJjN21Mb01taENFN1c0WGJ2aVZyRVlna1pqdnhFdkdaZ0pEazFUazRlTjBKSw?oc=5",
+      "summary": "Midea To Unveil Industry-First Power-Cooling Hyperconvergence Architecture at Data Center World Asia 2026 kipost.net",
+      "source": "kipost.net",
+      "published": "2026-09-28T14:05:17+00:00",
+      "feed": "cooling",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "de9a3d471b9a0dc605de233f3281a31e90dc40e8a306a964f1902df79f4723e0": {
+      "title": "Vertiv to Expand Nové Mesto nad Váhom Site for Manufacturing",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSTRfakxRU0M4djVXR2lLV3gtbXNLc0dWWEtTcV9rYmk2eU41UFhwTlR5ZmlJekZjaHJRTzNlUjNEN0ttaTh1R3NpaWItRGxTNjJjN2xLbHVqbmVIUERoVm9sMHpoUzZ6bVVkVmtDUnM4QUNWVURkMmRNNlBUcVVaZmxaYjBfQ2kyTXdvT0x3N044eFl6bDNuUG9aTVY?oc=5",
+      "summary": "Vertiv to Expand Nové Mesto nad Váhom Site for Manufacturing Data Centre Magazine",
+      "source": "Data Centre Magazine",
+      "published": "2026-09-28T13:47:10+00:00",
+      "feed": "infra_company_3",
+      "stage": "candidate",
+      "precheck_priority": 70
+    },
+    "f5f7b69453a02b2316e187ec8cb04caae4e7313f586e5c4292d1449aa8f18550": {
+      "title": "KLAC DCF Analysis: Intrinsic Value $104 vs Price $188",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxORmdOODU2TzNPY2lPaTJuSlNrY2dGUEVkc0syUm1uZEFhNWtzU0xTb2M4SURrVnFJTTFhQ3RiN2FITkRTM3pweUVHcWdZdnd6THRYb0c0R3FjVWpQdWppb3pNc3RHMkwxTWRHN2oxUHJFZ0lUT2RPT2ZIazZBWEwzYlZ6b2FBd1NhSXhMN0FSeENnREU?oc=5",
+      "summary": "KLAC DCF Analysis: Intrinsic Value $104 vs Price $188 GuruFocus",
+      "source": "GuruFocus",
+      "published": "2026-09-28T11:32:48+00:00",
       "feed": "semicap_earnings",
       "stage": "candidate",
       "precheck_priority": 66,
@@ -44305,6 +44382,96 @@
       "policy": "ai-industry-v4.6-executive-origin-radar",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "As Cadence Strengthens Its Partnership With TSMC, Here's What It Could Mean for AI Stocks"
+    },
+    "3161df4bee3c7445ecdd4c9babe4efd06a681ba26c003c4a66ef2cec8e764915": {
+      "ts": 1790630235.035914,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "This is a stock performance report due to index entry, not a fundamental industry development.",
+      "title": "Arista Networks stock falls 1.10 percent after S&P 100 entry"
+    },
+    "017ab00d4e74226773e3e7ce88edfb8179a3b60d603f761e22ba2a078050626f": {
+      "ts": 1790630235.036014,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "This is a social/political event (dinner) with an AI executive, not a business deal, technology announcement, or market data.",
+      "title": "Trump hosts Anthropic chief Dario Amodei for private White House dinner"
+    },
+    "598f99f0763d62f64e7ffeb91ba3e074c1ead58a2e16cda3863dbadb9db883ca": {
+      "ts": 1790630235.688498,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Marvell’s AI Opportunity Could Expand To $625B By 2030, Says Cantor — Sees Up To 45% Revenue CAGR"
+    },
+    "2338880e00577b378f620f39385c4ca349a60553e2c3f4a3bea356431b75858d": {
+      "ts": 1790630245.226814,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic Crowns “New Hot AI Stock” With $11.6 Billion Contract + Investment"
+    },
+    "a86a8645e851da9dc2378012db394025c3367dff409784d1ac437cfb91ebbaa8": {
+      "ts": 1790630254.211968,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AMD to Buy AI Firm World Labs in $8.2 Billion Deal"
+    },
+    "6acafd01285e3b765413687850425a6af2715b50fedfff819bf0be6ff49d92b7": {
+      "ts": 1790630258.965992,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "$Trillion Bottleneck: TSMC OIP 2026 – AI Design Kit, Packaging Innovations, 3D DRAM Timeline"
+    },
+    "54cd23cab19cf7e03888d47df200066d266d3200be7812f7cdf2b8f9d0dfc879": {
+      "ts": 1790630258.966022,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Samsung nears 60% 2nm yield, targets big tech with power gains - CHOSUNBIZ"
+    },
+    "d8faee0e781c8b9f1b9139797f13b280c517c8eb835e9833e96f5c4300a3bf24": {
+      "ts": 1790630265.399665,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron's Memory Gambit: A 512GB Breakthrough, a $10 Billion Research Bet, and the Verdict Coming Wed"
+    },
+    "1dcc62cc5d6495fd26eec67822382161d8d8490607e486f6e1819b58d0e9343f": {
+      "ts": 1790630265.405145,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron Earnings Preview: Can the AI Memory Cycle Keep Delivering?"
+    },
+    "b8b34c9783c54d6e35c3d47dd6b5aed5832838b4d9e213385b95fc88b572d051": {
+      "ts": 1790630265.405173,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Microsoft goes quiet after church groups ask for 1% of data center costs"
+    },
+    "96ef5e2b7e51793667124887bbd3d378e53938eff5af6fcb1563014716b72a6e": {
+      "ts": 1790630273.201837,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Hyperscaler Bang for Buck: The AI Capex ROI Has Two Clear Winners"
+    },
+    "c3064e678201685ec500fabc28fcfcca2068582966f02d1718a74e1107144747": {
+      "ts": 1790630273.201861,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Marvell's AI Opportunity Expands to $625 Billion Market"
+    },
+    "69a48fff7ef513185d7383cecc4d03d595c563a2f9c43380c75406f3724c6a97": {
+      "ts": 1790630273.201882,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Europe Data Center Market Investment to Reach USD 148.82 Billion"
+    },
+    "bd882606ceed5a3b26e4dc43d6d6448761ba6f6db20e580199a4818c3ddca438": {
+      "ts": 1790630278.890147,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "HBM堆上20層 ASM、ASMPT及KLA揭先進封裝量測與良率硬仗"
+    },
+    "a5d2082645755eccaeb3c8e3d4aa672d21eb38e0bb1f5dd75df081b8698546a1": {
+      "ts": 1790630278.890158,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "Fed’s Cook Expects Continuing Inflation Pressure From AI Buildout in Coming Months"
     }
   },
   "legacy": {
@@ -47419,6 +47586,27 @@
   },
   "archive": [
     {
+      "title": "AI 에이전트 스타트업 Instinct, 100억 달러 가치에 10억 달러 투자 유치",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPazRMTDQ4OVJ0TF9KT1ZYaEkyLTFSNENZdmVTb1J4NElnZkFQTjd1T05Gb2p3ZGF4ckZObVFVanFzQU1OVkp4MXdFMUhwR3pacFhjVlFtM2QxV3V1UWFwbk9rTzQ3dzVCazhzTTJ1c0tXMlhhM2J1bU9YeU91anVvUzJYTnVGWWY3dk02SGJmeWMwUi1STHFibkdGNm9NVkotZWJKZjJfMDliaFdEdkMtMS14NA?oc=5",
+      "source": "Bloomberg",
+      "published": "2026-09-28T14:28:38+00:00",
+      "summary": "AI 에이전트 스타트업 Instinct가 100억 달러의 기업 가치로 10억 달러의 투자를 유치했다.\nAI 에이전트 기술 분야에 대한 높은 관심과 대규모 자금 투입은 해당 기술의 성장 잠재력과 향후 시장 형성에 긍정적인 영향을 미칠 것으로 보인다. 이는 AI 에이전트 기술 발전에 박차를 가할 수 있는 중요한 동력이 될 것이다."
+    },
+    {
+      "title": "Synopsys, AI 기반 반도체 설계 자동화 플랫폼 'Autopilot' 공개",
+      "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxPZ0RXeVhTZUt4THYyNGZva0Y0RlJub1BGdkoxcERqSHVCOG1HZW5QN3c4TDlnZUtZd0NCWWlieEo4Q3dLUlBRY0NXSE5SMVRYQ19BbnBZNXhtc2tZZ0QzSWV5NTNhZm02Vkc0ZmFCZW53a1BVVkx0RlUzYTg0NVBpVDdpd2pTd2s1REgyQzlrOHN1d0Z3Q1k4WXh2SjVNYjJ1WmpHR3N2emItVlVVbWZqX0sxZnEyeVczQlB3TUg2SHpMUWxrNks4WmxIY3JYT2szLXZ3SW9nX2t4ZC1HUDdRVXFlRUw1Y3QwaXlZQkVFYlY1M3NWbEZ6dVd4VVJUYVRmc0xTampIMGk1UFZTY3JpZ1BfQVZDc1RhVnliODVhZF8tblYwTlFndDRRcmo3MGltNTdpOFpQQ2l4SkU2?oc=5",
+      "source": "Tom's Hardware",
+      "published": "2026-09-28T16:35:00+00:00",
+      "summary": "Synopsys가 AI를 활용해 칩 설계를 자동화하는 Autopilot 플랫폼을 공개했으며, AgentEngineer 플랫폼은 2026년 말까지 일반 출시될 예정이다.\nAI 기반 설계 자동화는 반도체 개발 속도를 높이고 복잡한 칩 설계를 용이하게 하여, 칩 개발 비용 절감 및 시장 출시 기간 단축에 기여할 수 있다. 이는 AI 반도체 설계 생태계 전반에 긍정적인 영향을 미칠 것이다."
+    },
+    {
+      "title": "Volato Group 자회사, 대형 AI 고객과 12억 달러 규모 AI 인프라 공급 계약 체결",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPaXQ4RVV4NXBwVEtUOS1jc0kyYl9NQ0lwSjItLS1wd2p3N3NGNmpKYlV2Wm0weTEwNklCcUxXRG9fRFhTUC1vYVNFV2JEa1gzeENhSWYzLWhNODQwSzVMX3o2RjBiWWRZN3VOUkxyRlR2a0s0dnEya3pBZTdLTmpCekQ2WFhvNmpYUDZ1aEdvY3VsZ1k?oc=5",
+      "source": "Yahoo Finance UK",
+      "published": "2026-09-28T12:05:00+00:00",
+      "summary": "Volato Group의 자회사인 Alignment Engine이 대형 AI 고객으로부터 12억 달러 규모의 AI 인프라 주문을 확보했다.\n이는 AI 인프라 시장의 강력한 수요를 시사하며, 관련 기업들의 매출 증대와 기술 개발에 긍정적인 영향을 줄 것이다. 특히 대규모 AI 워크로드를 지원하기 위한 인프라 투자가 지속될 것임을 보여준다."
+    },
+    {
       "title": "Marvell’s AI Opportunity Could Expand To $625B By 2030, Says Cantor — Sees Up To 45% Revenue CAGR",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZGkwSmxaTlVBWllZU3h5djBUZnlTQmZBOVdvY3pDaXU2anFPR0t1R29qeFlyYkVkNmU5ZElTb3paaFlNNTlLdzlnbmZta1cwdkcxNlZad2RoakljU1lyOHM3dERJa0NiTGtITGVGdjZvOVRGRm5zRkU5RDV1NXN0TnAyYWtDWWdhZlZVSElRQjJUbTk5MFluSjZ1Q0Rya0Zl?oc=5",
       "source": "Yahoo Finance",
@@ -48446,27 +48634,6 @@
       "source": "Yahoo Finance Singapore",
       "published": "2026-09-16T09:11:00+00:00",
       "summary": "스페인의 데이터센터 포트폴리오가 확장될 예정이며, 기존 용량 증설과 신규 프로젝트를 통해 새로운 투자 기회가 창출될 것으로 예상됨. 이는 AI 및 반도체 산업의 컴퓨팅 수요 증가와 인프라 투자의 중요성을 보여줌.\n스페인 내 데이터센터 용량 증가는 AI 연산 및 데이터 처리를 위한 컴퓨팅 파워 수요 증가를 뒷받침하며, 관련 장비, 설비, 전력 인프라 시장에 긍정적인 영향을 미칠 수 있음. 또한, 관련 기술 기업 및 인프라 투자자에게 새로운 기회를 제공할 수 있음."
-    },
-    {
-      "title": "삼성, 천안 공장 HBM 생산 전환 및 기존 메모리 모듈 아웃소싱 전환 보도",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNYkFrOU15WjNIYThBbjFEZk14YVhkdXREeFhZR1BIRVNLSm1uZFNfeXdlZUZQRERETGp4RzRDbGxWdlgyS2dFenI0blR1NTFoNkNDV2Y3TWU1QjV3dG41czdWQnM0REFCY0dlQjhNcDJlcXpoczdzZEpMZGtGdllSdXphVHkxb21vT200WVVuMG0yUnNtOHd3NU1saFZPMmNTRmRIR1kxeG5HWmxyVFFsd1d6VXQwR2tUaVdjaGtoV3oyNGdtdXViTkhQWTc4dWQxODZzTzRydGlnYXdNaXpz?oc=5",
-      "source": "TrendForce",
-      "published": "2026-09-16T04:07:28+00:00",
-      "summary": "삼성전자가 천안 공장의 생산 능력을 고대역폭 메모리(HBM) 패키징에 집중하고, 기존 메모리 모듈 생산은 외부 업체에 맡기는 방향으로 전환을 검토 중이라는 보도가 나왔다. 이는 AI 시장의 HBM 수요 급증에 대응하기 위한 전략으로 풀이된다.\nAI 서버 및 고성능 컴퓨팅 시장에서 HBM 수요가 지속적으로 증가하는 가운데, 삼성전자의 HBM 생산 능력 확대는 시장 공급 안정화에 기여할 수 있다. 또한, 기존 메모리 모듈 아웃소싱은 해당 분야의 공급 업체들에게 기회를 제공할 수 있다."
-    },
-    {
-      "title": "2026년 데이터센터 전력 수요 31% 증가 전망, 2028년 공급 격차 확대 예상",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAxV3NwOFRXUGljXzFBLXV1cW1pLUZkMWFNakNLZ0ZmOWdBeVZIX2lqdk1JMEViWXY5ekRDVlRBRHZyeFprR2xKUXh4QXhlS2VHWFpZWmlGZlIxdzFYUW1OM2x5Q04wU0tRbUxIblZ0aWU?oc=5",
-      "source": "TrendForce",
-      "published": "2026-09-16T07:03:37+00:00",
-      "summary": "TrendForce에 따르면, 2026년 전 세계 데이터센터의 전력 수요 용량은 전년 대비 31% 증가할 것으로 예상되며, 2028년에는 전력 공급 격차가 더욱 확대될 것으로 전망됨.\n데이터센터 전력 수요의 급증과 공급 부족 심화는 AI 연산 및 클라우드 서비스 확장에 큰 제약이 될 수 있으며, 전력 인프라 투자 확대, 효율적인 전력 관리 기술, 신재생 에너지 확보의 중요성을 부각시킴. 이는 관련 기업들의 CAPEX 결정 및 공급망 전략에 직접적인 영향을 미칠 수 있음."
-    },
-    {
-      "title": "홍콩 데이터센터, 26억 달러 자금 조달 시험대 올라",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQb2VGQ3JkTjdXUG5RMXh3YkV5VjNwWTRQMjJyY0p4ekJfYThvNmxoV0FHQXZwWk5mOEd2WjRHWURRWVB1eDNqVGNPQzBSdXlVWnBaWlNIMEVhamY5REQtOGhZZGc0U0pINDlYLVN0QXpPZlBLenBVdnJGa0dtZzRsSFoxX1BPUTBJSk5jMEpBblRycjV3YXJxYk5CVWQxbFA2dUNPbTZkcDN4ZXZJelJ6eVliM3Q?oc=5",
-      "source": "bloomberg.com",
-      "published": "2026-09-16T00:30:00+00:00",
-      "summary": "홍콩의 데이터센터 구축 야심이 26억 달러 규모의 자금 조달이라는 시험대에 올랐다. 이는 AI 및 관련 산업 성장을 지원하기 위한 데이터센터 인프라 확장에 필요한 자본 규모를 보여준다.\n이 자금 조달이 성공적으로 이루어진다면 홍콩의 AI 및 데이터 관련 산업 발전의 중요한 기반이 될 수 있다. 반대로 자금 조달에 실패할 경우, 홍콩의 데이터센터 확장 계획에 차질이 생겨 역내 AI 생태계 성장에 영향을 줄 수 있다."
     }
   ]
 }
