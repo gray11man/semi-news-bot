@@ -2749,6 +2749,48 @@
       "source_published": "",
       "source_modified": "",
       "message_id": 4978
+    },
+    "22e91c2e8c4240227e8e263d16b49b7a92e6d3078489dde6bd98199dd9e828c1": {
+      "ts": 1790643893.298822,
+      "title": "Anthropic's cloud and neocloud contracts surpass $180B, Nvidia says",
+      "fact": "Anthropic이 Nvidia와 1800억 달러 규모의 클라우드 및 네오클라우드 계약을 체결했다. 이는 AI 개발 및 운영을 위한 막대한 컴퓨팅 자원 확보를 의미한다.",
+      "source": "Seeking Alpha",
+      "rss_published": "2026-09-28T15:03:20+00:00",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNEEydEJGSDdsSlNxUHN6d2g3azAyS2NocklsSUNPcW0ybXJ4VFJlTXkzRnVvYzByV1QwUjFqQ09reE8tbjhiQzFGWDNBNEx5SWlkNXRUNVp2cS1qRk01OV9PZGxOYWpDYWNveGd4VnUwTTBTWXdhQTdvUnFLYm5WMDNJRVRVYkJlTG1pZ2czTVFsVlJYdDFVWklaQW5IZkRnZmFzQw?oc=5",
+      "resolved_url": "",
+      "event_key": "Anthropic|계약|Nvidia|1800억 달러",
+      "new_fact_date": "2026-09-28T15:03:20+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4979
+    },
+    "d3c2abc171683b9f8ce9d54c7e9818f0c7332956bd0f383a5bbe54695aad3768": {
+      "ts": 1790643895.056536,
+      "title": "Nvidia agrees to acquire Hugging Face for about $13 billion — CNBC",
+      "fact": "Nvidia가 AI 모델 및 개발자 커뮤니티 플랫폼인 Hugging Face를 약 130억 달러에 인수하기로 합의했다. 이번 인수는 Nvidia의 AI 생태계 확장 및 기술 리더십 강화 전략의 일환이다.",
+      "source": "ua.news",
+      "rss_published": "2026-09-28T19:12:31+00:00",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNcElNdUF4dGpSa2Q1ZG5fQVVVc1NyYWgtaFNjOWxJNlVXZjFMUUlsTVpENkMyX3B6SlRTcmhOV1V1TVRIaFJVUkl2RjZUYkZPZEk0ZExWWU41d3k2V1pnTjd4cFpzUmQzVnEzczR6WFpaQU9USGFYQ1lqNVkyY2oyRTNfMGR0bFlZSkVjLUR0RzV0UDlhdkFBZEREbmhNQzQ?oc=5",
+      "resolved_url": "",
+      "event_key": "Nvidia|인수|Hugging Face|130억 달러",
+      "new_fact_date": "2026-09-28T19:12:31+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4980
+    },
+    "0b279f472cf2cbbfe18ecbefda7bf7f9e3665cc96e029a94f5fd4c081d1f3a5e": {
+      "ts": 1790643896.795959,
+      "title": "AMD to Buy Fei-Fei Li’s World Labs AI Startup for $8.2 Billion",
+      "fact": "AMD가 페이페이 리(Fei-Fei Li)가 이끄는 AI 스타트업 World Labs를 82억 달러에 인수하기로 합의했다. 이번 인수는 AMD의 AI 시스템 전략 강화 및 '물리 AI'와 같은 새로운 AI 영역으로의 확장을 목표로 한다.",
+      "source": "Bloomberg",
+      "rss_published": "2026-09-28T20:05:00+00:00",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZW1PMmt1Q2c4TzNIaDNIbEs2TWQ3V0xQc1F6QXpzdHdHalpEWlk5ZlhoYnVHVXlsUGdmRm1Fd05aek1UdGFWT2dTZmFBUk9HZDAtRE85NFEwWXhnaHFqdWdSNzkzbWFMUWRxaDQ1VU4tblBrSFhRYkR3VEltUnhtMlI3dmhkcDE5OEx5T2l3RjZ6amdzVFhyeXE1Z2ZTQ0liUVFlREVzZU52THFDM29XSXpB?oc=5",
+      "resolved_url": "",
+      "event_key": "AMD|인수|World Labs|82억 달러",
+      "new_fact_date": "2026-09-28T20:05:00+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 4981
     }
   },
   "pending": {
@@ -2928,142 +2970,6 @@
       "stage": "candidate",
       "precheck_priority": 80
     },
-    "c9225be58d0a828047c46877ab77ae00b414dd73b5223dbddcafc90eda654d62": {
-      "title": "Google Data Center Anchors 550,000 Dth/d NGPL Natural Gas Expansion in Texas",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQy1OQTN3UUtHVzJaaTRBVVJFdnBOTDV4aW9LdEZjUnFZcGtSaTNPTE9qRU5ya1ZqUmVZTHFONjdoa3lfTG1pOEc0ZzVIX25tUzU3ek1DSXV2bUtkc1V1UnZiUm5NQjU4alhCVWZNWUplMTEzWS1HMFJ2RTFTMm11SnowZF9rR1hXR1o4VXd1ZnJiemp0RW10My1LQWxaNnNmbHgyMk5JblAzNVp2?oc=5",
-      "summary": "Google Data Center Anchors 550,000 Dth/d NGPL Natural Gas Expansion in Texas Natural Gas Intelligence",
-      "source": "Natural Gas Intelligence",
-      "published": "2026-09-28T13:00:30+00:00",
-      "feed": "hyperscaler_longterm_datacenter",
-      "stage": "candidate",
-      "precheck_priority": 70
-    },
-    "a8b26abec3bd4e482be5a2cb1f8556d6e56cf84b6be1f1d1b179ff9b29e4413c": {
-      "title": "UK government tells staff to stop thanking AI chatbots — draft guidance pushes lightweight models and shorter prompts to cut environmental impact",
-      "link": "https://news.google.com/rss/articles/CBMitAJBVV95cUxPUjRFVU1PWFdBbEFCODdhZnlEOWdLSTVHbWV6LVNjWlZINTA0UUdycHJyMTA2SjFOQ2xIT0JXdGlLR1JPcC1Ka2pqaUxWN1dTYm5NYWoyNTdrdUZvc1pqT3VRajZTSG9hWU1oVmw4NHlLc25OOHAtSjJFNEhNc3gzWWlFTXlMWXVzX1FVNUl1V2R0OTZSZWNQZk1ualdWNGZxanlQNkRIb2d4QmxscUhjM1pnT1NaTWxpT2tMX2tPMDJsSU5YcW1TelY4bXZqRkdJd2luVXhvTmhRR0N6OS1DbnZIRnZNSTl3bUlUX0JCMWptcmNUZHBheE8xeGJVX0l5cm1neVNoZXphczlBdUxNZVE1cnc3X2hqQXNwSnNuOVZQTFUweG5pU3BVNnJ3NnE4QWVCMA?oc=5",
-      "summary": "UK government tells staff to stop thanking AI chatbots — draft guidance pushes lightweight models and shorter prompts to cut environmental impact Tom's Hardware",
-      "source": "Tom's Hardware",
-      "published": "2026-09-28T13:00:00+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 78
-    },
-    "2d5412724c84b2edbbc3b2b59eb9b15173b2fbc3d4746277e5e76af449ccf447": {
-      "title": "MongoDB Stock Sinks 16% as CEO Steps Down to ‘Pursue’ Role at Meta",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5IaXFwQ1pyNk9HMzY5VDlCcmtieGpIeUkwbWNIWXB0c281eDBFcDA5Um04ZS11RmRjNVRYRWFJMjVFVEp4bmJUc2owdzNLN0xFZTJmVlZZbV9EQWg2ZktVT25FZ3piTEpCTGlNVUY4bVZEQQ?oc=5",
-      "summary": "MongoDB Stock Sinks 16% as CEO Steps Down to ‘Pursue’ Role at Meta Barron's",
-      "source": "Barron's",
-      "published": "2026-09-28T12:53:06+00:00",
-      "feed": "executive_role_13",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "7cae60b6683f2342bd52d94d27406abea2fba4a779e2bf63db7caa965fc59601": {
-      "title": "Morgan Stanley cuts Applied Materials' price target by $79",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPejdMZDM2OHBQa1dOSU1vSDNUMmVHb2lWb3RvNk13ZWhIWHlRbnR6Mm1yYU95WFlrTkQ2cWJiMVJKWDZNVkt3cXNGSTNXVG41Q1puNVpOQlNSRlNiOUltSE1NZnRobGZxWGJabnJVd0RWNDRlQlFTT1pmLWo0T2xpSjlsdy1zcUs5cVI0VjViY19GendyWDJNUkxNa2tZekRSWXZjd3d4X1c4dHIyZzliM1lrQnBzV0NuOU1Z?oc=5",
-      "summary": "Morgan Stanley cuts Applied Materials' price target by $79 TradingView",
-      "source": "TradingView",
-      "published": "2026-09-28T12:50:01+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "4b6a3e02cbbfb4aa020abdbc2b05c8c6fac309e6921510c73916ceba3368f482": {
-      "title": "Micron Stock Drops Ahead of Earnings Despite Baird Target Hike, JPMorgan Bullish Outlook",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWmhqQWM5SE5oUkY0SW1RSFdZNlV5TzFkN0RXZXRPNzNuSVVoQkJhSnR6WUVlcGVTdmdqenNISmxXUUxWTHF4VWlvSVVSNmRwSWRhUGVuWjJOS3VfRDJQdXRJUFhtOTlVTWUxNkp5YVhJUGxXN1RNOHE4U2cwRWlCd0czdm1hcGxId1dPSUFucWk3Mk5vWEZFOThlOFB0SlJBZk9Tc2ktTEdLX25ELWY5RVFsSk5lZkQyeWpYSmFjbWJjb21n?oc=5",
-      "summary": "Micron Stock Drops Ahead of Earnings Despite Baird Target Hike, JPMorgan Bullish Outlook thecryptobasic.com",
-      "source": "thecryptobasic.com",
-      "published": "2026-09-28T12:40:47+00:00",
-      "feed": "memory_market",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "156172215353e5b21105c5e45647decee217b8280d285da7e28397c987f9dec9": {
-      "title": "ASML N : reports transactions under its current share buyback program",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZEx1bmpFTENzcnZzdjFBb2FzX25KVXNTc2pUZWtXVXBxa3o1WWZwMVJpS3JSSlE3b19lbmVoeVltYlhQWUVta1hTbGFpV2pLV0JaaW5OdWYtM1JxVHUzeWhVLWh1M0J1ZFgzbVI2bFlaVFNUTmRDaTl4YnRMZHBDRmU1Yk1MV3JHVm44Tm1JZVR3M1NjckNQZm5TdmhhMEs4enZKVmFvNXYzMWtKeEw5RFgxV3dmOTFQblViOQ?oc=5",
-      "summary": "ASML N : reports transactions under its current share buyback program marketscreener.com",
-      "source": "marketscreener.com",
-      "published": "2026-09-28T12:33:10+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "2944d6cc712b984aa52db50da5fd9e40aa8132efffa51cbeee68d7d2bfea1ade": {
-      "title": "Goldman Sachs has a blunt message for AI stock investors",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTElUajZZZ1libngtUFFqS00zZ3lnV2I1eXN2Mnp4UWNYZ3Z0YmtmRUtfbEgzalhhaXp2SUR1WU0taUxCeE40QmczVWJ6V3dkWEFZV3pLT3JLYjI0UnZyNEI3M3F2aTZweWxMc2dRVzViYmlCc1lnVUc4NFJLVFVNTVRFMVFjNmgteFgtYkZqNkhPRWx2MmtlcUZiT0llVkZy?oc=5",
-      "summary": "Goldman Sachs has a blunt message for AI stock investors thestreet.com",
-      "source": "thestreet.com",
-      "published": "2026-09-28T12:33:00+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 70
-    },
-    "77857b738c93dba35b4d009f41b7414f85d00a91c48f762682fdb134141cc5a4": {
-      "title": "Micron Stock Is Falling but It Might Good Thing Ahead of Earnings",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE04bkI1em1nVkNpenlNVWZ0U2t3eVZPZnBJZVU1am9lcHJhOEtLdmxXMTFYS296T3lUc1ZIZmdZRENuMW9jU0lmSjdhUVN3N3FOTGJ5eG1SYWc5TDJ5SDVQdmM1RDNaNFZyR1YyWGhBbVBxUE9KSEFpUG5WZUw?oc=5",
-      "summary": "Micron Stock Is Falling but It Might Good Thing Ahead of Earnings Barron's",
-      "source": "Barron's",
-      "published": "2026-09-28T12:32:00+00:00",
-      "feed": "ai_infra_earnings",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "b89b41860be9dacac890b7f2b603bef5056cb3f4d667fda85b126cae0a691bbd": {
-      "title": "Amazon’s AI Capex Is Paying Off and I’m Buying",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZ0RnRkQ1NEhJdUNjajdiRHFvNl82LVJ2YW5OUTFxWnNZYm01YXpUOWctRS1ab2tvZnZqeFhJY0kwcGZLSkVRSXJuSlRTY0JDdDZsZkxzbFRPNEc2c3FYZ1BPUFJ3OU5nbmo2eVFGeDBXV2JvMEYyVWkxbWl4LXNjNGU0a1BpSmhLY1U1ZXJ5b05ZYl9W?oc=5",
-      "summary": "Amazon’s AI Capex Is Paying Off and I’m Buying Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-28T12:28:11+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 100
-    },
-    "2a27dd806c803de42cf4e0e1d5d756c8bacf5109150dea2130fec624deda5a10": {
-      "title": "Apple and Nvidia Just Delivered a Major Boost for TSMC Chip Business",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOTWtUWmY2OEtwMmg2TUhXSnBPbncyeDhaWTR0X1NRRTZNZy1LbXJJWmdndng3ekZtcy1vZmkyWXFfZnFXdUdHaXBlMlA1MU5qeEtfRzRNU2ttZ2tCQnBTRnozV0FnZ2hlOWFIQUF3X2tLRE9aSElfbFNTY0xZNFRTcWt3VERoR3V5Rm51QjRtRGpGdnZoX2NoTkxB?oc=5",
-      "summary": "Apple and Nvidia Just Delivered a Major Boost for TSMC Chip Business Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-28T12:22:30+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 85
-    },
-    "33e40dfa4d0ec59a2c142482a6df45464637581430ff0f72da39d2a50e2181c3": {
-      "title": "Thales and Google Cloud Expand Collaboration to Help Secure Agentic Ai Workflows",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNSmdfUXVFWVBmd2lHb1NhMEl1d09wd0RTVXg1c2R2TnlRZWQ3dlVKaS0tbG01LUFvM3BFTXp4dUFDS3hIU3R6am0yMno0bm9lM2prUDY1MGR6YTZQWkdtRlhzSDBDUkd0WTY2VEtYQWtlR19fNzlQa1RhV3RfTWw4NDZuZWczV0ZxTlNzY3A2alNMMzN3VWQ0TjQ3WngwdkdfOU40QWNWcXBhQVVmU2QzTnRqUTVxR1huUWtQcTZGX21heXVXTS15Zk0yN20tUQ?oc=5",
-      "summary": "Thales and Google Cloud Expand Collaboration to Help Secure Agentic Ai Workflows marketscreener.com",
-      "source": "marketscreener.com",
-      "published": "2026-09-28T12:21:19+00:00",
-      "feed": "hyperscaler_longterm_datacenter",
-      "stage": "candidate",
-      "precheck_priority": 66
-    },
-    "1faa8af8f017d87d0bd875337aeb918d308b75d6fa8060aa8090affc0729e3a4": {
-      "title": "ASML Holding N.V. : UBS reiterates its Buy rating",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSjVyYVdxODdPa3A3RVpMU2xJNUpLdlliLVkyWDEtRDJMQzc4NDdxVUdsOWNQaVJkZDVOdUJLQVF3LWRpWEFUU1FUWXQ4WUlSaGxadVV0TnE5QUpnMFp4cklpeTFFbGZ4VkFyOVFLczZHX0V0Q0IxTC02M0hBc0hRT0pwUklNckotZFllek9IUVljb2J5dFVHaW5VQllhWjZZ?oc=5",
-      "summary": "ASML Holding N.V. : UBS reiterates its Buy rating marketscreener.com",
-      "source": "marketscreener.com",
-      "published": "2026-09-28T12:17:44+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "cff1c397a925bebead7b548cc6842f0afbc2e20e416b716270245d682bb9a93a": {
-      "title": "Mona Raises $3.5M to Expand Its AI Platform for Small Business Capital Access and Financial Coaching",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE50QXpYMkhrMXhCai1ZSk5oVHZCOEw2ZXFwTXQ2Q0RUREpUaW5KcDRCbEt5bUhqMnllU1lLRENIXzl0TnptTmxWT29ia3RnWFNqcEZDLTVpcWxuQkNuQzJTY1FNc3VsYTNHdjE4cEl5TU1HZlNTNFYzQjNWdTE?oc=5",
-      "summary": "Mona Raises $3.5M to Expand Its AI Platform for Small Business Capital Access and Financial Coaching Yahoo Finance UK",
-      "source": "Yahoo Finance UK",
-      "published": "2026-09-28T12:12:00+00:00",
-      "feed": "ai_financing",
-      "stage": "candidate",
-      "precheck_priority": 60
-    },
     "0bc9c1280578b879701b54c8870ef61c6781b1e5651aee90070a88b4d4962741": {
       "title": "Kodiak Sciences soars after pivotal DAYBREAK Phase 3 wet AMD results clear key endpoints",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQVZaM2FsLXNLSTdpY1N0Tno0X2V5eWlzWS13TWRWbW1RbkdhQ0J3MEQ5ZGVhYWF1SUkweDQwTXVnYlVRazVYVmdZWTllLWlsWl9vMVU0aUVCYldLMVc2SGFsa08zbTktRlJzQW50U3R6NUgzam5OeGhVQlNuRE15THhYbzZSZ0RsT29KSGE1NUd2eW1nWDhnUERQMC0zNkRWWFZSbTRNSG1JTE9ZRHhYUTBXM2Jnb0NBZmtRRUx3?oc=5",
@@ -3186,80 +3092,6 @@
       "source": "finimize.com",
       "published": "2026-09-28T13:03:56+00:00",
       "feed": "memory_market",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "13b5e612ab04e2477676ce7a3445b96c93494ec09e90316c4f4b1dc05406eb05": {
-      "title": "Japan's Nikkei Ends 5-Day Winning Streak Ahead of Micron Earnings",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBfbjVaaDFKTW9MdFROaVdHc3BZSW1jMk1UbkJuVTVpY0xyTzJyMEtxWFhLaDdaRFkwWVNVVHdtUUZ1RzhkNldGN18tWGZMMEdOMzZ2dG5VMml6bndGTHhnaXlqamhmN2NOeGNz?oc=5",
-      "summary": "Japan's Nikkei Ends 5-Day Winning Streak Ahead of Micron Earnings صحيفة مال",
-      "source": "صحيفة مال",
-      "published": "2026-09-28T13:00:10+00:00",
-      "feed": "ai_infra_earnings",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "9ed0364c30f55057dea149151ff3ab500c63ecaec7a7c260dba9384666b19a79": {
-      "title": "Submer Group Launches Corenix to Deliver Modular Data Center Platforms for Accelerated Computing",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNVzN6YVdtdGl2YlFEa0taQlJYYmlROThEU1RaVjZzbDZxVlJLaXJsdHM1M2FuSUpSWFZjaHJjUV9UZHg5WlUwOUxDcHRtYkRCeVp0TmJfTmxKaXpaWFllcEY2OWtXRGVBSlhwQkFoZ1VPMUtTRTBPd3RaYXlfVmo0RWZLQUJJVElmYnpqdTkyaTg1SktNMnFkMGhMN1NBRUYzNXZ3NnFqZ2NOcl9iX3ZQd2VpMDItVlZCVXNWOUpGYk9EZnFpSVhVLTNQZUVpcUxvdVhWYWZKY2FYV21fN0Jtb2YxSW1fTUU?oc=5",
-      "summary": "Submer Group Launches Corenix to Deliver Modular Data Center Platforms for Accelerated Computing PR Newswire",
-      "source": "PR Newswire",
-      "published": "2026-09-28T13:00:00+00:00",
-      "feed": "cooling",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
-    "8465ac5319c12546826a8ec6b2e77440b319c1abb9502e9d3825592bf1f492f9": {
-      "title": "Cipher Digital Extends Barber Lake Lease, Boosts Revenues Above $9B",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQOU5SSmxHcDR2YkIzZTROcVdmMEJnQV95UUk4RWJGU2EzRlFfeVc5ZjRGVjk5TFJXMFVHdDVLTzJhOGpQYjN1NnBsUUVyTVZWakRBTG5idW4weVFPZng5WlhNS3R5T2M3bjhLT0k2SVdTVFJHWVJPeDcxRDVYclVrMThSckNtekpxMEpoR2VyMnBCdjI4SFBxVXFfQQ?oc=5",
-      "summary": "Cipher Digital Extends Barber Lake Lease, Boosts Revenues Above $9B Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-28T12:45:00+00:00",
-      "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 76
-    },
-    "0f8c574d397ff227d5e0aa490e8ae76a69337e6391407d531d828a47b99c7799": {
-      "title": "Micron Stock Drops Ahead of Earnings Despite Baird Target Hike, JPMorgan Bullish Outlook",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWmhqQWM5SE5oUkY0SW1RSFdZNlV5TzFkN0RXZXRPNzNuSVVoQkJhSnR6WUVlcGVTdmdqenNISmxXUUxWTHF4VWlvSVVSNmRwSWRhUGVuWjJOS3VfRDJQdXRJUFhtOTlVTWUxNkp5YVhJUGxXN1RNOHE4U2cwRWlCd0czdm1hcGxId1dPSUFucWk3Mk5vWEZFOThlOFB0SlJBZk9Tc2ktTEdLX25ELWY5RVFsSk5lZkQyeWpYSmFjbWJjb21n?oc=5",
-      "summary": "Micron Stock Drops Ahead of Earnings Despite Baird Target Hike, JPMorgan Bullish Outlook The Crypto Basic",
-      "source": "The Crypto Basic",
-      "published": "2026-09-28T12:40:47+00:00",
-      "feed": "memory_market",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "a88522eb682d2d91a797b35766dc34660bd490b67862587af89e1ded0d70f421": {
-      "title": "Vertiv expands Slovakian campus as demand for AI infrastructure continues to surge",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTkVXWU1CSS1ib2FSQUlTclhuaXJ3WVNlNUhsRW02R2xoY3Z1NndtODlTY2FrMnJOQlJ6eGdCVXc4Mm5Qd3cwVkFnYzNSQk1KSWJOa0xmaTVCWEl6QThxaV91MU04b3p2ZHg2TkI5d0sxWmFGb3NLcnhibE5VejBmUGVSTDN0RDhYcTdyb1ZDaXI2amtLUXVGblBIT1pGOVZqdThBRTJVNW5jLVkySW52RzZtRlhlejNwem9QcS13?oc=5",
-      "summary": "Vertiv expands Slovakian campus as demand for AI infrastructure continues to surge channelweb.co.uk",
-      "source": "channelweb.co.uk",
-      "published": "2026-09-28T12:26:48+00:00",
-      "feed": "infra_company_3",
-      "stage": "candidate",
-      "precheck_priority": 80
-    },
-    "db16a6d7558be3281b0475e45d0b33fc99040138e3818076953f138bfaf35665": {
-      "title": "Micron Q4 Earnings Preview: What To Expect From Upcoming Report",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQOGMzTEdnTEFITWRua1MtdlR3QjlWaHdoNDM0RDl4ekdtaVFOTk94Q3lJRTdsY3NkanN5QUtvdTFwSVM5VFk2cEZvTzlURFRhZ3ozWnJvMFVvMk12QTRnal9jb0FaTE5qUmlwNHpLQ2VqYXFhYnhKMXFDUGRNWnZTMXVaY0p5eUxydklYUXZVbWtDRmlGdkxpTzFqSzE5TVk?oc=5",
-      "summary": "Micron Q4 Earnings Preview: What To Expect From Upcoming Report Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-28T12:21:13+00:00",
-      "feed": "ai_infra_earnings",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "ff9ee1d6923298fa9d0096ca3cbe7b42ad5c4f70c5387b99e031b581524e4104": {
-      "title": "SpaceX could see 'significant' upside to EBITDA amid Colossus ramp: Evercore",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNc25YX0hnWndCSE55VTczRk1kQXc1MXphazgzTzNKRkFqa1FUNWs0VWhLRkRubXZVam9Ec3BOSVBQTTdQZkk4b041SFdOR1h5ZUtfRVBTWTQ1RnB1ZFZXSUFnWUNjaHpYNDh6UXZFQzlFWGszQjF6a3Bzd3J4anRNS05yT0xBN0JETXVCTVd4WVdBakxENHFHdGZTWWx0amhKdkp5dFhFblI3RU01Z3FIZ0Jram1tMXI0RG8zZ1JjRmt1NFJJS0QzREpNNDFrWXBKMGc?oc=5",
-      "summary": "SpaceX could see 'significant' upside to EBITDA amid Colossus ramp: Evercore TradingView",
-      "source": "TradingView",
-      "published": "2026-09-28T12:16:28+00:00",
-      "feed": "ai_capex_outlook",
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
@@ -3512,16 +3344,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "22e91c2e8c4240227e8e263d16b49b7a92e6d3078489dde6bd98199dd9e828c1": {
-      "title": "Anthropic's cloud and neocloud contracts surpass $180B, Nvidia says",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNEEydEJGSDdsSlNxUHN6d2g3azAyS2NocklsSUNPcW0ybXJ4VFJlTXkzRnVvYzByV1QwUjFqQ09reE8tbjhiQzFGWDNBNEx5SWlkNXRUNVp2cS1qRk01OV9PZGxOYWpDYWNveGd4VnUwTTBTWXdhQTdvUnFLYm5WMDNJRVRVYkJlTG1pZ2czTVFsVlJYdDFVWklaQW5IZkRnZmFzQw?oc=5",
-      "summary": "Anthropic's cloud and neocloud contracts surpass $180B, Nvidia says Seeking Alpha",
-      "source": "Seeking Alpha",
-      "published": "2026-09-28T15:03:20+00:00",
-      "feed": "ai_company_0",
-      "stage": "candidate",
-      "precheck_priority": 95
-    },
     "5e2e1fa65f5d85514f6dd7b577a30fcc85451e84ffe7234f503ee6944b506103": {
       "title": "Nvidia Just Delivered 106% Revenue Growth. What Could NVDA Stock Do Next?",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdlJxUFJvNGJIbE1hTTJqbFNIWjdvQy1OSm1xUlBDZ2tPajRwcWlhZEN4ZkpXYzZEQlJ4YU41ekR6ekVZQ3NIaVc2eXF6bXhCUWIyZVJpaGRTTWRGbHhGSzBZUno4ZEdmOHBVV0NyUWEtd0huSklMUkp4S0xMWjRfV012X0FmR1ZXOVJ4bThoUzFldTFHbWFyMUZGNV9Lb1A4bE4wZENHbDJXaDhQek41cHlXeGc?oc=5",
@@ -3630,49 +3452,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "0b81a217272303a864a2b9fced937b111ca94d426c01f9f018a84981666fe164": {
-      "title": "Japan's Nikkei Ends 5-Day Winning Streak Ahead of Micron Earnings",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBfbjVaaDFKTW9MdFROaVdHc3BZSW1jMk1UbkJuVTVpY0xyTzJyMEtxWFhLaDdaRFkwWVNVVHdtUUZ1RzhkNldGN18tWGZMMEdOMzZ2dG5VMml6bndGTHhnaXlqamhmN2NOeGNz?oc=5",
-      "summary": "Japan's Nikkei Ends 5-Day Winning Streak Ahead of Micron Earnings maaal.com",
-      "source": "maaal.com",
-      "published": "2026-09-28T13:00:10+00:00",
-      "feed": "ai_infra_earnings",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "1310081c775e5e6df10be0774d54545a50dc51e02187b1a51d7233fb17a9881a": {
-      "title": "Wall Street Analysts Believe Applied Materials (AMAT) Could Rally 34.23%: Here's is How to Trade",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPbEx3aTZDZEZ5VURnLUwzMFUwM3F3ek02RlBQbzFQQW43NzR5STZ3eHdyalNYVWh0QjFBd0hRdFl2RnIwZGFxbnB2bGVKWDlfcklNWmxLdDNEVl9ydE1Bc3kzNWpGTklxekd4Rk9WVXhoNkpMaUxJUGFsUnpkcWdIQWhTRWZ0X01WaXZOLVp6b2UyVmEySnZ2clZpei1acmhkY0tB?oc=5",
-      "summary": "Wall Street Analysts Believe Applied Materials (AMAT) Could Rally 34.23%: Here's is How to Trade Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-28T12:55:03+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
-    "af13cfa28c6148640dec6e284982597622c95d45b43b3de67a5638e8783757b9": {
-      "title": "Cipher Digital Extends Barber Lake Lease, Boosts Revenues Above $9B",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZl9nLXAtUU9BN1otRk55ay1WWjBJYjgzdXRINzRjc20xZDloUmI1RmxnZl9oOE1CRlJwN3FuQzc1TnRySmxKd1VvcXV1ZURtbU9HY2tFY3FfZXBwOW04YXVoNUZQaXpuc25lemIzMVFNQXh0Sk1fVGp6SGlrbWk4eVVweHJoOElmZ0FBQkU1dWpBRDhEQ1NsWWd0b1AzVEItaWhDUktfdEQ3SlFtUEJ2ckFfWmRWWkpfbDZza1N3?oc=5",
-      "summary": "Cipher Digital Extends Barber Lake Lease, Boosts Revenues Above $9B TradingView",
-      "source": "TradingView",
-      "published": "2026-09-28T12:45:00+00:00",
-      "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 80
-    },
-    "ac3d35f7ed30fb0691b5dcdc32784840fad4abc9cc48a43ed69497f2271e4336": {
-      "title": "ASML Holding N.V. (ASML) Stock Price, News, Quote & History",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1xYTJNLWlrdEl5bkZ5REJDbzVqREU2amNmcFY1bXp3TU5fQjJfaWtlTUN2NHViZUVtTmIxV18zWUZ5QWx4Y0lRWTJmcHhXQTREcHc?oc=5",
-      "summary": "ASML Holding N.V. (ASML) Stock Price, News, Quote & History Yahoo! Finance Canada",
-      "source": "Yahoo! Finance Canada",
-      "published": "2026-09-28T12:27:36+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
     "78fd7b4a2862e6f7561c9f63f847ae5d356d710819e30d60f63ab787397688c9": {
       "title": "Trane Technologies unveils AI data center cooling designs By Investing.com",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxONDg5N3YyUEU1ejJQR3FicHpWNGZNMUprMFd0RjZodUlvTHFaNzVnSEQxcUd0bERWUUt2R1hadEIxY1pnUjJZdldmbVN2RGkyVVJCQl9LT2xGZ0NyTzBudGoxUng4TkpLSmtHVW5GTmhXS1E1OGxmWi1JaU4zVFdiQVd0U2VrWjdFS292NFBzcG5pSkFTR0U0X2JSZUFrZmUxbmw1b3JBcUc2Mzd4VGI0bk5sUnNQdmF1aEE?oc=5",
@@ -3742,16 +3521,6 @@
       "source": "CNBC",
       "published": "2026-09-28T20:10:45+00:00",
       "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 95
-    },
-    "0b279f472cf2cbbfe18ecbefda7bf7f9e3665cc96e029a94f5fd4c081d1f3a5e": {
-      "title": "AMD to Buy Fei-Fei Li’s World Labs AI Startup for $8.2 Billion",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZW1PMmt1Q2c4TzNIaDNIbEs2TWQ3V0xQc1F6QXpzdHdHalpEWlk5ZlhoYnVHVXlsUGdmRm1Fd05aek1UdGFWT2dTZmFBUk9HZDAtRE85NFEwWXhnaHFqdWdSNzkzbWFMUWRxaDQ1VU4tblBrSFhRYkR3VEltUnhtMlI3dmhkcDE5OEx5T2l3RjZ6amdzVFhyeXE1Z2ZTQ0liUVFlREVzZU52THFDM29XSXpB?oc=5",
-      "summary": "AMD to Buy Fei-Fei Li’s World Labs AI Startup for $8.2 Billion Bloomberg",
-      "source": "Bloomberg",
-      "published": "2026-09-28T20:05:00+00:00",
-      "feed": "ai_mergers",
       "stage": "candidate",
       "precheck_priority": 95
     },
@@ -3973,16 +3742,6 @@
       "stage": "candidate",
       "precheck_priority": 78,
       "precheck_override": "critical_event_force_review"
-    },
-    "bed695fb6781ac92e320e4613705d4061a6b76d77e989920fe0a2349e3270d45": {
-      "title": "Anthropic launches cheaper AI model, its second release since CEO's call for a slowdown",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9qRGtiMER0c2RNRG5wOWl1ZWd4aEszaTJqWW5hWnI3cXpVaHBtTzlGYnQ2bTBsMnhXSkxONXdLVVpXQ0IxSG9RR2tXTnNiM2J0Qk5sbXJqVTVQRUFERXBSNEVPa2NmWHpYMDNOaktSNUNlUdIBd0FVX3lxTE9VUlRzOG8tVjJtWXpKb0hFNlduRU1QU1dlS2xPaHpBSzlxcWxzbFRBT19oMEJMdjgyd0c2elZXcV9vT1lGNU9VR0VqZGZxTThIRW5kLTlMTEUxdEhhUEs2NjJabER2UUdpaTVFdzZxWTVkX0JTeGU4?oc=5",
-      "summary": "Anthropic launches cheaper AI model, its second release since CEO's call for a slowdown CNBC",
-      "source": "CNBC",
-      "published": "2026-09-28T18:00:06+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 85
     },
     "ed024cce2c293ebeddef8c0549d90b36bf7027bc61846782dc1bc2ba66d43a32": {
       "title": "New Mexico Dem governor nominee Haaland announces data center moratorium executive order if elected",
@@ -4222,27 +3981,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "761a800c0299cdc94bf2e6547e5df0b552c2d1a38172e77ccc88262fb333ec8a": {
-      "title": "AI data centers could meet grid limits with 35 hours of reduced demand, model suggests",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9FVnhXV1BCdW9UcktSVGJZdGMwVEZzQUN1MXRpYlRubnZrZmJvOEdxbnlXeDFweDR0eE1oNGJ1NkoyNnhwTDdOS1RxbXRoUTVuRXNqeDdGOUFrcVBWa0NOLV92UmFGSFBKdE1JZ1B6N3MtZzFCRkFFYg?oc=5",
-      "summary": "AI data centers could meet grid limits with 35 hours of reduced demand, model suggests Tech Xplore",
-      "source": "Tech Xplore",
-      "published": "2026-09-28T13:00:15+00:00",
-      "feed": "risk_negative",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
-    "05a96a6c7dae8c73709e1731c852206488650fd2366bbd841e8d605b1de8d5e4": {
-      "title": "Morgan Stanley cuts Applied Materials' price target by $79 (AMAT:NASDAQ)",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOalpnMl9SeUdUVHpjYmtTdGI2Nnpla1hOLTJqYjZpQkRlSEt6YXRrWFB0OVIzcjUzUk1OakVIb1VxelJfZTdRS2dqQ205VlI0N3lZYzRrOWlCZ0U5ZDhuU0w1LXVvZHNuSE9nZDhSVXRYelpEV0N1NkhINTZvcUNIWVROSFIyRHBZT092UWcwR3pXWTBkVEJaLWV3?oc=5",
-      "summary": "Morgan Stanley cuts Applied Materials' price target by $79 (AMAT:NASDAQ) Seeking Alpha",
-      "source": "Seeking Alpha",
-      "published": "2026-09-28T12:50:01+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 78,
-      "precheck_override": "critical_event_force_review"
-    },
     "e3d9c74fb0ce9e5596ebe718f28d99cfec06098dd2a760d6b81327dd114f2a7d": {
       "title": "Stockdale backs real estate AI startup Zinq with strategic investment",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWDVBNG1qcm0yM1Jrc3ZHd0Z0RWdQY3FBOVE5ZlZ1U2hGWWdfR2hkTlJFUTc2TVV3eFpIazh6OW1ZVjhVd25mcEVXU0xpOUE3cmZob1RFanRUa3NjNVBLRDZPT2psQUJhak5HV2JpRU5GaElfZWE1TURUNUpyU28xYm5SZ0RaMWV5UndnT0FUQ0RmT2pQTzV2elpNZ2FhQ1Z0LU52Skp3?oc=5",
@@ -4274,16 +4012,6 @@
       "stage": "candidate",
       "precheck_priority": 95
     },
-    "636bde733c3720e9f783438ae68701e5c642a8c89a4284ae5286ac5a758d6970": {
-      "title": "AMD acquires World Labs in $8.2 billion deal to bolster AI systems strategy",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUEpLOGExLXd6b0dKeXJadmdubW9zdWZzTDB6eVhLb0RSN3RSQTYyenBJdTVRdmR6Vm5jRnp4VHVQQ1NEbGFQb1J0V08xcThIRUs1aG5NQ0piLXhEQTRhcXZQNEZkMUVuaHVyLTRNVjhjbDEtZmxuTGpuR2d1ZDU2b1pGdkxqS1o2TUNDcUMyaFUzRVdmUUpPQndkdEZMZw?oc=5",
-      "summary": "AMD acquires World Labs in $8.2 billion deal to bolster AI systems strategy Reuters",
-      "source": "Reuters",
-      "published": "2026-09-28T20:39:16+00:00",
-      "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 95
-    },
     "72e95367dcd2ca645fb13b2f034595f36adcddc3355609dd0fa93c688b50891a": {
       "title": "AMD to acquire AI research firm World Labs for $8.2 billion",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPblNxOHFWUXpleGxuQnFtWS1ha05obmJsNmVoM2lxY3E1TTBqM2lpTllJaTlXMERTbllVd1J4cW5QSGFxaTN2UXAwUkY5eFJla25icnF1azZKSnlwVUxMT3FpWXVqNDU3TTdpZUNxSFpxdUNvQnBBc0RmR29jM3VxbTNWa3VEbUNiYnBMQjQ2R1FnODVycks4NGdzZElRZFRHb3NTWFY3ZE9iMDE2c09nRjRpS2NTOHBzN0E?oc=5",
@@ -4303,16 +4031,6 @@
       "feed": "cooling",
       "stage": "candidate",
       "precheck_priority": 75
-    },
-    "4ca4d676f1aa466364cbe388983ec8693d08ac46c01505e378ab59936118b259": {
-      "title": "AMD to Buy Fei-Fei Li’s World Labs AI Startup for $8.2 Billion",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZW1PMmt1Q2c4TzNIaDNIbEs2TWQ3V0xQc1F6QXpzdHdHalpEWlk5ZlhoYnVHVXlsUGdmRm1Fd05aek1UdGFWT2dTZmFBUk9HZDAtRE85NFEwWXhnaHFqdWdSNzkzbWFMUWRxaDQ1VU4tblBrSFhRYkR3VEltUnhtMlI3dmhkcDE5OEx5T2l3RjZ6amdzVFhyeXE1Z2ZTQ0liUVFlREVzZU52THFDM29XSXpB?oc=5",
-      "summary": "AMD to Buy Fei-Fei Li’s World Labs AI Startup for $8.2 Billion Bloomberg.com",
-      "source": "Bloomberg.com",
-      "published": "2026-09-28T20:05:00+00:00",
-      "feed": "ai_mergers",
-      "stage": "candidate",
-      "precheck_priority": 95
     },
     "e80abd831c6f3a983b772399759255e453bc7e0383118cd16f31e68fab122983": {
       "title": "New group targets Pennsylvania, 6 other states as data center battle heats up",
@@ -4438,16 +4156,6 @@
       "stage": "candidate",
       "precheck_priority": 90
     },
-    "79d035c71a0ac5223b80301ab997f7f92a382691e72914fb4367b590343db9ce": {
-      "title": "AMD to buy Fei-Fei Li's World Labs in $8.2 billion bet on 'physical AI'",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUEpLOGExLXd6b0dKeXJadmdubW9zdWZzTDB6eVhLb0RSN3RSQTYyenBJdTVRdmR6Vm5jRnp4VHVQQ1NEbGFQb1J0V08xcThIRUs1aG5NQ0piLXhEQTRhcXZQNEZkMUVuaHVyLTRNVjhjbDEtZmxuTGpuR2d1ZDU2b1pGdkxqS1o2TUNDcUMyaFUzRVdmUUpPQndkdEZMZw?oc=5",
-      "summary": "AMD to buy Fei-Fei Li's World Labs in $8.2 billion bet on 'physical AI' Reuters",
-      "source": "Reuters",
-      "published": "2026-09-28T23:18:36+00:00",
-      "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 95
-    },
     "5012bcbf39343c581984d8c412f08c805163728e061a383cd2ae586c88a954c5": {
       "title": "Exclusive | OpenAI Scraps Release of New AI Model Over Safety Concerns",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcC0xNDExdTJodUowZi1yeWdFN3M5RlpvY3FvZ1lQeHltWGVkeG01ZTVlaHJ0TldqVVRhekJhWl9ZRTRLNHRqX1NQQVFKMW5NRnhBTmlUNWNpX1FBX3Myc3VlaGIxbFZTZDZYRlYwTGNVLTUtNnJScGJWcm5rX0hMMmNadFFmZw?oc=5",
@@ -4457,16 +4165,6 @@
       "feed": "frontier_model_release",
       "stage": "candidate",
       "precheck_priority": 90
-    },
-    "9443ff0edfd9ce98b9b0b1c3281af20c55ddf31f947a126799ced9f4448d2038": {
-      "title": "AMD just spent $8.2 billion to enlist the 'Godmother of AI'",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQMXlWUW5ycmtzTVhGNmRrRXBCTG9pbUtxSW9BS1RYcHVjaVNUeGo4Z3Fvc0hOV1dIVXJpbVNFSXVaTEQwU2NmV09LcXlCc21RdklCbV95UVBrRklhZVg1UWd5NVY2MExCT2JnV1dMV2hlc0xNMlhDMXNBcThsUzd6aFZINWZtaFM1bW5fczkzMjRtOW1uWmpyR1ZId0JjS2lKeGo5RXVIblpodUtOanFqX3ZpaDZHdw?oc=5",
-      "summary": "AMD just spent $8.2 billion to enlist the 'Godmother of AI' Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-09-28T23:06:34+00:00",
-      "feed": "executive_role_6",
-      "stage": "candidate",
-      "precheck_priority": 95
     },
     "45f516e0699ad6f00c14aee71972631df8943a874f999f959de0ee58472500f2": {
       "title": "UK Should Relax Accounting Rules to Boost Investment, Paper Says",
@@ -4609,16 +4307,6 @@
       "stage": "candidate",
       "precheck_priority": 85
     },
-    "81f46f7a6b54861781f02f5750231a3f01cd5b0ab85626926cf42604d6fab784": {
-      "title": "Fed’s Cook says AI demand ‘broadening’ to increase inflation",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBRcXFxbDNlWjhJN191MW5oUWNCSm52SFg5U3lDMWZiZGVuR2w5MXJLTXFNY0lBUzgwS2lKY2VPY1hFYktraDRVTFNkTXVLY2cwUE95UDYxUWw2M1hCMlJOTkxmeHptVXQ2V3JnSzRFMWk2LS1JLWZjRUc2VdIBe0FVX3lxTFBRcXFxbDNlWjhJN191MW5oUWNCSm52SFg5U3lDMWZiZGVuR2w5MXJLTXFNY0lBUzgwS2lKY2VPY1hFYktraDRVTFNkTXVLY2cwUE95UDYxUWw2M1hCMlJOTkxmeHptVXQ2V3JnSzRFMWk2LS1JLWZjRUc2VQ?oc=5",
-      "summary": "Fed’s Cook says AI demand ‘broadening’ to increase inflation The Hill",
-      "source": "The Hill",
-      "published": "2026-09-28T20:17:43+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 85
-    },
     "cc1d7e003860acacb3e302f3656e4826cc2dec5988f1d08838673df7c25d5e57": {
       "title": "AMD to acquire AI research firm World Labs for $8.2 billion",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOa1JGWXhsUGNzUi1KOGtzeUtjaklzRW5Bak9YNUdhZDc4eUh0a0JON1pXc3UwTXlYdUdvNUgyNS02RWFlTmx6dk1mZ19TNWw5NVFFVEcwdmNaR3RIQTNhVjJYNm93bkM2UWhLT3A3b2pNMWpUTVlZQjdYTGk2b0JjSUJKOGJIbURwLVJENW4zZy1BMm9Ua19Qd2kxbUM5SXRTM0V2MjBRU0ZYS0oyak5GZE83Smg?oc=5",
@@ -4660,26 +4348,6 @@
       "feed": "semicap_earnings",
       "stage": "candidate",
       "precheck_priority": 80
-    },
-    "d3c2abc171683b9f8ce9d54c7e9818f0c7332956bd0f383a5bbe54695aad3768": {
-      "title": "Nvidia agrees to acquire Hugging Face for about $13 billion — CNBC",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNcElNdUF4dGpSa2Q1ZG5fQVVVc1NyYWgtaFNjOWxJNlVXZjFMUUlsTVpENkMyX3B6SlRTcmhOV1V1TVRIaFJVUkl2RjZUYkZPZEk0ZExWWU41d3k2V1pnTjd4cFpzUmQzVnEzczR6WFpaQU9USGFYQ1lqNVkyY2oyRTNfMGR0bFlZSkVjLUR0RzV0UDlhdkFBZEREbmhNQzQ?oc=5",
-      "summary": "Nvidia agrees to acquire Hugging Face for about $13 billion — CNBC ua.news",
-      "source": "ua.news",
-      "published": "2026-09-28T19:12:31+00:00",
-      "feed": "ai_mergers",
-      "stage": "candidate",
-      "precheck_priority": 95
-    },
-    "a728e2b626af63e9ffd5a1683e5dd39a018bb7109123ce7f678091ed0b10b235": {
-      "title": "Legrand raises mid-term targets on data centre growth",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNOFVPY1dQZnhoQ2dMZHZZbXNBN0M2X25obFFPbjRkeHBOQmhKcDhETGZwelpvSXJfVmdpZ0NqcXh3MmhBOW0yTnNLVGtMMHBHM3ByUjZtTFVSNm56Y3I4ZFFVeW5JcTFMeFZZWHJCTlBsdWlLY1ZZeU5RS2R0YmVQYlh6dG4xODlQWFE?oc=5",
-      "summary": "Legrand raises mid-term targets on data centre growth Y100 WNCY",
-      "source": "Y100 WNCY",
-      "published": "2026-09-28T19:03:28+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 85
     },
     "45c81eb2d0139dfaefaa1eb1fa888af7518bf7acd6bd3904f9d77877690b33b4": {
       "title": "Elon Musk, SpaceXAI subpoenaed by NYC in AI safety investigation",
@@ -4786,26 +4454,245 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "7d115e6574ecb6f975d5787e41f3d1f54296105a3d242e88e2977109f1613c46": {
-      "title": "Most Americans skeptical of turning to AI for spiritual guidance",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRS1YU0JxUlBEUXI0bWV2OVhUTnlDV0paSGZ3LXZIMlZoUzFjaXlFbmNicUQ5TkNPdXh0TXQ2WkxVaGVma3FucURaUm9JTGgtWEZkaGMxVGs3ejFDZkNMOFZRN3JBR1h5bHNicUdZUE5oUjBzd1kzaWN0ZjNBSkVaOHk5dkZLZG8zTkE?oc=5",
-      "summary": "Most Americans skeptical of turning to AI for spiritual guidance Ipsos",
-      "source": "Ipsos",
-      "published": "2026-09-28T12:19:00+00:00",
-      "feed": "ai_capex_outlook",
+    "c0ed070476f42c298e56bbc721a06a8f00553a7aa5084fa517ba7c6cfba09d8a": {
+      "title": "Samsung bets $1B on KKR’s Helix to build global AI infrastructure - CHOSUNBIZ",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNR19yYTRHcEQ2V1hLenJBaDBHaGlfVzlMNzRxU2hrLV9XaUh2aXlaQjVmSzBrclJUb2d6YVYyV2hmbTZ6R3R3UFlSelRhbzlEUDR4NHhmaDJWdHJPdl9GUnJQOGZ2R3BTZ04yVklGTlFpcGVTdUlKU3oxUURQbnc1Q9IBlAFBVV95cUxOWDNNZ3F1M3FkNHMxR2luRWo2QTlCaVlnc1hZYm5Ub21EVTlhYVVScXpBV2FKeWlQOXF4MkpqbXFuMzluMmxyaDBmX1diNDYyWEhVcWNqRVhBX0VjX1MxWFFqYVBPb2FRUFVqeURzMlFqV1BvNmNuV2JIXzh5UXJvcmFiWDhqWmJvTU4xaDRqaVFqWHBN?oc=5",
+      "summary": "Samsung bets $1B on KKR’s Helix to build global AI infrastructure - CHOSUNBIZ Chosunbiz",
+      "source": "Chosunbiz",
+      "published": "2026-09-29T00:47:00+00:00",
+      "feed": "power_grid",
       "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
+      "precheck_priority": 85
     },
-    "826d999ebd80b47d95028a9fdd8876bdce9f1fc1d8467a20d0ed0318d06d3c8b": {
-      "title": "Finland’s Security Strategy Attracts Google’s €13 Billion AI Investment",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMHdMSlhMWkZOMm9oX2ltcW5LaEplb1ZlRUNGUGp1NXMxdGtlcFlsVXQxbVF6SWRJdGc5UUZ5MWQ2WjgtdU5sU0otWHVSLTZzS2xrS0hsdENhbEFuTHM0T0tYM1BPUXQxVU91bGJMWWxFRklxbnhRcGtVZ25RN3VaajZBRU9NcFhiQ0F3T2VaNnUzOWlGNERtYlRBcUM?oc=5",
-      "summary": "Finland’s Security Strategy Attracts Google’s €13 Billion AI Investment SSBCrack",
-      "source": "SSBCrack",
-      "published": "2026-09-28T12:07:10+00:00",
+    "91f927805993a00b95e85e95602a351270d750d480aa6741d2bfc77ab9a3e024": {
+      "title": "Samsung SDI to showcase battery solutions for AI data centers in Singapore",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9HblVGVHFzLUVBazBUd1N2ZVA0YzExUF9oSU1jbVgyQVhZekNHZFNHRDgwekpqaGdPV01rS0lnYzBncEVSV0FVbDFycmpmalVkdFdMbHNWN0xPZw?oc=5",
+      "summary": "Samsung SDI to showcase battery solutions for AI data centers in Singapore en.yna.co.kr",
+      "source": "en.yna.co.kr",
+      "published": "2026-09-29T00:45:23+00:00",
+      "feed": "power_grid",
+      "stage": "candidate",
+      "precheck_priority": 72
+    },
+    "b62b981eac1aa0dc75f51a4e65b99e96f3d3cfe36831ac2551ba854bc3bc5575": {
+      "title": "Samsung Group's Six Affiliates Invest $1 Billion in KKR-Backed AI Infrastructure Firm Helix",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5yMkcya25vdGJPZngtZ3NtamxTM3Q1NHRSVHhpVDR4WGctb0RFN3VzZV85QmtTWU9ZWkN3anlFQlA5enNvc19jRllmRFBacEVOMUk3YlB3WmFRR053T3R5U2l3ck9naUptQnR3Y29Xa19jbUZvTFE?oc=5",
+      "summary": "Samsung Group's Six Affiliates Invest $1 Billion in KKR-Backed AI Infrastructure Firm Helix finance.biggo.com",
+      "source": "finance.biggo.com",
+      "published": "2026-09-29T00:25:00+00:00",
+      "feed": "power_grid",
+      "stage": "candidate",
+      "precheck_priority": 85
+    },
+    "dca67b368eeda7dc2e8df21fa94f8a4635b91c4a0ab40a8bcb2e140a02688768": {
+      "title": "Worthington Industries Earnings Call Highlights Data Center Upside",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQeUYtbEhpVXkxaFVGdVJtZm5UZjlsbnFhV2ZjSElpMktObjZtaW1fR3dHUkdWYXJ5ckx2Y3ZCb2N1dmN5NlBUakVTa3Nsb29xRmhwY0J4RzFsdG50OUxLbGh5a2V5NUZfU2VWazJLdGhqdHNzY1NaN0lwazFDR0tKR3dVVlJNdldRcUVobUlZbEVHMXlhWkEyU2hsUDN6UGpKalZtNWhNMUV6ZTA0NnduWm9DT0hYSm9NUkE?oc=5",
+      "summary": "Worthington Industries Earnings Call Highlights Data Center Upside TipRanks",
+      "source": "TipRanks",
+      "published": "2026-09-29T00:19:50+00:00",
+      "feed": "cooling",
+      "stage": "candidate",
+      "precheck_priority": 84
+    },
+    "d6be95445f3d68fa5a9ad8dfcb103c216cfe8c7f4469c82a19943f03cef363b6": {
+      "title": "LG CNS External Sales Top 50% as It Opens ‘Second Act’ in AI With GPUs, Data Centers",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8zbVF2N2dibkJIMEoyT1dybVZNZVpTU013WldQYm85ZnJIM1VmdHpIekp3d0JnaU4zVG9OZW5Xb2k1cTB2M3lKS1F2WWZQcnpmTjZVTnV2Z09IY0pUcmtVc25zeF9jTzA?oc=5",
+      "summary": "LG CNS External Sales Top 50% as It Opens ‘Second Act’ in AI With GPUs, Data Centers thelec.net",
+      "source": "thelec.net",
+      "published": "2026-09-29T00:17:48+00:00",
+      "feed": "power_grid",
+      "stage": "candidate",
+      "precheck_priority": 84
+    },
+    "66429cebaed21f50672bd04c1c23c661e46996bad84daceadca390e3c273320e": {
+      "title": "Nvidia expands share buyback by $150 billion to boost shareholder returns",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQNHA1cU43bzRpNi1TdWk4c2ktOHFTVHQ3YmktRTB0S0ZHckxIdHNiR2dMaE1HQlJuSlFhZ2tVTWh5UnN5NUpZQjA3WVMzMUc0Y0lUYzUtVjE3NkJ5SE1KX2JQS0diYVBLYmJzb0JHVlc1MWZGVjhVeTRYVlFzbV9KOURyQnF1Unl4TXdFU1RUV3dUbmVrT1FHTDUxb1pFSm9iX0F2UGVwSU1iMV9iQ29VSEI0ei1yemZZUVpEZ1M5eFM4YVlR?oc=5",
+      "summary": "Nvidia expands share buyback by $150 billion to boost shareholder returns 디지털투데이",
+      "source": "디지털투데이",
+      "published": "2026-09-29T00:14:16+00:00",
+      "feed": "accelerators",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "d35505f3484bad17717e8309e161492e9f784753fbbf572e45959e7fd672fbde": {
+      "title": "Samsung to inject $1 billion into Nvidia- and KKR-backed AI infrastructure firm",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPYTZ1UjNVY2c5emJzWG1DWERwTHNmaWJUN3IxRTV2bWl0Rk1TM3UtbWNyRHZwalltSVptSUtTU0tlRldBUktJNnh3dl9iNHVWR2tjdjlwTEI3VElKTVV4SHhwZ2hwNW9qRDNkNTFwMi1RREtTSzh3SHFidnRwWWI4ZEhaQlJfTFlGX2M00gGQAUFVX3lxTE5adHBjTmY1OUh1bDVPekFGekc4Y3VSZDFfc1p1NHgtd1ZhNkxPZDdFd2s3N0doaElvNjlDMVQycWNjUlh6TWw5V0hxYWpDeUNnLVpUVFJ3S2Q5dWM1TDNPaGlhQWZpMXRoOEFLOVZVdVVkczYyM3pPWUdaTHU5d3laTE96Ny1QbUk0ckFqNDJkNw?oc=5",
+      "summary": "Samsung to inject $1 billion into Nvidia- and KKR-backed AI infrastructure firm CNBC",
+      "source": "CNBC",
+      "published": "2026-09-29T00:00:00+00:00",
       "feed": "ai_mergers",
       "stage": "candidate",
       "precheck_priority": 85
+    },
+    "7c2c88ced020b04fa7b736e8faead3d16d167ea58668c4c569aa4898dc01d42c": {
+      "title": "Hana Securities lifts Samsung Electro-Mechanics outlook on AI parts crunch - CHOSUNBIZ",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOSVd2LUN5YnJzZVRsVUl5bkNSYWZkVXQ2ekVReWpRalNhTXZDNnhDOVI3MU5sZ3A4MGplS0lYb2dQQWY3MC1HU0ZnUmtjVHRWSk9yXzZLTWJEUDYyTEg5eEFlMlBsdjFfeHRXN3UtYVlGZFlLcjBVTlpiZkZycnR5SdIBlAFBVV95cUxOVnlkajNuNkFJcnp1Mjhpa3RKbm1kVDRJU0t6eVJXT0t0VndwZWJndWhSc1I4SWxtdkdBbmxadXlzZXp1bTJPd3doYTJoaWtkQm16cjBTYTYxdlpEMzUxMEx3S091VmdacGtfTFktTDU0T0FsWndUSkYxZTNvUEkxRlJEYXp4Qkp5OXZsMGhRZmxzOFh6?oc=5",
+      "summary": "Hana Securities lifts Samsung Electro-Mechanics outlook on AI parts crunch - CHOSUNBIZ Chosunbiz",
+      "source": "Chosunbiz",
+      "published": "2026-09-28T23:59:00+00:00",
+      "feed": "foundry_packaging",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "9e5f59a35922986e00f79cf41088ffc127a0014748fa3d41b77828ab480eeebd": {
+      "title": "OpenAI reportedly ditches model over safety concerns",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOaEs4blA0N1BzMm8zV0k4b1g0VUp2SWpGdVRsREhpaGxNdzNGbEc3MkktNnRISFk2MTZOT1lxcHU5UzlQYkNZOWRCYkN3QjRkMVpOLXdhRFNYYi1pMFZ4eVFwNFFMaG5sUVpZLXgwdnVFTlNwTUlhcnVDcTM1ZlhQWjZSZjBHN3B1NWxjXzJsOWk?oc=5",
+      "summary": "OpenAI reportedly ditches model over safety concerns TechCrunch",
+      "source": "TechCrunch",
+      "published": "2026-09-28T23:39:20+00:00",
+      "feed": "frontier_model_release",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "b96160f14a65d1b762f89044a340212b9c73cfbeb7fa108e6e04cd497030532b": {
+      "title": "Samsung to Invest $1 Billion in KKR’s AI Infrastructure Company",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNYWpnZGR0dFNqY0Y1bU1WT2FFaG9zZERNU2FxRGRzQjV6azRrTGNDVXVMTG5NQWh5ODF4X3NfbnJVU1BGXzlGaHpiZXl5OW1xNG16THE2OXoxZDBvWklsUG9tVWZCRzdKaEpLQVR3RmhvUzAwWEpyX0lBaDN3aWhOcmpWOFJCQ2NreTBIaHpHVXdlVXpXemVkXzRjVnlwQTJESnVFVlF0NENYNUtySURyT0pUNA?oc=5",
+      "summary": "Samsung to Invest $1 Billion in KKR’s AI Infrastructure Company Bloomberg.com",
+      "source": "Bloomberg.com",
+      "published": "2026-09-28T23:21:03+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 100
+    },
+    "b95430a7fa77e72bde3f6341ae11648f88463273083ce720da79e472cefb3e61": {
+      "title": "Menos AI raises $5.1M pre-Series A for institutional investment intelligence layer",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbWwwM3ZBX0EzQ3NyclpJRk45ZlVRaFBUUHB3TF9sWWZJa19zcGpGTmFQbFBnRi1kOFhRNTRpV1BpQ0lnOTZPYUlRbDJYR2xJd3BQRmxWd0VHMzktUWVCNnJrLTBDSDM3cDZzRi1OMXZmeEhLOTl6d040OGhoRV84UUM0YUxKVDZidnowUldpNFBqZExHME5sLVRkLTY1Y3EwNlpkaFYzYy11XzdSRkJmT2JtM2ZPUQ?oc=5",
+      "summary": "Menos AI raises $5.1M pre-Series A for institutional investment intelligence layer Dealroom.co",
+      "source": "Dealroom.co",
+      "published": "2026-09-28T23:00:17+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 66
+    },
+    "13d4021aeec236ee86d747c9057c264cd8bc5cf8cc02843012fb5ec6f465cefd": {
+      "title": "OpenAI shelves new AI model release over safety concerns",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMXc5dDQ0V0FSdEZfMWN3YjNGcG1jZmdHaG1mTDRwMExSZ2pLcjFzRzN1aU0tZFNJa0ZBZXVDdzJJQWxqN01WTmxUbXcyOFEyU1hIUjVpLXlJMW5SVUpiTWRkOHFQd1lyYmVCRHM1UzRtc3lPQXdoRHVvQmQ2ZGp2dGFjLXA1YWNhRjhDc0Z0MmVfejhYdk1IOFEzdUVTYl9Rc0hOWWVKY0RzeENVaks0eFZR?oc=5",
+      "summary": "OpenAI shelves new AI model release over safety concerns Reuters",
+      "source": "Reuters",
+      "published": "2026-09-28T22:34:00+00:00",
+      "feed": "frontier_model_release",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "58b7e6ad78070e1bcfda58aae099221164c1316443b663d166d69ceef9c7c7fd": {
+      "title": "AMD briefly joined the $1 trillion club. Cramer says its monster run isn’t over",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5kU1VzbFNQbDdUSDJjQzJwanpLRHZuUGxOOWVITmF1S0dKNC1hc3BEb1ltczh4WUgwN3pnTm41ejZXQWFmNFVTcXBNZHByS0Q0YjVXTmZ6NVJ0Qzk2Zll0OTRvdUVxb1FPVTVfejF3aGkwY0hJTkVFXzB30gF_QVVfeXFMTTIzb3dzSHlsYnhBbF8tRUFrOEhrSjFidGxjQ1JKcTVtd29EMndJTHljM3AzZGI3MDlpdFBqN2I5dkJheTZZd3ZrQWJzM2Y0NXg2NlRvSHdPQW1oZXl0ekF3SWt0MlpIVF85U25LV1c4WVZWS2hoOUxpVnl0VU9kSQ?oc=5",
+      "summary": "AMD briefly joined the $1 trillion club. Cramer says its monster run isn’t over CNBC",
+      "source": "CNBC",
+      "published": "2026-09-28T22:27:10+00:00",
+      "feed": "agents_usage",
+      "stage": "candidate",
+      "precheck_priority": 85
+    },
+    "5cd8f0655667427f2b59d2ffecc0a06bab1587f432fa574bdf2296d4aeff67ca": {
+      "title": "Trane Technologies unveils AI data center cooling designs",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeEVpbzZpekM4RGt3SjhxRzNmaUZiY1dTVm5LZFVUejdqZGNUajU5MGNKZXMtcENpcUNYbGxTZHFQWGo3M3Q4endhR0hNck0yY3JwU0llZjN0QVNUU0NCUVdFMFgwTF9tWW5vY0NFcGNIelN1NFk4MXJ1QXBjVk5aem53cUNpTWtRUnY5SHgtY3pJbGk1aEpMWjkxNjN2NjdaYnVsRWVQVExSTTd5TkZ4bzZ4eHg?oc=5",
+      "summary": "Trane Technologies unveils AI data center cooling designs Investing.com",
+      "source": "Investing.com",
+      "published": "2026-09-28T21:19:37+00:00",
+      "feed": "cooling",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "b70a6e172b35fcc2041e8948099c51bc6160845e1508d3ec47eb39131aa616cb": {
+      "title": "AI tops cybersecurity spending as CISOs boost budgets",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNV2Nzc3lueExnMDJGVzhCRUd3eWxVb2dDUHVnMGZhVExVQlRPUThkdmEtS0RrRTd4dGFjWVQwSjJ6SFJqdXcxUGNpUWd1MmttUGhIRS1MWC1zeVhzWGYyaDJ3ZzdWZVZlVDc0VXFaRGtyVUw4TWNXZVBFX2hNSV9HUk10UGhtODQ?oc=5",
+      "summary": "AI tops cybersecurity spending as CISOs boost budgets IT Brief Asia",
+      "source": "IT Brief Asia",
+      "published": "2026-09-28T20:43:00+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "b2aed6d83636a10a3cd03f902ee97f33145ac2d52be61704916e8a898013242f": {
+      "title": "Data Center AI at the Power Limit: When Data Movement Defines Performance",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaHJKd0NUZmhER2MtcmFrZGtISjVjQXNKT0h2WV9oQWJCeXFqakRfMEpOTXA5TmdKamZSQ25TZW10RzhtbjdNdy14azA3YmVuakdFZWkwU0lfbWFSbjBIcVVLcldlRjVaSnFSM3hKcjlGQ0lfTUpsSVJRU1JxcUt2RmFtUzFTbGhhVnZxZkkxODJIYTIwNFBxX1N4VEQ4UGktbmdUbzlBdzJGVkJh?oc=5",
+      "summary": "Data Center AI at the Power Limit: When Data Movement Defines Performance hpcwire.com",
+      "source": "hpcwire.com",
+      "published": "2026-09-28T20:18:21+00:00",
+      "feed": "memory_system",
+      "stage": "candidate",
+      "precheck_priority": 75
+    },
+    "f4a1d3f83388f2f732529503332913f4c559cbada4892080111396d52464e16b": {
+      "title": "Meta Platform Takes Aim at Salesforce, ServiceNow With AI Push",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWnFZRl9kSFR2LTZuN20xVF84TmcybGdhT3dfYTVMUFJwN0Y4ZUdjUmJHT1NjdDc3X1dHMzdYSXY3enJ0QU1iYTY1WVdWY05vWFA3RGZGNERMQml4ZTB6TW93YjRnTlJGQ2duWEZUWDEtRlRzWHRrc0RrMElOanVVUFg3UWl3Ry02YzZWdGxndDZxVXhtSFF2OThzUnRTbTFSLXRaNC1Hc2dXODBpOXB2aEVFTTNRQlFCSjFJWWhR?oc=5",
+      "summary": "Meta Platform Takes Aim at Salesforce, ServiceNow With AI Push tradingview.com",
+      "source": "tradingview.com",
+      "published": "2026-09-28T19:41:11+00:00",
+      "feed": "agents_usage",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "bca9c9f596126751b5ed13db92b0639833f44ad29892179e347aac26ec2ce4c2": {
+      "title": "Market Strategist Kristina Hooper Sees Risk Building Around AI Capex Over Surging Treasury Yields",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPTk0zQVVyblQ1VHZfeDdxTlRFbGFYVmtrakVYTDg0WWRmTEx0eG5VTS1ST0t2eGNqY01zZUVfUkc0ck50ZENrUEtjeU1scVZwa1Bmc0xiNE9wZks5QnhuXzd4NDVxZUkxZEtqWnYtZWtiQ0J4S2ZSVV9lWGYwRjNVRlVub2FOaWpwTWZReWRmM0ZZZnRuZ25QQndIZGg4aTV4OTdkZkdDdmEwRUpLZkJhODhqR3REV0FPd0JNZmU5WTRlTTBRY3V3aVkzNlNMTkZHaEN5eE9NcVJ2MmV6VjhHM2FIZG9VeTdPb0RaVUJ1RQ?oc=5",
+      "summary": "Market Strategist Kristina Hooper Sees Risk Building Around AI Capex Over Surging Treasury Yields tradingview.com",
+      "source": "tradingview.com",
+      "published": "2026-09-28T18:21:49+00:00",
+      "feed": "ai_financing",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "a2143d1e7bbad26833799dbb45b81352b336483e4a4b33d5b9a7829c52530635": {
+      "title": "AI’s $1 Trillion Funding Problem Is Moving From Stocks to Bonds",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxORG15a2ktWkZQMXJLN2ZHMjl4TV83WUZ6WFFBQlNnOHV6NnlONk9IbXEzOXFMTnJ1N2x1VjlEUjJuenVPUEw4eGxyTUx0SkJZVVFMRUFUcnZXcExpTFM0WEFqNFZqaXJqakFTcHAya0pQVUc3RS1PcWxHTnNlOFJmNV9TQTJDT0VEeVZ1elNNU3l4ckxjOTB6VkRwVEcycEpnNnRPa1JPSHVGbjF5VnRkb0tXRlZkRk5aSkRrU3hR?oc=5",
+      "summary": "AI’s $1 Trillion Funding Problem Is Moving From Stocks to Bonds tradingview.com",
+      "source": "tradingview.com",
+      "published": "2026-09-28T17:36:39+00:00",
+      "feed": "ai_financing",
+      "stage": "candidate",
+      "precheck_priority": 85
+    },
+    "d1f14705e23ded88809275c3132d3a6fa73ce12331f3b0c965220326cf07a5a4": {
+      "title": "Meta Is Coming for Europe’s Bond Market: AI Debt Is Going Global",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNd3RNVHJ1UFNoVXJNQ0R3X1k4OW13ZVpoeGwyZzJVZFItYVg4QzItYkpwbjI5djdWUUxtRnZSUGhNVDhDcXF3Tk5TZTMtNGNCV1dBci15SWF2alRmTGVfRWFKaUZkalVtX0I1V3QzTHJmYUFzTWpSSDZhdXJFeV8ycnItOGQ0SDhfXzRVdHJCV3pxLXlWR3UwQTA4alk5c2pXai12LUdJWkhySkotVTlkdGxwLUVTY2VJQkFNQkdkQQ?oc=5",
+      "summary": "Meta Is Coming for Europe’s Bond Market: AI Debt Is Going Global tradingview.com",
+      "source": "tradingview.com",
+      "published": "2026-09-28T17:30:41+00:00",
+      "feed": "ai_financing",
+      "stage": "candidate",
+      "precheck_priority": 85
+    },
+    "43d243bda36ac3d2f49ddbcf81f7be3471ef4dcfd7ab2ca6d0a27adc266f8bd3": {
+      "title": "NVIDIA Announces a $150 Billion Share Repurchase Authorization Increase",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPR0Vsb0ZuR3F0Sl9oYldFNF90azJObUVsNkJIb0VCWVJxWDRmRmdyR2swZE90ZkxwRGJERXBveVRvX040RUJMLU9Tc3lIbm44R2lzMzcxZHVYRkZmS0lGRWhHMDF4azNCakJHSk00UU1KdEhzNzVrYVd1SVpnNDZyZkV4bWVNVHY3cC1fSlpUSm1BTnZTdS1Vak5LOXB2NkF5X0VnZFhFR1A?oc=5",
+      "summary": "NVIDIA Announces a $150 Billion Share Repurchase Authorization Increase NVIDIA Newsroom",
+      "source": "NVIDIA Newsroom",
+      "published": "2026-09-28T17:02:51+00:00",
+      "feed": "official_2",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "9a08eda69520fab33be9f5043951f8a7f5b5ef30b663232cf2c0d71b16b92e62": {
+      "title": "Synopsys debuts Autopilot platform for developing chips autonomously using AI — New AgentEngineer platform is poised for 'general availability' by the end of 2026",
+      "link": "https://news.google.com/rss/articles/CBMivAJBVV95cUxPZ0RXeVhTZUt4THYyNGZva0Y0RlJub1BGdkoxcERqSHVCOG1HZW5QN3c4TDlnZUtZd0NCWWlieEo4Q3dLUlBRY0NXSE5SMVRYQ19BbnBZNXhtc2tZZ0QzSWV5NTNhZm02Vkc0ZmFCZW53a1BVVkx0RlUzYTg0NVBpVDdpd2pTd2s1REgyQzlrOHN1d0Z3Q1k4WXh2SjVNYjJ1WmpHR3N2emItVlVVbWZqX0sxZnEyeVczQlB3TUg2SHpMUWxrNks4WmxIY3JYT2szLXZ3SW9nX2t4ZC1HUDdRVXFlRUw1Y3QwaXlZQkVFYlY1M3NWbEZ6dVd4VVJUYVRmc0xTampIMGk1UFZTY3JpZ1BfQVZDc1RhVnliODVhZF8tblYwTlFndDRRcmo3MGltNTdpOFpQQ2l4SkU2?oc=5",
+      "summary": "Synopsys debuts Autopilot platform for developing chips autonomously using AI — New AgentEngineer platform is poised for 'general availability' by the end of 2026 tomshardware.com",
+      "source": "tomshardware.com",
+      "published": "2026-09-28T16:35:00+00:00",
+      "feed": "chip_company_5",
+      "stage": "candidate",
+      "precheck_priority": 80
+    },
+    "9485be165daf428de07f9b0498bb8286adbefd809f3e630cb34ce6c4d09e6c96": {
+      "title": "Applied Digital falls 6% despite $70 Buy rating amid rate concerns hitting data center stocks",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZ1M3TTAxa3pBa3IxTC1QWFU3aW1FcHRpQjN5YUVxNm11VE8zSjktOGhmR0JNSXJVdlNENVg2TE9kOW5mV2I1c3VmV0RXOC01cnZBVUFrcG1GMG14eld5eFg5blBtczRKUzNxTE9sWDdla3p1VzRLd3dBeWN6REdUaHgwS3c2RklfN1RnR0ZLMmhwb2FKeW9DSm1GSVoySHM?oc=5",
+      "summary": "Applied Digital falls 6% despite $70 Buy rating amid rate concerns hitting data center stocks Pluang",
+      "source": "Pluang",
+      "published": "2026-09-28T16:19:41+00:00",
+      "feed": "neocloud",
+      "stage": "candidate",
+      "precheck_priority": 70
+    },
+    "ae3e7614443abd5b44a72a5ff8ef1b8099c126c5c3275ea376248befe29caf52": {
+      "title": "VLY: Acquisition adds digital scale, AI, and funding strength, driving 8% EPS accretion by 2028",
+      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOb1NMR2RCanFTREJWb3F5Tk9XcHNNd2FqeFppMjJmTHBYN01NX0d5Nmlaa3JUVjN5R3J2dk16WFQ4OW0wMk56Y2wtcE5FQnBPMFRyaDNpdDJXaC0wR3lhS0tzM09lSWYxZWViS0tFaWRYdmg4bHlRampEcVUwT2tSSms4elNLbEszQnJwNnFkNUR4dTJWVzgwWm9hWVZXbmlNQWMxVmtCVm5yQy1oTG5vMFBITXpyYkRITHlYUkdkX3RCeThhVUpmdVBETFJlTzllbFR0MGV5eXdHMjF0M3FIbkJGQ05qN1M4OGYwT2k4QmZhdXBTTlVTY2x3ZUs5elAtT19wbHNVZTU?oc=5",
+      "summary": "VLY: Acquisition adds digital scale, AI, and funding strength, driving 8% EPS accretion by 2028 tradingview.com",
+      "source": "tradingview.com",
+      "published": "2026-09-28T15:44:52+00:00",
+      "feed": "ai_financing",
+      "stage": "candidate",
+      "precheck_priority": 82
     }
   },
   "decisions": {
@@ -44426,6 +44313,138 @@
       "policy": "ai-industry-v4.6-executive-origin-radar",
       "reason": "중요 뉴스 과다일 최종 중요도 컷",
       "title": "Marvell Likely to Lift Fiscal 2029 AI Revenue Estimate by at Least $2 Billion Largely Due to Google Deal, RBC Says"
+    },
+    "d1e84fd672f678bc72d2b69eef321968d4c40db39c6e5eb9f46ee14f12c8c44d": {
+      "ts": 1790643846.132724,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron Heads Into Earnings as JPMorgan Sees HBM Shortage Lasting Through 2028"
+    },
+    "cdb68b88713e9ce7d4112654e0338f3117ea9670d7da4f5c255fb227d9fdad0b": {
+      "ts": 1790643855.359678,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Marvell’s AI Opportunity Could Expand To $625B By 2030, Says Cantor — Sees Up To 45% Revenue CAGR"
+    },
+    "e7bb3e1c2c2a272c2f89d17b542b366675aebd7b668f638252823da85137d5b7": {
+      "ts": 1790643865.770768,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "TSMC Is Quietly Setting the Price Every AI Chip Company Has to Pay"
+    },
+    "4ca4d676f1aa466364cbe388983ec8693d08ac46c01505e378ab59936118b259": {
+      "ts": 1790643875.064127,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "동일한 기사의 중복 보도임. 원본 기사(index 0)에서 이미 중요하게 다루어졌으므로 추가할 필요 없음.",
+      "title": "AMD to Buy Fei-Fei Li’s World Labs AI Startup for $8.2 Billion"
+    },
+    "79d035c71a0ac5223b80301ab997f7f92a382691e72914fb4367b590343db9ce": {
+      "ts": 1790643875.068086,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "동일한 AMD의 World Labs 인수 관련 기사로, index 0에서 이미 처리됨. '물리 AI'에 대한 베팅이라는 점은 언급되나, 핵심 사실은 동일하다.",
+      "title": "AMD to buy Fei-Fei Li's World Labs in $8.2 billion bet on 'physical AI'"
+    },
+    "9443ff0edfd9ce98b9b0b1c3281af20c55ddf31f947a126799ced9f4448d2038": {
+      "ts": 1790643875.068092,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "동일한 AMD의 World Labs 인수 관련 기사로, index 0에서 이미 처리됨. 'AI의 대모'를 영입했다는 표현은 중요 사실을 부각하지만, 핵심 거래 내용은 동일하다.",
+      "title": "AMD just spent $8.2 billion to enlist the 'Godmother of AI'"
+    },
+    "636bde733c3720e9f783438ae68701e5c642a8c89a4284ae5286ac5a758d6970": {
+      "ts": 1790643875.068094,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "동일한 AMD의 World Labs 인수 관련 기사로, index 0에서 이미 처리됨. 'AI 시스템 전략 강화'라는 점을 강조하나, 핵심 거래 내용은 같다.",
+      "title": "AMD acquires World Labs in $8.2 billion deal to bolster AI systems strategy"
+    },
+    "d47612edca74af0c4c1c90bb0850ac7cac436c90c9d6c7cf6aad1ee693c413fd": {
+      "ts": 1790643875.987621,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI 반도체 수요 폭증…TSMC, 첨단 패키징 공장 5곳 더 짓는다"
+    },
+    "17596e24937c44f8599f0f1cc776a56644187c43f959744d66a132f9b16dfc4c": {
+      "ts": 1790643875.996082,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AMD (AMD.US), with a market capitalization exceeding $1 trillion, has begun vying for the \"right to define computing power\"! The company officially announced an $8.2 billion acquisition of World Labs, founded by Fei-Fei Li."
+    },
+    "a1c0d3dc33b072b3aa9bd4a88be982c2c3fb1e6eba05aa357409f2af797f55c6": {
+      "ts": 1790643875.996105,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AMD to acquire World Labs in $8.2 billion AI systems deal"
+    },
+    "298a751b5d2cb5a09efc7bd5421faaa62146551be58638ab9dc0c5240a8672fe": {
+      "ts": 1790643884.009474,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AMD Bolsters AI Vision With $8.2B Acquisition Of Fei-Fei Li’s World Labs, Stock Drops 4%"
+    },
+    "137394afb516d7dd98fc2875febc409cc5ada62e1da8c4bd4a5ccfd1c70c34f8": {
+      "ts": 1790643884.009509,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AMD briefly tops $1 trillion market cap on expectations of CPU demand from AI agent adoption"
+    },
+    "275099c5e54d6301d8addff826ae8822c10ac75fc2308769b7a331bdf652043f": {
+      "ts": 1790643884.012524,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "米半導体大手AMD「AI新興企業」買収へ 1兆3000億円、次世代半導体の開発強化"
+    },
+    "650aeca6879f805585bb1ef76535b7f238cd6d01755cb8ed04f73cc96e5fc47e": {
+      "ts": 1790643884.012559,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Fed Governor Cook: AI Infrastructure Spending Is Pushing Up Inflation First, Only a Small Fraction of $2 Trillion Investment Has Been Spent"
+    },
+    "9bcfb29bea150cc237d567e8543ab782d28a9aad0ac7a93e384294c0b4741789": {
+      "ts": 1790643890.558688,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Samsung affiliates invest $1B in Helix to build AI data centers and power - CHOSUNBIZ"
+    },
+    "e6b97b88f1850ba74f796dc40005555fb928fe5fb22d3e423fdfe02807257dea": {
+      "ts": 1790643890.558755,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AMD buys firm founded by AI 'godmother' Fei-Fei Li"
+    },
+    "81f46f7a6b54861781f02f5750231a3f01cd5b0ab85626926cf42604d6fab784": {
+      "ts": 1790643890.558833,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Fed’s Cook says AI demand ‘broadening’ to increase inflation"
+    },
+    "a728e2b626af63e9ffd5a1683e5dd39a018bb7109123ce7f678091ed0b10b235": {
+      "ts": 1790643890.558887,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Legrand raises mid-term targets on data centre growth"
+    },
+    "1759b9d664a8a1d41814f4af1c862c19367a67e5b99a10ccabc0233979c07cce": {
+      "ts": 1790643890.558953,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Microsoft's Autopilot opens new AI revenue path, Jefferies writes"
+    },
+    "e0c61a70c220acbf981a66fd7d3092d9b7d40c9e1306c1677c4960818f785eb5": {
+      "ts": 1790643890.559009,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "SCHMID Stock Rises as Nvidia, AMD, Intel Eye Glass Substrate Technology"
+    },
+    "8e13abcf21799fd4f3ec9387c6d77590826d9dc4549c21eb9eecc10b21ecdbb6": {
+      "ts": 1790643890.559031,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Lagarde warns of an AI \"bubble\": risks to the markets from corporate debt"
+    },
+    "bed695fb6781ac92e320e4613705d4061a6b76d77e989920fe0a2349e3270d45": {
+      "ts": 1790643892.508702,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "중요 뉴스 과다일 최종 중요도 컷",
+      "title": "Anthropic launches cheaper AI model, its second release since CEO's call for a slowdown"
     }
   },
   "legacy": {
@@ -47540,6 +47559,27 @@
   },
   "archive": [
     {
+      "title": "AMD, AI 스타트업 World Labs 82억 달러에 인수",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZW1PMmt1Q2c4TzNIaDNIbEs2TWQ3V0xQc1F6QXpzdHdHalpEWlk5ZlhoYnVHVXlsUGdmRm1Fd05aek1UdGFWT2dTZmFBUk9HZDAtRE85NFEwWXhnaHFqdWdSNzkzbWFMUWRxaDQ1VU4tblBrSFhRYkR3VEltUnhtMlI3dmhkcDE5OEx5T2l3RjZ6amdzVFhyeXE1Z2ZTQ0liUVFlREVzZU52THFDM29XSXpB?oc=5",
+      "source": "Bloomberg",
+      "published": "2026-09-28T20:05:00+00:00",
+      "summary": "AMD가 페이페이 리(Fei-Fei Li)가 이끄는 AI 스타트업 World Labs를 82억 달러에 인수하기로 합의했다. 이번 인수는 AMD의 AI 시스템 전략 강화 및 '물리 AI'와 같은 새로운 AI 영역으로의 확장을 목표로 한다.\n이번 인수는 AMD의 AI 역량을 강화하고, 특히 물리적 세계와 상호작용하는 AI 기술 발전에 기여할 것으로 예상된다. 이는 관련 AI 칩 및 하드웨어 수요에 긍정적 또는 부정적 영향을 미칠 수 있으며, AI 기술의 새로운 발전 방향을 제시한다."
+    },
+    {
+      "title": "Nvidia, AI 플랫폼 Hugging Face 130억 달러에 인수 합의",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNcElNdUF4dGpSa2Q1ZG5fQVVVc1NyYWgtaFNjOWxJNlVXZjFMUUlsTVpENkMyX3B6SlRTcmhOV1V1TVRIaFJVUkl2RjZUYkZPZEk0ZExWWU41d3k2V1pnTjd4cFpzUmQzVnEzczR6WFpaQU9USGFYQ1lqNVkyY2oyRTNfMGR0bFlZSkVjLUR0RzV0UDlhdkFBZEREbmhNQzQ?oc=5",
+      "source": "ua.news",
+      "published": "2026-09-28T19:12:31+00:00",
+      "summary": "Nvidia가 AI 모델 및 개발자 커뮤니티 플랫폼인 Hugging Face를 약 130억 달러에 인수하기로 합의했다. 이번 인수는 Nvidia의 AI 생태계 확장 및 기술 리더십 강화 전략의 일환이다.\nHugging Face의 방대한 AI 모델 라이브러리와 커뮤니티가 Nvidia의 하드웨어 및 소프트웨어와 결합될 경우, AI 모델 개발 및 배포의 효율성과 접근성이 크게 향상될 수 있다. 이는 AI 기술의 전반적인 발전 속도를 가속화하고, 경쟁 환경에 상당한 변화를 가져올 것이다."
+    },
+    {
+      "title": "Anthropic, Nvidia와 1800억 달러 규모 클라우드 및 네오클라우드 계약 체결",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNEEydEJGSDdsSlNxUHN6d2g3azAyS2NocklsSUNPcW0ybXJ4VFJlTXkzRnVvYzByV1QwUjFqQ09reE8tbjhiQzFGWDNBNEx5SWlkNXRUNVp2cS1qRk01OV9PZGxOYWpDYWNveGd4VnUwTTBTWXdhQTdvUnFLYm5WMDNJRVRVYkJlTG1pZ2czTVFsVlJYdDFVWklaQW5IZkRnZmFzQw?oc=5",
+      "source": "Seeking Alpha",
+      "published": "2026-09-28T15:03:20+00:00",
+      "summary": "Anthropic이 Nvidia와 1800억 달러 규모의 클라우드 및 네오클라우드 계약을 체결했다. 이는 AI 개발 및 운영을 위한 막대한 컴퓨팅 자원 확보를 의미한다.\n이 계약은 AI 기업들의 컴퓨팅 자원 수요가 기하급수적으로 증가하고 있음을 보여주며, 특히 Nvidia의 GPU 및 관련 클라우드 서비스 시장 성장에 크게 기여할 것이다. AI 모델의 발전과 실제 서비스 확장에 필요한 인프라 구축의 중요한 지표가 된다."
+    },
+    {
       "title": "OpenAI, 수만 건 AI 보안 사고 조사 및 테스트 중단… '킬 스위치' 실패 보고",
       "url": "https://news.google.com/rss/articles/CBMivwNBVV95cUxQTk9xM3BhUGd6WHh5WC1hY3AzLVhOaFlUTUhEektzNGppUzExaV85RmNDQlRLYzdhM2RCSTIzWHJCY3ppX3cyY0VKWDhvM0ktNDhEZXdyYnRnS01wYW5WcE5kb0ZmOHZnS0xxOHBxZl90enVaOGZBMHp6UGhPSFBnQmRVam9CbUJCQTFfWUJQN2FndUJkclRraXVxUGlIdWRDOU1kaDdyOEhEQV9uM00temVrdnFRZk9WRUYxckhYdDVJNkFZVWhhT01teXhQTV91dXpoWHhQNmlIem1OckJhMXlBNTJXWXU2OVBZYkhhaUJ6U2FsTS1zcEpmdks3eDZNM1YzSlkxdmM1SzIwdE1ZbkNrdWMtUmNHOGdBc1hmOGh3NE5WOGJnVDFyRDllSF95MFNrb3VLZmlqV3lWLUt6Nm9NRnJHM2ltdGhrelQ3aVdabkVlMHdTU3RWa0Q1Q0VPWFNWeGdJcXlGRTBlQm1TSFMyejcza2pHNHNLMThsUVRDQ1IxbEhmTGxMZmZnWEdtZXg5M2swSmdWUm1LdmVRT1hFWGJZSzFKM1NCRHQ2YTFJajdkQmlySFRzVjUtSkE?oc=5",
       "source": "Tom's Hardware",
@@ -48567,27 +48607,6 @@
       "source": "Bloomberg.com",
       "published": "2026-09-16T19:38:10+00:00",
       "summary": "은행들이 블랙스톤, 알파벳과 연계된 220억 달러 규모의 반도체 산업 대출을 준비하고 있다는 보도가 나왔다. 이는 AI 인프라 구축에 상당한 자금이 투입될 수 있음을 시사한다.\n이번 대규모 자금 조달은 AI 칩 제조 및 관련 인프라 투자에 긍정적인 영향을 미칠 수 있다. 특히 블랙스톤과 알파벳의 참여는 AI 분야에 대한 대규모 투자를 뒷받침할 것으로 보인다."
-    },
-    {
-      "title": "짐 크레이머, AI 지출 '가속 지속' 전망...데이터센터 투자 낙관",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBraDRXbHdWSjJCSUhCMVBha0NrVENRVlJSbGNlRms1ai1XQWV5WTlzVGNYd1ROLUQ2R29ySC1iY0t0SzZiUkQ2X2NrY1VIMWFVcDJsbVNlWHRpeFdxaFNDT2FuaDNFY19scUZad0RNektZRFhV0gF6QVVfeXFMTXBEeDUwa3BRRGxZS2E2RDhpVy10anY0SGdUbTFsNXdCYkxnT3lpTTRVblhqYnB2Y1daOWJQVEpXc1IyZVZRMWktZXJybFdnaV9ySmZCd0c4UE5RMzYwenR1UWFMZHhxaWdwSk1YZXZrWWEzem9RT3l3anc?oc=5",
-      "source": "CNBC",
-      "published": "2026-09-16T23:00:33+00:00",
-      "summary": "CNBC의 짐 크레이머는 AI 지출이 '계속해서 가속화될 것'이라고 전망하며, 데이터센터 관련 투자를 지속할 의향이 있음을 밝혔습니다.\nAI 지출의 지속적인 증가는 AI 기술 개발 및 서비스 확장에 필수적인 데이터센터 인프라에 대한 투자를 촉진할 것입니다. 이는 관련 기업들의 매출 증대와 기술 혁신을 유도할 가능성이 높습니다."
-    },
-    {
-      "title": "인피니언, 800V DC AI 데이터센터 차단기 역할로 투자 가치 변화",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPLV83cnhvbVRNRVpzVENLMDRyMV9MS0dNUTJlYVpid29KUEt2N000SHB2ZG1EdHhBcWw4dUd1cXJCbHgtVXVRRG1FdGJrcnRsU0JUa3Q0YVAwell4R2lhZmU1dmNYaXZ3WUhMc2tMcHlqVFNvTTNFYTBUWEtkU3FfbUt5U252YTYwNW9KaVh1RE9Gdw?oc=5",
-      "source": "Yahoo Finance",
-      "published": "2026-09-16T23:14:37+00:00",
-      "summary": "인피니언 테크놀로지스의 800V DC AI 데이터센터 차단기 역할이 회사의 투자 가치에 영향을 미칠 수 있습니다.\n고전압(800V DC) 차단기는 AI 데이터센터의 전력 효율성과 안정성을 높이는 데 기여할 수 있습니다. 이는 데이터센터 운영 비용 절감 및 성능 향상으로 이어져, 인피니언과 같은 부품 공급업체의 경쟁력 강화에 영향을 줄 수 있습니다."
-    },
-    {
-      "title": "주요 은행, 블랙스톤-알파벳 AI 클라우드 벤처에 220억 달러 칩 대출 제공",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOQVBYUDM0azJaTVZjVHAzbUtkOVBWLWpZYnptZFZ4S0x0dHpkS1lXVFM2SnJtX0F0Ull5OXdJUkdiNXdUZTNQamM0S3NoeFRxdTdFVmFWWi00cVJ6YXQxTDFTQlBmc0FsS3l5SHJ5VnZpOVplcllLVk04dy1YS2cwUDdMWEY5RzZWN3JTU2luOXJ4NUt3NzkyREJSUVlMSFJBcFpMcHprUjVsM2J3WGg1NUI5NjZrZDBHUGZiNnJGZUtvZThlTk9jWmRSaVZpUQ?oc=5",
-      "source": "Reuters",
-      "published": "2026-09-16T22:02:53+00:00",
-      "summary": "블랙스톤과 알파벳의 AI 클라우드 벤처가 220억 달러 규모의 칩 대출을 확보했습니다. 이 대출은 뱅크오브아메리카, 씨티, 골드만삭스 등 주요 은행 컨소시엄이 제공했으며, 2026년 9월 16일(현지시간)에 소식통을 통해 알려졌습니다.\n이 대규모 칩 대출은 AI 인프라 구축에 필요한 막대한 자금 조달 능력을 보여주며, AI 서비스 제공업체들의 컴퓨팅 파워 확장 및 신규 AI 모델 개발에 대한 투자를 가속화할 수 있습니다. 이는 반도체 제조업체 및 관련 공급망에 긍정적인 영향을 미칠 수 있습니다."
     }
   ]
 }
