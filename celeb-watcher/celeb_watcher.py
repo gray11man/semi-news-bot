@@ -20,7 +20,7 @@ PART 4  사모크레딧 / AI CAPEX 팟캐스트 감시
 - 최근 7시간 검색·발송 + 채널 업로드 수집 + 게시일 최신순 판정·발송.
 - 실행 환경에서 seen_celeb_meta.json을 실행 간 보존해야 재시도·중복차단이 유지된다.
 - 운영 스케줄은 외부 스케줄러에서 설정한다. 이 파일만 교체해도 외부 스케줄은 바뀌지 않는다.
-- 1분 이하 초단편과 길이에 무관한 발췌 클립을 제외한다. 20분 제한은 없다.
+- 3분 이하 초단편과 길이에 무관한 발췌 클립을 제외한다. 20분 제한은 없다.
 - 제목에 인터뷰 단어가 없어도 행사/대담 출연 근거를 검토한다.
 - Gemini의 근거 인용이 실제 제목/설명에 있는지 검증한다.
 - 이미 보낸 영상, 탈락, 미확인, 기한 만료를 분리한다.
@@ -131,7 +131,7 @@ CONFIRMED_DELIVERED_VIDEO_IDS = frozenset({
     "XzNjq6DNjSY",  # Jensen Huang
     "Ho1gnEeVryA",  # Roland Busch / Dreamforce
 })
-BOT_VERSION = "v11.0-full-interviews"
+BOT_VERSION = "v11.1-interviews-over-three-minutes"
 
 
 def send_tg(msg):
@@ -392,7 +392,7 @@ CELEB_CHANNEL_POLL_HOURS = 1  # 저비용 업로드 조회는 검색 제한과 �
 CELEB_SENT_DUP_TTL_DAYS = 21
 
 # 실제 화상·대면 인터뷰만. 쇼츠·발췌·하이라이트·발표는 제외.
-MIN_DURATION_SEC = 60  # 40초 등 초단편 차단; 20분 제한은 적용하지 않음
+MIN_DURATION_SEC = 180  # 3분 이하 제외; 정확히 180초도 제외
 MEDIUM_MIN_DURATION_SEC = 240
 
 # API 예산 안에서 인물 묶음을 순환한다. 실행마다 전원 검색을 보장하지 않는다.
@@ -2716,7 +2716,7 @@ def _interview_evidence_gate(judge, item, detail):
     if exclusion:
         return 'reject', exclusion
     if parse_duration(detail.get('contentDetails', {}).get('duration')) <= MIN_DURATION_SEC:
-        return 'reject', '1분 이하 초단편 제외'
+        return 'reject', '3분 이하 초단편 제외'
     if judge.get('is_excerpt') is True:
         return 'reject', '전체 인터뷰가 아닌 발췌 클립'
     if judge.get('decision') == 'reject' and grounded('rejection_quote'):
@@ -2887,7 +2887,7 @@ def run_celeb_watch():
             _celeb_retry(state, vid, '라이브/공개 예정 — 종료 후 검토')
             continue
         if duration <= MIN_DURATION_SEC:
-            _celeb_record(state, vid, 'rejected', '1분 이하 초단편 제외')
+            _celeb_record(state, vid, 'rejected', '3분 이하 초단편 제외')
             continue
         title = detail['snippet'].get('title', '')
         description = detail['snippet'].get('description', '')
