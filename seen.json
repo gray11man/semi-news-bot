@@ -3687,6 +3687,34 @@
       "source_published": "",
       "source_modified": "",
       "message_id": 5068
+    },
+    "a102c8e83e047bd98fbe4befebd71c8daf7b29f6216fb31127a6b8967b17609c": {
+      "ts": 1791045130.023823,
+      "title": "AI agents use 5x more tokens than humans as cached prompts explode, headed for 10x — agents are mostly rereading what they've already seen, skyrocketing KV cache demand threatens already-worsening RAM shortages",
+      "fact": "AI 에이전트가 프롬프트를 캐싱하면서 인간보다 5배 더 많은 토큰을 사용하고 있으며, 이는 KV 캐시 수요를 급증시켜 RAM 부족 현상을 더욱 악화시킬 것으로 전망됩니다.",
+      "source": "Tom's Hardware",
+      "rss_published": "2026-10-03T13:10:00+00:00",
+      "link": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNVVVhN3dDRnN1RVBpNC1pMG52TTczcTNoc09VdkE3TUNZbmIxaXdnWXQ2WkM1cmJJNXVpQXk5U2RDWDZ0SEFNeHRuU2loS05SdTRacGlmUDdmMi1RSE5EXzhmcC13ZkhJS2stNll1UjNoOExkYnR1eHV5U0RoT1ptVzd3bzNOTW1obldoRW9JMFFvM3J3WjRZM2RaUHZYeGxMb2g1SWwxM1FhRmxHUXZBUER6SkkwaTRud2c5bGdTQlJQRmNXcG91c1FaVlNoNWpRc0plbk1VTDdtNDMycmJUUW1ZUHN2S1VUeXBnOTdBeks0QzBoUGJibHJDNkFGa0xpdDUyZjgyUGQwc05vSUh1emlnVGZOaEVTRWU1cWhUajM1WUpTVUJMRndYeVJ3UQ?oc=5",
+      "resolved_url": "",
+      "event_key": "AI 에이전트|토큰 사용량 증가|KV 캐시 수요|RAM 부족 심화",
+      "new_fact_date": "2026-10-03T13:10:00+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 5069
+    },
+    "1d7fcaf7fe6af6e99a90303fb522fcc0f167a432ff3dc380e259aa1fddf75cd3": {
+      "ts": 1791045131.745549,
+      "title": "Dell Technologies (DELL) Joined A $15 Billion AI Data Center Project In Japan",
+      "fact": "Dell Technologies가 일본에서 진행되는 150억 달러 규모의 AI 데이터센터 프로젝트에 참여합니다.",
+      "source": "Yahoo Finance",
+      "rss_published": "2026-10-03T12:07:32+00:00",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPS011UzhxRkdHa2ZPWFlKZ214aUtHRTB6R1NubnhpNjZ4dnpYdWpXdndQTFRlSGpQZ0VxMGxEdWFwTGVtY25fUER4ZkI5SW80c2xmbkpXcXJEYVRNek9xYkVBV1lvN25jczFNMGg3bmJFVFY4QXlfOTJLTmkxNGZRb256MDk0OGJYdEZWX3dGZFZoaWxDMERvQVB5T1M?oc=5",
+      "resolved_url": "",
+      "event_key": "Dell Technologies|AI 데이터센터 구축|일본|150억 달러",
+      "new_fact_date": "2026-10-03T12:07:32+00:00",
+      "source_published": "",
+      "source_modified": "",
+      "message_id": 5070
     }
   },
   "pending": {
@@ -3700,38 +3728,6 @@
       "stage": "candidate",
       "precheck_priority": 78,
       "precheck_override": "critical_event_force_review"
-    },
-    "cc40ea2648cb5b1a34fdf50f1dfc6da2eaee6655db63255162a29ae618def069": {
-      "title": "Applied Materials (AMAT) Climbed, What Is Behind The Latest Attention?",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNUU9YT2ZDZnNnS3pGakxRRXZkZU9TcmdEX0JZSU5TM21EaHB0R3RMMVNZeFNXaEg2Um5jME54ZGdsTnN5SE8waXo1emJPWm1WQzFvQTY5Zm1VU25SYXctc1ZfUDBqS29TVGJCM3RkX2hZeG1SSXQwdktocGEtVC0wOWF1d1lreFhPSER3Z3NpV2lJN250ZmF0QlpyVlMxanZnaGVMajhPV21kbVdFWENCYmd5dTh3VVctMU1LRlU5RTU4dVIzei1qS3dhc1pVRVR4T2plQ3dVMFhSd9IB3wFBVV95cUxNTUJISVlLVkotWm41LVdaWDE4VHduNFlVTklXYXdmUGtxcjZER0FGRGl0V19RbldpOFppWUVqNElhc1MtZTF1ZWRpVHVEN1lwcmlsbW9kM0F5TFA3LWdjT0x1U3gyazhNQ2xkXy1LdXdBczJnbWFZaW9XcENUNFk2d09RYkRhU2FZZFZxRm12QTdBM2l6M3ZBeUplMUh1Ql8xQ3NpMUYxWnduZWNFUXF2NDM4TWJBS29OZXFLMkxYRWJjUnJrdjBka0lDQ3lreWtldFhjYm0wcGJDV3BQSVhv?oc=5",
-      "summary": "Applied Materials (AMAT) Climbed, What Is Behind The Latest Attention? Simply Wall Street",
-      "source": "Simply Wall Street",
-      "published": "2026-10-03T03:27:17+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "1cef338f3881fa74ff27d4cfb1ec8621758989497c76a5657bd936036e6fe9f3": {
-      "title": "AI can amplify Kazakhstan’s global voice, says strategist Olaf Groth",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNX3lQWW1YZ3h6NUMzZHN3T1k2cEdteS1WOHdlandieTJWUF9kVUNBTGNFZnFlQXQ2ZF94ZGJPVnVFXy1nTnh6aTVuSktvUlNDTk9pNUpMZXVabHJ0QXZyTUsySkNPVGFJaVVkLXdtLTNfdmZ6cUhsaGFEZHh3RC1GTEp4NWVIWVl1SU1kQVF2VEh0MVJVeFd1LXZSNWY5eG15SnfSAaIBQVVfeXFMTV95UFltWGd4ejVDM2Rzd09ZNnBHbXktVjh3ZWp3YnkyVlBfZFVDQUxjRWZxZUF0NmRfeGRiT1Z1RV8tZ054emk1bkpLb1JTQ05PaTVKTGV1WmxydEF2ck1LMkpDT1RhSWlVZC13bS0zX3ZmenFIbGhhRGR4d0QtRkxKeDVlSFlZdUlNZEFRdlRIdDFSVXhXdS12UjVmOXhteUp3?oc=5",
-      "summary": "AI can amplify Kazakhstan’s global voice, says strategist Olaf Groth qazinform.com",
-      "source": "qazinform.com",
-      "published": "2026-10-03T03:13:30+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "18325370fffb7d192ce39a2eeee4e6ad2477d0fd062b11cf11e851137d8619e4": {
-      "title": "Meta launches new AI platform to transform enterprise business",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9yXy1VXzgyMzBCeWRuWENjM1h5YVl2THNyT1ZPb0tic0RXVUJJTzVOSzBLRUFiTk9CTDRqaFNON3lJTkU4X2U1OGlYamM2ejEt?oc=5",
-      "summary": "Meta launches new AI platform to transform enterprise business trend.az",
-      "source": "trend.az",
-      "published": "2026-10-03T05:47:00+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 70
     },
     "7b3d593d3a9fc7ba96a71fa591d42d53379e7d999c53e6788cd4c017156a9b66": {
       "title": "Did AI Driven Disney+ Upgrades Just Shift Disney Stock Investment Narrative?",
@@ -3754,36 +3750,6 @@
       "stage": "candidate",
       "precheck_priority": 70
     },
-    "b636012eb211edff24bf750fe26360408699b37d8002b7f058515cf2b4552f3a": {
-      "title": "Anthropic launches Claude Tag AI assistant embedded into Slack channels",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNLWRfSTY4TmxfVkRhcTliSVlOSjV0VXJjMTExTzRFLUx2Qi1JTC1tNjM1M2NDUHVlanItRWpXNDlZTE9udzZlM3ZhN2pDYWs2TkVmaXd6elNocTN1T1VlcFh1NmhIM1RoaWdmU280bENnSU5xUlpDd0RXdzM5WXZuR3U2cjJNeExGc0pBSjM2M21HU0pBM0lMQzRlOEt3TEc5dlIzRDd1bmlVejNjUTBMRXRyRlI5cWJQWWc?oc=5",
-      "summary": "Anthropic launches Claude Tag AI assistant embedded into Slack channels newsbytesapp.com",
-      "source": "newsbytesapp.com",
-      "published": "2026-10-03T04:18:41+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 65
-    },
-    "d0d661fefc0604885fb69a60d555004be2c7873eff0daae42ef5c100f4e05900": {
-      "title": "Meta launches AI tools to detect scams on Facebook, Instagram",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPcjlLQW9ObUpUbFFZbFNpRmJ1aE55VlRGOVlZbHJZeWJFNlNqcHdZNFlwZktQSjV0Q0toMkhfRVdSUmY0UTZvX3QwOXRqWndETjFabDBtTS1PaDZNcnhNSWkyb2ktV0JWYjh3ZEhwVDhNekVsb25SX0dtWDE0STVPMEhZSTM1U3ZBb2hNQngwWEpvdkowTFFid2drTmxLYmVYVXpJMVVVSmtqa2c?oc=5",
-      "summary": "Meta launches AI tools to detect scams on Facebook, Instagram newsbytesapp.com",
-      "source": "newsbytesapp.com",
-      "published": "2026-10-03T04:18:38+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 60
-    },
-    "6791f7fee680b4bfb49b7edf769352cf1b591502b90bd85512fa4e8b6dd52cd0": {
-      "title": "AI Data Center Voltage Sag Ride-Through Systems Market to Reach",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZGM3VVBTSTIyQW5iME5VY3BDb3F2X0JGckRjTGZIOGVlZmdIQmV5dHhDa3JOcXdtVTYxQzBfWWJyYU0wMUg5cG9zX01zOWNYbUpmWkVLVk5mNjBZNlQxek1NcjVsUEtacWRoa1BVcGROdzIwTldSTGtMQmV0QU52M1hGRHI3MTJGbG4tSURDOTNNTFRkcTJKUVBGaUNYOE9I?oc=5",
-      "summary": "AI Data Center Voltage Sag Ride-Through Systems Market to Reach openPR.com",
-      "source": "openPR.com",
-      "published": "2026-10-03T03:38:17+00:00",
-      "feed": "cooling",
-      "stage": "candidate",
-      "precheck_priority": 65
-    },
     "ef787c3d4e0aa0a587d403ccf141ecf83018e6c64a5deb7d445820c30fd7d489": {
       "title": "半導体前工程用コーティング・現像装置の世界市場（2026年～2032年）、市場規模（コーター、現像機、コーティング・現像複合機）・分析レポートを発表",
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1UNURiRjh4Rm1YNHhoeGJuR0pfQkROcV82RkplX3JySkk4QlJtRWFSbnZlNXMzZFh1RWpZQUJPVGFWcEhqVmJYR1MzUUlHakk?oc=5",
@@ -3805,16 +3771,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "491df1c7234a88ce1e2236094fd54c3e27f51f12a366782b4667280f57eaa0e4": {
-      "title": "Tech Talk: Google launches Project Suncatcher satellite to test solar-powered AI computing in space",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUWpHdUtaY00zdzZXQXRZTVBTYlQ1SWdPY1V1eWtKVDZKWFJzTFMzcVhMV1pxUEdrR2ZLckRnMU9xQUwteW44ekkzbFAyeW9yaC1VUk5QdWFRUmxsaXBIVkRPdk9taXVqdm5KMUIxb3FoQW5yYUo0LUxsZ0VOMTZBZFFpNWNycDVtZVZ4b3VuMTRTLWtacmRnbFp0R2tIazE5bkpvMUpzR3Q4Qmtpa19oMU5XMG5kSmVlWjhYcHVnVUc3bGZnWWNqSGFB?oc=5",
-      "summary": "Tech Talk: Google launches Project Suncatcher satellite to test solar-powered AI computing in space Gulf Daily News (Bahrain)",
-      "source": "Gulf Daily News (Bahrain)",
-      "published": "2026-10-03T08:17:49+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 70
-    },
     "7bf62fd683b58220546915a7bebc4fb6f541143fb527d80d984eced7cbbf9d93": {
       "title": "AI investment boom supports markets, but slowdown could trigger sharp repricing: RBI Governor Malhotra",
       "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQdVM1SmhZVEwzeDhkNk1Ib2RmaEhFLXViMC1IMm5wX0x6bFgwS0IwNy0tOUR5NF9wY2JvbnNOaGo3Ml9SWjEzWHRIVnZrUUgzQzhNQVFrVENzcENtNXo1d2dmazJObWJKcFFVSkN4NnFiSzNPS0oxR1dDTjR4anBmd2JORk5YdXByUWl2b2hOVXBzUDB2SnE2TWtXNEdQZDRQUU8tTlJNTldmX1VEOThyN2UtSHZjTUJ3eHV6QTZrQWk5UnFXbWQ1aFBBNk5xeThBblBFclhGdUlXLW5wSkJhV21zajUtbDNzSFHSAfcBQVVfeXFMTWw0VjB1YW11YW9Hd0VrclFIUi1HVjdHMDNrMmlaRnRhV1NfYnZXcXBxTkNiY29WY2hTeWMwRUs3OTRDV2x1cXBteGlsS1FsZkc1TUJPTnpPVXlGYjlzd0pjRG9EQWttRW1idVAzQ2FaTmJPb2FZQl9Zalh6MXZrS1BfMURXTGRmVm9FdHN1WXFlNW9iNmdtV3FhbXZjN3RXblNNZ3RzTGQ1cXlsdkI1c01pcVFxRlM1eVZQQWFxanNBeEZuREt3cVJNbG91ak1BTkI5S21MWUZRV0pVVE9NVy00YWFWdGJPanZvN1hJRk9WWkh2ak9ZQQ?oc=5",
@@ -3825,16 +3781,6 @@
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
-    },
-    "b28370a3ed5dee94d6a39fdec286437abbdb8b264a1f6ae0d4eab42e3442384d": {
-      "title": "TSMC Reports August Revenue Growth. TSMC stock sits at EUR 421.25.",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQckVnWnFBLTJJOTFGSkV4Z2xfMTZteWxqRGtSUWYwdHRVd2tUQ3BvQko1Zmxsblg4T3V3TkhqeTJRRXFwR0gxRVE1dXc0ZTU4a3VPdGpWSmhGLVoxcFNpMkVWeFRJTTY3R19pNDBIaDdyUDJRa3FCaUdmcWVBNUlHajFIcVdTTFRnRElMa3NRRHdORldHUFRzaTVRWVBYSHdaWERYWVU4NksyMkM0bVY3VXI5ODYxVkFSZ3A3cWFrZ3FnSzRaWUE?oc=5",
-      "summary": "TSMC Reports August Revenue Growth. TSMC stock sits at EUR 421.25. AD HOC NEWS",
-      "source": "AD HOC NEWS",
-      "published": "2026-10-03T08:10:05+00:00",
-      "feed": "semicap_earnings",
-      "stage": "candidate",
-      "precheck_priority": 70
     },
     "2ef97fec7f9be58b1179cfca96909b7ec06d1a3dd9a7eea99acb0f0027717fd2": {
       "title": "3 Data Center Stocks Facing The AI Power And Regulation Squeeze",
@@ -3930,28 +3876,6 @@
       "stage": "candidate",
       "precheck_priority": 60
     },
-    "95a5915125491886b267eaa565d99fcabc946dab3841b2f31e30a2cc04f6908a": {
-      "title": "Prime Minister Han pledges inclusive AI Basic Society",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1ra0dyajJ1LVV0Y2g3TGppSTFuYXAxSGxBQU5TQ1VCODhGa0syZ01LbUZVS1gzdVpHc09iRWVxWDQ1ZF9jRFExXzdUdjZJRVMtTXl2YzQ5VXVpcHfSAVdBVV95cUxQVUFSUFRDbHQxTTN5eGhEeno5blptcVRBaDhRbXRCN3liVDdDV2xOY0MtZmc5UlBZLXNvYmNkcFJmbVAxcGpiOGVHRWFvZnlzbTFsaXNZX1E?oc=5",
-      "summary": "Prime Minister Han pledges inclusive AI Basic Society Aju Press",
-      "source": "Aju Press",
-      "published": "2026-10-03T04:10:27+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "dca7eb10129e1e7574710555cb2e5519d996db3e32b400d39a0bf08ba260a1e1": {
-      "title": "AI can amplify Kazakhstan’s global voice, says strategist Olaf Groth",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNX3lQWW1YZ3h6NUMzZHN3T1k2cEdteS1WOHdlandieTJWUF9kVUNBTGNFZnFlQXQ2ZF94ZGJPVnVFXy1nTnh6aTVuSktvUlNDTk9pNUpMZXVabHJ0QXZyTUsySkNPVGFJaVVkLXdtLTNfdmZ6cUhsaGFEZHh3RC1GTEp4NWVIWVl1SU1kQVF2VEh0MVJVeFd1LXZSNWY5eG15SnfSAaIBQVVfeXFMTV95UFltWGd4ejVDM2Rzd09ZNnBHbXktVjh3ZWp3YnkyVlBfZFVDQUxjRWZxZUF0NmRfeGRiT1Z1RV8tZ054emk1bkpLb1JTQ05PaTVKTGV1WmxydEF2ck1LMkpDT1RhSWlVZC13bS0zX3ZmenFIbGhhRGR4d0QtRkxKeDVlSFlZdUlNZEFRdlRIdDFSVXhXdS12UjVmOXhteUp3?oc=5",
-      "summary": "AI can amplify Kazakhstan’s global voice, says strategist Olaf Groth Qazinform",
-      "source": "Qazinform",
-      "published": "2026-10-03T03:13:30+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
     "403c86470ed790de376ba010e5504463cbfe635a4387f1d3e5242d473eda1b4c": {
       "title": "Is IDC WAAP Leader Status Altering The Investment Case For F5 (FFIV)?",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTXVQczNwei1YTTRYZ3hPWXptU1o2ZUZvSlJBRjdUOERGZmtsbm5xR0Q4d0N1T1VDQzFVRy1kSWZMMlRaVlkwMTNsM0Y2ODgzSHBmSVB4Z1IxRHlIRlIxT3Q0VjVPYVQyOE5hT29fdmxYckM3MG00ZzhmbW15R0VFU3piNE5YM1FuSTh4dm5JVWdMcG5CWHVzdVR2WWo1Ti1EV2l0M00zVFFCOGhKRHZVTHpmY0dwbXVSQlZpcGxR0gHDAUFVX3lxTE5QNnEyWTJxanBiR09OaXViZ1BEVmZoNUVSVEM1ZHdWUVJRQ01rRkJtdDAzaExpVldxR0o1MEZaRWFWNUY4MmdJUDllRlJlVTE5Q1pjR2FUWHB5VTFLVnZtRk5YOWl1T1JhVDlPX1FqX3RaSFBnbnhUS0JqM1VLS0tSN0diZjB1SjdlM1FrX2E1TXNpdFRGZFQyb2M4VlB4NFNLZ2NUVGpldlFzaTJyMHZVYWFmSG1VMXU4T2tSMGRSandKYw?oc=5",
@@ -3962,16 +3886,6 @@
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
-    },
-    "d4294fe3e1fba255de8ee267bb641ef4c7d963cc63e59420f2af97dfaf51da09": {
-      "title": "4 Data Center REITs That Pay Dividends: Where AI Boom Meets Steady Income",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1EWWgyQ2VLbDFrZFlwR2Yzc29JYjNDZ2VKOXdLTmhBQXZBdHZKd1J2MnV0S3oyVWhqX2EzLW9VR2FXWFJhTm5JTXNkRXRIb0p1VXlGMGZpLVlSRi1nMEU0S1MxUWJDLVdMWFNuZ3c2OTNhMXJaQWc?oc=5",
-      "summary": "4 Data Center REITs That Pay Dividends: Where AI Boom Meets Steady Income AOL.com",
-      "source": "AOL.com",
-      "published": "2026-10-03T11:45:43+00:00",
-      "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 70
     },
     "045cf9fcc4cf5458de902bd7e73a0326f25ea8fe3fd13fb0d30a38a37361b6c4": {
       "title": "Sharjah Investment Forum to analyse how AI can change govt, investor services",
@@ -4016,27 +3930,6 @@
       "stage": "candidate",
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
-    },
-    "a1ba99d901f6082c50b7f64c93fcbf5e70a490d61b1b4346b2633f580ca4350b": {
-      "title": "Meta wants you to build your own AI gadget, and it’s giving away the code",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRzVISTh1YlRRa0pTVDdYOGxEZHRsR3hkOTBKamZ1UHpxdEg4VDBITDhrR3ZYOTVhcVJmRXFzMnRlLXpoSHZTSTF2OTJ5bEx5OW9USnFHUElrUWlqaGFSbHhOemRDcjNEbHBLT0F6a3lvQ3J5d2x3Y2dXLWJoVE5uNWo4ZUM0WVo3TGtfMDFDSl9hdjk1N21KSG1IYkNOSEEzckVpc05mcUgtSXFsZWs5OWRKellqUdIBxgFBVV95cUxQU1ZSNHFzUFBMNXJ2X1E3XzZwRmVKdlNaOU1yZkc5V3ZtbHJkZEhkZmNZY3lsWkpITDRRbVJ1NGpJYndEQWZIS01HRVZEZFFvaWpFLU1qNG9ET21WOFF0R0IyRVF4VExGcV8tWFdXLWREbWFJbWs4dGhseUJLbmExLXpiYk5NTGpQNjhEdU9VYmFOeklsWXFvOEQ5QkZSVXMxRlNjVy1wc3N2UC1UcTlDU1J4RGJSVjdLWE5aT3Nsb2ZZbDMwT0E?oc=5",
-      "summary": "Meta wants you to build your own AI gadget, and it’s giving away the code Gulf News",
-      "source": "Gulf News",
-      "published": "2026-10-03T10:06:01+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 70,
-      "precheck_override": "critical_event_force_review"
-    },
-    "70fa43a8c4738551258474eafa48a546389446d19026631ade2deb1737b84c56": {
-      "title": "IREN Rides AI Data-Center Rebound as Griffin Discloses 4.7% Stake",
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQUVNJcFlzUWxTTG5FSTQ5U0oyS1VzZzUwT0MwR1N5cVRTNENvZENvdVZ3cFBjVy1aWXVuaWkwY1BRM29Yc2ZZRkt0V3R0YXZpRnBqWjVWVktoTVB4eFBYbG1Ia3dtZDZMTTZXSUZjZ1lxb3FZVnZ4VVpkS2xZWkVob3kxa3Yxa0xJNUxnN0U3YklBTEQwdnIyXzQ2OXJ3NVBManB1QU5jckxRUEVZM0QwSWowdy1TMXVIVjdyRUhWSnRDbGowQjVoTGRfUzVPTmRnOFVHU2FDNldEWGhO?oc=5",
-      "summary": "IREN Rides AI Data-Center Rebound as Griffin Discloses 4.7% Stake AD HOC NEWS",
-      "source": "AD HOC NEWS",
-      "published": "2026-10-03T09:50:47+00:00",
-      "feed": "neocloud",
-      "stage": "candidate",
-      "precheck_priority": 75
     },
     "50f60e9ba7f6af6b52c3b2ed8008dca3a49a4ef9842874eda6f10ecb1f003152": {
       "title": "Meta's AI Spending Has a $3.9 Billion Tax Perk — Mark Zuckerberg-Led Company Reportedly Classified Data Centers as ‘Pilot Models’",
@@ -4123,69 +4016,6 @@
       "stage": "candidate",
       "precheck_priority": 85
     },
-    "1a7112907823da823d0a5b1eb0fdc29036ba4f2054322dafdfe032767c6aa077": {
-      "title": "Metro Nashville continues to investigate data center impacts",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNDNFMU5BUFdZZ2QzV01GVTk5NllxbkZmWWVsS3VJd2syb1JqNUp2ZXlUQ2xFWkNtSkkzSXFWSm0tdjd4d3dXZ25TME8xdDFtRnVLY1lOVGNwUUhkd01adVJjZE1TbXF1MGRoRDIxa0tQbnRicGVMOE9fVnZ6VU51cTBXWVd2YjI2TEhlSjlnc0J0Rk5zeVBiM2dvVTk?oc=5",
-      "summary": "Metro Nashville continues to investigate data center impacts Yahoo",
-      "source": "Yahoo",
-      "published": "2026-10-03T04:13:00+00:00",
-      "feed": "ai_commitments",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
-    "3a9df6ccc341c57146ed1704f84ac78fc859673199d25bb338828bd523ad8d3f": {
-      "title": "Commerce Minister Piyush Goyal pitches India as investment hub for food processing, AI",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPemFWYU03SkMzUGx3UlFmUkYtMmM4RXRUX2ZQcno3ZkxMU05Ga2M3YVN4aUdFZkl3Vl9UcGhUdVVFQk9qNE5aeGVSeFZrM3E2OVY2T2FGNEZsT3BMckkzTXlMZXZnQkhmSWdTcS1VQmxDUGdOQlN2X2RDNXM2WFczQWd0TjR0bDd6cXNwc1hvMU9vejFCQUpaY1otQ0dmV2ZrTld0dTRDVVNhV3gyc3drX3BNUldLbTQ0bk1yNExCbzZYUDdnMU8xNdIBzAFBVV95cUxOckI4VVdFQjYyX0N6cWtqdHExTHNEV2U4X3BWUjNJZWVFVVZNNUJvVVRoejJ5alVvMzlDM19jbUUxLWtWbVdWbk96bFdzLTRaMGI0dzNzbFNzRzIxTlFXd2VGM2U5VzFGMUhaUmlFY2FDc0hsaFB6NW12MWw2MEhvVnJ6aGV2aldFd2NmR1hZM05CYWV4Um1kWmN2SVJ0bDNaY2ttNy1HQzdxTk9Kd2VSSTlMckVMRDBqemJXbU5xVmg4UnFSU0dhMVhlOUQ?oc=5",
-      "summary": "Commerce Minister Piyush Goyal pitches India as investment hub for food processing, AI The Tribune",
-      "source": "The Tribune",
-      "published": "2026-10-03T04:02:26+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "f4d0cb6fb97457c589707a914ece10f4a8baf9968d9210ccb4211681e097e03b": {
-      "title": "Q3 Earnings Still Have the Horsepower, but the Market Is Riding a Narrow Track",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPM2hPZi1LdmlzWndvSnlhYTZoMUZPVkFSa1BhM0xmZTNhSGxQb0JfWUFYMXdpeUFjUENSbVU2MkJ2Um5JLWpHY3ViUnVsdGVabWJ1YUNhRVRISDZleXJmd2k3OHRqT1p2SmdDc2tNU2JwT3Q0VF8xTG1OX05Pa0h5bjFVSURCX2Rw?oc=5",
-      "summary": "Q3 Earnings Still Have the Horsepower, but the Market Is Riding a Narrow Track The Dark Side Of The Boom",
-      "source": "The Dark Side Of The Boom",
-      "published": "2026-10-03T04:01:14+00:00",
-      "feed": "ai_capex_outlook",
-      "stage": "candidate",
-      "precheck_priority": 66,
-      "precheck_override": "critical_event_force_review"
-    },
-    "c08e72197ba6b55d6ffd7e926cb95aeac9a248307486e7140c3ee58874972994": {
-      "title": "Wall Street Week Ahead: Spiking bond yields, midterms, earnings to test US stocks' typical fourth-quarter",
-      "link": "https://news.google.com/rss/articles/CBMirAJBVV95cUxOS0tKdmNDOVAtT3dyMWxwM0Q0c0MzZ0UzMnRZLXNIb3R5dElBWEYyVHJjbXNEcGQ5N3FnZk1LNUpEUkhxaGtSSlVUUmM0WTBPR29hYnZZTVM5S2JSOTlJSDg0OWdBeUJUN3NOOVZXVElWZ2hlcWZ3RGUtRzFieXljRy1IYWVxRm5wWTF0R1JaTHdOWE9MckZYajBkUnZZVnByT2xxbXhKZ05BdW9qMmtPZU5Vam1iNnFhVkYwemh3Z0RtUDMxYnM1VE5DNVFFLXpMUnUyeWNkdFFXallXQWlJV3dCV2Nkc3NiYVBkRDVQTTdLYWVCWkFpZnY2V1BzY09IX1dBY1ZwcWt5MkJHczB1dkNQUmE3MGFNeUFNM2lDV2d1MlJ1emxLMkRXekXSAawCQVVfeXFMTktLSnZjQzlQLU93cjFscDNENHNDM2dFMzJ0WS1zSG90eXRJQVhGMlRyY21zRHBkOTdxZ2ZNSzVKRFJIcWhrUkpVVFJjNFkwT0dvYWJ2WU1TOUtiUjk5SUg4NDlnQXlCVDdzTjlWV1RJVmdoZXFmd0RlLUcxYnl5Y0ctSGFlcUZucFkxdEdSWkx3TlhPTHJGWGowZFJ2WVZwck9scW14SmdOQXVvajJrT2VOVWptYjZxYVZGMHpod2dEbVAzMWJzNVROQzVRRS16TFJ1MnljZHRRV2pZV0FpSVd3QldjZHNzYmFQZEQ1UE03S2FlQlpBaWZ2NldQc2NPSF9XQWNWcHFreTJCR3MwdXZDUFJhNzBhTXlBTTNpQ1dndTJSdXpsSzJEV3pF?oc=5",
-      "summary": "Wall Street Week Ahead: Spiking bond yields, midterms, earnings to test US stocks' typical fourth-quarter The Economic Times",
-      "source": "The Economic Times",
-      "published": "2026-10-03T03:52:00+00:00",
-      "feed": "ai_financing",
-      "stage": "candidate",
-      "precheck_priority": 64,
-      "precheck_override": "critical_event_force_review"
-    },
-    "d195a9d8d30af108a67887f524a3472750e43079d1f2ab3fe340c83aee6a0f4a": {
-      "title": "AI Data Center Voltage Sag Ride-Through Systems Market to Reach",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZGM3VVBTSTIyQW5iME5VY3BDb3F2X0JGckRjTGZIOGVlZmdIQmV5dHhDa3JOcXdtVTYxQzBfWWJyYU0wMUg5cG9zX01zOWNYbUpmWkVLVk5mNjBZNlQxek1NcjVsUEtacWRoa1BVcGROdzIwTldSTGtMQmV0QU52M1hGRHI3MTJGbG4tSURDOTNNTFRkcTJKUVBGaUNYOE9I?oc=5",
-      "summary": "AI Data Center Voltage Sag Ride-Through Systems Market to Reach openpr.com",
-      "source": "openpr.com",
-      "published": "2026-10-03T03:38:17+00:00",
-      "feed": "cooling",
-      "stage": "candidate",
-      "precheck_priority": 70
-    },
-    "f68928d433fd6c010b0dd4697ee58c48903fb0673847613b6a4855e1195a1d67": {
-      "title": "Megawatt AI Rack Load Emulation Systems Market to Reach USD 449.0",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOMnREdDRxblFRM1Y3dTdaUzcyM19CSFBodm84Q1NNSXlHWEU1QnA5MjJoczhjTHJwYjlNbHBWZ3Z3TmFOdVZ1SnM1YmZ1aThxWklyY2FTRGhvUUQ4QS1zUWhRaXRwQVJsM2U1Sl9ablUzaUQzejZtaTZIbnJoZGZjSmlFQWl6aVNlejN2S1VEWFZuTFVNRjBVUzc2a2dPejdzRkxn?oc=5",
-      "summary": "Megawatt AI Rack Load Emulation Systems Market to Reach USD 449.0 openpr.com",
-      "source": "openpr.com",
-      "published": "2026-10-03T03:36:36+00:00",
-      "feed": "accelerators",
-      "stage": "candidate",
-      "precheck_priority": 70
-    },
     "413ae23367a543433d21693060f12e1ffe285ddd7619485d1d3cb4141637c16d": {
       "title": "Elon Musk confirms discussions with TSMC about Terafab chipmaking collaboration — Intel is the only other named partner, Terafab to exclusively supply Tesla, SpaceX, and xAI",
       "link": "https://news.google.com/rss/articles/CBMiygJBVV95cUxNeXItamxLWmIyc21RQWhkVFlValdBRFZZWF9aamZYcmZrdFBXM1BZSHAzZFhydlFHcUNpMlE3bV83dlJLZ0ZIQnZtWGFuNmp4Vzh1QVA2WFFFZk5faHU2U0ZyZlE0RzJxdWplX3pFTm1QTVdibHZTMUZFOHRmTGFjWk1XRnQtSVFLTmpoVjd1cV9HR3dlRDB1TW5jdnpIMk9WZjJhUFRINXFqMWFlNjFVNldTUWxxQk1zeXJlQ1lwRzNaOHpZemdEaWNtUnd3RXdCSEpuNWphVWxuMXZpeGM5cXBYaUlRU0dVVnpGaUF1d09pMWM5MkhQY2FWQnlWeHROQ2RibUZwWVY4VXNtS1JjZ0lzZGZWS183UjZpZVJfZU9UV0NKa05Oam1SY2JNeFhMWjd5RTdYNmVnQWUzZ0lrb21GaVJpR2lWTGc?oc=5",
@@ -4239,16 +4069,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "a102c8e83e047bd98fbe4befebd71c8daf7b29f6216fb31127a6b8967b17609c": {
-      "title": "AI agents use 5x more tokens than humans as cached prompts explode, headed for 10x — agents are mostly rereading what they've already seen, skyrocketing KV cache demand threatens already-worsening RAM shortages",
-      "link": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNVVVhN3dDRnN1RVBpNC1pMG52TTczcTNoc09VdkE3TUNZbmIxaXdnWXQ2WkM1cmJJNXVpQXk5U2RDWDZ0SEFNeHRuU2loS05SdTRacGlmUDdmMi1RSE5EXzhmcC13ZkhJS2stNll1UjNoOExkYnR1eHV5U0RoT1ptVzd3bzNOTW1obldoRW9JMFFvM3J3WjRZM2RaUHZYeGxMb2g1SWwxM1FhRmxHUXZBUER6SkkwaTRud2c5bGdTQlJQRmNXcG91c1FaVlNoNWpRc0plbk1VTDdtNDMycmJUUW1ZUHN2S1VUeXBnOTdBeks0QzBoUGJibHJDNkFGa0xpdDUyZjgyUGQwc05vSUh1emlnVGZOaEVTRWU1cWhUajM1WUpTVUJMRndYeVJ3UQ?oc=5",
-      "summary": "AI agents use 5x more tokens than humans as cached prompts explode, headed for 10x — agents are mostly rereading what they've already seen, skyrocketing KV cache demand threatens already-worsening RAM shortages Tom's Hardware",
-      "source": "Tom's Hardware",
-      "published": "2026-10-03T13:10:00+00:00",
-      "feed": "agents_usage",
-      "stage": "candidate",
-      "precheck_priority": 95
-    },
     "2b56a347a61d1ec144f3862eb2dada96bb2ab4020b6663e3bec01ca7aeef553a": {
       "title": "AAP Issues Guidance on Generative AI Use by Clinicians",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSVJuV3JGZUFDcEU1dWlhN2lhUk0xa05JRFU5YUVvbDBfbGFCemR4LUdzRGZISGxaU09CUXp6RjlUTW9wbTlUZmlfMlpyYTdCTC1xZnZGZ0JQQkFjUUN4OWh6R3RUdmlXQm5LMmpEaDNTUUVwdHhRZ3NlQS1fMUlkT0lLQ2NRQQ?oc=5",
@@ -4260,16 +4080,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "0f5a2d9f27325c79307e170e59c1aed56e9a66150e9e196ba4f0cfe13995dcc0": {
-      "title": "You can put a data center at your house—but who really pays?",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdEZjYWI5cm9WeEN5ZUJJUWNwcHhTSE9KWDRvclplWUlDVERQcl9NOG5qYmhDOGpIT29LT2UtaGItS0hVb00yMG43THNyQm9BV0JZTXBDSU1DQ0ZrWGZ1eHJnVkZZZU5kMWU5SXlGT2hCako0WXNZLThFSmQ4NFljeWdpQVozX0FKLUJndWVhaFNqUjg4QlhTTVN1dHdqUQ?oc=5",
-      "summary": "You can put a data center at your house—but who really pays? Fast Company",
-      "source": "Fast Company",
-      "published": "2026-10-03T12:57:58+00:00",
-      "feed": "accelerators",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
     "ab8d9a5c0143d8125236b037f12c0c1e364dc61ce695d5eeb6ece2cd3878cb0f": {
       "title": "Beware, Bears: Chipmakers Are Still Lubricating The AI Financing Wheel (SP500)",
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQd3dlcXlMVFZKRTVvc2lHT2hnR3RMX0N2SDFSMFlJOElXdDE4Mm9pbmZJTHRTaXV6TkJkVzVtSWlKR1NESUN6NmF4SDVXLWV4Sm9kTUpYWlpOS001R3V3VVZqUExybDJWMzh5ZGVFTGw5VXlTWm5tUGdqTEVua2g0ZGtDckJNRTdzUmdEbGNJS3p6U3VFcXlDX0w4NDluWTl0QXJVaFZwV3hsZXF6Ync?oc=5",
@@ -4280,16 +4090,6 @@
       "stage": "candidate",
       "precheck_priority": 100,
       "precheck_override": "critical_event_force_review"
-    },
-    "1d7fcaf7fe6af6e99a90303fb522fcc0f167a432ff3dc380e259aa1fddf75cd3": {
-      "title": "Dell Technologies (DELL) Joined A $15 Billion AI Data Center Project In Japan",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPS011UzhxRkdHa2ZPWFlKZ214aUtHRTB6R1NubnhpNjZ4dnpYdWpXdndQTFRlSGpQZ0VxMGxEdWFwTGVtY25fUER4ZkI5SW80c2xmbkpXcXJEYVRNek9xYkVBV1lvN25jczFNMGg3bmJFVFY4QXlfOTJLTmkxNGZRb256MDk0OGJYdEZWX3dGZFZoaWxDMERvQVB5T1M?oc=5",
-      "summary": "Dell Technologies (DELL) Joined A $15 Billion AI Data Center Project In Japan Yahoo Finance",
-      "source": "Yahoo Finance",
-      "published": "2026-10-03T12:07:32+00:00",
-      "feed": "ai_mergers",
-      "stage": "candidate",
-      "precheck_priority": 94
     },
     "bb5ad7408331a9c6035b4e0bcee8d5b486153af63e13a732a0066c72215ab7dc": {
       "title": "Meta's Muse can shop and check out for you. Here's how it works",
@@ -4312,27 +4112,6 @@
       "precheck_priority": 66,
       "precheck_override": "critical_event_force_review"
     },
-    "f2e4ac3bc52ab76e780055041de249e515fb9d5be6b748623a94be568eccd224": {
-      "title": "Bitcoin Miners Write Off $1.1 Billion in Assets Amid Shift to AI",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNbXdEYXFfM09FYnNVZm5NZndiRGk2OHMxTHdnYXo4Y0ZaYWNjdWtSR2lIU3JSU1VNazlzbGVXV3ozWGowUGJveE5SUnJySlFJWDFzUTFCNXBSSTlkSXk5N2prZzB4ZVpSdWZIUDhZLWp4ZXNPZU1tOWFXVDhlcGgzUFNiendURHJZYWN2SlZnVXo?oc=5",
-      "summary": "Bitcoin Miners Write Off $1.1 Billion in Assets Amid Shift to AI ForkLog",
-      "source": "ForkLog",
-      "published": "2026-10-03T10:29:39+00:00",
-      "feed": "ai_financing",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
-    "2f529bcbc5a68528a114559f0292c1dc54f9398305e5421772f89ee7338f5b69": {
-      "title": "Meta wants you to build your own AI gadget, and it’s giving away the code",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRzVISTh1YlRRa0pTVDdYOGxEZHRsR3hkOTBKamZ1UHpxdEg4VDBITDhrR3ZYOTVhcVJmRXFzMnRlLXpoSHZTSTF2OTJ5bEx5OW9USnFHUElrUWlqaGFSbHhOemRDcjNEbHBLT0F6a3lvQ3J5d2x3Y2dXLWJoVE5uNWo4ZUM0WVo3TGtfMDFDSl9hdjk1N21KSG1IYkNOSEEzckVpc05mcUgtSXFsZWs5OWRKellqUdIBxgFBVV95cUxQU1ZSNHFzUFBMNXJ2X1E3XzZwRmVKdlNaOU1yZkc5V3ZtbHJkZEhkZmNZY3lsWkpITDRRbVJ1NGpJYndEQWZIS01HRVZEZFFvaWpFLU1qNG9ET21WOFF0R0IyRVF4VExGcV8tWFdXLWREbWFJbWs4dGhseUJLbmExLXpiYk5NTGpQNjhEdU9VYmFOeklsWXFvOEQ5QkZSVXMxRlNjVy1wc3N2UC1UcTlDU1J4RGJSVjdLWE5aT3Nsb2ZZbDMwT0E?oc=5",
-      "summary": "Meta wants you to build your own AI gadget, and it’s giving away the code gulfnews.com",
-      "source": "gulfnews.com",
-      "published": "2026-10-03T10:06:01+00:00",
-      "feed": "frontier_model_release",
-      "stage": "candidate",
-      "precheck_priority": 70,
-      "precheck_override": "critical_event_force_review"
-    },
     "b08c05e6e70c882c1e930beeffb7cd9062cb08a7a1885c399f4acce706d77088": {
       "title": "The world is spending trillions of dollars on AI. Will it pay off?",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBLbjY0dXJianVlSUVacHgwLXpydWdhWms1RG9jMDE5YUk5dkxZMWlXc0wxcEUtLW03Qk1TSHpMX01lMlFoX1gtbE42dkhFNU5rX242UHF1dEtFNWVMZVJyTWt0aU11SjQ?oc=5",
@@ -4344,16 +4123,6 @@
       "precheck_priority": 78,
       "precheck_override": "critical_event_force_review"
     },
-    "5342c1f9c8f1897ffb9cfb0ee0584f821636800eb8ee568c1aea5d0db2bdbef6": {
-      "title": "Digital Realty plans in-data-center cable landing station at LAX12",
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPbDZlN1Q3STNJQlNiQmVmTWhqU1M0SS1Wa0djWFhnUGw3YjBmbm82a0ZPeGwxc1hvX0hQUWFZMEVGYXJXcXI0TG80M0tVQ1dfQzBNT0pzVzVvZkpfRC1uSDBOV3VXQlY5bVp2a25xMmJHZ3B4OERBTUVOeEJiSjdEOFRtMnpLazVjbEcwcDI3V2VxWDBmQjRoTklxWUVobW5iLWt6SUIzQklWTXpxMlNZb0pwTVo4cXk2aGFJN1kzc0Q3LTZubjQtdm1wdlRZYzVaOUlnbVNGUmQ0UnAyVHVXX2NCTWFvTXd2UEd6VzZucDNod9IB9gFBVV95cUxOejZ2Q0UzcDRtenVobFVtRTgyd0k0UUEycnJXVmV5QjV6MDc1bW1kUDE2a3Q1VG81eHJVN0p3emRoQ19BUTlYY195Qzltb0lGRElxd1BhZXRUY3Iyc04zRXIzTzJLLVc2NUxmMTgtT25KQ2tEQnRfc0h3RnRCSWdqV0ZvRUVMREhBMmFlckJ6MWV0ZURERTVEbUcxTnY2Z21OZUxmQ21yS0E2MnFuNGV2YmVCNER5ak9ZeDk1LWtrc0l1U3NadXdYNmpEc1RkYVdxa3hkb1RYU0d3WWI3d0ZkRHBRNDhra3h3bUpNS0V3ZGJhQnd4R2c?oc=5",
-      "summary": "Digital Realty plans in-data-center cable landing station at LAX12 ET Datacenters",
-      "source": "ET Datacenters",
-      "published": "2026-10-03T09:00:43+00:00",
-      "feed": "network_optics",
-      "stage": "candidate",
-      "precheck_priority": 75
-    },
     "14296045f9fe37758ec4c688fe88220cba896cec5413fd58575bcb3d199bee44": {
       "title": "Limaj is asked if he received orders from Thaçi: What kind of orders did you receive, what nonsense?",
       "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVUdOTjdEYlFUWlR5Y2RTMXZLOUxaLXNGSGNlaU5pT3JSZFpnVWVnMnpoV0JxUE5EWkZoOExoR1BicUprUno0ZU9tXzc2V2FUU3BLSVNmR3ZZUE41QmVqZzZrSUh5MXVLcGdYWm5tNWZwZEN1RWgySW5wY2htVUZiLVFsS2NNSTZvVVlYNWV0cHR1YkIzYm1Td3VmYzdST05zT1FHSy1jQ3RwN2hESlA4MkRSLXpwQU5zQnNoOVJmSzI0UQ?oc=5",
@@ -4363,6 +4132,61 @@
       "feed": "semicap_earnings",
       "stage": "candidate",
       "precheck_priority": 64,
+      "precheck_override": "critical_event_force_review"
+    },
+    "346c8bde924fa330c402f74973daac837a0d6b1e5e2704a3596af29a5fa1ac88": {
+      "title": "ASML vs. Taiwan Semiconductor Manufacturing Company: What Revenue Trends Tell Investors About These Companies Tied to Artificial Intelligence",
+      "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNak5Sd3ZzRmhvMnpfSk5veGRyZ0JIajRaQVhjM0tHekRwTVNEY3M4Zk1QU3hKSDhIN0VqbGc3Wkxoa2M5NVpMamRnY1c1SFNMRlBWYmQ0YWZXRk5ha3JSV1ZuRnJ2U3VMRElLRHBxMDNlY2YwZjRUU3FEdUNyQUFkNDl4YU12ZDNJZTFfQ0RkdFRGbE8tOEpkVHZnSVM1VnJUUEcxQlFMTWVLSmgzNmU3TWFISW9Zak1NalA5UkFva3B4c0VQTzhtQ0tjZWF1R2NzQ1U5WWNOZmhIRl9UdmM0cEkxTWpEek9RUGc5aWZxMExJOS1kaGRPMlpMTGNLT1VNWGNLOG8xVVJyVDZRbDd0ZGdhLW12S2c?oc=5",
+      "summary": "ASML vs. Taiwan Semiconductor Manufacturing Company: What Revenue Trends Tell Investors About These Companies Tied to Artificial Intelligence The Motley Fool",
+      "source": "The Motley Fool",
+      "published": "2026-10-03T16:18:44+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "73ec3affb35cd7a051c739e1dfbf02f2cb95b86aae200b75a4549d43bd54e990": {
+      "title": "Cash-Strapped Americans Tap Home Equity and AI to Keep Spending",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQWRGRlMyR3lmcEpxN1Z0Sk5PQ3B0VlZvTUppdXhrYjk2c3RJU2VnTkhobWo0X3gzYV8wZlJOdFBoSC00ZjJVLU12aGVKcld5N3c0QzFXX3drTGZyZVB2MHNEUzB5ZHh5SFB0RERzMVNSNFhCRElvaVppZUloMFBwWGotVlhGYnpHSnZ2ZEJDNThkTC16aFNTaUdjbDN3ZGpsamszM2I5ODA3MjQ?oc=5",
+      "summary": "Cash-Strapped Americans Tap Home Equity and AI to Keep Spending Bloomberg.com",
+      "source": "Bloomberg.com",
+      "published": "2026-10-03T14:00:03+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 78,
+      "precheck_override": "critical_event_force_review"
+    },
+    "4e33dc38399fdf71abe0226e1d1128f517e8e9b6c8dc0217c23fcc68cd088265": {
+      "title": "Bank of England Highlights Risks in the AI Investment Boom",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNcW5DMUNvaUNZb21KT1A2R3ZjT05JWlR0bmdMLUZ3QWQ1a01lRUpRR0F0ZVgzS2hoZFcyN0FkMGxlZm4yLUctaHRXb2t5Ym1HX3JvaTEzTk5QU1R3czJoXzZjWmt3N0NpckEwVlUxdW56TDY1U3Fmc2M1S191bERtZFpadC1KN1pqbnow?oc=5",
+      "summary": "Bank of England Highlights Risks in the AI Investment Boom Tekedia",
+      "source": "Tekedia",
+      "published": "2026-10-03T08:40:28+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "ed3745e640d69d6f68b59c66a0b855e7f1d79f5f79ad20f6077877f1e7e104e8": {
+      "title": "SK hynix Inc. - American Depositary Shares (Nasdaq:SKHY) Stock Quote",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9kMC0zZW52R1FZTFJVdHE2YUQwcmN1N3lDdGJsYzI0T29KUnZpLUpwWXRJRjJ1OTlqZ2pLU2hITkFuRFFKTlZvYUVrbE51eHNZZzhFM1phOV9pTnhSNVhFcGhUeEpTQ3oxNEJSbWVvWGVlbEVM?oc=5",
+      "summary": "SK hynix Inc. - American Depositary Shares (Nasdaq:SKHY) Stock Quote The Chronicle-Journal",
+      "source": "The Chronicle-Journal",
+      "published": "2026-10-03T05:48:36+00:00",
+      "feed": "semicap_earnings",
+      "stage": "candidate",
+      "precheck_priority": 66,
+      "precheck_override": "critical_event_force_review"
+    },
+    "57afde32439853285590113ebd5f44f42217b1622d52e0adaf331d7ab7583daa": {
+      "title": "AI's race to transform the world before the money runs out",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNV2NqbWtDbjVfc2dZYWtJWEp3ZnI5M1o5UWhkQndYZV83T3BxTE1VeDFNclNIeUZCMnV2a1NIVXc2enlzV3lFWktoWE11NUF0RlNjTGk1c1RTSEVsUEtGUU9HZlVuRVVhQ2ZFZTU2UHBoRVozX3pJeS1vRmtoM0w5dndmWnJ2YjQxYi03TDl4X3ZQNlhWdXBfQnRsRjByYllpaXF3VlEzWVdrS28?oc=5",
+      "summary": "AI's race to transform the world before the money runs out reuters.com",
+      "source": "reuters.com",
+      "published": "2026-10-03T05:06:00+00:00",
+      "feed": "ai_capex_outlook",
+      "stage": "candidate",
+      "precheck_priority": 78,
       "precheck_override": "critical_event_force_review"
     }
   },
@@ -55708,6 +55532,342 @@
       "policy": "ai-industry-v4.6-executive-origin-radar",
       "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
       "title": "Meta's Muse AI Agent Hits Millions of Downloads Amid Privacy Concerns"
+    },
+    "2f0698e787cec98e4fdbd4a2faaee4aead20abd5b40a944d6c8a386402bfc59d": {
+      "ts": 1791045110.776278,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "CelcomDigi의 프로그램 발표는 통신 회사 내부 프로그램으로, AI 산업의 핵심적인 변화와는 관련이 적습니다.",
+      "title": "CelcomDigi Launches Next Phase Of CD:NXT With campus@celcomdigi Program"
+    },
+    "4ffdc30b988c55d50685131c07ce727d47779f692fc3d01794e811ad3aaf91cd": {
+      "ts": 1791045110.776418,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "AI 안전 조직 구축 관련 행사는 AI 산업의 동향을 보여줄 수 있으나, 산업 구조, 수요/공급, 가격, 생산, 수율, 재고, CAPEX, 데이터센터/전력, 자금 조달, 정책, 핵심 경영진의 새 수치, 프런티어 모델/기술 변화 등 핵심적인 산업 뉴스에는 해당하지 않습니다.",
+      "title": "Liftoff Founders Week 2026 – Build an AI Safety Organisation in London"
+    },
+    "5d6a22b76f223081b42afd461ed41af89d23c95fef842b716b4e31de12bec2a2": {
+      "ts": 1791045110.776512,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Micron, Nike, Meta 등 5개 주식에 대한 투자자 관심 보도는 단순 주가 및 투자 동향으로, 산업 자체의 변화를 나타내지는 않습니다.",
+      "title": "Micron, Nike, Meta and More: 5 Stocks Investors Couldn't Stop Buzzing About This Week"
+    },
+    "2613b3c34fe6265aea52b2f9a1d67eb17ac6b477a840d19c259737009bc5c39c": {
+      "ts": 1791045110.77661,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Anthropic의 AI에 대한 분석 기사는 기술 철학적 논의로, 산업의 구체적인 변화와는 거리가 있습니다.",
+      "title": "Anthropic’s ‘Mythos’ AI proves that obsessing over AGI is folly"
+    },
+    "9c39b42602b8f6846cd0d6433c3270e16a5bbbaf46f4ab99c9c06ef8a41a6b8b": {
+      "ts": 1791045110.776787,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Manus의 AI 에이전트에게 전화번호와 지갑을 부여했다는 내용은 AI 에이전트의 기능적 변화를 보여주지만, 산업 전반에 미치는 영향은 미미합니다.",
+      "title": "Manus gave its AI agents phone numbers and wallets days after Nvidia caged them"
+    },
+    "ef3aed1c8f6c9a6c1e34b3d3b402cd472011f59f5d7fa41829e4b594bc3962c8": {
+      "ts": 1791045110.776929,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "AI가 여행 예약을 변화시킨다는 내용은 일반적인 AI 적용 사례로, 새로운 산업적 파급력을 가진 뉴스는 아닙니다.",
+      "title": "AI transforms travel bookings – study"
+    },
+    "b3914169dc3b675628a345cf0562cd630374a3c223ec5ff7550cc1c93d13bc86": {
+      "ts": 1791045110.777036,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "AI 칩 혁명을 가능하게 한 특정 기업에 대한 분석은 이미 알려진 사실에 기반한 투자자 관점의 분석일 가능성이 높습니다.",
+      "title": "The AI Chip Revolution Wouldn’t Be Possible Without This Company"
+    },
+    "14e82b707ebcf9f8fdacb3901708f977023756cc1845f903f62261ce6c76bf41": {
+      "ts": 1791045110.777124,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "FuelCell Energy 주가 상승 및 데이터센터 호황 분석은 시장 동향에 대한 분석으로, 직접적인 산업 변화를 보여주지는 않습니다.",
+      "title": "FuelCell Energy FCEL Jumps As Analysts Target Data Center Boom"
+    },
+    "b45e95452a90206859c6ea87eeb8947e3af3e4f4f20100dfdc3ca12035872d86": {
+      "ts": 1791045110.777227,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "3개 암호화폐 주식의 매출 성장률 분석은 금융 시장 동향이며, AI 산업 자체의 핵심 뉴스는 아닙니다.",
+      "title": "3 Crypto Stocks To Watch With Up To 47% Revenue Growth"
+    },
+    "37f442aa554c28a25abfb5c63696ff1c8b8a9e1f04ca49f83fd1c01667add2d8": {
+      "ts": 1791045110.777486,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "버밍엄 시장 부인의 데이터센터 부동산 매매 관련 내용은 지역 정치적 이슈로, AI 산업 자체의 핵심 뉴스와는 거리가 멉니다.",
+      "title": "Birmingham mayor says wife has no involvement in massive data center property sale"
+    },
+    "5b3835456c2eef83a4c0c2fbf4ee2e29c12bef8b5e7a3747f6b34493004962fa": {
+      "ts": 1791045110.777611,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Micron 주식의 현재 가치 및 메모리 이익 하락 가능성에 대한 분석은 투자 관점의 의견으로, 새로운 산업 뉴스에 해당하지 않습니다.",
+      "title": "Is Micron Stock Cheap Enough to Survive Lower Memory Profits?"
+    },
+    "4ae5a8b93b5353fcef6b044c8307c4c54b61566d618a83d4ca5b6cd7e651f6c0": {
+      "ts": 1791045110.777688,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "OpenAI 안전 직원 퇴사 및 경고는 기업 내부 이슈로, AI 산업의 구조적 변화나 기술적 발전을 나타내는 뉴스는 아닙니다.",
+      "title": "An OpenAI safety employee has quit and is sounding the alarm"
+    },
+    "9a66cc07b8b33cd76d0793de7bd6ae2e2cc8a133549402c688ba3055ebacfb05": {
+      "ts": 1791045110.777764,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Micron의 메모리 주식 사이클에 대한 분석은 투자 관점의 의견으로, 새로운 산업 뉴스에 해당하지 않습니다.",
+      "title": "Micron: The Memory Equity Cycle Is At Its Zenith"
+    },
+    "e20db4982691ba7a3f52299da24d8e4ddffa4e72d308048124e1a55cbdac618f": {
+      "ts": 1791045110.777849,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Meta CEO Mark Zuckerberg의 투자자 성공 요인 분석은 기업 개별 정보 및 투자 동향으로, AI 산업 자체의 핵심 뉴스와는 거리가 멉니다.",
+      "title": "The simple reason Meta CEO Mark Zuckerberg is winning for investors again"
+    },
+    "8e12fef2448283927786c4770a30e93a42c02bd03c327f10becec71252506262": {
+      "ts": 1791045110.77794,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Bloom Energy의 데이터센터 사업 제안에 대한 월스트리트의 엇갈린 평가는 기업의 개별적인 사업 평가로, AI 산업 전반의 변화를 나타내지는 않습니다.",
+      "title": "Bloom Energy's Data-Center Pitch Meets Wall Street's Split Verdict"
+    },
+    "1e6af929a527466c649b59f7d483dbe5f60ac2bfb272f9df314d6daf837d3b76": {
+      "ts": 1791045110.778126,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "Samsung Galaxy SmartTag3에 대한 뉴스는 일반 소비자 가전 제품 정보로, AI 산업의 핵심 뉴스와는 관련이 적습니다.",
+      "title": "Samsung Galaxy SmartTag3 Makes It Easier To Keep Track of What Matters"
+    },
+    "ed81c7f8515a79af8eda98a81b8b96c659b03075a78285deb2fda8a5057ca916": {
+      "ts": 1791045110.778387,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "미국 주식 시장의 강세 및 AI 위험 증가는 거시 경제적 관점이며, AI 산업 자체의 구체적인 변화를 나타내는 뉴스는 아닙니다.",
+      "title": "US Stocks Enter a Historically Strong Quarter as Bond Yields and AI Risks Rise"
+    },
+    "87de4ce872f6f66970caca4f073202f6979a415d5c5ac969308a9ab3985f3109": {
+      "ts": 1791045110.778488,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "인도 정부 채권 수익률 상승에 대한 뉴스는 금융 시장 동향이며, AI 산업 자체의 핵심 뉴스는 아닙니다.",
+      "title": "Indian Government Bond Yields Rise \"Only Partially\" Despite Global Pressures: RBI Governor"
+    },
+    "a7bf76ae30fd457a9f938e2eab968f1943cd00bbf7555aa8f50c06c3e6031e8f": {
+      "ts": 1791045110.778585,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "AdBlue 오일 시장 전망은 특정 화학 제품 시장 분석으로, AI 산업과 직접적인 관련이 없습니다.",
+      "title": "AdBlue Oil Market Through 2035: Heavy-Duty Diesel Vehicles Account for 42% of Demand - News and Statistics"
+    },
+    "782b4560f0f06996f46956eecad46a1fa4e591b0ae6181a7f276c8b36ddea443": {
+      "ts": 1791045110.778803,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "McKinsey의 AI가 일자리를 창출할 것이라는 전망은 AI의 사회적 영향에 대한 분석이지만, 구체적인 산업 뉴스에 해당하지는 않습니다.",
+      "title": "McKinsey: AI will create more jobs than it kills — after destroying 11 million"
+    },
+    "a65572b428e13a3ab517eccca9f824a002cafb047f0723bc9ee4463f6044af11": {
+      "ts": 1791045111.544838,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI agents now consume 5x more tokens than humans, driving NVIDIA's data center revenue to $89B in Q2 2027."
+    },
+    "529f98a9e4a0a1f0784278074bbde981565a8eec7423d09a706a76d94fced981": {
+      "ts": 1791045111.54888,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bloom Energy Stock Price Forecast: AI Data Center Power Shortages Boost Fuel Cell Demand, Stock Could Rise to $309"
+    },
+    "26f9637715e9ec9bc9d76a4f7fc45112c8be05b875751ad7148304c832e0aa70": {
+      "ts": 1791045111.55608,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Elon Musk Confirms TSMC Talks for $16.8 Billion Texas Terafab Project"
+    },
+    "97d785bb14ffc949565639bf379175ec448d44c10b353fced55fdfa6b84972d8": {
+      "ts": 1791045111.556111,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Broadcom’s $42 Billion Loan to Anthropic Turns the Chipmaker Into Its Customer’s Bank"
+    },
+    "c8acb3cbf04987b7351aa74e8afbdb8497d80df54e8d28642d6fa8e102bb9734": {
+      "ts": 1791045118.037668,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "삼성전자 3분기 영업익 108조 전망…HBM이 실적 끌어올린다"
+    },
+    "ae1add838f6a18e35516a23a8df966ab9a3ef1ae2a3c7d324a40cab3630481ba": {
+      "ts": 1791045118.041272,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "TSMC Eyes Texas Mega Expansion As AI Boom Lifts Stock"
+    },
+    "e74e486369f3b715e42d6b98e38d58a776d5dc6e5b0bba564c4de6b7090e2493": {
+      "ts": 1791045118.041298,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI伺服器漲價潮席捲華爾街：CoreWeave推升Nvidia身價、亞馬遜8億美元晶片大挪移震撼雲端市場"
+    },
+    "2085ffd396e4dc44d0d9ae2ab294955623d1e0ca2cabff315659ac2470b3b580": {
+      "ts": 1791045118.041319,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AI receives largest investment backing in history, returns uncertain"
+    },
+    "d70cb7ae1750aba4fbdab9e7977fb402b8a7da9f80cfbc8a1eb4ed64bbee028e": {
+      "ts": 1791045118.041339,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Micron Projects Persistent Memory Shortage Through 2028 Amid AI Demand"
+    },
+    "6b77ab6b6b99afba783da8020229642dcf14b29df774a5449c3c0593db2de007": {
+      "ts": 1791045118.04136,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "AMD Announces $8.2B All-Stock Acquisition of AI Firm World Labs, Ticker AMD Reacts"
+    },
+    "95dad3652301521086da297869a9ae64d821fd221693bc6144b87e27e77fc315": {
+      "ts": 1791045122.154417,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Super Micro (SMCI): $60B Backlog, 15-17% Margin Guidance, Stock Consolidates Near $31.87"
+    },
+    "fae66273236c64844e72ac4781250b0876cc4a6640563f033e44b12cef0d89ac": {
+      "ts": 1791045122.154448,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic eyes mid-November IPO, targets up to $2 trillion valuation: Report"
+    },
+    "f67417b8d917a450bedc12b8de284d0e36b7b2606660ca15e8cbd61f94b4cb98": {
+      "ts": 1791045122.154471,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "GPT-6.1 Sol 소개"
+    },
+    "5cfbb9091707d8869f7446c57de1c82336a5f31abb32c114138dbc14118f2084": {
+      "ts": 1791045122.154497,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Greg Lui DOJ Charges: California Tech CEO Accused of Smuggling $300 Million in Nvidia Servers to China"
+    },
+    "54c717863b4be9b412749da03f5500c5b7f1c6084f2f34de24d385acb3259bb0": {
+      "ts": 1791045122.154518,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "TSMC stock rises 51% in 2026 as AI chip demand boosts revenue and production."
+    },
+    "42318c2dff4cef79057189d05042d8747eaaa9758aebbcb1fab692086b94815e": {
+      "ts": 1791045122.158382,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Amazon Pledges $1B to Data Center Communities, Ends Government NDAs"
+    },
+    "8325c3fb54664444e64222b37fdb5e4dab21be5ae1d5862eb4a0c22f097b8a9f": {
+      "ts": 1791045122.158415,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Amazon’s $1B data center pledge underscores rising tension over AI build-out"
+    },
+    "d68c31c60ae6475ea8c47318053e967395577d1cde6bdfe1ef0f946e35a64ad3": {
+      "ts": 1791045123.907874,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Meta launches open source Muse Gadgets project for custom AI hardware"
+    },
+    "2c5689f190d3285e55275300227b3bfe417b477eff7dcb7683811e7192c78271": {
+      "ts": 1791045123.907916,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "GIGABYTE AI TOP 100 B850 Doubles RTX 5090’s VRAM With Dual Radeon AI PRO R9700 GPUs, Handling 235B-Parameter Inference"
+    },
+    "3ac869de7922dbf55e60d7bcfa34db73ef1b62710c06343cfa495dabb441525c": {
+      "ts": 1791045123.907942,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Google launches satellite carrying AI chips to test performance in space"
+    },
+    "e8cb0163453b9940a59fc9178afc165c575b9f839577f003071f3957685b6f07": {
+      "ts": 1791045123.907961,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bull Doubles Supercomputer Output in France"
+    },
+    "cdd6e2cfd925566adbf014747f986311c357ba0014cd0d9d2ec1e06a0d3e0c35": {
+      "ts": 1791045123.907983,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Samsung starts mass-producing the Exynos 2700, and it could finally challenge Snapdragon"
+    },
+    "715156d1a31a8bc6f8566672e47ff38d00892eac84960c5b644ec6b253e4039b": {
+      "ts": 1791045123.908,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Anthropic: GLM-5.3 Safeguards Fail 64% to 100% of Tests"
+    },
+    "7339b1e9309fd8ea868066db3cbac09a85926f215af384b575ac9200afcfd985": {
+      "ts": 1791045123.908019,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Data Center Backlash Goes Global as AI Boom Hits Communities"
+    },
+    "ad4b38d5e36cb789b73d0a2607de6476c8af988bbd3621d5e0922b4f7ea49c39": {
+      "ts": 1791045123.908043,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Take Advantage of India’s Low Cost Data Centers: Goyal at G20"
+    },
+    "e5bf89ad0a75ba6a806014ced2dae3c7e5dcad49b25f3a162e622e24572692ad": {
+      "ts": 1791045124.575537,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Kazakhstan ready for large-scale AI rollout, PM Bektenov says"
+    },
+    "0f5a2d9f27325c79307e170e59c1aed56e9a66150e9e196ba4f0cfe13995dcc0": {
+      "ts": 1791045124.589888,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "You can put a data center at your house—but who really pays?"
+    },
+    "5342c1f9c8f1897ffb9cfb0ee0584f821636800eb8ee568c1aea5d0db2bdbef6": {
+      "ts": 1791045124.589917,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Digital Realty plans in-data-center cable landing station at LAX12"
+    },
+    "f2e4ac3bc52ab76e780055041de249e515fb9d5be6b748623a94be568eccd224": {
+      "ts": 1791045124.589938,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Bitcoin Miners Write Off $1.1 Billion in Assets Amid Shift to AI"
+    },
+    "70fa43a8c4738551258474eafa48a546389446d19026631ade2deb1737b84c56": {
+      "ts": 1791045128.281846,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "IREN Rides AI Data-Center Rebound as Griffin Discloses 4.7% Stake"
+    },
+    "a1ba99d901f6082c50b7f64c93fcbf5e70a490d61b1b4346b2633f580ca4350b": {
+      "ts": 1791045128.281883,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Meta wants you to build your own AI gadget, and it’s giving away the code"
+    },
+    "2f529bcbc5a68528a114559f0292c1dc54f9398305e5421772f89ee7338f5b69": {
+      "ts": 1791045128.281908,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Meta wants you to build your own AI gadget, and it’s giving away the code"
+    },
+    "b28370a3ed5dee94d6a39fdec286437abbdb8b264a1f6ae0d4eab42e3442384d": {
+      "ts": 1791045128.281929,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "TSMC Reports August Revenue Growth. TSMC stock sits at EUR 421.25."
+    },
+    "491df1c7234a88ce1e2236094fd54c3e27f51f12a366782b4667280f57eaa0e4": {
+      "ts": 1791045128.281953,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Tech Talk: Google launches Project Suncatcher satellite to test solar-powered AI computing in space"
+    },
+    "18325370fffb7d192ce39a2eeee4e6ad2477d0fd062b11cf11e851137d8619e4": {
+      "ts": 1791045128.281971,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "Meta launches new AI platform to transform enterprise business"
+    },
+    "d4294fe3e1fba255de8ee267bb641ef4c7d963cc63e59420f2af97dfaf51da09": {
+      "ts": 1791045128.281991,
+      "policy": "ai-industry-v4.6-executive-origin-radar",
+      "reason": "최신성 탈락: 원문 날짜와 본문을 모두 확인할 수 없음",
+      "title": "4 Data Center REITs That Pay Dividends: Where AI Boom Meets Steady Income"
     }
   },
   "legacy": {
@@ -58822,6 +58982,20 @@
   },
   "archive": [
     {
+      "title": "Dell, 일본 150억 달러 규모 AI 데이터센터 프로젝트 참여",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPS011UzhxRkdHa2ZPWFlKZ214aUtHRTB6R1NubnhpNjZ4dnpYdWpXdndQTFRlSGpQZ0VxMGxEdWFwTGVtY25fUER4ZkI5SW80c2xmbkpXcXJEYVRNek9xYkVBV1lvN25jczFNMGg3bmJFVFY4QXlfOTJLTmkxNGZRb256MDk0OGJYdEZWX3dGZFZoaWxDMERvQVB5T1M?oc=5",
+      "source": "Yahoo Finance",
+      "published": "2026-10-03T12:07:32+00:00",
+      "summary": "Dell Technologies가 일본에서 진행되는 150억 달러 규모의 AI 데이터센터 프로젝트에 참여합니다.\n이 프로젝트는 AI 인프라 구축을 위한 대규모 투자를 보여주며, 데이터센터 건설 및 관련 하드웨어/소프트웨어 공급망에 긍정적인 영향을 미칠 수 있습니다. 특히 일본 시장에서의 AI 인프라 성장 가능성을 시사합니다."
+    },
+    {
+      "title": "AI 에이전트, 토큰 사용량 5배 증가…KV 캐시 수요 급증 및 RAM 부족 심화 예상",
+      "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNVVVhN3dDRnN1RVBpNC1pMG52TTczcTNoc09VdkE3TUNZbmIxaXdnWXQ2WkM1cmJJNXVpQXk5U2RDWDZ0SEFNeHRuU2loS05SdTRacGlmUDdmMi1RSE5EXzhmcC13ZkhJS2stNll1UjNoOExkYnR1eHV5U0RoT1ptVzd3bzNOTW1obldoRW9JMFFvM3J3WjRZM2RaUHZYeGxMb2g1SWwxM1FhRmxHUXZBUER6SkkwaTRud2c5bGdTQlJQRmNXcG91c1FaVlNoNWpRc0plbk1VTDdtNDMycmJUUW1ZUHN2S1VUeXBnOTdBeks0QzBoUGJibHJDNkFGa0xpdDUyZjgyUGQwc05vSUh1emlnVGZOaEVTRWU1cWhUajM1WUpTVUJMRndYeVJ3UQ?oc=5",
+      "source": "Tom's Hardware",
+      "published": "2026-10-03T13:10:00+00:00",
+      "summary": "AI 에이전트가 프롬프트를 캐싱하면서 인간보다 5배 더 많은 토큰을 사용하고 있으며, 이는 KV 캐시 수요를 급증시켜 RAM 부족 현상을 더욱 악화시킬 것으로 전망됩니다.\nAI 에이전트의 토큰 처리 방식 변화는 KV 캐시 및 RAM과 같은 메모리 반도체 수요에 직접적인 영향을 미칩니다. 현재 악화되고 있는 RAM 부족 현상이 더욱 심화될 수 있으며, 관련 반도체 공급망에 대한 투자자들의 주의가 필요합니다."
+    },
+    {
       "title": "AI 에이전트, 인간보다 5배 많은 토큰 사용... 격차 확대",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOak5yNk1tS05QX0JMXzFWNkFnRVVsNU5OYVdZaWRyVEFBTXZ3cHBhQ3pJVkZaWHA4LS1oQTQxbW1oemVIaTRHc0pTdXVNc3Jwd1ZTUFpYN3pUMVdrUXA5UURjNFFYeEo1SUJrbXNxeUtRZWE2TGQ0YTktLXNxU1YxRjlXaUpJWnhTZ1hGS2JsU3VUb2pwZ0E?oc=5",
       "source": "Yahoo Finance",
@@ -59856,20 +60030,6 @@
       "source": "VentureBeat",
       "published": "2026-09-22T18:22:38+00:00",
       "summary": "OpenAI가 새로운 GPT-6 모델인 Sol과 Luna를 출시했으며, 이 모델들은 기존 대비 API 비용을 50% 이상 절감한다. 또한, 오류율 감소 등 성능 향상도 동반된다.\nAI 모델의 비용 효율성이 크게 개선되면서 더 많은 기업과 개발자가 OpenAI의 AI 서비스를 활용할 수 있게 될 것이다. 이는 AI 기술의 대중화와 신규 서비스 개발을 촉진할 것으로 예상된다."
-    },
-    {
-      "title": "한미반도체, 2.5D 패키징용 FC Bonder 75 초도 물량 출하",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQVFk2cUlhY1J4anhXc2dkMjZkWDVGcWZTOG1DSGdYUk5SeEh5dHAzLXUzNzcyeWFlS08wMmdzZ2h1TUplb2YybFd5blBWVmVJTk1WWEtOUFJ4eEJmbWpqV3FOaWU0ZFBfa0ZvN0ZQblBKYzIwRzZnMlg3YU9lZ1RxSUNaUVpjOGpDWndZQUdB?oc=5",
-      "source": "digitimes",
-      "published": "2026-09-22T06:56:26+00:00",
-      "summary": "한미반도체가 2.5D 패키징 공정에 사용되는 FC Bonder 75의 초도 물량을 출하했다. 이 장비는 고성능 AI 칩 생산에 필수적인 2.5D 패키징 기술에 사용된다.\nAI 칩 생산 능력 확대와 고성능 패키징 기술 발전에 기여할 것으로 예상된다. 한미반도체의 AI 반도체 장비 공급망 내 위상 강화와 추가 수주 가능성을 시사한다."
-    },
-    {
-      "title": "ASE Technology, AI 수요 공략 위한 105억 달러 규모 CAPEX 계획",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPRldOX3FKMmhDOGUyZTRHNkg1SmpFNWxoLUx6cHoxN05ySzdodmhYM0k4cnF6UVkzNDhreF9PZGVILURjOWpUcC1KcGlkcEJaWTN1MnljTkh1NlhNWTd0MnEzM0xjZ1ctYUxobk9zZE1DMVlBSDR0eXRuOVhZaGNPaDhR?oc=5",
-      "source": "Yahoo Finance Singapore",
-      "published": "2026-09-22T14:44:00+00:00",
-      "summary": "ASE Technology가 AI 수요 증가에 대응하기 위해 105억 달러 규모의 설비투자(CAPEX) 계획을 발표했다. 이는 AI 칩의 고성능화에 필수적인 첨단 패키징 능력 확대를 위한 투자로 해석된다.\nAI 칩의 고성능화 및 수요 증가 추세 속에서 ASE Technology의 대규모 투자는 관련 패키징 시장 성장을 견인하고, AI 반도체 공급망 안정화에 기여할 수 있다. 또한, 경쟁사들의 설비 투자에도 영향을 줄 수 있다."
     }
   ]
 }
